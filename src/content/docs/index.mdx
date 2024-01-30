@@ -5,7 +5,7 @@ template: splash
 hero:
   tagline: Welcome to the official documentation for the Dusk platform!
   image:
-    file: ../../assets/rocket_base.gif
+    file: ../../assets/coin.svg
   actions:
     - text: Read the docs 
       link: /start/
@@ -16,21 +16,11 @@ hero:
       icon: external
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
-
-## Featured Articles 
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
 
 <CardGrid>
-	<Card title="Node Setup" icon="pencil">
-		Go to [Node Setup](guides/node) to find a detailed guide about how to setup your personal Dusk node.
-	</Card>
-	<Card title="Citadel" icon="add-document">
-	    Add content here
-	</Card>
-	<Card title="Economic Model" icon="setting">
-	    Add content here
-	</Card>
-	<Card title="Roadmap" icon="open-book">
-	    Add content here
-	</Card>
+	<LinkCard title="Node Setup" icon="pencil" href="#" description="Go to Node Setup to find a detailed guide about how to setup your personal Dusk node."/>
+	<LinkCard title="Citadel" icon="add-document" href="#" description="Add content here"/>
+	<LinkCard title="Economic Model" icon="add-document" href="#" description="Add content here"/>
+	<LinkCard title="Roadmap" icon="setting" href="#" description="Add content here"/> 
 </CardGrid>

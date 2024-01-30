@@ -22,6 +22,7 @@ export default defineConfig({
 			},
 			customCss: [
 				// Relative path to your custom CSS file
+				'./src/fonts/font-face.css',
 				'./src/styles/custom.css',
 			],
 			sidebar: [
