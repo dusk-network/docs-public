@@ -6,6 +6,7 @@ description: Tokenomics, allocation, vesting and emission of the Dusk token
 The Dusk protocol utilizes the DUSK token both as an incentive for consensus participation and as its primary native currency. DUSK is currently an ERC-20 token deployed on Ethereum. With the launch of mainnet, the DUSK token will be bridged to its native network. Below are the key tokenomic points:
 
 ## Token Metrics
+
 * **Token Name**: Dusk
 * **Token Symbol**: DUSK
 * **Total Supply**: 500,000,000 DUSK
@@ -13,6 +14,22 @@ The Dusk protocol utilizes the DUSK token both as an incentive for consensus par
 * **Maximum Supply**: 1,000,000,000 DUSK. 500M pre-mainnet, 500M emitted over an 18-36 year period to stakers on mainnet.
 * **ICO**: Raised $8 million in November 2018. The tokens were priced at $0.0404 during the ICO period. Private sale tokens comprise 50% of total supply, 10% DUSK BEP20 and 40% DUSK ERC20.
 * **Token Type**: ERC20 & BEP20. In the future, bridged to the Dusk protocol as the DUSK native currency.
+
+## Token Contract
+
+The DUSK token is available as an ERC20 on Ethereum, a BEP20 on Binance Smart Chain and a BEP2 token on Binance Beacon Chain.
+
+| Chain                | Standard | Contract Address                           |
+|----------------------|----------|--------------------------------------------|
+| Ethereum             | ERC20    | [0x940a2db1b7008b6c776d4faaca729d6d4a4aa551](https://etherscan.io/token/0x940a2db1b7008b6c776d4faaca729d6d4a4aa551) |
+| Binance Smart Chain  | BEP20    | [0xb2bd0749dbe21f623d9baba856d3b0f0e1bfec9c](https://bscscan.com/token/0xb2bd0749dbe21f623d9baba856d3b0f0e1bfec9c) |
+| Binance Beacon Chain | BEP2     | [DUSK-45E](https://explorer.bnbchain.org/asset/DUSK-45E) |
+
+## Token Markets & Exchanges
+
+The DUSK token is widely accessible on top-tier CEXs and DEXs. For more information on the various locations DUSK is accessible, see the markets pages for Coinmarketcap and Coingecko:
+- [DUSK markets Coinmarketcap](https://coinmarketcap.com/currencies/dusk/#Markets)
+- [DUSK markets Coingecko](https://www.coingecko.com/en/coins/dusk)
 
 ## Token Utility
 
