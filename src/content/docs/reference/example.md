@@ -1,6 +1,7 @@
 ---
 title: Example Reference
 description: A reference page in my new Dusk docs site.
+tableOfContents: false
 ---
 
 Reference pages are ideal for outlining how things work in terse and clear terms.

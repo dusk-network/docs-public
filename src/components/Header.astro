@@ -1,0 +1,36 @@
+---
+import config from 'virtual:starlight/user-config';
+import type { Props } from '../props';
+
+import Search from 'virtual:starlight/components/Search';
+import SiteTitle from 'virtual:starlight/components/SiteTitle';
+
+/**
+ * Render the `Search` component if Pagefind is enabled or the default search component has been overridden.
+ */
+const shouldRenderSearch =
+	config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro';
+---
+
+<div class="header sl-flex">
+	<div class="sl-flex">
+		<SiteTitle {...Astro.props} />
+	</div>
+	<div class="sl-flex">
+		{shouldRenderSearch && <Search {...Astro.props} />}
+	</div>
+</div>
+
+<style>
+	.header {
+		gap: var(--sl-nav-gap);
+		justify-content: space-between;
+		align-items: center;
+		height: 100%;
+        padding: 16px 22px 16px 22px !important;
+
+        padding: 0 !important;
+	    padding-block: unset !important;
+	}
+
+</style>

@@ -1,6 +1,8 @@
 ---
 title: Example Guide
 description: A guide in my new Dusk docs site.
+tableOfContents: false
+pagination: false
 ---
 
 Guides lead a user through a specific task they want to accomplish, often with a sequence of steps.

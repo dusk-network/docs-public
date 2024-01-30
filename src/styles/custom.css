@@ -5,8 +5,12 @@
 	--default-color: #e1dfe8;
 	--on-surface-color: #eceaf2;
 	--sl-color-text-accent: #101010;
-
+	--sl-color-bg-nav: var(--on-surface-color);
 	--sl-text-3x: 58px;
+	--sl-text-h2: 28px;
+	--sl-color-bg-sidebar: #e1dfe8;
+	--sl-color-hairline: #71b1ff;
+	--sl-color-black: var(--default-color)
 
 
 	/* --sl-color-accent-low: #242424; */
@@ -28,8 +32,8 @@
 }
 
 /* Light mode colors. */
-:root[data-theme='dark'] {
-	--sl-color-accent-high: #c8c8c8;
+:root[data-theme="dark"] {
+	/* --sl-color-accent-high: #c8c8c8;
 	--sl-color-white: #ffffff;
 	--sl-color-gray-1: #eeeeee;
 	--sl-color-gray-2: #c2c2c2;
@@ -37,7 +41,7 @@
 	--sl-color-gray-4: #585858;
 	--sl-color-gray-5: #383838;
 	--sl-color-gray-6: #272727;
-	--sl-color-black: #181818;
+	--sl-color-black: #181818; */
 }
 
 body {
@@ -64,4 +68,33 @@ body {
 h1 {
 	font-size: 58px;
 	font-weight: 400;
+}
+
+h2 {
+	font-size: 29px;
+	font-weight: 400;
+}
+
+.site-title span {
+	font-size: 14px;
+	font-weight: 400;
+}
+
+
+.sl-markdown-content {
+	margin: 0 !important;
+}
+
+.hero {
+	padding-block: 0 !important;
+	padding-bottom: 4rem !important;
+}
+
+site-search {
+	display: none !important;
+}
+
+starlight-menu-button button {
+	top: 44px !important;
+	inset-inline-end: 44px !important;
 }

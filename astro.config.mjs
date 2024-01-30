@@ -6,11 +6,16 @@ export default defineConfig({
 	site: 'https://docs.dusk.network',
 	integrations: [
 		starlight({
-			title: 'Wiki',
+			title: 'Documentation',
 			logo: {
 				light: './src/assets/logo-light.svg',
 				dark: './src/assets/logo-dark.svg',
 			},
+			components: {
+				PageFrame: './src/components/PageFrame.astro',
+				Header: './src/components/Header.astro',
+				ContentPanel: "./src/components/ContentPanel.astro",
+			  },
 			social: {
 				'github': 'https://github.com/dusk-network',
 				'x.com': 'https://x.com/duskfoundation',
@@ -21,10 +26,11 @@ export default defineConfig({
 				'reddit': 'https://www.reddit.com/r/dusknetwork',
 			},
 			customCss: [
-				// Relative path to your custom CSS file
 				'./src/fonts/font-face.css',
 				'./src/styles/custom.css',
 			],
+			pagination: false,
+			tableOfContents: false,
 			sidebar: [
 				{
 					label: 'Guides',
