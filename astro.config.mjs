@@ -30,6 +30,14 @@ export default defineConfig({
       tableOfContents: false,
       sidebar: [
         {
+					label: 'Start Here',
+					items: [
+						// Each item here is one entry in the navigation menu.
+						{ label: 'Welcome', link: '/start' },
+						{ label: 'About Dusk', link: '/learn/vision/' },
+					],
+				},
+        {
           label: "Guides",
           items: [
             // Each item here is one entry in the navigation menu.
