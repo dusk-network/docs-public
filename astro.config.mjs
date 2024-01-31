@@ -57,16 +57,7 @@ export default defineConfig({
 					label: "Getting Started",
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: "Node Setup", link: "/getting-started/node-setup/" },
-						{ label: "Digital Identity On Dusk", link: "/guides/example/" },
-						{ 
-						    label: "Digital Identity On Dusk", 
-                            items: [
-                                {label: "Self-Sovereign DI", link: 'digital-identity/self-sovereign-di'},
-                                {label: "Citadel", link: 'digital-identity/citadel'},
-                                {label: "SDK", link: 'digital-identity/moat'},
-                            ],
-                        },
+						{ label: "Node Setup", link: "getting-started/node-setup/" },
 						{ label: "Piecrust And Contracts on Dusk", link: "/guides/example/" },
 						{ 
 						    label: "Wallets", 
