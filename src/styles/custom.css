@@ -28,13 +28,13 @@
 	--sl-color-orange: #FFCF23;
 	--sl-color-orange-low: #FFCF23;
 
-	--sl-color-blue-high: #a4cdff;
-	--sl-color-blue: #71b1ff;
-	--sl-color-blue-low: #71b1ff;
+	--sl-color-blue-high: #EDEAF3;
+	--sl-color-blue: #EDEAF3;
+	--sl-color-blue-low: #EDEAF3;
 
-	--sl-color-purple-high: #a4cdff;
-	--sl-color-purple: #71b1ff;
-	--sl-color-purple-low: #71b1ff;
+	--sl-color-purple-high: #EDEAF3;
+	--sl-color-purple: #EDEAF3;
+	--sl-color-purple-low: #EDEAF3;
 }
 
 /* Dark mode colors. */
@@ -60,13 +60,13 @@
 	--sl-color-orange: #FFCF23;
 	--sl-color-orange-low: #FFCF23;
 
-	--sl-color-blue-high: #a4cdff;
-	--sl-color-blue: #71b1ff;
-	--sl-color-blue-low: #71b1ff;
+	--sl-color-blue-high: #2E2D30;
+	--sl-color-blue: #2E2D30;
+	--sl-color-blue-low: #2E2D30;
 
-	--sl-color-purple-high: #a4cdff;
-	--sl-color-purple: #71b1ff;
-	--sl-color-purple-low: #71b1ff;
+	--sl-color-purple-high: #2E2D30;
+	--sl-color-purple: #2E2D30;
+	--sl-color-purple-low: #2E2D30;
 }
 
 body {
@@ -127,8 +127,12 @@ starlight-menu-button button {
 	inset-inline-end: 44px !important;
 }
 
-.starlight-aside, .starlight-aside__title {
+:root[data-theme="light"] .starlight-aside, :root[data-theme="light"] .starlight-aside__title {
 	color: #2E2D30;
+}
+
+:root[data-theme="dark"] .starlight-aside, :root[data-theme="dark"] .starlight-aside__title {
+	color: #EDEAF3;
 }
 
 .starlight-aside code {
