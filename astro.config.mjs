@@ -30,24 +30,58 @@ export default defineConfig({
 			tableOfContents: false,
 			sidebar: [
 				{
-					label: 'Start Here',
+					label: 'Learn Dusk',
 					items: [
 						// Each item here is one entry in the navigation menu.
 						{ label: 'Welcome', link: '/start' },
-						{ label: 'About Dusk', link: '/learn/vision/' },
+						{ label: 'Vision', link: '/learn/vision/' },
+                        { 
+                            label: 'Overview',
+                            items: [
+                                {label: "Introduction", link: 'learn/overview'},
+                                {label: "Tech Primer", link: 'learn/overview'},
+                            ],
+                        },
+                        { 
+                            label: 'Economic Info',
+                            items: [
+                                {label: "Tokenomics", link: 'learn/overview'},
+                                {label: "Gas", link: 'learn/overview'},
+                                {label: "Economic Protocol", link: 'learn/overview'},
+                            ],
+                        }
 					],
 				},
 				{
-					label: "Guides",
+					label: "Getting Started",
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: "Example Guide", link: "/guides/example/" },
-						{ label: "Wallets", link: "/wallets/overview/" },
+						{ label: "Node Setup", link: "/getting-started/node-setup/" },
+						{ label: "Digital Identity On Dusk", link: "/guides/example/" },
+						{ label: "Piecrust And Contracts on Dusk", link: "/guides/example/" },
+						{ 
+						    label: "Wallets", 
+                            items: [
+                                {label: "Introduction", link: 'wallets/overview'},
+                                {label: "dusk-wallet.js", link: 'wallets/dust-wallet-js'},
+                                {label: "wallet core", link: 'wallets/wallet-core'},
+                            ],
+                        },
 					],
 				},
 				{
-					label: "Reference",
-					autogenerate: { directory: "reference" },
+					label: "ITN",
+					items: [
+						{ label: "Dusk-ERC20 Staking", link: "/guides/example/" },
+						{ label: "ITN Node Running", link: "/wallets/overview/" },
+						{ label: "Get Support", link: "/wallets/overview/" },
+					],
+				},
+				{
+					label: "Community",
+					items: [
+						{ label: "Ecosystem Information", link: "/guides/example/" },
+					],
 				},
 			],
 		}),
