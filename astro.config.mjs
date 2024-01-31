@@ -78,7 +78,7 @@ export default defineConfig({
 				{
 					label: "ITN",
 					items: [
-						{ label: "Dusk-ERC20 Staking", link: "/itn/ethereum-staking/" },
+						{ label: "Dusk-ERC20 Staking", link: "/itn/erc20-staking/" },
 						{ label: "ITN Node Running", link: "/wallets/overview/" },
 						{ label: "Get Support", link: "/wallets/overview/" },
 					],
