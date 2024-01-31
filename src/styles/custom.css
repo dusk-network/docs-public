@@ -90,8 +90,14 @@ h2 {
 	padding-bottom: 4rem !important;
 }
 
-site-search {
-	display: none !important;
+
+button[data-open-modal] {
+	border-radius: 24px !important;
+}
+
+
+dialog {
+	border-radius: 24px !important;
 }
 
 starlight-menu-button button {

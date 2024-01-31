@@ -4,6 +4,7 @@ import type { Props } from '../props';
 
 import Search from 'virtual:starlight/components/Search';
 import SiteTitle from 'virtual:starlight/components/SiteTitle';
+import ThemeSelect from 'virtual:starlight/components/ThemeSelect';
 
 /**
  * Render the `Search` component if Pagefind is enabled or the default search component has been overridden.
@@ -18,6 +19,9 @@ const shouldRenderSearch =
 	</div>
 	<div class="sl-flex">
 		{shouldRenderSearch && <Search {...Astro.props} />}
+	</div>
+	<div class="sl-hidden md:sl-flex right-group">
+	    <ThemeSelect {...Astro.props} />
 	</div>
 </div>
 
