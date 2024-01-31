@@ -47,7 +47,7 @@ export default defineConfig({
                             label: 'Economic Info',
                             items: [
                                 {label: "Tokenomics", link: 'learn/tokenomics'},
-                                {label: "Gas", link: 'learn/overview'},
+                                {label: "Gas", link: 'learn/gas'},
                                 {label: "Economic Protocol", link: 'learn/overview'},
                             ],
                         }

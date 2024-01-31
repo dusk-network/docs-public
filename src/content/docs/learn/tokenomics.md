@@ -36,7 +36,7 @@ The DUSK token is widely accessible on top-tier CEXs and DEXs. For more informat
 The token can be used for the activities:
 * Used for staking in consensus participation.
 * Rewards to consensus participants.
-* Payment of network fees (gas).
+* Payment of network fees ([gas](../learn/gas)).
 * Paying for the deployment of dApps on the network.
 * Payment of services on the network.
 * Target currency for dividend payouts in XSC or other dApps.
