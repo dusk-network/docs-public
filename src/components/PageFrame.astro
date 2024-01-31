@@ -7,6 +7,7 @@ const { hasSidebar, labels } = Astro.props;
 
 <div class="page sl-flex">
 	<header class="header"><slot name="header" /></header>
+	<div class="overlay" />
 	{
 		hasSidebar && (
 			<nav class="sidebar" aria-label={labels['sidebarNav.accessibleLabel']}>
@@ -32,6 +33,8 @@ const { hasSidebar, labels } = Astro.props;
 	.header {
 		z-index: var(--sl-z-index-navbar);
 		height: var(--sl-nav-height);
+		position: fixed;
+		width: 95%;
 		/* border-bottom: 1px solid var(--sl-color-hairline-shade);
 		padding: var(--sl-nav-pad-y) var(--sl-nav-pad-x);
 		padding-inline-end: var(--sl-nav-pad-x); */
@@ -77,9 +80,21 @@ const { hasSidebar, labels } = Astro.props;
 	}
 
 	.main-frame {
-		/* padding-top: calc(var(--sl-nav-height) + var(--sl-mobile-toc-height)); */
+		padding-top: calc(var(--sl-nav-height) + var(--sl-mobile-toc-height)); 
 		padding-inline-start: var(--sl-content-inline-start);
+		overflow: hidden;
 	}
+
+
+
+	.overlay {
+		height: calc(var(--sl-nav-height) + var(--sl-mobile-toc-height) + 30px); 
+		z-index: 5;
+		position: fixed;;
+		background-color: #e1dfe8; 
+		width: 100%; 
+	}
+
 
 	@media (min-width: 50rem) {
 		:global([data-has-sidebar]) .header {
