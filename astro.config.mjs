@@ -69,7 +69,7 @@ export default defineConfig({
 						    label: "Wallets", 
                             items: [
                                 {label: "Introduction", link: 'wallets/overview'},
-                                {label: "dusk-wallet.js", link: 'wallets/dust-wallet-js'},
+                                {label: "dusk-wallet.js", link: 'wallets/dusk-wallet-js'},
                                 {label: "wallet core", link: 'wallets/wallet-core'},
                             ],
                         },
