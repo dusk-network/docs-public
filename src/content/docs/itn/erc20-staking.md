@@ -40,20 +40,20 @@ You can retrieve your DUSK at any time by clicking on `Unstake`.
 
 
 # Frequently Asked Questions (FAQ)
-**Q**: Can I withdraw my stake at any time?  
-**A**: Yes! You can withdraw your stake at any time
+**Q: Can I withdraw my stake at any time?**
+Yes! You can withdraw your stake at any time
 
-**Q**: How do I receive rewards?  
-**A**: While you are staking you accrue rewards at a rate proportional to your stake. You can unstake and restake as you wish, but rewards only accrue while your DUSK is staked. Rewards are not lost by unstaking.
+**Q: How do I receive rewards?**  
+While you are staking you accrue rewards at a rate proportional to your stake. You can unstake and restake as you wish, but rewards only accrue while your DUSK is staked. Rewards are not lost by unstaking.
 
-**Q**: When will I get my rewards?  
-**A**: The rewards will be given to you when you bridge from Ethereum to our mainnet with the same address you staked with. Did you earn a 1000 DUSK during the staking period? Then you'll receive a 1000 DUSK extra when you bridge to mainnet.
+**Q: When will I get my rewards?**
+The rewards will be given to you when you bridge from Ethereum to our mainnet with the same address you staked with. Did you earn a 1000 DUSK during the staking period? Then you'll receive a 1000 DUSK extra when you bridge to mainnet.
 
-**Q**: How much are the gas fees?  
-**A**: It depends on how busy the Ethereum network is. There's 3 operations for staking: Approval, Stake and Unstake. Combined, these use about 300000 gas. You can calculate the cost based on current gas prices by filling in the gas in the `Custom Gas Limit` box: https://etherscan.io/gastracker
+**Q: How much are the gas fees?** 
+It depends on how busy the Ethereum network is. There's 3 operations for staking: Approval, Stake and Unstake. Combined, these use about 300000 gas. You can calculate the cost based on current gas prices by filling in the gas in the `Custom Gas Limit` box: https://etherscan.io/gastracker
 
-**Q**: How do I get the DUSK I stake mirrored on ITN as TDUSK?  
-**A**: If you stake between February 1st and February 14th, do not unstake, and provide an optional Dusk address created through the [web wallet](https://wallet.dusk.network/), you will receive the staked amount in TDUSK.
+**Q: How do I get the DUSK I stake mirrored on ITN as TDUSK?**
+If you stake between February 1st and February 14th, do not unstake, and provide an optional Dusk address created through the [web wallet](https://wallet.dusk.network/), you will receive the staked amount in TDUSK.
 
-**Q**: Can I add to my existing stake?  
-**A**: No, you will have to unstake and stake again.
+**Q: Can I add to my existing stake?**
+No, you will have to unstake and stake again.
