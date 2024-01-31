@@ -56,14 +56,20 @@ export default defineConfig({
 				{
 					label: "Getting Started",
 					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: "Node Setup", link: "getting-started/node-setup/" },
+						{
+							label: "Node Setup",
+							items: [
+								{ label: "Build from source", link: 'node-setup/source' },
+								{ label: "Docker image", link: 'node-setup/docker' },
+								{ label: "Installer", link: 'node-setup/installer' },
+							],
+						},
 						{ label: "Piecrust And Contracts on Dusk", link: "/guides/example/" },
 						{ 
 						    label: "Wallets", 
                             items: [
                                 {label: "Introduction", link: 'wallets/overview'},
-                                {label: "dusk-wallet.js", link: 'wallets/dust-wallet-js'},
+                                {label: "dusk-wallet.js", link: 'wallets/dusk-wallet-js'},
                                 {label: "wallet core", link: 'wallets/wallet-core'},
                             ],
                         },
