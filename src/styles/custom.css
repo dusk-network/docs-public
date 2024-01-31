@@ -3,6 +3,18 @@
 	--mono-font-family: "Soehne Mono", monospace;
 	--sl-text-3x: 58px;
 	--sl-text-h2: 28px;
+}
+
+/* Light mode colors. */
+:root[data-theme="light"] {
+	--default-color: #E2DFE9;
+	--on-surface-color: #EDEAF3;
+	--sl-color-text-accent: #101010;
+	--sl-color-bg-nav: var(--on-surface-color);
+	--sl-color-bg-sidebar: var(--on-surface-color);
+	--sl-color-hairline: transparent;
+	--sl-color-hairline-light: #908E94;
+	--sl-color-black: var(--default-color);
 
 	--sl-color-red-high: #F04367;
 	--sl-color-red: #ED254E;
@@ -25,18 +37,6 @@
 	--sl-color-purple-low: #71b1ff;
 }
 
-/* Light mode colors. */
-:root[data-theme="light"] {
-	--default-color: #E2DFE9;
-	--on-surface-color: #EDEAF3;
-	--sl-color-text-accent: #101010;
-	--sl-color-bg-nav: var(--on-surface-color);
-	--sl-color-bg-sidebar: var(--on-surface-color);
-	--sl-color-hairline: transparent;
-	--sl-color-hairline-light: #908E94;
-	--sl-color-black: var(--default-color);
-}
-
 /* Dark mode colors. */
 :root[data-theme="dark"] {
 	--default-color: #101010;
@@ -47,6 +47,26 @@
 	--sl-color-hairline: transparent;
 	--sl-color-hairline-light: #908E94;
 	--sl-color-white: #E2DFE9;
+
+	--sl-color-red-high: #F04367;
+	--sl-color-red: #ED254E;
+	--sl-color-red-low: #ED254E;
+
+	--sl-color-green-high: #28E6A1;
+	--sl-color-green: #16DB93;
+	--sl-color-green-low: #16DB93;
+
+	--sl-color-orange-high: #FFDC60;
+	--sl-color-orange: #FFCF23;
+	--sl-color-orange-low: #FFCF23;
+
+	--sl-color-blue-high: #a4cdff;
+	--sl-color-blue: #71b1ff;
+	--sl-color-blue-low: #71b1ff;
+
+	--sl-color-purple-high: #a4cdff;
+	--sl-color-purple: #71b1ff;
+	--sl-color-purple-low: #71b1ff;
 }
 
 body {
@@ -109,4 +129,8 @@ starlight-menu-button button {
 
 .starlight-aside, .starlight-aside__title {
 	color: #2E2D30;
+}
+
+.starlight-aside code {
+	background-color: transparent;
 }
