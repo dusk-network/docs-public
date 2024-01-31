@@ -22,7 +22,7 @@ There are three different parties involved in our protocol:
 
 ### User
 User is a party willing to get a license that will allow her or him to use a particular service. 
-By a license we mean a generalized permit, or a ticket, or a permission.
+By license, we mean a generalized permit, or a ticket, or a permission.
 Users request licenses on-chain from license providers, meaning, they communicate with
 license providers by interacting indirectly via blockchain. Thanks to that, license providers do not know who
 sent them a given request. Users obtain licenses via blockchain as well.
@@ -37,7 +37,7 @@ License providers do not get any information about the requesting users, thanks 
 in the blockchain.
 
 ### Service Provider (SP)
-Service Provider is a party receiving off-chain requests to grant services from users. 
+Service Provider is a party receiving off-chain requests to grant services to users. 
 When user receives a license, she or he converts the license into a cookie, effectively
 starting a session with Service Provider. The user can then send the cookie off-chain
 to the Service Provider. Service Provider, upon receiving the cookie off-chain, can verify some information

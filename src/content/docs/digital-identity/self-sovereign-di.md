@@ -32,7 +32,7 @@ By unlinkability we mean a feature of the system which makes sure that an attack
 happening in the system are related, in other words, the parties participating in some events cannot
 be traced together under any circumstances.
 Citadel employs Zero Knowledge (ZK) approach, yet using ZK alone is not enough to make the problem of leaking private
-or sensitive information go away. In addition to being able to proof ownership of some rights or group inclusion,
+or sensitive information go away. In addition to being able to prove ownership of some rights or group inclusion,
 without revealing any information, it is also important to arrange the communication so that the system which verifies
 a given proof does not know what is the origin of the proof. In other words, the system works under the
 requirement of full unlinkability. For that, it is important to combine benefits of
