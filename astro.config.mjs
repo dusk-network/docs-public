@@ -40,12 +40,13 @@ export default defineConfig({
                             items: [
                                 {label: "Introduction", link: 'learn/overview'},
                                 {label: "Tech Primer", link: 'learn/overview'},
+                                {label: "Resources", link: 'learn/additional-resources'},
                             ],
                         },
                         { 
                             label: 'Economic Info',
                             items: [
-                                {label: "Tokenomics", link: 'learn/overview'},
+                                {label: "Tokenomics", link: 'learn/tokenomics'},
                                 {label: "Gas", link: 'learn/overview'},
                                 {label: "Economic Protocol", link: 'learn/overview'},
                             ],
@@ -58,6 +59,14 @@ export default defineConfig({
 						// Each item here is one entry in the navigation menu.
 						{ label: "Node Setup", link: "/getting-started/node-setup/" },
 						{ label: "Digital Identity On Dusk", link: "/guides/example/" },
+						{ 
+						    label: "Digital Identity On Dusk", 
+                            items: [
+                                {label: "Self-Sovereign DI", link: 'digital-identity/self-sovereign-di'},
+                                {label: "Citadel", link: 'digital-identity/citadel'},
+                                {label: "SDK", link: 'digital-identity/moat'},
+                            ],
+                        },
 						{ label: "Piecrust And Contracts on Dusk", link: "/guides/example/" },
 						{ 
 						    label: "Wallets", 
@@ -72,7 +81,7 @@ export default defineConfig({
 				{
 					label: "ITN",
 					items: [
-						{ label: "Dusk-ERC20 Staking", link: "/guides/example/" },
+						{ label: "Dusk-ERC20 Staking", link: "/itn/ethereum-staking/" },
 						{ label: "ITN Node Running", link: "/wallets/overview/" },
 						{ label: "Get Support", link: "/wallets/overview/" },
 					],
@@ -80,7 +89,7 @@ export default defineConfig({
 				{
 					label: "Community",
 					items: [
-						{ label: "Ecosystem Information", link: "/guides/example/" },
+						{ label: "Ecosystem Information", link: "community/overview" },
 					],
 				},
 			],
