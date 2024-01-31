@@ -1,9 +1,7 @@
 ---
-title: Gas 
+title: What is Gas?
 description: Links to our research papers and technical blogs 
 ---
-
-## What is 'Gas'?
 
 In the context of the Dusk and its economic protocol, 'Gas' is a fundamental concept central to the execution and processing of transactions on the blockchain. Gas can be thought of as the fuel that powers blockchain operations, similar to how gasoline powers a vehicle.
 

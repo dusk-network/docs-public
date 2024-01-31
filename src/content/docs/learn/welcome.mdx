@@ -1,0 +1,44 @@
+---
+title: Dusk Protocol Overview
+description: This is the Homepage of Dusk Documentation for users and Provisioner runners
+---
+import { LinkCard, Card, CardGrid } from '@astrojs/starlight/components';
+
+Welcome to Dusk! Here, you'll find comprehensive guides, tutorials, and resources to help you getting started.
+
+## Overview
+
+> The power of DeFi, the privacy of Fintech institutions, the control of FMIs - at the fingertip of all users
+
+Dusk is the first global computer with **privacy-preserving dApps** built for **real world adoption** and assets (RWA). Dusk protocol has been built from the ground up for financial applications and services, providing a secure, private, and scalable infrastructure for the digital economy. Dusk ultimate goal is to enable a full and decentralized **Financial Market Infrastructure (FMI)** powering clearance & settlement, post-trading services, and corporate actions for securities and digital assets.
+
+### Key Features
+
+Dusk is designed to power the next generation of financial applications. The protocol addresses key challenges in the financial sector, such as privacy, compliance, and scalability, making it an ideal choice for a wide range of services.
+
+<CardGrid stagger>
+    <Card title="Privacy-Preserving Smart Contracts">
+Piecrust VM facilitates the development of complex, privacy-focused dApps. It supports Smart Contracts written in rust or any programming language that targets WebAssembly (WASM) bytecode.
+        <LinkCard title="Piecrust: ZK-Friendly VM" href="/getting-started/vm/overview"/>
+    </Card>
+    <Card title="Compliance">
+        Dusk features a privacy-preserving digital identity protocol, Citadel, crucial for KYC/AML compliance. Moreover, the protocol features 
+        <a href="https://dusk.network/news/why-we-need-phoenix-and-zedger">Zedger</a>, a transaction model which encodes Mifid II regulation and allow the issuance of [regulated financial products](/learn/digital-assets/security-tokens).
+        <LinkCard title="Digital Identity Protocol" href="/digital-identity/self-sovereign-di"/>
+    </Card>
+    <Card title="Powered By Cryptography">
+        Our R&D team is at the forefront of research for zero-knowledge proofs with dozen of papers published and libraries developed
+        <LinkCard title="Publications And Research" href="overview/additional-resources"/>
+    </Card>
+    <Card title="Finality And Scalability">
+    Thanks to <a href="">Kadcast networking protocol</a> and the Succinct Attestation consensus, Dusk can scale to millions of nodes without compromising time to finality, decentralization, or network efficiency.
+        <LinkCard title="Network" href="overview/additional-resources"/>
+    </Card>
+    <Card title="Economic Soundness">
+The Economic Protocol allows service providers to be productized and profit, keeps developers incentivized, and unlocks completely new breed of use cases.
+        <LinkCard title="Economic Protocol" href="economy/economic-protocol"/>
+    </Card>
+</CardGrid>
+## Join Dusk!
+
+To ease you into the intricacies of Dusk, you might consider participating in the [Staking](/staking) initiative, or [run a Provisioner](/node-setup) in our upcoming [Incentivized Testnet (ITN)](/ITN) program. 

@@ -33,22 +33,29 @@ export default defineConfig({
 					label: 'Learn Dusk',
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: 'Welcome', link: '/start' },
-						{ label: 'Vision', link: '/learn/vision/' },
+						{ label: 'Welcome', link: 'learn/welcome' },
                         { 
                             label: 'Overview',
                             items: [
-                                {label: "Introduction", link: 'learn/overview'},
-                                {label: "Tech Primer", link: 'learn/overview'},
-                                {label: "Resources", link: 'learn/additional-resources'},
+                                { label: "Introduction", link: 'learn/overview/intro/'},
+                                { label: 'Vision', link: 'learn/overview/vision/' },
+                                { label: "Resources", link: 'learn/overview/additional-resources'},
                             ],
                         },
                         { 
                             label: 'Economic Info',
                             items: [
-                                {label: "Tokenomics", link: 'learn/tokenomics'},
-                                {label: "Gas", link: 'learn/gas'},
-                                {label: "Economic Protocol", link: 'learn/overview'},
+                                {label: "Tokenomics", link: 'learn/economy/tokenomics'},
+                                {label: "Gas", link: 'learn/economy/gas'},
+                                {label: "Economic Protocol", link: 'learn/economy/economic-protocol'},
+                            ],
+                        },
+                        { 
+                            label: 'Digital Assets',
+                            items: [
+                                {label: "MiCA", link: 'learn/digital-assets/mica'},
+                                {label: "Security Lifecycle", link: 'learn/digital-assets/security-tokens'},
+                                {label: "Security Dematerialization", link: 'learn/digital-assets/dematerialization'},
                             ],
                         }
 					],
@@ -64,13 +71,21 @@ export default defineConfig({
 								{ label: "Installer", link: 'node-setup/installer' },
 							],
 						},
-						{ label: "Piecrust And Contracts on Dusk", link: "/guides/example/" },
+						{
+							label: "VM And Contracts",
+							items: [
+								{ label: "Piecrust Overview", link: '/getting-started/vm/overview/' },
+                                { label: "Smart Contract Example: Counter", link: '/getting-started/vm/counter-example/' },
+								{ label: "Piecrust vs RuskVM1.0", link: '/getting-started/vm/comparison-with-vm1/' },
+							],
+						},
+						{ label: "", link: "/guides/example/" },
 						{ 
 						    label: "Wallets", 
                             items: [
-                                {label: "Introduction", link: 'wallets/overview'},
-                                {label: "dusk-wallet.js", link: 'wallets/dusk-wallet-js'},
-                                {label: "wallet core", link: 'wallets/wallet-core'},
+                                {label: "Introduction", link: '/getting-started/wallets/overview'},
+                                {label: "dusk-wallet.js", link: '/getting-started/wallets/dusk-wallet-js'},
+                                {label: "wallet core", link: '/getting-started/wallets/wallet-core'},
                             ],
                         },
 					],
@@ -79,8 +94,10 @@ export default defineConfig({
 					label: "ITN",
 					items: [
 						{ label: "Dusk-ERC20 Staking", link: "/itn/erc20-staking/" },
+						/*
 						{ label: "ITN Node Running", link: "/wallets/overview/" },
 						{ label: "Get Support", link: "/wallets/overview/" },
+                        */
 					],
 				},
 				{

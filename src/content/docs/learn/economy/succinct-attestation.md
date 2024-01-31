@@ -1,0 +1,3 @@
+---
+title: Succinct Attestation Consensus
+---
