@@ -19,7 +19,7 @@ Click on the `Approve` button to approve that the contract can use your ERC20 DU
 
 ![Approve the contract.](../../../assets/itn/approve.png)
 
-Your wallet will ask you to sign the transaction. Triple check you're doing this for the right staking contract!
+Your wallet will ask you to sign the transaction. Triple check you're doing this for the right staking contract! The staking contract can be found [here](https://etherscan.io/address/0x4ab6ffa52460979dde1e442fb95f8bac56c3adc3). The Dusk token [here](https://etherscan.io/token/0x940a2db1b7008b6c776d4faaca729d6d4a4aa551).
 
 ## Step 4 - Stake
 After the approval transaction has gone through, click on the `Stake` button to stake your DUSK. Optionally, if you also want to receive the equivalent amount of your stake on ITN2, provide a DUSK address in the input field. You can create a DUSK address through our [web wallet](https://wallet.dusk.network/).
@@ -40,6 +40,11 @@ You can retrieve your DUSK at any time by clicking on `Unstake`.
 
 
 ## Frequently Asked Questions (FAQ)
+
+**Q: Where can I find the DUSK ERC20 token address and staking contract address?**
+
+The DUSK ERC20 token address is: [0x940a2db1b7008b6c776d4faaca729d6d4a4aa551](https://etherscan.io/token/0x940a2db1b7008b6c776d4faaca729d6d4a4aa551)
+The staking contract address is: [0x4ab6ffa52460979dde1e442fb95f8bac56c3adc3](https://etherscan.io/address/0x4ab6ffa52460979dde1e442fb95f8bac56c3adc3)
 
 **Q: Can I withdraw my stake at any time?**
 
