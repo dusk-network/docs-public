@@ -58,6 +58,8 @@ const { hasSidebar, labels } = Astro.props;
 		width: 100%;
 		background-color: var(--sl-color-black);
 		overflow-y: auto;
+		margin-top: 4.5rem;
+		border-top-right-radius: 1rem;
 	}
 
 	:global([aria-expanded='true']) ~ .sidebar-pane {
@@ -67,7 +69,7 @@ const { hasSidebar, labels } = Astro.props;
 	.sidebar-content {
 		height: 100%;
 		min-height: max-content;
-		padding: 3rem var(--sl-sidebar-pad-x) 0;
+		padding: 1rem var(--sl-sidebar-pad-x) 0;
 		flex-direction: column;
 		gap: 1rem;
 	}
@@ -83,6 +85,7 @@ const { hasSidebar, labels } = Astro.props;
 		padding-top: calc(var(--sl-nav-height) + var(--sl-mobile-toc-height)); 
 		padding-inline-start: var(--sl-content-inline-start);
 		overflow: hidden;
+		margin: 2rem;
 	}
 
 
@@ -91,7 +94,7 @@ const { hasSidebar, labels } = Astro.props;
 		height: calc(var(--sl-nav-height) + var(--sl-mobile-toc-height) + 30px); 
 		z-index: 5;
 		position: fixed;;
-		background-color: #e1dfe8; 
+		background-color: var(--default-color); 
 		width: 100%; 
 	}
 
