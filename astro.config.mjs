@@ -49,6 +49,7 @@ export default defineConfig({
 								{ label: "Tokenomics", link: 'learn/economy/tokenomics' },
 								{ label: "Gas", link: 'learn/economy/gas' },
 								{ label: "Economic Protocol", link: 'learn/economy/economic-protocol' },
+								{ label: "Succinct Attestation", link: 'learn/economy/succinct-attestation' },
 							],
 						},
 						{
