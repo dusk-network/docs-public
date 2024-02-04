@@ -138,3 +138,7 @@ starlight-menu-button button {
 .starlight-aside code {
 	background-color: transparent;
 }
+
+.MathJax * {
+	display: inline !important;
+}
