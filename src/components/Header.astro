@@ -17,11 +17,13 @@ const shouldRenderSearch =
 	<div class="sl-flex">
 		<SiteTitle {...Astro.props} />
 	</div>
-	<div class="sl-flex">
-		{shouldRenderSearch && <Search {...Astro.props} />}
-	</div>
-	<div class="sl-hidden md:sl-flex right-group">
-	    <ThemeSelect {...Astro.props} />
+	<div class="header sl-flex">
+		<div class="sl-flex">
+			{shouldRenderSearch && <Search {...Astro.props} />}
+		</div>
+		<div class="sl-hidden md:sl-flex right-group">
+		    <ThemeSelect {...Astro.props} />
+		</div>
 	</div>
 </div>
 
