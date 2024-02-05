@@ -7,7 +7,7 @@ description: This resource explains how to setup a Dusk node starting from sourc
 * **A Linux Operating System**: This guide is tailored for Linux users. If you're using another operating system, you might run into issues.
 * **An Internet Connection**: Ensure you can download files and communicate to other nodes on the target device.
 * **Firewall Access**: Dusk's networking protocol, Kadcast, uses [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol) to communicate among nodes. If you want your node to connect to an external network, ensure that your firewall and router's UDP ports are forwarded correctly. The default configuration targets port 9000.
-* **Software Prerequisites**: You'll need the following software installed to follow this guide: `rustc`, `clang`, `gcc` and `git`.
+* **Software Prerequisites**: You'll need the following software installed to follow this guide: `curl`, `zip`, `libssl-dev`, `rustc`, `clang`, `gcc` and `git`.
 
 ## Step-by-Step Instructions
 
