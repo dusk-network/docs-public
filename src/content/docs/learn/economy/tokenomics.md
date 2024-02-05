@@ -1,5 +1,5 @@
 ---
-title: Dusk Tokenomics 
+title: Tokenomics 
 description: Tokenomics, allocation, vesting and emission of the Dusk token 
 ---
 

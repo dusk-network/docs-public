@@ -1,5 +1,5 @@
 ---
-title: Dusk Protocol Overview
+title: Welcome
 description: This is the Homepage of Dusk Documentation for users and Provisioner runners
 ---
 import { LinkCard, Card, CardGrid } from '@astrojs/starlight/components';
@@ -21,12 +21,12 @@ Dusk is designed to power the next generation of financial applications. The pro
 <CardGrid stagger>
     <Card title="Privacy-Preserving Smart Contracts">
 Piecrust VM facilitates the development of complex, privacy-focused dApps. It supports Smart Contracts written in rust or any programming language that targets WebAssembly (WASM) bytecode.
-        <LinkCard title="Piecrust: ZK-Friendly VM" href="/getting-started/vm/overview"/>
+        <LinkCard title="Piecrust: ZK-Friendly VM" href="/getting-started/vm/piecrust"/>
     </Card>
     <Card title="Compliance">
         Dusk features a privacy-preserving digital identity protocol, Citadel, crucial for KYC/AML compliance. Moreover, the protocol features 
         <a href="https://dusk.network/news/why-we-need-phoenix-and-zedger">Zedger</a>, a transaction model which encodes Mifid II regulation and allow the issuance of [regulated financial products](/learn/digital-assets/security-tokens).
-        <LinkCard title="Digital Identity Protocol" href="/digital-identity/self-sovereign-di"/>
+        <LinkCard title="Digital Identity Protocol" href="/getting-started/digital-identity/protocol"/>
     </Card>
     <Card title="Powered By Cryptography">
         Our R&D team is at the forefront of research for zero-knowledge proofs with dozen of papers published and libraries developed
@@ -34,7 +34,7 @@ Piecrust VM facilitates the development of complex, privacy-focused dApps. It su
     </Card>
     <Card title="Finality And Scalability">
     Thanks to <a href="">Kadcast networking protocol</a> and the Succinct Attestation consensus, Dusk can scale to millions of nodes without compromising time to finality, decentralization, or network efficiency.
-        <LinkCard title="Network" href="/learn/economy/succinct-attestation"/>
+        <LinkCard title="Succinct Attestation Consensus" href="/learn/economy/succinct-attestation"/>
     </Card>
     <Card title="Economic Soundness">
 The Economic Protocol allows service providers to be productized and profit, keeps developers incentivized, and unlocks completely new breed of use cases.

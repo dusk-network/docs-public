@@ -1,9 +1,9 @@
 ---
-title: Moat (Citadel SDK)
+title: Moat - Citadel SDK
 ---
 
 
-#Moat
+## The Citadel SDK
 
 **Moat** (a.k.a. the Citadel SDK) contains all the required tools for using and implementing self-sovereign identity systems using the Citadel protocol integrated into the Dusk Blockchain.
 

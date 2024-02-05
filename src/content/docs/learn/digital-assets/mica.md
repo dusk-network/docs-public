@@ -1,5 +1,5 @@
 ---
-title: Markets in Crypto Assets
+title: MiCA
 ---
 The Markets in Crypto Assets Regulation (MiCA) is a proposed [regulation](/org/regulation) of the European Union aimed at regulating the issuing of crypto assets and the operations of Crypto Asset Service Providers (CASPs) in the member states of the EU.
 

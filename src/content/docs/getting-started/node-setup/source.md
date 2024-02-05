@@ -1,5 +1,5 @@
 ---
-title: Setting Up a Dusk Node
+title: Build from Source
 description: This resource explains how to setup a Dusk node starting from source
 ---
 

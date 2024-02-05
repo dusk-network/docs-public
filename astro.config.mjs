@@ -36,26 +36,26 @@ export default defineConfig({
 			pagination: false,
 			tableOfContents: false,
 			sidebar: [
+				{ label: 'Welcome', link: 'learn/welcome' },
 				{
 					label: 'Learn Dusk',
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: 'Welcome', link: 'learn/welcome' },
 						{
-							label: 'Overview',
+							label: 'Dusk Protocol',
 							items: [
-								{ label: "Introduction", link: 'learn/overview/intro/' },
-								{ label: 'Vision', link: 'learn/overview/vision/' },
+								{ label: "Overview", link: 'learn/overview/intro/' },
+								{ label: 'Core Values', link: 'learn/overview/vision/' },
 								{ label: "Resources", link: 'learn/overview/additional-resources' },
 							],
 						},
 						{
-							label: 'Economic Info',
+							label: 'Economic Information',
 							items: [
 								{ label: "Tokenomics", link: 'learn/economy/tokenomics' },
-								{ label: "Gas", link: 'learn/economy/gas' },
+								{ label: "Gas Management", link: 'learn/economy/gas' },
 								{ label: "Economic Protocol", link: 'learn/economy/economic-protocol' },
-								{ label: "Succinct Attestation", link: 'learn/economy/succinct-attestation' },
+								{ label: "Succinct Attestation Consensus", link: 'learn/economy/succinct-attestation' },
 							],
 						},
 						{
@@ -74,26 +74,32 @@ export default defineConfig({
 						{
 							label: "Node Setup",
 							items: [
-								{ label: "Build from source", link: 'node-setup/source' },
-								{ label: "Docker image", link: 'node-setup/docker' },
-								{ label: "Installer", link: 'node-setup/installer' },
+								//{ label: "Installer", link: '/getting-started/node-setup/installer' },
+								{ label: "Build from Source", link: '/getting-started/node-setup/source' },
+								{ label: "Docker Image", link: '/getting-started/node-setup/docker' },
 							],
 						},
 						{
-							label: "VM And Contracts",
+							label: "Virtual Machine and Smart Contracts",
 							items: [
-								{ label: "Piecrust Overview", link: '/getting-started/vm/overview/' },
-								{ label: "Smart Contract Example: Counter", link: '/getting-started/vm/counter-example/' },
-								{ label: "Piecrust vs RuskVM1.0", link: '/getting-started/vm/comparison-with-vm1/' },
+								{ label: "Piecrust and Smart Contracts", link: '/getting-started/vm/piecrust' },
+								{ label: "Smart Contract Example", link: '/getting-started/vm/counter-example' },
+								{ label: "Piecrust vs Rusk VM 1.0", link: '/getting-started/vm/comparison-with-vm1' },
 							],
 						},
-						{ label: "", link: "/guides/example/" },
 						{
 							label: "Wallets",
 							items: [
-								{ label: "Introduction", link: '/getting-started/wallets/overview' },
-								{ label: "dusk-wallet.js", link: '/getting-started/wallets/dusk-wallet-js' },
-								{ label: "wallet core", link: '/getting-started/wallets/wallet-core' },
+								{ label: "The Wallet Stack", link: '/getting-started/wallet/stack' },
+								{ label: "Wallet Core Library", link: '/getting-started/wallet/wallet-core' },
+								{ label: "Wallet JS Library", link: '/getting-started/wallet/wallet-js' },
+							],
+						},
+						{
+							label: "Digital Identity",
+							items: [
+								{ label: "Citadel Protocol", link: '/getting-started/digital-identity/protocol' },
+								{ label: "Moat - Citadel SDK", link: '/getting-started/digital-identity/sdk' },
 							],
 						},
 					],

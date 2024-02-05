@@ -1,5 +1,5 @@
 ---
-title: Dusk node with Docker
+title: Docker Image
 description: This resource explains how to setup a Dusk node with Docker
 ---
 

@@ -1,5 +1,5 @@
 ---
-title:  Comparison with Rusk-VM Version 1.0
+title: Piecrust vs Rusk VM 1.0
 ---
 
 After a taste of how [a counter example smart contract looks in Piecrust](/getting-started/vm/counter-example), it is worth to have a look at a functionally equivalent example written for Rusk-VM Version 1.0. An example looks as follows:

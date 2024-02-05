@@ -1,8 +1,6 @@
 ---
-title: Citadel
+title: Citadel Protocol
 ---
-
-# Citadel
 
 ## What is Citadel?
 
@@ -62,11 +60,11 @@ Citadel is composed of two main protocols: the *license request protocol*, and t
 The above steps are depicted in detail in the following figure.
 
 
-![Citadel protocol](../../../assets/protocol_citadel.svg)
+![Citadel protocol](../../../../assets/protocol_citadel.svg)
 
 The following implementation diagram illustrates how messages are passing between protocol' actors.
 
-![Citadel implementation](../../../assets/implementation_citadel.png)
+![Citadel implementation](../../../../assets/implementation_citadel.png)
 
 You can find a more detailed description in the [specs](https://github.com/dusk-network/citadel-docs/blob/main/specs/main.pdf).
 An academic paper with further details about the protocol can be found [here](https://arxiv.org/pdf/2301.09378.pdf).

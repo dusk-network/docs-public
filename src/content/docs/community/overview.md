@@ -1,5 +1,5 @@
 ---
-title: Community Section
+title: Ecosystem Information
 description: An overview of our socials and official Dusk channels.
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: dusk-wallet-core
+title: Wallet Core Library
 description: Usage documentation about the dusk-wallet-js library
 ---
 

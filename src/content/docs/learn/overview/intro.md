@@ -1,5 +1,5 @@
 ---
-title: What is Dusk?
+title: Overview
 ---
 
 Dusk is an open source and secure network infrastructure which hosts a privacy-preserving distributed ledger technology - or `DLT` - conceived for the digitization - or `tokenization` - of all types of financial instruments, as well as for clearance & settlement operations of their transactions.

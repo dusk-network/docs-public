@@ -1,13 +1,11 @@
 ---
-title: Security Mechanics and Standard Requirements
+title: Security Lifecycle
 description: This page starts with a general introduction to the classes of securities and the resulting types of security tokens. We then dive into the mechanics and requirements of these tokens.
 ---
 
-# Security Token Mechanics and Standard Requirements
-
 This page starts with a general introduction to the classes of securities and the resulting types of security tokens. We then dive into the mechanics and requirements of these tokens.
 
-## Securities?
+## Securities
 Securities are tradable financial assets issued to raise funds from investors. These can be equity or debt instruments. Equity refers to the stock, indicating the ownership interest in the company. On the contrary, debt is the sum of money borrowed by the company. Shares (synonymous with stocks) are an example of equity-type securities, whereas a loan, obligation, or bond is debt-type security.
 
 ## Dividend and Interest

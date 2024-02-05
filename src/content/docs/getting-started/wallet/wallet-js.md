@@ -1,5 +1,5 @@
 ---
-title: 🎧 dusk-wallet-js
+title: Wallet JS Library
 description: Usage documentation about the dusk-wallet-js library
 ---
 

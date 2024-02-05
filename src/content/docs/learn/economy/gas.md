@@ -1,5 +1,5 @@
 ---
-title: What is Gas?
+title: Gas Management
 description: Links to our research papers and technical blogs 
 ---
 
@@ -11,7 +11,7 @@ Gas is used as a unit of measure to allocate resources on the blockchain. Each o
 ### Gas Price
 Whenever you use a unit of gas, a corresponding price is incurred. The gas price is expressed in `LUX` (`LUX` being the minimum fraction of `DUSK`, equivalent to 1 billionth of `DUSK`).
 
-### Transaction Fee?
+### Transaction Fee
 When you initiate a transaction, you specify the fee you're willing to pay. The fee is calculated by indicating the maximum amount of gas you're willing to pay and the amount of `LUX` you'll pay for each gas unit.
 
 For example, if you send a transaction with GasLimit=100,000 and GasPrice=2, it means you'll pay no more than 100,000 * 2 `LUX` = 0.000200 `DUSK` for that transaction. This only signifies your fee limit, as only the spent gas is charged after your transaction is processed and included in a block. This means that if the transaction consumes only 50,000 GasPoints, you'll be charged only 0.0001 `DUSK`.

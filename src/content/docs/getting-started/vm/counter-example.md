@@ -1,7 +1,9 @@
 ---
-title: Simple Counter Example
+title: Smart Contract Example
 ---
 
+
+### Simple Counter Example
 Let's create a simple contract example for a counter. The counter will keep a count, and allow for incrementing it by one, as well as for reading its current value. In other words, the counter contract will count the number of times its increment method has been called, and will make this count available via a read method. As our contract (as any Dusk VM contract) is "almost" a normal Rusk program, let's create a new Rust cargo project in order to be able to write it and compile it.
 
 You can create new Rust library for our contract by issuing the following command:

@@ -1,14 +1,9 @@
 ---
-title: Dematerialisation, CSDs, and the Role of Dusk
+title: Security Dematerialization
 ---
 
 This documentation provides an overview of the evolving landscape of security tokens, with a particular focus on dematerialisation, the role of Central Securities Depositories (CSDs), and how Dusk, having applied for the DLT-TSS license, is set to play a significant role in this space.
 
-## Contents
-- [Dematerialisation and the Role of CSDs](#dematerialisation-and-the-role-of-csds)
-- [Dusk's Position in the DLT-TSS Ecosystem](#dusks-position-in-the-dlt-tss-ecosystem)
-
-<hr className="subsection" />
 
 ## Dematerialisation and the Role of CSDs 
 
