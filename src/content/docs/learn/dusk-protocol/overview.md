@@ -16,18 +16,18 @@ Simply put, Dusk is **privacy-centric global ledger for real world applications 
 Dusk is engineered for high performance and ease of use, catering to both developers and users.
 
 ### Unparalleled Privacy
-1. Implements [confidential smart contracts](/getting-started/vm/overview) with [Phoenix and Zedger](https://dusk.network/news/why-we-need-phoenix-and-zedger/) transaction models.
-2. Utilizes the most popular and sound [zero-knowledge](https://github.com/dusk-network/plonk) [cryptographic](https://www.usenix.org/conference/usenixsecurity21/presentation/grassi) [tools](https://eprint.iacr.org/2022/086) for privacy.
-3. Provides a [privacy-preserving digital identity protocol](/digital-identity/self-sovereign-di) for compliance and secure user interactions.
+1. Implements [confidential smart contracts](/getting-started/vm/counter-example) with [Phoenix and Zedger](https://dusk.network/news/why-we-need-phoenix-and-zedger/) transaction models.
+2. Utilizes the most popular and sound zero-knowledge cryptographic tools for privacy, being the [PlonK](https://github.com/dusk-network/plonk) proof system or the [Poseidon](https://www.usenix.org/conference/usenixsecurity21/presentation/grassi) hash function among them.
+3. Provides a [privacy-preserving digital identity protocol](/getting-started/digital-identity/protocol) for compliance and secure user interactions.
 
 ### High Performance and Finality
 1. Features [Kadcast](https://github.com/dusk-network/kadcast/blob/main/README.md), an innovative network protocol for **10x more efficient block and transaction data propagation**.
-2. [Succinct Attestation](https://dusk.network/news/web-wallet-and-node-are-shipped/), Dusk's consensus algorithm powered by proof-of-stake sybil resistant mechanism, enables **complete state finality**, not just transactions. This unlocks a wealth of financial applications.
-3. Transactions are **fast and efficient**, bolstered by [Piecrust](/getting-started/vm/overview), Dusk ZK-friendly virtual machine.
+2. [Succinct Attestation](/learn/economic-information/succinct-attestation), Dusk's consensus algorithm powered by proof-of-stake sybil resistant mechanism, enables **complete state finality**, not just transactions. This unlocks a wealth of financial applications.
+3. Transactions are **fast and efficient**, bolstered by [Piecrust](/getting-started/vm/piecrust), Dusk ZK-friendly virtual machine.
 
-### Developer And User Experience
+### Developer and User Experience
 1. Smart Contracts are [WASM](https://webassembly.org/) bytecode, enabling their **development in [Rust](https://dusk.network/news/piecrust-and-our-transition-to-rust/)** or any other language that compiles to WebAssembly.
-2. Introduces an [innovative economic model](/learn/economy/economic-protocol) where smart contracts can be elevated to **real-world applications** and **services** to greatly boost adoption.
+2. Introduces an [innovative economic model](/learn/economic-information/economic-protocol) where smart contracts can be elevated to **real-world applications** and **services** to greatly boost adoption.
 3. Users can use a [WebWallet](https://dusk.network/news/web-wallet-and-node-are-shipped/) without renouncing the security of privacy-preserving transactions.
 
 ## Use Cases
@@ -44,7 +44,7 @@ Dusk is ideal for building transactional applications with high throughput and p
 
 Please refer to Dusk's [use cases](https://dusk.network/pages/usecases) for more information.
 
-## A Note On Privacy And Compliance
+## A Note on Privacy and Compliance
 
 Dusk uniquely offers the possibility to automate processes previously requiring the aid of trusted (and costly) third parties. The novel use of [Zero-Knowledge technology](https://en.wikipedia.org/wiki/Zero-knowledge_proof) enables organizations to harness the power of DLT while respecting confidentiality agreements, and data protection legislation. Anyone can leverage Dusk to inexpensively issue *programmable* financial assets that are governed by privacy preserving smart contracts.
 

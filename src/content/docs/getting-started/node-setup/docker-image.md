@@ -3,7 +3,7 @@ title: Docker Image
 description: This resource explains how to setup a Dusk node with Docker
 ---
 
-:::caution
+:::note[Caution]
 The following guide is designed to assist in setting up a local node for testing and development purposes only. It is not recommended for production use. Docker is utilized here to facilitate convenient local testing and provide developers with a dedicated node for API testing
 :::
 

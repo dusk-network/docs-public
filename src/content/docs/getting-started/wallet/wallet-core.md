@@ -3,8 +3,6 @@ title: Wallet Core Library
 description: Usage documentation about the dusk-wallet-js library
 ---
 
-Welcome to the wallet-core wiki!
-
 This is documentation for how to use the wallet-core library from any programming language of your preference. 
 
 This wallet-core is used in a js library for the web and a rust library (wallet-cli) through wasmer. They are both examples on how to use this library.

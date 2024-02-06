@@ -36,7 +36,7 @@ export default defineConfig({
 			pagination: false,
 			tableOfContents: false,
 			sidebar: [
-				{ label: 'Welcome', link: 'learn/welcome' },
+				{ label: 'Welcome', link: 'welcome' },
 				{
 					label: 'Learn Dusk',
 					items: [
@@ -44,25 +44,25 @@ export default defineConfig({
 						{
 							label: 'Dusk Protocol',
 							items: [
-								{ label: "Overview", link: 'learn/overview/intro/' },
-								{ label: 'Core Values', link: 'learn/overview/vision/' },
-								{ label: "Resources", link: 'learn/overview/additional-resources' },
+								{ label: "Overview", link: 'learn/dusk-protocol/overview' },
+								{ label: 'Core Values', link: 'learn/dusk-protocol/core-values' },
+								{ label: "Resources", link: 'learn/dusk-protocol/additional-resources' },
 							],
 						},
 						{
 							label: 'Economic Information',
 							items: [
-								{ label: "Tokenomics", link: 'learn/economy/tokenomics' },
-								{ label: "Gas Management", link: 'learn/economy/gas' },
-								{ label: "Economic Protocol", link: 'learn/economy/economic-protocol' },
-								{ label: "Succinct Attestation Consensus", link: 'learn/economy/succinct-attestation' },
+								{ label: "Tokenomics", link: 'learn/economic-information/tokenomics' },
+								{ label: "Gas Management", link: 'learn/economic-information/gas-management' },
+								{ label: "Economic Protocol", link: 'learn/economic-information/economic-protocol' },
+								{ label: "Succinct Attestation Consensus", link: 'learn/economic-information/succinct-attestation' },
 							],
 						},
 						{
 							label: 'Digital Assets',
 							items: [
 								{ label: "MiCA", link: 'learn/digital-assets/mica' },
-								{ label: "Security Lifecycle", link: 'learn/digital-assets/security-tokens' },
+								{ label: "Security Lifecycle", link: 'learn/digital-assets/lifecycle' },
 								{ label: "Security Dematerialization", link: 'learn/digital-assets/dematerialization' },
 							],
 						}
@@ -75,8 +75,8 @@ export default defineConfig({
 							label: "Node Setup",
 							items: [
 								//{ label: "Installer", link: '/getting-started/node-setup/installer' },
-								{ label: "Build from Source", link: '/getting-started/node-setup/source' },
-								{ label: "Docker Image", link: '/getting-started/node-setup/docker' },
+								{ label: "Build from Source", link: '/getting-started/node-setup/build-from-source' },
+								{ label: "Docker Image", link: '/getting-started/node-setup/docker-image' },
 							],
 						},
 						{
@@ -90,7 +90,7 @@ export default defineConfig({
 						{
 							label: "Wallets",
 							items: [
-								{ label: "The Wallet Stack", link: '/getting-started/wallet/stack' },
+								{ label: "The Wallet Stack", link: '/getting-started/wallet/wallet-stack' },
 								{ label: "Wallet Core Library", link: '/getting-started/wallet/wallet-core' },
 								{ label: "Wallet JS Library", link: '/getting-started/wallet/wallet-js' },
 							],
@@ -99,7 +99,7 @@ export default defineConfig({
 							label: "Digital Identity",
 							items: [
 								{ label: "Citadel Protocol", link: '/getting-started/digital-identity/protocol' },
-								{ label: "Moat - Citadel SDK", link: '/getting-started/digital-identity/sdk' },
+								{ label: "Citadel SDK", link: '/getting-started/digital-identity/sdk' },
 							],
 						},
 					],

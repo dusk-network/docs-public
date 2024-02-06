@@ -1,31 +1,17 @@
 ---
-title: Moat - Citadel SDK
+title: Citadel SDK
 ---
 
+**Moat** (a.k.a. the Citadel SDK) is a Software Development Kit allowing developers to implement SSI solutions using Citadel and the Dusk Blockchain. In the next subsections we explain how to use it.
 
-## The Citadel SDK
+You can find the complete API [here](https://github.com/dusk-network/moat/blob/main/moat/src/api.rs), and a complete example using such API [here](https://github.com/dusk-network/moat/blob/main/moat-example/src/main.rs).
 
-**Moat** (a.k.a. the Citadel SDK) contains all the required tools for using and implementing self-sovereign identity systems using the Citadel protocol integrated into the Dusk Blockchain.
 
-Moat consists of two main parts:
-- Moat CLI
-- Moat API
+### Prerequisites
 
-Moat CLI is a utility which allows to use the Citadel SSI solution from the point of view of either the user, license provider or service provider.
-The respective roles can be assumed simpy by issuing commands in the command line interface window. 
-Moat API, on the other hand, is a programmatic interface for developers willing to integrate Citadel SSI solution into their 
-software tools or systems.
+**Moat** requires a reachable Rusk node installed and running, or selecting a trusted one. You can set up a node as explained [here](/getting-started/node-setup/build-from-source). It also requires an installed wallet connected to the given Rusk node, as explained [here](https://github.com/dusk-network/wallet-cli/blob/main/src/bin/README.md).
 
-## Prerequisites
-
-**Moat** requires a reachable Rusk node installed and running, or selecting a trusted one. You can set up a node as explained [here](https://wiki.dusk.network/en/setting-up-node). It also requires an installed wallet connected to the given Rusk node, as explained [here](https://github.com/dusk-network/wallet-cli/blob/main/src/bin/README.md).
-
-## Moat CLI
-
-The `moat-cli` utility can be used from the POV of any of the parties involved in the Citadel protocol, it could be:
-- **User:** A party requesting licenses on-chain to LPs, and being able to use the licenses onchain as well.
-- **License Provider (LP):** A party receiving on-chain requests from users to issue licenses onchain addressed to them.
-- **Service Provider (SP):** A party receiving off-chain requests from users to grant services.
+### Using the CLI
 
 To use the CLI, you first need to clone the following repository:
 
@@ -36,35 +22,25 @@ cd moat
 
 Now, specify the Rusk node address in `moat-cli/config.toml`. Then, you can execute the CLI for any of the involved parties, as follows.
 
-### User
-
-Users can request licenses and use them. To run the user CLI, simply run:
+#### User
 
 ```sh
 cargo r --release --bin moat-cli-user -- --wallet-pass <PASSWORD>
 ```
 
-### License Provider
-
-LPs can scan the Blockchain for requests and issue licenses if the requests are valid. To run the LP CLI, simply run:
+#### License Provider
 
 ```sh
 cargo r --release --bin moat-cli-lp -- --wallet-pass <PASSWORD>
 ```
 
-### Service Provider
-
-SPs can get requests from users to grant their services, and accept or deny them by checking if the session cookies provided by the users are valid. To run the SP CLI, simply run:
+#### Service Provider
 
 ```sh
 cargo r --release --bin moat-cli-sp -- --wallet-pass <PASSWORD>
 ```
 
-## Moat API
-
-You can find the complete API [here](https://github.com/dusk-network/moat/blob/main/moat/src/api.rs), and a complete example using such API [here](https://github.com/dusk-network/moat/blob/main/moat-example/src/main.rs).
-
-### Import the required modules
+### Import the Required Modules
 
 To use **Moat**, you need the `zk-citadel-moat` Rust crate, available [here](https://crates.io/crates/zk-citadel-moat). In order to use it, you are required to add it as a dependency in your `Cargo.toml` and to use the following modules in your code.
 
@@ -101,16 +77,16 @@ let moat_context = MoatContext::create(
 )?;
 ```
 
-### Retrieve credentials from the installed wallet
+### Retrieve Credentials from the Installed Wallet
 
 You can choose to use the same credentials used by the wallet in your Citadel application as well. To get them, you as do as follows.
 
 ```rust
 // Retrieve the keypair from the installed wallet
-let (psk_user, ssk_user) = MoatCore::get_wallet_keypair(&moat_context)?;
+let (psk, ssk) = MoatCore::get_wallet_keypair(&moat_context)?;
 ```
 
-### Request a license
+### Request a License
 
 The user can request a license on-chain. In order to create a transaction including that request, it will be necessary to provide the public key `psk_lp` of the LP, doing as follows.
 
@@ -125,7 +101,7 @@ let request_hash = MoatCore::request_license(
 .await?;
 ```
 
-### Get owned requests
+### Get Owned Requests
 
 The LP can retrieve all the requests belonging to them (using their secret key `ssk_lp`) from the Blockchain, as follows.
 
@@ -134,19 +110,20 @@ The LP can retrieve all the requests belonging to them (using their secret key `
 let requests = MoatCore::get_owned_requests(&ssk_lp, &moat_context).await?;
 ```
 
-### Issuing a license
+### Issuing a License
 
-After receiving a request, LP can issue license for that given request. First, it is required to set the attribute data as follows.
+After receiving a request, the LP can issue a license for that given request. First, it is required to set the attribute data as follows.
 
-> Attribute data is a privately shared on-chain data using the Poseidon Cipher. However, it should never contain sensitive information. Application layer should hash sensitive data using, for instance, Poseidon hash.
-{.is-warning}
+:::note[Important]
+The attribute data is privately shared on-chain using the Poseidon Cipher. However, it should never contain sensitive information. Instead, the application layer must hash it using, for instance, the Poseidon hash.
+:::
 
 ```rust
 // Set attribute data to, for instance, 1234
 let attr_data = JubJubScalar::from(1234u64);
 ```
 
-LP can now create transaction which will issue a license, as follows.
+The LP can now create a transaction which will issue a license, as follows.
 
 ```rust
 // Issue a license
@@ -161,31 +138,33 @@ let license_hash = MoatCore::issue_license(
 .await?;
 ```
 
-### Get owned licenses
+### Get Owned Licenses
 
-User can use their secret key to list her or his owned licenses, as follows.
+The user can use their secret key to list the owned licenses, as follows.
 
 ```rust
 let licenses =
     MoatCore::get_owned_licenses(&ssk_user, &moat_context).await?;
 ```
 
-### Use a license
+### Use a License
 
 To use a license, the user first needs to set the challenge value `c`, which allows to use the license under certain conditions specified by the SP. It can be done as follows.
 
-> The Blockchain will accept use of a license for a given challenge `c` only once. The format of this value is dictated by the SP. For instance, SP can publicly state that it will only grant services if the challenge is `0`. In such case, the license will be accepted by the Blockchain only once. It could also be provided in a format with a changing part, for example, the current date. This would ensure that a given license is accepted by the Blockchain once per day, and the SP will accept it as long as the given date corresponds to the current date.
-{.is-info}
+:::note[Important]
+The Blockchain will accept use of a license for a given challenge `c` only once. The format of this value is dictated by the SP. For instance, the SP can publicly state that they will only grant services if the challenge is `0`. In such case, the license will be accepted by the Blockchain only once. It could also be required to be a changing format, for example, the current date. This would ensure that a given license is accepted by the Blockchain once per day, and the SP will accept it as long as the given date corresponds to the current date.
+:::
 
 ```rust
-// Set challenge to 1234
+// Set challenge to, for instance, 1234
 let challenge = JubJubScalar::from(1234u64);
 ```
 
-The user can now create transaction using a given license, providing the public key `psk_sp` of the SP. In this step, a session will be created in the contract's state, and a session cookie will be provided in the process.
+The user can now create a transaction using a given license, providing the public key `psk_sp` of the SP. In this step, a session will be created in the contract's state, and a session cookie will be provided in the process.
 
-> The session cookie is needed by the SP to verify that you opened a valid session, it shouldn't be shared with no one else but the SP.
-{.is-warning}
+:::note[Important]
+The session cookie is needed by the SP to verify that you opened a valid session, hence it shouldn't be shared with no one else but the SP.
+:::
 
 ```rust
 let session_cookie = MoatCore::use_license(
@@ -201,7 +180,7 @@ let session_cookie = MoatCore::use_license(
 .expect("session cookie has been obtained");
 ```
 
-### Verify a session cookie
+### Verify a Session Cookie
 
 The SP can verify if a given session cookie is correct. Upon success, it will mean that the requested service in such process shall be granted. It can be done as follows.
 
@@ -210,7 +189,7 @@ if MoatCore::verify_requested_service(
     &moat_context,
     &psk_lp,
     &psk_sp,
-	&session_cookie,
+    &session_cookie,
 )
 .await?
 {
@@ -224,6 +203,6 @@ Additionally, the SP should verify the challenge used by the user, as follows.
 
 ```rust
 if session_cookie.c == challenge {
-    // perform or grant a service
+    // grant service
 }
 ```
