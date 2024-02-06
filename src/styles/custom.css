@@ -197,3 +197,7 @@ starlight-menu-button button {
   -webkit-user-select: none;
   user-select: none;
 }
+
+ .starlight-aside__content a {
+    color: #71b1ff !important; 
+ }
