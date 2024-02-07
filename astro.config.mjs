@@ -12,7 +12,7 @@ export default defineConfig({
 	},
 	integrations: [
 		starlight({
-			title: "Documentation",
+			title: "DOCUMENTATION",
 			favicon: "./src/assets/favicon.svg",
 			logo: {
 				light: "./src/assets/logo-light.svg",
