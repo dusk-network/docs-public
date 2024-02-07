@@ -80,9 +80,9 @@ export default defineConfig({
 							],
 						},
 						{
-							label: "Virtual Machine and Smart Contracts",
+							label: "Smart Contracts",
 							items: [
-								{ label: "Piecrust and Smart Contracts", link: '/getting-started/vm/piecrust' },
+								{ label: "Piecrust VM and Smart Contracts", link: '/getting-started/vm/piecrust' },
 								{ label: "Smart Contract Example", link: '/getting-started/vm/counter-example' },
 								{ label: "Piecrust vs Rusk VM 1.0", link: '/getting-started/vm/comparison-with-vm1' },
 							],
