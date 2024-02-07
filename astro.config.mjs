@@ -92,7 +92,7 @@ export default defineConfig({
 							items: [
 								{ label: "The Wallet Stack", link: '/getting-started/wallet/wallet-stack' },
 								{ label: "Wallet Core Library", link: '/getting-started/wallet/wallet-core' },
-								{ label: "Wallet JS Library", link: '/getting-started/wallet/wallet-js' },
+								//{ label: "Wallet JS Library", link: '/getting-started/wallet/wallet-js' },
 							],
 						},
 						{

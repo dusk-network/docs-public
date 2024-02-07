@@ -178,4 +178,4 @@ console.log("propogating chain request status: " + propogateReq.status);
 ```
 And we should get 200 request for everything.
 
-The dusk-wallet-js and wallet-cli libraries are example of how to do these operations, refer to them until more fuller documentation is online.
+The wallet-cli library is an example of how to do these operations, refer to it until more fuller documentation is online.

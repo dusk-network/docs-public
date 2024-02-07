@@ -3,21 +3,18 @@ title: The Wallet Stack
 description: An overview of the wallet ecosystem in Dusk.
 ---
 
-The wallets are a crucial part of interacting with our network, we have several wallet repos
+The wallet is a crucial part of interacting with our network. We have the wallet repositories that follow.
 
-- [dusk-wallet-js](https://github.com/dusk-network/dusk-wallet-js)
-    A javascript library that allows you to use a wallet on the web and node endpoints
 - [dusk-wallet-core](https://github.com/dusk-network/wallet-core/)
-    A web assembly/rust library that lets you write transactions for transfer, stake and do basic wallet utilities
+    A web assembly/rust library that allows you to write transactions for transfer, stake and do basic wallet actions.
 - [wallet-cli](https://github.com/dusk-network/wallet-cli/)
-    A cli wallet written in rust to interface with our network
+    A CLI wallet written in rust to interface with our network.
 
-There's specific guides on how to use the API of `wallet-core` and `dusk-wallet-js` but `web-wallet` and `wallet-cli`
-are applications meant to be used as wallets. There will be more documentation regarding all the wallet repos so stay tuned
+There's a specific guide on how to use the API of `wallet-core`, but `wallet-cli`
+is an application meant to be used as a standalone wallet.
 
 import { LinkCard, CardGrid } from '@astrojs/starlight/components';
 
 <CardGrid>
-     <LinkCard title="dusk-wallet-core" icon="add-document" href="/getting-started/wallet/wallet-core" description="This is documentation about the usage of dusk-wallet-core library and the API it exposes"/>
-	<LinkCard title="dusk-wallet-js" icon="pencil" href="/getting-started/wallet/wallet-js" description="This is documentation about the usage of dusk-wallet-js library and the API it exposes"/>
+     <LinkCard title="dusk-wallet-core" icon="add-document" href="/getting-started/wallet/wallet-core" description="Documentation about the usage of the dusk-wallet-core library and the API it exposes."/>
 </CardGrid>
