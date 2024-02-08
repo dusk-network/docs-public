@@ -6,11 +6,16 @@ import { LinkCard, Card, CardGrid } from '@astrojs/starlight/components';
 
 # Types of Nodes
 
-Dusk supports several types of nodes, each serving a specific need within the ecosystem.
+Dusk supports several types of node configurations, depending on the preference of the users and their intended setup. 
 
-- **Full Nodes**: Combines the capabilities of a provisioner node and prover node. They maintain a complete copy of the blockchain, validate transactions and contribute to the network's consensus.
-- **Provisioner Nodes**: Specialized in participating directly in consensus. Provisioner nodes are responsible for validating transactions and proposing new blocks. 
-- **Prover Nodes**: Focused on creating Zero-Knowledge proofs. Prover nodes are essential for generating the proofs for private transactions.
+- **Provisioner**: Provisioners are specialized in directly participating in the consensus. They play a vital role as they are responsible for validating transactions, as well as processing and appending new blocks to Dusk blockchain.
+- **Prover**: Provers carry on the computation-heavy task on creating Zero-Knowledge proofs (ZKP), which are a requirement for transactions on Dusk.
+- **Full Node**: A full node combines the capabilities of a provisioner node and prover node. 
+- **Archiver**: While Provisioners and full nodes generally only keep the current state of the blockchain, Archivers instead maintain a complete copy of the blockchain. They normally don't actively engage in consensus related tasks and do not require a valid Stake.
+
+:::tip[Recommended Setup]
+The recommended setup for network participants is to run a Provisioner node on a VPS or server, and a Prover locally on their machine/laptop. This ensures the most efficient configuration where the full resources of your machine is at disposal to the consensus, while maximizing privacy.
+:::
 
 # Setting Up a Node
 
@@ -20,5 +25,4 @@ There are multiple ways to set up a Dusk node. The pages below provide informati
         <LinkCard title="Node Requirements" href="./node-requirements" description="Hardware and software requirements for running a node."/>
         <LinkCard title="Build from Source" href="./build-from-source" description="Guides you through the process of compiling your node from the Rusk source code."/>
         <LinkCard title="Docker Image" href="./docker-image" description="A convenient way to run a node through a Docker container."/>
-        <!-- <LinkCard title="Installer" href="./installer" description="Use our installer for an easy way to setup and configure a node."/> -->
 </CardGrid>
