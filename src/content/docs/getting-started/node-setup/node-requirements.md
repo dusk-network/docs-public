@@ -7,7 +7,7 @@ The Dusk node is the software that downloads and verifies every block and transa
 
 The node is designed to be efficient and decentralized, able to run on consumer hardware. 
 
-A Dusk node can take many different roles, from being a Provisioner and participating in consensus, to proving transactions, to being a historical data node.
+A Dusk node can take many different roles, from being a provisioner and participating in consensus, to proving transactions, to being a historical data node.
 
 # DUSK Requirement
 
