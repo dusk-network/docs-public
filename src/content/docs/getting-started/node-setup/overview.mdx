@@ -1,0 +1,24 @@
+---
+title: Node Section
+description: Explore the different node types and different ways to setup a node
+---
+import { LinkCard, Card, CardGrid } from '@astrojs/starlight/components';
+
+# Types of Nodes
+
+Dusk supports several types of nodes, each serving a specific need within the ecosystem.
+
+- **Full Nodes**: Combines the capabilities of a Provisioner node and Prover node. They maintain a complete copy of the blockchain, validate transactions and contribute to the network's consensus.
+- **Provisioner Nodes**: Specialized in participating directly in consensus. Provisioner nodes are responsible for validating transactions and proposing new blocks. 
+- **Prover Nodes**: Focused on creating Zero-Knowledge proofs. Prover nodes are essential for generating the proofs for private transactions.
+
+# Setting Up a Node
+
+There are multiple ways to set up a Dusk node. The pages below provide information and methods on how to run a node.
+
+<CardGrid>
+        <LinkCard title="Node Requirements" href="./node-requirements" description="Hardware and software requirements for running a node."/>
+        <LinkCard title="Build from Source" href="./build-from-source" description="Guides you through the process of compiling your node from the Rusk source code."/>
+        <LinkCard title="Docker Image" href="./docker-image" description="A convenient way to run a node through a Docker container."/>
+        <LinkCard title="Installer" href="./installer" description="User our installer for an easy way to setup and configure a node."/>
+</CardGrid>
