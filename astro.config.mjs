@@ -75,10 +75,10 @@ export default defineConfig({
 							label: "Node Setup",
 							items: [
 								{ label: "Overview", link: '/getting-started/node-setup/overview' },
+								{ label: "Node Requirements", link: '/getting-started/node-setup/node-requirements' },
 								//{ label: "Installer", link: '/getting-started/node-setup/installer' },
 								{ label: "Build from Source", link: '/getting-started/node-setup/build-from-source' },
 								{ label: "Docker Image", link: '/getting-started/node-setup/docker-image' },
-								{ label: "Node Requirements", link: '/getting-started/node-setup/node-requirements' },
 							],
 						},
 						{

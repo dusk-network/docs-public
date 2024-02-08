@@ -9,7 +9,7 @@ The node is designed to be efficient and decentralized, able to run on consumer 
 
 A Dusk node can take many different roles, from being a Provisioner and participating in consensus, to proving transactions, to being a historical data node.
 
-# Minimum Dusk Requirement
+# DUSK Requirement
 
 To run a Dusk provisioner, at least 1000 DUSK must be staked. A user will need the 1000 DUSK and enough DUSK to execute the stake transaction.
 
@@ -27,21 +27,33 @@ We recommend using a stable operating system with long-term support, such as [Ub
 
 The node software has been tested on x86-64/AMD64 and ARM architectures.
 
-## Minimum Specifications
+## Provisioner Node Specifications
 
-The minimum specifications are set to comfortably accommodate provisioner nodes.
+These specifications are set to comfortably accommodate provisioner and full nodes, with limited proving capabilities.
+
+For increased network throughput, the node benefits from highly performant single-threaded performance.
 
 | CPU | RAM | Storage | Network Connection |
 | :--- | :--- | :--- | :--- |
 | 2 cores; 2 GHz | 4 GB | 50 GB | 10 Mbps |
 
-## Recommended Specifications
+## Prover Node Specifications
 
-The recommended specifications can comfortably accommodate provisioner nodes and allows for local proving.
+Prover node requirements are dependant on the amount of workers a server can run in parallel. Single-threaded performance is key to generate proofs as quickly as possible. 
+
+**Minimum**
 
 | CPU | RAM | Storage | Network Connection |
 | :--- | :--- | :--- | :--- |
-| 4 cores; 2 GHz | 8 GB | 250 GB | 50 Mbps |
+| 4 cores; +2 GHz | 8 GB | 20 GB | 20 Mbps |
+
+**Per Worker**
+
+The specifications listed below are per worker.
+
+| CPU | RAM | Storage | Network Connection |
+| :--- | :--- | :--- | :--- |
+| 1 core; +2 GHz | 1 GB | 2 GB | 5 Mbps |
 
 # Networking
 
