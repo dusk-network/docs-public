@@ -55,6 +55,14 @@ The specifications listed below are per worker.
 | :--- | :--- | :--- | :--- |
 | 1 core; +2 GHz | 1 GB | 2 GB | 5 Mbps |
 
+## Archiver Node Specifications
+
+Archiver nodes store and provide access to historical data. As such, they benefit from the capability to process multiple concurrent data requests, fast internet connectivity, and enough storage. The following specs are a reference point for archiver nodes. For an archiver, the beefier the configuration, the more concurrent requests they can handle.
+
+| CPU | RAM | Storage | Network Connection |
+| :--- | :--- | :--- | :--- |
+| 8 cores; 2 GHz | 16 GB | 250 GB | 100 Mbps |
+
 # Networking
 
 Dusk makes use of the ultra-efficient P2P protocol [Kadcast](https://eprint.iacr.org/2019/876.pdf).  As such, the internet service requirements are relatively low, but they should be symmetrical and stable, with low latency.
