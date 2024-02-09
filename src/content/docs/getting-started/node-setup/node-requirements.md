@@ -3,31 +3,31 @@ title: Node Requirements
 description: This resource outlines the hardware and software requirements for the node
 ---
 
-The Dusk node is the software that downloads and verifies every block and transaction. 
+A Dusk node can take many different [roles](./overview#types-of-nodes), from being a Provisioner and participating in consensus, to proving transactions, to storing historical data. The node is designed to be efficient, decentralized, and able to run on a wide-variety of hardware and platforms. 
 
-The node is designed to be efficient and decentralized, able to run on consumer hardware. 
+:::tip[What is Rusk]
+Rusk is the [repository where the software of the Node is maintained](https://github.com/dusk-network/rusk). Dusk nodes can assume different roles by compiling Rusk with different features enabled or disabled.
+:::
 
-A Dusk node can take many different roles, from being a provisioner and participating in consensus, to proving transactions, to being a historical data node.
+## DUSK Requirement
 
-# DUSK Requirement
+To run a Dusk provisioner, at least **1000 DUSK** must be staked.
 
-To run a Dusk provisioner, at least 1000 DUSK must be staked. A user will need the 1000 DUSK and enough DUSK to execute the stake transaction.
+### Why stake?
 
-## Why stake?
+Dusk uses a *pure proof-of-stake* algorithm to provide sybil-resistance and as such it is a cornerstone of Dusk's security and consensus mechanism. By staking DUSK, participants actively contribute to the network's integrity. 
 
-Staking is a cornerstone of Dusk's security and consensus mechanism. By staking DUSK, participants actively contribute to the network's integrity. 
+Stakers have the right to participate in the [Succinct Attestation](../../learn/economic-information/succinct-attestation) and accrue rewards for generating blocks and participating in block validation activities. These rewards are an incentive for creating blocks and voting, and compensate users for locking their assets while their node performs such operations.
 
-In return, stakers receive rewards proportional to their stake, as an incentive for their contribution (creating blocks and voting) and to compensate for locking their assets.
+## Software 
 
-# Software 
+We recommend using a stable operating system with long-term support, such as [Ubuntu 22.04](https://releases.ubuntu.com/jammy/) or [Debian Bookworm](https://www.debian.org/releases/bookworm/). 
 
-We recommend using a stable operating system with long-term support, such as [Ubuntu 22.04](https://releases.ubuntu.com/jammy/) or [Debian Bookworm](https://www.debian.org/releases/bookworm/).
-
-# Hardware
+## Hardware
 
 The node software has been tested on x86-64/AMD64 and ARM architectures.
 
-## Provisioner Node Specifications
+### Provisioner Specifications
 
 These specifications are set to comfortably accommodate provisioner and full nodes, with limited proving capabilities.
 
@@ -37,9 +37,9 @@ For increased network throughput, the node benefits from highly performant singl
 | :--- | :--- | :--- | :--- |
 | 2 cores; 2 GHz | 4 GB | 50 GB | 10 Mbps |
 
-## Prover Node Specifications
+### Prover Specifications
 
-Prover node requirements are dependant on the amount of workers a server can run in parallel. Single-threaded performance is key to generate proofs as quickly as possible. 
+Prover requirements are dependant on the amount of workers a server can run in parallel. Single-threaded performance is key to generate proofs as quickly as possible. 
 
 **Minimum**
 
@@ -55,19 +55,19 @@ The specifications listed below are per worker.
 | :--- | :--- | :--- | :--- |
 | 1 core; +2 GHz | 1 GB | 2 GB | 5 Mbps |
 
-## Archiver Node Specifications
+### Archiver Specifications
 
-Archiver nodes store and provide access to historical data. As such, they benefit from the capability to process multiple concurrent data requests, fast internet connectivity, and enough storage. The following specs are a reference point for archiver nodes. For an archiver, the beefier the configuration, the more concurrent requests they can handle.
+Archivers store and provide access to historical data. As such, they benefit from the capability to process multiple concurrent data requests, fast internet connectivity, and enough storage. The following specs are a reference point for archivers. For an archiver, the beefier the configuration, the higher the amount of concurrent requests they can handle.
 
 | CPU | RAM | Storage | Network Connection |
 | :--- | :--- | :--- | :--- |
 | 8 cores; 2 GHz | 16 GB | 250 GB | 100 Mbps |
 
-# Networking
+## Networking
 
-Dusk makes use of the ultra-efficient P2P protocol [Kadcast](https://eprint.iacr.org/2019/876.pdf).  As such, the internet service requirements are relatively low, but they should be symmetrical and stable, with low latency.
+Dusk makes use of the ultra-efficient P2P network protocol [Kadcast](https://eprint.iacr.org/2019/876.pdf). As such, the internet service requirements are relatively low, but they should be symmetrical and stable, with low latency.
 
-## Port Forwarding
+### Port Forwarding
 
 For the node to be accessible to the outside world, a number of ports need to be open to allow for inbound and outbound messages.
 
@@ -75,9 +75,9 @@ For the node to be accessible to the outside world, a number of ports need to be
 - **8080/tcp**: Optional HTTPS API for querying the node.
 
 :::note[Note]
-The ports are settable either by passing them as an option to the node binary or by setting them in the configuration files.
+The ports are configurable either as option to the node binary or by setting them in the configuration files.
 :::
 
-# Server Security
+## Server Security
 
-Maintaining a secure and stable node is paramount for the proper functioning of Dusk. We advise following best practices for system security and network configuration, including using a firewall, locking down unused APIs, performing regular updates and using a static IP for uninterrupted service.
+Maintaining a secure and stable node is paramount for the proper functioning of Dusk. We advise using a firewall, locking down unused APIs, performing regular updates and using a static IP for an uninterrupted service.
