@@ -10,9 +10,9 @@ The Dusk protocol utilizes the DUSK token both as an incentive for consensus par
 * **Token Name**: Dusk
 * **Token Symbol**: DUSK
 * **Total Supply**: 500,000,000 DUSK
-* **Circulating Supply**: See [this](https://supply.dusk.network/) page. The value shown here is the total supply minus the DUSK held by the team controlled [Dusk Deployer](https://etherscan.io/token/0x940a2db1b7008b6c776d4faaca729d6d4a4aa551?a=0x618bb3b255928ae6b2046df5c828fa1dc7e3c5f0).
+* **Circulating Supply**: See [this](https://supply.dusk.network/) page. The value shown here is the total supply minus the DUSK held by the team controlled [Dusk deployer](https://etherscan.io/token/0x940a2db1b7008b6c776d4faaca729d6d4a4aa551?a=0x618bb3b255928ae6b2046df5c828fa1dc7e3c5f0).
 * **Maximum Supply**: 1,000,000,000 DUSK. 500M pre-mainnet, 500M emitted over an 18-36 year period to stakers on mainnet.
-* **ICO**: Raised $8 million in November 2018. The tokens were priced at $0.0404 during the ICO period. Private sale tokens comprise 50% of total supply, 10% DUSK BEP20 and 40% DUSK ERC20.
+* **ICO**: Raised \$8 million in November 2018. The tokens were priced at $0.0404 during the ICO period. Private sale tokens comprise 50% of total supply, 10% DUSK BEP20 and 40% DUSK ERC20.
 * **Token Type**: ERC20 & BEP20. In the future, bridged to the Dusk protocol as the DUSK native currency.
 
 ## Token Contract
