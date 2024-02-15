@@ -3,7 +3,7 @@ title: Node Running Guide
 description: "This guide outlines how to install the Dusk node and join ITN2"
 ---
 
-In this guide we’ll be using [DigitalOcean](https://www.digitalocean.com/) (DO) as our go-to [Virtual Private Server](https://en.wikipedia.org/wiki/Virtual_private_server) (VPS) service. The same can be replicated on Vultr, AWS, or any other cloud service. While it is also possible to run a node on home infrastructure, this guide will not deal with those types of setups. 
+In this guide, we’ll be using [DigitalOcean](https://www.digitalocean.com/) (DO) as our go-to [Virtual Private Server](https://en.wikipedia.org/wiki/Virtual_private_server) (VPS) service. The same can be replicated on Vultr, AWS, or any other cloud service. While it is also possible to run a node on home infrastructure, this guide will not deal with those types of setups. 
 
 We work under the assumption that you’ve already created an account for your respective service, and provided it with a payment method.
 
@@ -23,7 +23,7 @@ Next, we have to pick the size of the droplet. The [node requirements](https://d
 
 ![Select size of the droplet.](../../../assets/itn/node-guide/requirements-droplet.png)
 
-Choose an authentication method to access your droplet. Using a SSH Key is more secure, but you can also use a password if you prefer. We recommend the SSH Key approach. You can follow DOs instructions here: [How to Add SSH Keys to New or Existing Droplets](https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/)
+Choose an authentication method to access your droplet. Using an SSH key is more secure, but you can also use a password if you prefer. We recommend the SSH key approach. You can follow DOs instructions here: [How to Add SSH Keys to New or Existing Droplets](https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/)
 
 ![Set an authentication method.](../../../assets/itn/node-guide/authenticate-droplet.png)
 
@@ -37,9 +37,9 @@ DO will now set the droplet up for you. This can take a minute:
 
 # Configure Firewall
 
-The Rusk node makes use of the Kadcast protocol to communicate messages between nodes in the network. This protocol uses UDP, and runs on a custom port. Due to the nature of how UDP works, Kadcast is not automatically port forwarded. Regardless of where the node is hosted, it is important that this is done.
+The Rusk node makes use of the Kadcast protocol to communicate messages between nodes on the network. This protocol uses UDP, and runs on a custom port. Due to the nature of how UDP works, Kadcast is not automatically port forwarded. Regardless of where the node is hosted, it is important that this is done.
 
-Depending on the cloud provider, we will need to either add a firewall rule on the instance you’re running, or add a firewall group. If you’re running a local setup, you will need to enable port forward in your router.
+Depending on the cloud provider, we need to either add a firewall rule on the instance you’re running, or add a firewall group. If you’re running a local setup, you will need to enable port forward in your router.
 
 DO works with firewall groups. Navigate to _Networking_ -> _Firewalls_ under the _Manage_ section of your project. Click on the [_Create Firewall_](https://cloud.digitalocean.com/networking/firewalls) button.
 
@@ -69,7 +69,7 @@ A terminal should pop-up and connect you to your Droplet
 
 ![Droplet terminal.](../../../assets/itn/node-guide/droplet-terminal.png)
 
-Just like last time, we've created an easy to use [ITN installer](https://github.com/dusk-network/itn-installer). This installer will setup Rusk as service on your droplet, preconfigures parts of the node, and provides a couple of helper scripts.
+Just like last time, we've created an easy to use [ITN installer](https://github.com/dusk-network/itn-installer). This installer will set up Rusk as a service on your droplet, preconfigure parts of the node, and provide a couple of helper scripts.
 
 Install Rusk by pasting the following command in your droplet terminal:
 ```sh
@@ -78,23 +78,23 @@ curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/itn-instal
 
 # Configure Rusk
 
-Once it's done setting everything up, it will ask you to add your consensus keys. These keys are used to sign and vote for blocks.
+Once everything has been set up, you will be asked to add your consensus keys. These keys are used to sign and vote for blocks.
 
-If you didn't make a wallet yet, go to our [Web Wallet](https://wallet.dusk.network/setup/) and create a new wallet. You can request funds from our [faucet here](https://faucet.dusk.network/). The faucet will give you 1100 tDUSK. The minimum to stake is 1000 tDUSK.
+If you haven't made a wallet yet, go to our [Web Wallet](https://wallet.dusk.network/setup/) and create a new wallet. You can request funds from our [faucet here](https://faucet.dusk.network/). The faucet will give you 1100 tDUSK. The minimum to stake is 1000 tDUSK.
 
 Once you have access to a Dusk mnemonic, run the following command:
 ```sh
 rusk-wallet restore
 ```
 
-It will ask you to provide your recovery phrase/mnemonic and to enter a password for the wallet. 
+You will be asked to provide your recovery phrase/mnemonic and to enter a password for the wallet. 
 
 Once you've done so, run the following command to export a consensus key for the given wallet:
 ```sh
 rusk-wallet export -d /opt/dusk/conf -n consensus.keys
 ```
 
-It will ask you to set an encryption password for the consensus key. Remember it and run the following script to set it as an environment variable:
+You will be asked to set an encryption password for the consensus key. Remember it and run the following script to set it as an environment variable:
 ```sh
 sh /opt/dusk/bin/setup_consensus_pwd.sh
 ```
@@ -129,3 +129,5 @@ tail -F /var/log/rusk.log | grep "execute_state_transition"
 ```
 
 Note that this can take a while, depending on how big your stake is.
+
+If everything went right, and your node starts accepting and creating blocks, you have succesfully set up your ITN node!
