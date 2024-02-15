@@ -45,7 +45,7 @@ DO works with firewall groups. Navigate to _Networking_ -> _Firewalls_ under the
 
 ![Create firewall page.](../../../assets/itn/node-guide/create-firewall.png)
 
-Give the firewall a name, open UDP under port 900 and TCP under 8080. Leave all the Outbound rules as they are. 
+Give the firewall a name, open UDP under port 9000 and TCP under 8080. Leave all the Outbound rules as they are. 
 
 Apply the rules to the itn-node droplet you made.
 
