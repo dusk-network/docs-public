@@ -61,7 +61,10 @@ service rusk start
 Monitor the progress of your node's sync by checking the last block accepted by your node:
 
 ```sh
-tail -n 1 /var/log/rusk.log | grep "block accepted"
+curl --location --request POST 'http://127.0.0.1:8080/02/Chain' --header 'Rusk-Version: 0.7.0-rc' --header 'Content-Type: application/json' --data-raw '{
+    "topic": "gql",
+    "data": "query { block(height: -1) { header { height } } }"
+}' | jq '.block.header.height'
 ```
 
 ### 6. Restake (if applicable)

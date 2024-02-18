@@ -87,7 +87,7 @@ Once you have access to a Dusk mnemonic, run the following command:
 rusk-wallet restore
 ```
 
-You will be asked to provide your recovery phrase/mnemonic, **in lower caps**, and to enter a password for the wallet. 
+You will be asked to provide your recovery phrase/mnemonic, **in lowercase**, and to enter a password for the wallet. 
 
 Once you've done so, run the following command to export a consensus key for the given wallet:
 ```sh
@@ -123,9 +123,9 @@ Once the transaction has gone through, you can view your staking information by 
 rusk-wallet stake-info
 ```
 
-To see if your node is participating in consensus and creating blocks:
+To see if your node is participating in consensus and creating blocks, occasionally check:
 ```sh
-tail -F /var/log/rusk.log | grep "execute_state_transition"
+grep "execute_state_transition" /var/log/rusk.log | tail -n 5
 ```
 
 Note that this can take a while, given that your stake needs at least 2 epochs, or 4320 blocks, to mature. Your stake, relative to the total stake, also plays a factor.
