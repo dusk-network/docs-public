@@ -113,6 +113,7 @@ export default defineConfig({
 						{ label: "Dusk-ERC20 Staking", link: "/itn/erc20-staking/" },
 						{ label: "ITN Node Running", link: "/itn/node-running-guide/" },
 						{ label: "Testnet Faucet", link: "/itn/testnet-faucet/" },
+						{ label: "Node upgrading", link: "/itn/upgrade-node/" },
 						/*
 						{ label: "ITN Node Running", link: "/wallets/overview/" },
 						{ label: "Get Support", link: "/wallets/overview/" },
