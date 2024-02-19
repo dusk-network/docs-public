@@ -22,4 +22,4 @@ Keep an eye on the logs to see if it's making and accepting new blocks:
 tail -F /var/log/rusk.log
 ```
 
-If you see new blocks being accepted, you're up and running again.
+If you see new blocks being accepted, you're up and running again. Is your node stuck, or are you not sure if it is? Check out the [manual resync](../getting-started/node-setup/manual-resync.md) instructions.
