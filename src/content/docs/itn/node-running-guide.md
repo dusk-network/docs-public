@@ -87,6 +87,8 @@ Once you have access to a Dusk mnemonic, run the following command:
 rusk-wallet restore
 ```
 
+If your node is not running, it will tell you `some operations won't be available`. This is fine, and happens due to your node not being online yet. You can still continue to follow the steps below.
+
 You will be asked to provide your recovery phrase/mnemonic, **in lowercase**, and to enter a password for the wallet. 
 
 Once you've done so, run the following command to export a consensus key for the given wallet:
