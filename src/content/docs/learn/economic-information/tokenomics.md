@@ -15,6 +15,9 @@ The Dusk protocol utilizes the DUSK token both as an incentive for consensus par
 * **ICO**: Raised \$8 million in November 2018. The tokens were priced at $0.0404 during the ICO period. Private sale tokens comprise 50% of total supply, 10% DUSK BEP20 and 40% DUSK ERC20.
 * **Token Type**: ERC20 & BEP20. In the future, bridged to the Dusk protocol as the DUSK native currency.
 
+> **⚠️ IMPORTANT**
+> We are aware of the [plans to sunset the Binance Beacon Chain](https://www.binance.com/en/support/announcement/binance-will-support-the-bnb-beacon-chain-bep2-network-sunset-plan-9effc62ec5f74839a19f8554b5dbb349). The team is working on creating the necessary binding between BEP2 DUSK and BEP20 DUSK and will make an official announcement as soon as we've done so, with a comprehensive guide covering the necessary steps to perform the migration.
+
 ## Token Contract
 
 The DUSK token is available as an ERC20 on Ethereum, a BEP20 on Binance Smart Chain and a BEP2 token on Binance Beacon Chain.
