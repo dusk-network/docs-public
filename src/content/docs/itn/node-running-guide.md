@@ -73,7 +73,7 @@ Just like last time, we've created an easy to use [ITN installer](https://github
 
 Install Rusk by pasting the following command in your droplet terminal:
 ```sh
-curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/itn-installer/releases/download/v0.1.5/itn-installer.sh | sudo sh
+curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/itn-installer/releases/download/v0.1.6/itn-installer.sh | sudo sh
 ```
 
 # Configure Rusk
@@ -108,7 +108,7 @@ service rusk start
 
 Your node will now start syncing. You can check if it indeed is by running:
 ```sh
-grep "block accepted" /var/log/rusk.log
+ruskquery block-height
 ```
 
 It is best to wait until your node is synced up. You can find the latest block height on [our explorer](https://explorer.dusk.network/).
