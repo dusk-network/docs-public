@@ -10,10 +10,7 @@ Resyncing a Dusk node is sometimes a necessary procedure if your node experience
 Before initiating a resync, confirm if your node is indeed stuck or lagging behind the network. Execute the following command to check your current block height:
 
 ```sh
-curl --location --request POST 'http://127.0.0.1:8080/02/Chain' --header 'Rusk-Version: 0.7.0-rc' --header 'Content-Type: application/json' --data-raw '{
-    "topic": "gql",
-    "data": "query { block(height: -1) { header { height } } }"
-}' | jq '.block.header.height'
+ruskquery block-height
 ```
 
 Compare the output with the latest block height available on the [Dusk Network Explorer](https://explorer.dusk.network/).
@@ -61,10 +58,7 @@ service rusk start
 Monitor the progress of your node's sync by checking the last block accepted by your node:
 
 ```sh
-curl --location --request POST 'http://127.0.0.1:8080/02/Chain' --header 'Rusk-Version: 0.7.0-rc' --header 'Content-Type: application/json' --data-raw '{
-    "topic": "gql",
-    "data": "query { block(height: -1) { header { height } } }"
-}' | jq '.block.header.height'
+ruskquery block-height
 ```
 
 ### 6. Restake (if applicable)

@@ -108,7 +108,7 @@ service rusk start
 
 Your node will now start syncing. You can check if it indeed is by running:
 ```sh
-grep "block accepted" /var/log/rusk.log
+ruskquery block-height
 ```
 
 It is best to wait until your node is synced up. You can find the latest block height on [our explorer](https://explorer.dusk.network/).
