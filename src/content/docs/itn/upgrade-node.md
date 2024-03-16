@@ -9,7 +9,7 @@ To make the upgrade process as flawless as possible, we will update the [ITN ins
 
 To upgrade to the latest ITN version, run:
 ```sh
-curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/itn-installer/releases/download/v0.1.8/itn-installer.sh | sudo sh
+curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/itn-installer/releases/download/v0.1.9/itn-installer.sh | sudo sh
 ```
 
 Once it's done and gives no errors, start Rusk again:

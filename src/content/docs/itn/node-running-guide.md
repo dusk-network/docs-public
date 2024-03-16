@@ -73,7 +73,7 @@ Just like last time, we've created an easy to use [ITN installer](https://github
 
 Install Rusk by pasting the following command in your droplet terminal:
 ```sh
-curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/itn-installer/releases/download/v0.1.8/itn-installer.sh | sudo sh
+curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/itn-installer/releases/download/v0.1.9/itn-installer.sh | sudo sh
 ```
 
 # Configure Rusk
