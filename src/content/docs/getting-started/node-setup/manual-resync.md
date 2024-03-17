@@ -35,15 +35,14 @@ Stop the Rusk service to prevent any new data from being written to the database
 service rusk stop
 ```
 
-### 3. Remove Chain Data and Cache
+### 3. Use the fast syncing tool
 
-Delete the existing chain database and cache to remove any potentially corrupt data:
-
+Retrieve the latest published state through the fast syncing tool:
 ```sh
-rm -rf /opt/dusk/rusk/chain.db/
-rm -rf /opt/dusk/rusk/state/
-rm -rf ~/.dusk/rusk-wallet/cache*
+download_state --list
 ```
+
+For more details see the [Fast syncing page](../../itn/fast-sync).
 
 ### 4. Restart Rusk
 
