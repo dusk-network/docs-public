@@ -57,14 +57,19 @@ curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-insta
 ruskreset
 ```
 
-3. Check if your staking rewards are in your wallet:
+3. Start Rusk:
 ```sh
-rusk-wallet stake-info -reward
+service rusk start
 ```
 
-4. To claim your rewards, request nDUSK from the faucet. A guide can be found [here](/nocturne/testnet-faucet).
+4. Check if your staking rewards are in your wallet:
+```sh
+rusk-wallet stake-info --reward
+```
 
-5. Withdraw your staking rewards:
+5. To claim your rewards, request nDUSK from the faucet. A guide can be found [here](/nocturne/testnet-faucet).
+
+6. Withdraw your staking rewards:
 ```sh
 rusk-wallet withdraw
 ```
