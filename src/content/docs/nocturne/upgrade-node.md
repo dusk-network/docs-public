@@ -9,7 +9,7 @@ To make the upgrade process as flawless as possible, we will update the [node in
 
 To upgrade to the latest Nocturne version, run:
 ```sh
-curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.1.10/node-installer.sh | sudo sh
+curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.2.0/node-installer.sh | sudo sh
 ```
 
 Once it's done and gives no errors, start Rusk again:
