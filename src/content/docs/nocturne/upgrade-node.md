@@ -7,6 +7,8 @@ We will occasional upgrade and patch Nocturne with new features and patches to i
 
 To make the upgrade process as flawless as possible, we will update the [node installer](https://github.com/dusk-network/node-installer) script from time to time. This script can be ran in a non-destructive way, meaning it changes only what is needed. It will gracefully shut down Rusk for you.
 
+Migrating from ITN to Nocturne? See [Nocturne Migration](#nocturne-migration).
+
 To upgrade to the latest Nocturne version, run:
 ```sh
 curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.2.0/node-installer.sh | sudo sh
@@ -42,3 +44,32 @@ tail -n 30 /var/log/rusk.log
 Unable to figure it out yourself? Visit our [Node Runner Troubleshooting](https://discord.com/channels/847466263064346624/1118582421055606805) on Discord.
 
 If everything else fails, check out the [manual resync](/getting-started/node-setup/manual-resync) instructions.
+
+# Nocturne Migration
+
+1. To migrate from ITN to Nocturne, download the latest version of our installer:
+```sh
+curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.2.0/node-installer.sh | sudo sh
+```
+
+2. Reset all the data on your node:
+```sh
+ruskreset
+```
+
+3. Check if your staking rewards are in your wallet:
+```sh
+rusk-wallet stake-info -reward
+```
+
+4. To claim your rewards, request nDUSK from the faucet. A guide can be found [here](/nocturne/testnet-faucet).
+
+5. Withdraw your staking rewards:
+```sh
+rusk-wallet withdraw
+```
+
+6. Stake your nDUSK:
+```sh
+rusk-wallet stake --amt 1000 # Or however much you want to stake
+```
