@@ -47,6 +47,12 @@ If everything else fails, check out the [manual resync](/getting-started/node-se
 
 # Nocturne Migration
 
+:::note[Note]
+We migrated stakes and rewards that accumulatively were higher than 5000 tDUSK to nDUSK. This was done to prevent the high amount of ghost provisioners with small stakes that we observed during ITN2. 
+
+The list of migrated stakes can be found [here](https://github.com/dusk-network/rusk/blob/cd4b2f209b9f0db6b5235027162798998d7e91e5/rusk-recovery/config/testnet.toml). Check with your provisioner key to see if you're included.
+:::
+
 1. To migrate from ITN to Nocturne, download the latest version of our installer:
 ```sh
 curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.2.0/node-installer.sh | sudo sh
