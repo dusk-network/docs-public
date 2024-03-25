@@ -112,6 +112,7 @@ export default defineConfig({
 						{ label: "Node Running", link: "/nocturne/node-running-guide/" },
 						{ label: "Faucet", link: "/nocturne/testnet-faucet/" },
 						{ label: "Node upgrading", link: "/nocturne/upgrade-node/" },
+						{ label: "Fast syncing", link: "/nocturne/fast-sync/" },
 					],
 				},
 				{
