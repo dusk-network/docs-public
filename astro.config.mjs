@@ -110,7 +110,7 @@ export default defineConfig({
 					label: "Nocturne",
 					items: [
 						{ label: "Node Running", link: "/nocturne/node-running-guide/" },
-						{ label: "Faucet", link: "/nocturne/faucet/" },
+						{ label: "Faucet", link: "/nocturne/testnet-faucet/" },
 						{ label: "Node upgrading", link: "/nocturne/upgrade-node/" },
 					],
 				},
