@@ -41,6 +41,6 @@ The staking contract address is: [0x4ab6ffa52460979dde1e442fb95f8bac56c3adc3](ht
 
 Yes! You can withdraw your stake at any time
 
-**Q: How do I get the DUSK I stake mirrored on ITN as TDUSK?**
+**Q: How do I get the DUSK I stake mirrored on ITN as tDUSK?**
 
-If you stake between February 1st and February 14th, do not unstake, and provide an optional Dusk address created through the [web wallet](https://wallet.dusk.network/), you will receive the staked amount in TDUSK.
+If you stake between February 1st and February 14th, do not unstake, and provide an optional Dusk address created through the [web wallet](https://wallet.dusk.network/), you will receive the staked amount in tDUSK.
