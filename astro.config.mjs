@@ -107,17 +107,17 @@ export default defineConfig({
 					],
 				},
 				{
+					label: "Nocturne",
+					items: [
+						{ label: "Node Running", link: "/nocturne/node-running-guide/" },
+						{ label: "Faucet", link: "/nocturne/faucet/" },
+						{ label: "Node upgrading", link: "/nocturne/upgrade-node/" },
+					],
+				},
+				{
 					label: "ITN",
 					items: [
 						{ label: "Dusk-ERC20 Staking", link: "/itn/erc20-staking/" },
-						{ label: "ITN Node Running", link: "/itn/node-running-guide/" },
-						{ label: "Testnet Faucet", link: "/itn/testnet-faucet/" },
-						{ label: "Fast Syncing", link: "/itn/fast-sync/" },
-						{ label: "Node upgrading", link: "/itn/upgrade-node/" },
-						/*
-						{ label: "ITN Node Running", link: "/wallets/overview/" },
-						{ label: "Get Support", link: "/wallets/overview/" },
-						*/
 					],
 				},
 				{

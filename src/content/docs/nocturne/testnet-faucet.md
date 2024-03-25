@@ -1,6 +1,6 @@
 ---
 title: Dusk Testnet Faucet 
-description: "This guide will explain how to obtain tDUSK in the running Dusk Testnet Network."
+description: "This guide will explain how to obtain nDUSK in the running Dusk Testnet."
 ---
 
 The Dusk testnet uses a Discord bot to distribute Testnet tokens, as the old Twitter/X page has been deprecated.
