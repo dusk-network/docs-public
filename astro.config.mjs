@@ -119,6 +119,7 @@ export default defineConfig({
 					label: "Pre-Mainnet",
 					items: [
 						{ label: "Dusk-ERC20 Staking", link: "/pre-mainnet/erc20-staking/" },
+						{ label: "BEP2 migration", link: "/pre-mainnet/bep2-migration/" },
 					],
 				},
 				{
