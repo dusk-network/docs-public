@@ -32,6 +32,8 @@ Ensure that you have a small amount of BNB in your wallet to cover the network f
 **IMPORTANT**: In the MEMO field of the transaction, enter the receiving address of your BEP20-compatible wallet. **The address should be in a `0x` format**. This step is **crucial** to ensure your BEP20 DUSK tokens are sent to a correct address.
 :::
 
+![BNB Chain wallet transfer.](../../../assets/bnb-chain-wallet.png)
+
 ### Step 3: Receiving BEP20 DUSK Tokens 
 
 The Dusk team will process migrations in batches. Your BEP20 DUSK tokens will be distributed to the provided BEP20 wallet address on May the 1st 2024.
