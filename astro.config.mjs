@@ -10,6 +10,9 @@ export default defineConfig({
 		remarkPlugins: [remarkMath],
 		rehypePlugins: [rehypeMathjax],
 	},
+	redirects: {
+		'/itn/[...slug]': '/nocturne/[...slug]'
+	},
 	integrations: [
 		starlight({
 			title: "DOCUMENTATION",
