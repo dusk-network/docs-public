@@ -27,9 +27,9 @@ The documentation of all the methods are written in jsdoc but they do exactly wh
 const wallet = new Wallet(seed, gasLimit, gasPrice);
 ```
 
-The seed is a array of 64 bytes max, to generate a seed, the user of the library is responsible to generate them correctly and pass them there.
+The seed is an array of 64 bytes max, to generate a seed, the user of the library is responsible for generating them correctly and pass them there.
 
-> ##### To call any of these functions above, you need to be synced first, if you are not synced then the balance and other operations will fail!
+> ##### To call any of the above functions, you need to be synced first, if you are not synced then the balance and other operations will fail!
 
 To sync correctly, just call sync and wait before it completes
 
@@ -40,4 +40,4 @@ walletInstance.sync().then(() => {
 })
 ```
 
-##### After the sync completes successfully you are able to correctly call the wallet methods
+##### After the sync completes successfully, you are able to correctly call the wallet methods
