@@ -52,15 +52,15 @@ The security token contract is a permissioned system, with roles and access mana
 
 So in terms of access management there are two ways of managing this on-chain:
 - An **allowlist** maintained by governance of the security token contract
-- A **decentralized identity system** mainainted by Trusted Identity Providers
+- A **decentralized identity system** maintained by Trusted Identity Providers
 
 ## Allowlist
-The allowlist is one of the envisioned solutions that could be managed by the governance of the security token contract. Prospective investors reach out to a governance’ member and go through the CDD and investor eligibility checks. Then once the prospective investor has been vetted their wallets will be added to allowlist, meaning they are now eligible to purchase, hold, and trade the security token.
+The allowlist is one of the envisioned solutions that could be managed by the governance of the security token contract. Prospective investors reach out to a governance’ member and go through the CDD and investor eligibility checks. Then once the prospective investor has been vetted their wallets will be added to the allowlist, meaning they are now eligible to purchase, hold, and trade the security token.
 
 The further scale this system, the governance of the security token contract might engage a trusted identity provider to perform this service for them. 
 
 ## Identity System
-An identity system [such as Citadel](/getting-started/digital-identity/protocol) could be used to take access management to the next level. Here, the security token contract governance specificies the trusted identity providers, and the `claim_topics` that the prospective investor needs to prove in order to purchase, hold and trade its security token. 
+An identity system [such as Citadel](/getting-started/digital-identity/protocol) could be used to take access management to the next level. Here, the security token contract governance specifies the trusted identity providers, and the `claim_topics` that the prospective investor needs to prove in order to purchase, hold and trade its security token. 
 
 These requirements should be publicly accessible. The `claim_topics` could be:
 - Investor type (retail, professional, accredited)

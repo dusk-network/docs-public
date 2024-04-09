@@ -16,7 +16,7 @@ Types are defined in `assets/schema.json` and a types.rs is generated with the d
 ## Creating a transaction
 
 The transaction creation happens with the [`execute`](https://github.com/dusk-network/wallet-core/blob/main/src/ffi.rs#L131) function in the `wallet-core`
-this gives out the bytes for the unproven transction which we'll learn how to prove later on...
+this gives out the bytes for the unproven transaction which we'll learn how to prove later on...
 
 ```js
  const output = {
@@ -46,7 +46,7 @@ const json = {
 const bytes = call_execute(wasm, json);
 ```
 
-This gives out the bytes of the unproven transcation, before proving that, lets call more complicated method like stake.
+This gives out the bytes of the unproven transaction, before proving that, lets call more complicated method like stake.
 
 We call [`get_stct_proof`](https://github.com/dusk-network/wallet-core/blob/main/src/compat/stake.rs#L43) to get the proof we needed to embed in the transaction
 ```js
@@ -148,10 +148,10 @@ const args = JSON.stringify({
 const provedTx = jsonFromBytes(call(wasm, args, wasm.prove_tx));
 ```
 
-Now you have to preverify the transaction before propogating it to the blockchain
+Now you have to preverify the transaction before propagating it to the blockchain
 
 ```js
-// pre verify the proved tx
+// preverify the proved tx
 const preVerifyReq = await request(
       provedTx,
       "preverify",
@@ -164,8 +164,8 @@ const preVerifyReq = await request(
 // log the status of the request (should be 200)
 console.log("preverify request status code: " + preVerifyReq.status);
 
-// propogate the proved tx
-const propogateReq = await request(
+// propagate the proved tx
+const propagateReq = await request(
       tx,
       "propagate_tx",
       false,
@@ -174,7 +174,7 @@ const propogateReq = await request(
       "2"
 );
 
-console.log("propogating chain request status: " + propogateReq.status);
+console.log("propagating chain request status: " + propagateReq.status);
 ```
 And we should get 200 request for everything.
 
