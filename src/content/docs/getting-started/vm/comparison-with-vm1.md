@@ -92,7 +92,7 @@ As you can see, the sample is much harder to follow and contains much more boile
 
 ## Eventing
 
-In addition to querying and changing the contract state, Rusk VM smart contract can also send events. Events are (by intention light-weight) objects which hold a topic string as well as an attched piece of data. Events are stored by the host and can be queried by the caller of a method which generated events. If contract has a need to inform a user about some operations or facts encountered during execution, and this information may or may not be consumed by the user - events are an ideal tool for that. Events have the advantage that they are not passed as return values of contracts, and because of that many events can be sent during a single query or transaction execution. Let's have a look at a small contract which generates events:
+In addition to querying and changing the contract state, Rusk VM smart contract can also send events. Events are (by intention light-weight) objects which hold a topic string as well as an attached piece of data. Events are stored by the host and can be queried by the caller of a method which generated events. If contract has a need to inform a user about some operations or facts encountered during execution, and this information may or may not be consumed by the user - events are an ideal tool for that. Events have the advantage that they are not passed as return values of contracts, and because of that many events can be sent during a single query or transaction execution. Let's have a look at a small contract which generates events:
 
 ```rust
 #![no_std]

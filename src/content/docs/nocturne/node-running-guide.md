@@ -132,4 +132,4 @@ grep "execute_state_transition" /var/log/rusk.log | tail -n 5
 
 Note that this can take a while, given that your stake needs at least 2 epochs, or 4320 blocks, to mature. Your stake, relative to the total stake, also plays a factor.
 
-If everything went right, and your node starts accepting and creating blocks, you have succesfully set up your Nocturne node!
+If everything went right, and your node starts accepting and creating blocks, you have successfully set up your Nocturne node!

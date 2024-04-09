@@ -3,7 +3,7 @@ title: Wallet JS Library
 description: Usage documentation about the dusk-wallet-js library
 ---
 
-The dusk-wallet-js uses the web assembly generated from [`wallet-core`]("/wallet-core") the web assembly is embeded in the npm package
+The dusk-wallet-js uses the web assembly generated from [`wallet-core`]("/wallet-core") the web assembly is embedded in the npm package
 that's released with the dusk-wallet-js
 
 ## API
@@ -27,7 +27,7 @@ The documentation of all the methods are written in jsdoc but they do exactly wh
 const wallet = new Wallet(seed, gasLimit, gasPrice);
 ```
 
-The seed is a array of 64 bytes max, to generate a seed, the user of the library is reponsible to generate them correctly and pass them there.
+The seed is a array of 64 bytes max, to generate a seed, the user of the library is responsible to generate them correctly and pass them there.
 
 > ##### To call any of these functions above, you need to be synced first, if you are not synced then the balance and other operations will fail!
 
@@ -40,4 +40,4 @@ walletInstance.sync().then(() => {
 })
 ```
 
-##### After the sync completes sucessfully you are able to correctly call the wallet methods
+##### After the sync completes successfully you are able to correctly call the wallet methods
