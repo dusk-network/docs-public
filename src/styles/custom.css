@@ -90,6 +90,10 @@ body {
 	border: 1px solid #101010 !important;
 }
 
+:root[data-theme="dark"] .minimal {
+	border: 1px solid var(--sl-color-white) !important;
+}
+
 h1 {
 	font-size: 58px;
 	font-weight: 400;
