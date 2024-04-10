@@ -11,7 +11,10 @@ export default defineConfig({
 		rehypePlugins: [rehypeMathjax],
 	},
 	redirects: {
-		'/itn/[...slug]': '/nocturne/[...slug]'
+		'/itn/fast-sync': '/nocturne/fast-sync',
+		'/itn/node-running-guide': '/nocturne/node-running-guide',
+		'/itn/testnet-faucet': '/nocturne/testnet-faucet',
+		'/itn/upgrade-node': '/nocturne/upgrade-node',
 	},
 	integrations: [
 		starlight({
