@@ -28,6 +28,8 @@ export default defineConfig({
 				PageFrame: "./src/components/PageFrame.astro",
 				Header: "./src/components/Header.astro",
 				ContentPanel: "./src/components/ContentPanel.astro",
+				Sidebar: './src/overrides/Sidebar.astro',
+				SiteTitle: './src/overrides/SiteTitle.astro',
 			},
 			social: {
 				github: "https://github.com/dusk-network",

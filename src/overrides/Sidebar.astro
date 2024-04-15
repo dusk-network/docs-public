@@ -1,0 +1,19 @@
+---
+import type { Props, SidebarEntry } from '@astrojs/starlight/props';
+import DefaultSidebar from '@astrojs/starlight/components/Sidebar.astro';
+
+const isGrantPage = Astro.url.pathname.startsWith('/grant');
+
+let currentPath = Astro.url.pathname;
+if (isGrantPage) {
+    Astro.props.sidebar = [
+      { "label": "Grants 1", "href": "/grants/grants-1", "type": "link", "isCurrent": currentPath === "/grants/grants-1", "badge": undefined, "attrs": {} },
+      { "label": "Grants 2", "href": "/grants/grants-2", "type": "link", "isCurrent": currentPath === "/grants/grants-2", "badge": undefined, "attrs": {} },
+      { "label": "Grants 3", "href": "/grants/grants-3", "type": "link", "isCurrent": currentPath === "/grants/grants-3", "badge": undefined, "attrs": {} },
+    ];
+}
+
+
+---
+
+<DefaultSidebar {...Astro.props}><slot /></DefaultSidebar>

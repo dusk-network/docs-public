@@ -1,0 +1,29 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import DefaultSiteTitle from '@astrojs/starlight/components/SiteTitle.astro';
+
+
+const isGrantPage = Astro.url.pathname.startsWith('/grant');
+
+const grantsLinkStyle = isGrantPage ? 'text-decoration: underline' : '';
+
+---
+
+<DefaultSiteTitle {...Astro.props}><slot /></DefaultSiteTitle>
+<div class="grasntstab">
+   <span class="grants"><a href="/grants" style={grantsLinkStyle}>GRANTS</a></span>
+</div>
+
+
+<style>
+    .grasntstab {
+       padding-top: 7px;
+       margin-left: 10px;
+       font-size: 14px
+   }
+
+   .grants a {
+    text-decoration: none; 
+    color: inherit; 
+   }
+</style>
