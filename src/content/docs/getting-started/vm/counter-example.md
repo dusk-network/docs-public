@@ -4,22 +4,25 @@ title: Smart Contract Example
 
 
 ### Simple Counter Example
-Let's create a simple contract example for a counter. The counter will keep a count, and allow for incrementing it by one, as well as for reading its current value. In other words, the counter contract will count the number of times its increment method has been called, and will make this count available via a read method. 
+Let's create a simple contract for <a href="https://github.com/dusk-network/piecrust" target="_blank" >Piecrust</a>, the virtual machine used by the Dusk blockchain.
+
+ We will develop a counter that keeps track of its total count, providing functionality to increment this count by one and to read the current value. Specifically, the counter will record how many times its increment method has been called, and this information can be accessed through a read method.
 
 Let's do it step by step.
 
 #### 1) Create a Rust project
-As smart contracts on Dus are "almost" normal Rust programs, let's create a new Rust cargo project in order to be able to write it and compile it.
+As smart contracts on Dusk are "almost" normal Rust programs, let's create a new Rust cargo project in order to be able to write it and compile it.
 
 You can create new Rust library for our contract by issuing the following command:
 
 `cargo new --lib hello-dusk-contract`
 
-This command will create a small Rust library project in a folder named `hello-dusk-contract`. You can open files of this project using your favorite IDE or with a simple system editor. 
+This command will create a small Rust library project in the folder named `hello-dusk-contract`. You can open files of this project using your favorite IDE or with a simple system editor. 
 
-In folder `src` there is a `lib.rs` file with some sample tests. You can remove all the content from the `lib.rs` file.
+In folder `src` there is a `lib.rs` file with some example tests. You can remove all the content from the `lib.rs` file.
 
-We will add the needed dependencies on the cargo.toml file you can start entering or pasting in the contract's code.
+We will add the required dependencies to the `Cargo.toml` file. You can then start entering or pasting in the contract's code.
+
 
 #### 2) Add dependencies
 
@@ -31,11 +34,11 @@ piecrust-uplink = { version = "0.8", features = ["abi", "dlmalloc"] }
 ```
 
 
-If we don't do it, when compiling the contract we will encounter an error stating that a `piecrust-uplink` dependency is missing. 
+If we don't do it, when compiling the contract we will encounter an error stating that the `piecrust-uplink` dependency is missing. 
 
 #### 3) Prepare the contract
 
-The Rust contract will be translated into Web Assembly, and the standard Rust libraries contain many elements that are unnecessary for our smart contracts. Because when dealing with blockchain efficiency is paramount, we want to minimize the size of the compiled code by compiling it without the standard libraries. We can do that because those libraries won't be available at Piecrust runtime.
+The Rust contract will be translated into WebAssembly, and the standard Rust libraries contain many elements that are unnecessary for our smart contracts. The reason is that those libraries won't be available in WASM due to its sandboxed environment (and therefore won't be available at Piecrust's runtime). Removing those libraries also helps us to minimize the size of the compiled code. 
 
 Hence, first line of our contract will be:
 
@@ -98,7 +101,7 @@ We have created a Rust structure containing our state and two methods: one manip
 
 ##### Interact with the Piecrust VM
 
-Now we need to expose the methods in our contract to the Virtual Machine used by Dusk, called Piecrust. By doing this, the VM is able to "see" them and execute them after our contract is deployed.
+Now we need to expose the methods in our contract to the VM. This allows the VM to "see" the methods and call them on our contract.
 
 This is why we need to add the following code to expose the `increment` method:
 
@@ -118,7 +121,7 @@ unsafe fn read_value(arg_len: u32) -> u32 {
 ```
 
 **Notes**: 
-- The `#[no_mangle]` annotations are needed in order to turn off the default Rust linker name mangling. We want our names to be as they are, since they will be called via mechanisms outside of control of the linker. 
+- The `#[no_mangle]` annotations are needed in order to turn off the default Rust linker name mangling. We want our names to be as they are, since they will be called via mechanisms outside the control of the linker. 
 
 - `uplink::wrap_call` takes care of all the boilerplate code needed to serialize/deserialize and pass arguments to and from our methods.
 
@@ -183,7 +186,7 @@ By doing so, you should see the build file named: `hello_dusk_contact.wasm`.
 Now that you have compiled the contract, you can deploy it to the Dusk blockchain.
 
 ## Contract State Persistence
-After trying out the above example, you may wonder, how is it possible that counter state is being persisted, although we did not do anything special with the count value. Usually, smart contracts provide persistence in a form of special key-value maps, accessible via an api provided by the contract host. Here, we did not do anything to make the count persistent, yet it is being persistent and when we try out the contract by subsequently calling increment and read_value, we can see that the count value  is correct. 
+After trying out the above example, you may wonder, how is it possible that the counter state is being persisted, although we did not do anything special with the count value. Usually, smart contracts provide persistence in a form of special key-value maps, accessible via an api provided by the contract host. Here, we did not do anything to make the count persistent, yet it is being persistent and when we try out the contract by subsequently calling `increment` and `read_value`, we can see that the count value is correct.. 
 
-The answer is that the entire memory of a contract gets persisted, along with contract data. Thus, we don't need to do anything special to make data persistent. As data is in memory, it will persist along with the entire memory. A consequence of this is the fact that you can use any data structure or data collection in you program, and it will be persisted. You don't need to limit yourself to a predefined set of types provided to you by the blockchain's VM runtime environment.
+The answer is that the entire memory of a contract gets persisted, along with contract data. Thus, we don't need to do anything special to make data persistent. As data is in memory, it will persist along with the entire memory. A consequence of this is the fact that you can use any data structure or data collection in your program, and it will be persisted. You don't need to limit yourself to a predefined set of types provided to you by the blockchain's VM runtime environment.
 
