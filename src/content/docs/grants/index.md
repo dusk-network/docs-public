@@ -3,25 +3,28 @@ title: Grants
 ---
 
 # Thesan
-Thesan is the Etruscan goddess of the dawn. She is associated with the rising sun, the breaking of dawn, and the awakening of the world each day. Also associated with childbirth and giving new life, Thesan is depicted as a radiant and youthful goddess, often portrayed with wings and a torch to symbolize the light she brings.
 
-Dusk’s funding program, focused on bringing life and innovation to the Dusk ecosystem but funding teams and projects with great ideas. Featuring grants, investments, and Calls for Proposals, Thesan is designed to bring great ideas to life, with a focus on DeFi, RegDeFi, privacy, and real-world assets. 
 
-## What is Thesan?
+Dusk's grants program is named after <a href="https://en.wikipedia.org/wiki/Thesan" target="_blank" >Thesan</a>, the Etruscan goddess of the dawn.
 
 __Thesan__
 
 > noun
 > /ˈθɛ.sæn/
 
-the Etruscan goddess of the dawn. She is associated with the rising sun, the breaking of dawn, and the awakening of the world each day. Also associated with childbirth and giving new life, Thesan is depicted as a radiant and youthful goddess, often portrayed with wings and a torch to symbolize the light she brings.
+is associated with the rising sun, the breaking of dawn, and the awakening of the world each day.
 
-_Example:
-Thesan received offerings together with the sun god Usil._
+She is depicted as a radiant and youthful goddess, and often portrayed with wings and a torch to symbolize the light she brings. Thesan also represents childbirth and the giving of new life. 
 
+## What is Thesan?
 
+The Thesan grants program is designed to infuse the Dusk ecosystem with innovation and growth, by supporting projects via grants, investments, and Calls for Proposals (CFPs).
 
-
+Thesan primarily focuses on:
+- DeFi (Decentralized Finance)
+- RegDeFi (Regulated Decentralized Finance)
+- Privacy enhancements
+- Integration of real-world assets (RWAs).
 
 ## Dusk Funding
 
@@ -29,8 +32,8 @@ Embracing the ethos of open source within the Dusk ecosystem, and in line with o
 
 There are two main categories for projects asking for a grant:
 
-- Requests for Proposals (RFPs). This involves projects Dusk is actively interested in funding, according to predetermined specifications and objectives.
-- Other projects that are directly proposed by the community. Even if these projects do not appear in existing RFPs, their development benefits the overall Dusk ecosystem.
+- **Requests for Proposals (RFPs)**. This involves projects Dusk is actively interested in funding, according to predetermined specifications and objectives.
+- **Other projects** that are directly proposed by the community. Even if these projects do not appear in existing RFPs, their development benefits the overall Dusk ecosystem.
 
 In addition to the above, and depending on the maturity of the project proposal and the experience of the applicant, ad-hoc deals involving funding for equity can be discussed.
 
@@ -47,18 +50,21 @@ In addition to the above, and depending on the maturity of the project proposal 
 Fill out the [Thesan application form](https://qfisyyuui1g.typeform.com/to/uAucnWFJ). 
 The information requested is highly useful for the Dusk team to properly evaluate the grant. For this reason, make sure to take your time to answer all the relevant questions in detail.
 
+As the application may require some time, it is reccomended to write your answers first in a text file and later on paste them in the form.
+
 In your application, be sure to:
 
 
-Provide a detailed breakdown of the milestones. As this is a milestone-based grants program, we ask you to provide a detailed description of each milestone. This milestone-specific information should include a features list, cost breakdowns, and approximate timelines. Make sure to add a final milestone consisting of a 1-year maintenance of the delivered repository(ies). This last milestone ensures that the team can commit to maintaining the project for at least one year.
-Provide a high-level plan documenting how the team intends to make the delivered project sustainable in the long run and/or how to build it into a business. You are welcome to include suggestions for future collaboration with Dusk. This ensures that applicants have a clear motivation to maintain the provided repository(ies) after the final milestone is completed.
+- Provide a detailed breakdown of the milestones. As this is a milestone-based grants program, we ask you to provide a detailed description of each milestone. This milestone-specific information should include a features list, cost breakdowns, and approximate timelines. Make sure to add a final milestone consisting of a 1-year maintenance of the delivered repository(ies). This last milestone ensures that the team can commit to maintaining the project for at least one year.
+
+- Provide a high-level plan documenting how the team intends to make the delivered project sustainable in the long run and/or how to build it into a business. You are welcome to include suggestions for future collaboration with Dusk. This ensures that applicants have a clear motivation to maintain the provided repository(ies) after the final milestone is completed.
 
 
 ### Selection Process
 
 #### Requirements
 - **Being able to enroll in a KYB process**. This means that either the grant receiver is a physical person who can issue invoices for the milestones payments, or there is a company or legal entity that can apply for the grant. Applicants from prohibited jurisdictions will not be considered.
-- **Software provided will be open-source and available** via an Apache 2.0 license, which should be included in every relevant Github repository. The software delivered should be independent of any proprietary software for its full functionality, meaning that any dependency on external software or IP also needs to be compatible with Apache 2.0 license.
+- **Software provided is open-source** and available via an Apache 2.0 license, which should be included in every relevant Github repository. The software delivered should be independent of any proprietary software for its full functionality, meaning that any dependency on external software or IP also needs to be compatible with Apache 2.0 license.
 - **Transparent Budgeting and Milestones Breakdowns**. This implies that there needs to be a detailed budget proposal that details well-defined milestones, with their associated costs and timelines. A final milestone covering 1 year of maintenance of all the project repositories needs to be added. 
 - **Long-term commitment to the project**. To ensure a solid foundation for the whole Dusk ecosystem, applicants are requested to show commitment to the maintenance of the project even after the successful completion of the final milestone. This commitment can be shown by providing a post-grant plan, which covers at least 1 year from the end of the last milestone (the 1-year maintenance one). This plan should include details of how the applying team intends to make the project financially sustainable and/or build it into a business. It is also possible to include suggestions for future collaborations between the Applicant team and Dusk.
 
@@ -102,10 +108,10 @@ To ensure a smooth and rapid assessment of milestones’ completion, we kindly a
 - **Formatting and Style**. For any Rust code, it is highly encouraged to stick to the <a href="https://doc.rust-lang.org/1.0.0/style/README.html" target="_blank" >Style Guidelines</a>. For other coding languages, it is recommended to follow established standards.
 
 
-Join the Dusk ecosystem
+### Join the Dusk ecosystem
 Funding is available for the wider ecosystem for projects that benefit Dusk. This can range from protocols built on Dusk, protocols that will make use of Dusk’s technology, compliance, and privacy, or broader initiatives like security and auditing, events, hackathons, and documentation. 
 
-If you have an idea that is of benefit to the Dusk ecosystem, token holders, and makes good use of the tech stack, we’re looking forward to [your application](https://qfisyyuui1g.typeform.com/to/uAucnWFJ). 
----
+If you have an idea that is of benefit to the Dusk ecosystem, token holders, and makes good use of the tech stack,
+**we’re looking forward to [your application](https://qfisyyuui1g.typeform.com/to/uAucnWFJ)** . 
 
 
