@@ -35,15 +35,6 @@ Understanding, translating, and explaining to our publics the meaning and implic
 *   [Dusk Prepares For Upcoming EU Crypto Regulation (MiCA)](https://cryptodaily.co.uk/2022/09/dusk-network-prepares-for-upcoming-eu-crypto-regulation-mica) - CryptoDaily
 *   [Episode 52: Crypto Market Regulations & MiCA](https://open.spotify.com/episode/2iyXBk9WlPL5gF3ZWJZpY8?si=4f439ea3bd174e77) - 2tokens Podcast
 
-## Other Resources
-
-As a key piece of European legislation, there is a lot of information available about MiCA. Here are some of the key pieces, from the perspective of Dusk:
-
-*   [Ryan on Regulation 1 - Regulation in the EU and Why It Matters](https://www.youtube.com/watch?v=EFHroES_fhY) - video introduction to MiCA, as well as the European Crowdfunding Sourcing Provider regulation.
-*   [Ryan on Regulation 2 - MiCA: the Ins and Outs](https://www.youtube.com/watch?v=2lMFRCxNDr0) - video outline of the requirements imposed on crypto assets and CASPs
-*   [Regulation Glossary](https://docs.google.com/spreadsheets/d/1kWbd2yPKHzAcfTEfJkBZa8HNMYDPyb9HnPKoPWW6e1I/edit#gid=0) - list of key terms and definitions related to MiCA and other EU regulation
-*   [EMT vs ART](https://drive.google.com/file/d/1c7A6hsnOeJZDcQ5rXBxGNpHA_6v0Ta8C/edit) - side-by-side comparison of Electronic Money Tokens and Asset-Referenced Tokens, according to MiCA
-
 ### External
 
 *   [Watsonlaw Whitepaper](https://drive.google.com/file/d/1-FJ_xDkxYkUFjTa2oSsSSj3T5UcZRKhs/edit) - PDF document outlining MiCA, created by our legal partners.
