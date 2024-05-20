@@ -39,7 +39,7 @@ service rusk stop
 
 Retrieve the latest published state through the fast syncing tool:
 ```sh
-download_state --list
+download_state
 ```
 
 For more details see the [Fast syncing page](/nocturne/fast-sync).
