@@ -1,5 +1,5 @@
 ---
-title: Smart Contracts in Dusk
+title: Smart Contracts on Dusk
 ---
 
 
