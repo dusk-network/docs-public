@@ -1,35 +1,62 @@
 ---
-title: Piecrust And Smart Contracts
+title: Smart Contracts on Dusk
 ---
 
-### Dusk Blockchain Smart Contracts
-The Dusk blockchain supports smart contracts compiled into Web Assembly, an open-standard binary-code format. This allows for the use of various programming languages like Rust, C, C++, and Go, as long as the Web Assembly output meets certain requirements. The flexibility in language choice broadens the accessibility for developers.
-
-### Dusk Virtual Machine Execution
-Smart contracts are run on the Dusk Virtual Machine, which manages the contract's bytecode, state, and runtime sandboxed environment. The Virtual Machine executes contract methods, which are functions made available externally for interaction by other contracts or external parties.
-
-## Smart Contract Methods: Queries and Transactions
-
-Smart contracts on the Dusk blockchain employ two types of methods: queries and transactions. Queries are designed to retrieve data without altering the contract’s state. In contrast, transactions modify the contract’s state but do not return data. This distinction is crucial for understanding how smart contracts interact with the blockchain.
-
-**Contract State Concept:**  
-The concept of a contract’s state is integral. It refers to persistent data maintained by the contract, which, in the context of a blockchain, is a global singleton. This means there is a single, globally consistent state at any time, maintained across all nodes of the Dusk blockchain. Queries can access and return parts or the entirety of this state, while transactions are responsible for state mutations.
-
-## Advanced Contract Mechanics: Eventing and Argument Passing
-
-**Eventing and Feedback Mechanism:**  
-Apart from transactions and queries, contracts can use events as a lightweight mechanism to provide feedback. These events can be emitted by either queries or transactions and processed post-call by the caller. They are particularly useful for triggering actions on the caller's side.
-
-**Argument Passing and Host Methods:**  
-Understanding the mechanism of argument passing to and from queries and transactions is beneficial. Each contract has a memory area for argument passing, and host methods simplify this process by handling the details. Utilizing host-provided methods can result in significant computational power savings, especially for intensive functions like cryptographic and zero-knowledge proofs.
-
-**Note on Smart Contract Development:**  
-As a smart contract developer, it's important to be mindful of the computational cost of every instruction, leveraging host methods for efficiency and optimizing code to reduce unnecessary expenses.
-
----
-## Additional Notes and Highlights:
-- **Flexibility in Language Choice:** The ability to use multiple programming languages for smart contract development is a key feature of the Dusk blockchain.
-- **Cost Implications:** Smart contract execution involves real financial costs, emphasizing the need for efficient coding practices.
-- **Eventing as a Useful Tool:** The eventing mechanism offers an additional layer of interaction between the contract and its environment.
+## Overview
 
 
+Dusk offers robust support for smart contracts, as developers can leverage the features offered by <a href="https://github.com/dusk-network/piecrust" target="_blank" >Piecrust</a>, <a href="https://github.com/dusk-network/piecrust/blob/main/piecrust-uplink/README.md" target="_blank" >piecrust-uplink</a>  and  <a href="https://github.com/dusk-network/rusk" target="_blank" >Rusk</a>.
+
+In order to deploy a smart contract, developers only need to compile their contracts to WASM. This is possible because the <a href="https://github.com/dusk-network/piecrust" target="_blank" >Piecrust</a> VM manages the contract’s bytecode, state, and runtime sandboxed environment.  
+
+Even if developers can use any programming language that compiles to WASM (e.g.  C, C++, Go...), most developers prefer writing smart contracts in Rust due to its efficiency and security benefits.
+
+
+##### Methods
+
+Smart contracts on the Dusk blockchain employ two types of methods: 
+- **Queries**: designed to retrieve data without altering the contract’s state.
+- **Transactions**: designed to modify the contract’s state but do not return data. 
+
+This distinction is crucial for understanding how smart contracts interact with the Dusk blockchain.
+
+Understanding the mechanism of argument passing to and from queries and transactions is beneficial, as each contract has a memory area for argument passing, and host methods simplify this process by handling the details. Utilizing host-provided methods can result in significant computational power savings, especially for intensive functions like cryptographic and zero-knowledge proofs.
+
+##### Events
+
+Contracts on Dusk can use events as a lightweight mechanism to provide feedback, and they are particularly useful for triggering actions on the caller's side.
+
+Events serve as a logging mechanism that facilitates interactions between various applications and can be emitted by either queries or transactions. Events can be processed post-call by the caller, which can then execute its logic accordingly
+
+Clients can subscribe to events emitted by both smart contracts and nodes by using the Rusk Universal Event System <a href="https://github.com/dusk-network/rusk/wiki/RUES-(Rusk-Universal-Event-System)" target="_blank" >Rusk Universal Event System</a>.
+
+
+
+## Tooling
+
+##### Piecrust and piecrust-uplink
+
+<a href="https://github.com/dusk-network/piecrust" target="_blank" >Piecrust</a> is the WASM virtual machine for running Dusk's smart contracts, and it is based on WASM runtime, with few custom modifications:
+- Specific memory management mechanism
+- Support for Dusk’s ABI
+- Support for inter-contract calls. 
+
+Piecrust functions as the host-side interface, handling the execution environment and system-level operations
+
+<a href="https://github.com/dusk-network/piecrust/blob/main/piecrust-uplink/README.md" target="_blank" >piecrust-uplink</a> operates on the contract side, managing the deployment and execution of smart contracts. It is the library that allows developers to create smart contracts directly on top of Piecrust.
+
+##### Rusk
+
+<a href="https://github.com/dusk-network/rusk" target="_blank" >Rusk</a>  is the official Dusk protocol node client and smart contract platform.
+
+The rusk-abi crate has the following two features: 
+- **abi**: to create contracts that are compliant with the ABI (used by smart contracts developers)
+- **host**: to create binaries that run contracts compliant to the ABI (used by host functions developers).
+
+These features are mutually exclusive since each of them needs to implement the same functions in very different ways. 
+
+
+
+## Examples
+
+There are several <a href="https://github.com/dusk-network/piecrust/tree/main/contracts" target="_blank" >smart contracts examples</a> available, which can be used for reference.
