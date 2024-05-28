@@ -93,7 +93,9 @@ export default defineConfig({
 							label: "Smart Contracts",
 							items: [
 								{ label: "Introduction", link: '/getting-started/vm/introduction-sc' },
-								{ label: "Smart Contracts on Dusk", link: '/getting-started/vm/piecrust' },
+								{ label: "Smart Contracts on Dusk", link: '/getting-started/vm/smart_contracts_on_dusk' },
+								{ label: "Piecrust and piecrust-uplink", link: '/getting-started/vm/piecrust' },
+								{ label: "Rusk", link: '/getting-started/vm/rusk' },
 								{ label: "Smart Contract Example", link: '/getting-started/vm/counter-example' },
 								{ label: "Piecrust vs Rusk VM 1.0", link: '/getting-started/vm/comparison-with-vm1' },
 							],
