@@ -15,7 +15,11 @@ if (isGrantPage) {
           { "label": "Selection workflow", "href": "/grants/#selection-process", "type": "link", "isCurrent": currentPath === "/grants/#selection-process", "badge": undefined, "attrs": {} },
 
       ], collapsed: false },
-      { "label": "Ecosystem funding", "href": "/grants/#milestone-guidelines", "type": "link", "isCurrent": currentPath === "/grants/#ecosystem-funding", "badge": undefined, "attrs": {} },
+      
+      { "label": "Request for Proposals", "type": "group", "badge": undefined, "entries": [
+          { "label": "Archival Node", "href": "/grants/rfps/archival_node", "type": "link", "isCurrent": currentPath === "/grants/rfps/archival_node", "badge": undefined, "attrs": {} },
+          { "label": "Hardware Wallet", "href": "/grants/rfps/hardware_wallet", "type": "link", "isCurrent": currentPath === "/grants/rfps/hardware_wallet", "badge": undefined, "attrs": {} }
+      ], collapsed: false }
     ];
 }
 
