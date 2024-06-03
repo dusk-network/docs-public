@@ -8,9 +8,9 @@ title: RFP-01
 
 **Category:** Infrastructure
 
-**Date Created:** 02/06/2024
+**Date Created:** 03/06/2024
 
-#### Project Overview
+## Project Overview
 
 Archival nodes are full nodes responsible for maintaining a comprehensive record of all transactions, blocks, and events ever recorded on the blockchain, from the genesis block. Archival nodes are a critical piece of infrastructure because they provide access to extensive historical data. Applications can query these nodes for detailed historical information, enabling complex analyses and queries.
 
@@ -31,7 +31,7 @@ Applications can also verify the legitimacy of stored events by hashing them and
 
 There is currently no simple way to access the data stored by archival nodes. The scope for this RFP is to leverage the existing APIs and expand on them to make data easily consumable. The project should provide comprehensive APIs that improve the accessibility and usability of the data stored in Dusk archival nodes, enabling clients to perform detailed and efficient queries.
 
-#### Scope of Work
+## Scope of Work
 
 Since Dusk's archival nodes already incorporate the logic for storing events, this RFP requests leveraging that existing logic by adding extensive API infrastructure.
 The solution should be compatible with the different networks provided by Dusk (e.g., mainnet, testnet, devnet…), and comprehensive documentation is expected.
@@ -111,3 +111,5 @@ All proposals will be treated as confidential.
 Code should be provided with the necessary licenses for open-source use (e.g. Apache 2.0, MPL, MIT).
 
 
+## How to apply
+Fill out the [Thesan application form](https://qfisyyuui1g.typeform.com/to/uAucnWFJ) by taking your your time to answer all the relevant questions in detail. Please make sure to follow the general and <a href="http://docs.dusk.network/grants/#selection-process" target="_blank" > requirements and guidelines </a>.
