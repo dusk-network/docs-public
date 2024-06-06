@@ -31,17 +31,6 @@ Events serve as a logging mechanism that facilitates interactions between variou
 Clients can subscribe to events emitted by both smart contracts and nodes by using the Rusk Universal Event System <a href="https://github.com/dusk-network/rusk/wiki/RUES-(Rusk-Universal-Event-System)" target="_blank" >Rusk Universal Event System</a>.
 
 
-##### Entities
-There's three entities that we can consider:
-
-Contract
-Transactor
-Node
-
-The contract, as mentioned, can write anything it wants to its memory, full freedom.
-A node can put in metadata for a contract to use (with the above described mechanism) for a session, and is responsible for passing transactions (i.e. call data) into the contract barrier in the ultimate.
-A transactor can - currently - pass call data into the contract it wants to call.
-
 
 ## Owner
 Every contract has a owner ID that can perform upgrade operations, etc.

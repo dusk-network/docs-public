@@ -26,7 +26,7 @@ State variables, mappings, arrays, and structs are part of the smart contract's 
 
 The data held in state variables can be updated based on the logic defined in the contract. It is important to note that even if the state of a smart contract can change through transactions, the contract code itself is immutable once deployed (unless using a proxy contract).
 
-##### Gas
+#### Gas
 
 Executing smart contracts involves computational work performed by the network nodes. The unit of measurement used to quantify the computational effort required for executing operations on a blockchain is called gas. Gas measures the amount of work needed to perform a task: the more complex the task, the more gas it requires. 
 
@@ -34,9 +34,26 @@ While gas itself measures computation, the gas price determines native cryptocur
 
 Gas prices fluctuate based on network demand. When the network is congested, gas prices can spike, making transactions more expensive. Conversely, in periods where the network is less congested, gas price is lower. You can learn more on how gas works on Dusk by reading the [Gas Management](/learn/economic-information/gas-management) page.
 
-## Considerations when writing Smart Contracts
 
-#### Determine the necessary contracts
+## Smart Contracts Flow
+When it comes to smart contracts on Dusk, there are three key entities to consider:
+
+- **Contract**: can write anything to its memory, and can manipulate its internal state based on the call data it receives. 
+- **Transactor**: is the entity that initiates transactions, tipically a user or an application. Its role is to pass a payload (call data) that includes information necessary for the contract to perform its functions.
+- **Node**: can inject metadata into a contract's execution context for a session, so that it can be used by the contract to make informed decisions during its execution. The node also ensure that transactions are valid before being passed to the contract for the execution.
+
+##### Smart Contracts Flow
+The execution of a Smart Contract follows these steps:
+1) A transactor initiates a transaction by creating a call data payload and specifying the target contract.
+2) The transactor submits the transaction to the network, where it is received by a node.
+3) The node validates the transaction, ensuring it adheres to the network's rules and contains the necessary metadata.
+4) Once validated, the node passes the transaction into the contract barrier, where the contract executes its logic based on the provided call data and metadata.
+5) The contract writes the results of its execution to its memory, potentially altering its internal state.
+6) Nodes collectively reach a consensus on the transaction's validity and the resulting state changes, ensuring consistency across the network.
+
+## How to write Smart Contracts
+
+#### Outline the structure
 
 When developing smart contracts, it is important to understand which functionalities need to be implemented and to categorize them into distinct contracts based on their responsibilities.
 This modular approach helps manage complexity and improve maintainability. It is recomended to clearly outline how these contracts will interact, documenting data flows and the function calls across different contracts.
@@ -53,10 +70,10 @@ Implement a mechanism to update the proxy’s reference to new logic contracts w
 
 It is important to design contracts to minimize the need for trust, as well as indentify and eliminate single points of failure. A safe approach is assuming that stakeholders might act maliciously and ensure the contract logic accounts for such scenarios.
 
-
-#### Audits
-It is important to conduct in-depth code reviews and have third-party audits to identify and fix vulnerabilities. This is especially important for smart contracts, as hacks or bugs can have devastating consequences.
-
 #### Gas consumption and optimization
 
 It is important to write efficient code especially to minimize gas consumption. As smart contracts consume gas while performing their execution, it is key to avoid unnecessary computations, and store data efficiently. Where feasible, it is convenient to batch multiple operations into a single transaction to save gas.
+
+
+#### Audits
+It is important to conduct in-depth code reviews and have third-party audits to identify and fix vulnerabilities. This is especially important for smart contracts, as hacks or bugs can have devastating consequences.

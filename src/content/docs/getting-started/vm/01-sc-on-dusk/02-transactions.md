@@ -4,8 +4,9 @@ title: Transactions on Dusk
 
 
 
-## Notes and UTXOs
+# Transactions
 
-Because of the way that Dusk works, transactions don't have the equivalent to msg.sender. Therefore developers need to figure out how to represent users. The issue is that even if in theory users can be seen as a collection of unspent notes associated with a key, notes are on purpose not linkable to each other. If someone find a way to do it, this should be reported and treated by as a vulnerability. 
 
- msg.sender is not "abstracted" away on dusk. So you could at the moment mimic that behavior explicitly in every function by taking the address as function argument too + for example a signature that signed all other function arguments (including your address). Then verifying this this in the function.
+In Dusk, transactions operate differently compared to other blockchains. Specifically, transactions do not have an equivalent to ```msg.sender()```, which is used in other blockchains to identify the origin of a transaction. As a result, developers need to rely on alternative methods to represent and manage user identities within their smart contracts.
+
+Even if in theory users could be seen as a collection of unspent notes associated with a key, these notes are not linkable to each other to maintain privacy and security.
