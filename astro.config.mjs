@@ -93,21 +93,53 @@ export default defineConfig({
 							label: "Smart Contracts",
 							items: [
 								{ label: "Introduction", link: '/getting-started/vm/introduction-sc' },
-								{ label: "Smart Contracts on Dusk", link: '/getting-started/vm/smart_contracts_on_dusk' },
+								{
+									label: "Smart Contracts on Dusk",
+									items: [
+										{ label: "Overview", link: '/getting-started/vm/01-sc-on-dusk/01-smart_contracts_on_dusk' },
+										{ label: "Transactions", link: '/getting-started/vm/01-sc-on-dusk/02-transactions' },
+										{ label: "Keys", link: '/getting-started/vm/01-sc-on-dusk/03-keys' },
+										{ label: "Functions", link: '/getting-started/vm/01-sc-on-dusk/04-functions' },
+										{ label: "Token Standards", link: '/getting-started/vm/01-sc-on-dusk/05-token_standards' },
+									],
+								},
 								{
 									label: "Components",
 									items: [
-										{ label: "Piecrust", link: '/getting-started/vm/components/piecrust' },
-										{ label: "Rusk", link: '/getting-started/vm/components/rusk' },
+										{ label: "Piecrust", link: '/getting-started/vm/02-components/01-piecrust' },
+										{ label: "Rusk", link: '/getting-started/vm/02-components/02-rusk' },
+										{ label: "Rues", link: '/getting-started/vm/02-components/03-rues' },
 									],
 								},
 								{
-									label: "Examples",
+									label: "Getting Started",
 									items: [
-										{ label: "Piecrust vs Rusk VM 1.0", link: '/getting-started/vm/examples/comparison-with-vm1' },
-										{ label: "Smart Contract Example", link: '/getting-started/vm/examples/counter-example' },
+										{ label: "Dependencies", link: '/getting-started/vm/04-getting-started/01-dependencies' },
+										{ label: "IDE", link: '/getting-started/vm/04-getting-started/02-ide' },
 									],
 								},
+								{
+									label: "Guides",
+									items: [
+										{ label: "Debugging", link: '/getting-started/vm/05-guides/01-debugging' },
+										{ label: "Testing", link: '/getting-started/vm/05-guides/02-testing' },
+										{ label: "Compiling", link: '/getting-started/vm/05-guides/03-compiling' },
+										{ label: "Deploying", link: '/getting-started/vm/05-guides/04-deploying' },
+										{ label: "Upgrades", link: '/getting-started/vm/05-guides/05-upgrades' },
+										{ label: "Troubleshooting", link: '/getting-started/vm/05-guides/06-troubleshooting' },
+									],
+								},
+
+								{
+									label: "Examples",
+									items: [
+										{ label: "Counter Example", link: '/getting-started/vm/03-examples/01-counter-example' },
+										{ label: "Comparison with VM1", link: '/getting-started/vm/03-examples/02-comparison-with-vm1' },
+										{ label: "Token Example", link: '/getting-started/vm/03-examples/03-token-example' },
+										{ label: "Multisig", link: '/getting-started/vm/03-examples/04-multisig' },
+									],
+								},
+								
 							],
 						},
 						{
