@@ -54,6 +54,9 @@ export default defineConfig({
 							items: [
 								{ label: "Overview", link: 'learn/dusk-protocol/overview' },
 								{ label: 'Core Values', link: 'learn/dusk-protocol/core-values' },
+								{ label: "Transaction Models", link: 'learn/dusk-protocol/transaction_models' },
+								{ label: "Token Standards", link: 'learn/dusk-protocol/token_standards' },
+								{ label: "DIPs", link: 'learn/dusk-protocol/dips' },
 								{ label: "Resources", link: 'learn/dusk-protocol/additional-resources' },
 							],
 						},
