@@ -28,7 +28,3 @@ As <a href="https://github.com/dusk-network/rusk" target="_blank" >Rusk</a> make
 rustup toolchain install nightly
 rustup default nightly
 ```
-
-## Build and Tests
-
-To build `rusk` from source, Rust, GCC and Clang are required. Once the dependencies are installed, you can simply run the following command to compile everything:
