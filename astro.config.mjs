@@ -129,7 +129,8 @@ export default defineConfig({
 										{ label: "Compiling", link: '/getting-started/vm/05-guides/03-compiling' },
 										{ label: "Deploying", link: '/getting-started/vm/05-guides/04-deploying' },
 										{ label: "Upgrades", link: '/getting-started/vm/05-guides/05-upgrades' },
-										{ label: "Troubleshooting", link: '/getting-started/vm/05-guides/06-troubleshooting' },
+										
+
 									],
 								},
 
@@ -142,9 +143,19 @@ export default defineConfig({
 										{ label: "Multisig", link: '/getting-started/vm/03-examples/04-multisig' },
 									],
 								},
+
+								{
+									label: "FAQs and issues",
+									items: [
+										{ label: "FAQs", link: '/getting-started/vm/06-faqs-issues/01-FAQs' },
+										{ label: "Troubleshooting", link: 'src/content/docs/getting-started/vm/06-faqs-issues/02-troubleshooting' },
+
+									],
+								},
 								
 							],
 						},
+
 						{
 							label: "Wallets",
 							items: [
