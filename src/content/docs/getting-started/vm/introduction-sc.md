@@ -12,7 +12,7 @@ As smart contracts live on the blockchain, once deployed they cannot be modified
 
 
 #### Methods
-Executing the logic of a smart contract is **only** possible when its methods are called, either by users directly or by other smart contracts. Methods can pass data and initiate the execution of the contract's logic, and if the conditions coded in the smart contract are satisfied, the contract executes the relevant piece of code. The execution depends on the coded logic, which can involve transferring funds, issuing digital assets, triggering other contracts, and much more...
+The logic of a smart contract is executed by the calling one of its methods. Methods can be called by users directly, or by other smart contracts. Methods can consume data and can branch their code based on its properties, and on other conditions such as the current state of the chain. Based on these conditions, the method may decide to continue execution of the contract's logic, or reject the execution entirely. The product of the execution depends on the coded logic, which can involve transferring funds, issuing digital assets, triggering other contracts, and much more...
 
 Smart contracts can be designed to implement fallback methods when receiving cryptocurrencies so that when a user sends cryptocurrency to a smart contract's address, the contract can automatically execute predefined actions based on the received funds. 
 
