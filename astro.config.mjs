@@ -90,6 +90,7 @@ export default defineConfig({
 								{ label: "Build from Source", link: '/getting-started/node-setup/build-from-source' },
 								{ label: "Docker Image", link: '/getting-started/node-setup/docker-image' },
 								{ label: "Manual Resync", link: '/getting-started/node-setup/manual-resync' },
+								{ label: "Slashing", link: '/getting-started/node-setup/slashing' },
 							],
 						},
 						{
@@ -104,6 +105,8 @@ export default defineConfig({
 										{ label: "Keys", link: '/getting-started/vm/01-sc-on-dusk/03-keys' },
 										{ label: "Functions", link: '/getting-started/vm/01-sc-on-dusk/04-functions' },
 										{ label: "Token Standards", link: '/getting-started/vm/01-sc-on-dusk/05-token_standards' },
+										{ label: "Circuits", link: '/getting-started/vm/01-sc-on-dusk/06-circuits' },
+										{ label: "Sessions", link: '/getting-started/vm/01-sc-on-dusk/07-sessions' },
 									],
 								},
 								{
@@ -129,7 +132,7 @@ export default defineConfig({
 										{ label: "Compiling", link: '/getting-started/vm/05-guides/03-compiling' },
 										{ label: "Deploying", link: '/getting-started/vm/05-guides/04-deploying' },
 										{ label: "Upgrades", link: '/getting-started/vm/05-guides/05-upgrades' },
-										
+										{ label: "Interacting", link: '/getting-started/vm/05-guides/06-interacting' }
 
 									],
 								},
@@ -141,6 +144,7 @@ export default defineConfig({
 										{ label: "Comparison with VM1", link: '/getting-started/vm/03-examples/02-comparison-with-vm1' },
 										{ label: "Token Example", link: '/getting-started/vm/03-examples/03-token-example' },
 										{ label: "Multisig", link: '/getting-started/vm/03-examples/04-multisig' },
+										{ label: "Hashing", link: '/getting-started/vm/03-examples/05-hashing' },
 									],
 								},
 
