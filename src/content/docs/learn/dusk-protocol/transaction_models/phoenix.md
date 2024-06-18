@@ -1,5 +1,5 @@
 ---
-title: Transaction Models
+title: Phoenix
 ---
 
 # Phoenix
@@ -73,8 +73,3 @@ In addition to the **user static keys**, Phoenix assigns a one-time key pair to 
 By using the note's public key, a user can delegate the job of scanning the different transactions of the network to retrieve their notes by sharing their view key ```vk``` with an external entity, which we call a network-listening helper. Thus, the user could delegate the scanning of all transactions to a different entity by sharing ```(a,B)``` with the helper. Even with that information, such an entity could not spend ```R```’s money, since they can not derive ```skR``` without the second part of ```R```’s private key.
  
 On the other hand, the note's secret key can only be computed by the recipient of the note, since they are the only ones holding the whole secret key ```sk = (a,b)```.
-
-
-# Moonlight
-
-TBD

@@ -54,9 +54,15 @@ export default defineConfig({
 							items: [
 								{ label: "Overview", link: 'learn/dusk-protocol/overview' },
 								{ label: 'Core Values', link: 'learn/dusk-protocol/core-values' },
-								{ label: "Transaction Models", link: 'learn/dusk-protocol/transaction_models' },
-								{ label: "Token Standards", link: 'learn/dusk-protocol/token_standards' },
-								{ label: "DIPs", link: 'learn/dusk-protocol/dips' },
+								{
+									label: 'Transaction Models',
+									items: [
+										{ label: "Transaction Models", link: 'learn/dusk-protocol/transaction_models/transaction_models' },
+										{ label: "Phoenix", link: 'learn/dusk-protocol/transaction_models/phoenix' },
+										{ label: "Zedger", link: 'learn/dusk-protocol/transaction_models/zedger' },
+										{ label: "Moonlight", link: 'learn/dusk-protocol/transaction_models/moonlight' },
+									],
+								},
 								{ label: "Resources", link: 'learn/dusk-protocol/additional-resources' },
 							],
 						},
@@ -75,6 +81,15 @@ export default defineConfig({
 								{ label: "MiCA", link: 'learn/digital-assets/mica' },
 								{ label: "Security Lifecycle", link: 'learn/digital-assets/lifecycle' },
 								{ label: "Security Dematerialization", link: 'learn/digital-assets/dematerialization' },
+							],
+						},
+
+						{
+							label: 'Zero Knowledge',
+							items: [
+								{ label: "Introduction", link: 'learn/zero-knowledge/introduction' },
+								{ label: "IOP and PCS", link: 'learn/zero-knowledge/iop_pcs' },
+								{ label: "PLONK", link: 'learn/learn/zero-knowledge/plonk' },
 							],
 						}
 					],
@@ -98,6 +113,14 @@ export default defineConfig({
 							items: [
 								{ label: "Introduction", link: '/getting-started/vm/introduction-sc' },
 								{
+									label: "Components",
+									items: [
+										{ label: "Piecrust", link: '/getting-started/vm/02-components/01-piecrust' },
+										{ label: "Rusk", link: '/getting-started/vm/02-components/02-rusk' },
+										{ label: "Rues", link: '/getting-started/vm/02-components/03-rues' },
+									],
+								},
+								{
 									label: "Smart Contracts on Dusk",
 									items: [
 										{ label: "Overview", link: '/getting-started/vm/01-sc-on-dusk/01-smart_contracts_on_dusk' },
@@ -107,14 +130,6 @@ export default defineConfig({
 										{ label: "Token Standards", link: '/getting-started/vm/01-sc-on-dusk/05-token_standards' },
 										{ label: "Circuits", link: '/getting-started/vm/01-sc-on-dusk/06-circuits' },
 										{ label: "Sessions", link: '/getting-started/vm/01-sc-on-dusk/07-sessions' },
-									],
-								},
-								{
-									label: "Components",
-									items: [
-										{ label: "Piecrust", link: '/getting-started/vm/02-components/01-piecrust' },
-										{ label: "Rusk", link: '/getting-started/vm/02-components/02-rusk' },
-										{ label: "Rues", link: '/getting-started/vm/02-components/03-rues' },
 									],
 								},
 								{
@@ -194,9 +209,11 @@ export default defineConfig({
 					],
 				},
 				{
-					label: "Community",
+					label: "Community and Ecosystem",
 					items: [
-						{ label: "Ecosystem Information", link: "community/overview" },
+						{ label: "Community", link: "community/overview" },
+						{ label: "Block Explorer", link: "community/block-explorer" },
+						{ label: "DIPs", link: 'community/dips' },
 					],
 				},
 			],
