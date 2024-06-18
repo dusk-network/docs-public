@@ -160,7 +160,8 @@ export default defineConfig({
 										{ label: "Token Example", link: '/getting-started/vm/03-examples/03-token-example' },
 										{ label: "Multisig", link: '/getting-started/vm/03-examples/04-multisig' },
 										{ label: "Hashing", link: '/getting-started/vm/03-examples/05-hashing' },
-									],
+										{ label: "Sessions example", link: '/getting-started/vm/03-examples/sessions-example' },
+									],	
 								},
 
 								{
