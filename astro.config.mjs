@@ -90,6 +90,7 @@ export default defineConfig({
 								{ label: "Introduction", link: 'learn/zero-knowledge/introduction' },
 								{ label: "IOP and PCS", link: 'learn/zero-knowledge/iop_pcs' },
 								{ label: "PLONK", link: 'learn/learn/zero-knowledge/plonk' },
+								{ label: "KZG", link: 'learn/learn/zero-knowledge/kzg' },
 							],
 						}
 					],
