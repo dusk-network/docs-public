@@ -57,7 +57,7 @@ export default defineConfig({
 								{
 									label: 'Transaction Models',
 									items: [
-										{ label: "Transaction Models", link: 'learn/dusk-protocol/transaction_models/transaction_models' },
+										{ label: "Overview", link: 'learn/dusk-protocol/transaction_models/overview' },
 										{ label: "Phoenix", link: 'learn/dusk-protocol/transaction_models/phoenix' },
 										{ label: "Zedger", link: 'learn/dusk-protocol/transaction_models/zedger' },
 										{ label: "Moonlight", link: 'learn/dusk-protocol/transaction_models/moonlight' },
