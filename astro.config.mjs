@@ -159,10 +159,17 @@ export default defineConfig({
 										{ label: "Comparison with VM1", link: '/getting-started/vm/03-examples/02-comparison-with-vm1' },
 										{ label: "Token Example", link: '/getting-started/vm/03-examples/03-token-example' },
 										{ label: "Multisig", link: '/getting-started/vm/03-examples/04-multisig' },
-										{ label: "Hashing", link: '/getting-started/vm/03-examples/05-hashing' },
-										{ label: "Sessions example", link: '/getting-started/vm/03-examples/sessions-example' },
-									],	
+										{ label: "Hashing", link: '/getting-started/vm/03-examples/06-hashing' },
+										{ label: "Sessions Example", link: '/getting-started/vm/03-examples/sessions-example' },
+										{ label: "Contract Calls", link: '/getting-started/vm/03-examples/contracts-calls' },
+										{ label: "Examples Overview", link: '/getting-started/vm/03-examples/examples' },
+										{ label: "Host Calls", link: '/getting-started/vm/03-examples/host-calls' },
+										{ label: "Persistence", link: '/getting-started/vm/03-examples/persistance' },
+										{ label: "Smart Contract Metadata", link: '/getting-started/vm/03-examples/sc-metadata' },
+										{ label: "Spender", link: '/getting-started/vm/03-examples/spender' }
+									]
 								},
+								
 
 								{
 									label: "FAQs and issues",
