@@ -89,8 +89,8 @@ export default defineConfig({
 							items: [
 								{ label: "Introduction", link: 'learn/zero-knowledge/introduction' },
 								{ label: "IOP and PCS", link: 'learn/zero-knowledge/iop_pcs' },
-								{ label: "PLONK", link: 'learn/learn/zero-knowledge/plonk' },
-								{ label: "KZG", link: 'learn/learn/zero-knowledge/kzg' },
+								{ label: "PLONK", link: 'learn/zero-knowledge/plonk' },
+								{ label: "KZG", link: 'learn/zero-knowledge/kzg' },
 							],
 						}
 					],

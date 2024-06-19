@@ -5,61 +5,45 @@ title: Introduction
 
 Zero Knowledge Proofs (ZKPs) are cryptographic techniques that allow a prover to convince a verifier that a given statement is true without revealing any additional information.
 
-ZKP represent a significant advancement in the field of cryptography and privacy-preserving computation, and some folks compare ZKPs to the creation of a new form of computing in the sense that they introduce novel ways of representing, manipulating, and reasoning about information. ZKPs expand the range of problems that can be solved and the methods by which they can be approached, introducing new mathematical abstractions and tools to reason about information and its manipulation.
+ZKPs represent a significant advancement in the field of cryptography and privacy-preserving computation, as they expand the range of problems that can be solved and the methods by which they can be approached. ZKPs introduce new mathematical abstractions and tools to reason about information and its manipulation.
 
-Zero Knowledge Proofs allow for more expressive and powerful privacy-preserving protocols, as the primary focus is on the relationships and transformations between different pieces of information, rather than the specific values themselves. This means that ZKPs offer a unique computing paradigm that focuses on privacy-preserving computation. This allows for the verification of computations without revealing the underlying data or the specifics of the computation itself.
+Zero Knowledge Proofs allow for more expressive and powerful privacy-preserving protocols, as the primary focus is on the relationships and transformations between different pieces of information, rather than the specific values themselves.
 
-Zero-knowledge proofs can also be viewed as a form of knowledge-compression technology, as they allow the prover to convince the verifier of a statement’s truth without transmitting the entire witness. This results in a smaller proof size and reduced communication overhead, making zero-knowledge proofs suitable for applications with bandwidth limitations or where privacy is paramount.
+ZKPs offer a unique computing paradigm that focuses on privacy-preserving computation, allowing for the verification of computations without revealing the underlying data or the specifics of the computation itself.
 
-Additionally, ZKPs can be used as a means of verifiable computation, as they enable the prover to prove the correctness of the computation without revealing any information about the computation’s input, output, or internal detail.
+ZKPs can also be viewed as a form of knowledge-compression technology, as by leveraging SNARKs they allow for a succinct proof size and reduced communication overhead.
+
+ZKPs can be also used as a means of verifiable computation, as they enable the prover to prove the correctness of the computation without revealing any information about the computation’s input, output, or internal detail.
+
+## Components
+
+To understand the ZKP process, it is important to know its essential concepts:
+- Statement: A claim or assertion that the prover wants to prove to a verifier. A statement is publicly known information.
+- Witness: a secret that the prover possesses that is used to prove the statement. The witness is the necessary element for the Prover to generate a valid proof. In a ZK setup, the Prover wants to prove to the - Verifier that he knows the witness, without showing it.
+- Prover: The party trying to prove the statement is true, without revealing the witness.
+- Verifier: The party verifying the statement’s truth without learning the witness.
+
+## Arithmetic Circuit
+
+Once we have the code representing the computation trace of the statement we want to prove, we can use an arithmetic circuit to translate that computation into algebraic equations.
+
+An arithmetic circuit is a mathematical model that allows us to represent our program as relations between polynomials. Using math, we can leverage the propriety of polynomials to prove statements.
+
+In order to construct a SNARK, the computation to be proven needs to be translated into an arithmetic circuit. By doing so, it is possible to perform very specific arithmetic operations (such as additions and multiplications over the finite field for a prime number). 
+
+An arithmetic circuit can resemble a Directed Acyclic Graph (DAG), where Internal nodes are gates that represent an arithmetic operation (x,+,-,:), and inputs are the variables.
+
+An arithmetic circuit takes as inputs some elements in the finite field and produces an element of the field as output. It is important to notice that the bigger is the computation that needs to be proven, the bigger the number of gates that are needed in the circuit. More specifically, the circuit is constrained to have a maximum number of gates equal to the degree of the polynomial.
+
+## ZKP creation and verification flow
 
 Zero-knowledge proofs achieve verifiable computation through the following process:
 
-A prover wants to convince a verifier that they have correctly performed a computation on secret input data.
-The prover creates a zero-knowledge proof demonstrating the correctness of the computation while keeping the input data secret.
-The verifier checks the proof to confirm the correctness of the computation without learning any information about the input data.
+- A prover wants to convince a verifier that they have correctly performed a computation on secret input data.
+- The prover creates a zero-knowledge proof demonstrating the correctness of the computation while keeping the input data secret.
+- The verifier checks the proof to confirm the correctness of the computation without learning any information about the input data.
 
 
-To understand the ZKP process, it is important to know its essential components:
-
-Statement: A claim or assertion that the prover wants to convince the verifier is true.
-Witness: A piece of information that proves the statement is true.
-Prover: The party trying to prove the statement is true, without revealing the witness.
-Verifier: The party verifying the statement’s truth without learning the witness.
-
-Fundamental concepts
-Let’s recap some concepts, as we will need them later on.
-
-Statement
-A statement is a claim that the Prover wants to prove to the Verifier. A statement is publicly known information, that the prover wants to prove.
-
-In our SHA256 example, the statement would be SHA256(M) = 0
-
-Witness
-A witness is a secret that the Prover possesses that is used to prove the statement. The witness is the necessary element for the Prover to generate a valid proof. In a ZK setup, the Prover wants to prove to the Verifier that he knows the witness, without showing it. In our example, the witness would be the message M.
-
-Arithmetic Circuit
-Once we have the code of the computation we want to prove, we can use an arithmetic circuit to represent that computation through algebraic relations.
-
-An arithmetic circuit is a mathematical model that allows us to represent our program as relations between polynomials. Using this math, we can leverage the propriety of polynomials to prove statements and do cool stuff. The arithmetic circuit itself tells you how to evaluate the polynomials so that you can use polynomials instead of computing in the “classical” way.
-
-So, if we want to construct a SNARK, we need to make sure that whatever code we have is translated into an arithmetic circuit. This allows us to perform arithmetic operations like additions and multiplications over the finite field. A finite field is a set of numbers from 0 to a very large prime number, on which we can perform a special type of additions and multiplications (modulo p). Therefore, to define an arithmetic circuit, we need first to choose a finite field for some prime number.
-
-You can also think of an arithmetic circuit to be a Directed Acyclic Graph (DAG), where Internal nodes are gates that represent an arithmetic operation (x,+,-,:), and inputs are the variables.
-
-There are 2 types of arithmetic circuits:
-
-Structured: the circuit is built in layers where you have one fixed arithmetic circuit that is repeated over and over again. You can think of it as a step of a microprocessor operation.
-Unstructured: a circuit with arbitrary wires
-Some SNARKS use structured circuits, and others use unstructured ones.
-
-In other words, an arithmetic circuit is a function that takes as inputs some elements in the finite field and produces an element of the field as output. The bigger the computation you want to prove, the bigger the number of gates you need to have in your circuit. The circuit is constrained to have a maximum number of gates equal to the degree of the polynomial.
-
-To get a sense, If we wanted to transform the SHA256 algorithm into an arithmetic circuit, we would have around 20 thousand gates! This would be considered to be a “small” circuit.
-
-A bigger arithmetic circuit could be one that verifies digital signatures. For example, it could take as inputs a public key, a message, and a signature, and it would output “0” if the signature is valid with respect to the public key.
-
-Flow of a Zero Knowledge Proof
 Here’s an example of how a ZKP works:
 
 The prover wants to convince the verifier that a statement is true without revealing the witness.
