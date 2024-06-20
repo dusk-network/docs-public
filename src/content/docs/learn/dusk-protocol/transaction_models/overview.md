@@ -16,14 +16,14 @@ In the account model instead, each account has a balance that increases or decre
 Dusk introduced innovative transaction models to protect user's privacy and enable flexibility when complying with regulations.
 
 # Phoenix
-Phoenix is UTXO based and privacy preserving transaction model. Phoenix is a primitive of Dusk, and it's used in the transfer of native $DUSK. With Phoenix, there are no balances connected to users' addresses. Instead, users can spend "notes" in a completely private manner by leveraging Zero Knowledge Proofs.
+[Phoenix](/src/content/docs/learn/dusk-protocol/transaction_models/phoenix) is UTXO-based and privacy preserving transaction model. Phoenix is a primitive of Dusk, and it's used in the transfer of native $DUSK. With Phoenix, there are no balances connected to users' addresses. Instead, users can spend "notes" in a completely private manner by leveraging Zero Knowledge Proofs.
 
 
 # Zedger
-Zedger is the transaction model that combines aspects of UTXO and the account model to allow for lifecycle management and regulatory compliance.
+[Zedger](/src/content/docs/learn/dusk-protocol/transaction_models/zedger) is the transaction model that combines aspects of UTXO and the account model to allow for lifecycle management and regulatory compliance.
 
 Zedger encodes the Mifid II directive, allowing for the digital representation and management of fund shares in a privacy-preserving manner. This includes both open and closed-end funds, where fund managers are able to issue, manage, and trade fund shares as tokens. Zedger supports a range of fund structures, aiming to increase transparency and reduce costs associated with fund management. The emphasis on regulatory compliance and privacy ensures that all operations meet the highest standards required by financial authorities and stakeholders.
 
 # Moonlight
-Moonlight is an account model implementation, which keeps track of account and contracts. Moonlight is fully transparent, making it easy to interact with external protocols that do not preserve privacy.
+[Moonlight](/src/content/docs/learn/dusk-protocol/transaction_models/moonlight) is an account-based transaction model, which keeps track of account and contracts. Moonlight is fully transparent, making it easy to interact with external protocols that do not preserve privacy.
 Users can deposit funds into Moonlight from Phoenix (and vice-versa), making Moonlight a completely integrated transparent model on Dusk.

@@ -4,7 +4,7 @@ title: Phoenix
 
 # Phoenix
 
-Phoenix is main transaction model used by Dusk. To understand Phoenix, it is important to note that in privacy-preserving blockchains there are no accounts or wallets at the protocol layer. Instead, coins are stored as a list of UTXOs with a quantity and some criteria for spending it. In this approach, transactions are created by consuming existing UTXOs and producing new ones in their place. In Phoenix's model, UTXOs are called notes.
+<a href="https://github.com/dusk-network/phoenix/blob/master/docs/protocol.pdf" target="_blank" >Phoenix</a> is main transaction model used by Dusk. To understand Phoenix, it is important to note that in privacy-preserving blockchains there are no accounts or wallets at the protocol layer. Instead, coins are stored as a list of UTXOs with a quantity and some criteria for spending it. In this approach, transactions are created by consuming existing UTXOs and producing new ones in their place. In Phoenix's model, UTXOs are called notes.
 
 
 Unlike transparent transaction models,  where it is easy to monitor which notes were spent, the details of the notes must be kept hidden. In this case, the network must keep track of all notes ever created by storing their hashes in the leaves of a Merkle tree of notes. When a transaction is validated, the network includes the hashes of the new notes to the leaves of this tree.
