@@ -1,7 +1,8 @@
 ---
-title: Introduction
+title: Zero Knowledge Proofs
 ---
 
+# Introduction
 
 Zero Knowledge Proofs (ZKPs) are cryptographic techniques that allow a prover to convince a verifier that a given statement is true without revealing any additional information.
 
@@ -15,17 +16,27 @@ ZKPs can also be viewed as a form of knowledge-compression technology, as by lev
 
 ZKPs can be also used as a means of verifiable computation, as they enable the prover to prove the correctness of the computation without revealing any information about the computation’s input, output, or internal detail.
 
-## Concepts
+To understand how a ZKP works, it is useful to know some basic concepts:
 
-To understand the ZKP process, it is important to know its essential concepts:
 - **Statement**: A claim or assertion that the prover wants to prove to a verifier. A statement is publicly known information.
 - **Witness**: a secret that the prover possesses that is used to prove the statement. The witness is the necessary element for the Prover to generate a valid proof. In a ZK setup, the Prover wants to prove to the - Verifier that he knows the witness, without showing it.
 - **Prover**: The party trying to prove the statement is true, without revealing the witness.
 - **Verifier**: The party verifying the statement’s truth without learning the witness.
 
-## Arithmetic Circuit
+## SNARKs
+Zero Knowledge Proofs are usually built using a Succinct Non-Interactive Argument of Knowledge (SNARK). The reason is that a SNARKs provides a succinct proof (short and fast to verify). By using SNARKs and adding Zero Knowledge proprieties, we obtain efficient zk-SNARKs.
 
-Once we have the code representing the computation trace of the statement we want to prove, we can arithmetic circuits to translate that computation into algebraic equations.
+The proprieties of a SNARK are:
+
+- **Completeness**: An honest Prover always will convince the verifier.
+- **Soundness**: if the prover lies, the verifier will reject the answer with a high probability.
+- **Succinctness**: proof is short, and verifying time is fast.
+- If the SNARK is also zero-knowledge, the verifier does not learn anything about the message itself.
+
+
+## Arithmetic Circuits
+
+Once we have the computation trace of the statement we want to prove, we can arithmetic circuits to translate that computation into algebraic equations.
 
 An arithmetic circuit is a mathematical model that can represent a computer program via relations between polynomials. Using math, we can leverage the propriety of polynomials to prove statements.
 
@@ -39,28 +50,9 @@ An arithmetic circuit can resemble a Directed Acyclic Graph (DAG), where Interna
 ![Circuit](../../../../assets/gates_unbranded.webp)
 
 
-## ZKP creation and verification flow
-
-Zero-knowledge proofs achieve verifiable computation through the following process:
-
-- A prover wants to convince a verifier that they have correctly performed a computation on secret input data.
-- The prover creates a zero-knowledge proof demonstrating the correctness of the computation while keeping the input data secret.
-- The verifier checks the proof to confirm the correctness of the computation without learning any information about the input data.
-- The prover successfully conviced the verifier that the statement is true without revealing the secret witness.
+## How to construct a zk-SNARK
 
 
-## What is a SNARK?
-A SNARK is a succinct proof that a certain statement is true. This means that the proof should be short and fast to verify. 
-
-Therefore the proprieties of a SNARK are:
-
-- **Completeness**: An honest Prover always will convince the verifier.
-- **Soundness**: if the prover lies, the verifier will reject the answer with a high probability.
-- **Succinctness**: proof is short, and verifying time is fast.
-- If the SNARK is also Zero Knowledge, the verifier does not learn anything about the message itself.
-
-
-## How to build a modern SNARK
 The state-of-art when it comes to constructing SNARKs, boils down to:
 
 - Representing the computer program via an arithmetic circuit, by using addition and multiplication gates. This transformation allows to represent the computation in the form of algebraic relations. The reason why this is important is that when working with elliptic curves (or other cryptographic primitives) complex algebraic expressions can be efficiently verified (in contrast to the operations of a computer program's bytecode).
@@ -68,8 +60,15 @@ The state-of-art when it comes to constructing SNARKs, boils down to:
 - Committing to the polynomial representation using a Polynomial Commitment Scheme. Different PCS come with different tradeoffs, properties and cryptographic assumptions. It is usually preferrableusing commitment schemes with a constant proof size (that doesn’t depend on the size of the circuit).
 - Evaluating the polynomial identity at a random point, several times. If a polynomial identity holds at a random point, it is almost guaranteed to hold at every other point (Schwartz–Zippel lemma). Being able to verify these polynomial relationships by only looking at a single point of evaluation is the reason why we can do it so efficiently.
 
+The above allows for the following flow:
 
+- A prover wants to convince a verifier that they have correctly performed a computation on secret input data.
+- The prover creates a zero-knowledge proof demonstrating the correctness of the computation while keeping the input data secret.
+- The verifier checks the proof to confirm the correctness of the computation without learning any information about the input data.
+- The prover successfully conviced the verifier that the statement is true without revealing the secret witness.
 Because of the above steps, what happens in practice is the following:
+
+Which more specifically consists in:
 
 - The prover encodes the witness by using a Polynomial Commitment Scheme, which is a cryptographic tool that allows the prover to commit to a polynomial.
 - The prover and verifier engage in an Interactive Oracle Proof (IOP), by interacting via oracle queries. During this interactive stage, the verifier queries the oracle at specific points to check the consistency of the witness with the statement.

@@ -2,23 +2,22 @@
 title: IOP and PCS
 ---
 
-To build a modern SNARK, we need to combine a cryptographic object with an information-theoretic one. By combining cryptography with interactive proofs, we obtain a succinct non-interactive arguments of knowledge (SNARK).
+By combining cryptography with interactive proofs, we obtain a succinct non-interactive arguments of knowledge (SNARK).
 
-The cryptographic object we need is a Polynomial Commitment Scheme, and the information-theoretic object we need is an Interactive Oracle Proof.
+To do so, we need a cryptographic object called Polynomial Commitment Scheme and an information-theoretic one called Interactive Oracle Proof.
 
-Therefore, the current paradigm on how to build an efficient snark for general circuits is to have:
+The current paradigm on how to build an efficient snark for general circuits is to have:
 
-- A functional Polynomial Commitment Scheme (PCS). The PCS is a cryptographic object, and its security depends on its cryptographic assumptions.
-- An Interactive Oracle Proof (IOP), compatible with the PCS. Because the IOP is an information-theoretic object, we can prove its security without underlying assumptions.
+- A **Polynomial Commitment Scheme** (PCS). The PCS is a cryptographic object, and its security depends on its cryptographic assumptions.
+- An **Interactive Oracle Proof** (IOP), compatible with the PCS. Because the IOP is an information-theoretic object, we can prove its security without underlying assumptions.
 
-The reason why we call these “modern” SNARKS, is that we figured out how to separate the IOP construction from the PCS construction. This flexibility gave us room for important innovations.
+The reason why this is considered a “modern” way to construct SNARKs, is because the IOP construction has been separated from the PCS construction, introducing the flexibility that paved the way for important innovations.
 
 
 
 
 ## Polynomial Commitment Schemes (PCS)
 
-#### "Normal" Commitments
 Before understanding what a PCS is, let’s first recap what a commitment scheme is.
 
 A commitment scheme is a protocol that needs to satisfy the following propriety(ies):
@@ -29,14 +28,13 @@ A commitment scheme is a protocol that needs to satisfy the following propriety(
 
 To have a commitment scheme, we need a commitment algorithm and a verifier algorithm.
 
-**Commit algorithm**: allows to commit a message to a random value. The output commitment string is very short (e.g. 32bytes), and its inputs are the message and the random value.
+- **Commit algorithm**: allows to commit a message to a random value. The output commitment string is very short (e.g. 32bytes), and its inputs are the message and the random value.
 - **Verifier algorithm**: runs by having as input the message, the commitment string, and the random number.
 
 As most commitment schemes use hash functions, the trivial commitment scheme would be to use a hash function and commit to the coefficients of the polynomial.
 
 Anyways, in the context of a Zero Knowledge Proof, this would mean that the prover would need to send a proof that includes all the coefficients of the polynomial. As the polynomial can be extremely big, the proof would not be succinct though. Because we need succintness to construct a SNARK, it is necessary to use a Polynomial Commitment Scheme (PCS).
 
-#### PCS
 A Polynomial Commitment Scheme (PCS) is a cryptographic protocol that is able to transform a polynomial IOP into a succinct argument of knowledge. The PCS allows the prover to simulate the polynomial IOP without explicitly sending a description of a large polynomial to the verifier.
 
 This is possible because what the verifier receives is only a commitment to the polynomial (e.g. a hash value of an element of a cryptographic group), and not the full description of the polynomial. As PCS supports the functionality that allows the verifier to choose a random point and demand that the prover evaluates the polynomial at that point, the verifier is convinced about the legitimacy of the proof after enough evaluations.
@@ -77,16 +75,15 @@ An IOP allows us to have an interactive protocol that works the following way:
 - The above steps happen for several rounds until the prover sends the last oracle for the last function.
 - Verifier uses the verification procedure to either accept or reject the proof.
 
+Combining the IOP with the PCS enables the construction of a SNARK..
 
-## Constructing a SNARK
-Combining the IOP with the PCS enables the construction of a SNARK for general circuits.
-
-The prover takes as inputs the prover parameters, the statement, and the witness. Instead, the verifier takes as inputs the verifier parameter and the statement.
-
-Public parameters for both the prover and the verifier are obtained via the pre-processing (setup).
 
 ## Pre-processing (setup)
-A setup procedure is a key step that allows to obtain the parameters for both prover and verifier algorithms. Let's first understand why this is so important.
+As both the prover and verifier algorithm take parameters as inputs, these parameters need to obtained via a pre-processing step (called "setup"). The setup procedure is a key step that allows to obtain the parameters for both prover and verifier algorithms.
+
+Let's first understand why this procedure is so important.
+
+##### Succinctness and polynomial's description
 
 If a circuit has a number of gates **d**, the polynomial would have at most a degree **d**. An important thing to note is that the verifier will need to have enough time to read the circuit if he wants to be able to verify the proofs. Allowing the verifier to read the circuit would mean that the verifier algorithm would need to run in linear time to the size of the circuit, which is a problem. Because the polynomial used to represent the circuit with can be huge (e.g. a degree of 1 billion) if the verifier algorithm was running in linear time to the size of the circuit, the proof wouldn't be succinct.
 
@@ -100,40 +97,62 @@ The pre-processing step is important, because it’s the algorithm that generate
 
 With the pre-processing step, the Verifier can work on a summary of the circuit and verify evaluations at arbitrary points without needing to know the full description of the circuit. The pre-processing steps involve an algorithm that takes as an input the circuit **C** and some randomness (random bits). The short summary of the circuit is represented via a string, and the verifier is able to know a summary of the circuit through that string.
 
-The pre-processing argument system takes in 3 algorithms: the setup, the verifier, and the prover algorithms. When it comes to inputs, the Prover takes the Prover’s public parameters, the witness, and the statement. The Verifier takes the Verifier’s public parameters, the proof, and the statement.
+##### Algorithms and inputs
+The pre-processing argument system takes in 3 algorithms: the setup, the verifier, and the prover algorithms. 
 
-## Constructing a SNARK
-To recap, here's how to construct a SNARK:
+When it comes to inputs, the Prover takes the Prover’s public parameters, the witness, and the statement. The Verifier takes the Verifier’s public parameters, the proof, and the statement.
 
-**1)** First, we choose a finite field for some prime number. Basically, we are fixing a set of functions.
-**2)** Then we write an arithmetic circuit, using the choosen finite field. The circuit would take as inouts a public statement and a private witness. The circuit would output some elements in the finite field. The arithmetic circuit has additions and multiplications gates, and the circuit takes as inputs a statement x and a witness w. This way, we can compile the computation into a SNARK-friendly format (e.g. PLONK) as we obtain an argument system.
-**3)** We need to pre-process the circuit with a setup algorithm. The setup algorithm takes a description of the circuit as input and outputs the public parameters for the Prover and Verifier. This allows us to pre-process the circuit. To be specific, the parameter for the verifier is a commitment to a bunch of polynomials. This is where the Fiat-Shamir transformation comes into play: it is the step that allows us to deal with non-interactive proof systems instead of interactive ones. The setup algorithm outputs some global parameters that are used by the Verifier and Prover. For non-interactive systems the pre-processing step is necessary, as this allows the Prover to just send the proof without any additional interactions.
-**4)** Once we choose the Prover and Verifier algorithms, we feed the public parameters into the snark backend prover system (e.g. a prover would be running something like Groth16, Plonk, Bulletproofs..).
-**5)** The Prover wants to prove that he can calculate f(x) = y. The Prover also wants to prove that the function f is included in the specific domain (the set of functions we chose before). In other words, the Prover wants to prove that for a circuit C and a statement s, he knows a witness w such as that the circuit is equal to 0, which in short means C(s,w) = 0. The witness in this case is the description of the function f along with the randomness r. Hopefully, the proof is short enough (e.g. few KBs). The first message in the protocol is the commitment to a polynomial sent from the Prover to the Verifier. To send the first message, the Prover chooses a function in the set and commits to it by running the commit algorithm. The commit algorithm outputs a commitment string, which is then used as a commitment to the global parameters, the selected function, and the randomness. This first message is important because it specifies the polynomial that the Prover committed to. After this first message, the interactive procedure starts. The interactive procedure corresponds to the evaluation protocol, which allows interactions between the Prover and the Verifier. In this interactive procedure, the messages from the Prover are short and read by the Verifier in full.
-   This procedure involves a series of rounds where:
-​ ​ ​​​ ​ ​​​ ​ ​​​ **6.1)** The Verifier chooses a random point in the finite field and asks the Prover to evaluate the polynomial on that random point. In other words, the Verifier asks the Prover to “open” the selected polynomial at a specific point.
+## How to constructing a zk-SNARK
 
-​ ​ ​​​ ​ ​​​ ​ **​​​6.2)** The Prover needs to evaluate the polynomial on the point chosen by the Verifier so that he can prove that he knows how to evaluate the function he committed to. The Prover sends back the evaluation, along with the proof that the evaluation is correct.
+The following process outlines how to construct a "modern" zk-SNARK.
 
-​ ​ ​​​ ​ ​​​ ​ ​​**​6.3)** Prover commits to another polynomial and sends the commitment to the Verifier.
+##### 1) Choose functions
+First, we choose a finite field for some prime number. Basically, we are fixing a set of functions.
 
-​ ​ ​​​ ​ ​​​ ​ **​​​6.4)** The Verifier chooses another random value and sends it to the prover.
+##### 2) Write an arithmetic circuit
 
-​ ​ ​​​ ​ ​​​ ​ **​​​6.5)** The Prover evaluates the polynomial at the new point and provides the Verifier with both the new evaluations and the new proof that the evaluation is correct.
+In order to represent the computation via polynomials, we need to write an arithmetic circuit using the choosen finite field. The circuit would take as inouts a public statement and a private witness. The circuit would output some elements in the finite field. The arithmetic circuit has additions and multiplications gates, and the circuit takes as inputs a statement x and a witness w. This way, we can compile the computation into a SNARK-friendly format (e.g. PLONK) as we obtain an argument system.
 
-**7)** The steps of point 6 are repeated for several rounds. This is a continuous interaction between the Prover and Verifier. Anyways, because we used the Fiat-Shamir transformation by doing a pre-processing, we can simulate this interaction. The verifier can ask the prover to open any of these polynomials at any point of the Verifier’s choice.
+##### 3) Pre-process the circuit
+To make sure that the final proof is succinct, we need to pre-process the circuit with a setup algorithm. The setup algorithm takes a description of the circuit as input and outputs the public parameters for the Prover and Verifier. This allows us to pre-process the circuit. To be specific, the parameter for the verifier is a commitment to a bunch of polynomials. This is where the Fiat-Shamir transformation comes into play: it is the step that allows us to deal with non-interactive proof systems instead of interactive ones. The setup algorithm outputs some global parameters that are used by the verifier and prover. For non-interactive systems the pre-processing step is necessary, as this allows the prover to just send the proof without any additional interactions.
 
-**8)** The Prover commits to the last polynomial and sends the commit. This means that the Prover commits to a function so that later on he can produce a succinct proof that the committed function satisfies f(x)=y. The Prover is proving that knows a witness (meaning a function description and a randomness)such that f(x)=y.
+##### 4) Choose algorithms and use the parameters
+Once having chosen the prover and verifier algorithms, the public parameters need to be fed into the snark backend prover system (e.g. a prover would be running something like Groth16, Plonk, Bulletproofs..).
 
-**9)** After a certain number of interactions, the Verifier then chooses whether to accept or reject the proof. The Verifier does this verification by taking as inputs the statement, the random values, and the evaluations of the polynomials at all the points that he chooses.
+##### 5) Prover / Verifier interaction
+The prover wants to prove that he can calculate ** f(x) = y**. The prover also wants to prove that the function f is included in the specific domain (the set of functions we have chosen previously).
 
-## Final SNARK
+In other words, the Prover wants to prove that for a circuit **C** and a statement s, he knows a witness w such as that the circuit is equal to **0**, which in short means **C(s,w) = 0**. The witness in this case is the description of the function f along with the randomness r. Hopefully, the proof is short enough (e.g. few KBs).
+
+The first message in the protocol is the commitment to a polynomial sent from the Prover to the Verifier. To send the first message, the Prover chooses a function in the set and commits to it by running the commit algorithm. The commit algorithm outputs a commitment string, which is then used as a commitment to the global parameters, the selected function, and the randomness. This first message is important because it specifies the polynomial that the Prover committed to. After this first message, the interactive procedure starts.
+
+**Interactive procedure**
+
+The interactive procedure corresponds to the evaluation protocol, which allows interactions between the Prover and the Verifier. In this interactive procedure, the messages from the Prover are short and read by the Verifier in full.
+This procedure involves a series of rounds where:
+- The verifier chooses a random point in the finite field and asks the Prover to evaluate the polynomial on that random point. In other words, the verifier asks the Prover to “open” the selected polynomial at a specific point.
+
+- The prover needs to evaluate the polynomial on the point chosen by the Verifier so that he can prove that he knows how to evaluate the function he committed to. The prover sends back the evaluation, along with the proof that the evaluation is correct.
+
+- The prover commits to another polynomial and sends the commitment to the verifier.
+
+- The verifier chooses another random value and sends it to the prover.The verifier can ask the prover to open any of these polynomials at any point of the verifier’s choice.
+
+- The prover evaluates the polynomial at the new point and provides the Verifier with both the new evaluations and the new proof that the evaluation is correct. 
+
+**Interactive rounds**
+
+These steps are repeated for several rounds, as this is a continuous interaction between the prover and verifier. Anyways, when using the Fiat-Shamir transformation, the interaction becomes non-interactive by being simulated via hashes obtained by an initial randomness provided by the verifier. 
+
+##### 6) Final Round
+After a certain number of interaction, the prover commits to the last polynomial and sends the commit. The verifier then chooses whether to accept or reject the proof, by taking as inputs the statement, the random values, and the evaluations of the polynomials at all the points that he chooses. By committing to the polynomial, he is providing a succinct proof that he knows a witness (the function description and a randomness)such that **f(x)=y**.
+
+## Wrap-up
 
 In summary, to build a SNARK, we parametrize the polynomial IOP by two parameters:
 
 - The number of polynomial commitments.
-- The number of evaluation queries from the verify algorithm. This is the number of points at which the prover needs to open the evaluated polynomial).
+- The number of evaluation queries from the verify algorithm (the number of points at which the prover needs to open the polynomial).
 
-The final SNARK consists in several polynomial commitments + several evaluation proofs, with the:
-- Prover sending the polynomial commitments to the Verifier.
-- Verifier running the evaluation queries several times.
+We instanciate the IOP via a PCS, constructing the final zk-SNARK by using several polynomial commitments + several evaluation proofs.
+The zk-proof is verified by having the prover sending the polynomial commitments to the verifier, which then runs the evaluation queries several times.
