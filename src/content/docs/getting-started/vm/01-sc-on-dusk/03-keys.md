@@ -2,6 +2,12 @@
 title: Cryptographic Keys
 ---
 
+Developers are free to choose any cryptographic signature algorithm when building on Dusk, as they can use various cryptographic primitives, as long as they are compatible to WASM. As an example, developers can choose BLS, JubJub Schnorr, ECDSA, Bitcoin's Secp256k1 and much more. The choice usually depends on requirements for security, signature size, and transaction efficiency.
+
+For developers opting to use BLS signatures, it is recommended to leverage the ```rusk_abi::verify_bls``` host function provided by Dusk. This function enables signature verification to be offloaded to the host, minimizing the gas consumption and execution time of contracts. Directly including complex cryptographic operations within the contract is still possible but less efficient in terms of gas usage.
+
+For those beginning token development on Dusk, it might be beneficial to start with an available ECDSA scheme that easily compiles to WASM, optimizing the development process. As the project progresses, developers can switch to a more suitable or advanced cryptographic algorithm based on the evolving needs and security requirements of their application.
+
 ## Types of keys
 Dusk uses BLS keys in the consensus and consequently the stake contract. They are called private and public keys. The keys used to handle Dusk are <a href="https://github.com/dusk-network/jubjub-schnorr" target="_blank" >JubJub-Schnorr</a> keys. Here there are ```PublicSpendKeys``` and ```SecretSpendKeys```, as well as ```PublicKeys``` and ```SecretKeys```. These are the ones used by the transfer contract. The former are the equivalent to the normal key-pairs one would hold, while the latter are single-use keys used to prove and assign note ownership, and are derived from the former. Dusk guarantees that the ```contract_id``` is a valid BLS scalar, but it’s not a <a href="https://github.com/dusk-network/bls12_381-sign" target="_blank" >BLS key</a>. Even if a BLS secret key is just a scalar in the BLS field, this doesn't mean that one should see any scalar in the BLS field as a secret key in general. In the case of Dusk, contract IDs are not secret keys because if the secret key is the contract ID the "secret" key would not be so secret
 

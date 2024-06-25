@@ -4,12 +4,23 @@ title: Interacting with a contract
 
 ## Sending and Withdrawing funds from contract
 
-Sending
+
+The transfer-contract (will) provide(s) two functions that can be used to withdraw or deposit funds to and from a contract.
+
+deposit funds into a contract, which essentially turn phoenix notes into a balance for that contract
+withdraw funds from a contract, which turns said balance into phoenix notes again
+
+Both functions will be triggered by a call to the transfer-contract and the gas will always be paid in phoenix notes (for now).
+
+Since the contract-balances are stored as part of the state of the transfer-contract there is no mechanism needed for a contract to 'consume' it's funds. 
+
+
+### Sending
 User makes transaction with crossover and with a call to the contract function taking Dusk (e.g. stake)
 During execution of the function, the contract calls the transfer contract to "pick up" the Dusk left for it, panicking if not there
 Contract proceeds with the knowledge that it now has that Dusk in its wallet
 
-Withdrawing
+### Withdrawing
 User makes transaction without crossover and with a call to the contract function outputting Dusk (e.g. unstake)
 During execution of the function, the contract takes the (given) stealth address and calls the transfer contract with it, sending money to said address.
 Contract proceeds with he knowledge that that amount was successfully transferred to the stealth address
