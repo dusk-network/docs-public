@@ -14,15 +14,15 @@ The interaction between the smart contract and the host involves a series of ste
 
 **1) Function Signature:** The function to be called from the host has a specific signature ```(fn foo(u32) -> u32)```. This uniformity is necessary because it simplifies the interface through which the host VM interacts with the contract, ensuring that calls are predictable and structured.
 
-- **2) Writing to the Argument Buffer:** Instead of passing complex and potentially variable data types directly, the host writes these data into a designated argument buffer. This method standardizes how data is input to the contract, regardless of the specific operation being performed.
+**2) Writing to the Argument Buffer:** Instead of passing complex and potentially variable data types directly, the host writes these data into a designated argument buffer. This method standardizes how data is input to the contract, regardless of the specific operation being performed.
 
-- **3) Calling the Function:** The smart contract’s function is invoked with an argument that typically represents the length or size of the data in the buffer. This helps the contract know how much data it needs to process.
+**3) Calling the Function:** The smart contract’s function is invoked with an argument that typically represents the length or size of the data in the buffer. This helps the contract know how much data it needs to process.
 
--** 4) Deserialization of Data:** The contract reads and deserializes the data from the argument buffer. Deserialization is converting data from a byte array (buffer) into usable data types within the contract.
+** 4) Deserialization of Data:** The contract reads and deserializes the data from the argument buffer. Deserialization is converting data from a byte array (buffer) into usable data types within the contract.
 
-- **5) Contract Processing:** The contract performs its intended operations using the deserialized data.
+**5) Contract Processing:** The contract performs its intended operations using the deserialized data.
 
-- **6) Serializing Results into the Argument Buffer:** After processing, the contract serializes any results back into the argument buffer. Serialization is the process of converting the contract's internal data types back into a standardized byte format that can be read by the host.
+**6) Serializing Results into the Argument Buffer:** After processing, the contract serializes any results back into the argument buffer. Serialization is the process of converting the contract's internal data types back into a standardized byte format that can be read by the host.
 
 **7) Return Data Length:** The contract returns the length of the serialized data, informing the host how much data to read from the buffer.
 

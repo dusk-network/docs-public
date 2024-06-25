@@ -130,6 +130,7 @@ export default defineConfig({
 										{ label: "Functions", link: '/getting-started/vm/01-sc-on-dusk/04-functions' },
 										{ label: "Token Standards", link: '/getting-started/vm/01-sc-on-dusk/05-token_standards' },
 										{ label: "Circuits", link: '/getting-started/vm/01-sc-on-dusk/06-circuits' },
+										{ label: "Hashing", link: '/getting-started/vm/01-sc-on-dusk/hashing' },
 										{ label: "Sessions", link: '/getting-started/vm/01-sc-on-dusk/07-sessions' },
 									],
 								},
@@ -160,7 +161,7 @@ export default defineConfig({
 										{ label: "Comparison with VM1", link: '/getting-started/vm/03-examples/02-comparison-with-vm1' },
 										{ label: "Token Example", link: '/getting-started/vm/03-examples/03-token-example' },
 										{ label: "Multisig", link: '/getting-started/vm/03-examples/04-multisig' },
-										{ label: "Hashing", link: '/getting-started/vm/03-examples/06-hashing' },
+		
 										{ label: "Sessions Example", link: '/getting-started/vm/03-examples/sessions-example' },
 										{ label: "Contract Calls", link: '/getting-started/vm/03-examples/contracts-calls' },
 										{ label: "Examples Overview", link: '/getting-started/vm/03-examples/examples' },

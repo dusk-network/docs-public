@@ -82,7 +82,7 @@ By using the note's public key, a user can delegate the job of scanning the diff
 On the other hand, the note's secret key can only be computed by the recipient of the note, since they are the only ones holding the whole secret key ```sk = (a,b)```. The recipient can use the note secret key to spend the note.
 
 
-### Phoenix 2.0
+### Phoenix 2.0 release
 
 As Phoenix has been updated to Phoenix 2.0, transactions also specify an encrypted sender’s public key that only the recipient can decrypt. 
 
