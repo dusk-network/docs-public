@@ -132,6 +132,9 @@ export default defineConfig({
 										{ label: "Circuits", link: '/getting-started/vm/01-sc-on-dusk/06-circuits' },
 										{ label: "Hashing", link: '/getting-started/vm/01-sc-on-dusk/hashing' },
 										{ label: "Sessions", link: '/getting-started/vm/01-sc-on-dusk/07-sessions' },
+										{ label: "Comparison", link: '/getting-started/vm/01-sc-on-dusk/comparison' },
+										{ label: "Semantics", link: '/getting-started/vm/01-sc-on-dusk/semantics' },
+										{ label: "Serialization", link: '/getting-started/vm/01-sc-on-dusk/serialization' },
 									],
 								},
 								{

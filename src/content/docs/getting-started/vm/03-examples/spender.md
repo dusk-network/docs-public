@@ -1,8 +1,11 @@
 ---
-title: Sessions example
+title: Monitoring Gas Usage
 ---
-Guide to Managing Gas Usage and Persistence in Smart Contracts
-This guide highlights the key pieces of managing gas usage and persistence in smart contracts, explaining the relevant concepts and pointing out where they can be found in the contract or test files.
+
+This page provides an overview on how to manage and track gas usage in smart contracts. By tracking the gas spent on contract calls, developers can gain insights on the computational cost and optimize performance.
+
+Developers are encouraged to have a deeper look at the <a href="https://github.com/dusk-network/piecrust/blob/main/contracts/spender/src/lib.rs" target="_blank" >spender contract</a> , as well as the <a href="https://github.com/dusk-network/piecrust/blob/main/piecrust/tests/spender.rs" target="_blank">test file</a>.
+
 
 Key Insights
 Gas Usage Tracking

@@ -4,9 +4,6 @@ title: Semantics
 
 When looking at the examples contracts, developers will notice some recurring elements. In this page, we provide an explication on why these elements are needed
 
-## Sessions
-Each test function uses a temporary VM instance (```VM::ephemeral()```) and creates sessions (```vm.session(SessionData::builder())?```).
-
 ## no_std
 The absence of the standard library to due to the fact that won't be available on Piecrust runtime, and removing it allows to optimize resources For this reason you will see #![no_std] at the beginning of contracts.
 
@@ -21,6 +18,8 @@ By using the #[no_mangle] attribute, developers ensure that the compiler does no
 Therefore contract methods are exposed to the host environment using #[no_mangle] and ```uplink::wrap_call```, facilitating safe interaction with the host.
 
 
-
 ## uplink::wrap_call
 The ```uplink::wrap_call```  macro serves to wrap contract methods in a way that ensures they can be safely and effectively called by the host environment. This ensures that any errors that occur during the execution of the function are caught and handled appropriately, avoiding uncontrolled errors that can affect the VM state. Wrapping the call also helps converting inputs and outputs between the formats expected by the smart contract and those used by the host environment (e.g. data type conversions), as well as performing security checks. For these reasons, ```piecrust_uplink``` is used for interacting with the host environment and other contracts.
+
+## Sessions
+Each test function uses a temporary VM instance (```VM::ephemeral()```) and creates sessions (```vm.session(SessionData::builder())?```).
