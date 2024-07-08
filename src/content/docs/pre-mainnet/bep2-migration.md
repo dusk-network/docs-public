@@ -44,4 +44,4 @@ Dusk will make an announcement when the payout has been completed. Once you rece
 
 ## Need Help?
 
-if you encounter any issues or have questions during hte migration process, please reach out to us on our official [Telegram](https://t.me/DuskNetwork) or [Discord channel](https://discord.com/channels/847466263064346624/1223314872834588865).
+if you encounter any issues or have questions during the migration process, please reach out to us on our official [Telegram](https://t.me/DuskNetwork) or [Discord channel](https://discord.com/channels/847466263064346624/1223314872834588865).
