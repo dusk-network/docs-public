@@ -7,7 +7,7 @@ The Dusk Nocturne testnet uses a Discord bot to distribute Nocturne tokens (nDUS
 
 In order to access it, follow these steps:
 
-1. Access the [Dusk Discord server](https://discord.gg/dusknetwork).
+1. Access the [Dusk Discord server](https://discord.gg/dusk-official).
 2. Among the team members, locate the bot "Dusk Testnet Faucet."
 3. Right-click and select "Message."
 4. Send `!dusk` as a command. The bot will reply, asking for your Testnet wallet address. 
@@ -24,7 +24,7 @@ There is currently a 24-hour cooldown period before you can ask for nDUSK again 
 
 **Q: How do I access the Dusk Discord server?** 
 
-You can access the Discord server by clicking on [this link](https://discord.gg/dusknetwork).
+You can access the Discord server by clicking on [this link](https://discord.gg/dusk-official).
 
 **Q: How long before I will see my nDUSK?** 
 

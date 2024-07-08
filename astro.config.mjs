@@ -32,7 +32,7 @@ export default defineConfig({
 			social: {
 				github: "https://github.com/dusk-network",
 				"x.com": "https://x.com/duskfoundation",
-				discord: "https://discord.com/invite/dusknetwork",
+				discord: "https://discord.com/invite/dusk-official",
 				linkedin: "https://www.linkedin.com/company/dusknetwork/",
 				telegram: "https://t.me/DuskNetwork",
 				youtube: "https://www.youtube.com/c/DuskNetwork",
