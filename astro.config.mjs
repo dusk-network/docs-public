@@ -59,8 +59,8 @@ export default defineConfig({
 									items: [
 										{ label: "Overview", link: 'learn/dusk-protocol/transaction_models/overview' },
 										{ label: "Phoenix", link: 'learn/dusk-protocol/transaction_models/phoenix' },
-										{ label: "Zedger", link: 'learn/dusk-protocol/transaction_models/zedger' },
 										{ label: "Moonlight", link: 'learn/dusk-protocol/transaction_models/moonlight' },
+										{ label: "Zedger", link: 'learn/dusk-protocol/transaction_models/zedger' },
 									],
 								},
 								{ label: "Resources", link: 'learn/dusk-protocol/additional-resources' },
@@ -130,11 +130,11 @@ export default defineConfig({
 										{ label: "Functions", link: '/getting-started/vm/01-sc-on-dusk/04-functions' },
 										{ label: "Token Standards", link: '/getting-started/vm/01-sc-on-dusk/05-token_standards' },
 										{ label: "Circuits", link: '/getting-started/vm/01-sc-on-dusk/06-circuits' },
-										{ label: "Hashing", link: '/getting-started/vm/01-sc-on-dusk/hashing' },
 										{ label: "Sessions", link: '/getting-started/vm/01-sc-on-dusk/07-sessions' },
-										{ label: "Comparison", link: '/getting-started/vm/01-sc-on-dusk/comparison' },
-										{ label: "Semantics", link: '/getting-started/vm/01-sc-on-dusk/semantics' },
-										{ label: "Serialization", link: '/getting-started/vm/01-sc-on-dusk/serialization' },
+										{ label: "Hashing", link: '/getting-started/vm/01-sc-on-dusk/08-hashing' },
+										{ label: "Semantics", link: '/getting-started/vm/01-sc-on-dusk/09-semantics' },
+										{ label: "Serialization", link: '/getting-started/vm/01-sc-on-dusk/10-serialization' },
+										{ label: "Comparison", link: '/getting-started/vm/01-sc-on-dusk/11-comparison' },
 									],
 								},
 								{
@@ -160,18 +160,17 @@ export default defineConfig({
 								{
 									label: "Examples",
 									items: [
+										{ label: "Examples Overview", link: '/getting-started/vm/03-examples/examples' },
 										{ label: "Counter Example", link: '/getting-started/vm/03-examples/01-counter-example' },
 										{ label: "Comparison with VM1", link: '/getting-started/vm/03-examples/02-comparison-with-vm1' },
 										{ label: "Token Example", link: '/getting-started/vm/03-examples/03-token-example' },
 										{ label: "Multisig", link: '/getting-started/vm/03-examples/04-multisig' },
-		
-										{ label: "Sessions Example", link: '/getting-started/vm/03-examples/sessions-example' },
-										{ label: "Contract Calls", link: '/getting-started/vm/03-examples/contracts-calls' },
-										{ label: "Examples Overview", link: '/getting-started/vm/03-examples/examples' },
-										{ label: "Host Calls", link: '/getting-started/vm/03-examples/host-calls' },
-										{ label: "Persistence", link: '/getting-started/vm/03-examples/persistance' },
-										{ label: "Smart Contract Metadata", link: '/getting-started/vm/03-examples/sc-metadata' },
-										{ label: "Spender", link: '/getting-started/vm/03-examples/spender' }
+										{ label: "Sessions Example", link: '/getting-started/vm/03-examples/05-sessions-example' },
+										{ label: "Contract Calls", link: '/getting-started/vm/03-examples/06-contracts-calls' },
+										{ label: "Host Calls", link: '/getting-started/vm/03-examples/07-host-calls' },
+										{ label: "Persistence", link: '/getting-started/vm/03-examples/08-persistance' },
+										{ label: "Smart Contract Metadata", link: '/getting-started/vm/03-examples/09-sc-metadata' },
+										{ label: "Spender", link: '/getting-started/vm/03-examples/10-spender' }
 									]
 								},
 								
