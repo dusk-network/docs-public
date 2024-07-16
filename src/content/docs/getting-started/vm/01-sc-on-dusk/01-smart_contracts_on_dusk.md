@@ -4,6 +4,7 @@ title: Smart Contracts on Dusk
 
 ## Overview
 
+Smart Contracts are a key feature of Dusk, and they play an fundamental role also at a protocol level. More specifically, both staking and transfering functionalities are implemented via <a href="https://github.com/dusk-network/rusk/tree/master/contracts" target="_blank" >contracts</a> .
 
 Dusk offers robust support for smart contracts, as developers can leverage the features offered by <a href="https://github.com/dusk-network/piecrust" target="_blank" >Piecrust</a>, <a href="https://github.com/dusk-network/piecrust/blob/main/piecrust-uplink/README.md" target="_blank" >piecrust-uplink</a>  and  <a href="https://github.com/dusk-network/rusk" target="_blank" >Rusk</a>.
 
@@ -32,10 +33,10 @@ Clients can subscribe to events emitted by both smart contracts and nodes by usi
 
 
 
-## Owner
+##### Owner
 Every contract has a owner ID that can perform upgrade operations, etc.
 
 
-## Examples
+##### Examples
 
 There are several <a href="https://github.com/dusk-network/piecrust/tree/main/contracts" target="_blank" >smart contracts examples</a> available, which can be used for reference.

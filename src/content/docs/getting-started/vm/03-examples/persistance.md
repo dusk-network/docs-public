@@ -1,5 +1,5 @@
 ---
-title: Persistence across Sessions
+title: Persistence
 ---
 
 This page provides an overview on how to manage persistence in smart contracts using sessions. 

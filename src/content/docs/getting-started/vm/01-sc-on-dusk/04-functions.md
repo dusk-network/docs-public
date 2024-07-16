@@ -7,9 +7,11 @@ Host functions are functions provided by rusk (the "host") and can be called fro
 
 Simply put, host functions are necessary because they allow smart contracts to interact with the system-level functions of the machine on which they run.
 
-# Functions Signature and Calling Sequence
+## Functions Signature and Calling Sequence
 
-The interaction between the smart contract and the host involves a series of steps designed to safely pass data back and forth while respecting the sandboxed environment in which the smart contract operates. Here's a breakdown of the process and why each step is crucial:
+The interaction between the smart contract and the host involves a series of steps designed to safely pass data back and forth while respecting the sandboxed environment in which the smart contract operates. 
+
+Here's a breakdown of the process and why each step is crucial:
 
 **1) Function Signature:** The function to be called from the host has a specific signature ```(fn foo(u32) -> u32)```. This uniformity is necessary because it simplifies the interface through which the host VM interacts with the contract, ensuring that calls are predictable and structured.
 
@@ -17,7 +19,7 @@ The interaction between the smart contract and the host involves a series of ste
 
 **3) Calling the Function:** The smart contract’s function is invoked with an argument that typically represents the length or size of the data in the buffer. This helps the contract know how much data it needs to process.
 
-** 4) Deserialization of Data:** The contract reads and deserializes the data from the argument buffer. Deserialization is converting data from a byte array (buffer) into usable data types within the contract.
+**4) Deserialization of Data:** The contract reads and deserializes the data from the argument buffer. Deserialization is converting data from a byte array (buffer) into usable data types within the contract.
 
 **5) Contract Processing:** The contract performs its intended operations using the deserialized data.
 
@@ -28,7 +30,6 @@ The interaction between the smart contract and the host involves a series of ste
 **8) Host Reads Buffer:** Finally, the host reads the output data from the buffer based on the provided length.
 
 
+:::note
 The use of an argument buffer and the serialization/deserialization prevents unsafe interactions between the host and the contract's internal state, ensuring that data passed between the host and the contract is done so in a controlled manner.
-
-By requiring that all data pass through the buffer and serialized data format, Dusk manages data integrity, security, and contract execution fidelity.
-
+:::

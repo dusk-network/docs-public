@@ -6,15 +6,21 @@ title: Passing data across contracts
 
 On Dusk, smart contracts are handled via sessions, as this provides a structured and reliable way to manage state changes across contract calls. By grouping a series of contract calls into sessions and using a commit to capture all state changes made during that session, complex operations to be batched together. By doing so, changes are either fully completed or not saved at all, thus maintaining the integrity of the state.
 
+
 Each commit acts as a snapshot of the contract state at a particular point in time. When new sessions are initiated, they start with the base state from these commits. This design ensures that the state is not only consistent across sessions but also provides a clear rollback path to a legitimate state if a session encounters issues that requires a reversion to a previous state. 
-
-Additionally, by grouping contract calls into sessions with commits, error handling can be more effectively managed. If an error occurs during a session, the changes can be discarded, and the contract state can revert to the last committed state. 
-
-Since each commit represents a definitive state at a certain point, it's easier to trace how contract states evolved over time. 
 
 Sessions provide isolated execution environments within the VM, allowing developers to deploy contracts, call methods, and manage state changes without affecting other sessions.
 
 Developers have the capability to write ephemeral data within a smart contract, meaning this data can be temporarily stored and destroyed after the call, but still retrieved later within the contract's lifecycle.
+
+Additionally, by grouping contract calls into sessions with commits, error handling can be more effectively managed. Since each commit represents a definitive state at a certain point, it's easier to trace how contract states evolved over time.
+
+:::note
+If an error occurs during a session, changes can be discarded and the contract state can revert to the last committed state.
+:::
+ 
+ 
+
 
 ## Retrieving call context
 

@@ -4,7 +4,7 @@ title: Host Calls
 
 This page provides an overview on how to handle host calls, by using as an example the implementation of a ZKP circuit.
 
-Developers are encouraged to have a deeper look at the <a href="https://github.com/dusk-network/piecrust/tree/main/contracts/hosts" target="_blank" >host contract</a>, and its <a href="https://github.com/dusk-network/piecrust/blob/main/piecrust/tests/host.rs" target="_blank" >test file</a>.
+Developers are encouraged to have a deeper look at the <a href="https://github.com/dusk-network/piecrust/blob/main/contracts/host/src/lib.rs" target="_blank" >host contract</a>, and its <a href="https://github.com/dusk-network/piecrust/blob/main/piecrust/tests/host.rs" target="_blank" >test file</a>.
 
 
 It is common for the contract itself to only deal with the operations that directly modify its state, while complex computations and verifications are delegated to external host queries.
@@ -13,8 +13,7 @@ The test code includes the implementations of host queries (```hash```, ```verif
 
 The test code also contains the code to generate public parameters and compiling the circuit using <a href="https://github.com/dusk-network/plonk" target="_blank" > PLONK</a>.  
 
-
-## Registration, Implementations and Calls
+## Registration, Implementations and Calls
 
 The host query integration demonstrates how to register and use custom host queries by using ```vm.register_host_query```:
 

@@ -5,12 +5,10 @@ title: Metadata
 
 Smart contract metadata includes a variety of information that describes the smart contract's structure, functionality, and other relevant details.
 
-This page provides an overview on how to manage and verify metadata in smart contract.
-
 Developers are encouraged to have a look at the <a href="https://github.com/dusk-network/piecrust/blob/main/contracts/metadata/src/lib.rs" target="_blank" >metadata contract</a> and check out the <a href="https://github.com/dusk-network/piecrust/blob/main/piecrust/tests/metadata.rs" target="_blank" >metadata test</a> file.
 
 
-The Metadata contract is designed to manage and retrieve various metadata attributes for smart contracts, and defines the following functions:
+The metadata contract is designed to manage and retrieve various metadata attributes for smart contracts, and defines the following functions:
 
 ```read_owner```: Retrieves the owner of the current contract.
 ```read_id```: Retrieves the ID of the current contract.
