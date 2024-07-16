@@ -3,29 +3,9 @@ title: Smart Contract Example
 ---
 
 
+This example shows how to upgrade a contract to a new version while preserving its state:
 
-Contract Migration
-Purpose: Demonstrates how to migrate a contract to a new version while preserving its state and possibly modifying attributes like the owner.
-
-Key Concepts
-Contract Upgrade Mechanism:
-
-Shows how to migrate a contract to a new version while preserving its state.
-Ensures continuity by transferring the state from the old contract to the new contract.
-State Preservation:
-
-During migration, the state from the old contract is transferred to the new contract.
-Owner Modification:
-
-Demonstrates how to change the owner of a contract during migration.
-Contract ID Consistency:
-
-Ensures that the contract ID remains the same across migrations, which is crucial for maintaining references to the contract.
-Examples
-State Preservation and Upgrade Mechanism:
-
-rust
-Copiar código
+```rust
 #[test]
 fn migration() -> Result<(), Error> {
     let vm = VM::ephemeral()?;
@@ -59,10 +39,13 @@ fn migration() -> Result<(), Error> {
 
     Ok(())
 }
-Owner Modification:
 
-rust
-Copiar código
+```
+
+The following example shows how to modify metadata attributes like ```OWNER```:
+
+
+```rust
 #[test]
 fn migration_new_owner() -> Result<(), Error> {
     let vm = VM::ephemeral()?;
@@ -84,3 +67,4 @@ fn migration_new_owner() -> Result<(), Error> {
 
     Ok(())
 }
+```

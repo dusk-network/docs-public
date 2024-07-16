@@ -2,65 +2,14 @@
 title: Monitoring Gas Usage
 ---
 
-This page provides an overview on how to manage and track gas usage in smart contracts. By tracking the gas spent on contract calls, developers can gain insights on the computational cost and optimize performance.
+This page provides an overview on how to manage and track gas usage in smart contracts. By tracking the gas spent on contract calls, developers can gain insights on the computational cost and optimize the performance of their contracts.
 
 Developers are encouraged to have a deeper look at the <a href="https://github.com/dusk-network/piecrust/blob/main/contracts/spender/src/lib.rs" target="_blank" >spender contract</a> , as well as the <a href="https://github.com/dusk-network/piecrust/blob/main/piecrust/tests/spender.rs" target="_blank">test file</a>.
 
 
-Key Insights
-Gas Usage Tracking
-Error Handling
-Contract-Defined Call Limits
-Detailed Gas Usage Analysis
-Gas Usage Tracking
-Purpose: Track the gas spent on contract calls to understand the computational cost and optimize performance.
+The contract uses a  ```get_limit_and_spent``` method which tracks gas limits and consumption before and after inter-contract calls:
 
-Contract:
-
-get_limit_and_spent Method:
-Tracks gas limits and consumption before and after inter-contract calls.
-Measures the gas used by internal calls.
-Code Snippet:
-
-rust
-Copiar código
-pub fn get_limit_and_spent(&self) -> (u64, u64, u64, u64, u64) {
-    let self_id = uplink::self_id();
-    let limit = uplink::limit();
-    let spent_before = uplink::spent();
-
-    match uplink::caller().is_uninitialized() {
-        true => {
-            let (called_limit, called_spent, _, _, _): (u64, u64, u64, u64, u64) = 
-                uplink::call(self_id, "get_limit_and_spent", &()).expect("Self query should succeed");
-
-            let spent_after = uplink::spent();
-            (limit, spent_before, spent_after, called_limit, called_spent)
-        }
-        false => (limit, spent_before, 0
-wait just focus on the last content i gave you.. u sure u need to put persistance? It's just the spender
-
-ChatGPT
-Guide to Managing Gas Usage in Smart Contracts
-This guide highlights the key aspects of managing gas usage in smart contracts, explaining the relevant concepts and pointing out where they can be found in the contract or test files.
-
-Key Insights
-Gas Usage Tracking
-Error Handling
-Contract-Defined Call Limits
-Detailed Gas Usage Analysis
-Gas Usage Tracking
-Purpose: Track the gas spent on contract calls to understand the computational cost and optimize performance.
-
-Contract:
-
-get_limit_and_spent Method: (Contract File)
-Tracks gas limits and consumption before and after inter-contract calls.
-Measures the gas used by internal calls.
-Code Snippet:
-
-rust
-Copiar código
+```rust
 pub fn get_limit_and_spent(&self) -> (u64, u64, u64, u64, u64) {
     let self_id = uplink::self_id();
     let limit = uplink::limit();
@@ -77,28 +26,11 @@ pub fn get_limit_and_spent(&self) -> (u64, u64, u64, u64, u64) {
         false => (limit, spent_before, 0, 0, 0),
     }
 }
-Error Handling
-Purpose: Properly handle out-of-gas scenarios to prevent unexpected contract failures and improve debugging.
+```
 
-Contract:
+The test file  provides a way to handle out-of-gas scenarios, preventing unexpected contract failures and improve debugging. This is done by using a method that consumes all provided gas by causing a panic to simulate out-of-gas scenarios:
 
-spend Method: (Contract File)
-Consumes all provided gas by causing a panic to simulate out-of-gas scenarios.
-Code Snippet:
-
-rust
-Copiar código
-pub fn spend(&self) {
-    panic!("I like spending");
-}
-Test:
-
-Out-of-Gas Error Handling: (Test File)
-Ensures that contracts handle insufficient gas scenarios properly.
-Code Snippet:
-
-rust
-Copiar código
+```rust
 #[test]
 pub fn fails_with_out_of_gas() -> Result<(), Error> {
     let vm = VM::ephemeral()?;
@@ -110,17 +42,12 @@ pub fn fails_with_out_of_gas() -> Result<(), Error> {
 
     Ok(())
 }
-Contract-Defined Call Limits
-Purpose: Define internal gas limits for calls to control execution costs and prevent excessive gas consumption.
+```
 
-Test:
+Developers can define internal gas limits for calls to control execution costs and prevent excessive gas consumption. 
+The test file shows how to verify that the gas spent aligns with the defined limits for contract calls:
 
-Setting Call Limits: (Test File)
-Verifies that the gas spent aligns with the defined limits for contract calls.
-Code Snippet:
-
-rust
-Copiar código
+```rust
 #[test]
 pub fn contract_sets_call_limit() -> Result<(), Error> {
     let vm = VM::ephemeral()?;
@@ -145,21 +72,11 @@ pub fn contract_sets_call_limit() -> Result<(), Error> {
 
     Ok(())
 }
-Detailed Gas Usage Analysis
-Purpose: Analyze gas limits and usage before and after contract calls to understand the actual computational costs and identify optimization opportunities.
+```
 
-Contract:
+Finally, by using the ```get_limit_and_spent``` method, developers can analyze gas limits and usage before and after contract calls. This is useful to understand the actual computational costs and identify optimization opportunities:
 
-get_limit_and_spent Method: (Contract File)
-Provides detailed tracking of gas limits and consumption.
-Test:
-
-Gas Usage Analysis: (Test File)
-Compares expected and actual gas usage for different contract calls.
-Code Snippet:
-
-rust
-Copiar código
+```rust
 #[test]
 pub fn limit_and_spent() -> Result<(), Error> {
     let vm = VM::ephemeral()?;
@@ -184,3 +101,4 @@ pub fn limit_and_spent() -> Result<(), Error> {
 
     Ok(())
 }
+```
