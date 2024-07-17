@@ -168,8 +168,8 @@ export default defineConfig({
 										{ label: "Contract Calls", link: '/getting-started/vm/03-examples/06-contracts-calls' },
 										{ label: "Host Calls", link: '/getting-started/vm/03-examples/07-host-calls' },
 										{ label: "Persistence", link: '/getting-started/vm/03-examples/08-persistance' },
-										{ label: "Smart Contract Metadata", link: '/getting-started/vm/03-examples/09-sc-metadata' },
-										{ label: "Spender", link: '/getting-started/vm/03-examples/10-spender' }
+										{ label: "Metadata", link: '/getting-started/vm/03-examples/09-sc-metadata' },
+										{ label: "Gas Usage", link: '/getting-started/vm/03-examples/10-spender' }
 									]
 								},
 								

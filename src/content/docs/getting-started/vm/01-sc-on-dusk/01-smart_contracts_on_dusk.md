@@ -13,7 +13,7 @@ In order to deploy a smart contract, developers only need to compile their contr
 Even if developers can use any programming language that compiles to WASM (e.g.  C, C++, Go...), most developers prefer writing smart contracts in Rust due to its efficiency and security benefits.
 
 
-##### Methods
+## Methods
 
 Smart contracts on the Dusk blockchain employ two types of methods: 
 - **Queries**: designed to retrieve data without altering the contract’s state.
@@ -23,7 +23,7 @@ This distinction is crucial for understanding how smart contracts interact with 
 
 Understanding the mechanism of argument passing to and from queries and transactions is beneficial, as each contract has a memory area for argument passing, and host methods simplify this process by handling the details. Utilizing host-provided methods can result in significant computational power savings, especially for intensive functions like cryptographic and zero-knowledge proofs.
 
-##### Events
+## Events
 
 Contracts on Dusk can use events as a lightweight mechanism to provide feedback, and they are particularly useful for triggering actions on the caller's side.
 
@@ -32,14 +32,6 @@ Events serve as a logging mechanism that facilitates interactions between variou
 Clients can subscribe to events emitted by both smart contracts and nodes by using the Rusk Universal Event System <a href="https://github.com/dusk-network/rusk/wiki/RUES-(Rusk-Universal-Event-System)" target="_blank" >Rusk Universal Event System</a>.
 
 
-
-##### Owner
-Every contract has a owner ID that can perform upgrade operations, etc.
-
-
-##### Examples
-
-There are several <a href="https://github.com/dusk-network/piecrust/tree/main/contracts" target="_blank" >smart contracts examples</a> available, which can be used for reference.
 
 ## Comparison
 
@@ -51,3 +43,8 @@ Here a simplified comparison between Dusk and other smart contracts platforms:
 | Transaction Models       | Account-based               | Account-based                | Account-based                | UTXO and account-based     |
 | Compiling Target         | EVM bytecode                | WASM                         | BPF                          | WASM                       |
 | VM                       | EVM | No               | Sealevel                     | Piecrust                    |
+
+
+## Examples
+
+There are several <a href="https://github.com/dusk-network/piecrust/tree/main/contracts" target="_blank" >smart contracts examples</a> available, which can be used for reference.
