@@ -134,7 +134,6 @@ export default defineConfig({
 										{ label: "Hashing", link: '/getting-started/vm/01-sc-on-dusk/08-hashing' },
 										{ label: "Semantics", link: '/getting-started/vm/01-sc-on-dusk/09-semantics' },
 										{ label: "Serialization", link: '/getting-started/vm/01-sc-on-dusk/10-serialization' },
-										{ label: "Comparison", link: '/getting-started/vm/01-sc-on-dusk/11-comparison' },
 									],
 								},
 								{
@@ -178,8 +177,8 @@ export default defineConfig({
 								{
 									label: "FAQs and issues",
 									items: [
-										{ label: "FAQs", link: '/getting-started/vm/06-faqs-issues/01-FAQs' },
-										{ label: "Troubleshooting", link: 'src/content/docs/getting-started/vm/06-faqs-issues/02-troubleshooting' },
+										{ label: "FAQs", link: '/getting-started/vm/06-faqs-issues/01-faqs' },
+										{ label: "Troubleshooting", link: '/getting-started/vm/06-faqs-issues/02-troubleshooting' },
 
 									],
 								},

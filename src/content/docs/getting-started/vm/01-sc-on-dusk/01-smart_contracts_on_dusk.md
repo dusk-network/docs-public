@@ -40,3 +40,14 @@ Every contract has a owner ID that can perform upgrade operations, etc.
 ##### Examples
 
 There are several <a href="https://github.com/dusk-network/piecrust/tree/main/contracts" target="_blank" >smart contracts examples</a> available, which can be used for reference.
+
+## Comparison
+
+Here a simplified comparison between Dusk and other smart contracts platforms:
+
+| Feature                  | EVM                         | CosmWasm                     | Solana                       | Dusk                       |
+|:------------------------:|:---------------------------:|:----------------------------:|:----------------------------:|:--------------------------:|
+| Main Programming Language| Solidity                    | Rust                         | Rust                         | Rust                       |
+| Transaction Models       | Account-based               | Account-based                | Account-based                | UTXO and account-based     |
+| Compiling Target         | EVM bytecode                | WASM                         | BPF                          | WASM                       |
+| VM                       | EVM | No               | Sealevel                     | Piecrust                    |
