@@ -85,12 +85,13 @@ export default defineConfig({
 						},
 
 						{
-							label: 'Zero Knowledge',
+							label: 'Cryptography',
 							items: [
 								{ label: "Introduction", link: 'learn/zero-knowledge/introduction' },
 								{ label: "IOP and PCS", link: 'learn/zero-knowledge/iop_pcs' },
 								{ label: "PLONK", link: 'learn/zero-knowledge/plonk' },
 								{ label: "KZG", link: 'learn/zero-knowledge/kzg' },
+								{ label: "BLS12-381", link: 'learn/zero-knowledge/bls' },
 							],
 						}
 					],
