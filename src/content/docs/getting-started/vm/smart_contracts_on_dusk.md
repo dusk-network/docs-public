@@ -4,13 +4,11 @@ title: Smart Contracts on Dusk
 
 ## Overview
 
+Dusk offers robust support for smart contracts, as developers can leverage the features offered by <a href="https://github.com/dusk-network/piecrust" target="_blank">Piecrust</a>, <a href="https://github.com/dusk-network/piecrust/blob/main/piecrust-uplink/README.md" target="_blank">piecrust-uplink</a> and <a href="https://github.com/dusk-network/rusk" target="_blank">Rusk</a>.
 
-Dusk offers robust support for smart contracts, as developers can leverage the features offered by <a href="https://github.com/dusk-network/piecrust" target="_blank" >Piecrust</a>, <a href="https://github.com/dusk-network/piecrust/blob/main/piecrust-uplink/README.md" target="_blank" >piecrust-uplink</a>  and  <a href="https://github.com/dusk-network/rusk" target="_blank" >Rusk</a>.
+In order to deploy a smart contract, developers only need to compile their contracts to WASM. This is possible because the <a href="https://github.com/dusk-network/piecrust" target="_blank">Piecrust</a> VM manages the contract’s bytecode, state, and runtime sandboxed environment.  
 
-In order to deploy a smart contract, developers only need to compile their contracts to WASM. This is possible because the <a href="https://github.com/dusk-network/piecrust" target="_blank" >Piecrust</a> VM manages the contract’s bytecode, state, and runtime sandboxed environment.  
-
-Even if developers can use any programming language that compiles to WASM (e.g.  C, C++, Go...), most developers prefer writing smart contracts in Rust due to its efficiency and security benefits.
-
+Even if developers can use any programming language that compiles to WASM (e.g.  C, C++, Go...), we strongly recommend developers to use Rust due to its extensive support in our ecosystem.
 
 ##### Methods
 
@@ -26,10 +24,8 @@ Contracts on Dusk can use events as a lightweight mechanism to provide feedback,
 
 Events serve as a logging mechanism that facilitates interactions between various applications, and can be processed post-call by the caller, which can then execute its logic accordingly
 
-Clients can subscribe to events emitted by both smart contracts and nodes by using the Rusk Universal Event System <a href="https://github.com/dusk-network/rusk/wiki/RUES-(Rusk-Universal-Event-System)" target="_blank" >Rusk Universal Event System</a>.
-
-
+Clients can subscribe to events emitted by both smart contracts and nodes by using the <a href="https://github.com/dusk-network/rusk/wiki/RUES-(Rusk-Universal-Event-System)" target="_blank">Rusk Universal Event System</a>.
 
 ## Examples
 
-There are several <a href="https://github.com/dusk-network/piecrust/tree/main/contracts" target="_blank" >smart contracts examples</a> available, which can be used for reference.
+There are several <a href="https://github.com/dusk-network/piecrust/tree/main/contracts" target="_blank">smart contracts examples</a> available, which can be used for reference.
