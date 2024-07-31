@@ -2,16 +2,17 @@
 title: Serialization
 ---
 
-Serialization and deserialization allow smart contracts to be compiled to WASM and be executed by Piecrust. While serialization converts data structures of a smart contract into a format that can be easily transmitted or stored across different environments, deserialization converts this data back into a usable form.
+Serialization and deserialization are essential for smart contracts to efficiently handle data within Piecrust. Serialization converts data structures of a smart contract into a format that can be easily transmitted or stored, while deserialization converts this data back into a usable form.
 
-Even if different serialization / deserialization frameworks can be used, Dusk uses ```rkyv``` to serialize and deserialize data across smart contracts. 
+While various serialization and deserialization frameworks can be used, Dusk uses [rkyv](https://rkyv.org/) to handle data calls towards smart contracts. 
 
 ## rkyv
-```rkyv``` is a zero-copy deserialization framework that serializes data structures in-place. This means that once data is serialized, it can be deserialized without copying, which makes it very efficient.
 
-For a type to be passable through the VM boundary automatically, developers need to implement the ```rkyv traits```, for example by deriving them them. 
+`rkyv` is a zero-copy deserialization framework that serializes data structures in-place. This means that once data is serialized, it can be deserialized without copying, which makes it very efficient.
 
-As an example, here it can be seen how the traits for a ```Note```have been implemented:
+For a type to be passable through the VM boundary automatically, developers need to implement the `rkyv traits`, for example by deriving them. 
+
+As an example, here it can be seen how the traits for a `Note`have been implemented:
 
 ```rust
 #[cfg_attr(
