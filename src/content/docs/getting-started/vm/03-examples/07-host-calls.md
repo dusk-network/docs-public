@@ -4,18 +4,18 @@ title: Host Calls
 
 This page provides an overview on how to handle host calls, by using as an example the implementation of a ZKP circuit.
 
-Developers are encouraged to have a deeper look at the <a href="https://github.com/dusk-network/piecrust/blob/main/contracts/host/src/lib.rs" target="_blank" >host contract</a>, and its <a href="https://github.com/dusk-network/piecrust/blob/main/piecrust/tests/host.rs" target="_blank" >test file</a>.
+Developers are encouraged to have a deeper look at the <a href="https://github.com/dusk-network/piecrust/blob/main/contracts/host/src/lib.rs" target="_blank">host contract</a>, and its <a href="https://github.com/dusk-network/piecrust/blob/main/piecrust/tests/host.rs" target="_blank">test file</a>.
 
 
 It is common for the contract itself to only deal with the operations that directly modify its state, while complex computations and verifications are delegated to external host queries.
 
-The test code includes the implementations of host queries (```hash```, ```verify_proof```, and ```very_expensive```), and the contract code interacts with these queries as if they were external calls
+The test code includes the implementations of host queries (`hash`, `verify_proof`, and `very_expensive`), and the contract code interacts with these queries as if they were external calls.
 
-The test code also contains the code to generate public parameters and compiling the circuit using <a href="https://github.com/dusk-network/plonk" target="_blank" > PLONK</a>.  
+The test code also contains the code to generate public parameters and compiling the circuit using <a href="https://github.com/dusk-network/plonk" target="_blank"> PLONK</a>.
 
 ## Registration, Implementations and Calls
 
-The host query integration demonstrates how to register and use custom host queries by using ```vm.register_host_query```:
+The host query integration demonstrates how to register and use custom host queries by using `vm.register_host_query`:
 
 ```rust
 fn new_ephemeral_vm() -> Result<VM, Error> {
@@ -41,8 +41,7 @@ fn hash(buf: &mut [u8], len: u32) -> u32 {
 }
 ```
 
-
-To to call the host queries, developers can use ```uplink::host_query``` :
+To call the host queries, developers can use `uplink::host_query`:
 
 ```rust
 impl Hoster {
@@ -52,12 +51,12 @@ impl Hoster {
 }
 ```
 
-
 ## Cryptographic Proofs
 
-Here we provide an overiew to set up a prover and verifier using <a href="https://github.com/dusk-network/plonk" target="_blank" > PLONK</a>, as well as generating proofs, and verifying them via a smart contract.
+Here we provide an overview on how to set up a prover and verifier using <a href="https://github.com/dusk-network/plonk" target="_blank"> PLONK</a>, as well as generating proofs, and verifying them via a smart contract.
 
 ##### Setup
+
 In the example it can be seen how to set up the prover and verifier with public parameters and compile a custom circuit.
 
 ```rust
@@ -75,6 +74,7 @@ fn get_prover_verifier() -> &'static (Prover, Verifier) {
 ```
 
 ##### Verification Logic
+
 Then, the logic to verify proofs against public inputs needs to be implemented:
 
 ```rust
@@ -91,8 +91,8 @@ fn verify_proof(buf: &mut [u8], len: u32) -> u32 {
 }
 ```
 
-
 ##### Host Calls
+
 Finally, here we can see how to use the methods to call various host queries:
 
 ```rust

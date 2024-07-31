@@ -2,7 +2,7 @@
 title: Sessions example
 ---
 
-In this section we will look at practical examples on how to manage seissions and handle state persistance in smart contracts. The original test file can be found <a href="https://github.com/dusk-network/piecrust/blob/f4d5951da3c7d2a6ea77ae63e33dfc9c49ff2d93/piecrust/tests/commit.rs" target="_blank" >here</a>.
+In this section we will look at practical examples on how to manage sessions and handle state persistance in smart contracts. The original test file can be found <a href="https://github.com/dusk-network/piecrust/blob/f4d5951da3c7d2a6ea77ae63e33dfc9c49ff2d93/piecrust/tests/commit.rs" target="_blank">here</a>.
 
 
 ### Creating and Using Sessions
@@ -37,6 +37,7 @@ session.commit()?;
 ```
 
 ### Concurrency
+
 Running multiple sessions concurrently using threads can improve efficiency and performance. Each thread can make changes and commit them, ensuring no conflicts and unique commits:
 
 ```rust

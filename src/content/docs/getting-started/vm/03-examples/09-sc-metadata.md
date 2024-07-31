@@ -2,19 +2,17 @@
 title: Metadata
 ---
 
-
 Smart contract metadata includes a variety of information that describes the smart contract's structure, functionality, and other relevant details.
 
 Developers are encouraged to have a look at the <a href="https://github.com/dusk-network/piecrust/blob/main/contracts/metadata/src/lib.rs" target="_blank" >metadata contract</a> and check out the <a href="https://github.com/dusk-network/piecrust/blob/main/piecrust/tests/metadata.rs" target="_blank" >metadata test</a> file.
 
-
 The metadata contract is designed to manage and retrieve various metadata attributes for smart contracts, and defines the following functions:
 
-```read_owner```: Retrieves the owner of the current contract.
-```read_id```: Retrieves the ID of the current contract.
-```read_owner_of```: Retrieves the owner of a specified contract.
-```read_free_limit_of```: Retrieves the free limit of a specified contract.
-`read_free_price_hint_of```: Retrieves the free price hint of a specified contract.
+`read_owner`: Retrieves the owner of the current contract.
+`read_id`: Retrieves the ID of the current contract.
+`read_owner_of`: Retrieves the owner of a specified contract.
+`read_free_limit_of`: Retrieves the free limit of a specified contract.
+`read_free_price_hint_of`: Retrieves the free price hint of a specified contract.
 
 These functions are defined as follows:
 ```rust

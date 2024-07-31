@@ -4,10 +4,9 @@ title: Monitoring Gas Usage
 
 This page provides an overview on how to manage and track gas usage in smart contracts. By tracking the gas spent on contract calls, developers can gain insights on the computational cost and optimize the performance of their contracts.
 
-Developers are encouraged to have a deeper look at the <a href="https://github.com/dusk-network/piecrust/blob/main/contracts/spender/src/lib.rs" target="_blank" >spender contract</a> , as well as the <a href="https://github.com/dusk-network/piecrust/blob/main/piecrust/tests/spender.rs" target="_blank">test file</a>.
+Developers are encouraged to have a deeper look at the <a href="https://github.com/dusk-network/piecrust/blob/main/contracts/spender/src/lib.rs" target="_blank">spender contract</a>, as well as the <a href="https://github.com/dusk-network/piecrust/blob/main/piecrust/tests/spender.rs" target="_blank">test file</a>.
 
-
-The contract uses a  ```get_limit_and_spent``` method which tracks gas limits and consumption before and after inter-contract calls:
+The contract uses a `get_limit_and_spent` method which tracks gas limits and consumption before and after inter-contract calls:
 
 ```rust
 pub fn get_limit_and_spent(&self) -> (u64, u64, u64, u64, u64) {
@@ -28,7 +27,7 @@ pub fn get_limit_and_spent(&self) -> (u64, u64, u64, u64, u64) {
 }
 ```
 
-The test file  provides a way to handle out-of-gas scenarios, preventing unexpected contract failures and improve debugging. This is done by using a method that consumes all provided gas by causing a panic to simulate out-of-gas scenarios:
+The test file provides a way to handle out-of-gas scenarios, preventing unexpected contract failures and improve debugging. This is done by using a method that consumes all provided gas by causing a panic to simulate out-of-gas scenarios:
 
 ```rust
 #[test]
@@ -74,7 +73,7 @@ pub fn contract_sets_call_limit() -> Result<(), Error> {
 }
 ```
 
-Finally, by using the ```get_limit_and_spent``` method, developers can analyze gas limits and usage before and after contract calls. This is useful to understand the actual computational costs and identify optimization opportunities:
+Finally, by using the `get_limit_and_spent` method, developers can analyze gas limits and usage before and after contract calls. This is useful to understand the actual computational costs and identify optimization opportunities:
 
 ```rust
 #[test]

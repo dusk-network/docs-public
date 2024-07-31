@@ -4,12 +4,10 @@ title: Persistence
 
 This page provides an overview on how to manage persistence in smart contracts using sessions. 
 
-Developers are encouraged to have a deeper look at the <a href="https://github.com/dusk-network/piecrust/blob/main/piecrust/tests/persistence.rs" target="_blank" >persistence test</a> file.
-
+Developers are encouraged to have a deeper look at the <a href="https://github.com/dusk-network/piecrust/blob/main/piecrust/tests/persistence.rs" target="_blank">persistence test</a> file.
 
 Each session performs a series of contract calls, and the state is captured through a commit.
 Commits ensure that the state of the contracts can be saved and restored accurately, while new sessions are created using the base state from previous commits.
-
 
 In the example below, two contracts (counter and box) are deployed, and their states are manipulated and committed. These states are then restored in new sessions to verify persistence.
 
@@ -60,7 +58,6 @@ fn session_commits_persistence() -> Result<(), Error> {
     Ok(())
 }
 ```
-
 
 ##### Preserving state across sessions
 
