@@ -5,12 +5,12 @@ title: Dusk Improvement Proposals (DIPs)
 
 ## What is a DIP?
 
-A <a href="https://github.com/dusk-network/dips" target="_blank" >Dusk Improvement Proposal (DIP)</a>  is a formal document that proposes a new feature, standard, or protocol adjustment within Dusk. DIPs are the primary mechanism for proposing new features, collecting community input on an issue, and documenting the design decisions that have gone into the Dusk protocol architecture. They are meant to be the source of truth for Dusk protocol improvements, serving both as a historical document and a detailed explanation of the feature and its purpose.
+A <a href="https://github.com/dusk-network/dips" target="_blank">Dusk Improvement Proposal (DIP)</a> is a formal document that proposes a new feature, standard, or protocol adjustment within Dusk. DIPs are the primary mechanism for proposing new features, collecting community input on an issue, and documenting the design decisions that have gone into the Dusk protocol architecture. They are meant to be the source of truth for Dusk protocol improvements, serving both as a historical document and a detailed explanation of the feature and its purpose.
 
 A DIP may be required to enable specific use-cases, as the Dusk protocol encompasses all rules that nodes must follow in order to:
 - Achieve consensus
 - Achieve synchronism
-- Create, validate, and process transactions according to the Phoenix transaction model
+- Create, validate, and process transactions
 
 ## Purpose
 
@@ -56,11 +56,11 @@ Each Dusk Improvement Proposal (DIP) must adhere to the following structure so a
 
 The Dusk Improvement Proposal (DIP) process is designed to provide a transparent and structured approach to proposing improvements within the Dusk protocol. Each DIP follows a clear path from inception to finalization:
 
-1. **Idea:** The process begins with an initial concept or idea. The writeup is unstructured, and the idea is introduced as a proposal with a title that goes as `Proposal: `. There is no DIP number assigned yet.
+1. **Idea:** The process begins with an initial concept or idea. The write-up is unstructured, and the idea is introduced as a proposal with a title that goes as `Proposal: [Title]`. There is no DIP number assigned yet.
 2. **Draft:** Once the idea has been sufficiently fleshed out, a formal draft is created to detail the proposal. A DIP number is assigned, a structure is created, and the draft undergoes review and feedback.
-3. **Feedback:** The DIP offers a first deliverable in a prototypical form (a technical implementation, a paper, etc). Feedback is collected in order to improve on the DIP.
-4. **Staging:** After the review, the proposal enters the `Staging` phase, indicating it is nearing completion and providing a final chance for feedback. If the DIP relates to technical implementation, the latter is staging on `Nocturne`.
-5. **Active:** If the DIP receives consensus, it is marked as Active and its deliverables make into the production environment (Mainnet for code, `docs.dusk.network` for documentation, etc).
+3. **Feedback:** The DIP offers a first deliverable in a prototypical form (a technical implementation, a paper, etc). Feedback is collected in order to improve the DIP.
+4. **Staging:** After the review, the proposal enters the `Staging` phase, indicating it is nearing completion and providing a final chance for feedback. If the DIP relates to technical implementation, it is staged on our testnet, `Nocturne`.
+5. **Active:** If the DIP receives consensus, it is marked as Active and its deliverables are incorporated into the production environment (Mainnet for code, `docs.dusk.network` for documentation, etc).
 
 Additionally, proposals can be transitioned to a **Stagnant** state if they are not actively being developed. A proposal might also become **Dead** either by the author(s) or if it stays in `Stagnant` status for more than 6 months.
 
@@ -72,4 +72,4 @@ Below is a diagram that illustrates the DIP workflow:
 
 ## Further information
 
-For further information or to submit a DIP, you can have a look at the <a href="https://github.com/dusk-network/rusk" target="_blank" >DIPs repository</a>.
+For further information or to submit a DIP, you can have a look at the <a href="https://github.com/dusk-network/rusk" target="_blank">DIPs repository</a>.
