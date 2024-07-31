@@ -4,20 +4,20 @@ title: Dependencies
 
 # Rust
 
-Even if developers can write smart contracts on Dusk by using programming language that compiles to WASM, most developers prefer to use Rust.
+Although developers can write smart contracts on Dusk using any programming language that compiles to WASM, Rust is the best supported language in our ecosystem.
 
-Therefore, the only real dependency that needs to be installed is <a href="https://www.rust-lang.org/tools/install" target="_blank" >Rust</a> 1.71 nightly or higher. 
+Therefore, the only real dependency that needs to be installed is <a href="https://www.rust-lang.org/tools/install" target="_blank">Rust</a> 1.71 nightly or higher. 
 
-You can build and test your contracts against <a href="https://github.com/dusk-network/piecrust" target="_blank" >Piecrust</a>.
+You can build and test your contracts against <a href="https://github.com/dusk-network/piecrust" target="_blank">Piecrust</a>.
 
+# Nightly
 
-# nightly
-
-<a href="https://github.com/dusk-network/rusk" target="_blank" >Rusk</a> makes use of the nightly toolchain, which can be installed with:
+<a href="https://github.com/dusk-network/rusk" target="_blank">Rusk</a> makes use of the nightly toolchain, which can be installed with:
 ```bash
 rustup toolchain install nightly
 rustup default nightly
 ```
+
 <!---
 # Optional dependencies
 
@@ -35,5 +35,4 @@ To build the WASM contracts, `wasm-pack` is required:
 ```bash
 cargo install wasm-pack
 ```
-
 -->

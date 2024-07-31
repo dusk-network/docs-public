@@ -4,32 +4,31 @@ title: Interacting with a contract
 
 ## Sending and Withdrawing funds from contract
 
-
 The transfer-contract (will) provide(s) two functions that can be used to withdraw or deposit funds to and from a contract.
 
-deposit funds into a contract, which essentially turn phoenix notes into a balance for that contract
-withdraw funds from a contract, which turns said balance into phoenix notes again
+Deposit funds into a contract, which essentially turn phoenix notes into a balance for that contract.
+Withdraw funds from a contract, which turns said balance into phoenix notes again.
 
 Both functions will be triggered by a call to the transfer-contract and the gas will always be paid in phoenix notes (for now).
 
 Since the contract-balances are stored as part of the state of the transfer-contract there is no mechanism needed for a contract to 'consume' it's funds. 
 
-
 ### Sending
-User makes transaction with crossover and with a call to the contract function taking Dusk (e.g. stake)
+
+User makes transaction with crossover and with a call to the contract function taking Dusk (e.g. stake).
 During execution of the function, the contract calls the transfer contract to "pick up" the Dusk left for it, panicking if not there
-Contract proceeds with the knowledge that it now has that Dusk in its wallet
+Contract proceeds with the knowledge that it now has that Dusk in its wallet.
 
 ### Withdrawing
-User makes transaction without crossover and with a call to the contract function outputting Dusk (e.g. unstake)
+
+User makes transaction without crossover and with a call to the contract function outputting Dusk (e.g. unstake).
 During execution of the function, the contract takes the (given) stealth address and calls the transfer contract with it, sending money to said address.
-Contract proceeds with he knowledge that that amount was successfully transferred to the stealth address
+Contract proceeds with the knowledge that that amount was successfully transferred to the stealth address.
 
 ## Interacting
 
-
-
 The correct way of interacting with a contract is exemplified in the test folder of wallet-core, where there is a useful test. In particular, using this code:
+```rust
 fn execute_works() {
     let seed = [0xfa; RNG_SEED];
     let rng_seed = [0xfb; 32];
@@ -93,10 +92,10 @@ fn execute_works() {
 
     rkyv::from_bytes::<tx::UnprovenTransaction>(&tx).unwrap();
 }
-
+```
 
 The ref_id in the output is optional and represents a nonce used for generating the notes. If provided it is used, if not a random one is generated.
 
-Anyway, it is recommended to follow the tests in rusk, for example the staking one.
+It is recommended to follow the tests in rusk, for example the staking one.
 
-The code wallet-cli is using currently is same being used on the rusk test cases (e.g. there is a  get_stake call).
+The code wallet-cli is using currently is same being used on the rusk test cases (e.g. there is a get_stake call).

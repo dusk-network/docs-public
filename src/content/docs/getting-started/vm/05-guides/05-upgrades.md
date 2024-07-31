@@ -2,7 +2,6 @@
 title: Smart Contract Example
 ---
 
-
 This example shows how to upgrade a contract to a new version while preserving its state:
 
 ```rust
@@ -42,8 +41,7 @@ fn migration() -> Result<(), Error> {
 
 ```
 
-The following example shows how to modify metadata attributes like ```OWNER```:
-
+The following example shows how to modify metadata attributes like `OWNER`:
 
 ```rust
 #[test]
