@@ -2,15 +2,16 @@
 title: Circuits
 ---
 
+Circuits allow for optimized zero-knowledge (ZK) operations on Dusk, and are targeted for specific use-cases:
 
+- [Phoenix](/learn/dusk-protocol/transaction_models/phoenix): to spend notes and pay for gas.
+- [Citadel](/getting-started/digital-identity/protocol): to use in the Self-Sovereign Identity implementation.
+- [Zedger](/learn/dusk-protocol/transaction_models/zedger): to use the XSC (Confidential Security Token) standard.
 
-Circuits allow for optimized ZK operations on Dusk, and are targeted for specific use-cases:
-
-- [Phoenix](/learn/dusk-protocol/transaction_models/phoenix) : to spend notes and pay for gas.
-- [Citadel](/getting-started/digital-identity/protocol): to use the SSI implementation.
-- [Zedger](/learn/dusk-protocol/transaction_models/zedger): to use the XSC standard.
+Developers can write their own ZK circuits as part of their smart contracts, allowing for the proving and verification of zero-knowledge proofs.
 
 # Phoenix circuits
+
 Circuits in Phoenix prove that the following conditions hold true:
 
 1. **Membership**: Every note that is about to be spent is included in the Merkle tree of notes.
@@ -19,9 +20,10 @@ Circuits in Phoenix prove that the following conditions hold true:
 4. **Minting**: The value commitment for the newly minted notes are computed correctly.
 5. **Balance integrity**: The sum of the values of all spent notes is equal to the sum of the values of all minted notes + the gas fee + a deposit, where a deposit refers to funds being transfered to a contract.
 
-For additional information, you can have a look at the <a href="https://github.com/dusk-network/phoenix/tree/b3ee366887b131993f9e41a11286c39e10f2e816/circuits" target="_blank" >circuits</a> and <a href="https://github.com/dusk-network/phoenix/blob/master/docs/protocol.pdf" target="_blank" >specifications</a>.
+For additional information, you can have a look at the <a href="https://github.com/dusk-network/phoenix/tree/b3ee366887b131993f9e41a11286c39e10f2e816/circuits" target="_blank">circuits</a> and <a href="https://github.com/dusk-network/phoenix/blob/master/docs/protocol.pdf" target="_blank">specifications</a>.
 
 # Citadel circuits
+
 Circuits in Citadel allow for the following actions:
 Request Creation and Encryption:
 
@@ -35,10 +37,9 @@ Request Creation and Encryption:
 8. **Proof Generation**: A proof of membership in a Merkle tree is created
 9. **Proof Verification:**: Cryptographic commitments are computed and the signature of the session hash is verified.
 
-For additional information, you can have a look at the <a href="https://github.com/dusk-network/citadel/blob/main/src/license.rs" target="_blank" >circuits</a> and <a href="https://github.com/dusk-network/citadel/blob/main/docs/specs.pdf" target="_blank" >specifications</a>.
+For additional information, you can have a look at the <a href="https://github.com/dusk-network/citadel/blob/main/src/license.rs" target="_blank">circuits</a> and <a href="https://github.com/dusk-network/citadel/blob/main/docs/specs.pdf" target="_blank">specifications</a>.
 
 # Zedger circuits
 :::note
-[Zedger](/learn/dusk-protocol/transaction_models/zedger) repository is currently private. Stay tuned for future updates. 
+The [Zedger](/learn/dusk-protocol/transaction_models/zedger) repository is currently private. 
 :::
-
