@@ -2,7 +2,6 @@
 title: Dusk Improvement Proposals (DIPs)
 ---
 
-
 ## What is a DIP?
 
 A <a href="https://github.com/dusk-network/dips" target="_blank">Dusk Improvement Proposal (DIP)</a> is a formal document that proposes a new feature, standard, or protocol adjustment within Dusk. DIPs are the primary mechanism for proposing new features, collecting community input on an issue, and documenting the design decisions that have gone into the Dusk protocol architecture. They are meant to be the source of truth for Dusk protocol improvements, serving both as a historical document and a detailed explanation of the feature and its purpose.
@@ -66,9 +65,7 @@ Additionally, proposals can be transitioned to a **Stagnant** state if they are 
 
 Below is a diagram that illustrates the DIP workflow:
 
-
 ![DIP-diagram](../../../assets/dip-gov-diag.png)
-
 
 ## Further information
 
