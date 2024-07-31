@@ -36,7 +36,7 @@ The Transfer Contract operates through the following steps:
 
 ## Implications
 
-In Dusk, there is no built-in variable like ```msg.sender``` which identifies the caller of a contract function. This is because Dusk is a privacy-focused blockchain, utilizing a UTXO-based transaction model (Phoenix).
+In Dusk, there is no built-in variable like `msg.sender` which identifies the caller of a contract function. This is because Dusk is a privacy-focused blockchain, utilizing a UTXO-based transaction model (Phoenix).
 
 In Dusk, an "address" is defined by the developer within the contract's logic. This approach gives developers more control over the privacy and compliance features of their applications but also increases their responsibility to securely identify and authenticate users and transactions.
 

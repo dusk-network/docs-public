@@ -4,7 +4,7 @@ title: Cryptographic Keys
 
 Developers are free to choose any cryptographic signature algorithm when building on Dusk, as they can use various cryptographic primitives, as long as they are compatible WASM-compatible. As an example, developers can choose BLS, JubJub Schnorr, ECDSA, Bitcoin's Secp256k1 and much more. The choice usually depends on requirements for security, signature size, and transaction efficiency.
 
-For developers opting to use BLS signatures, it is recommended to leverage the ```rusk_abi::verify_bls``` host function provided by Dusk. This function enables signature verification to be offloaded to the host, minimizing the gas consumption and execution time of contracts. Directly including complex cryptographic operations within the contract is still possible but less efficient in terms of gas usage.
+For developers opting to use BLS signatures, it is recommended to leverage the `rusk_abi::verify_bls` host function provided by Dusk. This function enables signature verification to be offloaded to the host, minimizing the gas consumption and execution time of contracts. Directly including complex cryptographic operations within the contract is still possible but less efficient in terms of gas usage.
 
 For those starting with token development on Dusk, it might be beneficial to start with an available ECDSA scheme that easily compiles to WASM, optimizing the development process. As the project progresses, developers can switch to a more suitable or advanced cryptographic algorithm based on the evolving needs and security requirements of their application.
 
@@ -16,9 +16,9 @@ Dusk uses three types of keys:
 - <a href="https://github.com/dusk-network/phoenix-core" target="_blank">Phoenix keys</a>: used for Phoenix transactions.
 
 Keys in Dusk work slighly different compared to other protocols:
-```PublicSpendKeys``` and ```SecretSpendKeys``` are equivalent to the traditional key-pairs used in other blockchains to manage transactions.
+`PublicSpendKeys` and `SecretSpendKeys` are equivalent to the traditional key-pairs used in other blockchains to manage transactions.
 
-```PublicKeys``` and ```SecretKeys``` are instead single-use keys derived from ```PublicSpendKeys``` and ```SecretSpendKeys```. They are specifically used to prove and assign note ownership during transactions.
+`PublicKeys` and `SecretKeys` are instead single-use keys derived from `PublicSpendKeys` and `SecretSpendKeys`. They are specifically used to prove and assign note ownership during transactions.
 
 ## Keys creation and verification
 The process for handling transactions in Dusk involves several key generation and verification steps:
@@ -29,7 +29,7 @@ The process for handling transactions in Dusk involves several key generation an
 4) Generate Schnorr private key from Phoenix private key combined with the stealth address.
 5) Sign the claims with the Schnorr private key and verify with the Phoenix public key.
 
-More specifically, a ```jubjub-schnorr::SecretKey``` can be created with ```phoenix-core::SecretKey``` by calling ```SecretKey::gen_note_sk```. A message can be signed with that ```jubjub-schnorr::SecretKey``` and verified with a ```jubjub-schnorr::PublicKey```.
+More specifically, a `jubjub-schnorr::SecretKey` can be created with `phoenix-core::SecretKey` by calling `SecretKey::gen_note_sk`. A message can be signed with that `jubjub-schnorr::SecretKey` and verified with a `jubjub-schnorr::PublicKey`.
 
 Creation and verification of signatures (both schnorr signatures and bls signatures) roughly follow this flow:
 ```rust
@@ -47,7 +47,7 @@ assert!(pk.verify(signature));
 
 #### Considerations
 
-It is important to understand that for the final step, the ```verify_schnorr``` function expects a ```NotePublicKey``` instead of a ```phoenix``` public key. This implies that a ```NotePublicKey``` needs to be added in the contract, because considering that the owner of the contract is a ```phoenix``` public key, the method ```verify_schnorr``` cannot be called with only that public key.
-This implies that a Schnorr signature cannot be verified with only a ```phoenix``` public key. 
+It is important to understand that for the final step, the `verify_schnorr` function expects a `NotePublicKey` instead of a `phoenix` public key. This implies that a `NotePublicKey` needs to be added in the contract, because considering that the owner of the contract is a `phoenix` public key, the method `verify_schnorr` cannot be called with only that public key.
+This implies that a Schnorr signature cannot be verified with only a `phoenix` public key. 
 
-The ```schnorr-sk``` is derived from ```phoenix-sk``` using a random value ```r```. If the same ```r``` is used to generate a stealth address from a ```phoenix-pk```, then the ```note-pk``` (which is a ```schnorr-pk```) in that stealth address can be used to verify the ```schnorr-sig``` signed with the ```schnorr-sk```.
+The `schnorr-sk` is derived from `phoenix-sk` using a random value `r`. If the same `r` is used to generate a stealth address from a `phoenix-pk`, then the `note-pk` (which is a `schnorr-pk`) in that stealth address can be used to verify the `schnorr-sig` signed with the `schnorr-sk`.
