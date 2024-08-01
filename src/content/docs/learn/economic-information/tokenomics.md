@@ -95,4 +95,3 @@ The following table lays out the specific emission strategy for the DUSK token:
 
 > 💡 The "Cumulative Duration (Best-Worst Case)" column in the **Token Emission Schedule** table represents the range of time intervals for token emissions based on the projected block times. The ideal case assumes optimal network conditions, maximum participation, and efficient block production. In contrast, the worst-case scenario accounts for possible network lags, decreased participation, or other unforeseen challenges that might lead to extended block production times.
 {.is-info}
-

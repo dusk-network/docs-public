@@ -72,4 +72,4 @@ Code should be provided with the necessary licenses for open-source use (e.g. Ap
 
 
 ## How to apply
-Fill out the [Thesan application form](https://qfisyyuui1g.typeform.com/to/uAucnWFJ) by taking your your time to answer all the relevant questions in detail. Please make sure to follow the general and <a href="http://docs.dusk.network/grants/#selection-process" target="_blank" > requirements and guidelines </a>.
+Fill out the [Thesan application form](https://qfisyyuui1g.typeform.com/to/uAucnWFJ) by taking your your time to answer all the relevant questions in detail. Please make sure to follow the general and <a href="http://docs.dusk.network/grants/#selection-process" target="_blank"> requirements and guidelines </a>.

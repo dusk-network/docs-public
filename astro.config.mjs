@@ -54,6 +54,15 @@ export default defineConfig({
 							items: [
 								{ label: "Overview", link: 'learn/dusk-protocol/overview' },
 								{ label: 'Core Values', link: 'learn/dusk-protocol/core-values' },
+								{
+									label: 'Transaction Models',
+									items: [
+										{ label: "Overview", link: 'learn/dusk-protocol/transaction_models/overview' },
+										{ label: "Phoenix", link: 'learn/dusk-protocol/transaction_models/phoenix' },
+										{ label: "Moonlight", link: 'learn/dusk-protocol/transaction_models/moonlight' },
+										{ label: "Zedger", link: 'learn/dusk-protocol/transaction_models/zedger' },
+									],
+								},
 								{ label: "Resources", link: 'learn/dusk-protocol/additional-resources' },
 							],
 						},
@@ -73,6 +82,17 @@ export default defineConfig({
 								{ label: "Security Lifecycle", link: 'learn/digital-assets/lifecycle' },
 								{ label: "Security Dematerialization", link: 'learn/digital-assets/dematerialization' },
 							],
+						},
+
+						{
+							label: 'Cryptography',
+							items: [
+								{ label: "Introduction", link: 'learn/zero-knowledge/introduction' },
+								{ label: "IOP and PCS", link: 'learn/zero-knowledge/iop_pcs' },
+								{ label: "PLONK", link: 'learn/zero-knowledge/plonk' },
+								{ label: "KZG", link: 'learn/zero-knowledge/kzg' },
+								{ label: "BLS12-381", link: 'learn/zero-knowledge/bls' },
+							],
 						}
 					],
 				},
@@ -87,16 +107,86 @@ export default defineConfig({
 								{ label: "Build from Source", link: '/getting-started/node-setup/build-from-source' },
 								{ label: "Docker Image", link: '/getting-started/node-setup/docker-image' },
 								{ label: "Manual Resync", link: '/getting-started/node-setup/manual-resync' },
+								{ label: "Slashing", link: '/getting-started/node-setup/slashing' },
 							],
 						},
 						{
 							label: "Smart Contracts",
 							items: [
-								{ label: "Piecrust VM and Smart Contracts", link: '/getting-started/vm/piecrust' },
-								{ label: "Smart Contract Example", link: '/getting-started/vm/counter-example' },
-								{ label: "Piecrust vs Rusk VM 1.0", link: '/getting-started/vm/comparison-with-vm1' },
+								{ label: "Introduction", link: '/getting-started/vm/introduction-sc' },
+								{
+									label: "Components",
+									items: [
+										{ label: "Piecrust", link: '/getting-started/vm/02-components/01-piecrust' },
+										{ label: "Rusk", link: '/getting-started/vm/02-components/02-rusk' },
+										{ label: "Rues", link: '/getting-started/vm/02-components/03-rues' },
+									],
+								},
+								{
+									label: "Smart Contracts on Dusk",
+									items: [
+										{ label: "Overview", link: '/getting-started/vm/01-sc-on-dusk/01-smart_contracts_on_dusk' },
+										{ label: "Transactions", link: '/getting-started/vm/01-sc-on-dusk/02-transactions' },
+										{ label: "Keys", link: '/getting-started/vm/01-sc-on-dusk/03-keys' },
+										{ label: "Functions", link: '/getting-started/vm/01-sc-on-dusk/04-functions' },
+										{ label: "Token Standards", link: '/getting-started/vm/01-sc-on-dusk/05-token_standards' },
+										{ label: "Circuits", link: '/getting-started/vm/01-sc-on-dusk/06-circuits' },
+										{ label: "Sessions", link: '/getting-started/vm/01-sc-on-dusk/07-sessions' },
+										{ label: "Hashing", link: '/getting-started/vm/01-sc-on-dusk/08-hashing' },
+										{ label: "Semantics", link: '/getting-started/vm/01-sc-on-dusk/09-semantics' },
+										{ label: "Serialization", link: '/getting-started/vm/01-sc-on-dusk/10-serialization' },
+									],
+								},
+								{
+									label: "Getting Started",
+									items: [
+										{ label: "Dependencies", link: '/getting-started/vm/04-getting-started/01-dependencies' },
+										{ label: "IDE", link: '/getting-started/vm/04-getting-started/02-ide' },
+									],
+								},
+								{
+									label: "Guides",
+									items: [
+										{ label: "Debugging", link: '/getting-started/vm/05-guides/01-debugging' },
+										{ label: "Testing", link: '/getting-started/vm/05-guides/02-testing' },
+										{ label: "Compiling", link: '/getting-started/vm/05-guides/03-compiling' },
+										{ label: "Deploying", link: '/getting-started/vm/05-guides/04-deploying' },
+										{ label: "Upgrades", link: '/getting-started/vm/05-guides/05-upgrades' },
+										{ label: "Interacting", link: '/getting-started/vm/05-guides/06-interacting' }
+
+									],
+								},
+
+								{
+									label: "Examples",
+									items: [
+										{ label: "Examples Overview", link: '/getting-started/vm/03-examples/examples' },
+										{ label: "Counter Example", link: '/getting-started/vm/03-examples/01-counter-example' },
+										{ label: "Comparison with VM1", link: '/getting-started/vm/03-examples/02-comparison-with-vm1' },
+										{ label: "Token Example", link: '/getting-started/vm/03-examples/03-token-example' },
+										{ label: "Multisig", link: '/getting-started/vm/03-examples/04-multisig' },
+										{ label: "Sessions Example", link: '/getting-started/vm/03-examples/05-sessions-example' },
+										{ label: "Contract Calls", link: '/getting-started/vm/03-examples/06-contracts-calls' },
+										{ label: "Host Calls", link: '/getting-started/vm/03-examples/07-host-calls' },
+										{ label: "Persistence", link: '/getting-started/vm/03-examples/08-persistance' },
+										{ label: "Metadata", link: '/getting-started/vm/03-examples/09-sc-metadata' },
+										{ label: "Gas Usage", link: '/getting-started/vm/03-examples/10-spender' }
+									]
+								},
+								
+
+								{
+									label: "FAQs and issues",
+									items: [
+										{ label: "FAQs", link: '/getting-started/vm/06-faqs-issues/01-faqs' },
+										{ label: "Troubleshooting", link: '/getting-started/vm/06-faqs-issues/02-troubleshooting' },
+
+									],
+								},
+								
 							],
 						},
+
 						{
 							label: "Wallets",
 							items: [
@@ -131,9 +221,11 @@ export default defineConfig({
 					],
 				},
 				{
-					label: "Community",
+					label: "Community and Ecosystem",
 					items: [
-						{ label: "Ecosystem Information", link: "community/overview" },
+						{ label: "Community", link: "community/overview" },
+						{ label: "Block Explorer", link: "community/block-explorer" },
+						{ label: "DIPs", link: 'community/dips' },
 					],
 				},
 			],

@@ -23,7 +23,7 @@ Instead, archival nodes listen to all events emitted in Dusk and store them in a
 These events include:
 
 - Events emitted on the Dusk blockchain (e.g. transactions)
-- <a href="https://github.com/dusk-network/rusk/wiki/RUES-(Rusk-Universal-Event-System)" target="_blank" >RUES</a> events (e.g. events emitted by a contract). 
+- <a href="https://github.com/dusk-network/rusk/wiki/RUES-(Rusk-Universal-Event-System)" target="_blank">RUES</a> events (e.g. events emitted by a contract). 
 
 Archival nodes serve as a reliable source for historical data, as they are the only type of nodes that not only listen and broadcast events, but also store them. 
 
@@ -39,22 +39,17 @@ Dusk invites grant applicants to submit proposals providing the following elemen
 
 ##### Extensive APIs
 
+Expand on and develop comprehensive APIs, to enable clients to access events stored by archival nodes. This should include both <a href="https://github.com/dusk-network/rusk/tree/4b37ab5c1f6c0635c549c932270d01090e183217/rusk/src/lib/http/chain/graphql" target="_blank">GraphQL</a> and <a href="https://github.com/dusk-network/rusk/wiki/RUES-(Rusk-Universal-Event-System)l" target="_blank">RUES</a> entrypoints, providing flexible querying options for specific events, transactions, and contracts' state.
 
-Expand on and develop comprehensive APIs, to enable clients to access events stored by archival nodes. This should include both <a href="https://github.com/dusk-network/rusk/tree/4b37ab5c1f6c0635c549c932270d01090e183217/rusk/src/lib/http/chain/graphql" target="_blank" >GraphQL</a> and <a href="https://github.com/dusk-network/rusk/wiki/RUES-(Rusk-Universal-Event-System)l" target="_blank" >RUES</a> entrypoints, providing flexible querying options for specific events, transactions, and contracts' state.
+To provide precise data retrieval, the <a href="https://github.com/dusk-network/rusk/blob/4b37ab5c1f6c0635c549c932270d01090e183217/rusk/src/lib/http/chain/graphql/data.rs" target="_blank">GraphQL schema</a> needs to allow queries by relevant attributes (e.g. event type, timestamp, emitter...). More specifically, the APIs should enable querying of all historical data stored by archival nodes at any block height, including both events recorded on the blockchain and events emitted by smart contracts. These APIs need to allow the GraphQL server to act as an intermediary between clients and the archival nodes' database, so that when a query is received, the server processes it, fetches the necessary data from the archival nodes and serves it.
 
-
-To provide precise data retrieval, the <a href="https://github.com/dusk-network/rusk/blob/4b37ab5c1f6c0635c549c932270d01090e183217/rusk/src/lib/http/chain/graphql/data.rs" target="_blank" >GraphQL schema</a>  needs to allow queries by relevant attributes (e.g. event type, timestamp, emitter .. ). More specifically, the APIs should enable querying of all historical data stored by archival nodes at any block height, including both events recorded on the blockchain and events emitted by smart contracts. These APIs need to allow the GraphQL server to act as an intermediary between clients and the archival nodes' database, so that when a query is received, the server processes it, fetches the necessary data from the archival nodes and serves it.
-
-To facilitate these APIs it is necessary to store additional data in local storage. An example of this would be  including a get_failed_txn_count function in  <a href="https://github.com/dusk-network/dusk-blockchain/tree/7031c8eb1efb77003c316ca25dd49a42325dd011/pkg/gql" target="_blank" >gql</a>, which may require adding a counter in RocksDB/SQLite to track this metric and support the API.
-
-
-
+To facilitate these APIs it is necessary to store additional data in local storage. An example of this would be including a get_failed_txn_count function in <a href="https://github.com/dusk-network/dusk-blockchain/tree/7031c8eb1efb77003c316ca25dd49a42325dd011/pkg/gql" target="_blank">gql</a>, which may require adding a counter in RocksDB/SQLite to track this metric and support the API.
 
 ##### Failover Support and Load Balancing
 
-Failover support procedures and load balancing network requests should be implemented,  to ensure that the least overloaded archival nodes handle data provision. This can be achieved by an API gateway between the client and the archival Nodes (servers). 
+Failover support procedures and load balancing network requests should be implemented, to ensure that the least overloaded archival nodes handle data provision. This can be achieved by an API gateway between the client and the archival Nodes (servers). 
 
-An API rate limiter  middleware should be integrated into the current HTTP server to mitigate DoS attacks.
+An API rate limiter middleware should be integrated into the current HTTP server to mitigate DoS attacks.
 
 ##### Real-Time Updates
 
@@ -66,14 +61,13 @@ Archival nodes should have the ability to define limits on the types or volumes 
 
 On-disk data compression supported by RocksDB, such as Snappy and LZ4, should be enabled.
 
-
 ## Envisioned Timelines
 
 8 weeks
 
 ## Proposal Submission
 
-Please submit applications through the Thesan grants form
+Please submit applications through the Thesan grants form.
 
 ## Resources
 
@@ -84,15 +78,13 @@ Relevant repositories can be found here:
 - https://github.com/dusk-network/rusk/wiki/RUES-(Rusk-Universal-Event-System)
 - https://github.com/dusk-network/node-installer
 
-
-
 ## Additional Information
+
 ##### Vendor Qualifications
 
 Dusk seeks applicants with the necessary experience and expertise to ensure successful implementation of the proposed solutions. 
 
-For this reason, Dusk will mainly consider applicants that have provable experience / knowledge in developing and deploying GraphQL and REST APIs in the context of blockchain technology.  Applicants should rely on strong programming skills and expertise in database management. Competence in implementing failover support and load balancing mechanisms is a plus.
-
+For this reason, Dusk will mainly consider applicants that have provable experience/knowledge in developing and deploying GraphQL and REST APIs in the context of blockchain technology. Applicants should rely on strong programming skills and expertise in database management. Competence in implementing failover support and load balancing mechanisms is a plus.
 
 ###### Evaluation Criteria
 
@@ -108,8 +100,9 @@ We evaluate all applications in a fair and unbiased manner. All proposals will b
 All proposals will be treated as confidential.
 
 ##### Open Source
+
 Code should be provided with the necessary licenses for open-source use (e.g. Apache 2.0, MPL, MIT).
 
-
 ## How to apply
-Fill out the [Thesan application form](https://qfisyyuui1g.typeform.com/to/uAucnWFJ) by taking your your time to answer all the relevant questions in detail. Please make sure to follow the general and <a href="http://docs.dusk.network/grants/#selection-process" target="_blank" > requirements and guidelines </a>.
+
+Fill out the [Thesan application form](https://qfisyyuui1g.typeform.com/to/uAucnWFJ) by taking your your time to answer all the relevant questions in detail. Please make sure to follow the general and <a href="http://docs.dusk.network/grants/#selection-process" target="_blank">requirements and guidelines</a>.

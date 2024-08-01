@@ -2,15 +2,16 @@
 title: Smart Contract Example
 ---
 
-
 ### Simple Counter Example
-Let's create a simple contract for <a href="https://github.com/dusk-network/piecrust" target="_blank" >Piecrust</a>, the virtual machine used by the Dusk blockchain.
 
- We will develop a counter that keeps track of its total count, providing functionality to increment this count by one and to read the current value. Specifically, the counter will record how many times its increment method has been called, and this information can be accessed through a read method.
+Let's create a simple contract for <a href="https://github.com/dusk-network/piecrust" target="_blank">Piecrust</a>, the virtual machine used by the Dusk blockchain.
+
+We will develop a counter that keeps track of its total count, providing functionality to increment this count by one and to read the current value. Specifically, the counter will record how many times its increment method has been called, and this information can be accessed through a read method.
 
 Let's do it step by step.
 
 #### 1) Create a Rust project
+
 As smart contracts on Dusk are "almost" normal Rust programs, let's create a new Rust cargo project in order to be able to write it and compile it.
 
 You can create new Rust library for our contract by issuing the following command:
@@ -23,7 +24,6 @@ In folder `src` there is a `lib.rs` file with some example tests. You can remove
 
 We will add the required dependencies to the `Cargo.toml` file. You can then start entering or pasting in the contract's code.
 
-
 #### 2) Add dependencies
 
 Add the following line in the `[dependencies]` section of your `Cargo.toml` file:
@@ -32,7 +32,6 @@ Add the following line in the `[dependencies]` section of your `Cargo.toml` file
 [dependencies]
 piecrust-uplink = { version = "0.8", features = ["abi", "dlmalloc"] }
 ```
-
 
 If we don't do it, when compiling the contract we will encounter an error stating that the `piecrust-uplink` dependency is missing. 
 
@@ -125,7 +124,6 @@ unsafe fn read_value(arg_len: u32) -> u32 {
 
 - `uplink::wrap_call` takes care of all the boilerplate code needed to serialize/deserialize and pass arguments to and from our methods.
 
-
 Our contract is now ready, and the entire counter contract looks as follows:
 
 ```rust
@@ -182,11 +180,10 @@ Once the contract has been compiled successfully, you can launch:
 
 By doing so, you should see the build file named: `hello_dusk_contact.wasm`.
 
-
 Now that you have compiled the contract, you can deploy it to the Dusk blockchain.
 
 ## Contract State Persistence
+
 After trying out the above example, you may wonder, how is it possible that the counter state is being persisted, although we did not do anything special with the count value. Usually, smart contracts provide persistence in a form of special key-value maps, accessible via an api provided by the contract host. Here, we did not do anything to make the count persistent, yet it is being persistent and when we try out the contract by subsequently calling `increment` and `read_value`, we can see that the count value is correct.. 
 
 The answer is that the entire memory of a contract gets persisted, along with contract data. Thus, we don't need to do anything special to make data persistent. As data is in memory, it will persist along with the entire memory. A consequence of this is the fact that you can use any data structure or data collection in your program, and it will be persisted. You don't need to limit yourself to a predefined set of types provided to you by the blockchain's VM runtime environment.
-
