@@ -1,7 +1,7 @@
 ---
 title: PLONK
 ---
-<a href="https://eprint.iacr.org/2019/953.pdf" target="_blank" >PLONK</a> is a polynomial Interactive Oracle Proof (IOP) where a Prover can convince a Verifier that for a public circuit **C** and statement **x**, he has a witness **w** such that **C(x,w) = 0**.
+<a href="https://eprint.iacr.org/2019/953.pdf" target="_blank">PLONK</a> is a polynomial Interactive Oracle Proof (IOP) where a Prover can convince a Verifier that for a public circuit **C** and statement **x**, he has a witness **w** such that **C(x,w) = 0**.
 
 This means that the PLONK IOP can be used together with a Polynomial Commitment Scheme (PCS) to construct a universal SNARK for general circuits.
 
@@ -12,11 +12,10 @@ For example:
 - If the PLONK IOP is combined with a PCS that does not require a trusted setup, then the final SNARK doesn’t have a trusted setup.
 - If the PLONK IOP is combined with a PCS that does require a trusted setup, then the final SNARK will need a trusted setup.
 
-The first Rust implementation of PLONK was built by Dusk, and can be found <a href="https://github.com/dusk-network/plonk" target="_blank" >here</a>.
-
-
+The first Rust implementation of PLONK was built by Dusk, and can be found <a href="https://github.com/dusk-network/plonk" target="_blank">here</a>.
 
 ## Arithmetization
+
 To efficiently construct proofs, the computation to be proven needs to be transformed into polynomials via an arithmetization. This implies encoding the entire execution trace of the circuit into a table that lists the inputs and output of every gate.
 
 As zk-SNARKs deal with polynomial commitments, a necessary step is interpolating a polynomial that encodes the entire computation trace that needs to be proven. This implies that all the inputs and all the wires need to be encoded into polynomials. The prover uses **Fast Fourier Transformations** (FFTs) to compute the coefficients of the polynomial, making the degree of the polynomial proportional to the number of gates that the computation requires for its arithmetization. For example, if the encoding gives 12 constraints, the correspondent polynomial has a degree at most 11. The fact that the degrees of the polynomials are equal to the number of the elements of the vector minus one is what makes PLONK so efficient.
@@ -25,6 +24,7 @@ As zk-SNARKs deal with polynomial commitments, a necessary step is interpolating
 ![plonk](../../../../assets/zk-plonk.png)
 
 ## Lagrange Polynomials and interpolations
+
 There are two different ways of representing a polynomial:
 
 - **Coefficient representation** (the polynomial is defined by providing its coefficients).
@@ -43,6 +43,7 @@ By using Lagrange polynomials, it is already known that their value is going to 
 A consequence of this is that the vector arithmetic can be mapped directly into the equivalent polynomial evaluation, allowing to evaluate a large number of arithmetic gates at once. This allow for efficiency and succintness.
 
 #### Roots of Unity and Vanishing Polynomial
+
 The roots of unity in the realm that in the real numbers are 1 and -1, because 1²=1 and -1²=1.
 
 Anyways, because SNARKs work on prime fields, modular arithmetic needs to be used.
@@ -52,6 +53,7 @@ To be more specific, the special points in which the Lagrange polynomials evalua
 If the arithmetic expression that need to be checked on the vectors holds true, the polynomials that are being evaluated are perfectly divisible for the vanishing polynomial. This implies that instead of evaluating vectors with millions of elements individually, we can simplify the process by evaluating millions of smaller equations with a single equation. This is achieved by verifying if the polynomials are zero modulo the vanishing polynomial of the root of unity.
 
 ## Proof Verification
+
 Once the prover encodes the computation trace into polynomials, the verifier needs to verify that the polynomial is a commitment to a valid computation trace by verifying the inputs, gates, copy constraints and outputs.
 
 ##### 1) Verify the inputs
@@ -87,4 +89,3 @@ The required steps when using PLONK to construct a SNARK can be summarized as fo
     - Wires are correct. He does this by proving that a specific polynomial is equal to 0 for a permutation-check.
     - The output of the circuit is equal to the output of the last gate, which is equal to 0.
 The verifications of this last step correspond to three “0 tests” and one evaluation test. If successful, these checks convince the Verifier that the polynomial commitment provided by the Prover is the commitment to a valid computation trace. This implies that the prover has a valid witness such as that **C(x,w) = 0**.
-

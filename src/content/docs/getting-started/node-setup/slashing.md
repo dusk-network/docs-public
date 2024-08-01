@@ -9,7 +9,7 @@ Slashing penalties can be categorized into two main types, depending on the seve
 
 ## Hard slashing
 
-Hard slashing is applied for serious violations that can significantly undermine the security or stability of the network.  Here are some of the scenarios that qualify for hard slashing:
+Hard slashing is applied for serious violations that can significantly undermine the security or stability of the network. Here are some of the scenarios that qualify for hard slashing:
 
 - Block Generators sending around multiple different candidates
 - Block Generators sending around a candidate with invalid transactions

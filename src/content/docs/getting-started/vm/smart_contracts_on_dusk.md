@@ -6,9 +6,9 @@ title: Smart Contracts on Dusk
 
 Dusk offers robust support for smart contracts, as developers can leverage the features offered by <a href="https://github.com/dusk-network/piecrust" target="_blank">Piecrust</a>, <a href="https://github.com/dusk-network/piecrust/blob/main/piecrust-uplink/README.md" target="_blank">piecrust-uplink</a> and <a href="https://github.com/dusk-network/rusk" target="_blank">Rusk</a>.
 
-In order to deploy a smart contract, developers only need to compile their contracts to WASM. This is possible because the <a href="https://github.com/dusk-network/piecrust" target="_blank">Piecrust</a> VM manages the contract’s bytecode, state, and runtime sandboxed environment.  
+In order to deploy a smart contract, developers only need to compile their contracts to WASM. This is possible because the <a href="https://github.com/dusk-network/piecrust" target="_blank">Piecrust</a> VM manages the contract’s bytecode, state, and runtime sandboxed environment.
 
-Even if developers can use any programming language that compiles to WASM (e.g.  C, C++, Go...), we strongly recommend developers to use Rust due to its extensive support in our ecosystem.
+Even if developers can use any programming language that compiles to WASM (e.g. C, C++, Go...), we strongly recommend developers to use Rust due to its extensive support in our ecosystem.
 
 ##### Methods
 

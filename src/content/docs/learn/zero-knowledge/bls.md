@@ -3,8 +3,7 @@ title: BLS12-381
 ---
 
 This is a non-exhaustive introduction to some of the key characteristics of the elliptic curve BLS12-381.
-For further reading have a look at <a href="https://hackmd.io/@benjaminion/bls12-381" target="_blank" >BLS12-381-For The Rest Of Us</a> or <a href="https://electriccoin.co/blog/new-snark-curve" target="_blank" >announcement</a>.
-
+For further reading have a look at <a href="https://hackmd.io/@benjaminion/bls12-381" target="_blank">BLS12-381-For The Rest Of Us</a> or <a href="https://electriccoin.co/blog/new-snark-curve" target="_blank">announcement</a>.
 
 ## Origin
 
@@ -223,8 +222,6 @@ $$
 $$
 - $\mathbb{G}_T$ which is the group of $r$th roots of unity in $\mathbb{F}_{q^{12}}$.
 
-
-
 [^1]: Note that this is **not** the point at $(0,0)$.
 
 [^2]: This is not the same as our curve being *defined over* $\mathbb{F}_q$.
@@ -232,9 +229,9 @@ Generally speaking, an elliptic curve of the form $E: y^2 = x^2 + ax + b$ is sai
 This is denoted by $E/K$.
 In the case of BLS12-381 however, the curve is both defined over the field $\mathbb{F}_q$ (so $E/\mathbb{F}_q$) **and** has coordinates in the field $\mathbb{F}_q$ (so $E(\mathbb{F}_q)$).
 
-[^3]: This is a direct consequence of <a href="https://en.wikipedia.org/wiki/Lagrange's_theorem_%28group_theory%29" target="_blank" >Lagrange's Theorem</a>.
+[^3]: This is a direct consequence of <a href="https://en.wikipedia.org/wiki/Lagrange's_theorem_%28group_theory%29" target="_blank">Lagrange's Theorem</a>.
 
-[^4]: Check the <a href="https://docs.rs/dusk-bls12_381/0.10.0/dusk_bls12_381/notes/design/index.html" target="_blank" >crate documentation</a> on how the generator is chosen.
+[^4]: Check the <a href="https://docs.rs/dusk-bls12_381/0.10.0/dusk_bls12_381/notes/design/index.html" target="_blank">crate documentation</a> on how the generator is chosen.
 
 [^5]: In order to ease the arithmetics with `BlsScalar` we still do some tricks under the hood.
 So even though `BlsScalar` essentially are just integers from $0$ to $r-1$, internally we multiply them with $2^{64}$ and take the resulting number modulo $r$.
@@ -242,6 +239,6 @@ This is called the Montgomery form of the `BlsScalar` and to add to the complexi
 
 [^6]: Depending on what the pairing scheme is used for, $\mathbb{G}$ can also be set to $\mathbb{G}_2$ instead of $\mathbb{G}_1$.
 
-[^7]: This is due to the fact that there are no irreducible polynomials with a degree $>1$ over the complex numbers and what that means is explained rather nicely <a href="https://hackmd.io/@benjaminion/bls12-381" target="_blank" >here</a>.
+[^7]: This is due to the fact that there are no irreducible polynomials with a degree $>1$ over the complex numbers and what that means is explained rather nicely <a href="https://hackmd.io/@benjaminion/bls12-381" target="_blank">here</a>.
 
 [^8]: Indeed the curve has been specifically designed to have an embedding degree of 12, which is a compromise between security (the higher the better) and performance (the lower the better).

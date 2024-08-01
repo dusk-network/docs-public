@@ -11,7 +11,7 @@ It is common for the contract itself to only deal with the operations that direc
 
 The test code includes the implementations of host queries (`hash`, `verify_proof`, and `very_expensive`), and the contract code interacts with these queries as if they were external calls.
 
-The test code also contains the code to generate public parameters and compiling the circuit using <a href="https://github.com/dusk-network/plonk" target="_blank"> PLONK</a>.
+The test code also contains the code to generate public parameters and compiling the circuit using <a href="https://github.com/dusk-network/plonk" target="_blank">PLONK</a>.
 
 ## Registration, Implementations and Calls
 
@@ -53,7 +53,7 @@ impl Hoster {
 
 ## Cryptographic Proofs
 
-Here we provide an overview on how to set up a prover and verifier using <a href="https://github.com/dusk-network/plonk" target="_blank"> PLONK</a>, as well as generating proofs, and verifying them via a smart contract.
+Here we provide an overview on how to set up a prover and verifier using <a href="https://github.com/dusk-network/plonk" target="_blank">PLONK</a>, as well as generating proofs, and verifying them via a smart contract.
 
 ##### Setup
 

@@ -3,13 +3,15 @@ title: Smart Contract Example
 ---
 
 ### Simple Counter Example
-Let's create a simple contract for <a href="https://github.com/dusk-network/piecrust" target="_blank" >Piecrust</a>, the virtual machine used by the Dusk blockchain.
 
- We will develop a counter that keeps track of its total count, providing functionality to increment this count by one and to read the current value. Specifically, the counter will record how many times its increment method has been called, and this information can be accessed through a read method.
+Let's create a simple contract for <a href="https://github.com/dusk-network/piecrust" target="_blank">Piecrust</a>, the virtual machine used by the Dusk blockchain.
+
+We will develop a counter that keeps track of its total count, providing functionality to increment this count by one and to read the current value. Specifically, the counter will record how many times its increment method has been called, and this information can be accessed through a read method.
 
 Let's do it step by step.
 
 #### 1) Create a Rust project
+
 As smart contracts on Dusk are "almost" normal Rust programs, let's create a new Rust cargo project in order to be able to write it and compile it.
 
 You can create new Rust library for our contract by issuing the following command:
@@ -121,7 +123,6 @@ unsafe fn read_value(arg_len: u32) -> u32 {
 - The `#[no_mangle]` annotations are needed in order to turn off the default Rust linker name mangling. We want our names to be as they are, since they will be called via mechanisms outside the control of the linker. 
 
 - `uplink::wrap_call` takes care of all the boilerplate code needed to serialize/deserialize and pass arguments to and from our methods.
-
 
 Our contract is now ready, and the entire counter contract looks as follows:
 

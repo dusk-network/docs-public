@@ -2,7 +2,7 @@
 title: Host Functions
 ---
 
-Host functions are functions provided by rusk (the "host") and can be called from within a smart contract running on the Piecrust VM. Due to the sandboxed nature of VMs, smart contracts need to rely on host functions to access and manipulate lower-level operations that are managed by the Dusk nodes (e.g. time checks, cryptographic functions ...).
+Host functions are functions provided by rusk (the "host") and can be called from within a smart contract running on the Piecrust VM. Due to the sandboxed nature of VMs, smart contracts need to rely on host functions to access and manipulate lower-level operations that are managed by the Dusk nodes (e.g. time checks, cryptographic functions...).
 
 Simply put, host functions are necessary because they allow smart contracts to interact with the system-level functions of the machine on which they run.
 

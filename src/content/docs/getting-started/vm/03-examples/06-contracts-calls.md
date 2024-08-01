@@ -35,7 +35,7 @@ let res = session.call::<_, Result<Vec<u8>, ContractError>>(
 let value: i64 = rkyv::from_bytes(&res).expect("Deserialization to succeed");
 ```
 
-To execute a function in another contract, use the ```delegate_transaction``` function:
+To execute a function in another contract, use the `delegate_transaction` function:
 
 ```rust
 session.call::<_, ()>(

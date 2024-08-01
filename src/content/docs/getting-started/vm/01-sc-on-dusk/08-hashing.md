@@ -8,7 +8,7 @@ Developers are not restricted to a specific set of cryptographic hash functions 
 
 Although developers are free to use any hash algorithm, Dusk provides specific support for the Blake2 hash function. Blake2 is known for its speed and efficiency compared to other cryptographic hash functions like SHA-256. On Dusk, computing a Blake2 hash through a host function is computationally much cheaper than in-VM, as such it's much cheaper in terms of gas versus hash functions compiled into the contract. This feature can significantly reduce the operational costs of running smart contracts on Dusk, especially for applications that require frequently used or complex hashing operations.
 
-The Blake2 hashing is integrated with operations involving `BlsScalar` types, which makes it work seamlessly with scalar values in cryptography. This is useful when performing operations such as digital signatures, zero-knowledge proofs (ZKPs), and more...
+The Blake2 hashing is integrated with operations involving `BlsScalar` types, which makes it work seamlessly with scalar values in cryptography. This is useful when performing operations such as digital signatures, zero-knowledge proofs (ZKPs), and other often used computationally expensive operations.
 
 :::tip
 The Blake2 hashing is integrated with operations involving `BlsScalar` types, which makes it work seamlessly with scalar values in cryptography.

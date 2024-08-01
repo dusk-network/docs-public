@@ -8,11 +8,11 @@ The <a href="https://github.com/dusk-network/rusk/wiki/RUES-%28Rusk-Universal-Ev
 
 RUES is designed to handle binary proofs, binary streams, and on-demand event-driven data, making it ideal for applications that need to process binary proofs or continuous binary data streams.
 It also enables on-demand data dispatching and real-time notifications, supporting applications like wallet operations that require high-performance binary data handling.
-This is achieved by avoiding the need to convert data to JSON or base64, 
+This is achieved by avoiding the need to convert data to JSON or base64.
 
 ## Use of RUES
 
-RUES is deeply integrated into Dusk’s architecture, playing a critical role in various components:
+RUES is deeply integrated into Dusk’s architecture, playing a critical role in various components.
 
 ##### Smart Contracts
 

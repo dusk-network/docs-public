@@ -21,13 +21,13 @@ rustup default nightly
 <!---
 # Optional dependencies
 
-If in addition to test your smart contracts against <a href="https://github.com/dusk-network/piecrust" target="_blank" >Piecrust</a> you want to deploy them on-chain, you can set up your local cluster and add the following dependencies:
+If in addition to test your smart contracts against <a href="https://github.com/dusk-network/piecrust" target="_blank">Piecrust</a> you want to deploy them on-chain, you can set up your local cluster and add the following dependencies:
 
 #### GCC
-To run Rusk, you will need to install <a href="https://gcc.gnu.org/install/" target="_blank" >GCC</a> 13 or higher.
+To run Rusk, you will need to install <a href="https://gcc.gnu.org/install/" target="_blank">GCC</a> 13 or higher.
 
 #### Clang
-To run Rusk, you will need to install <a href="https://clang.llvm.org/get_started.html" target="_blank" >Clang</a> 13 or higher.
+To run Rusk, you will need to install <a href="https://clang.llvm.org/get_started.html" target="_blank">Clang</a> 13 or higher.
 
 #### wasm-pack
 

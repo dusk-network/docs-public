@@ -7,7 +7,7 @@ title: Piecrust and piecrust-uplink
 <a href="https://github.com/dusk-network/piecrust" target="_blank">Piecrust</a> is the WASM virtual machine for running Dusk's smart contracts, and it is based on the [Wasmtime](https://wasmtime.dev) runtime, with a few custom modifications:
 - Specific memory management mechanism
 - Support for Dusk’s ABI
-- Support for inter-contract calls. 
+- Support for inter-contract calls 
 
 Piecrust functions as the host-side interface, handling the execution environment and system-level operations
 

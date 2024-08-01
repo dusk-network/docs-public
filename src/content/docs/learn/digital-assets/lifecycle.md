@@ -38,7 +38,7 @@ Security tokens make shareholder resolutions easier than they currently are. Und
 In most jurisdictions, companies can specify how voting works in their shareholder agreements. Hence, whatever voting mechanic we choose for our Security Token Standard can be adopted by companies that use our standard to tokenise. 
 
 In practice, the most straightforward mechanic is:
-- **Set Voting:** Governance determines the block height indicating the start and end of the voting period.  
+- **Set Voting:** Governance determines the block height indicating the start and end of the voting period.
 - **Vote:** A shareholder submits a vote and its weight, which is proportional to the amount of assets the holder owns. 
 - **Poll Count:** Governance decrypts the poll accumulator with its decryption key.
 

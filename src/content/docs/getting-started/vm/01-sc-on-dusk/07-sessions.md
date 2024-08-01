@@ -41,4 +41,5 @@ struct FnData {
 ```
 
 ## Example
+
 An example on how to use sessions can be found [here](/getting-started/vm/03-examples/05-sessions-example).

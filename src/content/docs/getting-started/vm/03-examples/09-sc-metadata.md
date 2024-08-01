@@ -4,7 +4,7 @@ title: Metadata
 
 Smart contract metadata includes a variety of information that describes the smart contract's structure, functionality, and other relevant details.
 
-Developers are encouraged to have a look at the <a href="https://github.com/dusk-network/piecrust/blob/main/contracts/metadata/src/lib.rs" target="_blank" >metadata contract</a> and check out the <a href="https://github.com/dusk-network/piecrust/blob/main/piecrust/tests/metadata.rs" target="_blank" >metadata test</a> file.
+Developers are encouraged to have a look at the <a href="https://github.com/dusk-network/piecrust/blob/main/contracts/metadata/src/lib.rs" target="_blank">metadata contract</a> and check out the <a href="https://github.com/dusk-network/piecrust/blob/main/piecrust/tests/metadata.rs" target="_blank">metadata test</a> file.
 
 The metadata contract is designed to manage and retrieve various metadata attributes for smart contracts, and defines the following functions:
 

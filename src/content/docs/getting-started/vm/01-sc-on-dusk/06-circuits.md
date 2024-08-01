@@ -29,17 +29,18 @@ Request Creation and Encryption:
 
 1. **Stealth Address Generation:** A new stealth address is correctly generated using Diffie-Hellman.
 2. **Data Encryption:** The license stealth address and an additional key are encrypted using the derived key.
-3. **Session Initialization:** Public inputs are used to construct session data (e.g. session ID, session hash, commitments...)
+3. **Session Initialization:** Public inputs are used to construct session data (e.g. session ID, session hash, commitments...).
 4. **Verification**: Pedersen commitments and hash commitment are calculated and verified.
 5. **Data Decryption:** Requested data is decrypted using the derived key.
 6. **Signature Creation:** A signature for the license is generated using the license secret key and hash.
 7. **License Data Encryption**: The signature and attribute data are encrypted with the public key of the license.
-8. **Proof Generation**: A proof of membership in a Merkle tree is created
+8. **Proof Generation**: A proof of membership in a Merkle tree is created.
 9. **Proof Verification:**: Cryptographic commitments are computed and the signature of the session hash is verified.
 
 For additional information, you can have a look at the <a href="https://github.com/dusk-network/citadel/blob/main/src/license.rs" target="_blank">circuits</a> and <a href="https://github.com/dusk-network/citadel/blob/main/docs/specs.pdf" target="_blank">specifications</a>.
 
 # Zedger circuits
+
 :::note
 The [Zedger](/learn/dusk-protocol/transaction_models/zedger) repository is currently private. 
 :::
