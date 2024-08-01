@@ -8,7 +8,7 @@ Dusk is powered by cutting-edge technology, engineered for the inception and dep
 
 Technically, Dusk is a [layer one](https://www.techopedia.com/definition/layer-1-in-blockchain), [zero-knowledge friendly](https://dusk.network/news/understanding_zkps-what-are-they-and-why-do-they-matter/), [proof-of-stake](https://en.wikipedia.org/wiki/Proof_of_stake) blockchain network protocol with an emphasis on privacy and compliance.
 
-Simply put, Dusk is **privacy-centric global ledger for real world applications and assets**.
+Simply put, Dusk is a **privacy-centric global ledger for real world applications and assets**.
 
 <hr className="subsection" />
 
@@ -22,7 +22,7 @@ Dusk is engineered for high performance and ease of use, catering to both develo
 
 ##### High Performance and Finality
 1. Features [Kadcast](https://github.com/dusk-network/kadcast/blob/main/README.md), an innovative network protocol for **10x more efficient block and transaction data propagation**.
-2. Dusk's consensus algorithm [succinct attestation](/learn/economic-information/succinct-attestation) is powered by proof-of-stake sybil resistant mechanism, and enables **complete state finality**, not just transactions. This unlocks a wealth of financial applications.
+2. Dusk's consensus algorithm [succinct attestation](/learn/economic-information/succinct-attestation) is powered by a proof-of-stake sybil resistant mechanism, and enables **complete state finality**, not just transactions. This unlocks a wealth of financial applications.
 3. Transactions are **fast and efficient**, bolstered by [Piecrust](/getting-started/vm/02-components/piecrust), Dusk's ZK-friendly virtual machine.
 
 ##### Developer and User Experience

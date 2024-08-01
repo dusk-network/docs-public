@@ -39,7 +39,8 @@ The `txpayload` contains all the previous information together with a field call
 
 Once `txpayload` is set, the sender of the transaction calculates `payload_hash`, which is the hash of all elements in `txpayload`. All these elements together with this hash are used to compute `tx_proof`, which is a zero-knowledge proof that proves that the transaction has been performed following the network rules and that the list encryptions do encrypt correctly a sender’s public key owned by the sender. 
 
-While `tx` consists of all the parameters that are set by the sender of the transaction, `txmetadata` contains the information set by the network once the transaction is processed and included in a block: - `timestamp` is the the date and time the transaction was processed
+While `tx` consists of all the parameters that are set by the sender of the transaction, `txmetadata` contains the information set by the network once the transaction is processed and included in a block: 
+- `timestamp` is the the date and time the transaction was processed
 - `block_height` is the number of the block the transaction was included in
 - `status` indicates if the transaction was successful or not
 - `tx_hash` is the hash of tx

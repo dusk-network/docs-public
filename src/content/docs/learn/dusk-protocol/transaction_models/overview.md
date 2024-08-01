@@ -4,7 +4,7 @@ title: Overview
 
 A transaction model defines how transactions are structured, verified, and recorded. Consequently, a transaction model specifies the rules that allow assets to be transferred between participants on a network.
 
-The structure of a transaction tipically includes inputs and outputs. Each transaction must be cryptographically signed by the sender to verify authenticity and prevent tampering.
+The structure of a transaction typically includes inputs and outputs. Each transaction must be cryptographically signed by the sender to verify authenticity and prevent tampering.
 
 Transactions must comply with network rules (e.g. no double-spending), and nodes validate transactions before they are added to the blockchain.
 
