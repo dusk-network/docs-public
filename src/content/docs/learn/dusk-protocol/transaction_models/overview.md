@@ -42,6 +42,6 @@ Some of the benefits of Moonlight:
 
 ### Zedger
 
-[Zedger](/learn/dusk-protocol/transaction_models/zedger) is the transaction model that combines aspects of UTXO and the account model to allow for lifecycle management and regulatory compliance.
+[Zedger](/learn/dusk-protocol/transaction_models/zedger) is the protocol that incorporates a transaction model which combines aspects of UTXO and the account model to allow for lifecycle management of securities and regulatory compliance.
 
-Zedger allows for the digital representation and management of securites in a privacy-preserving manner. Issuers of securities are able to issue, manage, and trade securities as tokens. Zedger supports a range of security types, like stocks, bonds and ETFs. The emphasis on regulatory compliance and privacy ensures that all operations meet the highest standards required by financial authorities and stakeholders.
+Zedger allows for the digital representation, native issuance and management of securites in a privacy-preserving manner. Issuers of securities are able to issue, manage, and trade securities as tokens. Zedger supports a range of security types, like stocks, bonds and ETFs. The emphasis on regulatory compliance and privacy ensures that all operations meet the highest standards required by financial authorities and stakeholders.

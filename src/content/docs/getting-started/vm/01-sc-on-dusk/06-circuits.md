@@ -6,7 +6,7 @@ Circuits allow for optimized zero-knowledge (ZK) operations on Dusk, and are tar
 
 - [Phoenix](/learn/dusk-protocol/transaction_models/phoenix): to spend notes and pay for gas.
 - [Citadel](/getting-started/digital-identity/protocol): to use in the Self-Sovereign Identity implementation.
-- [Zedger](/learn/dusk-protocol/transaction_models/zedger): to use the XSC (Confidential Security Token) standard.
+- [Zedger](/learn/dusk-protocol/transaction_models/zedger): to use the Zedger transaction model and spent securities.
 
 Developers can write their own ZK circuits as part of their smart contracts, allowing for the proving and verification of zero-knowledge proofs.
 
