@@ -18,7 +18,15 @@ Along with the source code, developers should provide the Dockerfile or the Dock
 
 #### Can a Contract deploy another Contract?
 
-This is possible, and it is something that the team is currently working on. Depending on the manner in which this happens, it could be possible to deploy contracts with a bytecode much larger than 64KiB. It could be that a contract is able to pass a pointer to the host, together with a length, and simply have the host copy that part of its memory under the assumption that it is WASM. This would mean being able to deploy bytecode of near-arbitrary length, up to 4GiB.
+Yes. With the introduction of a contract deployment transaction type, smart contracts deployments can be executed via transactions. This implies that developers can deploy smart contracts after the genesis block, as the new transaction type includes:
+
+- The owner of the transaction, identified by a BLS Public Key.
+- The <a href="https://github.com/dusk-network/rusk/wiki/Contract-File-Format" target="_blank">contract</a>.
+- The constructor arguments.
+
+The gas fees relative to the contract deployment are proportional to the amount of bytes of the contract's bytecode:
+
+```Total Cost=Bytecode Length × GAS_PER_DEPLOY_BYTE × Current Gas Price```
 
 #### Is there Token Discoverability?
 
@@ -83,7 +91,3 @@ It needs to be noted that even if in theory users can be seen as a collection of
 #### How to pause or unpause contracts?
 
 Contract locking is available to those contracts falling in the scenario 3 of the economic protocol, This includes the cases when a vulnerability is detected either algorithmically (the contract goes in out of gas) or manually by the contract's owner (the contract is losing money). 
-
-#### Can a contract deploy another contract?
-
-This is possible, and it is something that the team is currently working on. Depending on the manner in which this happens, it could be possible to deploy contracts with a bytecode much larger than 64KiB. It could be that a contract is able to pass a pointer to the host, together with a length, and simply have the host copy that part of its memory under the assumption that it is WASM. This would mean being able to deploy bytecode of near-arbitrary length, up to 4GiB.
