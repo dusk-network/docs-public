@@ -2,7 +2,7 @@
 	--__sl-font: "Soehne", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	--mono-font-family: "Soehne Mono", monospace;
 	--sl-text-3x: 58px;
-	--sl-text-h2: 28px;
+	/* --sl-text-h2: 28px; */
 }
 
 /* Light mode colors. */
@@ -89,6 +89,18 @@ body {
 
 .minimal {
 	border: 1px solid #101010 !important;
+}
+
+.large {
+	font-weight: 500;
+}
+
+.title {
+	font-weight: 500 !important;
+}
+
+.starlight-aside__title {
+	font-weight: 500;
 }
 
 :root[data-theme="dark"] .minimal {
