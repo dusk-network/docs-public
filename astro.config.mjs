@@ -42,7 +42,7 @@ export default defineConfig({
 			},
 			customCss: ["./src/fonts/font-face.css", "./src/styles/custom.css"],
 			pagination: false,
-			tableOfContents: false,
+			tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 4 },
 			sidebar: [
 				{ label: 'Welcome', link: 'welcome' },
 				{
@@ -62,6 +62,7 @@ export default defineConfig({
 										{ label: "Moonlight", link: 'learn/dusk-protocol/transaction_models/moonlight' },
 										{ label: "Zedger", link: 'learn/dusk-protocol/transaction_models/zedger' },
 									],
+									collapsed: true,
 								},
 								{ label: "Resources", link: 'learn/dusk-protocol/additional-resources' },
 							],
@@ -74,6 +75,7 @@ export default defineConfig({
 								{ label: "Economic Protocol", link: 'learn/economic-information/economic-protocol' },
 								{ label: "Succinct Attestation Consensus", link: 'learn/economic-information/succinct-attestation' },
 							],
+							collapsed: true,
 						},
 						{
 							label: 'Digital Assets',
@@ -82,8 +84,8 @@ export default defineConfig({
 								{ label: "Security Lifecycle", link: 'learn/digital-assets/lifecycle' },
 								{ label: "Security Dematerialization", link: 'learn/digital-assets/dematerialization' },
 							],
+							collapsed: true,
 						},
-
 						{
 							label: 'Cryptography',
 							items: [
@@ -93,6 +95,7 @@ export default defineConfig({
 								{ label: "KZG", link: 'learn/zero-knowledge/kzg' },
 								{ label: "BLS12-381", link: 'learn/zero-knowledge/bls' },
 							],
+							collapsed: true,
 						}
 					],
 				},
@@ -109,6 +112,7 @@ export default defineConfig({
 								{ label: "Manual Resync", link: '/getting-started/node-setup/manual-resync' },
 								{ label: "Slashing", link: '/getting-started/node-setup/slashing' },
 							],
+							collapsed: true,
 						},
 						{
 							label: "Smart Contracts",
@@ -121,6 +125,7 @@ export default defineConfig({
 										{ label: "Rusk", link: '/getting-started/vm/02-components/02-rusk' },
 										{ label: "Rues", link: '/getting-started/vm/02-components/03-rues' },
 									],
+									collapsed: true,
 								},
 								{
 									label: "Smart Contracts on Dusk",
@@ -136,6 +141,7 @@ export default defineConfig({
 										{ label: "Semantics", link: '/getting-started/vm/01-sc-on-dusk/09-semantics' },
 										{ label: "Serialization", link: '/getting-started/vm/01-sc-on-dusk/10-serialization' },
 									],
+									collapsed: true,
 								},
 								{
 									label: "Getting Started",
@@ -143,6 +149,7 @@ export default defineConfig({
 										{ label: "Dependencies", link: '/getting-started/vm/04-getting-started/01-dependencies' },
 										{ label: "IDE", link: '/getting-started/vm/04-getting-started/02-ide' },
 									],
+									collapsed: true,
 								},
 								{
 									label: "Guides",
@@ -153,10 +160,9 @@ export default defineConfig({
 										{ label: "Deploying", link: '/getting-started/vm/05-guides/04-deploying' },
 										{ label: "Upgrades", link: '/getting-started/vm/05-guides/05-upgrades' },
 										{ label: "Interacting", link: '/getting-started/vm/05-guides/06-interacting' }
-
 									],
+									collapsed: true,
 								},
-
 								{
 									label: "Examples",
 									items: [
@@ -171,10 +177,9 @@ export default defineConfig({
 										{ label: "Persistence", link: '/getting-started/vm/03-examples/08-persistance' },
 										{ label: "Metadata", link: '/getting-started/vm/03-examples/09-sc-metadata' },
 										{ label: "Gas Usage", link: '/getting-started/vm/03-examples/10-spender' }
-									]
+									],
+									collapsed: true,
 								},
-								
-
 								{
 									label: "FAQs and issues",
 									items: [
@@ -182,11 +187,11 @@ export default defineConfig({
 										{ label: "Troubleshooting", link: '/getting-started/vm/06-faqs-issues/02-troubleshooting' },
 
 									],
+									collapsed: true,
 								},
-								
+
 							],
 						},
-
 						{
 							label: "Wallets",
 							items: [
@@ -194,6 +199,7 @@ export default defineConfig({
 								{ label: "Wallet Core Library", link: '/getting-started/wallet/wallet-core' },
 								//{ label: "Wallet JS Library", link: '/getting-started/wallet/wallet-js' },
 							],
+							collapsed: true,
 						},
 						{
 							label: "Digital Identity",
@@ -201,6 +207,7 @@ export default defineConfig({
 								{ label: "Citadel Protocol", link: '/getting-started/digital-identity/protocol' },
 								{ label: "Citadel SDK", link: '/getting-started/digital-identity/sdk' },
 							],
+							collapsed: true,
 						},
 					],
 				},
@@ -212,6 +219,7 @@ export default defineConfig({
 						{ label: "Node upgrading", link: "/nocturne/upgrade-node/" },
 						{ label: "Fast syncing", link: "/nocturne/fast-sync/" },
 					],
+					collapsed: true,
 				},
 				{
 					label: "Pre-Mainnet",
