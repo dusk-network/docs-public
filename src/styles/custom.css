@@ -2,7 +2,6 @@
 	--__sl-font: "Soehne", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	--mono-font-family: "Soehne Mono", monospace;
 	--sl-text-3x: 58px;
-	--sl-text-h2: 28px;
 }
 
 /* Light mode colors. */
@@ -95,9 +94,33 @@ body {
 	font-weight: 500;
 }
 
-.right-sidebar {
-	padding-top: calc(var(--sl-nav-height) + var(--sl-mobile-toc-height));
-	margin-top: calc(var(--sl-nav-height));
+@media (min-width: 72rem) {
+	.right-sidebar {
+		padding-top: calc(var(--sl-nav-height) + var(--sl-mobile-toc-height));
+		margin-top: calc(var(--sl-nav-height));
+	}
+}
+
+mobile-starlight-toc nav {
+	top: 8.3rem;
+	background-color: var(--default-color);
+	border-top: none;
+}
+
+@media (min-width: 50rem) {
+	mobile-starlight-toc nav {
+		top: 8.5rem;
+	}
+}
+
+.toggle {
+	border-radius: 100px;
+	background-color: var(--sl-color-bg-nav);
+}
+
+.dropdown {
+	background-color: var(--sl-color-bg-nav);
+	/* border-color: white; */
 }
 
 .title {
