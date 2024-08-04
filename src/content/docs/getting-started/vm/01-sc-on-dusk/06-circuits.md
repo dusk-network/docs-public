@@ -10,7 +10,7 @@ Circuits allow for optimized zero-knowledge (ZK) operations on Dusk, and are tar
 
 Developers can write their own ZK circuits as part of their smart contracts, allowing for the proving and verification of zero-knowledge proofs.
 
-# Phoenix circuits
+## Phoenix circuits
 
 Circuits in Phoenix prove that the following conditions hold true:
 
@@ -22,7 +22,7 @@ Circuits in Phoenix prove that the following conditions hold true:
 
 For additional information, you can have a look at the <a href="https://github.com/dusk-network/phoenix/tree/b3ee366887b131993f9e41a11286c39e10f2e816/circuits" target="_blank">circuits</a> and <a href="https://github.com/dusk-network/phoenix/blob/master/docs/protocol.pdf" target="_blank">specifications</a>.
 
-# Citadel circuits
+## Citadel circuits
 
 Circuits in Citadel allow for the following actions:
 Request Creation and Encryption:
@@ -39,7 +39,7 @@ Request Creation and Encryption:
 
 For additional information, you can have a look at the <a href="https://github.com/dusk-network/citadel/blob/main/src/license.rs" target="_blank">circuits</a> and <a href="https://github.com/dusk-network/citadel/blob/main/docs/specs.pdf" target="_blank">specifications</a>.
 
-# Zedger circuits
+## Zedger circuits
 
 :::note
 The [Zedger](/learn/dusk-protocol/transaction_models/zedger) repository is currently private. 

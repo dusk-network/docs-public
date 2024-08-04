@@ -19,7 +19,7 @@ The parameters above correspond to the following:
 
 To prevent double spending, transactions include a list of deterministic values called nullifiers, one for each note being spent, which invalidates these notes. The network nodes must check that nullifiers were not used before. The idea here is that the nullifier is computed in such a way that an external observer cannot link it to any specific note. This way, when a transaction is accepted, the network knows that some notes are nullified and can no longer be spent, but does not know which ones.
 
-### Transactions
+## Transactions
 
 At a technical level, transactions consist of two parts, a header txmetadata which includes metadata, and the payload txpayload with the actual contents of the transaction that have been set by the transaction sender.
 
@@ -49,13 +49,13 @@ While `tx` consists of all the parameters that are set by the sender of the tran
 - `fee` is the amount of $DUSK spent in the transaction, which is the result of `gas_price` × `gas_spent`
 - `positions` is the list of positions of the newly minted notes in the Merkle tree of notes.
 
-### Protocol keys
+## Protocol keys
 
 As Phoenix is a privacy-preserving protocol, each note is associated with a unique public key, instead of using the static public key of the recipient. In addition to this, Phoenix uses two-element keys, which allows users of the network to delegate the process of scanning for the notes addressed to them.
 
 Keys in Phoenix can be categorized into **user's static keys** and **note keys**.
 
-##### User static keys
+### User static keys
 
 Every user keeps the following static keys:
 
@@ -65,7 +65,7 @@ Every user keeps the following static keys:
 
 – **View key**: `vk = (a, B)`. This key enables allows for the viewing but not spending of funds.
 
-##### Note keys
+### Note keys
 
 In addition to the **user static keys**, Phoenix assigns a one-time key pair to each note issued in the network, computed using the Diffie–Hellman key exchange protocol. The recipient’s Diffie–Hellman partial key will be the first part of its public key, `A`, whereas the sender will use a fresh key.
 
@@ -77,7 +77,7 @@ By using the note's public key, a user can delegate the job of scanning the diff
  
 On the other hand, the note's secret key can only be computed by the recipient of the note, since they are the only ones holding the whole secret key `sk = (a,b)`. The recipient can use the note secret key to spend the note.
 
-### Phoenix 2.0 release
+## Phoenix 2.0 release
 
 Since the update from Phoenix to Phoenix 2.0, transactions also specify an encrypted sender’s public key that only the recipient can decrypt. 
 

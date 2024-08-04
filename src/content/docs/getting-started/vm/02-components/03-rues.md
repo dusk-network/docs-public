@@ -2,7 +2,7 @@
 title: RUES
 ---
 
-# Rusk Universal Events System (RUES)
+## Rusk Universal Events System (RUES)
 
 The <a href="https://github.com/dusk-network/rusk/wiki/RUES-%28Rusk-Universal-Event-System%29" target="_blank">Rusk Universal Event System (RUES)</a> is an integral part of the architecture of Dusk, providing a powerful mechanism for handling real-time communication with an event-driven approach.
 
@@ -10,7 +10,7 @@ RUES is designed to handle binary proofs, binary streams, and on-demand event-dr
 It also enables on-demand data dispatching and real-time notifications, supporting applications like wallet operations that require high-performance binary data handling.
 This is achieved by avoiding the need to convert data to JSON or base64.
 
-## Use of RUES
+### Use of RUES
 
 RUES is deeply integrated into Dusk’s architecture, playing a critical role in various components.
 

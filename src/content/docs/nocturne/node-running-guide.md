@@ -7,7 +7,7 @@ In this guide, we’ll be using [DigitalOcean](https://www.digitalocean.com/) (D
 
 We work under the assumption that you’ve already created an account for your respective service, and provided it with a payment method.
 
-# Create a droplet
+## Create a droplet
 
 DO uses droplets, which are Linux-based virtual machines. When you’re [logged in](https://cloud.digitalocean.com/login) and have set up a default project, navigate to _Droplets_ under the _Manage_ section of your project, and click on [_Create Droplet_](https://cloud.digitalocean.com/droplets/new).
 
@@ -35,7 +35,7 @@ DO will now set the droplet up for you. This can take a minute:
 
 ![Droplet being created.](../../../assets/nocturne/node-guide/droplet-creation.png)
 
-# Configure Firewall
+## Configure Firewall
 
 The Rusk node makes use of the Kadcast protocol to communicate messages between nodes on the network. This protocol uses UDP, and runs on a custom port. Due to the nature of how UDP works, Kadcast is not automatically port forwarded. Regardless of where the node is hosted, it is important that this is done.
 
@@ -55,7 +55,7 @@ Your firewall should look as follows:
 
 Click on _Create Firewall_ to apply this firewall to your node's droplet.
 
-# Install Rusk
+## Install Rusk
 
 Navigate back to your [droplets overview](https://cloud.digitalocean.com/droplets) and select your Nocturne droplet:
 
@@ -76,7 +76,7 @@ Install Rusk by pasting the following command in your droplet terminal:
 curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.2.0/node-installer.sh | sudo sh
 ```
 
-# Configure Rusk
+## Configure Rusk
 
 Once everything has been set up, you will be asked to add your consensus keys. These keys are used to sign and vote for blocks.
 
@@ -113,7 +113,7 @@ ruskquery block-height
 
 It is best to wait until your node is synced up. You can find the latest block height on [our explorer](https://explorer.dusk.network/).
 
-# Stake nDUSK
+## Stake nDUSK
 
 The final step is to stake. You can stake by running:
 ```sh

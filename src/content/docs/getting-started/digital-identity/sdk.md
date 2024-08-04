@@ -7,11 +7,11 @@ title: Citadel SDK
 You can find the complete API [here](https://github.com/dusk-network/moat/blob/main/moat/src/api.rs), and a complete example using such API [here](https://github.com/dusk-network/moat/blob/main/moat-example/src/main.rs).
 
 
-### Prerequisites
+## Prerequisites
 
 **Moat** requires a reachable Rusk node installed and running, or selecting a trusted one. You can set up a node as explained [here](/getting-started/node-setup/build-from-source). It also requires an installed wallet connected to the given Rusk node, as explained [here](https://github.com/dusk-network/wallet-cli/blob/main/src/bin/README.md).
 
-### Using the CLI
+## Using the CLI
 
 To use the CLI, you first need to clone the following repository:
 
@@ -22,25 +22,25 @@ cd moat
 
 Now, specify the Rusk node address in `moat-cli/config.toml`. Then, you can execute the CLI for any of the involved parties, as follows.
 
-#### User
+### User
 
 ```sh
 cargo r --release --bin moat-cli-user -- --wallet-pass <PASSWORD>
 ```
 
-#### License Provider
+### License Provider
 
 ```sh
 cargo r --release --bin moat-cli-lp -- --wallet-pass <PASSWORD>
 ```
 
-#### Service Provider
+### Service Provider
 
 ```sh
 cargo r --release --bin moat-cli-sp -- --wallet-pass <PASSWORD>
 ```
 
-### Import the Required Modules
+## Import the Required Modules
 
 To use **Moat**, you need the `zk-citadel-moat` Rust crate, available [here](https://crates.io/crates/zk-citadel-moat). In order to use it, you are required to add it as a dependency in your `Cargo.toml` and to use the following modules in your code.
 
@@ -51,7 +51,7 @@ use rand::rngs::OsRng;
 use zk_citadel_moat::api::{Error, MoatContext, MoatCore};
 ```
 
-### Create a Moat Context
+## Create a Moat Context
 
 The first thing to do to use the different options given by Moat, is to specify some settings by means of a Moat Context, as follows.
 
@@ -77,7 +77,7 @@ let moat_context = MoatContext::create(
 )?;
 ```
 
-### Retrieve Credentials from the Installed Wallet
+## Retrieve Credentials from the Installed Wallet
 
 You can choose to use the same credentials used by the wallet in your Citadel application as well. To get them, you as do as follows.
 
@@ -86,7 +86,7 @@ You can choose to use the same credentials used by the wallet in your Citadel ap
 let (psk, ssk) = MoatCore::get_wallet_keypair(&moat_context)?;
 ```
 
-### Request a License
+## Request a License
 
 The user can request a license on-chain. In order to create a transaction including that request, it will be necessary to provide the public key `psk_lp` of the LP, doing as follows.
 
@@ -101,7 +101,7 @@ let request_hash = MoatCore::request_license(
 .await?;
 ```
 
-### Get Owned Requests
+## Get Owned Requests
 
 The LP can retrieve all the requests belonging to them (using their secret key `ssk_lp`) from the Blockchain, as follows.
 
@@ -110,7 +110,7 @@ The LP can retrieve all the requests belonging to them (using their secret key `
 let requests = MoatCore::get_owned_requests(&ssk_lp, &moat_context).await?;
 ```
 
-### Issuing a License
+## Issuing a License
 
 After receiving a request, the LP can issue a license for that given request. First, it is required to set the attribute data as follows.
 
@@ -138,7 +138,7 @@ let license_hash = MoatCore::issue_license(
 .await?;
 ```
 
-### Get Owned Licenses
+## Get Owned Licenses
 
 The user can use their secret key to list the owned licenses, as follows.
 
@@ -147,7 +147,7 @@ let licenses =
     MoatCore::get_owned_licenses(&ssk_user, &moat_context).await?;
 ```
 
-### Use a License
+## Use a License
 
 To use a license, the user first needs to set the challenge value `c`, which allows to use the license under certain conditions specified by the SP. It can be done as follows.
 
@@ -180,7 +180,7 @@ let session_cookie = MoatCore::use_license(
 .expect("session cookie has been obtained");
 ```
 
-### Verify a Session Cookie
+## Verify a Session Cookie
 
 The SP can verify if a given session cookie is correct. Upon success, it will mean that the requested service in such process shall be granted. It can be done as follows.
 

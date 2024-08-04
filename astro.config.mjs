@@ -191,6 +191,7 @@ export default defineConfig({
 								},
 
 							],
+							collapsed: true,
 						},
 						{
 							label: "Wallets",

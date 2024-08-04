@@ -13,9 +13,6 @@ The current paradigm on how to build an efficient snark for general circuits is 
 
 The reason why this is considered a “modern” way to construct SNARKs, is because the IOP construction has been separated from the PCS construction, introducing the flexibility that paved the way for important innovations.
 
-
-
-
 ## Polynomial Commitment Schemes (PCS)
 
 Before understanding what a PCS is, let’s first recap what a commitment scheme is.
@@ -24,7 +21,6 @@ A commitment scheme is a protocol that needs to satisfy the following propriety(
 
 - **Binding propriety**: it cannot produce two opening values for the commitment string. In other words, one commitment can only be “tied” to just one message.
 - **Hiding propriety** (in the case of ZK proofs). The committed string cannot reveal anything about the committed data.
-
 
 To have a commitment scheme, we need a commitment algorithm and a verifier algorithm.
 
@@ -44,7 +40,6 @@ By using a PCS, the Verifier does not need the complete description of the polyn
 - Receives a single hash value (or cryptographic group element) that commits to the polynomial.
 - Receives the requested evaluation of the polynomial and a proof that the requested evaluation of the polynomial is correct.
 
-
 The PCS allows for running the IOP succinctly, as the prover doesn’t need to send the whole polynomial to the verifier, but only a commitment to it.
 
 The PCS reduces the claim over the correctness of the circuit to the evaluation of polynomials (which can be error-correcting schemes, hash-based schemes, additive groups schemes..).
@@ -53,9 +48,8 @@ The reason why it is enough to send a commitment to the polynomial to the Verifi
 
 For this reason, the verifier only needs evaluation points and be able to query their evaluations. In practice, the verifier treats the queries to the polynomial commitment as “oracles”. The verifier needs the concept of an “oracle” so that he can query the evaluations from it. The way an oracle can be provided to the verifier is by instantiating the oracle into a Polynomial Commitment Scheme (PCS). The reason an oracle needs to be “instantiated” is because an oracle is just an information-theoretic concept: it doesn’t actually exist in practice. Because the oracle is an abstract model, we need to encode the polynomials in order to use it.
 
-
-
 ## Interactive Oracle Proof (IOP)
+
 An Interactive Oracle Proof (IOP) is a theoretical object that provides interactive proofs, which are the result of having both interactions and randomness. 
 
 An IOP provides the interaction between the prover and verifier, and demonstrates that a given circuit C equals to zero for a given public statement x and private witness w. In other words, the IOP is an interactive proof system that proves C(x,w)= 0.
@@ -77,8 +71,8 @@ An IOP allows us to have an interactive protocol that works the following way:
 
 Combining the IOP with the PCS enables the construction of a SNARK..
 
-
 ## Pre-processing (setup)
+
 As both the prover and verifier algorithm take parameters as inputs, these parameters need to obtained via a pre-processing step (called "setup"). The setup procedure is a key step that allows to obtain the parameters for both prover and verifier algorithms.
 
 Let's first understand why this procedure is so important.

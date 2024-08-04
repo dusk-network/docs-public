@@ -1,6 +1,7 @@
 ---
 title: PLONK
 ---
+
 <a href="https://eprint.iacr.org/2019/953.pdf" target="_blank">PLONK</a> is a polynomial Interactive Oracle Proof (IOP) where a Prover can convince a Verifier that for a public circuit **C** and statement **x**, he has a witness **w** such that **C(x,w) = 0**.
 
 This means that the PLONK IOP can be used together with a Polynomial Commitment Scheme (PCS) to construct a universal SNARK for general circuits.
@@ -8,7 +9,6 @@ This means that the PLONK IOP can be used together with a Polynomial Commitment 
 The PLONK pre-processing does not require a trusted setup. This means that depending on which PCS is combined with PLONK, there will be different properties and cryptographic assumptions (that depend on the selected PCS).
 
 For example:
-
 - If the PLONK IOP is combined with a PCS that does not require a trusted setup, then the final SNARK doesn’t have a trusted setup.
 - If the PLONK IOP is combined with a PCS that does require a trusted setup, then the final SNARK will need a trusted setup.
 
@@ -19,7 +19,6 @@ The first Rust implementation of PLONK was built by Dusk, and can be found <a hr
 To efficiently construct proofs, the computation to be proven needs to be transformed into polynomials via an arithmetization. This implies encoding the entire execution trace of the circuit into a table that lists the inputs and output of every gate.
 
 As zk-SNARKs deal with polynomial commitments, a necessary step is interpolating a polynomial that encodes the entire computation trace that needs to be proven. This implies that all the inputs and all the wires need to be encoded into polynomials. The prover uses **Fast Fourier Transformations** (FFTs) to compute the coefficients of the polynomial, making the degree of the polynomial proportional to the number of gates that the computation requires for its arithmetization. For example, if the encoding gives 12 constraints, the correspondent polynomial has a degree at most 11. The fact that the degrees of the polynomials are equal to the number of the elements of the vector minus one is what makes PLONK so efficient.
-
 
 ![plonk](../../../../assets/zk-plonk.png)
 
@@ -42,7 +41,7 @@ By using Lagrange polynomials, it is already known that their value is going to 
 
 A consequence of this is that the vector arithmetic can be mapped directly into the equivalent polynomial evaluation, allowing to evaluate a large number of arithmetic gates at once. This allow for efficiency and succintness.
 
-#### Roots of Unity and Vanishing Polynomial
+### Roots of Unity and Vanishing Polynomial
 
 The roots of unity in the realm that in the real numbers are 1 and -1, because 1²=1 and -1²=1.
 

@@ -3,7 +3,9 @@ title: Dusk Nocturne Faucet
 description: "This guide will explain how to obtain nDUSK for the running Nocturne testnet."
 ---
 
-The Dusk Nocturne testnet uses a Discord bot to distribute Nocturne tokens (nDUSK), as the old Twitter/X page has been deprecated.
+## How to get testnet tokens
+
+The Dusk Nocturne testnet uses a Discord bot to distribute Nocturne tokens (nDUSK).
 
 In order to access it, follow these steps:
 

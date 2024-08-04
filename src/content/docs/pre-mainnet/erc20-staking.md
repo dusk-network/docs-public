@@ -3,21 +3,26 @@ title: Dusk-ERC20 Staking
 description: "Quick guide and FAQ for the ERC20 DUSK ITN2 staking incentive"
 ---
 
-# Quick guide on how to unstake DUSK
-## Step 1 - Visit staking.dusk.network
+## Quick guide on how to unstake DUSK
+
+### Step 1 - Visit staking.dusk.network
+
 Navigate to [staking.dusk.network](https://staking.dusk.network/). 
 
-## Step 2 - Connect
+### Step 2 - Connect
+
 Click on the `Connect Wallet` button. 
 
 ![Staking landing page.](../../../assets/itn/connect-wallet.png)
 
-## Step 3 - Select
+### Step 3 - Select
+
 Select your wallet of choice and accept the request to connect the wallet.
 
 ![Select a wallet.](../../../assets/itn/select-wallet.png)
 
-## Step 4 - Unstake
+### Step 4 - Unstake
+
 You can retrieve your DUSK at any time by clicking on `Unstake`.
 
 ![Unstake window approval.](../../../assets/itn/unstake.png)

@@ -55,7 +55,7 @@ impl Hoster {
 
 Here we provide an overview on how to set up a prover and verifier using <a href="https://github.com/dusk-network/plonk" target="_blank">PLONK</a>, as well as generating proofs, and verifying them via a smart contract.
 
-##### Setup
+### Setup
 
 In the example it can be seen how to set up the prover and verifier with public parameters and compile a custom circuit.
 
@@ -73,7 +73,7 @@ fn get_prover_verifier() -> &'static (Prover, Verifier) {
 }
 ```
 
-##### Verification Logic
+### Verification Logic
 
 Then, the logic to verify proofs against public inputs needs to be implemented:
 
@@ -91,7 +91,7 @@ fn verify_proof(buf: &mut [u8], len: u32) -> u32 {
 }
 ```
 
-##### Host Calls
+### Host Calls
 
 Finally, here we can see how to use the methods to call various host queries:
 

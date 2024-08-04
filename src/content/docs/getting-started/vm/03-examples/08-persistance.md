@@ -59,7 +59,7 @@ fn session_commits_persistence() -> Result<(), Error> {
 }
 ```
 
-##### Preserving state across sessions
+## Preserving state across sessions
 
 In this example, the state of two contracts is verified to persist across sessions.
 

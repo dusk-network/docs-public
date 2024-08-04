@@ -2,7 +2,7 @@
 title: Smart Contract Example
 ---
 
-### Simple Counter Example
+## Simple Counter Example
 
 Let's create a simple contract for <a href="https://github.com/dusk-network/piecrust" target="_blank">Piecrust</a>, the virtual machine used by the Dusk blockchain.
 
@@ -10,7 +10,7 @@ We will develop a counter that keeps track of its total count, providing functio
 
 Let's do it step by step.
 
-#### 1) Create a Rust project
+### 1) Create a Rust project
 
 As smart contracts on Dusk are "almost" normal Rust programs, let's create a new Rust cargo project in order to be able to write it and compile it.
 
@@ -24,7 +24,7 @@ In folder `src` there is a `lib.rs` file with some example tests. You can remove
 
 We will add the required dependencies to the `Cargo.toml` file. You can then start entering or pasting in the contract's code.
 
-#### 2) Add dependencies
+### 2) Add dependencies
 
 Add the following line in the `[dependencies]` section of your `Cargo.toml` file:
 
@@ -35,7 +35,7 @@ piecrust-uplink = { version = "0.8", features = ["abi", "dlmalloc"] }
 
 If we don't do it, when compiling the contract we will encounter an error stating that the `piecrust-uplink` dependency is missing. 
 
-#### 3) Prepare the contract
+### 3) Prepare the contract
 
 The Rust contract will be translated into WebAssembly, and the standard Rust libraries contain many elements that are unnecessary for our smart contracts. The reason is that those libraries won't be available in WASM due to its sandboxed environment (and therefore won't be available at Piecrust's runtime). Removing those libraries also helps us to minimize the size of the compiled code. 
 
@@ -47,7 +47,7 @@ Next, in order to hook up methods of the Piecrust VM host, we need to import a s
 
 `use piecrust_uplink as uplink;`
 
-#### 4) Add functionalities
+### 4) Add functionalities
 
 We can now focus on our counter functionality. Let's define our counter state as a Rust structure as follows:
 
@@ -65,7 +65,7 @@ static mut STATE: Counter = Counter { value: 0 };
 
 Now we have our `STATE` of type `Counter`, but we also need methods to manipulate it. 
 
-##### Modify the contract state
+#### Modify the contract state
 Let's add a method to increment the counter by adding the following code:
 
 ```rust
@@ -78,7 +78,7 @@ impl Counter {
 
 We are still in the realm of 'normal' Rust, as there is nothing related to Piecrust or blockchain in the code we just added.
 
-##### Read from the contract state
+#### Read from the contract state
 
 We also need a method to read the counter value, so eventually our `Counter` methods implementation block will look as follows:
 
@@ -98,7 +98,7 @@ impl Counter {
 
 We have created a Rust structure containing our state and two methods: one manipulating the state and the other querying the state's value.
 
-##### Interact with the Piecrust VM
+#### Interact with the Piecrust VM
 
 Now we need to expose the methods in our contract to the VM. This allows the VM to "see" the methods and call them on our contract.
 
@@ -158,7 +158,7 @@ unsafe fn increment(arg_len: u32) -> u32 {
 }
 ```
 
-#### 5) Compile the contract
+### 5) Compile the contract
 
 Before compiling the contract, let's first add the following line in the `[lib]`section in the `Cargo.toml` file:
 
