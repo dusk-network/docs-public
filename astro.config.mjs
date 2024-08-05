@@ -41,7 +41,7 @@ export default defineConfig({
 				reddit: "https://www.reddit.com/r/dusknetwork",
 			},
 			customCss: ["./src/fonts/font-face.css", "./src/styles/custom.css"],
-			pagination: false,
+			pagination: true,
 			tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 4 },
 			sidebar: [
 				{ label: 'Welcome', link: 'welcome' },
