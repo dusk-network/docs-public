@@ -1,30 +1,24 @@
 ---
-import type { Props, SidebarEntry } from '@astrojs/starlight/props';
-import DefaultSidebar from '@astrojs/starlight/components/Sidebar.astro';
+import type { Props, SidebarEntry } from "@astrojs/starlight/props";
+import DefaultSidebar from "@astrojs/starlight/components/Sidebar.astro";
+import developerSidebar from "./developerSidebar";
+import operatorSidebar from "./operatorSidebar";
+import grantsSidebar from "./grantsSidebar";
 
-const isGrantPage = Astro.url.pathname.startsWith('/grant');
+// Learn should be the default sidebar, thus we do not check it here.
+const isDeveloperPage = Astro.url.pathname.startsWith("/developer");
+const isGrantPage = Astro.url.pathname.startsWith("/grant");
+const isOperatorPage = Astro.url.pathname.startsWith("/operator");
 
 let currentPath = Astro.url.pathname;
 
-if (isGrantPage) {
-    Astro.props.sidebar = [
-      { "label": "Grants", "href": "/grants/", "type": "link", "isCurrent": currentPath === "/grants", "badge": undefined, "attrs": {} },
-      { "label": "Thesan",  "type": "group", "badge": undefined, "entries": [
-          { "label": "What is it", "href": "/grants/#what-is-thesan", "type": "link", "isCurrent": currentPath === "/grants/#what-is-thesan", "badge": undefined, "attrs": {} },
-          { "label": "How to apply", "href": "/grants/#how-to-apply", "type": "link", "isCurrent": currentPath === "/grants/#how-to-apply", "badge": undefined, "attrs": {} },
-          { "label": "Selection workflow", "href": "/grants/#selection-process", "type": "link", "isCurrent": currentPath === "/grants/#selection-process", "badge": undefined, "attrs": {} },
-
-      ], collapsed: false },
-      
-      { "label": "Request for Proposals", "type": "group", "badge": undefined, "entries": [
-          { "label": "Overview", "href": "/grants/rfps/rfps_overview", "type": "link", "isCurrent": currentPath === "/grants/rfps/rfps_overview", "badge": undefined, "attrs": {} },
-          { "label": "Archival Nodes APIs", "href": "/grants/rfps/archival_node", "type": "link", "isCurrent": currentPath === "/grants/rfps/archival_node", "badge": undefined, "attrs": {} },
-          { "label": "Hardware Wallet", "href": "/grants/rfps/hardware_wallet", "type": "link", "isCurrent": currentPath === "/grants/rfps/hardware_wallet", "badge": undefined, "attrs": {} },
-      ], collapsed: false }
-    ];
+if (isDeveloperPage) {
+    Astro.props.sidebar = developerSidebar(currentPath);
+} else if (isOperatorPage) {
+    Astro.props.sidebar = operatorSidebar(currentPath);
+} else if (isGrantPage) {
+    Astro.props.sidebar = grantsSidebar(currentPath);
 }
-
-
 ---
 
 <DefaultSidebar {...Astro.props}><slot /></DefaultSidebar>
