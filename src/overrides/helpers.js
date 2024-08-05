@@ -28,6 +28,9 @@ export const createGroup = (label, currentPath, entries, collapsed = true) => ({
     label,
     type: "group",
     badge: undefined,
-    entries: entries.map(entry => createLink(entry.label, entry.href, currentPath)),
+    entries: entries.map(entry =>
+        entry.type === "group"
+            ? createGroup(entry.label, currentPath, entry.entries, entry.collapsed)
+            : createLink(entry.label, entry.href, currentPath)),
     collapsed,
 });

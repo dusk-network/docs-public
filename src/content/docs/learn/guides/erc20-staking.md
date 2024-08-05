@@ -13,19 +13,19 @@ Navigate to [staking.dusk.network](https://staking.dusk.network/).
 
 Click on the `Connect Wallet` button. 
 
-![Staking landing page.](../../../assets/itn/connect-wallet.png)
+![Staking landing page.](../../../../assets/itn/connect-wallet.png)
 
 ### Step 3 - Select
 
 Select your wallet of choice and accept the request to connect the wallet.
 
-![Select a wallet.](../../../assets/itn/select-wallet.png)
+![Select a wallet.](../../../../assets/itn/select-wallet.png)
 
 ### Step 4 - Unstake
 
 You can retrieve your DUSK at any time by clicking on `Unstake`.
 
-![Unstake window approval.](../../../assets/itn/unstake.png)
+![Unstake window approval.](../../../../assets/itn/unstake.png)
 
 ## Frequently Asked Questions (FAQ)
 
