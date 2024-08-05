@@ -9,6 +9,8 @@ To make the upgrade process as flawless as possible, we will update the [node in
 
 Migrating from ITN to Nocturne? See [Nocturne Migration](#nocturne-migration).
 
+## How to Upgrade
+
 To upgrade to the latest Nocturne version, run:
 ```sh
 curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.2.0/node-installer.sh | sudo sh
@@ -45,7 +47,7 @@ Unable to figure it out yourself? Visit our [Node Runner Troubleshooting](https:
 
 If everything else fails, check out the [manual resync](/getting-started/node-setup/manual-resync) instructions.
 
-# Nocturne Migration
+## Nocturne Migration
 
 :::note[Note]
 We migrated stakes and rewards that accumulatively were higher than 5000 tDUSK to nDUSK. This was done to prevent the high amount of ghost provisioners with small stakes that we observed during ITN2. 

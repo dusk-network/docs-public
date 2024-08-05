@@ -2,7 +2,7 @@
 title: Zero Knowledge Proofs
 ---
 
-# Introduction
+## Introduction
 
 Zero Knowledge Proofs (ZKPs) are cryptographic techniques that allow a prover to convince a verifier that a given statement is true without revealing any additional information.
 
@@ -33,7 +33,6 @@ The proprieties of a SNARK are:
 - **Succinctness**: proof is short, and verifying time is fast.
 - If the SNARK is also zero-knowledge, the verifier does not learn anything about the message itself.
 
-
 ## Arithmetic Circuits
 
 Once we have the computation trace of the statement we want to prove, we can arithmetic circuits to translate that computation into algebraic equations.
@@ -44,14 +43,11 @@ In order to construct a SNARK, the computation to be proven needs to be translat
 
 An arithmetic circuit takes as inputs some elements in the finite field and produces an element of the field as output. It is important to notice that the bigger is the computation that needs to be proven, the bigger the number of gates that are needed in the circuit. More specifically, the circuit is constrained to have a maximum number of gates equal to the degree of the polynomial.
 
-
 An arithmetic circuit can resemble a Directed Acyclic Graph (DAG), where Internal nodes are gates that represent an arithmetic operation (x,+,-,:), and inputs are the variables.
 
 ![Circuit](../../../../assets/zk-gates.png)
 
-
 ## How to construct a zk-SNARK
-
 
 The state-of-art when it comes to constructing SNARKs, boils down to:
 

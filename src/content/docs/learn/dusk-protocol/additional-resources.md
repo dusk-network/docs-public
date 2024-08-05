@@ -3,7 +3,7 @@ title: Additional Resources
 description: Links to our research papers and technical blogs.
 ---
 
-# Research Papers
+## Research Papers
 
 - [Citadel: Self-Sovereign Identities on Dusk Network](https://arxiv.org/abs/2301.09378)
 - [Poseidon: A New Hash Function for Zero-Knowledge Proof Systems](https://www.usenix.org/conference/usenixsecurity21/presentation/grassi)
@@ -17,7 +17,7 @@ description: Links to our research papers and technical blogs.
 - [Full privacy in account-based cryptocurrencies v 0.12](https://dusk-cms.ams3.digitaloceanspaces.com/Dmitry_Khovratovich_Mikhail_Vladimirov_Full_privacy_in_account_based_cryptocurrencies_v0_12_2_618fa83056.pdf)
 
 
-# Technical Blogs
+## Technical Blogs
 
 - [Understanding Citadel: How Does It Work Under the Hood?](https://dusk.network/news/understanding-citadel)
 - [Why We Need Phoenix and Zedger](https://dusk.network/news/why-we-need-phoenix-and-zedger)

@@ -147,6 +147,7 @@ unsafe fn feed_num(arg_len: u32) -> u32 {
 Method `feed_num` in the above example uses the host call named `feed` in order to pass subsequent values of a collection (in this case simple integers) to a `mpsc` communication channel. Caller of this method has a mechanism which allows it to pass an `mpsc` channel and can consume values as they arrive from the contract.
 
 ## Host Functions
+
 Contracts are "almost" regular Rust programs convertible to Web Assembly, which means that they follow the usual non-VM requirements like not using the standard library and not using input/output functions. Contracts also run in a so called "hosted" environment, which means that they have some host services available to them. Among those services there is a set of host functions they are allowed to call. Host functions are always available to contracts. So far we have encountered a few of them, like the following:
 - wrap_call()
 - emit()
@@ -234,6 +235,7 @@ unsafe fn host_hash(arg_len: u32) -> u32 {
 ```
 
 ## ZK Proof Verification
+
 One of the host functions available for contracts is a function to verify Zero Knowledge (ZK) proofs. A method within a contract performing a proof verification could look as follows:
 
 ```rust
@@ -252,6 +254,7 @@ In this way, contract is able to verify ZK proof without having to perform the v
 the work to the host.
 
 ## Calling Other Contracts
+
 Contracts are allowed to call other contracts, as in the following example:
 
 ```rust
@@ -277,6 +280,7 @@ unsafe fn increment_counter(arg_len: u32) -> u32 {
 Host method `call` makes it possible for the contract to call a method of a given another contract (identified by its id). The function accepts contract id, name of the function to be called, and function argument, which in the above example is a unit type (argument is empty). There is also another variant of the host `call()` function named `call_with_limit()`, which in addition to contract id, method name and method argument, accepts a maximum value of gas to be spent by the given call.
 
 ## Inserting Debugging Statements
+
 Contracts, being Web Assembly modules, running in a Virtual Machine sandbox, are not allowed to perform any input/output operations. Sometimes it is needed, especially for debugging purposes, for the contract to print a message on the console. For this purpose, a host macro named `debug!` has been provided. In the following example, contract's method issues a debugging statement:
 
 ```rust
@@ -297,6 +301,7 @@ pub fn check_funds(&self) {
 ```
 
 ## Constructor and Init
+
 It is possible to export a special contract method named `init()` which can perform contact's initialization of any kind. Such method will be called automatically when the contract is deployed. The main intention behind method `init()` is to allow contracts to initialize their state at a time before the contract is operational and ready to receive calls. Method `init()` accepts a single argument of any serializable type. That argument will be passed to the init method by code which performs the deployment of the contract. In the following example, we can see a contract with an `init()` method:
 
 ```rust

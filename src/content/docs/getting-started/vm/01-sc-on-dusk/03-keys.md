@@ -21,6 +21,7 @@ Keys in Dusk work slighly different compared to other protocols:
 `PublicKeys` and `SecretKeys` are instead single-use keys derived from `PublicSpendKeys` and `SecretSpendKeys`. They are specifically used to prove and assign note ownership during transactions.
 
 ## Keys creation and verification
+
 The process for handling transactions in Dusk involves several key generation and verification steps:
 
 1) Generate Phoenix private key.
@@ -45,7 +46,7 @@ let signature = sk.sign(message);
 assert!(pk.verify(signature));
 ```
 
-#### Considerations
+### Considerations
 
 It is important to understand that for the final step, the `verify_schnorr` function expects a `NotePublicKey` instead of a `phoenix` public key. This implies that a `NotePublicKey` needs to be added in the contract, because considering that the owner of the contract is a `phoenix` public key, the method `verify_schnorr` cannot be called with only that public key.
 This implies that a Schnorr signature cannot be verified with only a `phoenix` public key. 

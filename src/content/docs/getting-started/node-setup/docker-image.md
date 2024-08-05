@@ -14,7 +14,8 @@ Docker wraps software in a software container that houses code, runtime, system 
 :::
 
 
-### Prerequisites
+## Prerequisites
+
 1. 🐳 **Docker**: If you don't have Docker installed, please follow the [official guide](https://docs.docker.com/desktop/)
 2. 🛜 **Internet Connection**: Required to download the Docker image and necessary files.
 3. 🛠️ **Git**: Optional, but recommended. Useful for retrieving the node code. Git can be downloaded [here](https://git-scm.com/downloads).
@@ -28,13 +29,13 @@ docker run -p 9000:9000/udp -p 8080:8080/tcp dusknetwork/node
 ```
 :::
 
-### Step-by-Step Instructions
+## Step-by-Step Instructions
 
-#### 1. Get the Dusk node files
+### 1. Get the Dusk node files
 
 The Dusk Node is called `Rusk`. There are two way to get the software, [cloning the repository using git](#using-git-(recommended)), or [simply downloading from github](#without-git)
 
-###### Using Git (Recommended)
+##### Using Git (Recommended)
 
 Execute the following commands on the terminal:
 
@@ -42,13 +43,13 @@ Execute the following commands on the terminal:
 git clone https://github.com/dusk-network/rusk.git
 ```
 
-###### Without Git
+##### Without Git
 
 1. Go to the [Rusk Github repository](https://github.com/dusk-network/rusk).
 2. Click the green "**Code**" button and choose "**Download ZIP**".
 3. Extract the ZIP file.
 
-#### 2. Build the Docker Image
+### 2. Build the Docker Image
 
 With Docker installed and the repository files obtained, let's build the Docker image. Note that this can take 15 to 20 minutes. 
 
@@ -58,8 +59,7 @@ The following command will download all the required dependencies and set up the
 docker build -t rusk .
 ```
 
-
-#### 3. Run the Dusk node with Docker
+### 3. Run the Dusk node with Docker
 
 Once the image is built, you can run a Dusk node simply by running in your terminal:
 

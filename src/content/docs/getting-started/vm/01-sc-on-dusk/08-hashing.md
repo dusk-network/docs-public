@@ -31,6 +31,6 @@ The following is an example of how a Poseidon hash can be computed:
     let stct_message = dusk_poseidon::sponge::hash(&stct_message);
 ```
 
-#### SAFE
+### SAFE
 
 Developers interested in cryptographic functions suitable for ZKPs can check out the <a href="https://github.com/dusk-network/safe/tree/2d42f41f05e141a5786ea655e99ba1f3dae217bd" target="_blank">SAFE</a> implementation. This is a minimal, `no_std`, pure Rust implementation designed to operate on any type that implements the `Default` and `Copy` traits.

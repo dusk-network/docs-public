@@ -11,6 +11,7 @@ The prover uses the global parameters to commit to the polynomial by using its c
 Because the proof is the commitment to the quotient polynomial, the prover needs to compute the quotient polynomial and commit to it. As the prover commits to it by committing to a single group element, the proof has a constant size and does not depend on the degree of the polynomial. The fact that the proof size is constant (and does not depend on the circuit size), is the main reason why the KZG scheme is so popular.
 
 ## KZG's Proprieties
+
 KZG scheme has few interesting proprieties:
 - Can be generalized to commit also to multivariate polynomials (polynomials with multiple variables), in addition to the univariate ones.
 - Supports batch proofs. If the prover needs to commit to several polynomials, he can batch those proofs into a single group element (by opening multiple polynomials at multiple points).

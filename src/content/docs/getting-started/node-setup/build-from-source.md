@@ -4,6 +4,7 @@ description: This resource explains how to setup a Dusk node starting from sourc
 ---
 
 ## What You'll Need
+
 * **A Linux Operating System**: This guide is tailored for Linux users. If you're using another operating system, you might run into issues.
 * **An Internet Connection**: Ensure you can download files and communicate to other nodes on the target device.
 * **Firewall Access**: Dusk's networking protocol, Kadcast, uses [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol) to communicate among nodes. If you want your node to connect to an external network, ensure that your firewall and router's UDP ports are forwarded correctly. The default configuration targets port 9000.
@@ -13,7 +14,8 @@ description: This resource explains how to setup a Dusk node starting from sourc
 
 ### 1. Setting up the Environment
 
-#### 1.1 **Install the Rust Programming Language**
+#### 1.1 Install the Rust Programming Language
+
 The majority of Dusk software is written in Rust. To compile our code, we will first need to make sure it's installed. 
 
 Open a terminal and run the following command to see if Rust is available:
@@ -31,7 +33,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs/ | sh
 source $HOME/.cargo/env
 ```
 
-#### 1.2 **Install Clang** 
+#### 1.2 Install Clang
+
 Clang is necessary to compile the internal database of the node, RocksDB.
 
 * For Ubuntu/Debian:
@@ -49,7 +52,7 @@ sudo pacman -S clang
 sudo yum install clang
 ```
 
-#### 1.3 **Install git**
+#### 1.3 Install git
 
 Git is a version control system. We will use it to download the Node code.
 
@@ -100,7 +103,8 @@ cp examples/consensus.keys ~/.dusk/rusk/consensus.keys
 
 Create the Genesis state according to your local [`examples/genesis.toml`](https://github.com/dusk-network/rusk/blob/master/examples/genesis.toml). See the [`examples.toml`](https://github.com/dusk-network/rusk/blob/master/rusk-recovery/config/example.toml) for configuration options you can set in terms of stakes and balances on network initialization.
 
-###### Run ephemeral node
+##### Run ephemeral node
+
 ```bash
 # Generate genesis state
 cargo r --release -p rusk -- recovery-state --init examples/genesis.toml -o /tmp/example.state
@@ -109,7 +113,7 @@ cargo r --release -p rusk -- recovery-state --init examples/genesis.toml -o /tmp
 DUSK_CONSENSUS_KEYS_PASS=password cargo r --release -p rusk -- -s /tmp/example.state -c rusk/default.config.toml
 ```
 
-###### Run persistent node
+##### Run persistent node
 
 Delete any leftover in state/chain
 ```bash
@@ -133,7 +137,7 @@ Note that the `password` used here is connected to the example consensus keys, w
 It is possible to connect to other clusters by defining a set of bootstrapping nodes to which to connect to on initialization, by defining them in the [`rusk/default.config.toml`](https://github.com/dusk-network/rusk/blob/master/rusk/default.config.toml#L13), or by passing the `--bootstrap` argument in the node launch command.
 :::
 
-#### Troubleshooting Tips
+## Troubleshooting Tips
 
 * **Installation Issues**: Ensure your operating system is up-to-date, you have adequate permissions and all the necessary prerequisite software is installed.
 * **Network Errors**: Check your internet connection and verify UDP ports are open if connecting to an external network.
