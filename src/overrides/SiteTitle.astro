@@ -6,11 +6,14 @@ import config from "virtual:starlight/user-config";
 const href = "/";
 
 // Determine if the current page is the root, a grants page, or another page
+const isDeveloperPage = Astro.url.pathname.startsWith("/developer");
 const isGrantPage = Astro.url.pathname.startsWith("/grant");
-const isRoot = Astro.url.pathname === "/";
+const isLearnPage = Astro.url.pathname.startsWith("/learn");
+const isOperatorPage = Astro.url.pathname.startsWith("/operator");
+const developerLinkStyle = isDeveloperPage ? "font-weight: bold" : "";
 const grantsLinkStyle = isGrantPage ? "font-weight: bold" : "";
-const documentationLinkStyle =
-	!isRoot && !isGrantPage ? "font-weight: bold" : "";
+const learnLinkStyle = isLearnPage ? "font-weight: bold" : "";
+const operatorLinkStyle = isOperatorPage ? "font-weight: bold" : "";
 ---
 
 <a {href} class="site-title sl-flex">
@@ -38,43 +41,22 @@ const documentationLinkStyle =
 	}
 </a>
 
-{
-	isGrantPage ? (
-		<>
-			<span class="site-tabs">
-				<a
-					class="tab-link"
-					style={documentationLinkStyle}
-					href="/welcome"
-				>
-					DOCUMENTATION
-				</a>
-			</span>
-			<span class="site-tabs sl-hidden md:sl-flex">
-				<a class="tab-link" style={grantsLinkStyle} href="/grants">
-					GRANTS
-				</a>
-			</span>
-		</>
-	) : (
-		<>
-			<span class="site-tabs sl-hidden md:sl-flex">
-				<a
-					class="tab-link"
-					style={documentationLinkStyle}
-					href="/welcome"
-				>
-					DOCUMENTATION
-				</a>
-			</span>
-			<span class="site-tabs">
-				<a class="tab-link" style={grantsLinkStyle} href="/grants">
-					GRANTS
-				</a>
-			</span>
-		</>
-	)
-}
+<span class="site-tabs">
+	<a class="tab-link" style={learnLinkStyle} href="/learn">LEARN</a>
+</span>
+<span class="site-tabs">
+	<a class="tab-link" style={developerLinkStyle} href="/developer"
+		>DEVELOPER</a
+	>
+</span>
+<span class="site-tabs">
+	<a class="tab-link" style={operatorLinkStyle} href="/operator"
+		>NODE OPERATOR</a
+	>
+</span>
+<span class="site-tabs">
+	<a class="tab-link" style={grantsLinkStyle} href="/grants">GRANTS</a>
+</span>
 
 <style>
 	.site-tabs {
