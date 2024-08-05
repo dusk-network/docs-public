@@ -1,9 +1,10 @@
 ---
-import type { Props, SidebarEntry } from "@astrojs/starlight/props";
+import type { Props } from "@astrojs/starlight/props";
 import DefaultSidebar from "@astrojs/starlight/components/Sidebar.astro";
 import developerSidebar from "./developerSidebar";
 import operatorSidebar from "./operatorSidebar";
 import grantsSidebar from "./grantsSidebar";
+import Menu from "./../components/Menu.astro";
 
 // Learn should be the default sidebar, thus we do not check it here.
 const isDeveloperPage = Astro.url.pathname.startsWith("/developer");
@@ -21,4 +22,21 @@ if (isDeveloperPage) {
 }
 ---
 
+<div class="mobile-menu">
+    <Menu className="flex-column" />
+</div>
+
 <DefaultSidebar {...Astro.props}><slot /></DefaultSidebar>
+
+<style>
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @media (min-width: 56rem) {
+        .mobile-menu {
+            display: none;
+        }
+    }
+</style>

@@ -3,17 +3,9 @@ import type { Props } from "@astrojs/starlight/props";
 
 import { logos } from "virtual:starlight/user-images";
 import config from "virtual:starlight/user-config";
-const href = "/";
+import Menu from "./../components/Menu.astro";
 
-// Determine if the current page is the root, a grants page, or another page
-const isDeveloperPage = Astro.url.pathname.startsWith("/developer");
-const isGrantPage = Astro.url.pathname.startsWith("/grant");
-const isLearnPage = Astro.url.pathname.startsWith("/learn");
-const isOperatorPage = Astro.url.pathname.startsWith("/operator");
-const developerLinkStyle = isDeveloperPage ? "font-weight: bold" : "";
-const grantsLinkStyle = isGrantPage ? "font-weight: bold" : "";
-const learnLinkStyle = isLearnPage ? "font-weight: bold" : "";
-const operatorLinkStyle = isOperatorPage ? "font-weight: bold" : "";
+const href = "/";
 ---
 
 <a {href} class="site-title sl-flex">
@@ -41,44 +33,21 @@ const operatorLinkStyle = isOperatorPage ? "font-weight: bold" : "";
 	}
 </a>
 
-<span class="site-tabs">
-	<a class="tab-link" style={learnLinkStyle} href="/learn">LEARN</a>
-</span>
-<span class="site-tabs">
-	<a class="tab-link" style={developerLinkStyle} href="/developer"
-		>DEVELOPER</a
-	>
-</span>
-<span class="site-tabs">
-	<a class="tab-link" style={operatorLinkStyle} href="/operator"
-		>NODE OPERATOR</a
-	>
-</span>
-<span class="site-tabs">
-	<a class="tab-link" style={grantsLinkStyle} href="/grants">GRANTS</a>
-</span>
+<div class="large-menu">
+	<Menu />
+</div>
 
 <style>
-	.site-tabs {
-		color: inherit;
-		text-decoration: none;
-		font-size: 14px;
-		align-items: center;
-		gap: var(--sl-nav-gap);
-		color: var(--sl-color-text-accent);
-		text-decoration: none;
-		white-space: nowrap;
-		margin-left: 25px;
+	.large-menu {
+		display: none;
 	}
 
-	.tab-link {
-		text-decoration: none;
-		color: inherit;
+	@media (min-width: 56rem) {
+		.large-menu {
+			display: flex;
+		}
 	}
 
-	.tab-link:hover {
-		text-decoration: underline;
-	}
 	.site-title {
 		gap: var(--sl-nav-gap);
 		font-size: var(--sl-text-h4);
@@ -87,6 +56,7 @@ const operatorLinkStyle = isOperatorPage ? "font-weight: bold" : "";
 		text-decoration: none;
 		white-space: nowrap;
 	}
+
 	img {
 		height: calc(var(--sl-nav-height) - 2 * var(--sl-nav-pad-y));
 		width: auto;
