@@ -31,7 +31,7 @@ Embracing the ethos of open source within the Dusk ecosystem, and in line with o
 
 There are two main categories for projects asking for a grant:
 
-- <a href="http://docs.dusk.network/grants/rfps/rfps_overview" target="_blank"> **Requests for Proposals (RFPs)** </a>. This involves projects Dusk is actively interested in funding, according to predetermined specifications and objectives.
+- <a href="http://docs.dusk.network/grants/what-is-rfp" target="_blank"> **Requests for Proposals (RFPs)** </a>. This involves projects Dusk is actively interested in funding, according to predetermined specifications and objectives.
 - **Other projects** that are directly proposed by the community. Even if these projects do not appear in existing RFPs, their development benefits the overall Dusk ecosystem.
 
 In addition to the above, and depending on the maturity of the project proposal and the experience of the applicant, ad-hoc deals involving funding for equity can be discussed.
