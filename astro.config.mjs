@@ -44,7 +44,7 @@ export default defineConfig({
 			pagination: true,
 			tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 4 },
 			sidebar: [
-				{ label: 'Welcome', link: 'welcome' },
+				{ label: 'Welcome', link: '/learn' },
 				{
 					label: 'Learn Dusk',
 					items: [
