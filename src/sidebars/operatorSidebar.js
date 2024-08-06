@@ -1,4 +1,4 @@
-import { createGroup } from "./helpers";
+import { createGroup } from "../helpers/sidebarEntryHelpers";
 
 export default function sidebar(currentPath) {
     return [

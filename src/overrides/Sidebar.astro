@@ -1,11 +1,11 @@
 ---
 import type { Props } from "@astrojs/starlight/props";
 import DefaultSidebar from "@astrojs/starlight/components/Sidebar.astro";
-import developerSidebar from "./developerSidebar";
-import operatorSidebar from "./operatorSidebar";
-import grantsSidebar from "./grantsSidebar";
+import developerSidebar from "../sidebars/developerSidebar";
+import operatorSidebar from "../sidebars/operatorSidebar";
+import grantsSidebar from "../sidebars/grantsSidebar";
 import Menu from "./../components/Menu.astro";
-import { getNextPrevLinks } from "./paginationHelper";
+import { getNextPrevLinks } from "../helpers/paginationHelper";
 
 // Determine which sidebar to use based on the current path
 const isDeveloperPage = Astro.url.pathname.startsWith("/developer");
@@ -22,7 +22,7 @@ if (isDeveloperPage) {
 } else if (isGrantPage) {
     sidebar = grantsSidebar(currentPath);
 } else {
-    // This is the default menu as specified in the `astro.config.mjs` file
+    // This is the default menu as specified in `/src/sidebars/defaultSidebar.js` file
     sidebar = Astro.props.sidebar;
 }
 

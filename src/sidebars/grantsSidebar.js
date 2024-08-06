@@ -1,4 +1,4 @@
-import { createLink, createGroup } from "./helpers";
+import { createLink, createGroup } from "../helpers/sidebarEntryHelpers";
 
 export default function sidebar(currentPath) {
     return [
