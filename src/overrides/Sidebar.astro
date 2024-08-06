@@ -5,28 +5,40 @@ import developerSidebar from "./developerSidebar";
 import operatorSidebar from "./operatorSidebar";
 import grantsSidebar from "./grantsSidebar";
 import Menu from "./../components/Menu.astro";
+import { getNextPrevLinks } from "./paginationHelper";
 
-// Learn should be the default sidebar, thus we do not check it here.
+// Determine which sidebar to use based on the current path
 const isDeveloperPage = Astro.url.pathname.startsWith("/developer");
 const isGrantPage = Astro.url.pathname.startsWith("/grant");
 const isOperatorPage = Astro.url.pathname.startsWith("/operator");
 
 let currentPath = Astro.url.pathname;
 
+let sidebar;
 if (isDeveloperPage) {
-    Astro.props.sidebar = developerSidebar(currentPath);
+    sidebar = developerSidebar(currentPath);
 } else if (isOperatorPage) {
-    Astro.props.sidebar = operatorSidebar(currentPath);
+    sidebar = operatorSidebar(currentPath);
 } else if (isGrantPage) {
-    Astro.props.sidebar = grantsSidebar(currentPath);
+    sidebar = grantsSidebar(currentPath);
+} else {
+    // This is the default menu as specified in the `astro.config.mjs` file
+    sidebar = Astro.props.sidebar;
 }
+
+const { nextLink, prevLink } = getNextPrevLinks(sidebar, currentPath);
+
+Astro.props.pagination.next = nextLink;
+Astro.props.pagination.prev = prevLink;
+
+const props = { ...Astro.props, sidebar };
 ---
 
 <div class="mobile-menu">
     <Menu className="flex-column" />
 </div>
 
-<DefaultSidebar {...Astro.props}><slot /></DefaultSidebar>
+<DefaultSidebar {...props}><slot /></DefaultSidebar>
 
 <style>
     .mobile-menu {
