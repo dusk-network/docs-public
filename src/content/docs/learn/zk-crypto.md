@@ -45,7 +45,7 @@ An arithmetic circuit takes as inputs some elements in the finite field and prod
 
 An arithmetic circuit can resemble a Directed Acyclic Graph (DAG), where Internal nodes are gates that represent an arithmetic operation (x,+,-,:), and inputs are the variables.
 
-![Circuit](../../../../assets/zk-gates.png)
+![Circuit](../../../assets/zk-gates.png)
 
 ## How to construct a zk-SNARK
 

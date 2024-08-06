@@ -20,7 +20,7 @@ To efficiently construct proofs, the computation to be proven needs to be transf
 
 As zk-SNARKs deal with polynomial commitments, a necessary step is interpolating a polynomial that encodes the entire computation trace that needs to be proven. This implies that all the inputs and all the wires need to be encoded into polynomials. The prover uses **Fast Fourier Transformations** (FFTs) to compute the coefficients of the polynomial, making the degree of the polynomial proportional to the number of gates that the computation requires for its arithmetization. For example, if the encoding gives 12 constraints, the correspondent polynomial has a degree at most 11. The fact that the degrees of the polynomials are equal to the number of the elements of the vector minus one is what makes PLONK so efficient.
 
-![plonk](../../../../assets/zk-plonk.png)
+![plonk](../../../../../assets/zk-plonk.png)
 
 ## Lagrange Polynomials and interpolations
 
@@ -34,7 +34,7 @@ FFTs and NTTs allow switching between these two different representations, so th
 As any arithmetic circuit described via vectors can be transformed into a Lagrange-base representation, it is useful to represent the vectors as a linear sum of Lagrange polynomials.
 
 The reason is that when using Lagrange interpolation the global parameters are the Lagrange coefficients of the polynomial. This propriety gives an efficient point-value representation for the polynomial.
-
+../
 Lagrange polynomials allow to represent vectors via polynomials while making sure that any relation that applies to the vectors also holds true on the polynomials. This implies that because it is possible to evaluate gates using vectors, Lagrange polynomials can be used to represent those vectors as polynomials.
 
 By using Lagrange polynomials, it is already known that their value is going to be either 1 or 0 on a specific set of points. This means that once these specific polynomials are multiplied by a vector, the result is a polynomial that when evaluated at each of those specific points will be equal to an element of the vector.

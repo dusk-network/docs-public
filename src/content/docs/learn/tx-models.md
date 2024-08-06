@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Transaction Models
 ---
 
 A transaction model defines how transactions are structured, verified, and recorded. Consequently, a transaction model specifies the rules that allow assets to be transferred between participants on a network.

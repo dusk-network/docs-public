@@ -1,5 +1,5 @@
 ---
-title: Gas Management
+title: Transaction fees and gas
 ---
 
 In the context of the Dusk and its economic protocol, _gas_ is a fundamental concept central to the execution and processing of transactions on the blockchain. Gas can be thought of as the fuel that powers blockchain operations, similar to how gasoline powers a vehicle.
