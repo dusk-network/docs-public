@@ -1,12 +1,25 @@
 ---
 title: Node Requirements
-description: This resource outlines the hardware and software requirements for the node
+description: This resource outlines the hardware and software requirements for the node. Explore the different node types and different ways to setup a node
 ---
 
-A Dusk node can take many different [roles](./overview#types-of-nodes), from being a Provisioner and participating in consensus, to proving transactions, to storing historical data. The node is designed to be efficient, decentralized, and able to run on a wide-variety of hardware and platforms. 
+A Dusk node can take many different [roles](#types-of-nodes), from being a Provisioner and participating in consensus, to proving transactions, to storing historical data. The node is designed to be efficient, decentralized, and able to run on a wide-variety of hardware and platforms. 
 
 :::tip[What is Rusk]
 Rusk is the [repository where the software of the Node is maintained](https://github.com/dusk-network/rusk). Dusk nodes can assume different roles by compiling Rusk with different features enabled or disabled.
+:::
+
+## Types of Nodes
+
+Dusk supports several types of node configurations, depending on the preference of the users and their intended setup. 
+
+- **Provisioner**: Provisioners are specialized in directly participating in the consensus. They play a vital role as they are responsible for validating transactions, as well as processing and appending new blocks to Dusk blockchain.
+- **Prover**: Provers carry on the computation-heavy task of creating Zero-Knowledge proofs (ZKP), which are a requirement for transactions on Dusk.
+- **Full Node**: A full node combines the capabilities of a provisioner node and prover node. 
+- **Archiver**: While Provisioners and full nodes generally only keep the current state of the blockchain, Archivers instead maintain a complete copy of the blockchain. They normally don't actively engage in consensus related tasks and do not require a valid Stake.
+
+:::tip[Recommended Setup]
+The recommended setup for network participants is to run a Provisioner node on a VPS or server, and a Prover locally on their machine/laptop. This ensures the most efficient configuration where the full resources of your machine is at disposal to the consensus, while maximizing privacy.
 :::
 
 ## DUSK Requirement

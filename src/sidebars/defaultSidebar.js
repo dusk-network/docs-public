@@ -1,5 +1,5 @@
 const defaultSidebar = [
-    { label: 'Welcome', link: '/learn' },
+    { label: 'Overview', link: '/learn/overview' },
     {
         label: 'Learn Dusk',
         items: [
