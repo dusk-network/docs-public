@@ -1,5 +1,5 @@
 ---
-title: Node Requirements
+title: Getting Started
 description: This resource outlines the hardware and software requirements for the node. Explore the different node types and different ways to setup a node
 ---
 
