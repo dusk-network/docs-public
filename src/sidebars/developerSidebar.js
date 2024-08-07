@@ -2,6 +2,7 @@ import { createGroup, createLink } from "../helpers/sidebarEntryHelpers";
 
 export default function sidebar(currentPath) {
     return [
+        createLink("Overview", "/developer/overview", currentPath),
         createGroup("Smart Contracts", currentPath, [
             {
                 type: "link",
@@ -86,6 +87,7 @@ export default function sidebar(currentPath) {
             }
         ], false),
         createGroup("Integrations", currentPath, [
+            { label: "Introduction", href: '/developer/integrations/introduction' },
             { label: "The Wallet Stack", href: '/developer/integrations/wallet-stack' },
             { label: "Wallet Core Library", href: '/developer/integrations/wallet-core' },
             { label: "Execution Core", href: '404' },

@@ -1,9 +1,9 @@
-import { createGroup } from "../helpers/sidebarEntryHelpers";
+import { createGroup, createLink } from "../helpers/sidebarEntryHelpers";
 
 export default function sidebar(currentPath) {
     return [
+        createLink("Overview", "/operator/overview"),
         createGroup("Node Setup", currentPath, [
-            { label: "Overview", href: "/operator/node-setup/overview" },
             { label: "Node Requirements", href: "/operator/node-setup/node-requirements" },
             { label: "Build from Source", href: "/operator/node-setup/build-from-source" },
             { label: "Docker Image", href: "/operator/node-setup/docker-image" },
