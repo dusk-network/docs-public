@@ -1,10 +1,28 @@
 ---
-title: Host Functions
+title: Built-in Functions
 ---
+
+Rusk provides built-in functions that can be called from within a smart contract which we call **Host functions** or **Host calls**.
+
+## Host functions
 
 Host functions are functions provided by rusk (the "host") and can be called from within a smart contract running on the Piecrust VM. Due to the sandboxed nature of VMs, smart contracts need to rely on host functions to access and manipulate lower-level operations that are managed by the Dusk nodes (e.g. time checks, cryptographic functions...).
 
 Simply put, host functions are necessary because they allow smart contracts to interact with the system-level functions of the machine on which they run.
+
+:::tip
+Host functions are exempt from the normal costs associated (Gas costs) with computing VM instructions.
+:::
+
+## Available Host functions
+
+> ToDo
+>
+> List of available host functions
+>
+> We can also point towards the rust docs module overview or something here
+
+
 
 ## Functions Signature and Calling Sequence
 

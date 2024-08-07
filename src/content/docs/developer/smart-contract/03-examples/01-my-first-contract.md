@@ -1,5 +1,5 @@
 ---
-title: Smart Contract Example
+title: My first Smart Contract
 ---
 
 ## Simple Counter Example

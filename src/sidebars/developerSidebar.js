@@ -31,7 +31,7 @@ export default function sidebar(currentPath) {
                     { label: "Overview", href: '/developer/smart-contract/01-sc-on-dusk/01-smart_contracts_on_dusk' },
                     { label: "Transactions", href: '/developer/smart-contract/01-sc-on-dusk/02-transactions' },
                     { label: "Keys", href: '/developer/smart-contract/01-sc-on-dusk/03-keys' },
-                    { label: "Functions", href: '/developer/smart-contract/01-sc-on-dusk/04-functions' },
+                    { label: "Built-in Functions", href: '/developer/smart-contract/01-sc-on-dusk/04-builtin-functions' },
                     { label: "Token Standards", href: '/developer/smart-contract/01-sc-on-dusk/05-token_standards' },
                     { label: "Circuits", href: '/developer/smart-contract/01-sc-on-dusk/06-circuits' },
                     { label: "Sessions", href: '/developer/smart-contract/01-sc-on-dusk/07-sessions' },
@@ -45,6 +45,7 @@ export default function sidebar(currentPath) {
                 type: "group",
                 label: "Guides",
                 entries: [
+                    { label: "My first contract", href: '/developer/smart-contract/03-examples/01-my-first-contract' },
                     { label: "Debugging", href: '/developer/smart-contract/05-guides/01-debugging' },
                     { label: "Testing", href: '/developer/smart-contract/05-guides/02-testing' },
                     { label: "Compiling", href: '/developer/smart-contract/05-guides/03-compiling' },
@@ -59,7 +60,7 @@ export default function sidebar(currentPath) {
                 label: "Examples",
                 entries: [
                     { label: "Examples Overview", href: '/developer/smart-contract/03-examples/examples' },
-                    { label: "Counter Example", href: '/developer/smart-contract/03-examples/01-counter-example' },
+                    
                     { label: "Comparison with smart-contract1", href: '/developer/smart-contract/03-examples/02-comparison-with-smart-contract1' },
                     { label: "Token Example", href: '/developer/smart-contract/03-examples/03-token-example' },
                     { label: "Multisig", href: '/developer/smart-contract/03-examples/04-multisig' },

@@ -19,7 +19,7 @@ Under _Choose an image_, pick Ubuntu version 22.04 (LTS) x64.
 
 ![Select region and image for the droplet.](../../../../assets/nocturne/node-guide/region-image-droplet.png)
 
-Next, we have to pick the size of the droplet. The [node requirements](https://docs.dusk.network/getting-started/node-setup/node-requirements) for a provisioner node are in line with the _SHARED CPU_ -> _Regular_ -> $24/mo option. Select it.
+Next, we have to pick the size of the droplet. The [node requirements](https://docs.dusk.network/getting-started/node-setup/getting-started) for a provisioner node are in line with the _SHARED CPU_ -> _Regular_ -> $24/mo option. Select it.
 
 ![Select size of the droplet.](../../../../assets/nocturne/node-guide/requirements-droplet.png)
 
