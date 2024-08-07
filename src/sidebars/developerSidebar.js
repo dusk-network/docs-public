@@ -10,13 +10,9 @@ export default function sidebar(currentPath) {
                 href: "/developer/smart-contract/introduction-sc",
             },
             {
-                type: "group",
+                type: "link",
                 label: "Getting Started",
-                entries: [
-                    { label: "Dependencies", href: '/developer/smart-contract/04-getting-started/01-dependencies' },
-                    { label: "IDE", href: '/developer/smart-contract/04-getting-started/02-ide' },
-                ],
-                collapsed: true,
+                href: "/developer/smart-contract/04-getting-started",
             },
             {
                 type: "group",
