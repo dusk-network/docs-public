@@ -4,60 +4,59 @@ title: Glossary
 
 ## Dusk terminology
 
-#### Phoenix
-
-A unique UTXO transaction model created by Dusk that works in tandem with PLONK in order to allow users to access assets stored in public notes and spend transaction outputs without revealing any data (e.g., public key and private key).
-
-#### Piecrust
-
-A virtual machine created by Dusk that manages blockchain related functions (i.e., deploying smart contracts and changing the global state).
-
-#### Moonlight
-
-
-
-#### Zedger
-
-A hybrid transaction model created by Dusk that works in tandem with Phoenix to provide confidential security contracts or XSCs with functionalities unique to account-based transaction models (e.g., whitelisting, KYC, voting rights, etc.)
-
-#### Succinct Attestation
-
-A unique Proof-of-Stake consensus algorithm created by Dusk which allows network participants to compete for block producer rights.
-
-#### Rusk
-
-A virtual machine created by Dusk that processes the zero knowledge functions or operations (e.g., sending confidential transactions).
-
-#### Kadcast
-
-A structured information propagation protocol employed by Dusk that features unique properties; for example, a direct correlation between better performance and latency, as well as better performance and the number of nodes in the network.
-
 #### Confidential Security Contract Standard (XSC)
 
 A standardized framework for confidential smart contracts, which any company or organization can customize according to business-specific requirements (e.g., complying with data privacy and financial regulations).
 
+#### Kadcast
+
+A structured information propagation protocol used by Dusk, characterized by a direct correlation between network performance, latency, and the number of nodes.
+
+#### Moonlight
+
+An account-based transaction model on Dusk that tracks balances for accounts and contracts, offering full transparency. It is faster and cheaper than Phoenix, making it easier for developers to integrate with external protocols. 
+
+#### Phoenix
+
+A UTXO-based, privacy-preserving transaction model on Dusk used for transferring DUSK. It enables users to spend "notes" privately using zero-knowledge proofs without linking balances to addresses.
+
+#### Piecrust
+
+A general purpose virtual machine developed by Dusk that runs WASM smart contracts and manages their memory.
+
+#### Rusk
+
+The official Dusk platform's Rust reference implementation.
+
+#### Succinct Attestation
+
+A unique Proof-of-Stake consensus algorithm developed by Dusk which allows network participants to compete for block producer rights.
+
+#### Zedger
+
+A Dusk protocol combining UTXO and account models for the private, compliant management of securities. Zedger allows issuers to digitally represent, issue, and trade securities like stocks and bonds while ensuring regulatory compliance.
 
 ## Definitions
 
 #### Account
 
-With respect to a blockchain that employs an account-based model, the combination of a private key and a public key whereby funds of one or more persons are stored as balance.
+In an account-based blockchain, a combination of a private key and a public key where a user's funds are stored as a balance.
 
 #### Account-Based Transaction Model
 
-An accounting scheme that represents assets as balances within personal accounts, similar to bank accounts.
+A protocol that represents assets as balances within personal accounts, similar to bank accounts.
 
 #### Application Program Interface (API)
 
-Software code that enables communication between independent systems, such as computer programs and applications, in the form of a request-response message. For example, price aggregators submit order size, order time, and token address through the APIs of airlines’ cryptocurrency exchanges and receive prices for coins meeting those specifications in response.
+Software code that enables communication between different systems via request-response messages. It enables tasks like requesting user balances, listening to on-chain events and more.
 
 #### Asset Token
 
-A category of tokens that represent a “real world” asset or product — such as a commodity (e.g., gold) or currency (e.g., US dollar) — as opposed to utility tokens, which provide the holder with access to or the ability to do something on the network.
+A category of tokens that represent a “real world” asset or product — such as a commodity (e.g., gold) or currency (e.g., US dollar) — as opposed to utility tokens, which provide network-specific functions.
 
 #### Balance
 
-With respect to an account-based transaction model, the assets which a person owns and thus can exchange and spend.
+The assets owned by an account in an account-based transaction model, available for exchange or spending.
 
 #### Bandwidth
 
@@ -73,31 +72,35 @@ Files in which data of the network is permanently recorded. A block permanently 
 
 #### Block Explorer
 
-A web-based tool that allows an individual to search for information on the blockchain (e.g., the creation date and size of a block, or the transactions and corresponding addresses contained within such a block).
+A web tool for searchign blockchain information, such as block creation dates, sizes, gas fees, and transaction details.
 
 #### Block Header
 
-Metadata included in every block that provides a summary of the data in the block (e.g., the hash of the previous block, the block height, a time stamp, or the nonce of the block)
+Metadata in each block summarizing its content, including the previous block's hash, blockheight, timestamp and nonce.
 
 #### Block Height
 
-With respect to a block, the number of blocks preceding the block in question — i.e., the number of blocks between that block and the genesis block (which always has a block height of zero).
+The number of blocks preceding a given block, starting from the genesis block, which has a height of zero.
 
 #### Block Generator
 
-A provisioner elected by the network to produce a new block in exchange for a reward in $DUSK.
+A provisioner elected by the network to produce a new block in exchange for a reward in DUSK.
 
 #### Block Reward
 
-An amount of tokens awarded by the network to eligible stakers for each block they create successfully.
+An amount of tokens awarded by the network to eligible stakers for each block they create successfully or vote cast when eligible to do so.
 
 #### Block Time
 
-The amount of time it takes to create a new block in the blockchain.
+The duration it takes to create a new block in the blockchain.
 
 #### Brute Force Attack (BFA)
 
-An attack method in which hackers attempt to crack a private key via multiple guess attempts until one works.
+A method where hackers attempt to guess a private key through repeated attempts until successful.
+
+#### Coinbase
+
+A reward mechanism that mints new tokens for validators, incentivizing them to secure the network, especially during its early stages.
 
 #### Confidential Smart Contract
 
@@ -105,11 +108,11 @@ A smart contract which permits the creation of confidential or private transacti
 
 #### Confirmation
 
-The verification of blocks on the blockchain by stakers. When a block has been verified, it is accepted and added to the blockchain.
+The process by which validators verify and accept blocks on the blockchain, adding them to the chain.
 
 #### Consensus
 
-A process to achieve agreement by the majority of peers within the network. Achieving consensus means the group of peers have agreed on the state of the blockchain.
+A process where the majority of validators agree on the current state of the blockchain.
 
 #### Cryptographic Hash Function
 
@@ -117,15 +120,15 @@ A special class of hash function that has certain properties in order to make it
 
 #### Decentralized
 
-When the functions and power of an activity or organization are dispersed and Peer to Peer, rather than concentrated in a central location or authority.
+A system where functions and authority are distributed among peers rather than concentrated in a central entity.
 
 #### Decentralized Application
 
-A digital program that runs on a P2P or decentralized network and uses smart contracts to access the blockchain and enforce each term of agreement between two parties.
+A digital program running on a decentralized network, utilizing smart contracts to interact with the blockchain and enforce agreements.
 
 #### Devnet
 
-A network used as an experimental environment by blockchain users, token holders, app developers, and network validators and where tokens have no monetary value.
+An experimental network used by blockchain developers and users, where tokens have no real monetary value.
 
 #### Digital Signature
 
@@ -145,7 +148,7 @@ A mathematical function whereby any point on the curve can be mirrored over the 
 
 #### Epoch
 
-a specific period of time used to mark specific events within the network, such as the creation and addition of new blocks to the blockchain.
+A specific period of time used to mark specific events within the network, such as the creation and addition of new blocks to the blockchain.
 
 #### Faucet
 
@@ -173,15 +176,15 @@ The fee charged to a user in order to run a smart contract on the blockchain.
 
 #### Genesis Block
 
-The first block of a blockchain.
+The first block of a blockchain, from which all subsequent blocks are built. It is unique and hardcoded into the protocol.
 
-#### Genesis Contract (Staking Contract)
+#### Genesis Contract 
 
-The smart contract that allows a user to put $DUSK in staking. The genesis contract is responsible for managing the users’ funds according to their behavior (e.g., rewarding, slashing).
+A smart contract that is made available on the start of the blockchain, and hardcoded into the genesis block.
 
 #### Hash
 
-With respect to a hash function, the small fixed-size output that is used to index and retrieve items in a database faster than by using the larger original string which was hashed.
+The fixed-size output of a hash function used to index, retrieve or verify data more efficiently than the original input.
 
 #### Hash Function
 
@@ -205,7 +208,7 @@ The time it takes for data to go from one node to another.
 
 #### Mainnet
 
-The main copy of the blockchain for transactions where tokens have real monetary value.
+The primary blockchain network instance where transactions have real monetary value.
 
 #### Mempool
 
@@ -225,11 +228,11 @@ An instituted legislative framework by the European Commission to regulate finan
 
 #### Node
 
-Any computer that is connected to the network and maintains a copy of the blockchain.
+A computer connected to the network that maintains a copy of the blockchain.
 
 #### Note
 
-With respect to a UTXO transaction model, a public object whereby assets are stored. A person must prove possession of a private key to spend the assets contained within a note.
+In a UTXO model, a public object where assets are stored, requiring a private key to access and spend.
 
 #### Permissioned
 
@@ -237,7 +240,7 @@ A network that uses a layer of access control to dictate the actions that may be
 
 #### Permissionless
 
-A network in which users’ permission to utilize and interact with the network is not set by the network itself or any central person or institution.
+A network where users can interact without needing permission from any central authority.
 
 #### Peer
 
@@ -245,43 +248,43 @@ A user interacting with others within the network.
 
 #### Peer to Peer (P2P)
 
-The transfer of an asset from one person to another without any intermediating party, such as banks.
+The direct transfer of assets or data between individuals without intermediaries.
 
 #### Peer to Peer (P2P) Protocol
 
-A network model in which two or more persons exchange resources and assets through a decentralized network, rather than using a centralized server.
+A decentralized network model where users exchange resources directly without a centralized server.
 
 #### PLONK
 
-The industry-standard zk-SNARK used by several blockchains that focus on granting privacy to users.
+A widely-used zk-SNARK protocol that enables privacy-focused blockchain applications.
 
 #### PLOOKup
 
-A portmanteau of “PLONK” and “lookup”. PLOOKup is a function used to reduce the costs associated with otherwise expensive “ZK-SNARK unfriendly” operations.
+A function combining PLONK and lookup tables to reduce costs of zk-SNARK operations.
 
 #### PLONKup
 
-A portmanteau of “PLONK” and “PLOOKup”. PLONKup is an implementation of PLONK that is optimized to generate zero knowledge proofs of complex functions faster but without consuming any additional gas.
+An optimized implementation of PLONK that generates zero-knowledge proofs faster for certain use-cases without additional gas costs.
 
 #### Poseidon
 
-The fastest zero-knowledge friendly cryptographic hash function.
+A fast, zero-knowledge friendly cryptographic hash function.
 
 #### Private Key
 
-A string of data that permits a user to access, exchange, and spend assets stored within a digital wallet.
+A string of data that permits a user to access, exchange, and spend assets in a digital wallet.
 
 #### Prover
 
-The first block of a blockchain.
+A prover is an entity that is responsible for generating zero-knowledge proofs. The proof is used to verify certain statements, without revealing the underlying data.
 
 #### Provisioner
 
-A network user who is staking at least 1,000 $DUSK and competes to participate in a provisioner committee.
+A network participant staking at least 1,000 DUSK who competes to join the provisioner committee.
 
 #### Provisioner Committee
 
-A group of provisioners responsible for selecting a new uniform block to be added to the blockchain.
+A group of provisioners tasked with selecting and proposing new blocks for the blockchain.
 
 #### Provisioner Key
 
@@ -289,11 +292,11 @@ A unique identifier of alphanumeric characters which a provisioner uses to activ
 
 #### Public Key
 
-A unique identifier of alphanumeric characters that represents the destination address for accepting tokens. A public key can also be used to verify digital signatures made with a private key.
+A unique identifier of alphanumeric characters that represents the destination address for receiving tokens. A public key can also be used to verify digital signatures made with a private key.
 
 #### Reference String
 
-A string of data that ZK-SNARKs use to create every zero knowledge proof.
+A string of data that ZK-SNARKs use to create zero-knowledge proof.
 
 #### Regulated Finance (RegFi)
 
@@ -301,19 +304,19 @@ The centralized banking system whereby financial instruments are regulated by la
 
 #### Regulated Decentralized Finance (RegDeFi)
 
-The hybrid model combining RegFi and DeFi whereby people have access to regulated financial instruments in the form of security tokens on a decentralized or P2P network.
+A hybrid model combining RegFi and DeFi whereby people have access to regulated financial instruments in the form of security tokens on a decentralized or P2P network.
 
 #### Reinforced Concrete
 
-A zero knowledge friendly hash function created by Dusk which works in tandem with PLONKup to process zero knowledge operations.
+A zero-knowledge friendly hash function developed by Dusk designed to work with PLONKup for processing zero-knowledge operations.
 
 #### Remote Procedure Call (RPC)
 
-A communication protocol that permits a program to request a service from a program located in another computer within the network.
+A communication protocol allowing a program to request services from another program on a different networked computer.
 
 #### Same-Block Finality
 
-With respect to finality, the guarantee that an executed transaction will never be reversed or changed.
+The guarantee that a transaction, once executed, will never be reversed or altered within the same block.
 
 #### Security
 
@@ -321,11 +324,11 @@ A financial instrument that is tradeable and holds monetary value. Examples of s
 
 #### Security Token
 
-A token that is structured as a security. Security tokens can represent an underlying real asset and pay dividends, share profits, or pay interest, for the holders.
+A token structured as a security, representing an underlying asset and potentially offering dividends, profit-sharing, or interest.
 
 #### Self-Custody
 
-When assets are held in custody by the owner, rather than by an Intermediary such as a bank or exchange.
+When assets are held in custody by the owner, rather than by an intermediary such as a bank or exchange.
 
 #### Settlement Finality
 
@@ -337,7 +340,7 @@ A form of punishment whereby staking funds of provisioners and block generators 
 
 #### Smart Contract
 
-An immutable software protocol or contract that follows pre-defined rules to self-execute agreed-upon obligations automatically and without the involvement of third parties.
+An immutable contract that follows pre-defined rules to self-execute agreed-upon obligations automatically and without the involvement of third parties.
 
 #### Spent Transaction Output (UTXO)
 
@@ -345,19 +348,19 @@ Output or funds spent in a transaction that can no longer be used as input in a 
 
 #### Staking
 
-A way of earning rewards by locking tokens in the staking contract in order to help verify transactions on the network. Staking represents direct participation in the consensus mechanism.
+Earning rewards by locking tokens in a staking contract to help verify transactions and participate in the consensus mechanism.
 
 #### (Global) State
 
-The set of data that represents the current condition or state of the blockchain and determines whether a transaction is valid. Examples of state data include UTXOs and balances.
+Data representing the current condition of the blockchain, used to validate transactions (e.g., UTXOs, balances).
 
 #### Sybil Attack
 
-An attack that involves a single actor attempting to overtake the network through the use of an overwhelming number of accounts, computers, or nodes.
+An attack where a single actor attempts to take over the network by using a large number of accounts, computers, or nodes.
 
 #### Testnet
 
-A network serving as an environment where new code, features, or infrastructure components undergo stress tests that focus on performance, stability, and the behavior of validators.
+An environment for testing new code, features, or infrastructure, focusing on performance, stability, and validator behavior.
 
 #### Tokenization
 
@@ -365,11 +368,11 @@ The process whereby traditional Assets (such as securities) are digitized into t
 
 #### Trusted Setup
 
-The initial creation event of a reference string that is carried forth by human parties.
+The initial event where a reference string for ZK-SNARKs is created by trusted parties.
 
 #### Trustless
 
-A network that enables a user to deal with others without relying on a counterparty’s trustworthiness.
+A network where users can interact without needing to trust the counterparty.
 
 #### Unspent Transaction Output (UTXO)
 
@@ -377,37 +380,37 @@ Output or leftover change from a transaction that can be used as input in a new 
 
 #### Utility Token
 
-A token designed for use by consumers on a platform and not intended to constitute a security.
+A token designed for consumer use on a platform, not intended as a security.
 
 #### UTXO Transaction Model
 
-An accounting scheme that represents assets as transaction outputs, spent or unspent, stored in public notes.
+An accounting system where assets are represented as spent or unspent transaction outputs stored in encrypted public notes.
 
 #### Verifiable Computation
 
-The transfer or offload of resource intensive computational tasks by a processor to a third-party server or client while maintaining verifiable results.
+Outsourcing computational tasks to a third-party while ensuring the results are verifiable.
 
 #### Verifier
 
-The first block of a blockchain.
+The entity that checks and validates zero-knowledge proofs generated by a prover.
 
 #### Virtual Machine (VM)
 
-A simulated computer or machine that can perform any computation coded by developers and execute smart contracts on the blockchain.
+A simulated environment that executes smart contracts and performs computations on the blockchain.
 
 #### Wallet
 
-A web-based application that allows users to access and transfer digital assets on the blockchain.
+A software application that enables users to access and manage digital assets on the blockchain.
 
 #### WASM
 
-An execution environment for smart contracts; to execute operations which require access to blockchain or zero knowledge related functions, WASM works in tandem with Piecrust and Rusk.
+WebAssembly (WASM) is a binary instruction format that enables efficient and secure execution of smart contracts on the blockchain.
 
-#### Zero Knowledge Friendly Hash Function
+#### Zero-Knowledge Friendly Hash Function
 
-A cryptographic hash function optimized to process the complex data types associated with zero knowledge operations.
+A cryptographic hash function optimized to process the complex data types associated with zero-knowledge operations.
 
-#### Zero Knowledge Proof
+#### Zero-Knowledge Proof
 
 A cryptographic method used to verify the validity of given data without revealing the contents of the data in question and to permit users to send confidential transactions within the network.
 
