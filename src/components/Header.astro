@@ -23,7 +23,7 @@ const shouldRenderSearch =
 	<div class="header_container__right sl-flex">
 		{
 			!isRoot && shouldRenderSearch && (
-				<div class="sl-hidden md:sl-flex">
+				<div class="md:sl-flex right-group" style="margin-right: 3rem;">
 					<Search {...Astro.props} />
 				</div>
 			)
