@@ -1,4 +1,4 @@
-# Dusk Wiki - Powered by Astro / Starlight 
+# Dusk Docs - Powered by Astro / Starlight 
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
@@ -21,9 +21,11 @@ Inside of your Astro + Starlight project, you'll see the following folders and f
 ├── public/
 ├── src/
 │   ├── assets/
+│   ├── components/
 │   ├── content/
 │   │   ├── docs/
 │   │   └── config.ts
+│   ├── sidebars/
 │   └── env.d.ts
 ├── astro.config.js
 ├── package.json
@@ -35,6 +37,10 @@ Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. 
 Images can be added to `src/assets/` and embedded in Markdown with a relative link.
 
 Static assets, like favicons, can be placed in the `public/` directory.
+
+Custom astro components can be found in the `/src/components/` folder. These can be used and imported through the `astro.config.js`.
+
+Sidebar configurations can be found in the `/src/sidebars/` folder. It contains a default sidebar that will be used the `astro.config.js` as its sidebar, as well as conditionally set sidebars used in the `/src/overrides/Sidebar.astro`.
 
 ## 🧞 Commands
 
