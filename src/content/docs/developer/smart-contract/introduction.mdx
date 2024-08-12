@@ -13,6 +13,12 @@ A smart contract is a self-executing digital agreement whose terms and condition
 
 ## Smart contracts on Dusk
 
+Dusk offers robust support for smart contracts, as developers can leverage the features offered by <a href="https://github.com/dusk-network/piecrust" target="_blank">Piecrust</a>, <a href="https://github.com/dusk-network/piecrust/blob/main/piecrust-uplink/README.md" target="_blank">piecrust-uplink</a> and <a href="https://github.com/dusk-network/rusk" target="_blank">Rusk</a>.
+
+In order to deploy a smart contract, developers only need to compile their contracts to WASM. This is possible because the <a href="https://github.com/dusk-network/piecrust" target="_blank">Piecrust</a> VM manages the contract’s bytecode, state, and runtime sandboxed environment.
+
+Even if developers can use any programming language that compiles to WASM (e.g. C, C++, Go...), we strongly recommend developers to use Rust due to its extensive support in our ecosystem.
+
 ### Overview
 
 Smart Contracts are a key feature of Dusk, playing a fundamental role at the protocol level. Specifically, both transferring the native currency and staking functionalities are implemented as <a href="https://github.com/dusk-network/rusk/tree/master/contracts" target="_blank">genesis contracts</a>.
@@ -24,6 +30,12 @@ In order to deploy a smart contract, developers only need to compile their contr
 Even though developers can use any programming language that compiles to WASM (e.g. C, C++, Go...), we recommend Rust for writing smart contracts due to its security benefits and integration in our ecosystem.
 
 ### Methods
+
+Smart contracts on Dusk can retrieve data from other contracts without altering their contract’s state, as well as modifying the contract’s state without returning any data. 
+
+In order for a smart contract to modify its state, a transaction is needed.
+
+Each contract has a memory area for argument passing, and host methods simplify this process by handling the details. Utilizing host-provided methods can result in significant computational power savings, especially for intensive functions like cryptographic and zero-knowledge proofs.
 
 The logic of a smart contract is executed by calling one of its methods. Methods can be called by users directly, or by other smart contracts. Methods can consume data and can branch their code based on its properties, and on other conditions such as the current state of the chain.
 Based on these conditions, the method may decide to continue execution of the contract's logic, or reject the execution entirely. 
@@ -43,10 +55,13 @@ Understanding the mechanism of argument passing to and from queries and transact
 ### Events
 
 Smart contracts on Dusk can use events as a lightweight mechanism to provide feedback, and they are particularly useful for triggering actions on the caller's side.
+Todo: merge
+[Events serve as a logging mechanism that facilitates interactions between various applications and can be emitted by either queries or transactions. Events can be processed post-call by the caller, which can then execute its logic accordingly
+/
+Events serve as a logging mechanism that facilitates interactions between various applications, and can be processed post-call by the caller, which can then execute its logic accordingly
+]
 
-Events serve as a logging mechanism that facilitates interactions between various applications and can be emitted by either queries or transactions. Events can be processed post-call by the caller, which can then execute its logic accordingly
-
-Clients can subscribe to events emitted by smart contract execution, transactions and blocks by using the <a href="https://github.com/dusk-network/rusk/wiki/RUES-(Rusk-Universal-Event-System)" target="_blank">Rusk Universal Event System</a>.
+Clients can subscribe to events emitted by both smart contracts and nodes by using the <a href="https://github.com/dusk-network/rusk/wiki/RUES-(Rusk-Universal-Event-System)" target="_blank">Rusk Universal Event System</a>.
 
 ### Comparison
 
@@ -61,7 +76,7 @@ Here a simplified comparison between Dusk and other smart contracts platforms:
 
 ### Examples
 
-There are several <a href="https://github.com/dusk-network/piecrust/tree/main/contracts" target="_blank">smart contract examples</a> available, which can be used as a reference.
+There are several <a href="https://github.com/dusk-network/piecrust/tree/main/contracts" target="_blank">smart contracts examples</a> available, which can be used for reference.
 
 <CardGrid>
         <LinkCard title="Getting Started" href="./getting-started" description="Install all necessary dependencies and tools to get started with Smart Contract development"/>
