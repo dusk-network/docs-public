@@ -47,7 +47,7 @@ export default function sidebar(currentPath) {
                 label: "Examples",
                 entries: [
                     { label: "Examples Overview", href: '/developer/smart-contract/03-examples/examples' },
-                    
+
                     { label: "Comparison with smart-contract1", href: '/developer/smart-contract/03-examples/02-comparison-with-vm1' },
                     { label: "Token Example", href: '/developer/smart-contract/03-examples/03-token-example' },
                     { label: "Multisig", href: '/developer/smart-contract/03-examples/04-multisig' },
@@ -78,13 +78,9 @@ export default function sidebar(currentPath) {
                 collapsed: true,
             },
             {
-                type: "group",
-                label: "FAQs and issues",
-                entries: [
-                    { label: "FAQs", href: '/developer/smart-contract/06-faqs-issues/01-faqs' },
-                    { label: "Troubleshooting", href: '/developer/smart-contract/06-faqs-issues/02-troubleshooting' },
-                ],
-                collapsed: true,
+                type: "link",
+                label: "FAQ",
+                href: '/developer/smart-contract/faq'
             },
             {
                 type: "link",
