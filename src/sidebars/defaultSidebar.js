@@ -16,7 +16,7 @@ const defaultSidebar = [
     {
         label: "FAQ & Guides",
         items: [
-            { label: "Wallet Guide", link: "404" },
+            { label: "Wallet Guide", link: "/learn/guides/wallet-guide/" },
             { label: "Dusk-ERC20 Staking", link: "/learn/guides/erc20-staking/" },
             { label: "BEP2 migration", link: "/learn/guides/bep2-migration/" },
         ],
@@ -54,6 +54,7 @@ const defaultSidebar = [
                 collapsed: true,
             },
             { label: "Economic Protocol", link: 'learn/deep-dive/economic-protocol' },
+            { label: "Piecrust VM", link: 'learn/deep-dive/piecrust' },
             { label: "Succinct Attestation Consensus", link: 'learn/deep-dive/succinct-attestation' },
             { label: "Additional Resources", link: 'learn/deep-dive/additional-resources' },
         ],

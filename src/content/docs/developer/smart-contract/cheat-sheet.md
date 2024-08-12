@@ -18,13 +18,22 @@ Collection of code snippets and information bits on smart contract development f
 Data structures based on B-Trees require the Ord trait to be implemented for the values which get inserted. (In the case of a Map, the Ord needs to be implemented on the Key)
 :::
 
+## Common host functions
+
+| Function         | Explanation           |
+| ---------------- | --------------------- |
+| rusk_abi::emit() | Emit a contract event |
+|                  |                       |
+
 ## Common Dependencies
+
+- execution-core
+- rusk_abi
 
 ### No-std Crates
 
-#### Core
-
-#### Alloc
+- core
+- alloc
 
 The alloc crate needs to explicitly be imported in order to use heap-allocated values in a #![no-std] environment.
 More information on the alloc crate can be found <a href="https://doc.rust-lang.org/alloc/" target="_blank">here</a>
@@ -72,18 +81,21 @@ name = "MyContract"
 version = "0.1.0"
 edition = "2021"
 
+[lib]
+crate-type = ["cdylib", "rlib"]
+
 [dependencies]
-rusk-abi = "0.11.0"
+rusk-abi = { git = "https://github.com/dusk-network/rusk/", branch = "master", features = ["abi", "dlmalloc"] }
 ```
 
 ## Example Makefile to compile to WASM
 
 ```bash
-contract: ## Build contract
+build: ## Build contract
 	@RUSTFLAGS="-C link-args=-zstack-size=65536" \
 	cargo build \
 	  --release \
-	  --manifest-path=contract/Cargo.toml \
+	  --manifest-path=Cargo.toml \
 	  --color=always \
 	  -Z build-std=core,alloc \
 	  --target wasm32-unknown-unknown
@@ -94,13 +106,9 @@ contract: ## Build contract
 	 	          target/wasm32-unknown-unknown/release/% \
 	 	          -o target/stripped/%
 
-#test: contract ## Run all tests
+# test: contract ## Run all tests
 #	@cargo test \
-#	  --manifest-path=tests/Cargo.toml \
-#	  --all-features \
-#	  --color=always
-#	@cargo test \
-#	  --manifest-path=project/Cargo.toml \
+#	  --manifest-path=Cargo.toml \
 #	  --color=always
 
 MAX_COUNTER_CONTRACT_SIZE = 8192

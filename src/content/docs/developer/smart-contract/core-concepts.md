@@ -1,20 +1,20 @@
 ---
-title: Smart Contracts
+title: Getting Started
+description: Core concepts within the Dusk smart contract platform
 ---
 
-## What is a Smart Contract?
+You can build and test your contracts against <a href="https://github.com/dusk-network/piecrust" target="_blank">Piecrust</a>.
 
-A smart contract is a self-executing digital agreement whose terms and conditions are directly written into lines of code. Even if the concept of smart contracts has been <a href="https://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/szabo.best.vwh.net/smart.contracts.html" target="_blank">introduced in 1994</a>, it became more popular after the creation of general purpose blockchains. The reason is that storing smart contracts on a blockchain ensures transparency, security, and immutability.
+### The State & Persistence
 
-### Methods
+Each smart contract on Dusk has its own state, which is the persistent data maintained by the contract. This means that for every smart contract, there is a single, globally consistent state at any time, maintained across all nodes. In other words, the smart contract's state is a global singleton. 
 
-The logic of a smart contract is executed by calling one of its methods. Methods can be called by users directly, or by other smart contracts. Methods can consume data and can branch their code based on its properties, and on other conditions such as the current state of the chain. Based on these conditions, the method may decide to continue execution of the contract's logic, or reject the execution entirely. The product of the execution depends on the coded logic, which can involve transferring funds, issuing digital assets, triggering other contracts, etc.
+The State in a dusk smart contract is a static mutable constant and often maintains a single struct.
 
-Smart contracts can be programmed to execute specific code when receiving cryptocurrencies. This means that when a user sends cryptocurrency to a smart contract's address, the contract can automatically perform predefined actions based on the received funds.
-
-### State
-
-Each smart contract has its own state, which is the persistent data maintained by the contract. This means that for every smart contract, there is a single, globally consistent state at any time, maintained across all nodes. In other words, the smart contract's state is a global singleton. 
+An example State of a counter contract that maintains a single counter value would look like this:
+```rust
+static mut STATE: MyContract = MyContract { counter: 0 };
+```
 
 State information can be accessed and returned, while the state can be modified via transactions.
 
@@ -35,3 +35,23 @@ While gas itself measures computation, the gas price determines the amount of na
 Gas prices fluctuate based on network demand. When the network is congested, gas prices can spike, making transactions more expensive. Conversely, in periods where the network is less congested, gas prices are lower. You can learn more on how gas works on Dusk by reading the [Gas Management](/learn/economic-information/gas-management) page.
 
 Smart contracts consume gas while performing executions, which are paid for by the user. It therefore makes sense to optimize for gas consumption so that end-users do not overpay for contract interactions.
+
+### The host
+
+### Rust No-std
+
+#### Expose Functions
+#### Usage of panic & reverting state
+
+### Compiling Smart Contracts
+
+### Common dependencies
+
+#### Rusk-abi
+
+#### Execution Core
+
+### The Rusk Virtual Machine
+
+#### Host Calls
+#### Callcenter

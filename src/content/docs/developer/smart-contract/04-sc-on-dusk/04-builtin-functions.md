@@ -20,7 +20,7 @@ Host functions are exempt from the normal costs associated (Gas costs) with comp
 >
 > List of available host functions
 >
-> We can also point towards the rust docs module overview or something here
+> We can also point towards the rust docs module overview or cheat sheet here
 
 
 

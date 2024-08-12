@@ -7,37 +7,24 @@ export default function sidebar(currentPath) {
             {
                 type: "link",
                 label: "Introduction",
-                href: "/developer/smart-contract/introduction-sc",
+                href: "/developer/smart-contract/introduction",
             },
             {
                 type: "link",
                 label: "Getting Started",
-                href: "/developer/smart-contract/04-getting-started",
+                href: "/developer/smart-contract/getting-started",
+            },
+            {
+                type: "link",
+                label: "Core Concepts",
+                href: "/developer/smart-contract/core-concepts",
             },
             {
                 type: "group",
                 label: "Components",
                 entries: [
-                    { label: "Piecrust", href: '/developer/smart-contract/02-components/01-piecrust' },
-                    { label: "Rusk", href: '/developer/smart-contract/02-components/02-rusk' },
-                    { label: "Rues", href: '/developer/smart-contract/02-components/03-rues' },
-                ],
-                collapsed: true,
-            },
-            {
-                type: "group",
-                label: "Smart Contracts on Dusk",
-                entries: [
-                    { label: "Overview", href: '/developer/smart-contract/01-sc-on-dusk/01-smart_contracts_on_dusk' },
-                    { label: "Transactions", href: '/developer/smart-contract/01-sc-on-dusk/02-transactions' },
-                    { label: "Keys", href: '/developer/smart-contract/01-sc-on-dusk/03-keys' },
-                    { label: "Built-in Functions", href: '/developer/smart-contract/01-sc-on-dusk/04-builtin-functions' },
-                    { label: "Token Standards", href: '/developer/smart-contract/01-sc-on-dusk/05-token_standards' },
-                    { label: "Circuits", href: '/developer/smart-contract/01-sc-on-dusk/06-circuits' },
-                    { label: "Sessions", href: '/developer/smart-contract/01-sc-on-dusk/07-sessions' },
-                    { label: "Hashing", href: '/developer/smart-contract/01-sc-on-dusk/08-hashing' },
-                    { label: "Semantics", href: '/developer/smart-contract/01-sc-on-dusk/09-semantics' },
-                    { label: "Serialization", href: '/developer/smart-contract/01-sc-on-dusk/10-serialization' },
+                    { label: "Rusk", href: '/developer/smart-contract/01-components/02-rusk' },
+                    { label: "Rues", href: '/developer/smart-contract/01-components/03-rues' },
                 ],
                 collapsed: true,
             },
@@ -45,13 +32,13 @@ export default function sidebar(currentPath) {
                 type: "group",
                 label: "Guides",
                 entries: [
-                    { label: "My first contract", href: '/developer/smart-contract/03-examples/01-my-first-contract' },
-                    { label: "Debugging", href: '/developer/smart-contract/05-guides/01-debugging' },
-                    { label: "Testing", href: '/developer/smart-contract/05-guides/02-testing' },
-                    { label: "Compiling", href: '/developer/smart-contract/05-guides/03-compiling' },
-                    { label: "Deploying", href: '/developer/smart-contract/05-guides/04-deploying' },
-                    { label: "Upgrades", href: '/developer/smart-contract/05-guides/05-upgrades' },
-                    { label: "Interacting", href: '/developer/smart-contract/05-guides/06-interacting' }
+                    { label: "My first contract", href: '/developer/smart-contract/02-guides/01-my-first-contract' },
+                    { label: "Compiling", href: '/developer/smart-contract/02-guides/02-compiling' },
+                    { label: "Deploying", href: '/developer/smart-contract/02-guides/03-deploying' },
+                    { label: "Debugging", href: '/developer/smart-contract/02-guides/04-debugging' },
+                    { label: "Testing", href: '/developer/smart-contract/02-guides/05-testing' },
+                    { label: "Upgrades", href: '/developer/smart-contract/02-guides/06-upgrades' },
+                    { label: "Interacting", href: '/developer/smart-contract/02-guides/07-interacting' }
                 ],
                 collapsed: true,
             },
@@ -61,7 +48,7 @@ export default function sidebar(currentPath) {
                 entries: [
                     { label: "Examples Overview", href: '/developer/smart-contract/03-examples/examples' },
                     
-                    { label: "Comparison with smart-contract1", href: '/developer/smart-contract/03-examples/02-comparison-with-smart-contract1' },
+                    { label: "Comparison with smart-contract1", href: '/developer/smart-contract/03-examples/02-comparison-with-vm1' },
                     { label: "Token Example", href: '/developer/smart-contract/03-examples/03-token-example' },
                     { label: "Multisig", href: '/developer/smart-contract/03-examples/04-multisig' },
                     { label: "Sessions Example", href: '/developer/smart-contract/03-examples/05-sessions-example' },
@@ -75,12 +62,34 @@ export default function sidebar(currentPath) {
             },
             {
                 type: "group",
+                label: "Smart Contracts on Dusk",
+                entries: [
+                    { label: "Overview", href: '/developer/smart-contract/04-sc-on-dusk/01-smart_contracts_on_dusk' },
+                    { label: "Transactions", href: '/developer/smart-contract/04-sc-on-dusk/02-transactions' },
+                    { label: "Keys", href: '/developer/smart-contract/04-sc-on-dusk/03-keys' },
+                    { label: "Built-in Functions", href: '/developer/smart-contract/04-sc-on-dusk/04-builtin-functions' },
+                    { label: "Token Standards", href: '/developer/smart-contract/04-sc-on-dusk/05-token_standards' },
+                    { label: "Circuits", href: '/developer/smart-contract/04-sc-on-dusk/06-circuits' },
+                    { label: "Sessions", href: '/developer/smart-contract/04-sc-on-dusk/07-sessions' },
+                    { label: "Hashing", href: '/developer/smart-contract/04-sc-on-dusk/08-hashing' },
+                    { label: "Semantics", href: '/developer/smart-contract/04-sc-on-dusk/09-semantics' },
+                    { label: "Serialization", href: '/developer/smart-contract/04-sc-on-dusk/10-serialization' },
+                ],
+                collapsed: true,
+            },
+            {
+                type: "group",
                 label: "FAQs and issues",
                 entries: [
                     { label: "FAQs", href: '/developer/smart-contract/06-faqs-issues/01-faqs' },
                     { label: "Troubleshooting", href: '/developer/smart-contract/06-faqs-issues/02-troubleshooting' },
                 ],
                 collapsed: true,
+            },
+            {
+                type: "link",
+                label: "Cheat Sheet",
+                href: "/developer/smart-contract/cheat-sheet",
             }
         ], false),
         createGroup("Integrations", currentPath, [

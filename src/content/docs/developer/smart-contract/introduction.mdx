@@ -1,0 +1,32 @@
+---
+title: Smart Contracts
+description: Introduction to smart contract development on Dusk.
+---
+
+import { LinkCard, Card, CardGrid } from '@astrojs/starlight/components';
+
+The **Smart Contracts** section guides you through the different aspects of smart contract development on Dusk.
+
+## What is a Smart Contract?
+
+A smart contract is a self-executing digital agreement whose terms and conditions are directly written into lines of code. Even if the concept of smart contracts has been <a href="https://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/szabo.best.vwh.net/smart.contracts.html" target="_blank">introduced in 1994</a>, it became more popular after the creation of general purpose blockchains. The reason is that storing smart contracts on a blockchain ensures transparency, security, and immutability.
+
+## Smart contracts on Dusk
+
+Smart contracts on dusk are ...
+
+The logic of a smart contract is executed by calling one of its methods. Methods can be called by users directly, or by other smart contracts. Methods can consume data and can branch their code based on its properties, and on other conditions such as the current state of the chain.
+Based on these conditions, the method may decide to continue execution of the contract's logic, or reject the execution entirely. 
+
+### Methods
+
+  The product of the execution depends on the coded logic, which can involve transferring funds, issuing digital assets, triggering other contracts, etc.
+
+Smart contracts can be programmed to execute specific code when receiving cryptocurrencies. This means that when a user sends cryptocurrency to a smart contract's address, the contract can automatically perform predefined actions based on the received funds.
+
+
+<CardGrid>
+        <LinkCard title="Getting Started" href="./getting-started" description="Install all necessary dependencies and tools to get started with Smart Contract development"/>
+        <LinkCard title="My first contract" href="./02-guides/01-my-first-contract" description="Dive directly into writing your first contract with a Step by Step guide"/>
+        <LinkCard title="Cheat Sheet" href="./cheat-sheet" description="Take a look at the cheat sheet for quick reference of concepts and code snippets"/>
+</CardGrid>
