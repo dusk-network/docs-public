@@ -16,7 +16,7 @@ Simply put, Dusk is a **privacy-centric global ledger for real world application
 Dusk is engineered for high performance and ease of use, catering to both developers and users.
 
 ##### Unparalleled Privacy
-1. Implements [confidential smart contracts](/getting-started/vm/02-guides/01-my-first-contract) with [Phoenix and Zedger](https://dusk.network/news/why-we-need-phoenix-and-zedger/) transaction models.
+1. Implements [confidential smart contracts](/getting-started/vm/guides/01-my-first-contract) with [Phoenix and Zedger](https://dusk.network/news/why-we-need-phoenix-and-zedger/) transaction models.
 2. Uses the most popular and sound zero-knowledge (ZK) cryptographic tools for privacy, being the [PlonK](https://github.com/dusk-network/plonk) proof system and the [Poseidon](https://www.usenix.org/conference/usenixsecurity21/presentation/grassi) hash function among them.
 3. Provides a [privacy-preserving digital identity protocol](/getting-started/digital-identity/protocol) for compliance and secure user interactions.
 

@@ -4,11 +4,11 @@ title: FAQs
 
 #### How to verify a contract?
 
-Information about contract verification cen be found [here](../02-guides/02-compiling#how-to-verify-a-contract)
+Information about contract verification cen be found [here](../guides/02-compiling#how-to-verify-a-contract)
 
 #### Can a Contract deploy another Contract?
 
-Yes, see [here](/smart-contract/02-guides/03-deploying#let-contracts-deploy-other-contracts)
+Yes, see [here](/smart-contract/guides/03-deploying#let-contracts-deploy-other-contracts)
 
 #### Is there Token Discoverability?
 
@@ -64,10 +64,7 @@ A wallet exec with arbitrary data can be found <a href="https://github.com/dusk-
 
 #### Why is there no msg.sender method?
 
-[UTXO & Account model](core-concepts#uto-&-account-model)
-
-##### UTXO & Account model reference links
-todo (Write something about moonlight etc)
+[UTXO & Account model](core-concepts#utxo--account-model)
 
 #### How to pause or unpause contracts?
 

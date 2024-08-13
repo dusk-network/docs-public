@@ -12,6 +12,7 @@ const defaultSidebar = [
             { label: "Token Standards", link: 'learn/token-standards' },
             { label: "ZK Crypto", link: 'learn/zk-crypto' },
             { label: "Community", link: "learn/community" },
+            { label: "Glossary", link: "learn/glossary" },
         ],
     },
     {

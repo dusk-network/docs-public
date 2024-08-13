@@ -2,7 +2,7 @@
 title: Testing
 ---
 
-<!-- This guide will explain how to test a contract based on the previous counter Contract from [My first contract](/developer/smart-contract/02-guides/01-my-first-contract) -->
+<!-- This guide will explain how to test a contract based on the previous counter Contract from [My first contract](/developer/smart-contract/guides/01-my-first-contract) -->
 
 ## Writing tests for Contracts
 

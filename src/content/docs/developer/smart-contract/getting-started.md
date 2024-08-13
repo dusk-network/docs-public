@@ -8,9 +8,7 @@ This page explains what dependencies you need to have installed on your computer
 
 ### Rust
 
-Although developers can write smart contracts on Dusk using any programming language that compiles to WASM, Rust is the best supported language in our ecosystem.
-
-Therefore, the only real dependency that needs to be installed is <a href="https://www.rust-lang.org/tools/install" target="_blank">Rust</a> 1.71 nightly or higher. 
+To start writing contracts in Rust we need installed <a href="https://www.rust-lang.org/tools/install" target="_blank">Rust</a> 1.71 nightly or higher. 
 
 :::tip[Install Rust]
 You can find information to install Rust <a href="https://www.rust-lang.org/tools/install" target="_blank">here</a>.

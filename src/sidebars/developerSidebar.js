@@ -18,13 +18,13 @@ export default function sidebar(currentPath) {
                 type: "group",
                 label: "Guides",
                 entries: [
-                    { label: "My first contract", href: '/developer/smart-contract/02-guides/01-my-first-contract' },
-                    { label: "Compiling", href: '/developer/smart-contract/02-guides/02-compiling' },
-                    { label: "Deploying", href: '/developer/smart-contract/02-guides/03-deploying' },
-                    { label: "Debugging", href: '/developer/smart-contract/02-guides/04-debugging' },
-                    { label: "Testing", href: '/developer/smart-contract/02-guides/05-testing' },
-                    { label: "Upgrades", href: '/developer/smart-contract/02-guides/06-upgrades' },
-                    { label: "Interacting", href: '/developer/smart-contract/02-guides/07-interacting' }
+                    { label: "My first contract", href: '/developer/smart-contract/guides/01-my-first-contract' },
+                    { label: "Compiling", href: '/developer/smart-contract/guides/02-compiling' },
+                    { label: "Deploying", href: '/developer/smart-contract/guides/03-deploying' },
+                    { label: "Debugging", href: '/developer/smart-contract/guides/04-debugging' },
+                    { label: "Testing", href: '/developer/smart-contract/guides/05-testing' },
+                    { label: "Upgrades", href: '/developer/smart-contract/guides/06-upgrades' },
+                    { label: "Interacting", href: '/developer/smart-contract/guides/07-interacting' }
                 ],
                 collapsed: true,
             },
