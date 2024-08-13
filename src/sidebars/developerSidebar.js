@@ -21,15 +21,6 @@ export default function sidebar(currentPath) {
             },
             {
                 type: "group",
-                label: "Components",
-                entries: [
-                    { label: "Rusk", href: '/developer/smart-contract/01-components/02-rusk' },
-                    { label: "Rues", href: '/developer/smart-contract/01-components/03-rues' },
-                ],
-                collapsed: true,
-            },
-            {
-                type: "group",
                 label: "Guides",
                 entries: [
                     { label: "My first contract", href: '/developer/smart-contract/02-guides/01-my-first-contract' },
@@ -64,7 +55,6 @@ export default function sidebar(currentPath) {
                 type: "group",
                 label: "Smart Contracts on Dusk",
                 entries: [
-                    { label: "Overview", href: '/developer/smart-contract/04-sc-on-dusk/01-smart_contracts_on_dusk' },
                     { label: "Transactions", href: '/developer/smart-contract/04-sc-on-dusk/02-transactions' },
                     { label: "Keys", href: '/developer/smart-contract/04-sc-on-dusk/03-keys' },
                     { label: "Built-in Functions", href: '/developer/smart-contract/04-sc-on-dusk/04-builtin-functions' },
@@ -92,7 +82,7 @@ export default function sidebar(currentPath) {
             { label: "Introduction", href: '/developer/integrations/introduction' },
             { label: "The Wallet Stack", href: '/developer/integrations/wallet-stack' },
             { label: "Wallet Core Library", href: '/developer/integrations/wallet-core' },
-            { label: "Execution Core", href: '404' },
+            { label: "Execution Core", href: '/developer/integrations/execution-core' },
         ],
             false),
         createGroup("Digital Identity", currentPath, [

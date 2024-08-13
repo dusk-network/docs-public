@@ -1,5 +1,5 @@
 ---
-title: Dusk Smart Contract Cheat Sheet
+title: Smart Contract Cheat Sheet
 description: Quick information lookup on code snippets and infos for Dusk smart contracts.
 ---
 
@@ -20,10 +20,9 @@ Data structures based on B-Trees require the Ord trait to be implemented for the
 
 ## Common host functions
 
-| Function         | Explanation           |
-| ---------------- | --------------------- |
-| rusk_abi::emit() | Emit a contract event |
-|                  |                       |
+| Function                           | Explanation           |
+| ---------------------------------- | --------------------- |
+| rusk_abi::emit("EVENT_NAME", data) | Emit a contract event |
 
 ## Common Dependencies
 
@@ -38,55 +37,9 @@ Data structures based on B-Trees require the Ord trait to be implemented for the
 The alloc crate needs to explicitly be imported in order to use heap-allocated values in a #![no-std] environment.
 More information on the alloc crate can be found <a href="https://doc.rust-lang.org/alloc/" target="_blank">here</a>
 
-## Empty Contract Template
+## Simple Contract Template
 
-```rust
-// lib.rs
-#![no_std]
-
-extern crate alloc;
-
-mod contract {
-    use rusk_abi::wrap_call;
-
-    static mut STATE: MyContract = MyContract { counter: 0 };
-
-    /// My contract state struct
-    struct MyContract {
-        counter: u64,
-    }
-
-    impl MyContract {
-        pub fn increment(&mut self, value: u64) {
-            self.counter += 1;
-        }
-
-        fn init(&mut self) -> Self {
-            MyContract { counter: 1 }
-        }
-    }
-
-    /// Needed to call the increment function from outside the contract
-    #[no_mangle]
-    unsafe fn increment(arg_len: u32) -> u32 {
-        wrap_call(arg_len, |value| STATE.increment(value))
-    }
-}
-```
-
-```toml
-// Cargo.toml
-[package]
-name = "MyContract"
-version = "0.1.0"
-edition = "2021"
-
-[lib]
-crate-type = ["cdylib", "rlib"]
-
-[dependencies]
-rusk-abi = { git = "https://github.com/dusk-network/rusk/", branch = "master", features = ["abi", "dlmalloc"] }
-```
+[Counter Contract](https://github.com/dusk-network/my-first-contract)
 
 ## Example Makefile to compile to WASM
 
@@ -118,5 +71,6 @@ MAX_COUNTER_CONTRACT_SIZE = 8192
 
 ## More references
 
-The A <a href="https://cheats.rs/" target="_blank">Rust Language Cheat Sheet</a> is another great cheat sheet which can be used as a reference for Rust Code. 
-Note: Not all examples apply due to our no-std:
+The <a href="https://cheats.rs/" target="_blank">Rust Language Cheat Sheet</a> is another great cheat sheet that can be used as a reference for Rust code. 
+
+Note: Not all examples apply due to our no-std constraints.

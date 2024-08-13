@@ -6,11 +6,7 @@ In this guide, we will create a counter contract that keeps track of its total c
 
 ## Simple Counter Example
 
-Let's create a simple smart contract for the <a href="https://github.com/dusk-network/piecrust" target="_blank">Piecrust</a> virtual machine, the virtual machine used by the Dusk blockchain.
-
-:::tip[Info]
-It is useful to know that Piecrust is not used directly, but it is exposed through Rusk, the entrypoint for all Dusk related development.
-:::
+Let's create a simple smart contract for Dusk.
 
 Let's do it step by step.
 

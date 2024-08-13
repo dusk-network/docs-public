@@ -3,6 +3,13 @@ title: RUES
 ---
 
 ## Rusk Universal Events System (RUES)
+---
+TODO:
+Why not refer to here? - Avoid redundancy
+
+https://github.com/dusk-network/rusk/wiki/RUES-(Rusk-Universal-Event-System)
+
+---
 
 The <a href="https://github.com/dusk-network/rusk/wiki/RUES-%28Rusk-Universal-Event-System%29" target="_blank">Rusk Universal Event System (RUES)</a> is an integral part of the architecture of Dusk, providing a powerful mechanism for handling real-time communication with an event-driven approach.
 

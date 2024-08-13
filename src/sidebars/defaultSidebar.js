@@ -55,6 +55,7 @@ const defaultSidebar = [
             },
             { label: "Economic Protocol", link: 'learn/deep-dive/economic-protocol' },
             { label: "Piecrust VM", link: 'learn/deep-dive/piecrust' },
+            { label: "Rues", link: 'learn/deep-dive/rues' },
             { label: "Succinct Attestation Consensus", link: 'learn/deep-dive/succinct-attestation' },
             { label: "Additional Resources", link: 'learn/deep-dive/additional-resources' },
         ],
