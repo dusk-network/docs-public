@@ -5,7 +5,7 @@ description: Core concepts within the Dusk smart contract platform
 
 This page explains the core concepts and building blocks for developing smart contracts on Dusk. If you want to dive right into development you can directly go to the [Guides](/developer/smart-contract/02-guides/01-my-first-contract)
 
-### The State & Persistence
+## The State & Persistence
 
 Each smart contract on Dusk has its own state, which is the persistent data maintained by the contract. This means that for every smart contract, there is a single, globally consistent state at any time, maintained across all nodes. In other words, the smart contract's state is a global singleton. 
 
@@ -26,7 +26,7 @@ Updating any of these implies a state transition, which is recorded on the block
 
 The data held in state variables can be updated based on the logic defined in the contract. It is important to note that even if the state of a smart contract can change through transactions, the contract code itself is immutable once deployed. A proxy contract upgrading mechianism for example does not impact the immutability of contract code; it merely changes a pointer to point towards another contract. Data in a contract is mutable if the contract's logic allows for it.
 
-### Gas
+## Gas
 
 Executing smart contracts involves computational work performed by the network nodes. The unit of measurement used to quantify the computational effort required for executing operations on a blockchain is called gas. Gas measures the amount of work needed to perform a task: the more complex the task, the more gas it requires. 
 
@@ -36,7 +36,7 @@ Gas prices fluctuate based on network demand. When the network is congested, gas
 
 Smart contracts consume gas while performing executions, which are paid for by the user. It therefore makes sense to optimize for gas consumption so that end-users do not overpay for contract interactions.
 
-### Methods
+## Methods
 
 Smart contracts on Dusk can retrieve data from other contracts without altering their contract’s state, as well as modifying the contract’s state without returning any data. 
 
@@ -59,7 +59,78 @@ This distinction is crucial for understanding how smart contracts interact with 
 
 Understanding the mechanism of argument passing to and from queries and transactions is beneficial, as each contract has a memory area for argument passing, and host methods simplify this process by handling the details. Utilizing host-provided methods can result in significant computational power savings, especially for intensive functions like cryptographic has functions and zero-knowledge proof verification.
 
-### Events
+## UTXO & Account-model
+
+### Absence of msg.sender
+
+ToDo: merge this content
+
+In Dusk, there is no built-in variable like `msg.sender` which identifies the caller of a contract function. This is because Dusk is a privacy-focused blockchain, utilizing a UTXO-based transaction model (Phoenix).
+
+In Dusk, an "address" is defined by the developer within the contract's logic. This approach gives developers more control over the privacy and compliance features of their applications but also increases their responsibility to securely identify and authenticate users and transactions.
+
+It needs to be noted that even if users can theoretically be viewed as a collection of unspent notes associated with a key, these notes are not linkable to each other, preserving privacy and security.
+
+Because of the way that Dusk works, transactions don't have the equivalent to `msg.sender`. Therefore developers need to figure out how to represent users. 
+
+`msg.sender` is not "abstracted" away on dusk. A way to mimic that behavior is by explicitly taking the address as function argument and a signature that signed all other function arguments (including the address). Then verifying this this in the function.
+
+It needs to be noted that even if in theory users can be seen as a collection of unspent notes associated with a key, notes are on purpose not linkable to each other.
+
+## Built-in Functions
+
+Rusk provides built-in functions that can be called from within a smart contract which we call **Host functions** or **Host calls**.
+
+### Host functions
+
+Host functions are functions provided by rusk (the "host") and can be called from within a smart contract running on the Piecrust VM. Due to the sandboxed nature of VMs, smart contracts need to rely on host functions to access and manipulate lower-level operations that are managed by the Dusk nodes (e.g. time checks, cryptographic functions...).
+
+Simply put, host functions are necessary because they allow smart contracts to interact with the system-level functions of the machine on which they run.
+
+:::tip
+Host functions are exempt from the normal costs associated (Gas costs) with computing VM instructions.
+:::
+
+### Available Host functions
+
+> ToDo
+>
+> List of available host functions
+>
+> We can also point towards the rust docs module overview or cheat sheet here
+
+
+
+### Functions Signature and Calling Sequence
+
+ToDo: move this into deep dive VM section
+
+The interaction between the smart contract and the host involves a series of steps designed to safely pass data back and forth while respecting the sandboxed environment in which the smart contract operates. 
+
+Here's a breakdown of the process and why each step is crucial:
+
+**1) Function Signature:** The function to be called from the host has a specific signature `(fn foo(u32) -> u32)`. This uniformity is necessary because it simplifies the interface through which the host VM interacts with the contract, ensuring that calls are predictable and structured.
+
+**2) Writing to the Argument Buffer:** Instead of passing complex and potentially variable data types directly, the host writes his data into a designated argument buffer. This method standardizes how data is provided to the contract, regardless of the specific operation being performed.
+
+**3) Calling the Function:** The smart contract’s function is invoked with an argument that typically represents the length or size of the data in the buffer. This helps the contract know how much data it needs to process.
+
+**4) Deserialization of Data:** The contract reads and deserializes the data from the argument buffer. Deserialization is converting data from a byte array (buffer) into usable data types within the contract.
+
+**5) Contract Processing:** The contract performs its intended operations using the deserialized data.
+
+**6) Serializing Results into the Argument Buffer:** After processing, the contract serializes any results back into the argument buffer. Serialization is the process of converting the contract's internal data types back into a standardized byte format that can be read by the host.
+
+**7) Return Data Length:** The contract returns the length of the serialized data, informing the host how much data to read from the buffer.
+
+**8) Host Reads Buffer:** Finally, the host reads the output data from the buffer based on the provided length.
+
+:::note
+The use of an argument buffer and the serialization/deserialization prevents unsafe interactions between the host and the contract's internal state, ensuring that data passed between the host and the contract is done so in a controlled manner.
+:::
+
+
+## Events
 
 Smart contracts on Dusk can use events as a lightweight mechanism to provide feedback, and they are particularly useful for triggering actions on the caller's side.
 
@@ -67,18 +138,104 @@ Events serve as a logging mechanism that facilitates interactions between variou
 
 Clients can subscribe to events emitted by both smart contracts and nodes by using the <a href="https://github.com/dusk-network/rusk/wiki/RUES-(Rusk-Universal-Event-System)" target="_blank">Rusk Universal Event System</a>.
 
-### The host
+Serialization and deserialization are essential for smart contracts to efficiently handle data within Piecrust. Serialization converts data structures of a smart contract into a format that can be easily transmitted or stored, while deserialization converts this data back into a usable form.
 
-### Rust No-std
+While various serialization and deserialization frameworks can be used, Dusk uses [rkyv](https://rkyv.org/) to handle data calls towards smart contracts. 
 
-#### Expose Functions
-#### Usage of panic & reverting state
+### Usage of Events
 
-### Compiling Smart Contracts
+## Cryptographic Keys
 
-### Common dependencies
+Developers are free to choose any cryptographic signature algorithm when building on Dusk, as they can use various cryptographic primitives, as long as they are compatible WASM-compatible. As an example, developers can choose BLS, JubJub Schnorr, ECDSA, Bitcoin's Secp256k1 and much more. The choice usually depends on requirements for security, signature size, and transaction efficiency.
 
-#### Rusk
+For developers opting to use BLS signatures, it is recommended to leverage the `rusk_abi::verify_bls` host function provided by Dusk. This function enables signature verification to be offloaded to the host, minimizing the gas consumption and execution time of contracts. Directly including complex cryptographic operations within the contract is still possible but less efficient in terms of gas usage.
+
+For those starting with token development on Dusk, it might be beneficial to start with an available ECDSA scheme that easily compiles to WASM, optimizing the development process. As the project progresses, developers can switch to a more suitable or advanced cryptographic algorithm based on the evolving needs and security requirements of their application.
+
+### Types of keys
+
+Dusk uses three types of keys: 
+- <a href="https://github.com/dusk-network/bls12_381-sign" target="_blank">BLS-signature keys</a>: used in the consensus, the stake contract and Moonlight.
+- <a href="https://github.com/dusk-network/jubjub-schnorr" target="_blank">Schnorr-signature keys</a>: used within the Phoenix transaction model for note-signing and sender information generation.
+- <a href="https://github.com/dusk-network/phoenix-core" target="_blank">Phoenix keys</a>: used for Phoenix transactions.
+
+Keys in Dusk work slighly different compared to other protocols:
+`PublicSpendKeys` and `SecretSpendKeys` are equivalent to the traditional key-pairs used in other blockchains to manage transactions.
+
+`PublicKeys` and `SecretKeys` are instead single-use keys derived from `PublicSpendKeys` and `SecretSpendKeys`. They are specifically used to prove and assign note ownership during transactions.
+
+### Keys creation and verification
+
+The process for handling transactions in Dusk involves several key generation and verification steps:
+
+1) Generate Phoenix private key.
+2) Derive Phoenix public key.
+3) Generate stealth address from Phoenix public key and a JubJubScalar.
+4) Generate Schnorr private key from Phoenix private key combined with the stealth address.
+5) Sign the claims with the Schnorr private key and verify with the Phoenix public key.
+
+More specifically, a `jubjub-schnorr::SecretKey` can be created with `phoenix-core::SecretKey` by calling `SecretKey::gen_note_sk`. A message can be signed with that `jubjub-schnorr::SecretKey` and verified with a `jubjub-schnorr::PublicKey`.
+
+Creation and verification of signatures (both schnorr signatures and bls signatures) roughly follow this flow:
+```rust
+// get a random secret key
+let sk = SecretKey::random(rng);
+// generate public key from secret key
+let pk = PublicKey::from(sk);
+
+// sign a message with the secret key
+let signature = sk.sign(message);
+
+// verify the signature with the public key
+assert!(pk.verify(signature));
+```
+
+### Considerations
+
+It is important to understand that for the final step, the `verify_schnorr` function expects a `NotePublicKey` instead of a `phoenix` public key. This implies that a `NotePublicKey` needs to be added in the contract, because considering that the owner of the contract is a `phoenix` public key, the method `verify_schnorr` cannot be called with only that public key.
+This implies that a Schnorr signature cannot be verified with only a `phoenix` public key. 
+
+The `schnorr-sk` is derived from `phoenix-sk` using a random value `r`. If the same `r` is used to generate a stealth address from a `phoenix-pk`, then the `note-pk` (which is a `schnorr-pk`) in that stealth address can be used to verify the `schnorr-sig` signed with the `schnorr-sk`.
+
+## Serialization
+
+**Rkyv** is a zero-copy deserialization framework that serializes data structures in-place. This means that once data is serialized, it can be deserialized without copying, which makes it very efficient.
+
+For a type to be passable through the VM boundary automatically, developers need to implement the `rkyv traits`, for example by deriving them. 
+
+### rkyv example
+
+As an example, here it can be seen how the traits for a `Note` have been derived:
+
+```rust
+#[cfg_attr(
+    feature = "rkyv-impl",
+    derive(Archive, Serialize, Deserialize),
+    archive_attr(derive(bytecheck::CheckBytes))
+)]
+pub struct Note {
+    pub(crate) note_type: NoteType,
+    pub(crate) value_commitment: JubJubExtended,
+    pub(crate) nonce: BlsScalar,
+    pub(crate) stealth_address: StealthAddress,
+    pub(crate) pos: u64,
+    pub(crate) encrypted_data: PoseidonCipher,
+}
+```
+
+
+## The host
+
+## Rust No-std
+
+### Expose Functions
+### Usage of panic & reverting state
+
+## Compiling Smart Contracts
+
+## Common dependencies
+
+### Rusk
 
 <a href="https://github.com/dusk-network/rusk" target="_blank">Rusk</a> is the official Dusk protocol node client and smart contract platform. It plays a key role in Dusk by enabling the execution of smart contracts and handling the consensus. 
 
@@ -86,17 +243,17 @@ The `rusk-abi` crate encapsulates the following two features:
 - `abi`: for smart contracts developers who are creating smart contracts that can interact seamlessly with Dusk by adhering to the ABI.
 - `host`: for developers who are building binaries to run ABI-compliant contracts. This involves the creation and management of host functions that execute smart contracts within the execution environment.
 
-##### Rusk-abi
+#### Rusk-abi
 
 The `abi` and `host` features in the rusk-abi crate are mutually exclusive. This means that while they implement the same functions, they do so in fundamentally different ways tailored to their respective roles. While `abi` defines how contracts should interact within the network, `host` ensures that contracts run as intended and manage resources effectively in the execution environment.
 
-##### Rusk-host
+#### Rusk-host
 
 ?
 
-#### Execution Core
+### Execution Core
 
-### The Rusk Virtual Machine
+## The Rusk Virtual Machine
 
-#### Host Calls
-#### Callcenter
+### Host Calls
+### Callcenter

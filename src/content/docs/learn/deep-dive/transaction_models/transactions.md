@@ -33,11 +33,3 @@ The Transfer Contract operates through the following steps:
 4) Depending on the transaction type specified, the transfer contract directs the payload to the appropriate contract or logic for further processing.
 
 5) Once the proof is verified, the transfer contract updates the Merkle tree to mark the note as spent and records the nullifier. It then generates two new notes—one for the recipient and another as change for the sender.
-
-## Implications
-
-In Dusk, there is no built-in variable like `msg.sender` which identifies the caller of a contract function. This is because Dusk is a privacy-focused blockchain, utilizing a UTXO-based transaction model (Phoenix).
-
-In Dusk, an "address" is defined by the developer within the contract's logic. This approach gives developers more control over the privacy and compliance features of their applications but also increases their responsibility to securely identify and authenticate users and transactions.
-
-It needs to be noted that even if users can theoretically be viewed as a collection of unspent notes associated with a key, these notes are not linkable to each other, preserving privacy and security.

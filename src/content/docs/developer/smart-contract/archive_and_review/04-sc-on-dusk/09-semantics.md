@@ -2,13 +2,15 @@
 title: Semantics
 ---
 
+## Semantics
+
 When looking at the example contracts, developers will notice some recurring elements. On this page, we provide an explanation on why these elements are needed.
 
-## no_std
+### no_std
 
 The absence of the standard library is due to the fact that it won't be available on the Piecrust runtime, and removing it allows for resource optimization. For this reason, you will see `#![no_std]` at the beginning of contracts. This minimizes binary footprint, increases portability and doesn't cause environment constraints within WASM runtimes.
 
-## no_mangle
+### no_mangle
 
 Name mangling is a technique used by compilers to encode additional information about a function (like its namespace and signature) into its name. While this is useful in many programming scenarios to avoid name conflicts and support features like function overloading, it can pose a problem in the context of compiling smart contracts to WASM.
 
@@ -18,10 +20,10 @@ By using the `#[no_mangle]` attribute, developers ensure that the compiler does 
 
 Therefore contract methods are exposed to the host environment using `#[no_mangle]` and `uplink::wrap_call`, facilitating safe interaction with the host.
 
-## uplink::wrap_call
+### rusk_abi::wrap_call
 
-The `uplink::wrap_call` macro serves to wrap contract methods in a way that ensures they can be safely and effectively called by the host environment. This ensures that any errors that occur during the execution of the function are caught and handled appropriately, avoiding uncontrolled errors that can affect the VM state. Wrapping the call also helps converting inputs and outputs between the formats expected by the smart contract and those used by the host environment (e.g. data type conversions), as well as performing security checks. For these reasons, `piecrust_uplink` is used for interacting with the host environment and other contracts.
+The `rusk_abi::wrap_call` macro serves to wrap contract methods in a way that ensures they can be safely and effectively called by the host environment. This ensures that any errors that occur during the execution of the function are caught and handled appropriately, avoiding uncontrolled errors that can affect the VM state. Wrapping the call also helps converting inputs and outputs between the formats expected by the smart contract and those used by the host environment (e.g. data type conversions), as well as performing security checks. For these reasons, `piecrust_uplink` is used for interacting with the host environment and other contracts.
 
-## Sessions
+### Sessions
 
-Each test function uses a temporary VM instance (`VM::ephemeral()`) and creates sessions (`vm.session(SessionData::builder())?`).
+Each test function uses a temporary VM instance (`rusk_abi:: new_ephemeral_vm()`) and creates sessions.

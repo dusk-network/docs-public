@@ -16,7 +16,7 @@ The Blake2 hashing is integrated with operations involving `BlsScalar` types, wh
 
 ## Poseidon hash
 
-Standard hash functions are not usually not suited for ZKPs, as it's hard to combine them efficiently with the algebraic requirements of circuits. The necessity of framing operations as algebraic equations, introduces the need of using hash functions that are ZK "friendly".
+Standard hash functions are usually not suited for ZKPs, as it's hard to combine them efficiently with the algebraic requirements of circuits. The necessity of framing operations as algebraic equations, introduces the need of using hash functions that are ZK "friendly".
 
 Developers that want to leverage zk-proofs are recommended to use the <a href="https://github.com/dusk-network/Poseidon252" target="_blank">Poseidon hash</a>. 
 
@@ -26,11 +26,11 @@ The Poseidon hash is designed specifically to be used in efficient ZKPs, particu
 The following is an example of how a Poseidon hash can be computed:
 
 ```rust
-    let stct_message =
-        stct_signature_message(&crossover, value, contract_id);
-    let stct_message = dusk_poseidon::sponge::hash(&stct_message);
+let stct_message =
+    stct_signature_message(&crossover, value, contract_id);
+let stct_message = dusk_poseidon::sponge::hash(&stct_message);
 ```
 
 ### SAFE
 
-Developers interested in cryptographic functions suitable for ZKPs can check out the <a href="https://github.com/dusk-network/safe/tree/2d42f41f05e141a5786ea655e99ba1f3dae217bd" target="_blank">SAFE</a> implementation. This is a minimal, `no_std`, pure Rust implementation designed to operate on any type that implements the `Default` and `Copy` traits.
+Developers interested in cryptographic functions suitable for ZKPs can check out the <a href="https://github.com/dusk-network/safe/" target="_blank">SAFE</a> implementation. This is a minimal, `no_std`, pure Rust implementation designed to operate on any type that implements the `Default` and `Copy` traits.

@@ -64,11 +64,7 @@ A wallet exec with arbitrary data can be found <a href="https://github.com/dusk-
 
 #### Why is there no msg.sender method?
 
-Because of the way that Dusk works, transactions don't have the equivalent to `msg.sender`. Therefore developers need to figure out how to represent users. 
-
-`msg.sender` is not "abstracted" away on dusk. A way to mimic that behavior is by explicitly taking the address as function argument and a signature that signed all other function arguments (including the address). Then verifying this this in the function.
-
-It needs to be noted that even if in theory users can be seen as a collection of unspent notes associated with a key, notes are on purpose not linkable to each other.
+[UTXO & Account model](core-concepts#uto-&-account-model)
 
 ##### UTXO & Account model reference links
 todo (Write something about moonlight etc)

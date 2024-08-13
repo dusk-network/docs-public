@@ -15,11 +15,6 @@ export default function sidebar(currentPath) {
                 href: "/developer/smart-contract/getting-started",
             },
             {
-                type: "link",
-                label: "Core Concepts",
-                href: "/developer/smart-contract/core-concepts",
-            },
-            {
                 type: "group",
                 label: "Guides",
                 entries: [
@@ -34,38 +29,9 @@ export default function sidebar(currentPath) {
                 collapsed: true,
             },
             {
-                type: "group",
-                label: "Examples",
-                entries: [
-                    { label: "Examples Overview", href: '/developer/smart-contract/03-examples/examples' },
-
-                    { label: "Comparison with smart-contract1", href: '/developer/smart-contract/03-examples/02-comparison-with-vm1' },
-                    { label: "Token Example", href: '/developer/smart-contract/03-examples/03-token-example' },
-                    { label: "Multisig", href: '/developer/smart-contract/03-examples/04-multisig' },
-                    { label: "Sessions Example", href: '/developer/smart-contract/03-examples/05-sessions-example' },
-                    { label: "Contract Calls", href: '/developer/smart-contract/03-examples/06-contracts-calls' },
-                    { label: "Host Calls", href: '/developer/smart-contract/03-examples/07-host-calls' },
-                    { label: "Persistence", href: '/developer/smart-contract/03-examples/08-persistance' },
-                    { label: "Metadata", href: '/developer/smart-contract/03-examples/09-sc-metadata' },
-                    { label: "Gas Usage", href: '/developer/smart-contract/03-examples/10-spender' }
-                ],
-                collapsed: true,
-            },
-            {
-                type: "group",
-                label: "Smart Contracts on Dusk",
-                entries: [
-                    { label: "Transactions", href: '/developer/smart-contract/04-sc-on-dusk/02-transactions' },
-                    { label: "Keys", href: '/developer/smart-contract/04-sc-on-dusk/03-keys' },
-                    { label: "Built-in Functions", href: '/developer/smart-contract/04-sc-on-dusk/04-builtin-functions' },
-                    { label: "Token Standards", href: '/developer/smart-contract/04-sc-on-dusk/05-token_standards' },
-                    { label: "Circuits", href: '/developer/smart-contract/04-sc-on-dusk/06-circuits' },
-                    { label: "Sessions", href: '/developer/smart-contract/04-sc-on-dusk/07-sessions' },
-                    { label: "Hashing", href: '/developer/smart-contract/04-sc-on-dusk/08-hashing' },
-                    { label: "Semantics", href: '/developer/smart-contract/04-sc-on-dusk/09-semantics' },
-                    { label: "Serialization", href: '/developer/smart-contract/04-sc-on-dusk/10-serialization' },
-                ],
-                collapsed: true,
+                type: "link",
+                label: "Core Concepts",
+                href: "/developer/smart-contract/core-concepts",
             },
             {
                 type: "link",
