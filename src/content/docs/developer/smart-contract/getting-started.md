@@ -17,7 +17,7 @@ You can find information to install Rust <a href="https://www.rust-lang.org/tool
 #### Nightly
 
 After having installed Rust, you can switch to the nightly toolchain. <a href="https://github.com/dusk-network/rusk" target="_blank">Rusk</a> makes use of the nightly toolchain, which can be installed with:
-```bash
+```bash title="Terminal"
 rustup toolchain install nightly
 rustup default nightly
 ```

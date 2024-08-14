@@ -20,13 +20,13 @@ cargo new --lib my-first-contract
 
 This command will create a Rust library project in a folder named `my-first-contract`. You can open the project using your favorite [IDE](../getting-started#ide) or with a simple system editor.
 
-In the `src` folder there is a `lib.rs` file with some sample code. You can remove all the contents of the `lib.rs` file.
+In the `src` folder there is a `lib.rs` file with some sample code. You can remove all the contents of the that file.
 
 We will add the necessary dependencies to the `Cargo.toml` file. You can then start typing or pasting in the contract code.
 
 ### 2) Add dependencies
 
-Add the following line to the `[dependencies]` section of your `Cargo.toml` file:
+Add the following line to the dependencies section of your **Cargo.toml** file:
 
 ```toml
 // Cargo.toml

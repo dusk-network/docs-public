@@ -23,7 +23,7 @@ To compile `#![no_std]` Rust code to WASM we need to follow the following steps:
 
 To build the WASM contracts, `wasm-pack` is required:
 
-```bash
+```bash title="Terminal"
 cargo install wasm-pack
 ```
 
@@ -45,7 +45,7 @@ This ensures compatibility with the rusk-abi dependency in your contract.
 
 If you have not yet added the wasm32 target to Rust, you can add it with the following command:
 
-```bash
+```bash title="Terminal"
 rustup target add wasm32-unknown-unknown
 ```
 
@@ -53,7 +53,7 @@ rustup target add wasm32-unknown-unknown
 
 You can pass a target flag to the cargo build command, to explicitly set the target you want to compile to. This command compiles the Rust project to WebAssembly in release mode, optimizing the output for performance.
 
-```bash
+```bash title="Terminal"
 cargo build --target wasm32-unknown-unknown --release
 ```
 
@@ -70,7 +70,7 @@ For this you need to specify an additional dependency in your projects ``Cargo.t
 
 Once the contract has been compiled successfully, you can execute in your cli:
 
-```bash
+```bash title="Terminal"
 find . -name *.wasm
 ```
 
