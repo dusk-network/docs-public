@@ -17,11 +17,11 @@ At a programmatic level, this implies that by using Rust, developers can use any
 
 ### Smart Contract State
 
-Technically, within that globally persisted State that also keeps the smart contract bytecode, there is often another explicit State in our smart contract source code.
+Our smart contract is naturally part of the global blockchain state. Our contract's state partially comes from the bytecode we deploy and the contract metadata, but also the state that is managed within the contract.
 
-That State is a static mutable constant and often maintains a single struct. When talking about the State, we usually refer to this constant, because the underlying State from the Blockcahin is an implementation detail we do not necessarily need to care about.
+This contract state is defined within our contracts as a static mutable constant and often maintains a single struct. This state is naturally a substate of the global state. However, when talking about the state, we usually refer to this constant, because the underlying global state from the blockchain is an implementation detail we do not necessarily need to care about.
 
-An example State of a counter contract that maintains a single counter value would look like this:
+An example state of a counter contract that maintains a single counter value would look like this:
 ```rust
 static mut STATE: MyContract = MyContract { counter: 0 };
 ```
