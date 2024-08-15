@@ -3,11 +3,11 @@ title: Smart Contract Cheat Sheet
 description: Quick information lookup on code snippets and infos for Dusk smart contracts.
 ---
 
-Collection of code snippets and information bits on smart contract development for Dusk
+Collection of code snippets and information bits on smart contract development for Dusk.
 
 ## Common Data Structures
 
-> Because we program for WASM in no-std some data structures are not available. Here is a list of common alternatives
+> Because we program for WASM in no-std some data structures are not available. Here is a list of common alternatives:
 
 | Example                                                                                        | Explanation                                                                           |
 | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
@@ -35,7 +35,7 @@ Data structures based on B-Trees require the Ord trait to be implemented for the
 - alloc
 
 The alloc crate needs to explicitly be imported in order to use heap-allocated values in a #![no-std] environment.
-More information on the alloc crate can be found <a href="https://doc.rust-lang.org/alloc/" target="_blank">here</a>
+More information on the alloc crate can be found <a href="https://doc.rust-lang.org/alloc/" target="_blank">here</a>.
 
 ## Simple Contract Template
 

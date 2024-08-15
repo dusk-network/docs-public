@@ -13,7 +13,7 @@ Each smart contract on Dusk has its own state, which is the persistent data main
 
 A smart contract is allowed to write data in any way it likes to the underlying <a href="https://webassembly.github.io/spec/core/intro/overview.html#memory" target="_blank">linear memory</a>, which is a contiguous, mutable array of raw bytes. The linear memory is created with an initial size but can be grown dynamically, and a program can load and store values from/to a linear memory at any byte address.
 
-At a programmatic level, this implies that by using Rust, developers can use any data structue which can compile to WASM. Updating any of these implies a state transition, which is recorded on the blockchain and ensures a permanent and immutable record of all changes.
+At a programmatic level, this implies that by using Rust, developers can use any data structure which can compile to WASM. Updating any of these implies a state transition, which is recorded on the blockchain and ensures a permanent and immutable record of all changes.
 
 ### Smart Contract State
 
@@ -32,12 +32,11 @@ It is important to note that even if that state within the smart contract can ch
 
 ## Rust No-std
 
-One of the core concepts impacting development in Rust is the fact that we are developing smart contracts that compile to WASM. This requires the `#![no_std` flag to be set in your project, which means that smart conracts are written in a no_std environment where certain features are not available.
-
+One of the core concepts impacting development in Rust is the fact that we are developing smart contracts that compile to WASM. This requires the `#![no_std]` flag to be set in your project, which means that smart contracts are written in a no_std environment where certain features are not available.
 
 ### Usage of panic & reverting state
 
-While you can have Result types in your Smart contracts and handle them in multiple function calls, in the end you may want to abort execution. For example if a specific requirement is not satisfied you can always make use of directives that lead to panic (e.g. `.expect()` or `panic!()`). This is equivalent to `require()` in Solidity. It will abort the smart contract execution and let the transaction [fail](../../../learn/tx-fees#unsuccessful-transactions). This will also **revert** the state, making no changes to it.
+While you can have Result types in your smart contracts and handle them in multiple function calls, in the end you may want to abort execution. For example if a specific requirement is not satisfied you can always make use of directives that lead to panic (e.g. `.expect()` or `panic!()`). This is equivalent to `require()` in Solidity. It will abort the smart contract execution and let the transaction [fail](../../../learn/tx-fees#unsuccessful-transactions). This will also **revert** the state, making no changes to it.
 
 ## UTXO & Account-model
 
@@ -133,7 +132,7 @@ The use of an argument buffer and the serialization/deserialization prevents uns
 
 ## Cryptographic Keys
 
-Developers are free to choose any cryptographic signature algorithm when building on Dusk, as they can use various cryptographic primitives, as long as they are compatible WASM-compatible. As an example, developers can choose BLS, JubJub Schnorr, ECDSA, Bitcoin's Secp256k1 and much more. The choice usually depends on requirements for security, signature size, and transaction efficiency.
+Developers are free to choose any cryptographic signature algorithm when building on Dusk, as they can use various cryptographic primitives, as long as they are WASM-compatible. As an example, developers can choose BLS, JubJub Schnorr, ECDSA, Bitcoin's Secp256k1 and much more. The choice usually depends on requirements for security, signature size, and transaction efficiency.
 
 For developers opting to use BLS signatures, it is recommended to leverage the `rusk_abi::verify_bls` host function provided by Dusk. This function enables signature verification to be offloaded to the host, minimizing the gas consumption and execution time of contracts. Directly including complex cryptographic operations within the contract is still possible but less efficient in terms of gas usage.
 
@@ -163,7 +162,7 @@ The process for handling transactions in Dusk involves several key generation an
 
 More specifically, a `jubjub-schnorr::SecretKey` can be created with `phoenix-core::SecretKey` by calling `SecretKey::gen_note_sk`. A message can be signed with that `jubjub-schnorr::SecretKey` and verified with a `jubjub-schnorr::PublicKey`.
 
-Creation and verification of signatures (both schnorr signatures and bls signatures) roughly follow this flow:
+Creation and verification of signatures (both Schnorr signatures and BLS signatures) roughly follow this flow:
 ```rust
 // get a random secret key
 let sk = SecretKey::random(rng);
@@ -240,9 +239,9 @@ In order for smart contract functions to be accessible via transactions on Dusk,
 
 #### Events
 
-Smart contracts on Dusk can use events as a lightweight mechanism to provide feedback, and they are particularly useful for triggering actions on the caller's side. Events are provied through [rusk_abi::emit()](https://docs.rs/rusk-abi/0.13.0-rc.0/rusk_abi/fn.emit.html).
+Smart contracts on Dusk can use events as a lightweight mechanism to provide feedback, and they are particularly useful for triggering actions on the caller's side. Events are provided through [rusk_abi::emit()](https://docs.rs/rusk-abi/0.13.0-rc.0/rusk_abi/fn.emit.html).
 
-Events serve as a logging mechanism that facilitates interactions between various applications and can be emitted by either queries or transactions. Events can be processed post-call by the caller, which can then execute its logic accordingly
+Events serve as a logging mechanism that facilitates interactions between various applications and can be emitted by either queries or transactions. Events can be processed post-call by the caller, which can then execute its logic accordingly.
 
 Clients can subscribe to events emitted by both smart contracts and nodes by using the <a href="https://github.com/dusk-network/rusk/wiki/RUES-(Rusk-Universal-Event-System)" target="_blank">Rusk Universal Event System</a>.
 

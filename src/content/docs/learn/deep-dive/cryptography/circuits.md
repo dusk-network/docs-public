@@ -2,7 +2,7 @@
 title: Circuits
 ---
 
-Arithmetic Circuits allow for zero-knowledge (ZK) operations, and are used e.g., by our genesis contracts for the specific use-cases:
+Arithmetic Circuits allow for zero-knowledge (ZK) operations, and are used e.g., by our genesis contracts for these specific use-cases:
 
 - [Phoenix](/learn/dusk-protocol/transaction_models/phoenix): to spend notes and pay for gas.
 - [Citadel](/getting-started/digital-identity/protocol): to use in the Self-Sovereign Identity implementation.

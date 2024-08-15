@@ -12,7 +12,7 @@ With the introduction of a contract deployment transaction type, smart contracts
 
 The gas fees related to the contract deployment are proportional to the number of bytes of the contract's bytecode:
 
-```Total Cost=Bytecode Length × GAS_PER_DEPLOY_BYTE × Current Gas Price```
+`Total Cost=Bytecode Length × GAS_PER_DEPLOY_BYTE × Current Gas Price`
 
 Since a deployment may execute some contract initialization code, that code will also be metered and executed with the given `gas_limit`.
 
