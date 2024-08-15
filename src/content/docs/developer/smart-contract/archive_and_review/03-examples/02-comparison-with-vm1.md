@@ -2,7 +2,7 @@
 title: Piecrust vs Rusk VM 1.0
 ---
 
-After a taste of how [a counter example smart contract looks in Piecrust](/getting-started/vm/03-examples/01-counter-example), it is worth to have a look at a functionally equivalent example written for Rusk-VM Version 1.0. An example looks as follows:
+After a taste of how [a counter example smart contract looks in Piecrust](/getting-started/vm/guides/01-my-first-contract), it is worth to have a look at a functionally equivalent example written for Rusk-VM Version 1.0. An example looks as follows:
 
 ```rust
 #![cfg_attr(target_arch = "wasm32", no_std)]

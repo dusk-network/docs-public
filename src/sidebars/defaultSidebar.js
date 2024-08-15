@@ -9,14 +9,16 @@ const defaultSidebar = [
             { label: "Tokenomics", link: 'learn/tokenomics' },
             { label: "Transaction Fees & Gas", link: 'learn/tx-fees' },
             { label: "Transaction Models", link: 'learn/tx-models' },
+            { label: "Token Standards", link: 'learn/token-standards' },
             { label: "ZK Crypto", link: 'learn/zk-crypto' },
             { label: "Community", link: "learn/community" },
+            { label: "Glossary", link: "learn/glossary" },
         ],
     },
     {
         label: "FAQ & Guides",
         items: [
-            { label: "Wallet Guide", link: "404" },
+            { label: "Wallet Guide", link: "/learn/guides/wallet-guide/" },
             { label: "Dusk-ERC20 Staking", link: "/learn/guides/erc20-staking/" },
             { label: "BEP2 migration", link: "/learn/guides/bep2-migration/" },
         ],
@@ -27,6 +29,7 @@ const defaultSidebar = [
             {
                 label: 'Transaction Models',
                 items: [
+                    { label: "Transactions", link: 'learn/deep-dive/transaction_models/transactions' },
                     { label: "Phoenix", link: 'learn/deep-dive/transaction_models/phoenix' },
                     { label: "Moonlight", link: 'learn/deep-dive/transaction_models/moonlight' },
                     { label: "Zedger", link: 'learn/deep-dive/transaction_models/zedger' },
@@ -36,10 +39,12 @@ const defaultSidebar = [
             {
                 label: 'Cryptography',
                 items: [
+                    { label: "Circuits", link: 'learn/deep-dive/cryptography/circuits' },
                     { label: "IOP and PCS", link: 'learn/deep-dive/cryptography/iop_pcs' },
                     { label: "PLONK", link: 'learn/deep-dive/cryptography/plonk' },
                     { label: "KZG", link: 'learn/deep-dive/cryptography/kzg' },
                     { label: "BLS12-381", link: 'learn/deep-dive/cryptography/bls' },
+                    { label: "Hashing", link: 'learn/deep-dive/cryptography/hashing' },
                 ],
                 collapsed: true,
             },
@@ -54,6 +59,8 @@ const defaultSidebar = [
                 collapsed: true,
             },
             { label: "Economic Protocol", link: 'learn/deep-dive/economic-protocol' },
+            { label: "Piecrust VM", link: 'learn/deep-dive/piecrust' },
+            { label: "Rues", link: 'learn/deep-dive/rues' },
             { label: "Succinct Attestation Consensus", link: 'learn/deep-dive/succinct-attestation' },
             { label: "Additional Resources", link: 'learn/deep-dive/additional-resources' },
         ],

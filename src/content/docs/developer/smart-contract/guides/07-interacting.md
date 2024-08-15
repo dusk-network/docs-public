@@ -19,7 +19,7 @@ User makes transaction with crossover and with a call to the contract function t
 During execution of the function, the contract calls the transfer contract to "pick up" the Dusk left for it, panicking if not there
 Contract proceeds with the knowledge that it now has that Dusk in its wallet.
 
-### Withdrawing
+### Withdrawing
 
 User makes transaction without crossover and with a call to the contract function outputting Dusk (e.g. unstake).
 During execution of the function, the contract takes the (given) stealth address and calls the transfer contract with it, sending money to said address.

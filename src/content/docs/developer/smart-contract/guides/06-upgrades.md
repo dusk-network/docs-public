@@ -1,5 +1,5 @@
 ---
-title: Smart Contract Example
+title: Upgrade Smart Contracts
 ---
 
 This example shows how to upgrade a contract to a new version while preserving its state:

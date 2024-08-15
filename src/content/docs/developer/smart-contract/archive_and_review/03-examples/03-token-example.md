@@ -2,7 +2,7 @@
 title: Token Example
 ---
 
-When creating a custom token on Dusk, developers can fully define their token's characteristics, including its representation and underlying cryptographic primitives. To ensure that the token is fully interoperable with other applications, developers can adhere to a [Token Standard](/getting-started/vm/01-sc-on-dusk/05-token_standards).
+When creating a custom token on Dusk, developers can fully define their token's characteristics, including its representation and underlying cryptographic primitives. To ensure that the token is fully interoperable with other applications, developers can adhere to a [Token Standard](/getting-started/vm/04-sc-on-dusk/05-token_standards).
 
 Dusk allows tokens to be represented in various forms, as it is not mandatory to use the Dusk's native features like Phoenix notes for representing tokens. Instead, a smart contract can maintain its own state that maps addresses to balance values (e.g., using a `map(address -> value)` structure). 
 
