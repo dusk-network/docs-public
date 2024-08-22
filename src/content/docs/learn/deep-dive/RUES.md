@@ -1,5 +1,6 @@
 ---
 title: RUES
+description: The Dusk's node event system explained.
 ---
 
 ## Rusk Universal Events System (RUES)

@@ -1,4 +1,4 @@
 ---
 title: Integrations introduction
-description: Introduction to the integration of Dusk
+description: This page explains how to integrate with Dusk.
 ---

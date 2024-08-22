@@ -1,5 +1,6 @@
 ---
 title: RFPs Overview
+description: What is a request for proposal (RFP)?
 ---
 
 ## What is a RFP?

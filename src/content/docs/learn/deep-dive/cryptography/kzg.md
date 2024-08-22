@@ -1,5 +1,6 @@
 ---
 title: KZG
+description: KZG commitments in PLONK.
 ---
 
 One of the Polynomial Commitment Scheme that is usually combined with the PLONK IOP is the <a href="https://www.iacr.org/archive/asiacrypt2010/6477178/6477178.pdf" target="_blank">KZG</a> one. This PCS is quite fast and has interesting properties, and requires a trusted setup and pairings.

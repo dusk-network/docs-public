@@ -1,5 +1,6 @@
 ---
 title: Testing
+description: Guide on how to test Dusk contracts.
 ---
 
 <!-- This guide will explain how to test a contract based on the previous counter Contract from [My first contract](/developer/smart-contract/guides/01-my-first-contract) -->

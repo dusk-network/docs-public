@@ -1,6 +1,6 @@
 ---
 title: Build from Source
-description: This resource explains how to setup a Dusk node starting from source
+description: This resource explains how to setup a Dusk node starting from source.
 ---
 
 ## What You'll Need

@@ -1,5 +1,6 @@
 ---
 title: Zero Knowledge Proofs
+description: The role Zero Knowledge Proofs play in Dusk and what they are.
 ---
 
 ## Introduction

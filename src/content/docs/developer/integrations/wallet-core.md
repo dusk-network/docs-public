@@ -1,6 +1,6 @@
 ---
 title: Wallet Core Library
-description: Usage documentation about the dusk-wallet-js library
+description: Documentation on how to interact with wallet-core.
 ---
 
 This is documentation for how to use the wallet-core library from any programming language of your preference. 

@@ -1,5 +1,6 @@
 ---
 title: Token Standards
+description: The Dusk token standards explained.
 ---
 
 ## What is a Token Standard?

@@ -1,6 +1,6 @@
 ---
 title: Wallet JS Library
-description: Usage documentation about the dusk-wallet-js library
+description: Usage documentation about the dusk-wallet-js library.
 ---
 
 The dusk-wallet-js uses the web assembly generated from [`wallet-core`]("/wallet-core") the web assembly is embedded in the npm package

@@ -1,5 +1,6 @@
 ---
 title: Rusk
+description: What is Rusk?
 ---
 
 <a href="https://github.com/dusk-network/rusk" target="_blank">Rusk</a> is the official Dusk protocol node client and smart contract platform.

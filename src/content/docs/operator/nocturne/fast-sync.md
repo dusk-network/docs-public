@@ -1,6 +1,6 @@
 ---
 title: Fast syncing
-description: "How to fast sync your node"
+description: How to fast sync your node.
 ---
 
 The node installer comes with an easy to use fast syncing tool. To significantly reduce the time required to sync your node to the latest published state, you can use the `download_state` command. This command stops your node and replaces its current state with the latest published state from one of Dusk's archival nodes.

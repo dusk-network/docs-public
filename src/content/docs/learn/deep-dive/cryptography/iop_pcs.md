@@ -1,5 +1,6 @@
 ---
 title: IOP and PCS
+description: Explanation on IOPs and PCS.
 ---
 
 By combining cryptography with interactive proofs, we obtain a succinct non-interactive arguments of knowledge (SNARK).

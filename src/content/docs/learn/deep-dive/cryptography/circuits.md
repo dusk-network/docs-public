@@ -1,5 +1,6 @@
 ---
 title: Circuits
+description: Arithmetic Circuits in Dusk.
 ---
 
 Arithmetic Circuits allow for zero-knowledge (ZK) operations, and are used e.g., by our genesis contracts for these specific use-cases:

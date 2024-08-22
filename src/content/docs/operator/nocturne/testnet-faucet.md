@@ -1,6 +1,6 @@
 ---
 title: Dusk Nocturne Faucet 
-description: "This guide will explain how to obtain nDUSK for the running Nocturne testnet."
+description: This guide will explain how to obtain nDUSK for the running Nocturne testnet.
 ---
 
 ## How to get testnet tokens
