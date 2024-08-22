@@ -1,5 +1,6 @@
 ---
 title: Economic Protocol
+desccription: The Dusk economic protocol explained.
 ---
 
 The Dusk's **economic protocol** represents a transformative approach to the utilization and functionality of smart contracts in blockchain technology. This document provides a comprehensive overview of the protocol's features, their implications, and the opportunities they present for developers, enterprises, and users in the blockchain ecosystem.

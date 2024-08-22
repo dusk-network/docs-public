@@ -1,5 +1,6 @@
 ---
 title: Moonlight
+description: An account-based transaction model on Dusk.
 ---
 
 Moonlight is an account-based transaction model designed to offer full transparency within Dusk. It utilizes a BTreeMap for user accounts, which contains user addresses/BLS keys mapped to balances. 

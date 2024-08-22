@@ -1,5 +1,6 @@
 ---
 title: FAQs
+description: Frequently asked questions.
 ---
 
 #### How to verify a contract?

@@ -1,5 +1,6 @@
 ---
 title: Grants 
+description: Dusk's grants program.
 ---
 
 # Thesan

@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-description: This resource outlines the hardware and software requirements for the node. Explore the different node types and different ways to setup a node
+description: This resource outlines the hardware and software requirements for the node. Explore the different node types and different ways to setup a node.
 ---
 
 A Dusk node can take many different [roles](#types-of-nodes), from being a Provisioner and participating in consensus, to proving transactions, to storing historical data. The node is designed to be efficient, decentralized, and able to run on a wide-variety of hardware and platforms. 

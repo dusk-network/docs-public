@@ -1,6 +1,6 @@
 ---
 title: Slashing
-description: Learn about slashing conditions and their gravity
+description: Learn about slashing conditions and their gravity.
 ---
 
 Slashing is a mechanism used in consensus mechanisms using Proof-of-Stake (PoS), to penalize validators (Provisioners) who engage in malicious or dangerous behavior. The primary purpose of slashing is to maintain the security and integrity of the network by disincentivizing harmful actions and ensuring that participants adhere to the protocol's rules.

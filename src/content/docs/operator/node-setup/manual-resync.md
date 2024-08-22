@@ -1,6 +1,6 @@
 ---
 title: Manually Resyncing
-description: This resource outlines how to force a resync if a node is a stuck on a fork
+description: This resource outlines how to force a resync if a node is a stuck on a fork.
 ---
 
 Resyncing a Dusk node is sometimes a necessary procedure if your node experiences issues such as getting stuck on a block or if there's a need to recover from a network split. Below is a detailed guide on how to manually resync your Dusk node. Before proceeding, ensure you have access to your node's console and necessary permissions to execute the commands.

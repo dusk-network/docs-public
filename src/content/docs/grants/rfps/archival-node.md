@@ -1,5 +1,6 @@
 ---
 title: RFP-01
+description: Archival node RFP.
 ---
 
 # Archival Nodes APIs Infrastructure

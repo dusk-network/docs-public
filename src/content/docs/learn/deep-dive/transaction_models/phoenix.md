@@ -1,5 +1,6 @@
 ---
 title: Phoenix
+description: A UTXO-based transaction model on Dusk.
 ---
 
 <a href="https://github.com/dusk-network/phoenix/blob/master/docs/protocol.pdf" target="_blank">Phoenix</a> is the privacy-preserving transaction model used by Dusk. In privacy-preserving blockchains there are no accounts or wallets at the protocol layer. Instead, coins are stored as a list of UTXOs with specific quantities and criteria for spending. Transactions are created by consuming existing UTXOs and producing new ones in their place. In the Phoenix model, UTXOs are called notes.

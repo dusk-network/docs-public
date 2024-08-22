@@ -1,6 +1,6 @@
 ---
 title: Docker Image
-description: This resource explains how to setup a Dusk node with Docker
+description: This resource explains how to setup a Dusk node with Docker.
 ---
 
 :::note[Caution]

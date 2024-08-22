@@ -1,5 +1,6 @@
 ---
 title: Security Dematerialization
+description: Explanation on securities dematerialization.
 ---
 
 This documentation provides an overview of the evolving landscape of security tokens, with a particular focus on dematerialisation, the role of Central Securities Depositories (CSDs), and how Dusk, having applied for the DLT-TSS license, is set to play a significant role in this space.

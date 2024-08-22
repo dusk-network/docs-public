@@ -1,5 +1,6 @@
 ---
 title: Piecrust and piecrust-uplink
+description: The underlying VM of Dusk explained.
 ---
 
 ## Piecrust

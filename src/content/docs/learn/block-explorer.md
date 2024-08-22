@@ -1,5 +1,6 @@
 ---
 title: Block Explorer
+description: The Dusk block explorer.
 ---
 
 Transactions can be viewed on the [Dusk Block Explorer](https://explorer.dusk.network/), along with statistics and information about the network.

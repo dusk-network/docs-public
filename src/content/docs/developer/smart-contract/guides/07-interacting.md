@@ -1,5 +1,6 @@
 ---
 title: Interacting with a contract
+description: Guide on how to interact with Dusk smart contracts.
 ---
 
 ## Sending and Withdrawing funds from contract

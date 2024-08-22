@@ -1,6 +1,6 @@
 ---
 title: Tokenomics 
-description: Tokenomics, allocation, vesting and emission of the Dusk token 
+description: Tokenomics, allocation, vesting and emission of the Dusk token.
 ---
 
 The Dusk protocol utilizes the DUSK token both as an incentive for consensus participation and as its primary native currency. DUSK is currently an ERC-20 token deployed on Ethereum. With the launch of mainnet, the DUSK token will be bridged to its native network. Below are the key tokenomic points:

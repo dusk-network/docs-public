@@ -1,5 +1,6 @@
 ---
 title: Transactions in Dusk
+description: How transactions work on Dusk explained.
 ---
 
 Transactions in Dusk are managed by the <a href="https://github.com/dusk-network/rusk/tree/master/contracts/transfer" target="_blank">Transfer Contract</a>. The Transfer Contract implements both a UTXO and account-based model through [Phoenix](/learn/dusk-protocol/transaction_models/phoenix) and [Moonlight](/learn/dusk-protocol/transaction_models/moonlight) to handle transfers of the native currency, gas payments, and serve as a contract execution entry point.

@@ -1,5 +1,6 @@
 ---
 title: Dusk Improvement Proposals (DIPs)
+description: Dusk Improvement proposals - What are they?
 ---
 
 ## What is a DIP?

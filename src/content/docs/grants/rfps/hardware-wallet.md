@@ -1,5 +1,6 @@
 ---
 title: RFP-02
+description: Hardware wallet RFP.
 ---
 
 

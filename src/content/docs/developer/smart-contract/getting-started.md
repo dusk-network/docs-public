@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-description: Dependencies, available IDEs
+description: Dependencies and available IDEs we recommend.
 ---
 ## Dependencies
 

@@ -1,6 +1,6 @@
 ---
 title: Node Upgrade
-description: "This page outlines how you can upgrade your Nocturne node setup"
+description: This page outlines how you can upgrade your Nocturne node setup.
 ---
 
 We will occasional upgrade and patch Nocturne with new features and patches to improve the overall network.

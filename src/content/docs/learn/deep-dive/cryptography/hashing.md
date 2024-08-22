@@ -1,5 +1,6 @@
 ---
 title: Hashing
+description: Hash functions used in Dusk.
 ---
 
 Developers are not restricted to a specific set of cryptographic hash functions and can choose any hash function they prefer for their projects. The primary requirement is that the chosen hash function must be compatible with WASM.
