@@ -300,7 +300,7 @@ pub fn check_funds(&self) {
 }
 ```
 
-## Constructor and Init
+## Init method
 
 It is possible to export a special contract method named `init()` which can perform contact's initialization of any kind. Such method will be called automatically when the contract is deployed. The main intention behind method `init()` is to allow contracts to initialize their state at a time before the contract is operational and ready to receive calls. Method `init()` accepts a single argument of any serializable type. That argument will be passed to the init method by code which performs the deployment of the contract. In the following example, we can see a contract with an `init()` method:
 

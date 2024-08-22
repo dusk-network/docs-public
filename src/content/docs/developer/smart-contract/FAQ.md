@@ -5,7 +5,7 @@ description: Frequently asked questions.
 
 #### How to verify a contract?
 
-Information about contract verification can be found [here](../guides/02-compiling#how-to-verify-a-contract).
+Information about contract verification can be found [here](guides/02-compiling#how-to-verify-a-contract).
 
 #### Can a Contract deploy another Contract?
 
