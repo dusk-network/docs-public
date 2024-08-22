@@ -84,9 +84,9 @@ There is no general way to verify that a WASM binary came from a specific piece 
 
 Developers may be used to Solidity's deterministic compilation that comes from a standardized compiler. The compiler ensures that the same source code, when compiled with the same version, always produces the same bytecode. In the case of WASM compilation, the lack of standardized compilation means that different environments, settings, or versions of compilers can produce different WASM binaries from the same source code.
 
-### Current solution
+### Current solution - Verifiable Builds
 
-To allow users to verify that a deployed smart contract corresponds to the source code, developers would need to provide a reproducible build environment. This can be achieved by using Docker to create a containerized environment from which the smart contract was deployed. Docker ensures that the build environment is consistent, including the specific compiler version and settings used during compilation.
+To allow users to verify that a deployed smart contract corresponds to the source code, developers would need to provide a reproducible build environment. This can be achieved by using Docker to create a containerized environment from which the smart contract was deployed. Docker ensures that the build environment is consistent, including the specific compiler version and settings used during compilation, resulting in a deterministic compilation process.
 
 While Dusk is looking at ways to resolve this challenge, in the meantime developers are advised to deploy smart contracts from a Docker container. The container should encapsulate the entire build environment, ensuring that anyone can reproduce the build by using the same Docker image. This ensures that the binary produced during the deployment matches the one produced during the verification process.
 

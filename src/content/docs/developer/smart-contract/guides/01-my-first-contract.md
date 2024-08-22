@@ -124,13 +124,15 @@ Together with this and the instantiated version of this state through the const,
 
 #### Add an initializer
 
-Similar to constructors in Objects and the constructor in Solidity smart contracts, Dusk also supports such a mechanism. For state representations where values cannot be instantiated through the default function due to the const restriction and typing out the values for creation by hand in the STATE const lacks the possibility to call other functions or logic, we can add an `init` function.
+Similar to constructors for classes and the constructor in Solidity smart contracts, Dusk also supports such a mechanism. Upon deployment of a contract there can be an `init` **function** which will only be executed once during deployment.
 
-Contrary to constructors, this init function does **not** construct the struct, it initializes the values within the already existing struct of the STATE const.
+Unlike constructors, this init function does **not** construct the struct, it executes any arbitrary initialization logic and is able to initialize the values within the already existing struct of the STATE constant.
 
-This is particularly useful for contracts that need to be initialized on-chain with different data which will be defined during the deployment transaction. Another case where it becomes a necessity is that it allows you to define more complex on-chain behaviour, such as accessing data from other deployed contracts during the deployment or calling other on-chain VM functions or contracts during the deployment that are otherwise unavailable.
+This is particularly useful for state representations where values cannot be instantiated by the default function due to the const restriction, and manually typing the values in the STATE const lacks the ability to call other functions or logic, we can add an `init` function.
 
-We don't need this behaviour in our contract, but will add it for completeness and to show what it looks like.
+Another behaviour that is not otherwise possible is that the same contracts can be initialized on-chain with different data defined during the deployment transaction, which is close to the use case of a constructor.  In addition, there are cases where it becomes a necessity, allowing you to define more complex on-chain behaviour, such as accessing data from other deployed contracts during deployment, or calling other on-chain VM functions or contracts during deployment that are otherwise unavailable.
+
+We don't need this behaviour in our contract, but will add it for the sake of completeness.
 
 ```rust
 impl Counter {
@@ -149,9 +151,9 @@ impl Counter {
 ```
 
 :::tip[Note]
-If no argument to the constructor was provided during deployment, the constructor will be called with an empty argument. Since a deployment may execute some contract initialization code, that code will be metered and executed with the given `gas_limit`.
+If no argument to the init method was provided during deployment, the init method will be called with an empty argument. Since a deployment may execute some contract initialization code, that code will be metered and executed with the given `gas_limit`.
 
-Additionally, the `init()` function can also only be called during construction. 
+Additionally, the `init()` function can also only be called during deployment. 
 :::
 
 #### Expose functions
@@ -183,7 +185,7 @@ This is the first case where we move away from standard rust. The `wrap_call` fu
 
 :::tip[info]
 The closure within ``wrap_call`` can be used to capture all arguments being passed to the function parameters, given a function contains any.
-In our case above, there is no parameter being needed except for the constructor. However, it could very well look like this, if the increment would let you define arguments that may affect the increment:
+In our case above, there is no parameter being needed except for init. However, it could very well look like this, if the increment would let you define arguments that may affect the increment:
 
 ```rust
 wrap_call(arg_len, |num: u32, multiply: u32| STATE.increment(num, multiply))
@@ -191,7 +193,7 @@ wrap_call(arg_len, |num: u32, multiply: u32| STATE.increment(num, multiply))
 :::
 
 **Additional Information**: 
-- The `#[no_mangle]` annotations are needed in order to turn off the default name mangling of the Rust linker. We want our names to be as they are, since they will be called via mechanisms outside the control of the linker.
+- The `#[no_mangle]` annotations are needed in order to turn off the default name mangling of the Rust linker. We want our names to be as they are, since they will be called via mechanisms outside the control of the linker. More information on that can be found in [core concepts](../core-concepts#no_mangle).
 - `rusk_abi::wrap_call` takes care of all the boilerplate code needed to serialize/deserialize and pass arguments to and from our methods.
 
 #### Add Serialization
