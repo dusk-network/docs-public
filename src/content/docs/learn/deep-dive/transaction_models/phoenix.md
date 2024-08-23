@@ -9,9 +9,9 @@ description: A UTXO-based transaction model on Dusk.
 Dusk makes use of a UTXO and account-based transaction model. 
 :::
 
-Phoenix is designed to balance privacy with regulatory compliance. Unlike anonymity protocols, where transaction dertails are entirely hidden, Phoenix ensures that the receiver van provably see who the sender is, but no one else can. This allows users to comply with regulations while maintaining their privacy from external observers.
+Phoenix is designed to balance privacy with regulatory compliance. Unlike anonymity protocols, where transaction details are entirely hidden, Phoenix ensures that the receiver can provably see who the sender is, but no one else can. This allows users to comply with regulations while maintaining their privacy from external observers.
 
-The network track all notes ever created by storing their hashes in the leaves of a Merkle tree of notes. When a transaction is validated, the network includes the hashes of the new notes in the leaves of this tree.
+The network tracks all notes ever created by storing their hashes in the leaves of a Merkle tree of notes. When a transaction is validated, the network includes the hashes of the new notes in the leaves of this tree.
 
 All notes in the network have the same structure:
 `N = {type, com, enc, npk, R, encsender }.`
