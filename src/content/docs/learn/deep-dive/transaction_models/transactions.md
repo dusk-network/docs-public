@@ -1,13 +1,11 @@
 ---
-title: Transactions in Dusk
-description: How transactions work on Dusk explained.
+title: The transfer contract
+description: How transactions with the transfer contract work on Dusk explained.
 ---
 
-Transactions in Dusk are managed by the <a href="https://github.com/dusk-network/rusk/tree/master/contracts/transfer" target="_blank">Transfer Contract</a>. The Transfer Contract implements both a UTXO and account-based model through [Phoenix](/learn/dusk-protocol/transaction_models/phoenix) and [Moonlight](/learn/dusk-protocol/transaction_models/moonlight) to handle transfers of the native currency, gas payments, and serve as a contract execution entry point.
-
-## Transfer Contract
-
 The <a href="https://github.com/dusk-network/rusk/tree/master/contracts/transfer" target="_blank">Transfer Contract</a> is a vital component of the Dusk network, responsible for verifying transactions and managing gas payments.
+
+## Phoenix in the transfer contract
 
 The Transfer Contract maintains a Merkle tree structure to store obfuscated notes, representing unspent transaction outputs (UTXOs).
 To spend a note, users must provide a zero-knowledge proof, enabling them to spend valid notes without revealing any details.
@@ -21,7 +19,7 @@ The Transfer Contract ensures the sender has sufficient funds to cover gas fees 
 
 The Transfer Contract is essential in Dusk, handling various types of transactions, such as Phoenix and Moonlight. The transaction type is specified when sent to the Transfer Contract, allowing it to direct the payload accordingly.
 
-## Transfer Contract flow
+## Phoenix transfer contract flow
 
 The Transfer Contract operates through the following steps:
 
