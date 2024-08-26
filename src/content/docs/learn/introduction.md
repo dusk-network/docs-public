@@ -3,7 +3,7 @@ title: Introduction
 description: Introduction to the Dusk docs learn section.
 ---
 
-Dusk is an open source and secure network infrastructure that hosts a privacy-preserving distributed ledger technology (DLT) conceived for the digitization - or tokenization - of all types of financial instruments, as well as for clearance and settlement operations of their transactions.
+Dusk is an open source and secure network infrastructure that hosts a privacy-preserving distributed ledger technology (DLT) conceived for the digitization - or tokenization - of all types of financial instruments and assets, as well as for clearance and settlement operations of their transactions.
 
 Dusk is powered by cutting-edge technology, engineered for the inception and deployment of disintermediated services and decentralized applications with a specific focus on the financial sector, both traditional and alternative.
 
@@ -41,7 +41,7 @@ Dusk is ideal for building transactional applications with high throughput and p
 - Decentralized smart bulletin boards.
 - Proxy voting.
 - Self-custodial applications.
-- Decentralized finance.
+- Decentralized finance including on-chain trading of RWAs.
 
 Please refer to [Dusk's use cases](https://dusk.network/pages/usecases) for more information.
 

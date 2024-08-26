@@ -1,0 +1,32 @@
+---
+title: Introduction
+description: Introduction to the Dusk docs deep-dive section.
+---
+
+import { LinkCard, CardGrid, Card } from '@astrojs/starlight/components';
+
+Welcome to the Dusk deep dive section! Here you can find interesting pages about highly detailed, technical, or conceptual information related to Dusk and its concepts.
+
+<CardGrid stagger>
+    <Card title="Privacy-Preserving Smart Contracts">
+Piecrust VM facilitates the development of complex, privacy-focused dApps. It supports Smart Contracts written in rust or any programming language that targets WebAssembly (WASM) bytecode.
+        <LinkCard title="Piecrust: ZK-Friendly VM" href="piecrust"/>
+    </Card>
+    <Card title="Compliance">
+        Dusk features a privacy-preserving digital identity protocol, Citadel, crucial for KYC/AML compliance. Moreover, the protocol features 
+        <a href="https://dusk.network/news/why-we-need-phoenix-and-zedger">Zedger</a>, a transaction model which encodes Mifid II regulation and allows the issuance of [regulated financial products](/learn/digital-assets/lifecycle).
+        <LinkCard title="Digital Identity Protocol" href="/developer/digital-identity/protocol"/>
+    </Card>
+    <Card title="Cryptography Empowerment">
+        Our R&D team is at the forefront of research in zero-knowledge proof systems with several papers published and developed libraries.
+        <LinkCard title="Publications and Research" href="additional-resources"/>
+    </Card>
+    <Card title="Finality and Scalability">
+    Thanks to the <a href="">Kadcast networking protocol</a> and the succinct attestation consensus algorithm, Dusk can scale to millions of nodes without compromising time to finality, decentralization, and network efficiency.
+        <LinkCard title="Succinct Attestation Consensus" href="succinct-attestation"/>
+    </Card>
+    <Card title="Economic Soundness">
+Dusk's economic protocol allows service providers to be productized and generate revenue, incentivizes developers, and completely unlocks a new breed of use cases.
+        <LinkCard title="Economic Protocol" href="economic-protocol"/>
+    </Card>
+</CardGrid>
