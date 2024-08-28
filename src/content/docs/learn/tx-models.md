@@ -15,7 +15,7 @@ Usually, transaction models are based on UTXOs or accounts.
 
 ### UTXOs
 
-In a UTXO model each transaction creates new outputs that can be used as inputs in future transactions. The sum of inputs must equal or exceed the sum of outputs. If there are outputs that have not been used as inputs in other transactions, it means that they have not been "spent". This implies that the "unspent" outputs are actually available funds, as they can be spent by using them as inputs in another transaction. This model is useful to preserve privacy, as users are handling notes (inputs/outputs) rather than a balance associated to an account.
+In an unspent transaction output (UTXO) model, each transaction creates new outputs that can be used as inputs in future transactions. The sum of inputs must equal or exceed the sum of outputs. If there are outputs that have not been used as inputs in other transactions, it means that they have not been "spent". This implies that the "unspent" outputs are actually available funds, as they can be spent by using them as inputs in another transaction. This model is useful to preserve privacy, as users are handling notes (inputs/outputs) rather than a balance associated to an account.
 
 ### Account model
 
@@ -29,20 +29,23 @@ Dusk makes use of a dual transaction model, one for private transactions and ano
 
 ### Phoenix
 
-[Phoenix](/learn/dusk-protocol/transaction_models/phoenix) is a UTXO-based and privacy preserving transaction model. Phoenix is a primitive of Dusk, and it's used in the transfer of native DUSK. With Phoenix, there are no balances connected to users' addresses. Instead, users can spend "notes" in a completely private manner by leveraging Zero Knowledge Proofs.
+Phoenix is a primitive of Dusk, and it's used in the transfer of native DUSK. With Phoenix, there are no balances connected to users' addresses. Instead, users can spend "notes" in a completely private manner by leveraging Zero Knowledge Proofs.
+
+Moreover, phoenix is the custom-built zero-knowledge proof-powered Dusk UTXO transaction model enabling privacy-preserving transactions. Phoenix, encapsulated in the Transfer contract, is an integral part of Dusk’s privacy-preserving smart contract capabilities, enforcing the anonymity of contract callers and guaranteeing a level of privacy unavailable on other networks.
+
+Phoenix uses ZKPs to prevent double-spending attacks and prove the ownership of unspent outputs. An owner of a note can share their View Key, allowing third parties to detect the outputs belonging to the owner, and in case of obfuscated notes, the value encrypted within. A note can only be spent via a Secret Key, known exclusively to the owner of the note.
+
+
+[Deep dive into Phoenix](deep-dive/transaction_models/phoenix)
 
 ### Moonlight
 
-[Moonlight](/learn/dusk-protocol/transaction_models/moonlight) is an account-based transaction model, which keeps track of balances for accounts and contracts. Moonlight is fully transparent, making it easy to interact with external protocols that do not preserve privacy.
+Moonlight is an account-based transaction model, which keeps track of balances for accounts and contracts. Moonlight is fully transparent, making it easy to interact with external protocols that do not preserve privacy.
 Users can convert funds between Moonlight and Phoenix (and vice-versa), making Moonlight a completely integrated transparent account model on Dusk.
 
-Some of the benefits of Moonlight:
-- Given Moonlight does not require expensive ZK proving, it is faster than Phoenix
-- Given the computational complexity of a Moonlight transaction is lower, the transactions are cheaper than a Phoenix transaction
-- Given the account model is more familiar to developers, it's easier to integrate and work with
+[Deep dive into Moonlight](deep-dive/transaction_models/moonlight)
 
-### Zedger
 
-[Zedger](/learn/dusk-protocol/transaction_models/zedger) is the protocol that incorporates a transaction model which combines aspects of UTXO and the account model to allow for lifecycle management of securities and regulatory compliance.
+### Phoenix vs Moonlight
 
-Zedger allows for the digital representation, native issuance and management of securites in a privacy-preserving manner. Issuers of securities are able to issue, manage, and trade securities as tokens. Zedger supports a range of security types, like stocks, bonds and ETFs. The emphasis on regulatory compliance and privacy ensures that all operations meet the highest standards required by financial authorities and stakeholders.
+The first main difference between Phoenix and Moonlight is that transactions on Phoenix use ZKPs and are therefore completely private and anonymous. On the other hand, transactions on Moonlight are fully transparent and do not require expensive Zero Knowledge Proofs. This results in lower gas costs (cheaper transactions) for Moonlight transactions. The second is that UTXO and account-based transaction models are fundamentally different, which has some implications for applications that want to use one or the other. The good thing is that you are free to choose.
