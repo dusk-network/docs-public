@@ -38,6 +38,6 @@ Understanding, translating, and explaining to our publics the meaning and implic
 
 ### External
 
-*   [Watsonlaw Whitepaper](https://drive.google.com/file/d/1-FJ_xDkxYkUFjTa2oSsSSj3T5UcZRKhs/edit) - PDF document outlining MiCA, created by our legal partners.
-*   [Decentralized Finance (DeFI) Report](https://drive.google.com/file/d/1UvzSt71dJjI3IJbX5LTArXcc6ioLiRN0/edit) - PDF article about MiCA, courtesy of the European Blockchain Observatory
+*   [Watsonlaw Whitepaper](https://watsonlaw.nl/en/whitepaper-mica/) - PDF document outlining MiCA, created by our legal partners.
+*   [Decentralized Finance (DeFI) Report](https://digital-strategy.ec.europa.eu/en/library/eu-blockchain-observatory-and-forum-published-report-decentralized-finance-defi) - PDF article about MiCA, courtesy of the European Blockchain Observatory
 *   [EUR-Lex](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52020PC0593) - official text of MiCA, available in 24 languages
