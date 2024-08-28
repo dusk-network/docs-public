@@ -3,39 +3,38 @@ title: Core Components
 description: Core components that make up Dusk.
 ---
 
-There are a lot of moving pieces within Dusk, and a lot of tools that we have developed in-house to meet the requirements of being private, compliant, and able to interact with regulated assets.
+There are a lot of moving pieces within the Dusk protocol, and a lot of tools that we have developed in-house to meet the requirements of being privacy-preserving, compliant, and able to interact with regulated assets.
 
 What sets Dusk apart from other blockchains is its bespoke and tailor-made components to ensure compliance, privacy, and the security of the network for the tokenization of Real-World Assets.
 
-## Our PoS Consensus Algorithm
+## Rusk
 
-### Succinct Attestation (SA)
+Rusk can be thought of as the technological heart of the Dusk protocol, similar to the motherboard of a computer. It is the reference implementation of the Dusk protocol in Rust. Rusk serves multiple critical functions. It includes foundational elements like the genesis ZK circuits and contracts, such as the transfer and stake contracts. It integrates key components such as Plonk, Kadcast and Piecrust, and supplies host functions to the Rusk VM. Beyond that, Rusk houses the consensus mechanism and node software, maintaining the chain state, database and network. It also provides crucial external APIs through the Rusk Universal Event System (RUES).
 
-Succinct Attestation (SA) is the unique **proof-of-stake** (PoS) consensus algorithm at the core of Dusk. Unlike traditional consensus mechanisms, SA uses a committee-based approach, where eligible participants who hold a predefined amount of DUSK are allowed to partake in the process. The protocol operates in rounds, each generating a new block via a series of validation phases. These phases involve the creation of a candidate block, two rounds of voting on its validity by selected committees, and an agreement phase where the block is accepted if it garners enough votes.
+## Consensus Layer: Succinct Attestation
 
+Succinct Attestation (SA) is the unique **proof-of-stake** (PoS) consensus algorithm at the core of Dusk. It uses a committee-based approach where stakers, called provisioners, participate in generating, validating and ratifying blocks. Provisioners are randomly selected based on their stake.
+
+Each round of consensus involves three steps: 
+1. **Proposal**: A provisioner creates and broadcasts a candidate block.
+2. **Validation**: A committee checks the block's validity.
+3. **Ratification**: Another committee confirms the validation outcome.
+
+Blocks are added to the blockchain if they receive enough votes. The Deterministic Sortition (DS) algorithm ensures fair and random provisioner selection.
  
-## Piecrust
+## Execution Layer: Piecrust
 
-Replacing the former RuskVM, [Piecrust](https://dusk.network/news/piecrust-and-our-transition-to-rust/) is a hyper optimized [virtual machine](https://en.wikipedia.org/wiki/Virtual_machine) built around Wasmer, a WASM runtime. It is a ZK-friendly virtual machine, enabling the development and execution of privacy-focused smart contracts and applications. 
+[Piecrust](https://dusk.network/news/piecrust-and-our-transition-to-rust/) is a hyper optimized [virtual machine](https://en.wikipedia.org/wiki/Virtual_machine) built around Wasmtime, a WASM runtime. It is a ZK-friendly virtual machine, enabling the development and execution of privacy-focused smart contracts and applications. 
 
 Piecrust is fundamentally different from many blockchain VMs in that it not only executes WASM and is able to natively support ZK operations like SNARK verifications, but it also has a completely different way in which it handles memory.
 
- 
-## Phoenix & Moonlight
-
-[Phoenix](tx-models#phoenix) & [Moonlight](tx-models#moonlight) are both transaction models supported by Dusk. One is for privacy, the other one for transparency and compliance.
-  
-## Kadcast
+## Network Layer: Kadcast
 
 Kadcast is an innovative peer-to-peer protocol used by Dusk to optimize message exchanges between nodes. Unlike the traditional Gossip protocols used by many blockchain protocols, which broadcasts messages to a random set of nodes, Kadcast uses a structured overlay to direct message flow. This massively reduces network bandwidth and makes latency much more predictable, and at the same time lower compared to Gossip protocols.
  
-## Rusk
-
-Rusk can be thought of as the technological heart of the Dusk network, similar to the motherboard of a computer. It is defined as the smart contract platform, but it actually services multiple critical functions. Rusk includes foundational elements like the genesis ZK circuits and contracts, such as the transfer and stake contracts. It integrates key components such as Plonk, Kadcast and Piecrust, and supplies host functions to the Piecrust VM. Beyond that, Rusk houses the consensus mechanism and node software, maintaining the chain state, database and network. It also provides crucial external APIs.
- 
 ## Application layer
 
-At the application layer of our network, we’ve introduced innovative protocols and a transaction model designed to seamlessly meet the needs of financial institutions looking to tokenize Real-World Assets. Let’s take a closer look at the Genesis contracts, Citadel and Zedger/XSC.
+At the application layer of our network, we’ve introduced innovative protocols and a dual transaction model designed to seamlessly meet the needs of financial institutions looking to tokenize Real-World Assets. Let’s take a closer look at the Genesis contracts, Citadel and Zedger/XSC.
 
 ### Genesis Contracts
 
@@ -43,9 +42,13 @@ Dusk contains two fundamental Genesis contracts, which are contracts that are av
 
 The stake contract is responsible for managing the stakes associated with node provisioners (stakers). It tracks which provisioners are currently staking, records their rewards and enables the functionality to stake, unstake and withdraw rewards.
 
+### Phoenix & Moonlight
+
+[Phoenix](tx-models#phoenix) & [Moonlight](tx-models#moonlight) are both transaction models supported by Dusk. One is for privacy, the other one for transparency and compliance.
+
 ### Transactions on Dusk
 
-Transactions in Dusk are managed by the <a href="https://github.com/dusk-network/rusk/tree/master/contracts/transfer" target="_blank">Transfer Contract</a>. The transfer contract oversees the handling of both transparent and obfuscated transactions within the network. It maintains a Merkle tree of notes to ensure integrity. The transfer contract also has the ability to combine notes, preventing the tree from becoming excessively large and hindering network performance. Through the transfer contract, inter-contract calls can be made.
+Transactions in Dusk are managed by the <a href="https://github.com/dusk-network/rusk/tree/master/contracts/transfer" target="_blank">Transfer Contract</a>. The transfer contract oversees the handling of both transparent and obfuscated transactions within the network. It maintains a Merkle tree of notes and a mapping of keys to balances to ensure integrity of the chain balances. The transfer contract also has the ability to combine notes, preventing the tree from becoming excessively large and hindering network performance. Through the transfer contract, inter-contract calls can be made.
 
 Additionally, the transfer Contract supports **both** a [UTXO](tx-models#utxos) and [account-based](tx-models#account-model) model through [Phoenix](tx-models#phoenix) and [Moonlight](tx-models#moonlight) to handle transfers of the native currency, gas payments, and serve as a contract execution entry point.
 
@@ -63,11 +66,11 @@ Zedger allows for the digital representation, native issuance and management of 
 
 [Deep dive into Zedger](deep-dive/transaction_models/zedger) 
 
-## Cryptographic primitives
+## Dusk primitives
 
 ![Elliptic Curves image](../../../assets/elliptic_curves.png)
 
-At the foundation of Dusk’s architecture are the cryptographic primitives - BLS12_381, JubJub, Schnorr and Poseidon. These cryptography tools provide the robust security and privacy features of the network.
+At the foundation of Dusk’s architecture are the cryptographic primitives - BLS12_381, JubJub, Schnorr and Poseidon. These cryptography tools provide the robust security and privacy features of the network. Besides these, we also make use of our own Merkle tree implementation called dusk-merkle, and our own PLONK proving system.
 
 ### BLS12_381
 
