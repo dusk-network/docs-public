@@ -43,7 +43,7 @@ Dusk exposes the following APIs:
 You can rely on the RPCs infrastructure hosted by the community.
 
 # Token Deposits and Withdrawals
-You can subscribe via websocket to deposits and withdrawals events using [RUES](https://github.com/dusk-network/rusk/wiki/RUES-%28Rusk-Universal-Event-System%29).
+You can subscribe via websocket to deposit and withdrawal events using [RUES](https://github.com/dusk-network/rusk/wiki/RUES-%28Rusk-Universal-Event-System%29).
 
 In most cases, 1 block confirmation is sufficient for finality. The only exception to the 1 block finality is when the network is in a rolling finality state, in which additional blocks may be required to achieve finality.
 
