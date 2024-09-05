@@ -25,7 +25,7 @@ Current token contracts are:
 
 
 # Connect to Dusk
-To access the blockchan you can either:
+To access the blockchain you can either:
 - Spin up a node (query data, submit transactions, provide APIs)
 - Use Dusk APIs (events system, HTTP ...)
 - Use RPCs providers
