@@ -39,7 +39,7 @@ Dusk exposes the following APIs:
 - [RUES](https://github.com/dusk-network/rusk/wiki/RUES-%28Rusk-Universal-Event-System%29): Provides an event system for streamlining information from the network.
 - HTTP API (Work in Progress)
   
-## Use RPCs providers
+## Use RPC providers
 You can rely on the RPCs infrastructure hosted by the community.
 
 # Token Deposits and Withdrawals
