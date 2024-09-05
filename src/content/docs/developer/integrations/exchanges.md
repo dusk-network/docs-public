@@ -35,7 +35,7 @@ To access the blockchan you can either:
 You can access the blockchain and submit transactions by running a Dusk node. [Technical requirements](https://docs.dusk.network/getting-started/node-setup/node-requirements) are quite light, and you can either [build from source](https://docs.dusk.network/getting-started/node-setup/build-from-source) or run a [Docker image](https://docs.dusk.network/getting-started/node-setup/docker-image).
 
 ## Use Dusk APIs
-Dusk exposes the following APIs;
+Dusk exposes the following APIs:
 - [RUES](https://github.com/dusk-network/rusk/wiki/RUES-%28Rusk-Universal-Event-System%29): Provides an event system for streamlining information from the network.
 - HTTP API (Work in Progress)
   
