@@ -80,7 +80,7 @@ curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-insta
 
 Once everything has been set up, you will be asked to add your consensus keys. These keys are used to sign and vote for blocks.
 
-If you haven't made a wallet yet, go to our [Web Wallet](https://wallet.dusk.network/setup/) and create a new wallet. You can request funds from our [Discord faucet](/nocturne/testnet-faucet). The faucet will give you 400 nDUSK. The minimum to stake is 1000 nDUSK.
+If you haven't made a wallet yet, go to our [Web Wallet](https://wallet.dusk.network/setup/) and create a new wallet. You can request funds from our [Discord faucet](/operator/nocturne/testnet-faucet). The faucet will give you 400 nDUSK. The minimum to stake is 1000 nDUSK.
 
 Once you have access to a Dusk mnemonic, run the following command:
 ```sh
@@ -111,7 +111,7 @@ Your node will now start syncing. You can check if it indeed is by running:
 ruskquery block-height
 ```
 
-It is best to wait until your node is synced up. You can find the latest block height on [our explorer](https://explorer.dusk.network/).
+It is best to wait until your node is synced up. You can find the latest block height on [the block explorer](https://explorer.dusk.network/).
 
 ## Stake nDUSK
 

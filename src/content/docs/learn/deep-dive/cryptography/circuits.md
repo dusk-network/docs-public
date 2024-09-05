@@ -5,9 +5,9 @@ description: Arithmetic Circuits in Dusk.
 
 Arithmetic Circuits allow for zero-knowledge (ZK) operations, and are used e.g., by our genesis contracts for these specific use-cases:
 
-- [Phoenix](/learn/dusk-protocol/transaction_models/phoenix): to spend notes and pay for gas.
-- [Citadel](/getting-started/digital-identity/protocol): to use in the Self-Sovereign Identity implementation.
-- [Zedger](/learn/dusk-protocol/transaction_models/zedger): to use the Zedger transaction model and spent securities.
+- [Phoenix](/learn/deep-dive/transaction_models/phoenix): to spend notes and pay for gas.
+- [Citadel](/developer/digital-identity/protocol): to use in the Self-Sovereign Identity implementation.
+- [Zedger](/learn/deep-dive/transaction_models/zedger): to use the Zedger transaction model and spent securities.
 
 Developers can write their own ZK circuits as part of their smart contracts, allowing for the proving and verification of zero-knowledge proofs.
 
@@ -43,5 +43,5 @@ For additional information, you can have a look at the <a href="https://github.c
 ## Zedger circuits
 
 :::note
-The [Zedger](/learn/dusk-protocol/transaction_models/zedger) repository is currently private. 
+The [Zedger](/learn/deep-dive/transaction_models/zedger) repository is currently private. 
 :::

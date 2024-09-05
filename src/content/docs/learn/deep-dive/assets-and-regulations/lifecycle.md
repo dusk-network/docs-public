@@ -60,7 +60,7 @@ The allowlist is one of the envisioned solutions that could be managed by the go
 The further scale this system, the governance of the security token contract might engage a trusted identity provider to perform this service for them. 
 
 ## Identity System
-An identity system [such as Citadel](/getting-started/digital-identity/protocol) could be used to take access management to the next level. Here, the security token contract governance specifies the trusted identity providers, and the `claim_topics` that the prospective investor needs to prove in order to purchase, hold and trade its security token. 
+An identity system such as [Citadel](/developer/digital-identity/protocol) could be used to take access management to the next level. Here, the security token contract governance specifies the trusted identity providers, and the `claim_topics` that the prospective investor needs to prove in order to purchase, hold and trade its security token. 
 
 These requirements should be publicly accessible. The `claim_topics` could be:
 - Investor type (retail, professional, accredited)

@@ -9,7 +9,7 @@ Information about contract verification can be found [here](guides/02-compiling#
 
 #### Can a Contract deploy another Contract?
 
-Yes, see [here](/smart-contract/guides/03-deploying#let-contracts-deploy-other-contracts).
+Yes, see [here](/developer/smart-contract/guides/03-deploying#let-contracts-deploy-other-contracts).
 
 #### Is there Token Discoverability?
 

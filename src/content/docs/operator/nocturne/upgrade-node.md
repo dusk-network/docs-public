@@ -45,7 +45,7 @@ tail -n 30 /var/log/rusk.log
 
 Unable to figure it out yourself? Visit our [Node Runner Troubleshooting](https://discord.com/channels/847466263064346624/1118582421055606805) on Discord.
 
-If everything else fails, check out the [manual resync](/getting-started/node-setup/manual-resync) instructions.
+If everything else fails, check out the [manual resync](/operator/node-setup/manual-resync) instructions.
 
 ## Nocturne Migration
 
@@ -75,7 +75,7 @@ service rusk start
 rusk-wallet stake-info --reward
 ```
 
-5. To claim your rewards, request nDUSK from the faucet. A guide can be found [here](/nocturne/testnet-faucet).
+5. To claim your rewards, request nDUSK from the faucet. A guide can be found [here](/operator/nocturne/testnet-faucet).
 
 6. Withdraw your staking rewards:
 ```sh

@@ -11,8 +11,8 @@ By soliciting detailed proposals, Dusk's Grants Committee can compare different 
 ## Open RFPs
 
 Currently open RFPs are:
-- <a href="http://docs.dusk.network/grants/rfps/archival-node" target="_blank"> Archival Nodes API Infrastructure </a>
-- <a href="http://docs.dusk.network/grants/rfps/hardware-wallet" target="_blank"> Hardware Wallet Integration </a>
+- [Archival Nodes API Infrastructure](/grants/rfps/archival-node)
+- [Hardware Wallet Integration](/grants/rfps/hardware-wallet)
 
 ### Considerations
 

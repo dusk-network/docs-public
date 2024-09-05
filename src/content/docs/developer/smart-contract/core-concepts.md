@@ -50,7 +50,7 @@ Therefore developers need to figure out how to represent users.
 
 In Dusk, an "address" is defined by the developer within the contract's logic. This approach gives developers more control over the privacy and compliance features of their applications but also increases their responsibility to securely identify and authenticate users and transactions. 
 
-The `msg.sender` is not "abstracted" away on dusk. A way to mimic that behavior is by explicitly taking the address as function argument and a signature that signed all other function arguments (including the address). Then verifying this this in the function. Examples of such usage can be found in the [transparent token standard](/learn/token-standards#dusks-token-standards), the [Moonlight transaction model](/learn/deep-dive/transaction_models/moonlight) and the [Zedger project](/learn/deep-dive/transaction_models/zedger).
+The `msg.sender` is not "abstracted" away on dusk. A way to mimic that behavior is by explicitly taking the address as function argument and a signature that signed all other function arguments (including the address). Then verifying this this in the function. Examples of such usage can be found in the [transparent token standard](/learn/token-standards#dusks-token-standards), the [Moonlight transaction model](/learn/deep-dive/transaction_models/moonlight) and [Zedger](/learn/deep-dive/transaction_models/zedger).
 
 ## Methods
 
@@ -91,16 +91,17 @@ Host functions are exempt from the normal costs associated (Gas costs) with comp
 
 > Ethereum calls them pre-compiles
 
+<!---
 ### Available Host functions
 
-> ToDo
+
+> To Do
 >
 > List of available host functions
 >
-> We can also point towards the rust docs module overview or cheat sheet here
-> https://docs.rs/rusk-abi/0.13.0-rc.0/rusk_abi/fn.host_query.html
+> We can also point towards the rust docs module overview or cheat sheet [here](https://docs.rs/rusk-abi/0.13.0-rc.0/rusk_abi/fn.host_query.html)
 
-
+-->
 
 ### Functions Signature and Calling Sequence
 
@@ -259,9 +260,8 @@ Clients can subscribe to events emitted by both smart contracts and nodes by usi
 
 ## Other common dependencies
 
-### Execution Core
-
-## The Rusk Virtual Machine
+- <a href="https://github.com/dusk-network/rusk/tree/ac26fe31bb18563e83600904c32ef98d7119db22/execution-core" target="_blank">execution-core</a>
+- <a href="https://github.com/dusk-network/rusk/" target="_blank">rusk</a>
 
 :::tip[Info]
 It is useful to know that Piecrust is not used directly, but it is exposed through Rusk, the entrypoint for all Dusk related development.

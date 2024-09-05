@@ -2,7 +2,7 @@
 title: MiCA
 description: Explanation on the Markets in Crypto Assets (MiCA) regulation.
 ---
-The Markets in Crypto Assets Regulation (MiCA) is a proposed [regulation](/org/regulation) of the European Union aimed at regulating the issuing of crypto assets and the operations of Crypto Asset Service Providers (CASPs) in the member states of the EU.
+The Markets in Crypto Assets Regulation (MiCA) is a proposed regulation of the European Union aimed at regulating the issuing of crypto assets and the operations of Crypto Asset Service Providers (CASPs) in the member states of the EU.
 
 ## Brief History
 
@@ -15,7 +15,7 @@ MiCA defines and creates regulations for two things:
 *   **Crypto Assets** - defined as ‘Distributed Ledger Technology-based cryptographic tokens that are used as a medium of exchange’. MiCA lays down specific definitions of three subclasses of crypto assets:
     *   _Electronic Money Tokens_ - crypto assets that maintain a ‘stable’ value by referencing a single ‘real word’ fiat currency. Examples include [Tether](https://tether.to/en/) and [STASIS EURO](https://stasis.net/).
     *   _Asset-Referenced Tokens_ - crypto assets that maintain a ‘stable’ value by referencing anything other than a single fiat currency (i.e. two or more fiat currencies, one or more cryptocurrencies, one or more other assets such as gold or diamonds). Examples include [PAX Gold](https://paxos.com/paxgold/) and [DIAM](https://www.diamdexx.com/).
-    *   _Utility Tokens_ - crypto assets whose main purpose is to gain access to a service provided by the same issuer that issued the token. Examples include [Dusk](/learn/economy/gas), [Filecoin](https://filecoin.io/) and [Binance Coin](https://www.binance.com/en).
+    *   _Utility Tokens_ - crypto assets whose main purpose is to gain access to a service provided by the same issuer that issued the token. Examples include [Dusk](/learn/tx-fees), [Filecoin](https://filecoin.io/) and [Binance Coin](https://www.binance.com/en).
 *   **Crypto Asset Service Providers** - defined as entities that engage in any of the following activities:
     *   custody and administration of crypto assets on behalf of third parties
     *   crypto exchange services (running an exchange)
@@ -23,7 +23,7 @@ MiCA defines and creates regulations for two things:
 
 ## Dusk and MiCA
 
-As an issuer of a crypto asset, that is [actively on the trajectory to work with regulated entities](/learn/overview/vision/#ambition), Dusk pays a lot of attention to this regulation. As part of Dusk's commitment to compliance, inclusion of MiCA principles must be built into our technology at the foundational level.
+As an issuer of a crypto asset that is actively on the trajectory to work with regulated entities, Dusk pays a lot of attention to this regulation. As part of Dusk's commitment to compliance, inclusion of MiCA principles must be built into our technology at the foundational level.
 
 Understanding, translating, and explaining to our publics the meaning and implications of MiCA is a core part of Dusk's thought leadership in the regulatory space. As such, we have already issued several pieces of content related to the regulation:
 

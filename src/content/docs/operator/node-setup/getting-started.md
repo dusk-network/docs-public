@@ -30,7 +30,7 @@ To run a Dusk provisioner, at least **1000 DUSK** must be staked.
 
 Dusk uses a *pure proof-of-stake* algorithm to provide sybil-resistance and as such it is a cornerstone of Dusk's security and consensus mechanism. By staking DUSK, participants actively contribute to the network's integrity. 
 
-Stakers have the right to participate in the [Succinct Attestation](../../learn/economic-information/succinct-attestation) and accrue rewards for generating blocks and participating in block validation activities. These rewards are an incentive for creating blocks and voting, and compensate users for locking their assets while their node performs such operations.
+Stakers have the right to participate in the [Succinct Attestation](/learn/deep-dive/succinct-attestation) and accrue rewards for generating blocks and participating in block validation activities. These rewards are an incentive for creating blocks and voting, and compensate users for locking their assets while their node performs such operations.
 
 ## Software 
 
