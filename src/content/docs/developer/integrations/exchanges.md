@@ -58,7 +58,7 @@ The [w3sper SDK](https://github.com/dusk-network/rusk/wiki/%5BDraft%5D-W3sper-SD
 - [wallet-core](https://docs.dusk.network/developer/integrations/wallet-core)
 - [execution-core](https://docs.dusk.network/developer/integrations/execution-core)
 
-- [w3sper (SDK](https://github.com/dusk-network/rusk/wiki/%5BDraft%5D-W3sper-SDK)
+- [w3sper (SDK)](https://github.com/dusk-network/rusk/wiki/%5BDraft%5D-W3sper-SDK)
 - [RUES (events system)](https://github.com/dusk-network/rusk/wiki/RUES-%28Rusk-Universal-Event-System%29)
 
 ## Links
