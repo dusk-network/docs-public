@@ -34,6 +34,7 @@ The proprieties of a SNARK are:
 - **Succinctness**: proof is short, and verifying time is fast.
 - If the SNARK is also zero-knowledge, the verifier does not learn anything about the message itself.
 
+
 ## Arithmetic Circuits
 
 Once we have the computation trace of the statement we want to prove, we can arithmetic circuits to translate that computation into algebraic equations.
@@ -44,9 +45,12 @@ In order to construct a SNARK, the computation to be proven needs to be translat
 
 An arithmetic circuit takes as inputs some elements in the finite field and produces an element of the field as output. It is important to notice that the bigger is the computation that needs to be proven, the bigger the number of gates that are needed in the circuit. More specifically, the circuit is constrained to have a maximum number of gates equal to the degree of the polynomial.
 
+If you want to know more about circuits, you can have a look at the [deep dive into circuits](/learn/deep-dive/cryptography/circuits).
+
 An arithmetic circuit can resemble a Directed Acyclic Graph (DAG), where Internal nodes are gates that represent an arithmetic operation (x,+,-,:), and inputs are the variables.
 
 ![Circuit](../../../assets/zk-gates.png)
+
 
 ## How to construct a zk-SNARK
 
@@ -72,3 +76,5 @@ Which more specifically consists in:
 - The interactive proof is transformed into a non-interactive one by using the Fiat-Shamir heuristic. This is achieved by replacing the verifier’s random challenges with a deterministic hash function. The prover is then able to generate the non-interactive proof combining the PCS and IOP.
 - The prover sends the non-interactive proof to the verifier, who can now efficiently verify the proof without any further interaction with the prover.
 - The verifier checks the proof and, if it’s valid, becomes convinced that the statement is true without learning any additional information about the witness.
+
+If you want to know more about SNARKs, you can have a look at the [deep dive into zk-SNARKs](/learn/deep-dive/cryptography/iop_pcs).

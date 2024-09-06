@@ -17,19 +17,19 @@ Simply put, Dusk is a **privacy-centric global ledger for real world application
 Dusk is engineered for high performance and ease of use, catering to both developers and users.
 
 ##### Unparalleled Privacy
-1. Implements [confidential smart contracts](/getting-started/vm/guides/01-my-first-contract) with [Phoenix and Zedger](https://dusk.network/news/why-we-need-phoenix-and-zedger/) transaction models.
+1. Implements [confidential smart contracts](/developer/smart-contract/guides/01-my-first-contract) with [Phoenix and Zedger](https://dusk.network/news/why-we-need-phoenix-and-zedger/) transaction models.
 2. Uses the most popular and sound zero-knowledge (ZK) cryptographic tools for privacy, being the [PlonK](https://github.com/dusk-network/plonk) proof system and the [Poseidon](https://www.usenix.org/conference/usenixsecurity21/presentation/grassi) hash function among them.
-3. Provides a [privacy-preserving digital identity protocol](/getting-started/digital-identity/protocol) for compliance and secure user interactions.
+3. Provides a [privacy-preserving digital identity protocol](/developer/digital-identity/protocol) for compliance and secure user interactions.
 
 ##### High Performance and Finality
 1. Features [Kadcast](https://github.com/dusk-network/kadcast/blob/main/README.md), an innovative network protocol for **10x more efficient block and transaction data propagation**.
-2. Dusk's consensus algorithm [succinct attestation](/learn/economic-information/succinct-attestation) is powered by a proof-of-stake sybil resistant mechanism, and enables **complete state finality**, not just transactions. This unlocks a wealth of financial applications.
-3. Transactions are **fast and efficient**, bolstered by [Piecrust](/getting-started/vm/01-components/piecrust), Dusk's ZK-friendly virtual machine.
+2. Dusk's consensus algorithm [succinct attestation](/learn/deep-dive/succinct-attestation) is powered by a proof-of-stake sybil resistant mechanism, and enables **complete state finality**, not just transactions. This unlocks a wealth of financial applications.
+3. Transactions are **fast and efficient**, bolstered by [Piecrust](/learn/deep-dive/piecrust), Dusk's ZK-friendly virtual machine.
 
 ##### Developer and User Experience
-1. Smart contracts are [WASM](https://webassembly.org/) bytecode, enabling their **development in [Rust](https://dusk.network/news/piecrust-and-our-transition-to-rust/)** and any other programming language that compiles to WebAssembly.
-2. Introduces an [innovative economic model](/learn/economic-information/economic-protocol) where smart contracts can be elevated to **real-world applications** and **services** to greatly boost adoption.
-3. Users can use a [WebWallet](https://dusk.network/news/web-wallet-and-node-are-shipped/) without compromising the security of privacy-preserving transactions.
+1. Smart contracts are [WASM](https://webassembly.org/) bytecode, enabling their **development in [Rust](https://www.rust-lang.org/)** and any other programming language that compiles to WebAssembly.
+2. Introduces an [innovative economic model](/learn/deep-dive/economic-protocol) where smart contracts can be elevated to **real-world applications** and **services** to greatly boost adoption.
+3. Users can use a [WebWallet](https://wallet.dusk.network/setup/) without compromising the security of privacy-preserving transactions.
 
 ## Use Cases
 

@@ -5,7 +5,7 @@ description: The underlying VM of Dusk explained.
 
 ## Piecrust
 
-<a href="https://github.com/dusk-network/piecrust" target="_blank">Piecrust</a> is the WASM virtual machine for running Dusk's smart contracts, and it is based on the [Wasmtime](https://wasmtime.dev) runtime, with a few custom modifications:
+<a href="https://github.com/dusk-network/piecrust" target="_blank">Piecrust</a> is the WASM virtual machine for running Dusk's smart contracts, and it is based on the <a href="https://wasmtime.dev" target="_blank">Wasmtime</a> runtime, with a few custom modifications:
 - Specific memory management mechanism
 - Support for Dusk’s ABI
 - Support for inter-contract calls 

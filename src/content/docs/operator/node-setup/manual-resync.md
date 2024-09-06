@@ -42,7 +42,7 @@ Retrieve the latest published state through the fast syncing tool:
 download_state
 ```
 
-For more details see the [Fast syncing page](/nocturne/fast-sync).
+For more details see the [Fast syncing page](/operator/nocturne/fast-sync).
 
 ### 4. Restart Rusk
 

@@ -39,7 +39,7 @@ The DUSK token is widely accessible on top-tier CEXs and DEXs. For more informat
 The token can be used for the activities:
 * Used for staking in consensus participation.
 * Rewards to consensus participants.
-* Payment of network fees ([gas](../learn/gas)).
+* Payment of network fees ([gas](tx-fees)).
 * Paying for the deployment of dApps on the network.
 * Payment of services on the network.
 * Target currency for dividend payouts in XSC or other dApps.
@@ -51,7 +51,7 @@ DUSK represents the only medium responsible for transaction fee payments. Each t
 
 Users wishing to add their transaction to a block enter a *generalized first-price auction (GFP)* by defining a price (i.e. `gasprice`) that they are willing to purchase a unit of gas for, in which the block is limited to a total of gas and the transactions of the auction participants consume a total of gas. We define as `baseprice` the minimum gas price that a transaction can set. The `gaslimit` is required as a workaround to the halting problem, ensuring that every transaction does halt at after a finite amount computation cycles, either due to the successful termination or due to the gas consumption reaching the allocated.
 
-Gas payments are an area of innovation for Dusk research, as we continuously strive to improve the utility of Dusk token as well as making the network infrastructure and the tokenomics seamless and well-integrated with classic business requirements of profitability and good UX. As such, Dusk improves over the usual gas management in blockchain by introducing possibilities that are unavailable in other networks. More information can be found on the page [dedicated to the economic model](/org/roadmap/economic-model) (you need special permission to access the page).
+Gas payments are an area of innovation for Dusk research, as we continuously strive to improve the utility of Dusk token as well as making the network infrastructure and the tokenomics seamless and well-integrated with classic business requirements of profitability and good UX. As such, Dusk improves over the usual gas management in blockchain by introducing possibilities that are unavailable in other networks. More information can be found on the [economic model page](/learn/deep-dive/economic-protocol).
 
 ## Token Allocation and Vesting Overview
 

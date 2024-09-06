@@ -33,7 +33,7 @@ docker run -p 9000:9000/udp -p 8080:8080/tcp dusknetwork/node
 
 ### 1. Get the Dusk node files
 
-The Dusk Node is called `Rusk`. There are two way to get the software, [cloning the repository using git](#using-git-(recommended)), or [simply downloading from github](#without-git)
+The Dusk Node is called `Rusk`. There are two way to get the software, cloning the [repository](https://github.com/dusk-network/rusk.git) using git, or [simply downloading from github](#without-git)
 
 ##### Using Git (Recommended)
 

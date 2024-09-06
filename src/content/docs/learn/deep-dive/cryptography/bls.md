@@ -4,7 +4,7 @@ description: BLS12-381 explained.
 ---
 
 This is a non-exhaustive introduction to some of the key characteristics of the elliptic curve BLS12-381.
-For further reading have a look at <a href="https://hackmd.io/@benjaminion/bls12-381" target="_blank">BLS12-381-For The Rest Of Us</a> or <a href="https://electriccoin.co/blog/new-snark-curve" target="_blank">announcement</a>.
+For further reading have a look at <a href="https://hackmd.io/@benjaminion/bls12-381" target="_blank">BLS12-381-For The Rest Of Us</a> or the <a href="https://electriccoin.co/blog/new-snark-curve" target="_blank">announcement</a>.
 
 ## Origin
 
