@@ -50,6 +50,7 @@ export default function sidebar(currentPath) {
             { label: "Wallet Core Library", href: '/developer/integrations/wallet-core' },
             { label: "Execution Core", href: '/developer/integrations/execution-core' },
             { label: "Rues", href: '/developer/integrations/rues' },
+            { label: "Integrate with Exchanges", href: '/developer/integrations/exchanges' },
         ],
             false),
         createGroup("Digital Identity", currentPath, [
