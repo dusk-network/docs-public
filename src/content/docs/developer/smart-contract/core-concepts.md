@@ -144,8 +144,6 @@ Developers are free to choose any cryptographic signature algorithm when buildin
 
 For developers opting to use BLS signatures, it is recommended to leverage the `rusk_abi::verify_bls` host function provided by Dusk. This function enables signature verification to be offloaded to the host, minimizing the gas consumption and execution time of contracts. Directly including complex cryptographic operations within the contract is still possible but less efficient in terms of gas usage.
 
-For those starting with token development on Dusk, it might be beneficial to start with an available ECDSA scheme that easily compiles to WASM, optimizing the development process. As the project progresses, developers can switch to a more suitable or advanced cryptographic algorithm based on the evolving needs and security requirements of their application.
-
 ### Types of keys
 
 Dusk uses three types of keys: 
