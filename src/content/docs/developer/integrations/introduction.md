@@ -8,10 +8,10 @@ This section outlines the libraries that developers can use to integrate with Du
 
 
 - [execution-core](/developer/integrations/execution-core)
+- [W3sper SDK](https://github.com/dusk-network/rusk/wiki/%5BDraft%5D-W3sper-SDK)
 - [wallet-core](/developer/integrations/wallet-core)
 - [wallet-js](/developer/integrations/wallet-js)
 
 In addition to the above, developers can leverage:
--  [RUES](https://github.com/dusk-network/rusk/wiki/RUES-%28Rusk-Universal-Event-System%29)
--  [W3sper SDK](https://github.com/dusk-network/rusk/wiki/%5BDraft%5D-W3sper-SDK)
+-  [RUES](/developer/integrations/rues)
 

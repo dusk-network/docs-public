@@ -25,7 +25,7 @@ The DUSK token is available as an ERC20 on Ethereum, a BEP20 on Binance Smart Ch
 | Chain                | Standard | Contract Address                           |
 |----------------------|----------|--------------------------------------------|
 | Ethereum             | ERC20    | [0x940a2db1b7008b6c776d4faaca729d6d4a4aa551](https://etherscan.io/token/0x940a2db1b7008b6c776d4faaca729d6d4a4aa551) |
-| Binance Smart Chain  | BEP20    | [0xb2bd0749dbe21f623d9baba856d3b0f0e1bfec9c](https://bscscan.com/address/0xb2bd0749dbe21f623d9baba856d3b0f0e1bfec9c) |
+| Binance Smart Chain  | BEP20    | [0xb2bd0749dbe21f623d9baba856d3b0f0e1bfec9c](https://bscscan.com/token/0xb2bd0749dbe21f623d9baba856d3b0f0e1bfec9c) |
 | Binance Beacon Chain | BEP2     | [DUSK-45E](https://explorer.bnbchain.org/asset/DUSK-45E) |
 
 ## Token Markets & Exchanges
