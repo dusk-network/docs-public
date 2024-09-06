@@ -24,7 +24,7 @@ Blocks are added to the blockchain if they receive enough votes. The Determinist
  
 ## Execution Layer: Piecrust
 
-[Piecrust](/learn/deep-dive/piecrust) is a hyper optimized <a href="https://en.wikipedia.org/wiki/Virtual_machine" target="_blank">virtual machine</a> built around Wasmtime, a WASM runtime. It is a ZK-friendly virtual machine, enabling the development and execution of privacy-focused smart contracts and applications. 
+[Piecrust](/learn/deep-dive/piecrust) is a hyper optimized <a href="https://en.wikipedia.org/wiki/Virtual_machine#Process_virtual_machines" target="_blank">virtual machine</a> built around Wasmtime, a WASM runtime. It is a ZK-friendly virtual machine, enabling the development and execution of privacy-focused smart contracts and applications. 
 
 Piecrust is fundamentally different from many blockchain VMs in that it not only executes WASM and is able to natively support ZK operations like SNARK verifications, but it also has a completely different way in which it handles memory.
 
