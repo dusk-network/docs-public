@@ -4,15 +4,14 @@ const defaultSidebar = [
         label: 'Learn Dusk',
         items: [
             { label: "Introduction", link: 'learn/introduction' },
-            { label: 'Core Values', link: 'learn/core-values' },
-            { label: "Core Components", link: "learn/core-components" },
+            { label: "Core Values", link: 'learn/core-values' },
+            { label: "Core Components", link: 'learn/core-components' },
             { label: "Block Explorer", link: "learn/block-explorer" },
             { label: "Tokenomics", link: 'learn/tokenomics' },
             { label: "Transaction Fees & Gas", link: 'learn/tx-fees' },
             { label: "Transaction Models", link: 'learn/tx-models' },
             { label: "Token Standards", link: 'learn/token-standards' },
-            { label: "ZK Crypto", link: 'learn/zk-crypto' },
-            { label: "Community", link: "learn/community" },
+            { label: "Get involved & Community", link: "learn/community" },
             { label: "Glossary", link: "learn/glossary" },
         ],
     },
@@ -27,6 +26,7 @@ const defaultSidebar = [
     {
         label: "Deep Dive",
         items: [
+            { label: "Introduction", link: 'learn/deep-dive/introduction' },
             {
                 label: 'Transaction Models',
                 items: [
@@ -40,6 +40,7 @@ const defaultSidebar = [
             {
                 label: 'Cryptography',
                 items: [
+                    { label: "Zero Knowledge Proofs", link: 'learn/deep-dive/cryptography/zkp' },
                     { label: "Circuits", link: 'learn/deep-dive/cryptography/circuits' },
                     { label: "IOP and PCS", link: 'learn/deep-dive/cryptography/iop_pcs' },
                     { label: "PLONK", link: 'learn/deep-dive/cryptography/plonk' },

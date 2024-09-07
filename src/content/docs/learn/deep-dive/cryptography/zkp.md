@@ -49,7 +49,7 @@ If you want to know more about circuits, you can have a look at the [deep dive i
 
 An arithmetic circuit can resemble a Directed Acyclic Graph (DAG), where Internal nodes are gates that represent an arithmetic operation (x,+,-,:), and inputs are the variables.
 
-![Circuit](../../../assets/zk-gates.png)
+![Circuit](../../../../../assets/zk-gates.png)
 
 
 ## How to construct a zk-SNARK

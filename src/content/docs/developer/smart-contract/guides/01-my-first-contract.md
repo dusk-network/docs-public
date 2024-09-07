@@ -49,7 +49,7 @@ Hence, first line of our contract will be:
 ```
 
 :::tip[Info]
-To still use certain std features, we can import [core](https://doc.rust-lang.org/core/) and [alloc](https://doc.rust-lang.org/stable/alloc/) where needed. However, this simple example does not need these dependencies.
+To still use some features we are used to from std, we can use [core](https://doc.rust-lang.org/core/) and [alloc](https://doc.rust-lang.org/stable/alloc/) where needed.
 :::
 
 Next, in order to use the features of the VM, we need to import a dusk-specific functionality using the standard Rust `use` declaration:

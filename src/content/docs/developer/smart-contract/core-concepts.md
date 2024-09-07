@@ -34,6 +34,10 @@ It is important to note that even if that state within the smart contract can ch
 
 One of the core concepts impacting development in Rust is the fact that we are developing smart contracts that compile to WASM. This requires the `#![no_std]` flag to be set in your project, which means that smart contracts are written in a no_std environment where certain features are not available.
 
+#![no_std] tells rust to link to the **core** crate instead of the **std** crate. The core crate provides a subset of the std crate. It works within WASM because it makes no assumptions about the system which executes the program.
+
+Because the **core** crate lacks heap memory allocations, we can explicitly also import the **alloc** crate where needed.
+
 ### Usage of panic & reverting state
 
 While you can have Result types in your smart contracts and handle them in multiple function calls, in the end you may want to abort execution. For example if a specific requirement is not satisfied you can always make use of directives that lead to panic (e.g. `.expect()` or `panic!()`). This is equivalent to `require()` in Solidity. It will abort the smart contract execution and let the transaction [fail](../../../learn/tx-fees#unsuccessful-transactions). This will also **revert** the state, making no changes to it.
@@ -77,7 +81,7 @@ Understanding the mechanism of argument passing to and from queries and transact
 
 ## Built-in Functions
 
-Rusk provides built-in functions that can be called from within a smart contract which we call **Host functions** or **Host calls**.
+Rusk provides built-in functions that can be called from within a smart contract which we call **Host functions** or **Host queries**.
 
 ### Host functions
 
@@ -91,21 +95,23 @@ Host functions are exempt from the normal costs associated (Gas costs) with comp
 
 > Ethereum calls them pre-compiles
 
-<!---
+
 ### Available Host functions
 
+The host functions are currently defined in the following files of the Piecrust VM & rusk-abi:
 
-> To Do
->
-> List of available host functions
->
-> We can also point towards the rust docs module overview or cheat sheet [here](https://docs.rs/rusk-abi/0.13.0-rc.0/rusk_abi/fn.host_query.html)
+<a href="https://github.com/dusk-network/rusk/blob/master/rusk-abi/src/abi.rs">Piecrust abi.rs</a>
 
--->
+<a href="https://github.com/dusk-network/piecrust/blob/main/piecrust-uplink/src/abi/state.rs#L44" target="_blank">Piecrust state.rs</a>
 
-### Functions Signature and Calling Sequence
+<a href="https://github.com/dusk-network/piecrust/blob/main/piecrust-uplink/src/abi/debug.rs#L8" target="_blank">Piecrust debug.rs</a>
 
-ToDo: move this into deep dive VM section
+<a href="https://github.com/dusk-network/piecrust/blob/main/piecrust-uplink/src/abi/handlers.rs#L11" target="_blank">Piecrust handler.rs</a>
+
+<details>
+<summary>More on interaction between a smart contract & the host </summary>
+
+Functions Signature and Calling Sequence:
 
 The interaction between the smart contract and the host involves a series of steps designed to safely pass data back and forth while respecting the sandboxed environment in which the smart contract operates. 
 
@@ -130,14 +136,13 @@ Here's a breakdown of the process and why each step is crucial:
 :::note
 The use of an argument buffer and the serialization/deserialization prevents unsafe interactions between the host and the contract's internal state, ensuring that data passed between the host and the contract is done so in a controlled manner.
 :::
+</details>
 
 ## Cryptographic Keys
 
 Developers are free to choose any cryptographic signature algorithm when building on Dusk, as they can use various cryptographic primitives, as long as they are WASM-compatible. As an example, developers can choose BLS, JubJub Schnorr, ECDSA, Bitcoin's Secp256k1 and much more. The choice usually depends on requirements for security, signature size, and transaction efficiency.
 
 For developers opting to use BLS signatures, it is recommended to leverage the `rusk_abi::verify_bls` host function provided by Dusk. This function enables signature verification to be offloaded to the host, minimizing the gas consumption and execution time of contracts. Directly including complex cryptographic operations within the contract is still possible but less efficient in terms of gas usage.
-
-For those starting with token development on Dusk, it might be beneficial to start with an available ECDSA scheme that easily compiles to WASM, optimizing the development process. As the project progresses, developers can switch to a more suitable or advanced cryptographic algorithm based on the evolving needs and security requirements of their application.
 
 ### Types of keys
 
@@ -216,7 +221,7 @@ pub struct Note {
 
 ## The host
 
-In the context of Dusk we usually refer to Rusk as "the host". This is the reason why certain built-in functions are called **Host functions** or your smart contract functons need to be exposed to "the host" to be callable. Those functions and the exposing is being made available through [rusk-abi](https://crates.io/crates/rusk-abi).
+In the context of Dusk we usually refer to Rusk as "the host" because Rusk incorporates the VM, thus being the host that executes smart contracts. This is also the reason why certain built-in functions are called **Host functions** or why your smart contract functions need to be exposed to "the host" in order to be callable. Those functions and the exposing is being made available through [rusk-abi](https://crates.io/crates/rusk-abi).
 
 ## Rusk
 
