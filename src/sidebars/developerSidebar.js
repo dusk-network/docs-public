@@ -1,0 +1,64 @@
+import { createGroup, createLink } from "../helpers/sidebarEntryHelpers";
+
+export default function sidebar(currentPath) {
+    return [
+        createLink("Overview", "/developer/overview", currentPath),
+        createGroup("Smart Contracts", currentPath, [
+            {
+                type: "link",
+                label: "Introduction",
+                href: "/developer/smart-contract/introduction",
+            },
+            {
+                type: "link",
+                label: "Getting Started",
+                href: "/developer/smart-contract/getting-started",
+            },
+            {
+                type: "group",
+                label: "Guides",
+                entries: [
+                    { label: "My first contract", href: '/developer/smart-contract/guides/01-my-first-contract' },
+                    { label: "Compiling", href: '/developer/smart-contract/guides/02-compiling' },
+                    { label: "Deploying", href: '/developer/smart-contract/guides/03-deploying' },
+                    { label: "Debugging", href: '/developer/smart-contract/guides/04-debugging' },
+                    { label: "Testing", href: '/developer/smart-contract/guides/05-testing' },
+                    { label: "Upgrades", href: '/developer/smart-contract/guides/06-upgrades' },
+                    { label: "Interacting", href: '/developer/smart-contract/guides/07-interacting' }
+                ],
+                collapsed: true,
+            },
+            {
+                type: "link",
+                label: "Core Concepts",
+                href: "/developer/smart-contract/core-concepts",
+            },
+            {
+                type: "link",
+                label: "FAQ",
+                href: '/developer/smart-contract/faq'
+            },
+            {
+                type: "link",
+                label: "Cheat Sheet",
+                href: "/developer/smart-contract/cheat-sheet",
+            }
+        ], false),
+        createGroup("Integrations", currentPath, [
+            { label: "Introduction", href: '/developer/integrations/introduction' },
+            { label: "The Wallet Stack", href: '/developer/integrations/wallet-stack' },
+            { label: "Wallet Core Library", href: '/developer/integrations/wallet-core' },
+            { label: "Execution Core", href: '/developer/integrations/execution-core' },
+            { label: "W3sper SDK", href: '/developer/integrations/w3sper' },
+            { label: "Rues", href: '/developer/integrations/rues' },
+            { label: "Integrate with Exchanges", href: '/developer/integrations/exchanges' },
+        ],
+            false),
+        createGroup("Digital Identity", currentPath, [
+            { label: "Citadel Protocol", href: '/developer/digital-identity/protocol' },
+            { label: "Citadel SDK", href: '/developer/digital-identity/sdk' },
+        ],
+            false),
+        createLink("Dusk Improvement Proposals", "/developer/dips", currentPath),
+    ];
+}

@@ -1,0 +1,50 @@
+---
+title: Smart Contracts
+description: Introduction to smart contract development on Dusk.
+---
+
+import { LinkCard, Card, CardGrid } from '@astrojs/starlight/components';
+
+Smart Contracts are a key feature of Dusk, playing a fundamental role at the protocol level. Specifically, both transferring the native currency and 
+staking functionalities are implemented as <a href="https://github.com/dusk-network/rusk/tree/master/contracts" target="_blank">genesis contracts</a>.
+
+The Dusk smart contract platform is a tailor made basis for specific applications who want to leverage native zero-knowledge proof capabilities and privacy features.
+Any developer can make extensive use of these features but also develop just about any kind of smart contract they desire like with other chains. On top of that, the Dusk core team continues to develop and integrate smart contracts themselves into the Dusk ecosystem, especially the development of financial market infrastructure products such as Zedger and the self-sovereign identity system Citadel.
+
+This **Smart Contracts** section guides you through the different aspects of smart contract development on Dusk and how you can start developing your own contracts on Dusk.
+
+## What is a Smart Contract?
+
+A smart contract is a self-executing digital agreement whose terms and conditions are directly written into lines of code. Even though the concept of smart contracts has been <a href="https://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/szabo.best.vwh.net/smart.contracts.html" target="_blank">introduced in 1994</a>, it became more popular after the creation of general purpose blockchains. The reason is that storing smart contracts on a blockchain ensures transparency, security, and immutability.
+
+## Smart contracts on Dusk
+
+Dusk offers robust support for smart contracts, as developers can leverage the features offered 
+by <a href="https://github.com/dusk-network/rusk" target="_blank">Rusk</a>, specifically **execution-core** and **rusk-abi**.
+The rusk-abi serves as an entrypoint to be able to interact with the lower level underlying VM, which is called **Piecrust**.
+
+Theoretically, developers can use any programming language that compiles to WebAssembly (**WASM**), but we strongly recommend developers to use Rust due to its extensive support in our ecosystem.
+
+In order to deploy a smart contract, developers only need to compile their contracts to WASM together with exposing the functions to the host. 
+
+### Comparison
+
+Here is a simplified comparison between Dusk and other smart contracts platforms:
+
+|          Feature          |      EVM      |   CosmWasm    |    Solana     |          Dusk          |
+| :-----------------------: | :-----------: | :-----------: | :-----------: | :--------------------: |
+| Main Programming Language |   Solidity    |     Rust      |     Rust      |          Rust          |
+|    Transaction Models     | Account-based | Account-based | Account-based | UTXO and account-based |
+|     Compiling Target      | EVM bytecode  |     WASM      |      BPF      |          WASM          |
+|            VM             |      EVM      |      No       |   Sealevel    |        Piecrust        |
+
+
+### Examples
+
+There are several <a href="https://github.com/dusk-network/piecrust/tree/main/contracts" target="_blank">smart contracts examples</a> available, which can be used for reference.
+
+<CardGrid>
+        <LinkCard title="Getting Started" href="./getting-started" description="Install all necessary dependencies and tools to get started with Smart Contract development"/>
+        <LinkCard title="My first contract" href="./guides/01-my-first-contract" description="Dive directly into writing your first contract with a Step by Step guide"/>
+        <LinkCard title="Cheat Sheet" href="./cheat-sheet" description="Take a look at the cheat sheet for quick reference of concepts and code snippets"/>
+</CardGrid>
