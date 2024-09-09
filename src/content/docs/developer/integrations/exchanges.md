@@ -30,7 +30,6 @@ To access the blockchain you can either:
 - Use Dusk APIs (events system, HTTP ...)
 - Use RPCs providers
 
-  
 ## Spin up a node
 You can access the blockchain and submit transactions by running a Dusk node. [Technical requirements](https://docs.dusk.network/getting-started/node-setup/node-requirements) are quite light, and you can either [build from source](https://docs.dusk.network/getting-started/node-setup/build-from-source) or run a [Docker image](https://docs.dusk.network/getting-started/node-setup/docker-image).
 
@@ -51,6 +50,7 @@ In most cases, 1 block confirmation is sufficient for finality. The only excepti
 
 The [w3sper SDK](https://github.com/dusk-network/rusk/wiki/%5BDraft%5D-W3sper-SDK) provides address generation, transaction building, signing, and decoding functionalities. It can operate completely offline, without the need for an online wallet or node. The w3sper SDK leverages [wallet-core](https://github.com/dusk-network/dusk-wallet-core) to facilitate offline transaction processing and signing, producing both the transaction hash and signed transaction outputs. The format for transaction serialization and decoding is called `duskbytes`.
 
+
 # Resources
 
 ## Libraries
@@ -64,6 +64,7 @@ The [w3sper SDK](https://github.com/dusk-network/rusk/wiki/%5BDraft%5D-W3sper-SD
 ## Links
 - [Block explorer](https://explorer.dusk.network/)
 - [Web Wallet](https://wallet.dusk.network/)
+
 
 ## Token details
 
