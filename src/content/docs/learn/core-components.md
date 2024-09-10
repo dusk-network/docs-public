@@ -48,7 +48,9 @@ The stake contract is responsible for managing the stakes associated with node p
 
 ### Transactions on Dusk
 
-Transactions in Dusk are managed by the <a href="https://github.com/dusk-network/rusk/tree/master/contracts/transfer" target="_blank">Transfer Contract</a>. The transfer contract oversees the handling of both transparent and obfuscated transactions within the network. It maintains a Merkle tree of notes and a mapping of keys to balances to ensure integrity of the chain balances. The transfer contract also has the ability to combine notes, preventing the tree from becoming excessively large and hindering network performance. Through the transfer contract, inter-contract calls can be made.
+Transactions in Dusk are managed by the <a href="https://github.com/dusk-network/rusk/tree/master/contracts/transfer" target="_blank">Transfer Contract</a>. The transfer contract oversees the handling of both transparent and obfuscated transactions within the network. It maintains a Merkle tree of notes and a mapping of keys to balances to ensure integrity of the chain balances. The tree operates on an append-only structure, meaning that once a note is added, it remains there permanently—even after it has been spent. This ensures that no one can identify which notes have been spent in any given transaction, preserving anonymity.
+
+To minimize unnecessary entries and avoid overloading the tree, staking rewards are accumuated separately. When the rewards are withdrawn, they are consolidated into a single note representing the total accumulated stake
 
 Additionally, the transfer Contract supports **both** a [UTXO](tx-models#utxos) and [account-based](tx-models#account-model) model through [Phoenix](tx-models#phoenix) and [Moonlight](tx-models#moonlight) to handle transfers of the native currency, gas payments, and serve as a contract execution entry point.
 
@@ -78,7 +80,7 @@ At the foundation of Dusk’s architecture are the cryptographic primitives - BL
 
 BLS12_381 is a pairing-friendly elliptic curve used within Dusk to enable aggregation of signatures, which significantly reduces the amount of data to be stored and transmitted over the network, improving overall efficiency of the blockchain. This curve is especially crucial in the context of zero-knowledge proofs, where it provides the backbone for secure and private transactions.
 
-[Deep dive into BLS](/deep-dive/cryptography/bls) 
+[Deep dive into BLS](/learn/deep-dive/cryptography/bls) 
 
 ### JubJub
 
