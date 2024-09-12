@@ -11,15 +11,14 @@ Rusk is the [repository where the software of the Node is maintained](https://gi
 
 ## Types of Nodes
 
-Dusk supports several types of node configurations, depending on the preference of the users and their intended setup. 
+Dusk supports several types of node configurations. Of the three node types, only Provisioners are directly incentivized by the protocol through staking rewards. Provers and Archivers contribute critical services to the network, but rely on external agreements or use-case driven services like providing ZK-proof generation (for Provers) or historical data and API access (for Archivers).
 
-- **Provisioner**: Provisioners are specialized in directly participating in the consensus. They play a vital role as they are responsible for validating transactions, as well as processing and appending new blocks to Dusk blockchain.
-- **Prover**: Provers carry on the computation-heavy task of creating Zero-Knowledge proofs (ZKP), which are a requirement for transactions on Dusk.
-- **Full Node**: A full node combines the capabilities of a provisioner node and prover node. 
-- **Archiver**: While Provisioners and full nodes generally only keep the current state of the blockchain, Archivers instead maintain a complete copy of the blockchain. They normally don't actively engage in consensus related tasks and do not require a valid Stake.
+- **Provisioner**: Provisioners are the only node type that requires staking and participates in the consensus process, earning staking rewards. Provisioners play a vital role as they are responsible for validating transactions, as well as processing and appending new blocks to Dusk blockchain.
+- **Prover**: Provers carry on the computation-heavy task of creating Zero-Knowledge proofs (ZKP), which are a requirement for privacy-preserving transactions on Dusk and for certain ZK-powered applications.
+- **Archiver**: While Provisioners generally only keep the current state of the blockchain, Archivers instead maintain the full history of the blockchain accessible to applications, users, researchers and auditors. By maintaing and serving this data, Archivers can provide value to services and dApps that require long-term historical access. They normally don't actively engage in consensus related tasks and do not require a stake.
 
 :::tip[Recommended Setup]
-The recommended setup for network participants is to run a Provisioner node on a VPS or server, and a Prover locally on their machine/laptop. This ensures the most efficient configuration where the full resources of your machine is at disposal to the consensus, while maximizing privacy.
+The recommended setup for network participants looking to stake and use the network is to run a Provisioner node on a VPS or server, and a Prover locally on their machine/laptop. This ensures the most efficient configuration where the full resources of your provisioner node is at disposal to the consensus, while maximizing privacy by proving privacy-preserving transactions locally.
 :::
 
 ## DUSK Requirement
@@ -42,7 +41,7 @@ The node software has been tested on x86-64/AMD64 and ARM architectures.
 
 ### Provisioner Specifications
 
-These specifications are set to comfortably accommodate provisioner and full nodes, with limited proving capabilities.
+These specifications are set to comfortably accommodate provisioner nodes, with limited proving capabilities.
 
 For increased network throughput, the node benefits from highly performant single-threaded performance.
 
