@@ -13,7 +13,7 @@ description: Archival node RFP.
 
 ## Project Overview
 
-Archival nodes are full nodes responsible for maintaining a comprehensive record of all transactions, blocks, and events ever recorded on the blockchain, from the genesis block. Archival nodes are a critical piece of infrastructure because they provide access to extensive historical data. Applications can query these nodes for detailed historical information, enabling complex analyses and queries.
+Archival nodes are nodes responsible for maintaining a comprehensive record of all transactions, blocks, and events ever recorded on the blockchain, from the genesis block. Archival nodes are a critical piece of infrastructure because they provide access to extensive historical data. Applications can query these nodes for detailed historical information, enabling complex analyses and queries.
 
 In Dusk, archival nodes are available under a feature flag. This means that when setting up a node on Dusk, users can configure their node as an archival node. This configuration allows the node to record and store all events witnessed on the Dusk blockchain in a database.
 
