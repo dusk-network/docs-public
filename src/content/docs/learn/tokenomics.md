@@ -5,6 +5,8 @@ description: Tokenomics, allocation, vesting and emission of the Dusk token.
 
 The Dusk protocol utilizes the DUSK token both as an incentive for consensus participation and as its primary native currency. DUSK is currently represented as an ERC-20 or BEP-20 token. Upon the mainnet launch, users will be able to migrate their tokens to native DUSK via a burner contract.
 
+This page provides an in-depth overview of the DUSK token’s metrics, utility, allocation, emission schedule, rewards, as well as insights from the <a href="https://github.com/dusk-network/audits/blob/main/Dusk_Report%20(1).pdf">Economic Protocol Design</a> report.
+
 ## Token Metrics
 
 - **Token Name**: Dusk
