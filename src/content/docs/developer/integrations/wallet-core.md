@@ -5,7 +5,7 @@ description: Documentation on how to interact with wallet-core.
 
 This is documentation for how to use the wallet-core library from any programming language of your preference. 
 
-This wallet-core is used in a js library for the web and a rust library (wallet-cli) through wasmer. They are both examples on how to use this library.
+This wallet-core is used in a js library for the web and a rust library (rusk-wallet). They are both examples on how to use this library.
 
 This wiki documents how to sign transactions or extend your own code to talk to the blockchain.
 
@@ -34,7 +34,7 @@ const json = {
     "fee": null, 
     "inputs": ..., // they are the unspent notes which are persisted from the sync
     "output": output,
-    "openings": ..., // fetched from the node, see dusk-wallet-js/wallet-cli on how to do it
+    "openings": ..., // fetched from the node, see dusk-wallet-js/rusk-wallet on how to do it
     "gas_limit": ...,
     "gas_price": ...,
     "refund": ...,
@@ -178,4 +178,4 @@ console.log("propagating chain request status: " + propagateReq.status);
 ```
 And we should get 200 request for everything.
 
-The wallet-cli library is an example of how to do these operations, refer to it until more fuller documentation is online.
+The rusk-wallet library is an example of how to do these operations, refer to it until more fuller documentation is online.

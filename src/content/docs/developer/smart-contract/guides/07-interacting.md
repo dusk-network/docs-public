@@ -99,4 +99,4 @@ The ref_id in the output is optional and represents a nonce used for generating 
 
 It is recommended to follow the tests in rusk, for example the staking one.
 
-The code wallet-cli is using currently is same being used on the rusk test cases (e.g. there is a get_stake call).
+The code rusk-wallet is using currently is same being used on the rusk test cases (e.g. there is a get_stake call).
