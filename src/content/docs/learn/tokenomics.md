@@ -11,7 +11,7 @@ This page provides an in-depth overview of the DUSK token’s metrics, utility, 
 
 - **Token Name**: Dusk
 - **Token Symbol**: DUSK
-- **Initial Supply**: 500,000,000 DUSK, comprising both ERC-20, BEP-20 and BEP2 versions. These will be migrated to native DUSK tokens after the mainnet launch using a burner contract.
+- **Initial Supply**: 500,000,000 DUSK, comprising both ERC-20, BEP-20. These will be migrated to native DUSK tokens after the mainnet launch using a burner contract.
 - **Total Emitted Supply**: 500,000,000 DUSK will be emitted over 36 years to reward stakers on the mainnet, following the [Token Emission Schedule](#token-emission-schedule).
 - **Maximum Supply**: 1,000,000,000 DUSK, combining the 500M initial supply and 500M emitted over time.
 - **Circulating Supply**: Available on [this page](https://supply.dusk.network/). The circulating supply reflects the initial supply minus the DUSK held by the [Dusk deployer](https://etherscan.io/token/0x940a2db1b7008b6c776d4faaca729d6d4a4aa551?a=0x618bb3b255928ae6b2046df5c828fa1dc7e3c5f0). Post-mainnet, this value will increase as additional tokens are emitted.
@@ -19,13 +19,13 @@ This page provides an in-depth overview of the DUSK token’s metrics, utility, 
 
 ## Token Contract
 
-The DUSK token is available as an ERC20 on Ethereum, a BEP20 on Binance Smart Chain and a BEP2 token on Binance Beacon Chain.
+The DUSK token is available as an ERC20 on Ethereum and a BEP20 on Binance Smart Chain.
 
 | Chain                | Standard | Contract Address                           |
 |----------------------|----------|--------------------------------------------|
 | Ethereum             | ERC20    | [0x940a2db1b7008b6c776d4faaca729d6d4a4aa551](https://etherscan.io/token/0x940a2db1b7008b6c776d4faaca729d6d4a4aa551) |
 | Binance Smart Chain  | BEP20    | [0xb2bd0749dbe21f623d9baba856d3b0f0e1bfec9c](https://bscscan.com/token/0xb2bd0749dbe21f623d9baba856d3b0f0e1bfec9c) |
-| Binance Beacon Chain | BEP2     | [DUSK-45E](https://explorer.bnbchain.org/asset/DUSK-45E) |
+
 
 ## Token Markets & Exchanges
 
@@ -89,16 +89,9 @@ Key aspects of the DUSK token emission schedule include:
 - **36-Year Emission Duration**: The token emission is distributed across 36 years, divided into 9 periods of 4 years each.
 - **Emission Reduction Every 4 Years**: Token emission decreases every 4 years by a fixed reduction rate, ensuring gradual reduction in token issuance, similar to Bitcoin’s halving model.
 
-## Token Emission Strategies
+## Token Emission
 
-To ensure flexibility and sustainability, three different emission strategies have been proposed, each varying in the initial emission rate and the reduction rate per period.
-
-The following tables present the token emission schedule under three proposed strategies. Each strategy adjusts the initial emission rate and reduction rate to balance early incentives with long-term sustainability. Each table outlines the total number of tokens emitted per 4-year period, the cumulative supply over time, the emission rate per block, and the reduction rate applied in each period.
-
-### Scenario 1: High Initial Emission (r = 0.6)
-
-
-In the scenario with a high initial emission, the emission rate starts with a reduction rate `r = 0.5`, meaning the token emission halves every 4 years. This strategy is designed to rapidly build network participation by providing strong early incentives.
+The emission rate starts with a reduction rate `r = 0.5`, meaning the token emission halves every 4 years. This strategy is designed to rapidly build network participation by providing strong early incentives.
 
 | Period (Years)     | Period Duration (Blocks) | Total Emission (DUSK) | Total Supply (Cumulative) | Emission Per Block | Reduction Rate (r) |
 |--------------------|--------------------------|-----------------------|---------------------------|--------------------|--------------------|
@@ -112,40 +105,8 @@ In the scenario with a high initial emission, the emission rate starts with a re
 | 8 (28-32)          | 12,614,400               | 1.95M                 | 498.99M                   | 0.1551 DUSK/block  | 0.5                |
 | 9 (32-36)          | 12,614,400               | 0.98M                 | 499.97M                   | 0.0776 DUSK/block  | 0.5                |
 
-
-### Scenario 2: Moderate Initial Emission (r = 0.6)
-
-This scenarios balances high early incentives with longer-term sustainability by reducing the token emission by 40% every 4 years. The reduction rate `r = 0.6` ensures a moderate decrease in emissions, fostering sustained network engagement.
-
-| Period (Years)     | Period Duration (Blocks) | Total Emission (DUSK) | Total Supply (Cumulative) | Emission Per Block | Reduction Rate (r) |
-|--------------------|--------------------------|-----------------------|---------------------------|--------------------|--------------------|
-| 1 (0-4)            | 12,614,400               | 201.22M               | 201.22M                   | 15.943 DUSK/block  | N/A                |
-| 2 (4-8)            | 12,614,400               | 120.73M               | 321.95M                   | 9.568 DUSK/block   | 0.6                |
-| 3 (8-12)           | 12,614,400               | 72.44M                | 394.39M                   | 5.743 DUSK/block   | 0.6                |
-| 4 (12-16)          | 12,614,400               | 43.46M                | 437.85M                   | 3.445 DUSK/block   | 0.6                |
-| 5 (16-20)          | 12,614,400               | 26.08M                | 463.93M                   | 2.067 DUSK/block   | 0.6                |
-| 6 (20-24)          | 12,614,400               | 15.65M                | 479.58M                   | 1.240 DUSK/block   | 0.6                |
-| 7 (24-28)          | 12,614,400               | 9.39M                 | 488.97M                   | 0.744 DUSK/block   | 0.6                |
-| 8 (28-32)          | 12,614,400               | 5.63M                 | 494.60M                   | 0.446 DUSK/block   | 0.6                |
-| 9 (32-36)          | 12,614,400               | 3.38M                 | 497.98M                   | 0.268 DUSK/block   | 0.6                |
-
-### Scenario 3: Low Initial Emission (r = 0.7)
-
-Designed for gradual and sustained growth, this sceraio has the lowest initial emission and a 30% reduction every 4 years. The reduction rate `r = 0.7` ensures a slower decline in token issuance, making it ideal for maintaining long-term participation and network stability.
-
-| Period (Years)     | Period Duration (Blocks) | Total Emission (DUSK) | Total Supply (Cumulative) | Emission Per Block | Reduction Rate (r) |
-|--------------------|--------------------------|-----------------------|---------------------------|--------------------|--------------------|
-| 1 (0-4)            | 12,614,400               | 154.36M               | 154.36M                   | 12.235 DUSK/block  | N/A                |
-| 2 (4-8)            | 12,614,400               | 108.05M               | 262.41M                   | 8.566 DUSK/block   | 0.7                |
-| 3 (8-12)           | 12,614,400               | 75.63M                | 338.04M                   | 5.993 DUSK/block   | 0.7                |
-| 4 (12-16)          | 12,614,400               | 52.94M                | 390.98M                   | 4.195 DUSK/block   | 0.7                |
-| 5 (16-20)          | 12,614,400               | 37.06M                | 428.04M                   | 2.938 DUSK/block   | 0.7                |
-| 6 (20-24)          | 12,614,400               | 25.94M                | 453.98M                   | 2.056 DUSK/block   | 0.7                |
-| 7 (24-28)          | 12,614,400               | 18.16M                | 472.14M                   | 1.439 DUSK/block   | 0.7                |
-| 8 (28-32)          | 12,614,400               | 12.71M                | 484.85M                   | 1.007 DUSK/block   | 0.7                |
-| 9 (32-36)          | 12,614,400               | 8.90M                 | 493.75M                   | 0.706 DUSK/block   | 0.7                |
-
-
+More information regarding the model can be found in the
+<a href="https://github.com/dusk-network/audits/blob/main/Dusk_Report%20(1).pdf">Economic Protocol Design</a> report.
 
 ## Incentive Structure
 
