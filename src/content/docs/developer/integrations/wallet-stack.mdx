@@ -3,18 +3,11 @@ title: The Wallet Stack
 description: An overview of the wallet ecosystem in Dusk.
 ---
 
-The wallet is a crucial part of interacting with our network. We have the wallet repositories that follow.
+Wallets are a crucial part of any network, they're the gateway for users to interact with it. Our stack consists of a number of libraries to interact with the chain:
 
-- [dusk-wallet-core](https://github.com/dusk-network/wallet-core/)
-    A web assembly/rust library that allows you to write transactions for transfer, stake and do basic wallet actions.
+- [wallet-core](https://github.com/dusk-network/rusk/tree/master/wallet-core)
+    A WebAssembly/Rust library that allows you to write transactions for transfer, stake and do basic wallet actions.
 - [rusk-wallet](https://github.com/dusk-network/rusk/tree/master/rusk-wallet/)
-    A CLI wallet written in rust to interface with our network.
+    A wallet library and CLI tool written in Rust to interface with our network.
 
-There's a specific guide on how to use the API of `wallet-core`, but `rusk-wallet`
-is an application meant to be used as a standalone wallet.
-
-import { LinkCard, CardGrid } from '@astrojs/starlight/components';
-
-<CardGrid>
-     <LinkCard title="dusk-wallet-core" icon="add-document" href="/getting-started/wallet/wallet-core" description="Documentation about the usage of the dusk-wallet-core library and the API it exposes."/>
-</CardGrid>
+There's a specific guide on how to use the API of `wallet-core`. `rusk-wallet` is both an application meant to be used as a standalone wallet, and a library used for enriching `wallet-core` in a CLI context.
