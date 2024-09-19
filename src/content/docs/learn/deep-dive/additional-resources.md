@@ -22,3 +22,6 @@ description: Links to our research papers and technical blogs.
 - [Understanding Citadel: How Does It Work Under the Hood?](https://dusk.network/news/understanding-citadel)
 - [Why We Need Phoenix and Zedger](https://dusk.network/news/why-we-need-phoenix-and-zedger)
 - [Get to Know Dusk: Our Network Architecture](https://dusk.network/news/get-to-know-dusk-our-network-architecture)
+
+## Audits
+- [Audits Reports](https://github.com/dusk-network/audits)

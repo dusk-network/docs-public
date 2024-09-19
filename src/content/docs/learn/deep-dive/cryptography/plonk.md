@@ -3,7 +3,7 @@ title: PLONK
 description: Plonk explained.
 ---
 
-<a href="https://eprint.iacr.org/2019/953.pdf" target="_blank">PLONK</a> is a polynomial Interactive Oracle Proof (IOP) where a Prover can convince a Verifier that for a public circuit **C** and statement **x**, he has a witness **w** such that **C(x,w) = 0**.
+<a href="https://eprint.iacr.org/2019/953.pdf" target="_blank">PLONK</a> is a polynomial Interactive Oracle Proof (IOP) where a Prover can convince a Verifier that for a public circuit `C` and statement `x`, he has a witness `w` such that `C(x,w) = 0`.
 
 This means that the PLONK IOP can be used together with a Polynomial Commitment Scheme (PCS) to construct a universal SNARK for general circuits.
 
@@ -88,4 +88,4 @@ The required steps when using PLONK to construct a SNARK can be summarized as fo
     - Gates are correct. He does this by proving that a specific polynomial is identical to 0 on the set of gates.
     - Wires are correct. He does this by proving that a specific polynomial is equal to 0 for a permutation-check.
     - The output of the circuit is equal to the output of the last gate, which is equal to 0.
-The verifications of this last step correspond to three “0 tests” and one evaluation test. If successful, these checks convince the Verifier that the polynomial commitment provided by the Prover is the commitment to a valid computation trace. This implies that the prover has a valid witness such as that **C(x,w) = 0**.
+The verifications of this last step correspond to three “0 tests” and one evaluation test. If successful, these checks convince the Verifier that the polynomial commitment provided by the Prover is the commitment to a valid computation trace. This implies that the prover has a valid witness such as that `C(x,w) = 0`.

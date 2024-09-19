@@ -74,6 +74,9 @@ The [w3sper SDK](https://github.com/dusk-network/rusk/wiki/%5BDraft%5D-W3sper-SD
 - Token decimals: `9` (18 decimals for ERC-20 / BEP-20 versions)
 - [Tokenomics and metrics](https://docs.dusk.network/learn/economic-information/tokenomics/#token-metrics)
 - Consensus Mechanism: [Succinct Attestation Consensus](http://localhost:4321/learn/deep-dive/succinct-attestation)
+
+### Audits
+- [Audits Reports](https://github.com/dusk-network/audits)
   
 ## Q&As
 ### Status of Hardware Wallet Support

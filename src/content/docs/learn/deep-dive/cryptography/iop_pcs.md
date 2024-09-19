@@ -82,7 +82,7 @@ Let's first understand why this procedure is so important.
 
 If a circuit has a number of gates **d**, the polynomial would have at most a degree **d**. An important thing to note is that the verifier will need to have enough time to read the circuit if he wants to be able to verify the proofs. Allowing the verifier to read the circuit would mean that the verifier algorithm would need to run in linear time to the size of the circuit, which is a problem. Because the polynomial used to represent the circuit with can be huge (e.g. a degree of 1 billion) if the verifier algorithm was running in linear time to the size of the circuit, the proof wouldn't be succinct.
 
-To have a SNARK, the verifier algorithm to operate in a logarithmic time in the size of the circuit **C**, enabling succinctness. Anyways, the issue we encounter by having the verifier algorithm operating in logarithmic time, is that the verifier doesn’t have enough time to know what the circuit looks like. This is a problem because the verifier is tasked with dealing with the polyonmial without knowing the full description of it.
+To have a SNARK, the verifier algorithm to operate in a logarithmic time in the size of the circuit `C`, enabling succinctness. Anyways, the issue we encounter by having the verifier algorithm operating in logarithmic time, is that the verifier doesn’t have enough time to know what the circuit looks like. This is a problem because the verifier is tasked with dealing with the polyonmial without knowing the full description of it.
 
 To solve this issue, the verifier needs to have at least the summary of polynomial, so that he is able to evaluate it at the chosen points. By giving the verifer parameters that can function as a summary of the circuit, we obtain a succinct proof (as the proof size and verifier time becomes logarithmic in the degree of the polynomial). 
 
@@ -90,7 +90,7 @@ We do so by a pre-processing step, which leverages the PCS to let the prover com
 
 The pre-processing step is important, because it’s the algorithm that generates parameters for both the prover and the verifier, allowing the verifier to operate in a logarithmic time in the size of the circuit.
 
-With the pre-processing step, the Verifier can work on a summary of the circuit and verify evaluations at arbitrary points without needing to know the full description of the circuit. The pre-processing steps involve an algorithm that takes as an input the circuit **C** and some randomness (random bits). The short summary of the circuit is represented via a string, and the verifier is able to know a summary of the circuit through that string.
+With the pre-processing step, the Verifier can work on a summary of the circuit and verify evaluations at arbitrary points without needing to know the full description of the circuit. The pre-processing steps involve an algorithm that takes as an input the circuit `C` and some randomness (random bits). The short summary of the circuit is represented via a string, and the verifier is able to know a summary of the circuit through that string.
 
 ##### Algorithms and inputs
 The pre-processing argument system takes in 3 algorithms: the setup, the verifier, and the prover algorithms. 
@@ -115,9 +115,9 @@ To make sure that the final proof is succinct, we need to pre-process the circui
 Once having chosen the prover and verifier algorithms, the public parameters need to be fed into the snark backend prover system (e.g. a prover would be running something like Groth16, Plonk, Bulletproofs..).
 
 ##### 5) Prover / Verifier interaction
-The prover wants to prove that he can calculate ** f(x) = y**. The prover also wants to prove that the function f is included in the specific domain (the set of functions we have chosen previously).
+The prover wants to prove that he can calculate `f(x) = y` . The prover also wants to prove that the function f is included in the specific domain (the set of functions we have chosen previously).
 
-In other words, the Prover wants to prove that for a circuit **C** and a statement s, he knows a witness w such as that the circuit is equal to **0**, which in short means **C(s,w) = 0**. The witness in this case is the description of the function f along with the randomness r. Hopefully, the proof is short enough (e.g. few KBs).
+In other words, the Prover wants to prove that for a circuit `C` and a statement `s`, he knows a witness w such as that the circuit is equal to `0`, which in short means `C(s,w) = 0` . The witness in this case is the description of the function f along with the randomness r. Hopefully, the proof is short enough (e.g. few KBs).
 
 The first message in the protocol is the commitment to a polynomial sent from the Prover to the Verifier. To send the first message, the Prover chooses a function in the set and commits to it by running the commit algorithm. The commit algorithm outputs a commitment string, which is then used as a commitment to the global parameters, the selected function, and the randomness. This first message is important because it specifies the polynomial that the Prover committed to. After this first message, the interactive procedure starts.
 
@@ -140,7 +140,7 @@ This procedure involves a series of rounds where:
 These steps are repeated for several rounds, as this is a continuous interaction between the prover and verifier. Anyways, when using the Fiat-Shamir transformation, the interaction becomes non-interactive by being simulated via hashes obtained by an initial randomness provided by the verifier. 
 
 ##### 6) Final Round
-After a certain number of interaction, the prover commits to the last polynomial and sends the commit. The verifier then chooses whether to accept or reject the proof, by taking as inputs the statement, the random values, and the evaluations of the polynomials at all the points that he chooses. By committing to the polynomial, he is providing a succinct proof that he knows a witness (the function description and a randomness)such that **f(x)=y**.
+After a certain number of interaction, the prover commits to the last polynomial and sends the commit. The verifier then chooses whether to accept or reject the proof, by taking as inputs the statement, the random values, and the evaluations of the polynomials at all the points that he chooses. By committing to the polynomial, he is providing a succinct proof that he knows a witness (the function description and a randomness)such that `f(x)=y` .
 
 ## Wrap-up
 

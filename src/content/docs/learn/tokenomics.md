@@ -5,7 +5,7 @@ description: Tokenomics, allocation, vesting and emission of the Dusk token.
 
 The Dusk protocol utilizes the DUSK token both as an incentive for consensus participation and as its primary native currency. DUSK is currently represented as an ERC-20 or BEP-20 token. Upon the mainnet launch, users will be able to migrate their tokens to native DUSK via a burner contract.
 
-This page provides an in-depth overview of the DUSK token’s metrics, utility, allocation, emission schedule, rewards, as well as insights from the <a href="https://github.com/dusk-network/audits/blob/main/Dusk_Report%20(1).pdf">Economic Protocol Design</a> report.
+This page provides an in-depth overview of the DUSK token’s metrics, utility, allocation, emission schedule, rewards, as well as insights from the <a href="https://github.com/dusk-network/audits/blob/main/core-audits/2024-09_protocol-security-review_oak-security.pdf">Economic Protocol Design</a> report.
 
 ## Token Metrics
 
@@ -106,7 +106,7 @@ The emission rate starts with a reduction rate `r = 0.5`, meaning the token emis
 | 9 (32-36)          | 12,614,400               | 0.98M                 | 499.97M                   | 0.0776 DUSK/block  | 0.5                |
 
 More information regarding the model can be found in the
-<a href="https://github.com/dusk-network/audits/blob/main/Dusk_Report%20(1).pdf">Economic Protocol Design</a> report.
+<a href="https://github.com/dusk-network/audits/blob/main/core-audits/2024-09_protocol-security-review_oak-security.pdf">Economic Protocol Design</a> report.
 
 ## Incentive Structure
 
