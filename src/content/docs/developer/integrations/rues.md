@@ -158,9 +158,9 @@ POST https://nodes.dusk.network/on/contracts:efda355bc94a3be09006dc90f3714a0ee22
 | `404 Not Found`             | `[component]`, `[target]`, or `[topic]` not found          |
 | `422 Unprocessable Content` | Payload cannot be processed with the  given `Content-Type`        |
 
-## Event Endpoints
+## General Endpoints
 
-RUES provides access to multiple key blockchain components through event-driven interactions. Below are the primary event categories.
+These are endpoints accessible regardless of the node role. They include queries for general blockchain state and node information.
 
 ### GraphQL Queries
 
@@ -204,7 +204,7 @@ Example query for requesting the latest block.
 
 **Endpoint**: `/on/node/info`
 
-Retrieves general information about the node.
+Retrieves general information about the node, like the chain ID of the network the node operates on, its bootstrapping nodes, the Rusk version it uses and its Kadcast IP address.
 
 **Method**: `POST`
 
@@ -287,6 +287,37 @@ a9909cd1...580a0000
 
 ### Blocks
 
+#### Block Events
+
+**Endpoint**: `/on/blocks:[block-hash]/[topic]`, where `[topic]` is optional. Block events can have the topic `accepted`, or `statechange`.
+
+- **accepted**: Indicates that a block has been accepted into the chain.
+- **statechange**: Represents a change in the state of a block. The state of a block can be either `finalized` or `confirmed`.
+
+**Method**: `GET`
+
+**Example Request**:
+
+This example request listens to the `accepted` topic for a given block.
+
+```
+GET https://nodes.dusk.network/on/blocks:041e52089c69321eee12d6035917fc916e0c32f2457944d28060c95bb3dd231a/accepted
+```
+
+**Example Event**:
+
+```json
+[
+    {
+        "event": {
+            "target": "blocks:041e52089c69321eee12d6035917fc916e0c32f2457944d28060c95bb3dd231a",
+            "topic": "accepted",
+            "data": "a7d4f3b300143398de3bb3dbd8bc028c9c3dc3f96ef4232d90f56f50792cc06099d8ac05b26c31b719101434867af30322223d12e05a86423fb2b34624098dea043e30f8c6b8a3ae6e6a34f9307727bef4bbee8f9e14682300a6a5ba0a21180c711ce0dc6fc302522e18e9ad64a18881a2c2cfc636ffbd2c78cfd4d902986e167004ef61290902e259f3a10751742a0506f85a74dcc53877d60249427b3420bed341d11b3f56a61be4262bc87abd55ba651033583772d46147f1d7996cb9da05000000000000000020ea833c03000000000000000000000094d8bbc772a39dee8e2663d11fd067a0a90b68876acc4e316cd5fff2ea4b7cd068cdacd77d1434ba7cf7fb8bf0897f043b86208c6110fdf2996d01e26513d256abb5fd42ae9b91a116b347ef3ca3c4510b85f9e2f038092e39cc0e1d0e9b940f5b001d28ef68e5f68aa9edda93c8d1bbf1e47124b1ecf4825f0c169e0e35c37a5daed454a1375d8eba851df1c851fc0030abeeb9f7efd3150b4f50590ea5788f0f4e68b4c750d0201a9c17354a86f8bc031bfe4b955a698400276be5a2a8ef070000000000000000e0fc5b7600000000030000000000000050feffff02000000"
+        }
+    }
+]
+```
+
 #### Gas Price
 
 This endpoint retrieves the gas price for the latest blocks.
@@ -314,11 +345,120 @@ POST https://nodes.dusk.network/on/blocks/gas-price
 
 ### Transactions
 
+#### Transaction Events
+
+**Endpoint**: `/on/transactions:[transaction-id]/[topic]`, where `[topic]` is optional. Transaction events can have the topic `Removed`, `Included`, or `Executed`.
+
+- **Removed**: Indicates that the transaction has been removed from the mempool.
+- **Included**: A transaction has been included in the mempool.
+- **Executed**: A transaction that has been executed in an accepted block.
+
+**Method**: `GET`
+
+**Example Request**:
+
+This example request listens to the `Executed` topic for a given transaction.
+
+```
+GET https://nodes.dusk.network/on/transactions:04786a6678b376588bc74868879c6f07db2a19933082173ea4898570a9514709/Executed
+```
+
+**Example Event**:
+
+```json
+[
+    {
+        "event": {
+            "target": "0100000000000000000000000000000000000000000000000000000000000000",
+            "topic": "moonlight",
+            "data": "a7d4f3b300143398de3bb3dbd8bc028c9c3dc3f96ef4232d90f56f50792cc06099d8ac05b26c31b719101434867af30322223d12e05a86423fb2b34624098dea043e30f8c6b8a3ae6e6a34f9307727bef4bbee8f9e14682300a6a5ba0a21180c711ce0dc6fc302522e18e9ad64a18881a2c2cfc636ffbd2c78cfd4d902986e167004ef61290902e259f3a10751742a0506f85a74dcc53877d60249427b3420bed341d11b3f56a61be4262bc87abd55ba651033583772d46147f1d7996cb9da05000000000000000020ea833c03000000000000000000000094d8bbc772a39dee8e2663d11fd067a0a90b68876acc4e316cd5fff2ea4b7cd068cdacd77d1434ba7cf7fb8bf0897f043b86208c6110fdf2996d01e26513d256abb5fd42ae9b91a116b347ef3ca3c4510b85f9e2f038092e39cc0e1d0e9b940f5b001d28ef68e5f68aa9edda93c8d1bbf1e47124b1ecf4825f0c169e0e35c37a5daed454a1375d8eba851df1c851fc0030abeeb9f7efd3150b4f50590ea5788f0f4e68b4c750d0201a9c17354a86f8bc031bfe4b955a698400276be5a2a8ef070000000000000000e0fc5b7600000000030000000000000050feffff02000000"
+        },
+        "origin": "txID01010101"
+    }
+]
+```
+
 #### Preverify
+
+This endpoint pre-verifies a transaction without executing or propagating it. The transaction is checked to ensure it conforms to network rules before being propagated or executed.
+
+**Endpoint**: `/on/transactions/preverify`
+
+**Method**: `POST`
+
+**Example Request**:
+
+```
+POST https://nodes.dusk.network/on/transactions/preverify
+```
+
+**Request Body**:
+
+The request body should contain the raw binary representation of a transaction.
+
+```
+a9909cd1...580a0000
+```
+
+**Example Response**:
+
+Upon success, the transaction will be pre-verified, but no specific data is returned unless there is an error.
 
 #### Propagate
 
+This endpoint propagates a transaction across the network.
+
+**Endpoint**: `/on/transactions/propagate`
+
+**Method**: `POST`
+
+**Example Request**:
+
+```
+POST https://nodes.dusk.network/on/transactions/propagate
+```
+
+**Request Body**:
+
+The request body should contain the raw binary representation of a transaction.
+
+```
+a9909cd1...580a0000
+```
+
+**Example Response**:
+
+Upon success, the transaction will be propagated across the network. This endpoint returns a response indicating success but no specific data.
+
 ### Contracts
+
+#### Contract Events
+
+**Endpoint**: `/on/contracts:[contract-id]/[event-name]`, where `[event-name]` is optional. If the event name is not provided, the connection will listen to all events on the given contract.
+
+**Method**: `GET`
+
+**Example Request**:
+
+This example request listens to `stake` events from the stake contract.
+
+```
+GET https://nodes.dusk.network/on/contracts:0200000000000000000000000000000000000000000000000000000000000000/stake
+```
+
+**Example Event**: 
+
+```json
+[
+    {
+        "event": {
+            "target": "0200000000000000000000000000000000000000000000000000000000000000",
+            "topic": "reward",
+            "data": "a7d4f3b300143398de3bb3dbd8bc028c9c3dc3f96ef4232d90f56f50792cc06099d8ac05b26c31b719101434867af30322223d12e05a86423fb2b34624098dea043e30f8c6b8a3ae6e6a34f9307727bef4bbee8f9e14682300a6a5ba0a21180c711ce0dc6fc302522e18e9ad64a18881a2c2cfc636ffbd2c78cfd4d902986e167004ef61290902e259f3a10751742a0506f85a74dcc53877d60249427b3420bed341d11b3f56a61be4262bc87abd55ba651033583772d46147f1d7996cb9da05000000000000000020ea833c03000000000000000000000094d8bbc772a39dee8e2663d11fd067a0a90b68876acc4e316cd5fff2ea4b7cd068cdacd77d1434ba7cf7fb8bf0897f043b86208c6110fdf2996d01e26513d256abb5fd42ae9b91a116b347ef3ca3c4510b85f9e2f038092e39cc0e1d0e9b940f5b001d28ef68e5f68aa9edda93c8d1bbf1e47124b1ecf4825f0c169e0e35c37a5daed454a1375d8eba851df1c851fc0030abeeb9f7efd3150b4f50590ea5788f0f4e68b4c750d0201a9c17354a86f8bc031bfe4b955a698400276be5a2a8ef070000000000000000e0fc5b7600000000030000000000000050feffff02000000"
+        }
+    }
+]
+```
 
 ### Network
 
@@ -354,6 +494,52 @@ POST https://nodes.dusk.network/on/network/peers
 ]
 ```
 
-### Prover
+## Archiver Endpoints
 
-#### Prove
+These endpoints provide access to historical data and events stored by Archivers.
+
+### Moonlight Transaction History
+
+This endpoint provides access to the Moonlight transaction history stored by archivers in an efficient way. 
+
+Details to be filled in based on implementation.
+
+### Historical Events
+
+This endpoint provides access to other historical events in the blockchain. 
+
+Details to be filled in based on implementation.
+
+## Prover Endpoints
+
+The Provers in the network are responsible for generating Zero-Knowledge proofs. These endpoints offer proof-related functionality.
+
+### Prove
+
+This endpoint triggers the prover to generate a Zero-Knowledge proof for the provided data.
+
+**Endpoint**: `/on/prover/prove`
+
+**Method**: `POST`
+
+**Example Request**:
+
+```
+POST https://nodes.dusk.network/on/prover/prove
+```
+
+**Request Body**:
+
+The request body should contain raw binary data 
+
+```
+a9909cd1...580a0000
+```
+
+**Example Response**:
+
+Upon success, the prover will return the generated proof, likely as raw binary data.
+
+```
+a9909cd1...580a0000
+```
