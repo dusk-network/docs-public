@@ -9,7 +9,7 @@ This guide shows how to add DUSK to an Exchange by providing all the relevant in
 
 ## Mainnet Launch
 
-Dusk is launching its mainnet on the **20th of September**, meaning that Exchanges will be able to offer native DUSK. 
+Dusk is launching its mainnet on the **15th of October**, meaning that Exchanges will be able to offer native DUSK. 
 
 ### Token Migration
 
