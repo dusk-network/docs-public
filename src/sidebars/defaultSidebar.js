@@ -11,6 +11,7 @@ const defaultSidebar = [
       { label: "Transaction Fees & Gas", link: "learn/tx-fees" },
       { label: "Transaction Models", link: "learn/tx-models" },
       { label: "Token Standards", link: "learn/token-standards" },
+      { label: "Native Issuance", link: "learn/tokenization-comparison" },
       { label: "Get involved & Community", link: "learn/community" },
       { label: "Glossary", link: "learn/glossary" },
     ],
