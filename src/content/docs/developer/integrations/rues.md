@@ -18,7 +18,7 @@ Before interacting with RUES, clients must establish a WebSocket session with a 
 To start a session, initiate a WebSocket connection to the node. Upon connection, the server responds with a `Rusk-Session-Id`, a 16 byte random nonce that is essential for event subscriptions and dispatches.
 
 ```
-wss://[node-address]
+wss://[node-address]/on
 ```
 
 ### Session Persistence 
@@ -301,21 +301,22 @@ a9909cd1...580a0000
 This example request listens to the `accepted` topic for a given block.
 
 ```
-GET https://nodes.dusk.network/on/blocks:041e52089c69321eee12d6035917fc916e0c32f2457944d28060c95bb3dd231a/accepted
+GET https://nodes.dusk.network/on/blocks/accepted
 ```
 
 **Example Event**:
 
-```json
-[
-    {
-        "event": {
-            "target": "blocks:041e52089c69321eee12d6035917fc916e0c32f2457944d28060c95bb3dd231a",
-            "topic": "accepted",
-            "data": "a7d4f3b300143398de3bb3dbd8bc028c9c3dc3f96ef4232d90f56f50792cc06099d8ac05b26c31b719101434867af30322223d12e05a86423fb2b34624098dea043e30f8c6b8a3ae6e6a34f9307727bef4bbee8f9e14682300a6a5ba0a21180c711ce0dc6fc302522e18e9ad64a18881a2c2cfc636ffbd2c78cfd4d902986e167004ef61290902e259f3a10751742a0506f85a74dcc53877d60249427b3420bed341d11b3f56a61be4262bc87abd55ba651033583772d46147f1d7996cb9da05000000000000000020ea833c03000000000000000000000094d8bbc772a39dee8e2663d11fd067a0a90b68876acc4e316cd5fff2ea4b7cd068cdacd77d1434ba7cf7fb8bf0897f043b86208c6110fdf2996d01e26513d256abb5fd42ae9b91a116b347ef3ca3c4510b85f9e2f038092e39cc0e1d0e9b940f5b001d28ef68e5f68aa9edda93c8d1bbf1e47124b1ecf4825f0c169e0e35c37a5daed454a1375d8eba851df1c851fc0030abeeb9f7efd3150b4f50590ea5788f0f4e68b4c750d0201a9c17354a86f8bc031bfe4b955a698400276be5a2a8ef070000000000000000e0fc5b7600000000030000000000000050feffff02000000"
-        }
-    }
-]
+The event is returned as raw binary data. Ensure that your client can properly handle these formats according to the RUES specifications.
+Example for a newly accepted block.
+
+```hexdump
+00000000: 6B 00 00 00 7B 22 43 6F 6E 74 65 6E 74 2D 4C 6F    k...{"Content-Lo
+00000010: 63 61 74 69 6F 6E 22 3A 22 2F 6F 6E 2F 62 6C 6F    cation":"/on/blo
+00000020: 63 6B 73 3A 37 34 31 61 66 62 62 36 37 61 31 61    cks:741afbb67a1a
+...
+00000540: 30 30 30 30 30 30 30 30 30 30 30 22 2C 22 76 65    00000000000","ve
+00000550: 72 73 69 6F 6E 22 3A 31 7D 2C 22 74 72 61 6E 73    rsion":1},"trans
+00000560: 61 63 74 69 6F 6E 73 22 3A 5B 5D 7D                actions":[]}
 ```
 
 #### Gas Price
@@ -347,7 +348,7 @@ POST https://nodes.dusk.network/on/blocks/gas-price
 
 #### Transaction Events
 
-**Endpoint**: `/on/transactions:[transaction-id]/[topic]`, where `[topic]` is optional. Transaction events can have the topic `Removed`, `Included`, or `Executed`.
+**Endpoint**: `/on/transactions/[topic]`, where `[topic]` is mandatory. Transaction events can have the topic `Removed`, `Included`, or `Executed`.
 
 - **Removed**: Indicates that the transaction has been removed from the mempool.
 - **Included**: A transaction has been included in the mempool.
@@ -357,25 +358,25 @@ POST https://nodes.dusk.network/on/blocks/gas-price
 
 **Example Request**:
 
-This example request listens to the `Executed` topic for a given transaction.
+This example request listens to the `Executed` topic for any incoming transaction.
 
 ```
-GET https://nodes.dusk.network/on/transactions:04786a6678b376588bc74868879c6f07db2a19933082173ea4898570a9514709/Executed
+GET https://nodes.dusk.network/on/transactions/Executed
 ```
 
 **Example Event**:
 
-```json
-[
-    {
-        "event": {
-            "target": "0100000000000000000000000000000000000000000000000000000000000000",
-            "topic": "moonlight",
-            "data": "a7d4f3b300143398de3bb3dbd8bc028c9c3dc3f96ef4232d90f56f50792cc06099d8ac05b26c31b719101434867af30322223d12e05a86423fb2b34624098dea043e30f8c6b8a3ae6e6a34f9307727bef4bbee8f9e14682300a6a5ba0a21180c711ce0dc6fc302522e18e9ad64a18881a2c2cfc636ffbd2c78cfd4d902986e167004ef61290902e259f3a10751742a0506f85a74dcc53877d60249427b3420bed341d11b3f56a61be4262bc87abd55ba651033583772d46147f1d7996cb9da05000000000000000020ea833c03000000000000000000000094d8bbc772a39dee8e2663d11fd067a0a90b68876acc4e316cd5fff2ea4b7cd068cdacd77d1434ba7cf7fb8bf0897f043b86208c6110fdf2996d01e26513d256abb5fd42ae9b91a116b347ef3ca3c4510b85f9e2f038092e39cc0e1d0e9b940f5b001d28ef68e5f68aa9edda93c8d1bbf1e47124b1ecf4825f0c169e0e35c37a5daed454a1375d8eba851df1c851fc0030abeeb9f7efd3150b4f50590ea5788f0f4e68b4c750d0201a9c17354a86f8bc031bfe4b955a698400276be5a2a8ef070000000000000000e0fc5b7600000000030000000000000050feffff02000000"
-        },
-        "origin": "txID01010101"
-    }
-]
+The event is returned as raw binary data. Ensure that your client can properly handle these formats according to the RUES specifications.
+Example for an executed Moonlight transaction.
+
+```
+00000000: 71 00 00 00 7B 22 43 6F 6E 74 65 6E 74 2D 4C 6F    q...{"Content-Lo
+00000010: 63 61 74 69 6F 6E 22 3A 22 2F 6F 6E 2F 74 72 61    cation":"/on/tra
+00000020: 6E 73 61 63 74 69 6F 6E 73 3A 37 63 34 33 36 35    nsactions:7c4365
+...
+00000230: 79 70 65 22 3A 22 6D 6F 6F 6E 6C 69 67 68 74 22    ype":"moonlight"
+00000240: 2C 22 76 61 6C 75 65 22 3A 31 30 30 30 30 30 30    ,"value":1000000
+00000250: 30 30 30 7D 7D                                     000}}
 ```
 
 #### Preverify
@@ -448,16 +449,17 @@ GET https://nodes.dusk.network/on/contracts:020000000000000000000000000000000000
 
 **Example Event**: 
 
-```json
-[
-    {
-        "event": {
-            "target": "0200000000000000000000000000000000000000000000000000000000000000",
-            "topic": "reward",
-            "data": "a7d4f3b300143398de3bb3dbd8bc028c9c3dc3f96ef4232d90f56f50792cc06099d8ac05b26c31b719101434867af30322223d12e05a86423fb2b34624098dea043e30f8c6b8a3ae6e6a34f9307727bef4bbee8f9e14682300a6a5ba0a21180c711ce0dc6fc302522e18e9ad64a18881a2c2cfc636ffbd2c78cfd4d902986e167004ef61290902e259f3a10751742a0506f85a74dcc53877d60249427b3420bed341d11b3f56a61be4262bc87abd55ba651033583772d46147f1d7996cb9da05000000000000000020ea833c03000000000000000000000094d8bbc772a39dee8e2663d11fd067a0a90b68876acc4e316cd5fff2ea4b7cd068cdacd77d1434ba7cf7fb8bf0897f043b86208c6110fdf2996d01e26513d256abb5fd42ae9b91a116b347ef3ca3c4510b85f9e2f038092e39cc0e1d0e9b940f5b001d28ef68e5f68aa9edda93c8d1bbf1e47124b1ecf4825f0c169e0e35c37a5daed454a1375d8eba851df1c851fc0030abeeb9f7efd3150b4f50590ea5788f0f4e68b4c750d0201a9c17354a86f8bc031bfe4b955a698400276be5a2a8ef070000000000000000e0fc5b7600000000030000000000000050feffff02000000"
-        }
-    }
-]
+The event is returned as raw binary data. Ensure that your client can properly handle these formats according to the RUES specifications.
+Example for a stake event.
+
+```
+00000000: BC 00 00 00 7B 22 43 6F 6E 74 65 6E 74 2D 4C 6F    ....{"Content-Lo
+00000010: 63 61 74 69 6F 6E 22 3A 22 2F 6F 6E 2F 63 6F 6E    cation":"/on/con
+00000020: 74 72 61 63 74 73 3A 30 32 30 30 30 30 30 30 30    tracts:020000000
+...
+00000230: 34 B3 5B F3 E4 06 C9 C4 33 34 62 A3 38 6F A2 D5    4.[.....34b.8o..
+00000240: 47 CC 52 71 A9 0F 1D 18 00 00 00 00 00 00 00 00    G.Rq............
+00000250: 00 10 A5 D4 E8 00 00 00                            ........
 ```
 
 ### Network
