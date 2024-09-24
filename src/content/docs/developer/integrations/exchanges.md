@@ -32,7 +32,7 @@ To access the blockchain you can either:
 
 ### Spin up a node
 
-You can access the blockchain and submit transactions by running a Dusk node. [Technical requirements](https://docs.dusk.network/getting-started/node-setup/node-requirements) are quite light, and you can either [build from source](https://docs.dusk.network/getting-started/node-setup/build-from-source) or run a [Docker image](https://docs.dusk.network/getting-started/node-setup/docker-image).
+You can access the blockchain and submit transactions by running a Dusk node. [Technical requirements](https://docs.dusk.network/operator/node-setup/getting-started#hardware) are quite light, and you can either [build from source](https://docs.dusk.network/operator/node-setup/build-from-source) or run a [Docker image](https://docs.dusk.network/operator/node-setup/docker-image).
 
 ### Use Dusk APIs
 
@@ -59,7 +59,6 @@ The [w3sper SDK](https://github.com/dusk-network/rusk/wiki/%5BDraft%5D-W3sper-SD
 
 - [Wallet Stack](https://docs.dusk.network/developer/integrations/wallet-stack)
 - [wallet-core](https://docs.dusk.network/developer/integrations/wallet-core)
-- [execution-core](https://docs.dusk.network/developer/integrations/execution-core)
 - [w3sper (SDK)](https://github.com/dusk-network/rusk/wiki/%5BDraft%5D-W3sper-SDK)
 - [RUES (events system)](https://github.com/dusk-network/rusk/wiki/RUES-%28Rusk-Universal-Event-System%29)
 
@@ -72,8 +71,8 @@ The [w3sper SDK](https://github.com/dusk-network/rusk/wiki/%5BDraft%5D-W3sper-SD
 
 - Token: `dusk`
 - Token decimals: `9` (18 decimals for ERC-20 / BEP-20 versions)
-- [Tokenomics and metrics](https://docs.dusk.network/learn/economic-information/tokenomics/#token-metrics)
-- Consensus Mechanism: [Succinct Attestation Consensus](http://localhost:4321/learn/deep-dive/succinct-attestation)
+- [Tokenomics and metrics](https://docs.dusk.network/learn/tokenomics)
+- Consensus Mechanism: [Succinct Attestation Consensus](https://docs.dusk.network/learn/deep-dive/succinct-attestation)
 
 ### Audits
 - [Audits Reports](https://github.com/dusk-network/audits)
