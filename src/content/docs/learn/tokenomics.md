@@ -26,7 +26,6 @@ The DUSK token is available as an ERC20 on Ethereum and a BEP20 on Binance Smart
 | Ethereum             | ERC20    | [0x940a2db1b7008b6c776d4faaca729d6d4a4aa551](https://etherscan.io/token/0x940a2db1b7008b6c776d4faaca729d6d4a4aa551) |
 | Binance Smart Chain  | BEP20    | [0xb2bd0749dbe21f623d9baba856d3b0f0e1bfec9c](https://bscscan.com/token/0xb2bd0749dbe21f623d9baba856d3b0f0e1bfec9c) |
 
-
 ## Token Markets & Exchanges
 
 The DUSK token is widely accessible on top-tier CEXs and DEXs. For more information on the various locations DUSK is accessible, see the markets pages for Coinmarketcap and Coingecko:
@@ -41,13 +40,10 @@ DUSK serves several key purposes within the ecosystem:
 * Payment of network fees ([gas](tx-fees)).
 * Paying for the deployment of dApps on the network.
 * Payment of services on the network.
-* Target currency for dividend payouts in XSC or other dApps.
-* Security deposit for issuance of regulated digital assets
 
 ### DUSK for Transaction Fees
 
 DUSK represents the only medium responsible for transaction fee payments. Each transaction requires to have an attached fee. The transaction fees exist to subsidize consensus participants for the computation costs as well as to act as a deterrent against DDoS attacks. Specifically, Dusk utilizes an internal accounting system to express the cost of operations inside the virtual machine called `gas`. 
-
 
 Users wishing to add their transaction to a block enter a *generalized first-price auction (GFP)* by setting a gas price (i.e. `gasprice`) they are willing to pay per unit of gas. The block has a gas limit, and transactions consume the available gas based on the auction results.
 The `baseprice` is the minimum gas price that can be set for a transaction. The `gaslimit` is required as a workaround to the halting problem, ensuring that every transaction does halt at after a finite amount computation cycles, either due to the successful termination or due to the gas consumption reaching the allocated.
@@ -78,7 +74,6 @@ Staking is a crucial aspect of the Dusk protocol, allowing token holders to cont
 * **Unstaking**: No penalties or waiting period.
 
 ## Token Emission Schedule
-
 
 The DUSK token emission schedule plays a vital role in incentivizing network participants, particularly in the early stages of the blockchain network, where transaction fees alone may not be sufficient to reward node operators and validators. By systematically emitting tokens over time, the Dusk network ensures that participants are adequately compensated for securing and maintaining the network, fostering its growth and decentralization.
 
