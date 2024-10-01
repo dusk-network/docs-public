@@ -7,13 +7,13 @@ We will occasional upgrade and patch Nocturne with new features and patches to i
 
 To make the upgrade process as flawless as possible, we will update the [node installer](https://github.com/dusk-network/node-installer) script from time to time. This script can be ran in a non-destructive way, meaning it changes only what is needed. It will gracefully shut down Rusk for you.
 
-Migrating from ITN to Nocturne? See [Nocturne Migration](#nocturne-migration).
+Are you migrating from Nocturne 1 to Nocturne 2? See [Nocturne Reset](#nocturne-reset).
 
 ## How to Upgrade
 
 To upgrade to the latest Nocturne version, run:
 ```sh
-curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.2.0/node-installer.sh | sudo sh
+curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.3.0/node-installer.sh | sudo sh
 ```
 
 Once it's done and gives no errors, start Rusk again:
@@ -47,17 +47,11 @@ Unable to figure it out yourself? Visit our [Node Runner Troubleshooting](https:
 
 If everything else fails, check out the [manual resync](/operator/node-setup/manual-resync) instructions.
 
-## Nocturne Migration
+## Nocturne Reset
 
-:::note[Note]
-We migrated stakes and rewards that accumulatively were higher than 5000 tDUSK to nDUSK. This was done to prevent the high amount of ghost provisioners with small stakes that we observed during ITN2. 
-
-The list of migrated stakes can be found [here](https://github.com/dusk-network/rusk/blob/cd4b2f209b9f0db6b5235027162798998d7e91e5/rusk-recovery/config/testnet.toml). Check with your provisioner key to see if you're included.
-:::
-
-1. To migrate from ITN to Nocturne, download the latest version of our installer:
+1. To reset the state of Nocturne, download the latest version of our installer:
 ```sh
-curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.2.0/node-installer.sh | sudo sh
+curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.3.0/node-installer.sh | sudo sh
 ```
 
 2. Reset all the data on your node:
