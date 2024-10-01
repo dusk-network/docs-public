@@ -7,7 +7,7 @@ We will occasional upgrade and patch Nocturne with new features and patches to i
 
 To make the upgrade process as flawless as possible, we will update the [node installer](https://github.com/dusk-network/node-installer) script from time to time. This script can be ran in a non-destructive way, meaning it changes only what is needed. It will gracefully shut down Rusk for you.
 
-Migrating from Nocturne 1 to Nocturne 2? See [Nocturne Reset](#nocturne-reset).
+Are you migrating from Nocturne 1 to Nocturne 2? See [Nocturne Reset](#nocturne-reset).
 
 ## How to Upgrade
 
