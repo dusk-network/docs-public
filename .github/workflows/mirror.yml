@@ -1,0 +1,26 @@
+name: Mirror to Public Repo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: master
+
+      - name: Set up Git config
+        run: |
+          git config --global user.email "tech@dusk.network"
+          git config --global user.name "Dusk Network"
+
+      - name: Push to public mirror
+        env:
+          PUBLIC_REPO_URL: https://x-access-token:${{ secrets.PUBLIC_REPO_TOKEN }}@github.com:dusk-network/docs-public.git
+        run: |
+          git remote add public-mirror $PUBLIC_REPO_URL
+          git push public-mirror master --force
