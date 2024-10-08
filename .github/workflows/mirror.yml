@@ -13,20 +13,24 @@ jobs:
         with:
           ref: main
       - name: Debug Secret Access
+        env:
+          PUBLIC_REPO_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
         run: |
-          if [ -z "${{ secrets.PUBLIC_REPO_TOKEN }}" ]; then
+          if [ -z "$PUBLIC_REPO_TOKEN" ]; then
             echo "PUBLIC_REPO_TOKEN is empty"
             exit 1
           else
-            TOKEN_LENGTH=${#${{ secrets.PUBLIC_REPO_TOKEN }}}
+            TOKEN_LENGTH=${#PUBLIC_REPO_TOKEN}
             echo "PUBLIC_REPO_TOKEN is set and has length ${TOKEN_LENGTH}"
           fi
-
+        
       - name: Set up Git config
         run: |
           git config --global user.email "tech@dusk.network"
           git config --global user.name "Dusk Network"
 
       - name: Push to public mirror
+        env:
+          PUBLIC_REPO_URL: https://x-access-token:${{ secrets.PUBLIC_REPO_TOKEN }}@github.com/yourcompany/public-docs.git
         run: |
-          git push https://x-access-token:${{ secrets.PUBLIC_REPO_TOKEN }}@github.com/dusk-network/docs-public.git main --force
+          git push "$PUBLIC_REPO_URL" main --force
