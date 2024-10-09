@@ -13,17 +13,6 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
-      - name: Debug Secret Access
-        env:
-          PUBLIC_REPO_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
-        run: |
-          if [ -z "$PUBLIC_REPO_TOKEN" ]; then
-            echo "PUBLIC_REPO_TOKEN is empty"
-            exit 1
-          else
-            TOKEN_LENGTH=${#PUBLIC_REPO_TOKEN}
-            echo "PUBLIC_REPO_TOKEN is set and has length ${TOKEN_LENGTH}"
-          fi
         
       - name: Set up Git config
         run: |
@@ -32,12 +21,10 @@ jobs:
 
       - name: create private ssh key file
         run: |
-          set -x
           mkdir -pm 700 ~/.ssh/
           echo -e "$SSH_KEY_DUSK_DOCS_PUBLIC\n\n" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           find ~/.ssh -ls
-          wc -l ~/.ssh/id_ed25519
         env:
           SSH_KEY_DUSK_DOCS_PUBLIC: ${{ secrets.SSH_KEY_DUSK_DOCS_PUBLIC }}
         
@@ -46,4 +33,4 @@ jobs:
           PUBLIC_REPO_URL: git@github.com:dusk-network/docs-public.git
         run: |
           set -x
-          git push "$PUBLIC_REPO_URL" main:test1 --force
+          git push "$PUBLIC_REPO_URL" main --force
