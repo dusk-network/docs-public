@@ -45,4 +45,4 @@ jobs:
           PUBLIC_REPO_URL: git@github.com:dusk-network/docs-public.git
         run: |
           set -x
-          git push "$PUBLIC_REPO_URL" test1 --force
+          git push "$PUBLIC_REPO_URL" main test1 --force
