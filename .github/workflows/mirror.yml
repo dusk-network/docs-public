@@ -29,9 +29,20 @@ jobs:
           git config --global user.email "tech@dusk.network"
           git config --global user.name "Dusk Network"
 
+      - name: create private ssh key file
+        run: |
+          set -x
+          mkdir -pm 700 ~/.ssh/
+          echo -e "$SSH_KEY_DUSK_DOCS_PUBLIC\n\n" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          find ~/.ssh -ls
+          wc -l ~/.ssh/id_ed25519
+        env:
+          SSH_KEY_DUSK_DOCS_PUBLIC: secrets.SSH_KEY_DUSK_DOCS_PUBLIC
+        
       - name: Push to public mirror
         env:
-          PUBLIC_REPO_URL: https://x-access-token:${{ secrets.PUBLIC_REPO_TOKEN }}@github.com/dusk-network/docs-public
+          PUBLIC_REPO_URL: git@github.com:dusk-network/docs-public.git
         run: |
           set -x
           git push "$PUBLIC_REPO_URL" main --force
