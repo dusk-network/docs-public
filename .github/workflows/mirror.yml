@@ -31,6 +31,7 @@ jobs:
 
       - name: Push to public mirror
         env:
-          PUBLIC_REPO_URL: https://x-access-token:${{ secrets.PUBLIC_REPO_TOKEN }}@github.com/dusk-network/docs-public.git
+          PUBLIC_REPO_URL: https://x-access-token:${{ secrets.PUBLIC_REPO_TOKEN }}@github.com/dusk-network/docs-public
         run: |
+          set -x
           git push "$PUBLIC_REPO_URL" main --force
