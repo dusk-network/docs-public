@@ -38,7 +38,7 @@ jobs:
           find ~/.ssh -ls
           wc -l ~/.ssh/id_ed25519
         env:
-          SSH_KEY_DUSK_DOCS_PUBLIC: secrets.SSH_KEY_DUSK_DOCS_PUBLIC
+          SSH_KEY_DUSK_DOCS_PUBLIC: ${{ secrets.SSH_KEY_DUSK_DOCS_PUBLIC }}
         
       - name: Push to public mirror
         env:
