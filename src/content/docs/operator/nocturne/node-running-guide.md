@@ -5,7 +5,7 @@ description: This guide outlines how to install the Dusk node and join Nocturne.
 
 In this guide, we’ll be using [DigitalOcean](https://www.digitalocean.com/) (DO) as our go-to [Virtual Private Server](https://en.wikipedia.org/wiki/Virtual_private_server) (VPS) service. The same can be replicated on Vultr, AWS, any other cloud service or for node runners at home. While it is indeed possible to run a node on home infrastructure, this guide will not deal with those types of setups. 
 
-We work under the assumption that you’ve already created an account for your respective service, and provided it with a payment method.
+We work under the assumption that you’ve already created an account for your respective service, and provided it with a payment method. If not, you can get a $200 credit by using [our referral link](https://m.do.co/c/9ae612e34de9).
 
 ## Create a droplet
 
@@ -73,14 +73,14 @@ Just like last time, we've created an easy to use [node installer](https://githu
 
 Install Rusk by pasting the following command in your droplet terminal:
 ```sh
-curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.3.0/node-installer.sh | sudo sh
+curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.3.2/node-installer.sh | sudo sh
 ```
 
 ## Configure Rusk
 
 Once everything has been set up, you will be asked to add your consensus keys. These keys are used to sign and vote for blocks.
 
-If you haven't made a wallet yet, use our CLI [Rusk Wallet](https://wallet.dusk.network/setup/), which you can download [here](https://github.com/dusk-network/rusk/actions/runs/11113602682/artifacts/1997624810), and create a new wallet. You can request funds from our [Discord faucet](/operator/nocturne/testnet-faucet). The faucet will give you 1100 nDUSK. The minimum to stake is 1000 nDUSK.
+If you haven't made a wallet yet, use our CLI [Rusk Wallet](https://wallet.dusk.network/setup/), which you can download [here](https://github.com/dusk-network/rusk/actions/runs/11113602682/artifacts/1997624810), and create a new wallet. You can request funds from our [Discord faucet](/operator/nocturne/testnet-faucet). The faucet will give you 5000 nDUSK. The minimum to stake is 1000 nDUSK.
 
 Once you have access to a Dusk mnemonic, run the following command:
 ```sh
