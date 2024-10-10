@@ -7,11 +7,7 @@ description: Add Dusk to an Exchange
 
 This guide shows how to add DUSK to an Exchange by providing all the relevant information. In the first section we outline general details regarding the upcoming mainnet launch and token migration. We will then look into what are the available libraries and APIs to access and interact with the blockchan, as well as providing links to all the relevant resources, and addressing some common requests.
 
-## Mainnet Launch
-
-Dusk is launching its mainnet on the **15th of October**, meaning that Exchanges will be able to offer native DUSK. 
-
-### Token Migration
+## Token Migration
 
 Users will be able to migrate from ERC-20 DUSK and BEP-20 DUSK to native DUSK (`dusk`) by using the one-way bridge (burner contract) to burn their tokens and release an equivalent amount of `dusk` on the Dusk mainnet to the specified target address.
 

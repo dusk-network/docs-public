@@ -13,7 +13,7 @@ Are you migrating from Nocturne 1 to Nocturne 2? See [Nocturne Reset](#nocturne-
 
 To upgrade to the latest Nocturne version, run:
 ```sh
-curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.3.0/node-installer.sh | sudo sh
+curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.3.2/node-installer.sh | sudo sh
 ```
 
 Once it's done and gives no errors, start Rusk again:
@@ -51,30 +51,27 @@ If everything else fails, check out the [manual resync](/operator/node-setup/man
 
 1. To reset the state of Nocturne, download the latest version of our installer:
 ```sh
-curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.3.0/node-installer.sh | sudo sh
+curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.3.2/node-installer.sh | sudo sh
 ```
 
 2. Reset all the data on your node:
 ```sh
 ruskreset
 ```
+Press Y to accept the deletion of all the state.
 
 3. Start Rusk:
 ```sh
 service rusk start
 ```
 
-4. Check if your staking rewards are in your wallet:
+4. Check if you're already staking by running:
 ```sh
-rusk-wallet stake-info --reward
+rusk-wallet stake-info
 ```
+If you already have DUSK staked, wait until the chain starts producing blocks. You can check [our explorer](https://testnet.apps.dusk.network/explorer/) to see if the chain is progressing or when it will produce the genesis block.
 
-5. To claim your rewards, request nDUSK from the faucet. A guide can be found [here](/operator/nocturne/testnet-faucet).
-
-6. Withdraw your staking rewards:
-```sh
-rusk-wallet withdraw
-```
+5. If you do not have testnet DUSK, request nDUSK from the faucet. A guide can be found [here](/operator/nocturne/testnet-faucet).
 
 6. Stake your nDUSK:
 ```sh
