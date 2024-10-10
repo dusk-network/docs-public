@@ -58,23 +58,20 @@ curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-insta
 ```sh
 ruskreset
 ```
+Press Y to accept the deletion of all the state.
 
 3. Start Rusk:
 ```sh
 service rusk start
 ```
 
-4. Check if your staking rewards are in your wallet:
+4. Check if you're already staking by running:
 ```sh
-rusk-wallet stake-info --reward
+rusk-wallet stake-info
 ```
+If you already have DUSK staked, wait until the chain starts producing blocks. You can check [our explorer](https://testnet.apps.dusk.network/explorer/) to see if the chain is progressing or when it will produce the genesis block.
 
-5. To claim your rewards, request nDUSK from the faucet. A guide can be found [here](/operator/nocturne/testnet-faucet).
-
-6. Withdraw your staking rewards:
-```sh
-rusk-wallet withdraw
-```
+5. If you do not have testnet DUSK, request nDUSK from the faucet. A guide can be found [here](/operator/nocturne/testnet-faucet).
 
 6. Stake your nDUSK:
 ```sh
