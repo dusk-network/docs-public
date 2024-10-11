@@ -73,7 +73,7 @@ Just like last time, we've created an easy to use [node installer](https://githu
 
 Install Rusk by pasting the following command in your droplet terminal:
 ```sh
-curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.3.2/node-installer.sh | sudo sh
+curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.3.3/node-installer.sh | sudo sh
 ```
 
 ## Configure Rusk
