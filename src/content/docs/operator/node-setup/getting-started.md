@@ -87,7 +87,7 @@ For the node to be accessible to the outside world, a number of ports need to be
 - **8080/tcp**: Optional HTTPS API for querying the node.
 
 :::note[Note]
-The ports are configurable either as option to the node binary or by setting them in the configuration files.
+The ports are configurable either as option to the node binary or by setting them in the configuration files. This can be done by copying the addresses found in `/opt/dusk/services/rusk.conf.default`, pasting them into `/opt/dusk/services/rusk.conf.user` and changing the port numbers.
 :::
 
 ## Server Security
