@@ -3,6 +3,7 @@ title: Build from Source
 description: This resource explains how to setup a Dusk node starting from source.
 ---
 
+
 ## What You'll Need
 
 * **A Linux Operating System**: This guide is tailored for Linux users. If you're using another operating system, you might run into issues.
@@ -10,9 +11,25 @@ description: This resource explains how to setup a Dusk node starting from sourc
 * **Firewall Access**: Dusk's networking protocol, Kadcast, uses [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol) to communicate among nodes. If you want your node to connect to an external network, ensure that your firewall and router's UDP ports are forwarded correctly. The default configuration targets port 9000.
 * **Software Prerequisites**: You'll need the following software installed to follow this guide: `curl`, `zip`, `libssl-dev`, `rustc`, `clang`, `gcc` and `git`.
 
+
+:::tip[Nocturne Installer Script]
+If your goal is to run a node on the Nocturne testnet, you can easily do so by using the installer script. For detailed instructions, refer to this [guide](/operator/nocturne/node-running-guide).
+:::
+
+
 ## Step-by-Step Instructions
 
+If your goal is to run a node on the Nocturne testnet, you can easily do so by using the installer script provided in the [guide for running a node on Nocturne](/operator/nocturne/node-running-guide). If you choose so, there is no need of following the instructions below.
+
+Anyways, if your goal is to build from source by completing all the steps, or if you're planning to set up a local cluster you can simply continue reading this guide.
+
 ### 1. Setting up the Environment
+
+To make sure you have access to the latest versions of packages, update your system's package list:
+
+```sh
+sudo apt update
+```
 
 #### 1.1 Install the Rust Programming Language
 
@@ -70,6 +87,28 @@ sudo pacman -S git
 ```bash
 sudo yum install git
 ```
+
+
+#### Install Other Dependencies
+
+You can then install the rest of the necessary tools (`curl`, `zip`, `libssl-dev`, `gcc`).
+
+For Ubuntu/Debian:
+```bash
+sudo apt-get install -y curl zip libssl-dev gcc
+```
+
+For Arch:
+```bash
+sudo pacman -S curl zip openssl gcc
+```
+
+For CentOS/RHEL:
+```bash
+sudo yum install curl zip openssl-devel gcc
+```
+
+
 
 ### 2. Compiling the Dusk node
 
