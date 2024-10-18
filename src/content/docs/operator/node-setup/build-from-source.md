@@ -107,7 +107,7 @@ Create the Genesis state according to your local [`examples/genesis.toml`](https
 
 ```bash
 # Generate genesis state
-cargo r --release -p rusk -- recovery-state --init examples/genesis.toml -o /tmp/example.state
+cargo r --release -p rusk -- recovery state --init examples/genesis.toml -o /tmp/example.state
 
 # Launch a local ephemeral node
 DUSK_CONSENSUS_KEYS_PASS=password cargo r --release -p rusk -- -s /tmp/example.state -c rusk/default.config.toml
@@ -125,7 +125,7 @@ rm -rf ~/.dusk/rusk/chain.db
 
 ```bash
 # Generate genesis state
-cargo r --release -p rusk -- recovery-state --init examples/genesis.toml
+cargo r --release -p rusk -- recovery state --init examples/genesis.toml
 
 # Launch a local pnode
 DUSK_CONSENSUS_KEYS_PASS=password cargo r --release -p rusk -- -c rusk/default.config.toml
