@@ -180,10 +180,8 @@ POST https://nodes.dusk.network/on/graphql/query
 
 Example query for requesting the latest block.
 
-```json
-{
-  "query": "query { block(height: -1) { header { height } } }"
-}
+```graphql
+query { block(height: -1) { header { height } } }
 ```
 
 **Example Response**:
