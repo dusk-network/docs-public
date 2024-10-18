@@ -3,7 +3,7 @@ title: Introduction
 description: Learn about how to run a node and participate in the network.
 ---
 
-Dusk introduced an innovative consensus mechanism, called [Succict Attestation](/learn/deep-dive/succinct-attestation), which uses a *pure proof-of-stake* algorithm to provide sybil-resistance.
+Dusk introduced an innovative consensus mechanism, called [Succinct Attestation](/learn/deep-dive/succinct-attestation), which uses a *pure proof-of-stake* algorithm to provide sybil-resistance.
 
 In Dusk there are three types of nodes: [Provisioners, Provers and Archivers](/operator/introduction/node_types), each of them relying on different [requirements](/operator/introduction/requirements). Dusk allows network participants to run their node in different configurations according to their specific needs.
 

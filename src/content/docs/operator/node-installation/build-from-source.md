@@ -13,7 +13,7 @@ description: This resource explains how to setup a Dusk node starting from sourc
 
 
 :::tip[Nocturne Installer Script]
-If your goal is to run a node on the Nocturne testnet, you can easily do so by using the installer script. For detailed instructions, refer to this [guide](/operator/nocturne/node-running-guide).
+If your goal is to run a node on the Nocturne testnet, you can easily do so by using the installer script. For detailed instructions, refer to this [guide](operator/guides/node-running-guide).
 :::
 
 
@@ -132,6 +132,10 @@ make wasm
 cargo b --release -p rusk
 ```
 
+
+Once your node is installed, you can [configure Rusk](/operator/node-setup/configure_rusk).
+If you want to run a local cluster, you can follow the instructions below.
+
 #### 2.2 Run a single-node cluster with example's data
 
 Create a new directory and copy the example consensus keys to it. In a production environment, you would put your own consensus keys here.
@@ -175,8 +179,3 @@ Note that the `password` used here is connected to the example consensus keys, w
 :::note[Join a cluster]
 It is possible to connect to other clusters by defining a set of bootstrapping nodes to which to connect to on initialization, by defining them in the [`rusk/default.config.toml`](https://github.com/dusk-network/rusk/blob/master/rusk/default.config.toml#L13), or by passing the `--bootstrap` argument in the node launch command.
 :::
-
-## Troubleshooting Tips
-
-* **Installation Issues**: Ensure your operating system is up-to-date, you have adequate permissions and all the necessary prerequisite software is installed.
-* **Network Errors**: Check your internet connection and verify UDP ports are open if connecting to an external network.

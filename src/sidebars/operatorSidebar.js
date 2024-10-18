@@ -9,7 +9,7 @@ export default function sidebar(currentPath) {
             { label: "Requirements", href: "/operator/introduction/requirements" },
             { label: "Slashing", href: "/operator/introduction/slashing" },
             { label: "Tips", href: "/operator/introduction/tips" },
-            { label: "Upgrades history", href: "/operator/introduction/history" },
+            //{ label: "Upgrades history", href: "/operator/introduction/history" },
         ], false),
         createGroup("Node Installation", currentPath, [
             { label: "Getting Started", href: "/operator/node-installation/getting-started" },
@@ -27,7 +27,7 @@ export default function sidebar(currentPath) {
         ], false),
         createGroup("Guides", currentPath, [
             { label: "Nocturne testnet", href: "/operator/guides/node-running-guide" },
-            { label: "Faucet", href: "/operator/guides/testnet-faucet" },
+            { label: "Nocturne Faucet", href: "/operator/guides/testnet-faucet" },
 
         ], false),
     ];

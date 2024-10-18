@@ -46,4 +46,4 @@ ruskquery block-height
 
 You can compare the result with the latest block height on [the block explorer](https://explorer.dusk.network/). Alternatively, you can look into syncing your node by using a [fast-sync](/operator/node-setup/fast-sync) method.
 
-Once your noe is synced, you can [stake some DUSK](/docs/operator/node-setup/staking-dusk).
+Once your noe is synced, you can [stake some DUSK](/operator/node-setup/staking-dusk).

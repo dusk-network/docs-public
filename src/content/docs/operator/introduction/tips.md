@@ -39,3 +39,8 @@ It is recommended to use a dedicated server with only necessary services, as thi
 :::tip[Recommended Setup]
 The recommended setup for network participants looking to stake and use the network is to run a Provisioner node on a VPS or server, and a Prover locally on their machine/laptop. This ensures the most efficient configuration where the full resources of your provisioner node is at disposal to the consensus, while maximizing privacy by proving privacy-preserving transactions locally.
 :::
+
+## Troubleshooting Tips
+
+* **Installation Issues**: Ensure your operating system is up-to-date, you have adequate permissions and all the necessary prerequisite software is installed.
+* **Network Errors**: Check your internet connection and verify UDP ports are open if connecting to an external network.

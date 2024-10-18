@@ -3,11 +3,11 @@ title: Node Upgrade
 description: This page outlines how you can upgrade your Nocturne node setup.
 ---
 
-We will occasional upgrade and patch Nocturne with new features and patches to improve the overall network.
+A network may be occasionally upgraded with new features and performance optimizations.
 
-To make the upgrade process as flawless as possible, we will update the [node installer](https://github.com/dusk-network/node-installer) script from time to time. This script can be ran in a non-destructive way, meaning it changes only what is needed. It will gracefully shut down Rusk for you.
+To make the upgrade process as flawless as possible, the [node installer](https://github.com/dusk-network/node-installer) script may be updated from time to time. This script can be ran in a non-destructive way, meaning it changes only what is needed. It will gracefully shut down Rusk for you.
 
-Are you migrating from Nocturne 1 to Nocturne 2? See [Nocturne Reset](#nocturne-reset).
+In the case of migrating to a newer version of Nocturne, please see the [Nocturne Reset](#nocturne-reset) section.
 
 ## How to Upgrade
 
@@ -71,9 +71,9 @@ rusk-wallet stake-info
 ```
 If you already have DUSK staked, wait until the chain starts producing blocks. You can check [our explorer](https://testnet.apps.dusk.network/explorer/) to see if the chain is progressing or when it will produce the genesis block.
 
-5. If you do not have testnet DUSK, request nDUSK from the faucet. A guide can be found [here](/operator/nocturne/testnet-faucet).
+1. If you do not have testnet DUSK, request nDUSK from the [faucet](/operator/guides/testnet-faucet).
 
-6. Stake your nDUSK:
+2. Stake your nDUSK:
 ```sh
 rusk-wallet stake --amt 1000 # Or however much you want to stake
 ```

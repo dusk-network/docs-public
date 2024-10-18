@@ -1,5 +1,5 @@
 ---
-title: Dusk Nocturne Faucet 
+title: Nocturne Faucet 
 description: This guide will explain how to obtain nDUSK for the running Nocturne testnet.
 ---
 

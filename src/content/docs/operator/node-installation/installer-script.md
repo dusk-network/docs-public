@@ -1,5 +1,5 @@
 ---
-title: Installer Script
+title: Node Installer
 description: Install and launch your node easily with the installer script.
 ---
 
@@ -13,3 +13,5 @@ curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-insta
 :::note[UFW and other configurations]
 The script may enable <a href="https://help.ubuntu.com/community/UFW" target="_blank">ufw</a>  and apply other configurations to your system. If you want to avoid this, please follow the instructions on how to [build from source](/operator/node-installation/build-from-source).
 :::
+
+Once your node is installed, you can [configure Rusk](/operator/node-setup/configure_rusk).
