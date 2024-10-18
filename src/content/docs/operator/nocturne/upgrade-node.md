@@ -75,5 +75,5 @@ If you already have DUSK staked, wait until the chain starts producing blocks. Y
 
 6. Stake your nDUSK:
 ```sh
-rusk-wallet stake --amt 1000 # Or however much you want to stake
+rusk-wallet moonlight-stake --amt 1000 # Or however much you want to stake
 ```

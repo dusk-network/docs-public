@@ -117,7 +117,7 @@ It is best to wait until your node is synced up. You can find the latest block h
 
 The final step is to stake. You can stake by running:
 ```sh
-rusk-wallet stake --amt 1000 # Or however much you want to stake
+rusk-wallet moonlight-stake --amt 1000 # Or however much you want to stake
 ```
 
 Once the transaction has gone through, you can view your staking information by running:

@@ -21,10 +21,14 @@ If your node is confirmed to be stuck (e.g. at block 50636) or significantly beh
 
 ### 1. Unstake (if applicable)
 
-If you are staked, the first step is to unstake to prevent any potential loss of stake due to node downtime:
+If you are staked, the first step is to unstake to prevent any potential loss of stake due to node downtime. Choose one:
 
 ```sh
-rusk-wallet unstake
+rusk-wallet moonlight-unstake
+```
+Or
+```sh
+rusk-wallet phoenix-unstake
 ```
 
 ### 2. Stop the Rusk Service
@@ -62,11 +66,16 @@ ruskquery block-height
 
 ### 6. Restake (if applicable)
 
-Once your node is close to the current block height, you can restake your DUSK tokens:
+Once your node is close to the current block height, you can restake your DUSK tokens. Choose one:
 
 ```sh
-rusk-wallet stake <amount>
+rusk-wallet moonlight-stake <amount>
 ```
+or
+```sh
+rusk-wallet phoenix-stake <amount>
+```
+
 Replace `<amount>` with the number of DUSK tokens you wish to stake.
 
 ## Conclusion
