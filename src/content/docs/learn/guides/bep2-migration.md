@@ -9,7 +9,9 @@ This guide provides a step-by-step process for BEP2 DUSK token holders to succes
 
 
 :::note[Important]
-Both Binance <a href="https://www.binance.com/en/support/announcement/binance-will-support-the-bnb-beacon-chain-bep2-network-sunset-plan-9effc62ec5f74839a19f8554b5dbb349" target="_blank">Binance</a>  and [Dusk](https://discord.com/channels/847466263064346624/1118584438780084224/1223360077034160230) have issued numerous updates about the migration process, allowing ample time for users to convert their tokens. Thanks to these efforts, the majority of BEP2 DUSK tokens have already been transitioned. However, for those who missed the deadline, ad-hoc conversion options will be available on a case-by-case basis. While there is no fixed timeline for these conversions, Dusk team plans to address these cases when possible.
+Users will have up to November 1st to migrate their BEP2 DUSK. We will no longer process any BEP2 afterwards! 
+
+All BEP2 DUSK migrated before that deadline will be processed after said date.
 :::
 
 ## Why Migrate?
