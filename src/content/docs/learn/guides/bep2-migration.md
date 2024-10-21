@@ -9,7 +9,7 @@ This guide provides a step-by-step process for BEP2 DUSK token holders to succes
 
 
 :::note[Important]
-Users will have up to November 1st to migrate their BEP2 DUSK. We will no longer process any BEP2 afterwards! 
+Users will have up to **November 1st** to migrate their BEP2 DUSK. We will no longer process any BEP2 afterwards! 
 
 All BEP2 DUSK migrated before that deadline will be processed after said date.
 :::
