@@ -21,6 +21,7 @@ const defaultSidebar = [
     items: [
       { label: "Dusk-ERC20 Staking", link: "/learn/guides/erc20-staking/" },
       { label: "BEP2 migration", link: "/learn/guides/bep2-migration/" },
+      { label: "Mainnet DUSK migration", link: "/learn/guides/mainnet-migration/" },
       { label: "Restore Block Height", link: "/learn/guides/restore-height/" },
     ],
   },
