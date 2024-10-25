@@ -71,7 +71,9 @@ These docs are for users interested in participating in the grant program and ac
 - **Article Size:** Prefer large articles over multiple small pages to keep the structure clean.
 - **Table of Contents:** Ensure each page includes a table of contents for easy navigation.
 - **Section Placement:** Categorize new content correctly based on the target audience and topic.
-- **Page Data:** Always add title and description to the beginning of the page
+- **Page Data:** Always add title and description to the beginning of the page.
+- **Search Optimization:** Add "Dusk" as a context keyword in the **description** sentences where possible (SEO relevant). 
+    - For example: "Run a Provisioner" could be "Run a Dusk Provisioner" or "Run a Provisioner on Dusk".
 
 ### Content & Tone of Voice
 
