@@ -109,7 +109,7 @@ We also need a method to read the counter value, so our `Counter` methods implem
 
 ```rust
 impl Counter {
-    pub fn read_value(&self) -> i64 {
+    pub fn read_value(&self) -> u32 {
         self.value
     }
 
