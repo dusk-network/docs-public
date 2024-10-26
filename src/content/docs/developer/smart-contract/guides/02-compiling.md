@@ -34,7 +34,7 @@ Make sure that you use version ``1.75.0-nightly`` of rustc. This can be achieved
 ```toml
 // rust-toolchain.toml
 [toolchain]
-channel = "nightly-2023-11-10"
+channel = "nightly-2023-11-10" # 1.75.0-nightly
 targets = ["wasm32-unknown-unknown"]
 components = ["rust-src", "rustfmt", "cargo", "clippy"]
 ```
@@ -54,7 +54,7 @@ rustup target add wasm32-unknown-unknown
 You can pass a target flag to the cargo build command, to explicitly set the target you want to compile to. This command compiles the Rust project to WebAssembly in release mode, optimizing the output for performance.
 
 ```bash title="Terminal"
-cargo build --target wasm32-unknown-unknown --release
+cargo build --target wasm32-unknown-unknown --release -Znext-lockfile-bump
 ```
 
 :::tip[Note]
