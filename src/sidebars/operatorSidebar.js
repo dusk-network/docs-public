@@ -3,19 +3,21 @@ import { createGroup, createLink } from "../helpers/sidebarEntryHelpers";
 export default function sidebar(currentPath) {
     return [
         createLink("Overview", "/operator/overview"),
-        createGroup("Node Setup", currentPath, [
-            { label: "Getting Started", href: "/operator/node-setup/getting-started" },
-            { label: "Build from Source", href: "/operator/node-setup/build-from-source" },
-            { label: "Docker Image", href: "/operator/node-setup/docker-image" },
-            { label: "Manual Resync", href: "/operator/node-setup/manual-resync" },
-            //{ label: "Troubleshooting", href: "404" },
-            { label: "Slashing", href: "/operator/node-setup/slashing" },
+
+        createGroup("Run a node", currentPath, [
+            { label: "Install Rusk", href: "/operator/01-installation/" },
+            { label: "Run a Provisioner", href: "/operator/02-provisioner" },
+            { label: "Run an Archiver", href: "/operator/03-archiver" },
+            { label: "Run a Prover", href: "/operator/04-prover" },
+            { label: "Choose a Network", href: "/operator/05-networks" },
+            //{ label: "Upgrades history", href: "/operator/introduction/history" },
         ], false),
-        createGroup("Testnet", currentPath, [
-            { label: "Node Running", href: "/operator/nocturne/node-running-guide" },
-            { label: "Faucet", href: "/operator/nocturne/testnet-faucet" },
-            { label: "Node upgrading", href: "/operator/nocturne/upgrade-node" },
-            { label: "Fast syncing", href: "/operator/nocturne/fast-sync" },
+
+        createGroup("Guides", currentPath, [
+            { label: "Run a Provisioner on Nocturne", href: "/operator/guides/01-nocturne-node" },
+            { label: "Fast-sync a node", href: "/operator/guides/02-fast-sync" },
+            { label: "Manually re-sync a node", href: "/operator/guides/03-manual-resync" },
+            { label: "Upgrade a node", href: "/operator/guides/04-upgrade-node" },
         ], false),
     ];
 }
