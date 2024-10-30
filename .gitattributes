@@ -1,0 +1,26 @@
+# Auto normalize text line endings to LF
+* text=auto eol=lf
+
+# Auto normalize text, docs files for consistent line endings
+*.md text eol=lf
+*.mdx text eol=lf
+*.txt text eol=lf
+*.astro text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+
+# Auto normalize our JS/TS etc endings to LF
+*.js text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.json text eol=lf
+
+# Treat images and fonts as binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
+*.svg binary
+*.webp binary
+*.woff2 binary
