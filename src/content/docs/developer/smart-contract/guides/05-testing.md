@@ -1,5 +1,5 @@
 ---
-title: Testing
+title: Test a contract
 description: Guide on how to test Dusk contracts.
 ---
 

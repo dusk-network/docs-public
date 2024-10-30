@@ -1,5 +1,5 @@
 ---
-title: Grants 
+title: Dusk Grants Program
 description: Dusk's grants program.
 ---
 

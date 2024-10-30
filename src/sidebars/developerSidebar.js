@@ -3,48 +3,48 @@ import { createGroup, createLink } from "../helpers/sidebarEntryHelpers";
 export default function sidebar(currentPath) {
     return [
         createLink("Overview", "/developer/overview", currentPath),
-        createGroup("Smart Contracts", currentPath, [
+        createGroup("Develop Smart Contracts", currentPath, [
             {
                 type: "link",
-                label: "Introduction",
+                label: "Learn the Basics",
                 href: "/developer/smart-contract/introduction",
             },
             {
                 type: "link",
-                label: "Getting Started",
+                label: "Get Started",
                 href: "/developer/smart-contract/getting-started",
             },
             {
                 type: "group",
-                label: "Guides",
+                label: "Read the Guides",
                 entries: [
-                    { label: "My first contract", href: '/developer/smart-contract/guides/01-my-first-contract' },
-                    { label: "Compiling", href: '/developer/smart-contract/guides/02-compiling' },
-                    { label: "Deploying", href: '/developer/smart-contract/guides/03-deploying' },
-                    { label: "Debugging", href: '/developer/smart-contract/guides/04-debugging' },
-                    { label: "Testing", href: '/developer/smart-contract/guides/05-testing' },
-                    { label: "Upgrades", href: '/developer/smart-contract/guides/06-upgrades' },
-                    { label: "Interacting", href: '/developer/smart-contract/guides/07-interacting' }
+                    { label: "Develop", href: '/developer/smart-contract/guides/01-my-first-contract' },
+                    { label: "Compile", href: '/developer/smart-contract/guides/02-compiling' },
+                    { label: "Deploy", href: '/developer/smart-contract/guides/03-deploying' },
+                    { label: "Debug", href: '/developer/smart-contract/guides/04-debugging' },
+                    { label: "Test", href: '/developer/smart-contract/guides/05-testing' },
+                    { label: "Upgrade", href: '/developer/smart-contract/guides/06-upgrades' },
+                    { label: "Interact", href: '/developer/smart-contract/guides/07-interacting' }
                 ],
                 collapsed: true,
             },
             {
                 type: "link",
-                label: "Core Concepts",
+                label: "Understand Core Concepts",
                 href: "/developer/smart-contract/core-concepts",
             },
             {
                 type: "link",
-                label: "FAQ",
+                label: "Look at the FAQs",
                 href: '/developer/smart-contract/faq'
             },
             {
                 type: "link",
-                label: "Cheat Sheet",
+                label: "Read the Cheat Sheet",
                 href: "/developer/smart-contract/cheat-sheet",
             }
         ], false),
-        createGroup("Integrations", currentPath, [
+        createGroup("Integrate with Dusk", currentPath, [
             { label: "Introduction", href: '/developer/integrations/introduction' },
             { label: "The Wallet Stack", href: '/developer/integrations/wallet-stack' },
             { label: "Wallet Core Library", href: '/developer/integrations/wallet-core' },
@@ -54,11 +54,11 @@ export default function sidebar(currentPath) {
             { label: "Integrate with Exchanges", href: '/developer/integrations/exchanges' },
         ],
             false),
-        createGroup("Digital Identity", currentPath, [
+        createGroup("Use Digital Identity", currentPath, [
             { label: "Citadel Protocol", href: '/developer/digital-identity/protocol' },
             { label: "Citadel SDK", href: '/developer/digital-identity/sdk' },
         ],
             false),
-        createLink("Dusk Improvement Proposals", "/developer/dips", currentPath),
+        createLink("Contribute to Dusk", "/developer/dips", currentPath),
     ];
 }

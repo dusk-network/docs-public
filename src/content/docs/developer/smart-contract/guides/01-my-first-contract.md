@@ -1,5 +1,5 @@
 ---
-title: My first Smart Contract
+title: Develop a contract
 description: Tutorial on how to build your first contract on Dusk.
 ---
 

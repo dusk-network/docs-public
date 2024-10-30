@@ -1,5 +1,5 @@
 ---
-title: Upgrade Smart Contracts
+title: Upgrade a contract
 description: Example of how to upgrade Dusk contracts.
 ---
 

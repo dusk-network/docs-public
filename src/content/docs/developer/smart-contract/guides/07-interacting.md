@@ -1,5 +1,5 @@
 ---
-title: Interacting with a contract
+title: Interact with a contract
 description: Guide on how to interact with Dusk smart contracts.
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Deploy
+title: Deploy a contract
 description: Deploy smart contracts to the Dusk blockchain.
 ---
 
