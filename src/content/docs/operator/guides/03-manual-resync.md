@@ -1,5 +1,5 @@
 ---
-title: Manually Resyncing
+title: Manually re-sync your node
 description: This resource outlines how to force a resync if a node is a stuck on a fork.
 ---
 
@@ -42,7 +42,7 @@ Retrieve the latest published state through the fast syncing tool:
 download_state
 ```
 
-For more details see the [fast syncing page](/operator/node-setup/fast-sync).
+For more details see the [fast syncing page](/operator/guides/02-fast-sync).
 
 ### 4. Restart Rusk
 

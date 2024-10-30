@@ -1,5 +1,5 @@
 ---
-title: Node Upgrade
+title: Upgrade your node
 description: This page outlines how you can upgrade your Nocturne node setup.
 ---
 
@@ -45,7 +45,7 @@ tail -n 30 /var/log/rusk.log
 
 Unable to figure it out yourself? Visit our [Node Runner Troubleshooting](https://discord.com/channels/847466263064346624/1118582421055606805) on Discord.
 
-If everything else fails, check out the [manual resync](/operator/node-setup/manual-resync) instructions.
+If everything else fails, check out the [manual resync](/operator/guides/03-manual-resync) instructions.
 
 ## Nocturne Reset
 
