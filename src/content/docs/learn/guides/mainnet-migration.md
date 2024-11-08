@@ -1,5 +1,5 @@
 ---
-title: BEP20/ERC20 migration
+title: BEP20/ERC20 Migration
 description: Guide on how to migrate your BEP20/ERC20 DUSK to mainnet DUSK.
 ---
 

@@ -1,7 +1,7 @@
 const defaultSidebar = [
-  { label: "Overview", link: "/learn/overview" },
+  { label: "Get Started", link: "/learn/overview" },
   {
-    label: "Learn Dusk",
+    label: "Learn about Dusk",
     items: [
       { label: "Introduction", link: "learn/introduction" },
       { label: "Core Values", link: "learn/core-values" },
@@ -17,16 +17,16 @@ const defaultSidebar = [
     ],
   },
   {
-    label: "FAQ & Guides",
+    label: "Read FAQ & Guides",
     items: [
       { label: "Dusk-ERC20 Staking", link: "/learn/guides/erc20-staking/" },
-      { label: "BEP2 migration", link: "/learn/guides/bep2-migration/" },
-      { label: "Mainnet DUSK migration", link: "/learn/guides/mainnet-migration/" },
+      { label: "BEP2 Migration", link: "/learn/guides/bep2-migration/" },
+      { label: "Mainnet DUSK Migration", link: "/learn/guides/mainnet-migration/" },
       { label: "Restore Block Height", link: "/learn/guides/restore-height/" },
     ],
   },
   {
-    label: "Deep Dive",
+    label: "Deep dive into Dusk",
     items: [
       { label: "Introduction", link: "learn/deep-dive/introduction" },
       {

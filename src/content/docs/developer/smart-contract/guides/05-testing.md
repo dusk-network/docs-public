@@ -1,5 +1,5 @@
 ---
-title: Testing
+title: Test a contract
 description: Guide on how to test Dusk contracts.
 ---
 
@@ -23,7 +23,7 @@ An example for integration testing can be seen in the tests folder of our genesi
 
 ### Testing on Nocturne
 
-Testing on Nocturne requires you to deploy the smart contract to the Nocturne chain and call the functions there via transactions. To get nDusk for the testnet you can use the [Faucet](/operator/nocturne/testnet-faucet).
+Testing on Nocturne requires you to deploy the smart contract to the Nocturne chain and call the functions there via transactions. To get nDusk for the testnet you can use the [Faucet](/operator/guides/testnet-faucet).
 
 ## Additional Resources
 

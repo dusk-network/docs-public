@@ -1,5 +1,5 @@
 ---
-title: Compiling
+title: Compile a contract
 description: Compiling contracts and information about verifiable builds.
 ---
 

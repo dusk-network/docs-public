@@ -1,5 +1,5 @@
 ---
-title: Debugging
+title: Debug a contract
 description: Guide on debugging Dusk contracts.
 ---
 

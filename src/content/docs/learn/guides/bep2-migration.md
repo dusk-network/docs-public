@@ -1,5 +1,5 @@
 ---
-title: Dusk BEP2 migration
+title: Dusk BEP2 Migration
 description: Guide on how to migrate your BEP2 DUSK to BEP20 DUSK.
 ---
 

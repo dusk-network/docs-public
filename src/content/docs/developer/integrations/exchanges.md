@@ -28,7 +28,7 @@ To access the blockchain you can either:
 
 ### Spin up a node
 
-You can access the blockchain and submit transactions by running a Dusk node. [Technical requirements](https://docs.dusk.network/operator/node-setup/getting-started#hardware) are quite light, and you can either [build from source](https://docs.dusk.network/operator/node-setup/build-from-source) or run a [Docker image](https://docs.dusk.network/operator/node-setup/docker-image).
+You can access the blockchain and submit transactions by running a Dusk node. [Technical requirements](/operator/introduction/requirements#hardware) are quite light, and you can either [build from source](/operator/node-installation/build-from-source) or run a [Docker image](/operator/node-installation/docker-image).
 
 ### Use Dusk APIs
 
