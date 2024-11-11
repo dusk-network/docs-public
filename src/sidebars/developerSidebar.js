@@ -24,7 +24,8 @@ export default function sidebar(currentPath) {
                     { label: "Debug", href: '/developer/smart-contract/guides/04-debugging' },
                     { label: "Test", href: '/developer/smart-contract/guides/05-testing' },
                     { label: "Upgrade", href: '/developer/smart-contract/guides/06-upgrades' },
-                    { label: "Interact", href: '/developer/smart-contract/guides/07-interacting' }
+                    { label: "Interact", href: '/developer/smart-contract/guides/07-interacting' },
+                    { label: "Multisig", href: '/developer/smart-contract/guides/08-multisig' }
                 ],
                 collapsed: true,
             },

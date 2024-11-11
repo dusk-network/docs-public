@@ -21,7 +21,7 @@ Circuits in Phoenix prove that the following conditions hold true:
 4. **Minting**: The value commitment for the newly minted notes are computed correctly.
 5. **Balance integrity**: The sum of the values of all spent notes is equal to the sum of the values of all minted notes + the gas fee + a deposit, where a deposit refers to funds being transfered to a contract.
 
-For additional information, you can have a look at the <a href="https://github.com/dusk-network/phoenix/tree/b3ee366887b131993f9e41a11286c39e10f2e816/circuits" target="_blank">circuits</a> and <a href="https://github.com/dusk-network/phoenix/blob/master/docs/protocol.pdf" target="_blank">specifications</a>.
+For additional information, you can have a look at the <a href="https://github.com/dusk-network/phoenix/tree/b3ee366887b131993f9e41a11286c39e10f2e816/circuits" target="_blank">circuits</a> and <a href="https://github.com/dusk-network/phoenix/blob/master/docs/v2/protocol.pdf" target="_blank">specifications</a>.
 
 ## Citadel circuits
 
