@@ -52,7 +52,7 @@ In most cases, 1 block confirmation is sufficient for finality. The only excepti
 
 ## Construct, sign and decode transactions
 
-The [W3sper SDK](https://github.com/dusk-network/rusk/tree/master/w3sper.js) provides address generation, transaction building, signing, and decoding functionalities. It can operate completely offline, without the need for an online wallet or node. The W3sper SDK leverages [wallet-core](https://github.com/dusk-network/dusk-wallet-core) to facilitate offline transaction processing and signing, producing both the transaction hash and signed transaction outputs. The format for transaction serialization and decoding is called `duskbytes`.
+The [W3sper SDK](https://github.com/dusk-network/rusk/tree/master/w3sper.js) provides address generation, transaction building, signing, and decoding functionalities. It can operate completely offline, without the need for an online wallet or node. The W3sper SDK leverages [wallet-core](https://github.com/dusk-network/dusk-wallet-core) to facilitate offline transaction processing and signing, producing both the transaction hash and signed transaction outputs. The library for transaction serialization and decoding is called [dusk-bytes](https://github.com/dusk-network/dusk-bytes).
 
 
 ## Cold Storage Method
