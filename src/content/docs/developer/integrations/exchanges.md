@@ -9,7 +9,7 @@ This guide shows how to add DUSK to an Exchange by providing all the relevant in
 
 ## Token Migration
 
-Users will be able to migrate from ERC-20 DUSK and BEP-20 DUSK to native DUSK by using the [migration contract](https://github.com/dusk-network/dusk-migration) to to burn their tokens and release an equivalent amount of DUSK on the Dusk mainnet to the specified target address. 
+Users will be able to migrate from ERC-20 DUSK and BEP-20 DUSK to native DUSK by using the [migration contract](https://github.com/dusk-network/dusk-migration) to burn their tokens and release an equivalent amount of DUSK on the Dusk mainnet to the specified target address. 
 
 More information about the Mainnet migration can be found [here](/learn/guides/mainnet-migration).
 
