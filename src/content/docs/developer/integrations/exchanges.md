@@ -93,7 +93,7 @@ Hardware Wallet integration is a work in progress.
 
 ### Screening tools
 
-Screening tools integration is a work in progress.
+Screening tools are available for DUSK.
 
 ### Cross-Chain Fees
 
