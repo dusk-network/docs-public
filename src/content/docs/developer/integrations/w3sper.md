@@ -9,7 +9,7 @@ It empowers developers to deploy not just smart contracts but also the complete 
 
 The W3sper SDK includes the following core features:
 
-- **Address & Account Management**: To easily generate and manage user profiles and addresses, streamlining user onboarding and identity management.
+- **Address & Account Management**: Easily generate and manage user profiles and addresses, streamlining user onboarding and identity management.
 - **Balance and Transaction Management**: To Check balances, create signed transactions, and manage gas effectively.
 - **Event Subscription**: Stay up-to-date with network events and access blockchain data in real-time.
 - **Proof Management**: Generate and delegate Zero Knowledge proofs.
