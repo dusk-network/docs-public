@@ -9,7 +9,7 @@ This guide shows how to add DUSK to an Exchange by providing all the relevant in
 
 ## Token Migration
 
-Users will be able to migrate from ERC-20 DUSK and BEP-20 DUSK to native DUSK by using the one-way bridge (burner contract) to burn their tokens and release an equivalent amount of DUSK on the Dusk mainnet to the specified target address. 
+Users will be able to migrate from ERC-20 DUSK and BEP-20 DUSK to native DUSK by using the [migration contract](https://github.com/dusk-network/dusk-migration) to to burn their tokens and release an equivalent amount of DUSK on the Dusk mainnet to the specified target address. 
 
 More information about the Mainnet migration can be found [here](/learn/guides/mainnet-migration).
 
@@ -17,9 +17,7 @@ Current token contracts are:
 - ERC-20 Contract Address: [0x940a2db1b7008b6c776d4faaca729d6d4a4aa551](https://etherscan.io/address/0x940a2db1b7008b6c776d4faaca729d6d4a4aa551)
 - BEP-20 Contract Address: [0xb2bd0749dbe21f623d9baba856d3b0f0e1bfec9c](https://bscscan.com/token/0xb2bd0749dbe21f623d9baba856d3b0f0e1bfec9c)
 
-The burner contract has been [audited](https://github.com/dusk-network/audits/blob/main/core-audits/2024-10_migration-smart-contract-security-assessment_zellic.pdf) and will be accessible via the [Dusk Wallet](https://wallet.dusk.network/).
-
-Eventually, the one-way migration bridge will evolve into a two-way Dusk <> EVM bridge.
+The [migration contract](https://github.com/dusk-network/dusk-migration) has been [audited](https://github.com/dusk-network/audits/blob/main/core-audits/2024-10_migration-smart-contract-security-assessment_zellic.pdf) and will be accessible via the [Dusk Wallet](https://wallet.dusk.network/).
 
 ## Connect to Dusk
 
