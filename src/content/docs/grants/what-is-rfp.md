@@ -11,8 +11,8 @@ By soliciting detailed proposals, Dusk's Grants Committee can compare different 
 ## Open RFPs
 
 Currently open RFPs are:
-- [Archival Nodes API Infrastructure](./rfps/archival-node)
-- [Hardware Wallet Integration](./rfps/hardware-wallet)
+- [Archival Nodes API Infrastructure](/grants/rfps/archival-node)
+- [Hardware Wallet Integration](/grants/rfps/hardware-wallet)
 
 ### Considerations
 
@@ -20,5 +20,5 @@ Before applying for an RFP, make sure to:
 - Fully understand the requirements and instructions provided in the RFP document.
 - Address the specific RFP's needs and requirements.
 - Add information about your experience and expertise related to the project.
-- Follow the general and <a href="http://docs.dusk.network/grants/#selection-process" target="_blank"> requirements and guidelines </a>.
+- Follow the general and [requirements and guidelines](/grants#general-requirements).
 

@@ -37,7 +37,7 @@ The DUSK token is widely accessible on top-tier CEXs and DEXs. For more informat
 DUSK serves several key purposes within the ecosystem:
 * Used for staking in consensus participation.
 * Rewards to consensus participants.
-* Payment of network fees ([gas](tx-fees)).
+* Payment of network fees ([gas](/docs/learn/tx-fees)).
 * Paying for the deployment of dApps on the network.
 * Payment of services on the network.
 
@@ -66,7 +66,7 @@ The vesting period ran from May 2019 to April 2022.
 
 ## Staking Details
 
-Staking is a crucial aspect of the Dusk protocol, allowing token holders to contribute to network security. For more details on the emission schedule, see the **[Token Emission Schedule](#token-emission-schedule)** below. Here are the primary details for staking DUSK tokens:
+Staking is a crucial aspect of the Dusk protocol, allowing token holders to contribute to network security. For more details on the emission schedule, see the **[Token Emission Schedule](/learn/tokenomics.md#token-emission-schedule)** below. Here are the primary details for staking DUSK tokens:
 
 * **Minimum Staking Amount**: 1000 DUSK.
 * **Maximum Staking Amount**: No upper bound.
