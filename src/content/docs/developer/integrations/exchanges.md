@@ -64,8 +64,8 @@ Users get to create accounts owned by multiple different BLS keys, where any imp
 ## Resources
 ### Libraries
 
-- [Wallet Stack](/developer/integrations/wallet-stack.mdx)
-- [Wallet Core](/developer/integration/wallet-core)
+- [Wallet Stack](/developer/integrations/wallet-stack)
+- [Wallet Core](/developer/integrations/wallet-core)
 - [W3sper SDK](/developer/integrations/w3sper)
 - [RUES (events system)](/developer/integrations/w3sper)
 

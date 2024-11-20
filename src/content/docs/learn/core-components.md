@@ -44,7 +44,7 @@ The stake contract is responsible for managing the stakes associated with node p
 
 ### Phoenix & Moonlight
 
-[Phoenix](tx-models#phoenix) & [Moonlight](tx-models#moonlight) are both transaction models supported by Dusk. One is for privacy, the other one for transparency and compliance.
+[Phoenix](/learn/tx-models#phoenix) & [Moonlight](/learn/tx-models#moonlight) are both transaction models supported by Dusk. One is for privacy, the other one for transparency and compliance.
 
 ### Transactions on Dusk
 
@@ -68,7 +68,7 @@ Zedger is an asset protocol that incorporates a unique hybrid transaction model 
 
 Zedger allows for the digital representation, native issuance and management of securites in a privacy-preserving manner. Issuers of securities are able to issue, manage, and let investors trade securities as XSC tokens It offers built-in support for compliant settlement, redemption of securities, preventing pre-approved users from having more than one account, supports dividend distribution and voting, and can handle capped transfers. Zedger aims to support a range of security types, like stocks, bonds and ETFs. The emphasis on regulatory compliance and privacy ensures that all operations meet the highest standards required by financial authorities and stakeholders.
 
-[Deep dive into Zedger](deep-dive/transaction_models/zedger) 
+[Deep dive into Zedger](/learn/deep-dive/transaction_models/zedger) 
 
 ## Dusk primitives
 
@@ -106,4 +106,4 @@ PLONK is a versatile proof system developed to facilitate the implementation of 
 
 With PLONK, developers can define custom and reusable circuits that can be integrated into Dusk based smart contracts. 
 
-[Deep dive into PlonK](deep-dive/cryptography/plonk) 
+[Deep dive into PlonK](/learn/deep-dive/cryptography/plonk) 

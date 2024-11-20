@@ -76,7 +76,7 @@ find . -name *.wasm
 
 By doing so, you should see the build file named: `your_contract_project_name.wasm`.
 
-Now that you have compiled the contract, you can [deploy](03-deploying) it to the Dusk blockchain.
+Now that you have compiled the contract, you can [deploy](/developer/smart-contract/guides/03-deploying) it to the Dusk blockchain.
 
 ## How to verify a contract?
 
