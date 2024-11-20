@@ -5,13 +5,25 @@ description: The Dusk glossary, split between Dusk terms and general definitions
 
 ## Dusk terminology
 
+#### Citadel
+
+A self-sovereign identity system that is part of the Dusk protocol.
+
 #### Confidential Security Contract Standard (XSC)
 
 A standardized framework for confidential smart contracts, which any company or organization can customize according to business-specific requirements (e.g., complying with data privacy and financial regulations).
 
+#### DUSK
+
+The native cryptocurrency of Dusk. It is used to pay for transaction fees and staking. 
+
 #### Kadcast
 
 A structured information propagation protocol used by Dusk, characterized by a direct correlation between network performance, latency, and the number of nodes.
+
+#### LUX
+
+The smallest denomination of DUSK. 10^9 LUX = 1 DUSK, 1 DUSK = 1,000,000,000 LUX.
 
 #### Moonlight
 
@@ -29,9 +41,21 @@ A general purpose virtual machine developed by Dusk that runs WASM smart contrac
 
 The official Dusk platform's Rust reference implementation.
 
+#### Rusk Wallet
+
+The official CLI wallet for Dusk, enabling users to manage DUSK, interact with the blockchain and execute transactions via a command-line interface.
+
 #### Succinct Attestation
 
 A unique Proof-of-Stake consensus algorithm developed by Dusk which allows network participants to compete for block producer rights.
+
+#### W3sper SDK
+
+A JavaScript library for communication within the Dusk ecosystem, enabling developers to integrate Dusk dApps into (web) applications.
+
+#### Web Wallet
+
+The official web-based wallet for Dusk, providing users with an accessible way to manage DUSK and interact with the blockchain through a user-friendly interface.
 
 #### Zedger
 
