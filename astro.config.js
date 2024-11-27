@@ -3,6 +3,7 @@ import starlight from "@astrojs/starlight";
 import remarkMath from 'remark-math';
 import rehypeMathjax from 'rehype-mathjax';
 import defaultSidebar from "./src/sidebars/defaultSidebar";
+import starlightLinksValidator from "starlight-links-validator";
 
 // https://astro.build/config
 export default defineConfig({
@@ -45,6 +46,7 @@ export default defineConfig({
 			pagination: true,
 			tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 4 },
 			sidebar: defaultSidebar,
+			plugins: [starlightLinksValidator()],
 		}),
 	],
 });
