@@ -36,14 +36,14 @@ Moreover, phoenix is the custom-built zero-knowledge proof-powered Dusk UTXO tra
 Phoenix uses ZKPs to prevent double-spending attacks and prove the ownership of unspent outputs. An owner of a note can share their View Key, allowing third parties to detect the outputs belonging to the owner, and in case of obfuscated notes, the value encrypted within. A note can only be spent via a Secret Key, known exclusively to the owner of the note.
 
 
-[Deep dive into Phoenix](deep-dive/transaction_models/phoenix)
+[Deep dive into Phoenix](/learn/deep-dive/transaction_models/phoenix)
 
 ### Moonlight
 
 Moonlight is an account-based transaction model, which keeps track of balances for accounts and contracts. Moonlight is fully transparent, making it easy to interact with external protocols that do not preserve privacy.
 Users can convert funds between Moonlight and Phoenix (and vice-versa), making Moonlight a completely integrated transparent account model on Dusk.
 
-[Deep dive into Moonlight](deep-dive/transaction_models/moonlight)
+[Deep dive into Moonlight](/learn/deep-dive/transaction_models/moonlight)
 
 
 ### Phoenix vs Moonlight

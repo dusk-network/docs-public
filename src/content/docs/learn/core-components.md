@@ -52,7 +52,7 @@ Transactions in Dusk are managed by the <a href="https://github.com/dusk-network
 
 To minimize unnecessary entries and avoid overloading the tree, staking rewards are accumuated separately. When the rewards are withdrawn, they are consolidated into a single note representing the total accumulated stake
 
-Additionally, the transfer Contract supports **both** a [UTXO](tx-models#utxos) and [account-based](tx-models#account-model) model through [Phoenix](tx-models#phoenix) and [Moonlight](tx-models#moonlight) to handle transfers of the native currency, gas payments, and serve as a contract execution entry point.
+Additionally, the transfer Contract supports **both** a [UTXO](/learn/tx-models#utxos) and [account-based](/learn/tx-models#account-model) model through [Phoenix](/learn/tx-models#phoenix) and [Moonlight](/learn/tx-models#moonlight) to handle transfers of the native currency, gas payments, and serve as a contract execution entry point.
 
 ### Citadel
 

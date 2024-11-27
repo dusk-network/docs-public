@@ -10,7 +10,7 @@ You can find the complete API [here](https://github.com/dusk-network/moat/blob/m
 
 ## Prerequisites
 
-**Moat** requires a reachable Rusk node installed and running, or selecting a trusted one. You can set up a node as explained [here](/operator/node-installation/build-from-source). It also requires an installed wallet connected to the given Rusk node, as explained [here](https://github.com/dusk-network/rusk/blob/master/rusk-wallet/src/bin/README.md).
+**Moat** requires a reachable Rusk node installed and running, or selecting a trusted one. You can set up a node as explained [here](/operator/01-installation/). It also requires an installed wallet connected to the given Rusk node, as explained [here](https://github.com/dusk-network/rusk/blob/master/rusk-wallet/src/bin/README.md).
 
 ## Using the CLI
 

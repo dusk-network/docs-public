@@ -40,7 +40,7 @@ Because the **core** crate lacks heap memory allocations, we can explicitly also
 
 ### Usage of panic & reverting state
 
-While you can have Result types in your smart contracts and handle them in multiple function calls, in the end you may want to abort execution. For example if a specific requirement is not satisfied you can always make use of directives that lead to panic (e.g. `.expect()` or `panic!()`). This is equivalent to `require()` in Solidity. It will abort the smart contract execution and let the transaction [fail](../../../learn/tx-fees#unsuccessful-transactions). This will also **revert** the state, making no changes to it.
+While you can have Result types in your smart contracts and handle them in multiple function calls, in the end you may want to abort execution. For example if a specific requirement is not satisfied you can always make use of directives that lead to panic (e.g. `.expect()` or `panic!()`). This is equivalent to `require()` in Solidity. It will abort the smart contract execution and let the transaction [fail](/learn/tx-fees#unsuccessful-transactions). This will also **revert** the state, making no changes to it.
 
 ## UTXO & Account-model
 
@@ -239,7 +239,7 @@ The `abi` and `host` features in the rusk-abi crate are mutually exclusive. This
 
 #### Expose Functions
 
-In order for smart contract functions to be accessible via transactions on Dusk, they need to be exposed using features provided by rusk-abi. Exporting those functions is being done through `rusk_abi::wrap_call` which is available through the `abi` feature. An example for that can be found in the [Guide](guides/01-my-first-contract#expose-functions).
+In order for smart contract functions to be accessible via transactions on Dusk, they need to be exposed using features provided by rusk-abi. Exporting those functions is being done through `rusk_abi::wrap_call` which is available through the `abi` feature. An example for that can be found in the [Guide](/developer/smart-contract/guides/01-my-first-contract#expose-functions).
 
 The `rusk_abi::wrap_call` macro serves to wrap contract methods in a way that ensures they can be safely and effectively called by the host environment. This ensures that any errors that occur during the execution of the function are caught and handled appropriately, avoiding uncontrolled errors that can affect the VM state. Wrapping the call also helps converting inputs and outputs between the formats expected by the smart contract and those used by the host environment (e.g. data type conversions), as well as performing security checks.
 
