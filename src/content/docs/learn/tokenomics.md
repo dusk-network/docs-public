@@ -66,7 +66,7 @@ The vesting period ran from May 2019 to April 2022.
 
 ## Staking Details
 
-Staking is a crucial aspect of the Dusk protocol, allowing token holders to contribute to network security. For more details on the emission schedule, see the **[Token Emission Schedule](/learn/tokenomics.md#token-emission-schedule)** below. Here are the primary details for staking DUSK tokens:
+Staking is a crucial aspect of the Dusk protocol, allowing token holders to contribute to network security. For more details on the emission schedule, see the **[Token Emission Schedule](/learn/tokenomics#token-emission-schedule)** below. Here are the primary details for staking DUSK tokens:
 
 * **Minimum Staking Amount**: 1000 DUSK.
 * **Maximum Staking Amount**: No upper bound.

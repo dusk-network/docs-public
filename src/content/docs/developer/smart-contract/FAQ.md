@@ -5,7 +5,7 @@ description: Frequently asked questions.
 
 #### How to verify a contract?
 
-Information about contract verification can be found [here](guides/02-compiling#how-to-verify-a-contract).
+Information about contract verification can be found [here](/developer/smart-contract/guides/02-compiling#how-to-verify-a-contract).
 
 #### Can a Contract deploy another Contract?
 
@@ -65,7 +65,7 @@ A wallet exec with arbitrary data can be found <a href="https://github.com/dusk-
 
 #### Why is there no msg.sender method?
 
-[UTXO & Account model](core-concepts#utxo--account-model)
+[UTXO & Account model](/developer/smart-contract/core-concepts#utxo--account-model)
 
 #### How to pause or unpause contracts?
 

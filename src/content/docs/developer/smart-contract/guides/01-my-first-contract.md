@@ -19,7 +19,7 @@ Smart contracts on Dusk are "almost" normal Rust programs, let's create a new Ru
 cargo new --lib my-first-contract
 ```
 
-This command will create a Rust library project in a folder named `my-first-contract`. You can open the project using your favorite [IDE](../getting-started#ide) or with a simple system editor.
+This command will create a Rust library project in a folder named `my-first-contract`. You can open the project using your favorite [IDE](/developer/smart-contract/getting-started#ide) or with a simple system editor.
 
 In the `src` folder there is a `lib.rs` file with some sample code. You can remove all the contents of the that file.
 
@@ -158,7 +158,7 @@ Additionally, the `init()` function can also only be called during deployment.
 
 #### Expose functions
 
-To be able to interact with the VM, the functions need to be exposed in a special way due to the contract being compiled as a WASM module. You may come across the phrase "we expose them to the host" when talking about this. You can look into [Core concepts](../core-concepts#the-host) to learn more about what the host is.
+To be able to interact with the VM, the functions need to be exposed in a special way due to the contract being compiled as a WASM module. You may come across the phrase "we expose them to the host" when talking about this. You can look into [Core concepts](/developer/smart-contract/core-concepts) to learn more about what the host is.
 
 To explain it briefly, it just allows the VM to "see" the methods and allow them to be invoked by a transaction on Dusk.
 
@@ -193,7 +193,7 @@ wrap_call(arg_len, |num: u32, multiply: u32| STATE.increment(num, multiply))
 :::
 
 **Additional Information**: 
-- The `#[no_mangle]` annotations are needed in order to turn off the default name mangling of the Rust linker. We want our names to be as they are, since they will be called via mechanisms outside the control of the linker. More information on that can be found in [core concepts](../core-concepts#no_mangle).
+- The `#[no_mangle]` annotations are needed in order to turn off the default name mangling of the Rust linker. We want our names to be as they are, since they will be called via mechanisms outside the control of the linker. More information on that can be found in [core concepts](/developer/smart-contract/core-concepts#no_mangle).
 - `rusk_abi::wrap_call` takes care of all the boilerplate code needed to serialize/deserialize and pass arguments to and from our methods.
 
 #### Add Serialization
