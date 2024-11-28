@@ -42,4 +42,4 @@ struct FnData {
 
 ## Example
 
-An example on how to use sessions can be found [here](/getting-started/vm/03-examples/05-sessions-example).
+An example on how to use sessions can be found [here](/developer/smart-contract/archive_and_review/03-examples/05-sessions-example).

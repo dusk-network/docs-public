@@ -33,4 +33,4 @@ If the provided GasLimit is not sufficient for processing, your transaction may 
 In addition to encountering the `OUT_OF_GAS` error, a transaction can also FAIL for various reasons depending on the invoked smart contract. If the transaction fails, all changes are reverted, and the entire fees associated with the transaction are charged.
 
 ## Fee Redistribution
-Every time a transaction fee is charged, the amount accrues in the block reward. The block reward comprises transaction fees and the coinbase value (according to the [token emission schedule](./tokenomics#token-emission-schedule), see link). The block reward is then allocated 90% to the block generator and 10% to the DUSK pool.
+Every time a transaction fee is charged, the amount accrues in the block reward. The block reward comprises transaction fees and the coinbase value (according to the [token emission schedule](/learn/tokenomics#token-emission-schedule), see link). The block reward is then allocated 90% to the block generator and 10% to the DUSK pool.

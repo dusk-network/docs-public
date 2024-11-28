@@ -80,7 +80,7 @@ curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-insta
 
 Once everything has been set up, you will be asked to add your consensus keys. These keys are used to sign and vote for blocks.
 
-If you haven't made a wallet yet, use our CLI [Rusk Wallet](https://wallet.dusk.network/setup/), which you can download [here](https://github.com/dusk-network/rusk/actions/runs/11113602682/artifacts/1997624810), and create a new wallet. You can request funds from our [Discord faucet](/operator/guides/testnet-faucet). The faucet will give you 5000 nDUSK. The minimum to stake is 1000 nDUSK.
+If you haven't made a wallet yet, use our CLI [Rusk Wallet](https://wallet.dusk.network/setup/), which you can download [here](https://github.com/dusk-network/rusk/actions/runs/11113602682/artifacts/1997624810), and create a new wallet. You can request funds from our [Discord faucet](/operator/guides/01-nocturne-node#faucet). The faucet will give you 5000 nDUSK. The minimum to stake is 1000 nDUSK.
 
 Once you have access to a Dusk mnemonic, run the following command:
 ```sh
