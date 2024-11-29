@@ -59,6 +59,28 @@ The [multisig contract](https://github.com/dusk-network/multisig-contract) conta
 
 Users get to create accounts owned by multiple different BLS keys, where any important action must be signed (agreed upon) by some configurable portion of those keys.
 
+## Compliance and Legal Opinion
+
+Dusk is **fully compliant** with key global regulatory frameworks, providing robust adherence to financial and data protection standards:
+
+- Market Abuse Regulations (MAR)
+- Data Protection Regulations (GDPR)
+- Anti-Money Laundering Directive (AMLD5)
+- MiCA (Markets in Crypto-Assets Regulation)
+- TFR (Transfer of Funds Regulation)
+
+The protocol’s dual-model ([Moonlight](/learn/tx-models#moonlight) and [Phoenix](/learn/tx-models#phoenix)) offers unmatched flexibility while maintaining compliance. 
+
+:::note[Important]
+It is important to note that exchanges only need to support the Moonlight transaction model.
+::: 
+
+[Moonlight](/learn/tx-models#moonlight) is designed specifically for full transaction transparency, making it ideal for integration with exchanges and ensuring that:
+
+- **CASPs** can easily meet compliance obligations under **AMLD5**, **MiCA**, and **TFR**.
+- There is full support for **KYC**, transaction monitoring, and reporting requirements without any legal or technical barriers.
+
+To reinforce confidence in compliance, there is a comprehensive and detailed **legal opinion** confirming adherence to applicable laws and regulations. This document is available for review upon request.
 
 
 ## Resources
@@ -83,15 +105,12 @@ Users get to create accounts owned by multiple different BLS keys, where any imp
 
 ### Audits
 - [Audits Reports](https://github.com/dusk-network/audits)
+
   
 ## Q&As
 ### Status of Hardware Wallet Support
 
 Hardware Wallet integration is a work in progress.
-
-### Screening tools
-
-Screening tools are available for DUSK.
 
 ### Cross-Chain Fees
 
