@@ -1,6 +1,6 @@
 ---
 title: Additional Resources 
-description: Links to our research papers and technical blogs.
+description: Explore resources and links related to Dusk’s scientific research and implementations.
 ---
 
 ## Research Papers

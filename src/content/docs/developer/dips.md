@@ -1,6 +1,6 @@
 ---
 title: Dusk Improvement Proposals (DIPs)
-description: Dusk Improvement proposals - What are they?
+description: Learn how Dusk Improvement Proposals contribute to innovation within the Dusk ecosystem.
 ---
 
 ## What is a DIP?

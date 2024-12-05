@@ -1,6 +1,6 @@
 ---
 title: Interact with a contract
-description: Guide on how to interact with Dusk smart contracts.
+description: Learn the best practices for interacting with deployed smart contracts using Dusk’s tools and APIs.
 ---
 
 ## Sending and Withdrawing funds from contract

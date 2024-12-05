@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-description: Dependencies and available IDEs we recommend.
+description: Discover the essential tools, dependencies, and IDEs for developing smart contracts on Dusk.
 ---
 ## Dependencies
 

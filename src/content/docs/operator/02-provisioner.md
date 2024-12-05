@@ -1,6 +1,6 @@
 ---
 title: Run a Provisioner
-description: This section outlines how to install a Dusk Validator Node and start staking. Validator Nodes in Dusk are called Provisioners.
+description: Discover how to install and configure a Dusk Validator Node (Provisioner) to participate in consensus and start staking.
 ---
 
 Dusk supports multiple node configurations, with Provisioners being the only node type directly incentivized by the protocol through staking rewards. As the backbone of network security and transaction validation, Provisioners play a crucial role in processing and appending new blocks to the Dusk blockchain.

@@ -1,6 +1,7 @@
 ---
 title: Piecrust and piecrust-uplink
-description: The underlying VM of Dusk explained.
+description: Learn about Dusk Piecrust, the wasmtime VM that efficiently executes smart contracts on Dusk.
+
 ---
 
 ## Piecrust

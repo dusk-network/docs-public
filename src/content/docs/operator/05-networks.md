@@ -1,6 +1,6 @@
 ---
 title: Choose a Network
-description: Overview of Dusk’s network environments and their functionalities.
+description:  Explore the scope of different Dusk’s environments, including testnet and mainnet.
 ---
 
 Dusk offers multiple network environments to support different stages of development, testing, and live usage. Each network serves a unique purpose, allowing developers, testers, and users to interact with the Dusk network under various conditions. 

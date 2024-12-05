@@ -1,6 +1,6 @@
 ---
 title: Compile a contract
-description: Compiling contracts and information about verifiable builds.
+description: Compile Dusk smart contracts and ensure verifiable builds for secure and transparent deployments
 ---
 
 This page is about compiling smart contracts and what verifiable builds are. Verifiable builds are particularly important for smart contracts as it is necessary to reproduce every single step in order to verify a contract's compiled bytecode against the supplied source code or project to ensure that they are exactly the same.

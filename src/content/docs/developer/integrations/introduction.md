@@ -1,6 +1,6 @@
 ---
 title: Integrations introduction
-description: This page explains how to integrate with Dusk.
+description: Integrate with Dusk. Explore integration guides, SDKs, and tools tailored for developers and institutions.
 ---
 
 This section outlines the libraries that developers can use to integrate with Dusk:

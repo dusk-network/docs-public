@@ -1,6 +1,6 @@
 ---
 title: RFP-02
-description: Hardware wallet RFP.
+description: Learn about the RFP to integrate hardware wallet support on Dusk.
 ---
 
 

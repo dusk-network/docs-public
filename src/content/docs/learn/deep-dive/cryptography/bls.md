@@ -1,6 +1,6 @@
 ---
 title: BLS12-381
-description: BLS12-381 explained.
+description: Learn about the pairing-based curve BLS12-381 and its use in securing Dusk.
 ---
 
 This is a non-exhaustive introduction to some of the key characteristics of the elliptic curve BLS12-381.

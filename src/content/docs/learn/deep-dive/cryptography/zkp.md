@@ -1,6 +1,6 @@
 ---
 title: Zero Knowledge Proofs
-description: The role Zero Knowledge Proofs play in Dusk and what they are.
+description: Discover how zero-knowledge proofs empower privacy, security and scalability in Dusk’s blockchain ecosystem
 ---
 
 ## Introduction

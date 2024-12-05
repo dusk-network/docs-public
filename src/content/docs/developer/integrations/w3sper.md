@@ -1,6 +1,6 @@
 ---
 title: W3sper SDK
-description: Comprehensive Dusk toolkit.
+description: Use the Dusk toolkit to build, test, and deploy compliant dApps for regulated financial markets.
 ---
 
 The  <a href="https://github.com/dusk-network/rusk/tree/master/w3sper.js" target="_blank">W3sper SDK</a> (*/ˈwɛs.pər/*) is a comprehensive toolkit of modules designed to facilitate the development of applications that interact seamlessly with the Dusk network.  W3sper ensures secure, flexible interactions directly within the user's environment, eliminating the need for installations.

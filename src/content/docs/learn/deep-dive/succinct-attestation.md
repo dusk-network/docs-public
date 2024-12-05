@@ -1,6 +1,6 @@
 ---
 title: Succinct Attestation Consensus
-description: The proof-of-stake consensus protocol developed and designed by Dusk.
+description: Understand the innovative consensus mechanism that secures Dusk.
 ---
 
 The Dusk consensus protocol, called **succinct attestation** (**SA**), is a permission-less, committee-based proof-of-stake consensus protocol.

@@ -1,6 +1,6 @@
 ---
 title: Wallet Core Library
-description: Documentation on how to interact with wallet-core.
+description: Integrate with Dusk Wallet-Core library to manage transactions.
 ---
 
 This is documentation for how to use the wallet-core library from any programming language of your preference. 

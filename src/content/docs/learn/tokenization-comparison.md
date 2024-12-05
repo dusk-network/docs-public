@@ -1,6 +1,6 @@
 ---
 title: Digitization, Tokenization and Native Issuance 
-description: Understanding the difference between Tokenization and Native Issuance.
+description: Understand the difference between Tokenization and Native Issuance, and how Dusk is able to provide both.
 ---
 
 ## Common Misconceptions

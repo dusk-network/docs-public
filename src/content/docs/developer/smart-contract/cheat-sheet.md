@@ -1,6 +1,6 @@
 ---
 title: Smart Contract Cheat Sheet
-description: Quick information lookup on code snippets and infos for Dusk smart contracts.
+description: Access to examples tips to streamline your smart contract development on Dusk.
 ---
 
 Collection of code snippets and information bits on smart contract development for Dusk.

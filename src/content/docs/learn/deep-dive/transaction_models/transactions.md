@@ -1,6 +1,6 @@
 ---
 title: The transfer contract
-description: How transactions with the transfer contract work on Dusk explained.
+description: Learn how transactions are processed using the Dusk transfer contract.
 ---
 
 The <a href="https://github.com/dusk-network/rusk/tree/master/contracts/transfer" target="_blank">Transfer Contract</a> is a vital component of the Dusk network, responsible for verifying transactions and managing gas payments.

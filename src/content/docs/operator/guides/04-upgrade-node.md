@@ -1,6 +1,6 @@
 ---
 title: Upgrade your node
-description: This page outlines how you can upgrade your Nocturne node setup.
+description: Learn how to update your Dusk node to the latest version of the Nocturne testnet.
 ---
 
 A network may be occasionally upgraded with new features and performance optimizations.

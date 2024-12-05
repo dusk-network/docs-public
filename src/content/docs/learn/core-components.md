@@ -1,6 +1,6 @@
 ---
 title: Core Components
-description: Core components that make up Dusk.
+description: Introduction to the core components that power Dusk.
 ---
 
 There are a lot of moving pieces within the Dusk protocol, and a lot of tools that we have developed in-house to meet the requirements of being privacy-preserving, compliant, and able to interact with regulated assets.

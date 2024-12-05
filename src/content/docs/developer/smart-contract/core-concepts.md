@@ -1,6 +1,6 @@
 ---
 title: Core Concepts
-description: Core concepts within the Dusk smart contract platform.
+description: Learn the foundational principles of Dusk’s smart contract platform, including zero-knowledge proofs, privacy, and decentralized execution.
 ---
 
 This page explains in more detail the core concepts, namings, conventions and building blocks for developing smart contracts on Dusk. If you want to dive right into development you can directly go to the [Guides](/developer/smart-contract/guides/01-my-first-contract).

@@ -1,6 +1,6 @@
 ---
 title: Dusk BEP2 Migration
-description: Guide on how to migrate your BEP2 DUSK to BEP20 DUSK.
+description: Step-by-step guide to migrating your BEP2 DUSK tokens to the BEP20 standard.
 ---
 
 As the <a href="https://www.bnbchain.org/en/blog/final-sunset-plan-of-bnb-beacon-chain" target="_blank">Binance Beacon Chain is sunsetting</a>, there have been multiple communications over the past months to facilitate the migration of BEP2 DUSK tokens to BEP20 DUSK.

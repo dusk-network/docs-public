@@ -1,6 +1,6 @@
 ---
 title: Transaction Models
-description: Explanation on the transaction models on Dusk.
+description: Dive into the different transaction models available on Dusk and their unique features.
 ---
 
 A transaction model defines how transactions are structured, verified, and recorded. Consequently, a transaction model specifies the rules that allow assets to be transferred between participants on a network.

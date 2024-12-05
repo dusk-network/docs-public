@@ -1,6 +1,6 @@
 ---
 title: Glossary
-description: The Dusk glossary, split between Dusk terms and general definitions.
+description: A detailed glossary of terms specific to Dusk and general definitions.
 ---
 
 ## Dusk terminology

@@ -1,6 +1,6 @@
 ---
 title: Run an Archiver
-description: This section outlines how to install a Dusk Archiver Node.
+description: Learn how to set up a Dusk Archiver Node to store and give access to Dusk’s historical data.
 ---
 Archivers differs from [Provisioners](/operator/02-provisioner) by preserving a complete historical record of the Dusk blockchain. While Provisioners are focused solely on the current state, Archivers provide essential long-term data access that supports applications, users, researchers, and auditors who need comprehensive historical information.
 

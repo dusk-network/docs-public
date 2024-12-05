@@ -1,6 +1,6 @@
 ---
 title: Install Rusk
-description: This section provides a guide for installing a Dusk node.
+description: Learn how to install and configure a Dusk node.
 ---
 
 
