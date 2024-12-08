@@ -3,7 +3,7 @@ title: Run a Provisioner on Nocturne
 description: This guide outlines how to install the Dusk node and join Nocturne.
 ---
 
-In this guide, we’ll be using [DigitalOcean](https://www.digitalocean.com/) (DO) as our go-to [Virtual Private Server](https://en.wikipedia.org/wiki/Virtual_private_server) (VPS) service. The same can be replicated on Vultr, AWS, any other cloud service or for node runners at home. While it is indeed possible to run a node on home infrastructure, this guide will not deal with those types of setups. 
+In this guide, we’ll be using [DigitalOcean](https://www.digitalocean.com/) (DO) as our go-to [Virtual Private Server](https://en.wikipedia.org/wiki/Virtual_private_server) (VPS) service. The same can be replicated on Vultr, AWS, any other cloud service or for node runners at home. While it is indeed possible to run a node on home infrastructure, this guide will not deal with those types of setups.
 
 We work under the assumption that you’ve already created an account for your respective service, and provided it with a payment method. If not, you can get a $200 credit by using [our referral link](https://m.do.co/c/9ae612e34de9).
 
@@ -45,7 +45,7 @@ DO works with firewall groups. Navigate to _Networking_ -> _Firewalls_ under the
 
 ![Create firewall page.](../../../../assets/nocturne/node-guide/create-firewall.png)
 
-Give the firewall a name, open UDP under port 9000 and TCP under 8080. Leave all the Outbound rules as they are. 
+Give the firewall a name, open UDP under port 9000 and TCP under 8080. Leave all the Outbound rules as they are.
 
 Apply the rules to the nocturne-node droplet you made.
 
@@ -73,7 +73,7 @@ Just like last time, we've created an easy to use [node installer](https://githu
 
 Install Rusk by pasting the following command in your droplet terminal:
 ```sh
-curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.3.5/node-installer.sh | sudo sh
+curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/latest/download/node-installer.sh | sudo sh
 ```
 
 ## Configure Rusk
@@ -89,7 +89,7 @@ rusk-wallet restore
 
 If your node is not running, it will tell you `some operations won't be available`. This is fine, and happens due to your node not being online yet. You can still continue to follow the steps below.
 
-You will be asked to provide your recovery phrase/mnemonic, **in lowercase**, and to enter a password for the wallet. 
+You will be asked to provide your recovery phrase/mnemonic, **in lowercase**, and to enter a password for the wallet.
 
 Once you've done so, run the following command to export a consensus key for the given wallet:
 ```sh
@@ -149,31 +149,31 @@ In order to access it, follow these steps:
 1. Access the [Dusk Discord server](https://discord.gg/dusk-official).
 2. Among the team members, locate the bot "Dusk Testnet Faucet."
 3. Right-click and select "Message".
-4. Send `!dusk` as a command. The bot will reply, asking for your Testnet wallet address. 
+4. Send `!dusk` as a command. The bot will reply, asking for your Testnet wallet address.
 5. Done! Your transaction will be queued, and you will see it in your wallet once processed.
 
 There is currently a limit of 1 transaction per user/wallet every 24 hours.
 
 ## FAQs
 
-**Q: How many times can I use the faucet?** 
+**Q: How many times can I use the faucet?**
 
 There is currently a 24-hour cooldown period before you can ask for nDUSK again with the same Discord username or wallet address.
 
-**Q: How do I access the Dusk Discord server?** 
+**Q: How do I access the Dusk Discord server?**
 
 You can access the Discord server by clicking on [this link](https://discord.gg/dusk-official).
 
-**Q: How long before I will see my nDUSK?** 
+**Q: How long before I will see my nDUSK?**
 
-Once the transaction is submitted, it will be processed in a queue. 
-The time required to see the nDUSK in your account may vary according to network congestion and the number of people currently requesting nDUSK, but it usually takes just a few minutes. 
+Once the transaction is submitted, it will be processed in a queue.
+The time required to see the nDUSK in your account may vary according to network congestion and the number of people currently requesting nDUSK, but it usually takes just a few minutes.
 If the network is experiencing a large number of faucet requests, the transaction might take longer than usual to be processed.
 
 **Q: What if I want to run multiple nodes?**
 
 If you need nDUSK for multiple accounts, you can either wait 24 hours and then send again to the other wallet, or send your nDUSK to the first wallet, and then transfer some of it to the second wallet yourself.
 
-**Q: I got error X, what should I do?** 
+**Q: I got error X, what should I do?**
 
 If you encounter an error with the Discord faucet, please get in touch in our Telegram or Discord channel.
