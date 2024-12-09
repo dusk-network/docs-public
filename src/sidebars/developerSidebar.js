@@ -16,7 +16,7 @@ export default function sidebar(currentPath) {
             },
             {
                 type: "group",
-                label: "Read the Guides",
+                label: "Guides",
                 entries: [
                     { label: "Develop", href: '/developer/smart-contract/guides/01-my-first-contract' },
                     { label: "Compile", href: '/developer/smart-contract/guides/02-compiling' },
@@ -31,7 +31,7 @@ export default function sidebar(currentPath) {
             },
             {
                 type: "link",
-                label: "Understand Core Concepts",
+                label: "Core Concepts",
                 href: "/developer/smart-contract/core-concepts",
             },
             {
@@ -41,7 +41,7 @@ export default function sidebar(currentPath) {
             },
             {
                 type: "link",
-                label: "Read the Cheat Sheet",
+                label: "Cheat Sheet",
                 href: "/developer/smart-contract/cheat-sheet",
             }
         ], false),
