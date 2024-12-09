@@ -1,5 +1,5 @@
 ---
-title: FAQs
+title: FAQ
 description: Frequently asked questions.
 ---
 
@@ -69,4 +69,4 @@ A wallet exec with arbitrary data can be found <a href="https://github.com/dusk-
 
 #### How to pause or unpause contracts?
 
-Contract locking is available to those contracts falling in the scenario 3 of the economic protocol, This includes the cases when a vulnerability is detected either algorithmically (the contract goes in out of gas) or manually by the contract's owner (the contract is losing money). 
+Contract locking is available to those contracts falling in the scenario 3 of the economic protocol, This includes the cases when a vulnerability is detected either algorithmically (the contract goes in out of gas) or manually by the contract's owner (the contract is losing money).
