@@ -36,7 +36,7 @@ export default function sidebar(currentPath) {
             },
             {
                 type: "link",
-                label: "Look at the FAQs",
+                label: "FAQ",
                 href: '/developer/smart-contract/faq'
             },
             {

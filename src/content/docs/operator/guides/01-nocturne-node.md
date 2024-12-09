@@ -154,7 +154,7 @@ In order to access it, follow these steps:
 
 There is currently a limit of 1 transaction per user/wallet every 24 hours.
 
-## FAQs
+## FAQ
 
 **Q: How many times can I use the faucet?**
 
