@@ -1,0 +1,47 @@
+name: Docs Content Issue
+description: Report an issue with the content of the docs.
+title: 'Content: '
+assignees: []
+body:
+  - type: input # Url to the page
+    id: url
+    attributes:
+      label: Web Url
+      description: The URL of the page where the content issue is located or where the content should be.
+      placeholder: https://docs.dusk.network...
+    validations:
+      required: true
+  - type: textarea  # Description
+    id: description
+    attributes:
+      label: Description
+      description: A clear but concise description of what the content issue is about.
+      placeholder: E.g., explanation is missing, information is unclear, or something is outdated etc.
+    validations:
+      required: true
+  - type: dropdown # Section
+    id: section
+    attributes:
+      label: Section
+      description: The section of the docs where this issue is related to.
+      options:
+        - "Learn"
+        - "Developer"
+        - "Node Operator"
+        - "Grants"
+    validations:
+       required: false
+  - type: dropdown # Content Type
+    id: type
+    attributes:
+      label: Topic
+      multiple: true
+      description: The topic of the content issue that applies the most.
+      options:
+          - "APIs & Integrations"
+          - "Wallet & Dusk usage"
+          - "Staking & Node running"
+          - "Smart Contract Development"
+          - "Other"
+    validations:
+      required: false

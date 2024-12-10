@@ -1,0 +1,42 @@
+name: Bug report
+description: Create a bug report for the docs website
+title: 'Bug: '
+assignees: []
+body:
+  - type: textarea # Bug description
+    id: description
+    attributes:
+      label: Bug description
+      description: A clear but concise description of what the bug is.
+      placeholder: E.g., menu not working on mobile, page not loading, etc.
+    validations:
+      required: true
+  - type: textarea # Bug Reproduction
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: On which page did you encounter the bug? How can it be reproduced?
+      placeholder: Steps to reproduce the bug you encountered or information on what you did before the bug occurred.
+    validations:
+      required: true
+  - type: dropdown # Browser Type
+    id: browser
+    attributes:
+      label: Browser
+      description: The browser you were using when you encountered the bug.
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Other
+    validations:
+      required: true
+  - type: textarea # Additional context
+    id: context
+    attributes:
+      label: Additional context
+      placeholder: Any additional context you would like to provide.
+    validations:
+      required: false
+
