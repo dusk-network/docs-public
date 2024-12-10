@@ -1,6 +1,8 @@
 ---
 title: Security Lifecycle
-description: This page starts with a general introduction to the classes of securities and the resulting types of security tokens. We then dive into the mechanics and requirements of these tokens.
+description: Learn about the lifecycle of securities and how Dusk provides institutional grade technology for institutions operating in regulated financial markets.
+
+
 ---
 
 This page starts with a general introduction to the classes of securities and the resulting types of security tokens. We then dive into the mechanics and requirements of these tokens.

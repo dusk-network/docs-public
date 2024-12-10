@@ -1,6 +1,6 @@
 ---
 title: Debug a contract
-description: Guide on debugging Dusk contracts.
+description: Explore debugging techniques to optimize your smart contracts for Dusk’s environment.
 ---
 
 The `debug` and `host_debug` features are meant for debugging while writing the contracts. They allow developers to print logs to stdout from the contract, making inspecting the state a bit easier.

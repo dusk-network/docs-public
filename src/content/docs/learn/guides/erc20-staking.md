@@ -1,6 +1,6 @@
 ---
 title: Dusk-ERC20 Staking
-description: Quick guide and FAQ for the ERC20 DUSK ITN2 staking incentive.
+description: Answers to common questions about the ERC-20 DUSK staking ITN2 incentive program.
 ---
 
 ## Quick guide on how to unstake DUSK

@@ -1,6 +1,6 @@
 ---
 title: Deploy a contract
-description: Deploy smart contracts to the Dusk blockchain.
+description: Deploy smart contracts on Dusk using CLI tools and detailed walkthroughs.
 ---
 
 This page is about deploying contracts to the Dusk blockchain.

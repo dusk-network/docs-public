@@ -1,6 +1,6 @@
 ---
 title: Dusk Grants Program
-description: Dusk's grants program.
+description: Learn about funding opportunities with Dusk’s grants program.
 ---
 
 # Thesan

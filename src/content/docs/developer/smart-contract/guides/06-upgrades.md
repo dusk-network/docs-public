@@ -1,6 +1,6 @@
 ---
 title: Upgrade a contract
-description: Example of how to upgrade Dusk contracts.
+description: Practical examples on upgrading Dusk smart contracts while preserving state and functionality.
 ---
 
 This example shows how to upgrade a contract to a new version while preserving its state:

@@ -1,6 +1,8 @@
 ---
 title: MiCA
-description: Explanation on the Markets in Crypto Assets (MiCA) regulation.
+description: Learn about the MiCA regulation and how Dusk provides compliant technology for regulated financial markets.
+
+
 ---
 The Markets in Crypto Assets Regulation (MiCA) is a regulation of the European Union aimed at regulating the issuing of crypto assets and the operations of Crypto Asset Service Providers (CASPs) in the member states of the EU.
 

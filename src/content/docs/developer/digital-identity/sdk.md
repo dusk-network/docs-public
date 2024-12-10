@@ -1,6 +1,6 @@
 ---
 title: Citadel SDK
-description: How to use the Citadel SDK.
+description: Use the Dusk Citadel SDK to integrate with privacy-preserving and compliant Self-Sovereign Identity (SSI) solutions.
 ---
 
 **Moat** (a.k.a. the Citadel SDK) is a Software Development Kit allowing developers to implement SSI solutions using Citadel and the Dusk Blockchain. In the next subsections we explain how to use it.

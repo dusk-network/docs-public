@@ -1,6 +1,6 @@
 ---
 title: Restore Block Height
-description: Speed up your wallet synchronization! Discover what restore block height is, why it matters, and how to adjust it for optimal performance.
+description: Discover how to speed up wallet synchronization on Dusk by setting the correct restore block height.
 ---
 
 Your cryptocurrency wallet works by keeping track of the blockchain, the complete record of all transactions on the network. Normally, when you reset a wallet, it will "sync" with the network and download the entire blockchain history. This is also known as sync from genesis block. However, we also provide an option to sync from a specific point in the blockchain's history (a specific block height).

@@ -1,5 +1,6 @@
 ---
 title: Multisig example
+description: Use Dusk’s multisig to ensure your assets and operations remain secure.
 ---
 
 ## Multisigs on Moonlight

@@ -1,6 +1,6 @@
 ---
-title: BEP20/ERC20 Migration
-description: Guide on how to migrate your BEP20/ERC20 DUSK to mainnet DUSK.
+title: BEP-20/ER-C20 Migration
+description:  Detailed instructions for migrating your ERC-20/BEP-20 DUSK tokens to Dusk mainnet.
 ---
 
 :::note[Important]

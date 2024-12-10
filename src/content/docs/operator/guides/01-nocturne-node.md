@@ -1,6 +1,6 @@
 ---
 title: Run a Provisioner on Nocturne
-description: This guide outlines how to install the Dusk node and join Nocturne.
+description: A step-by-step guide to installing the Dusk node and connecting to Nocturne, Dusk’s testnet.
 ---
 
 In this guide, we’ll be using [DigitalOcean](https://www.digitalocean.com/) (DO) as our go-to [Virtual Private Server](https://en.wikipedia.org/wiki/Virtual_private_server) (VPS) service. The same can be replicated on Vultr, AWS, any other cloud service or for node runners at home. While it is indeed possible to run a node on home infrastructure, this guide will not deal with those types of setups.

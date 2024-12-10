@@ -1,6 +1,6 @@
 ---
 title: Run a Prover
-description: This section outlines how to install a Dusk Prover Node.
+description: Learn how to install and run a Dusk Prover Node for generating zero-knowledge proofs within Dusk.
 ---
 
 Provers carry on the computation-heavy task of creating Zero-Knowledge proofs (ZKP), which are a requirement for privacy-preserving transactions on Dusk and for certain ZK-powered applications.

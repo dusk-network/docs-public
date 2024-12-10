@@ -1,6 +1,6 @@
 ---
 title: Develop a contract
-description: Tutorial on how to build your first contract on Dusk.
+description: Create and Deploy smart contracts on Dusk. A step-by-step guide to building, compiling, and deploying your first smart contract on Dusk.
 ---
 
 In this guide, we will create a counter contract that keeps track of its total count and provides functionality to increment this count by one and read the current value. The contract keeps track of how many times its increment method has been called, and this information can be accessed via a read method.

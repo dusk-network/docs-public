@@ -1,6 +1,8 @@
 ---
-title: FAQ
-description: Frequently asked questions.
+
+title: FAQs
+description: Learn the answers to common questions about building, deploying, and optimizing smart contracts on Dusk.
+
 ---
 
 #### How to verify a contract?

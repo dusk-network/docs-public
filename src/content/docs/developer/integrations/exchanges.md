@@ -1,6 +1,6 @@
 ---
 title: Integrate with Exchanges
-description: Add Dusk to an Exchange
+description: Add $DUSK to your exchanges. Discover the integration process, technical requirements, and support resources.
 ---
 
 # Introduction

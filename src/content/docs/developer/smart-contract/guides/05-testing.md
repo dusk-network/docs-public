@@ -1,6 +1,6 @@
 ---
 title: Test a contract
-description: Guide on how to test Dusk contracts.
+description: A detailed guide to effectively test your Dusk smart contracts using integration tests and the Nocturne testnet.
 ---
 
 <!-- This guide will explain how to test a contract based on the previous counter Contract from [My first contract](/developer/smart-contract/guides/01-my-first-contract) -->

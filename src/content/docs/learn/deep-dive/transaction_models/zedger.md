@@ -1,6 +1,6 @@
 ---
 title: Zedger
-description: Explanation of the asset protocol on Dusk.
+description: Discover how Dusk's Zedger protocol uses selective disclosure to protect users' privacy while allowing regulatory compliance.
 ---
 Zedger is a protocol built on Dusk, designed to protect users' privacy while allowing regulatory compliance through selective disclosure. This feature enables transactions to be audited by regulatory agencies while remaining anonymous to other users. Zedger is tailored for deploying specific assets in the securities market, handling operations with Zedger tokens that represent securities such as stocks or bonds from various companies.
 

@@ -1,6 +1,6 @@
 ---
 title: RFP-01
-description: Archival node RFP.
+description: Learn about Dusk’s Archiver Node RFP, designed to enhance historical data access on Dusk.
 ---
 
 # Archival Nodes APIs Infrastructure

@@ -1,6 +1,6 @@
 ---
 title: PLONK
-description: Plonk explained.
+description: Learn about the PLONK proving system and its impact on cryptohraphy and blockchain protocols.
 ---
 
 <a href="https://eprint.iacr.org/2019/953.pdf" target="_blank">PLONK</a> is a polynomial Interactive Oracle Proof (IOP) where a Prover can convince a Verifier that for a public circuit `C` and statement `x`, he has a witness `w` such that `C(x,w) = 0`.

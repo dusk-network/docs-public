@@ -1,6 +1,6 @@
 ---
 title: IOP and PCS
-description: Explanation on IOPs and PCS.
+description: Learn about Interactive Oracle Proofs (IOPs) and Polynomial Commitment Schemes (PCS) and their use in Dusk.
 ---
 
 By combining cryptography with interactive proofs, we obtain a succinct non-interactive arguments of knowledge (SNARK).

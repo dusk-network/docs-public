@@ -1,6 +1,6 @@
 ---
 title: Introduction
-description: Introduction to the Dusk docs learn section.
+description: Learn about Dusk provides institutional-grade infrastructure for regulated financial markets.
 ---
 
 

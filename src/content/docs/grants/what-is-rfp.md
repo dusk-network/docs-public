@@ -1,6 +1,6 @@
 ---
 title: RFPs Overview
-description: What is a request for proposal (RFP)?
+description: Understand the purpose and process of RFPs in Dusk.
 ---
 
 ## What is a RFP?
