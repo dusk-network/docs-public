@@ -1,48 +1,33 @@
-# Dusk Docs - Powered by Astro / Starlight 
+<h1 align="center">
+<img height="90" src="assets/documentation_short_light.svg#gh-dark-mode-only" alt="Dusk Docs">
+<img height="90" src="assets/documentation_short_dark.svg#gh-light-mode-only" alt="Dusk Docs">
+</h1>
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+<p align="center">
+  Official <img height="11" src="assets/dusk_circular_light.svg#gh-dark-mode-only"><img height="11" src="assets/dusk_circular_dark.svg#gh-light-mode-only"><a href="https://dusk.network/"> Dusk</a> documentation for users, developers, integrators, and node runners
+</p>
 
-```
-npm create astro@latest -- --template starlight
-```
+<p align=center>
+<a href="https://discord.gg/dusk-official">
+<img src="https://img.shields.io/discord/847466263064346624?label=discord&style=flat-square&color=5a66f6" alt="Discord"></a>
+&nbsp;
+<a href="https://x.com/DuskFoundation/">
+<img alt="X (formerly Twitter) Follow" src="https://img.shields.io/twitter/follow/DuskFoundation"></a>
+&nbsp;
+<a href="https://github.com/dusk-network/docs/actions/workflows/validate_links.yml">
+<img src="https://github.com/dusk-network/docs/actions/workflows/validate_links.yml/badge.svg" alt="CI"></a>
+&nbsp;
+<a href="https://starlight.astro.build">
+<img src="https://astro.badg.es/v2/built-with-starlight/tiny.svg" alt="Built with Starlight"></a>
+</p>
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/starlight/tree/main/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/starlight/tree/main/examples/basics)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwithastro%2Fstarlight%2Ftree%2Fmain%2Fexamples%2Fbasics&project-name=my-starlight-docs&repository-name=my-starlight-docs)
+> The Documentation is live under [docs.dusk.network](https://docs.dusk.network)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## ⌨️ Contribute
 
-## 🚀 Project Structure
+If you want to contribute to the docs, make sure to have read the [CONTRIBUTING.md](/.github/CONTRIBUTING.md).
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
-
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── content/
-│   │   ├── docs/
-│   │   └── config.ts
-│   ├── sidebars/
-│   └── env.d.ts
-├── astro.config.js
-├── package.json
-└── tsconfig.json
-```
-
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
-
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
-
-Static assets, like favicons, can be placed in the `public/` directory.
-
-Custom astro components can be found in the `/src/components/` folder. These can be used and imported through the `astro.config.js`.
-
-Sidebar configurations can be found in the `/src/sidebars/` folder. It contains a default sidebar that will be used the `astro.config.js` as its sidebar, as well as conditionally set sidebars used in the `/src/overrides/Sidebar.astro`.
-
-## 🧞 Commands
+## </> Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -55,6 +40,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
-
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).

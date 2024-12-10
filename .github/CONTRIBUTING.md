@@ -2,7 +2,7 @@
 
 ## Contribution Process
 
-1. **Branching:** Always open Pull Requests against the `development` branch.
+1. **Branching:** Always open Pull Requests against the `main` branch.
 2. **Reviews:** Request reviews per our usual way of working.
 
 ## Guidelines
@@ -38,7 +38,7 @@ For advanced users from any background who are interested in highly detailed, te
 
 These docs are for developers who want to build on Dusk, whether by creating on-chain smart contracts or integrating Dusk’s technology into their projects.
 
-##### Smart Contracts section 
+##### Smart Contracts section
 
 For both beginner and advanced users who want to develop smart contracts on Dusk.
 
@@ -57,7 +57,7 @@ These docs are for users interested in participating in the grant program and ac
 ### Avoid Redundancy
 
 - **Cross-Referencing:** Avoid duplicating content across the documentation. Use cross-references where necessary.
-- **External References:** Link to the original source when referencing larger external content instead of copying it. 
+- **External References:** Link to the original source when referencing larger external content instead of copying it.
 - **Source Prioritization:** For (technical) topics that may be subject to change, always reference the most direct and authoritative source (often the original or primary source) to minimize maintenance burdens.
 
 ### Conciseness
@@ -72,7 +72,7 @@ These docs are for users interested in participating in the grant program and ac
 - **Table of Contents:** Ensure each page includes a table of contents for easy navigation.
 - **Section Placement:** Categorize new content correctly based on the target audience and topic.
 - **Page Data:** Always add title and description to the beginning of the page.
-- **Search Optimization:** Add "Dusk" as a context keyword in the **description** sentences where possible (SEO relevant). 
+- **Search Optimization:** Add "Dusk" as a context keyword in the **description** sentences where possible (SEO relevant).
     - For example: "Run a Provisioner" could be "Run a Dusk Provisioner" or "Run a Provisioner on Dusk".
 
 ### Content & Tone of Voice
