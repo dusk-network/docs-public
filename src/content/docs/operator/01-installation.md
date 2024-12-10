@@ -22,14 +22,14 @@ It is recommended to use a stable operating system with long-term support, such 
 ## Hardware
 The node software has been tested on x86-64/AMD64 and ARM architectures.
 
-Dusk supports several types of node configurations, and hardware requirements depend on the type of node you want to set up: 
+Dusk supports several types of node configurations, and hardware requirements depend on the type of node you want to set up:
 - [Provisioner specifications](/operator/02-provisioner#provisioner-specifications)
 - [Archiver specification](/operator/03-archiver#archiver-specifications)
 - [Prover specifications](/operator/04-prover#prover-specifications)
 
 ## Networking
 
-Ensure that your device can download files and communicate with other nodes. 
+Ensure that your device can download files and communicate with other nodes.
 
 As Dusk uses the ultra-efficient P2P network protocol <a href="https://github.com/dusk-network/kadcast/blob/main/README.md" target="_blank">Kadcast</a>, the network requirements are minimal but should maintain symmetrical, stable, low-latency connections.
 
@@ -53,14 +53,14 @@ To install Rusk, you can either:
 - Use the Nocturne installer to [quickly launch your node on the Dusk testnet](/operator/guides/01-nocturne-node)
 - Build from source
 - Use docker (not recommended for production environment)
-  
+
 ## Nocturne Installer
 
 If you want to spin up a Provisioner node on the Nocturne testnet, you can use the <a href="https://github.com/dusk-network/node-installer" target="_blank">node installer</a> script. This installer will set up Rusk as a service, preconfigure parts of the node, and provide a couple of helper scripts.
 
 You can install Rusk by pasting the following command in your terminal:
 ```sh
-curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.3.3/node-installer.sh | sudo sh
+curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/latest/download/node-installer.sh | sudo sh
 ```
 
 :::note[UFW and other configurations]
@@ -85,7 +85,7 @@ sudo apt update
 
 ##### 1.1 Install the Rust Programming Language
 
-The majority of Dusk software is written in Rust. To compile our code, we will first need to make sure it's installed. 
+The majority of Dusk software is written in Rust. To compile our code, we will first need to make sure it's installed.
 
 Open a terminal and run the following command to see if Rust is available:
 ```sh
@@ -284,7 +284,7 @@ git clone https://github.com/dusk-network/rusk.git
 
 #### 2. Build Docker Image
 
-With Docker installed and the repository files obtained, let's build the Docker image. Note that this can take 15 to 20 minutes. 
+With Docker installed and the repository files obtained, let's build the Docker image. Note that this can take 15 to 20 minutes.
 
 The following command will download all the required dependencies and set up the environment for your Dusk node.
 
@@ -307,19 +307,19 @@ Your node should now be running and giving you output on the blocks it is creati
 
 Here below you can find some recommendations on how to run your node. Especially when running a Provisioner, it is important to make sure that the node is managed in a secure way, as well as having risk-mitigation strategies.
 
-It is recommended to use a dedicated server with only necessary services, as this minimizes the attack surface. 
+It is recommended to use a dedicated server with only necessary services, as this minimizes the attack surface.
 
 
 :::tip[Recommended Setup]
 The recommended setup for network participants looking to stake and use the network is to run a Provisioner node on a VPS or server, and a Prover locally on their machine/laptop. This ensures the most efficient configuration where the full resources of your provisioner node is at disposal to the consensus, while maximizing privacy by proving privacy-preserving transactions locally.
 :::
 
-## Monitoring 
+## Monitoring
 
 Effective monitoring and alerting systems are crucial to avoid slashing events. There are several tools available for real-time monitoring and alerting, which are particularly important for provisioners participating in consensus. Implementing these systems helps ensure continuous performance and timely responses to potential issues.
 
 ## Keys Management
-Proper management of your cryptographic keys is essential to ensure the security of your node. 
+Proper management of your cryptographic keys is essential to ensure the security of your node.
 
 For this reason, *provisioner keys* are strictly limited to signing consensus messages, such as block proposal, validation, and voting. Any other critical operations, such as un-staking or withdrawing funds now require a multi-signature process involving a *funds key*, specifically registered during the staking process.
 

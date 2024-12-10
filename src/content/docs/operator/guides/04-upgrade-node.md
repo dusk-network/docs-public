@@ -13,7 +13,7 @@ In the case of migrating to a newer version of Nocturne, please see the [Nocturn
 
 To upgrade to the latest Nocturne version, run:
 ```sh
-curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.3.5/node-installer.sh | sudo sh
+curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/latest/download/node-installer.sh | sudo sh
 ```
 
 Once it's done and gives no errors, start Rusk again:
@@ -51,7 +51,7 @@ If everything else fails, check out the [manual resync](/operator/guides/03-manu
 
 1. To reset the state of Nocturne, download the latest version of our installer:
 ```sh
-curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.3.5/node-installer.sh | sudo sh
+curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/latest/download/node-installer.sh | sudo sh
 ```
 
 2. Reset all the data on your node:
