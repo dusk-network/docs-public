@@ -27,6 +27,10 @@
 
 If you want to contribute to the docs, make sure to have read the [CONTRIBUTING.md](/.github/CONTRIBUTING.md).
 
+### Check for errors
+
+To check for broken links make sure to run `npm run build` before pushing
+
 ## </> Commands
 
 All commands are run from the root of the project, from a terminal:

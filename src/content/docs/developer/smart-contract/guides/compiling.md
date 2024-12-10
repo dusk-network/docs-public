@@ -39,7 +39,7 @@ targets = ["wasm32-unknown-unknown"]
 components = ["rust-src", "rustfmt", "cargo", "clippy"]
 ```
 
-This ensures compatibility with the rusk-abi dependency in your contract. 
+This ensures compatibility with the rusk-abi dependency in your contract.
 
 ### 3. Add the wasm target
 
@@ -71,7 +71,7 @@ For this you need to specify an additional dependency in your projects ``Cargo.t
 Once the contract has been compiled successfully, you can execute in your cli:
 
 ```bash title="Terminal"
-find . -name *.wasm
+find . -name "*.wasm"
 ```
 
 By doing so, you should see the build file named: `your_contract_project_name.wasm`.
