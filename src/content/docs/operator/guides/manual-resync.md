@@ -42,7 +42,7 @@ Retrieve the latest published state through the fast syncing tool:
 download_state
 ```
 
-For more details see the [fast syncing page](/operator/guides/02-fast-sync).
+For more details see the [fast syncing page](/operator/guides/fast-sync).
 
 ### 4. Restart Rusk
 

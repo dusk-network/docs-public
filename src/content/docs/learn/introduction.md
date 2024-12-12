@@ -30,7 +30,7 @@ Its whole stack has been built to address all the applicable regulations that ap
 
 ### Unparalleled Privacy
 
-Dusk implements [confidential smart contracts](/developer/smart-contract/guides/01-my-first-contract) by allowing anyone to build ZKP-powered contracts. Our privacy-preserving and public transaction models [Phoenix and Zedger](/learn/tx-models#transaction-models-on-dusk) give users and developers the flexibility they need, based on their use-case, to pick the visibility of transactions. 
+Dusk implements [confidential smart contracts](/developer/smart-contract/guides/my-first-contract) by allowing anyone to build ZKP-powered contracts. Our privacy-preserving and public transaction models [Phoenix and Zedger](/learn/tx-models#transaction-models-on-dusk) give users and developers the flexibility they need, based on their use-case, to pick the visibility of transactions. 
 
 To ensure privacy, Dusk utilizes some of the most advanced and widely regarded cryptographic tools available in the realm of zero-knowledge (ZK) technology. Notably, Dusk employs the [PlonK](/learn/deep-dive/cryptography/plonk) proof system and the [Poseidon](/learn/deep-dive/cryptography/hashing#poseidon-hash) hash function, both of which are critical components in the ZK toolkit. PlonK is highly efficient in generating and verifying proofs, while Poseidon enhances security with its specially designed hashing algorithm tailored for ZK applications. 
 
@@ -46,7 +46,7 @@ Transaction performance is further enhanced by [Piecrust](/learn/deep-dive/piecr
 
 ### Developer Experience
 
-Developers benefit from the use of [WASM](https://webassembly.org/) bytecode for smart contracts, which allows them to write contracts in [Rust](/developer/smart-contract/guides/01-my-first-contract) or any other language that compiles to WASM. This flexibility in programming language opens up Dusk to a wide range of developers, encouraging adoption.
+Developers benefit from the use of [WASM](https://webassembly.org/) bytecode for smart contracts, which allows them to write contracts in [Rust](/developer/smart-contract/guides/my-first-contract) or any other language that compiles to WASM. This flexibility in programming language opens up Dusk to a wide range of developers, encouraging adoption.
 
 Dusk also introduces an [innovative economic model](/learn/deep-dive/economic-protocol) that elevates smart contracts into real-world applications and businesses.
 

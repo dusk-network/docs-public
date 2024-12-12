@@ -10,9 +10,9 @@ Rusk has been designed for efficiency and decentralization, and users can follow
 
 
 
-- [Provisioner](/operator/02-provisioner) : to stake and participates in consensus.
-- [Archiver](/operator/03-archiver) : to store and serve historical data.
-- [Prover](/operator/04-prover) : to compute [Zero-Knowledge Proofs](/learn/deep-dive/cryptography/zkp).
+- [Provisioner](/operator/provisioner) : to stake and participates in consensus.
+- [Archiver](/operator/archive-node) : to store and serve historical data.
+- [Prover](/operator/prover) : to compute [Zero-Knowledge Proofs](/learn/deep-dive/cryptography/zkp).
 
 # Requirements
 ## Operating System
@@ -23,9 +23,9 @@ It is recommended to use a stable operating system with long-term support, such 
 The node software has been tested on x86-64/AMD64 and ARM architectures.
 
 Dusk supports several types of node configurations, and hardware requirements depend on the type of node you want to set up:
-- [Provisioner specifications](/operator/02-provisioner#provisioner-specifications)
-- [Archiver specification](/operator/03-archiver#archiver-specifications)
-- [Prover specifications](/operator/04-prover#prover-specifications)
+- [Provisioner specifications](/operator/provisioner#provisioner-specifications)
+- [Archiver specification](/operator/archive-node#archiver-specifications)
+- [Prover specifications](/operator/prover#prover-specifications)
 
 ## Networking
 
@@ -50,7 +50,7 @@ Maintaining a secure and stable node is paramount for the proper functioning of 
 
 # Install Rusk
 To install Rusk, you can either:
-- Use the Nocturne installer to [quickly launch your node on the Dusk testnet](/operator/guides/01-nocturne-node)
+- Use the Nocturne installer to [quickly launch your node on the Dusk testnet](/operator/guides/nocturne-node)
 - Build from source
 - Use docker (not recommended for production environment)
 
@@ -64,7 +64,7 @@ curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-insta
 ```
 
 :::note[UFW and other configurations]
-The script may enable <a href="https://help.ubuntu.com/community/UFW" target="_blank">ufw</a>  and apply other configurations to your system. If you want to avoid this, please follow the instructions on how to [build from source](/operator/01-installation#build-from-source).
+The script may enable <a href="https://help.ubuntu.com/community/UFW" target="_blank">ufw</a>  and apply other configurations to your system. If you want to avoid this, please follow the instructions on how to [build from source](/operator/installation#build-from-source).
 :::
 
 ## Build from source
@@ -188,7 +188,7 @@ cargo b --release -p rusk
 ```
 
 
-Once your node is installed, you can either run a [Provisioner](/operator/02-provisioner), an [Archiver](/operator/03-archiver) or a [Prover](/operator/04-prover).
+Once your node is installed, you can either run a [Provisioner](/operator/provisioner), an [Archiver](/operator/archive-node) or a [Prover](/operator/prover).
 
 If you want to run a local cluster instead, you can follow the instructions below.
 

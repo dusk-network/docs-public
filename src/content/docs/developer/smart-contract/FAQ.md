@@ -7,11 +7,11 @@ description: Learn the answers to common questions about building, deploying, an
 
 #### How to verify a contract?
 
-Information about contract verification can be found [here](/developer/smart-contract/guides/02-compiling#how-to-verify-a-contract).
+Information about contract verification can be found [here](/developer/smart-contract/guides/compiling#how-to-verify-a-contract).
 
 #### Can a Contract deploy another Contract?
 
-Yes, see [here](/developer/smart-contract/guides/03-deploying#let-contracts-deploy-other-contracts).
+Yes, see [here](/developer/smart-contract/guides/deploying#let-contracts-deploy-other-contracts).
 
 #### Is there Token Discoverability?
 

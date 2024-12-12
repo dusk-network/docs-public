@@ -3,7 +3,7 @@ title: Test a contract
 description: A detailed guide to effectively test your Dusk smart contracts using integration tests and the Nocturne testnet.
 ---
 
-<!-- This guide will explain how to test a contract based on the previous counter Contract from [My first contract](/developer/smart-contract/guides/01-my-first-contract) -->
+<!-- This guide will explain how to test a contract based on the previous counter Contract from [My first contract](/developer/smart-contract/guides/my-first-contract) -->
 
 ## Writing tests for Contracts
 
@@ -23,7 +23,7 @@ An example for integration testing can be seen in the tests folder of our genesi
 
 ### Testing on Nocturne
 
-Testing on Nocturne requires you to deploy the smart contract to the Nocturne chain and call the functions there via transactions. To get nDusk for the testnet you can use the [Faucet](/operator/guides/01-nocturne-node#faucet).
+Testing on Nocturne requires you to deploy the smart contract to the Nocturne chain and call the functions there via transactions. To get nDusk for the testnet you can use the [Faucet](/operator/guides/nocturne-node#faucet).
 
 ## Additional Resources
 

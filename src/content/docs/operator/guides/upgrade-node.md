@@ -45,7 +45,7 @@ tail -n 30 /var/log/rusk.log
 
 Unable to figure it out yourself? Visit our [Node Runner Troubleshooting](https://discord.com/channels/847466263064346624/1118582421055606805) on Discord.
 
-If everything else fails, check out the [manual resync](/operator/guides/03-manual-resync) instructions.
+If everything else fails, check out the [manual resync](/operator/guides/manual-resync) instructions.
 
 ## Nocturne Reset
 
@@ -71,7 +71,7 @@ rusk-wallet stake-info
 ```
 If you already have DUSK staked, wait until the chain starts producing blocks. You can check [our explorer](https://testnet.apps.dusk.network/explorer/) to see if the chain is progressing or when it will produce the genesis block.
 
-1. If you do not have testnet DUSK, request nDUSK from the [faucet](/operator/guides/01-nocturne-node#faucet).
+1. If you do not have testnet DUSK, request nDUSK from the [faucet](/operator/guides/nocturne-node#faucet).
 
 2. Stake your nDUSK:
 ```sh
