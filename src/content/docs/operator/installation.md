@@ -3,15 +3,12 @@ title: Install Rusk
 description: Learn how to install and configure a Dusk node.
 ---
 
-
 <a href="https://github.com/dusk-network/rusk" target="_blank">Rusk</a> contains the software needed to run a Dusk node. Users can set specific compilation flags to configure their node for different roles, allowing it to perform tasks like participating in consensus, validating transactions, or storing historical data.
 
 Rusk has been designed for efficiency and decentralization, and users can follow this guide to install their node and later choose which role they want their node to have:
 
-
-
 - [Provisioner](/operator/provisioner) : to stake and participates in consensus.
-- [Archiver](/operator/archive-node) : to store and serve historical data.
+- [Archive node](/operator/archive-node) : to store and serve historical data.
 - [Prover](/operator/prover) : to compute [Zero-Knowledge Proofs](/learn/deep-dive/cryptography/zkp).
 
 # Requirements
@@ -24,7 +21,7 @@ The node software has been tested on x86-64/AMD64 and ARM architectures.
 
 Dusk supports several types of node configurations, and hardware requirements depend on the type of node you want to set up:
 - [Provisioner specifications](/operator/provisioner#provisioner-specifications)
-- [Archiver specification](/operator/archive-node#archiver-specifications)
+- [Archive node specification](/operator/archive-node#archive-node-specifications)
 - [Prover specifications](/operator/prover#prover-specifications)
 
 ## Networking
@@ -188,7 +185,7 @@ cargo b --release -p rusk
 ```
 
 
-Once your node is installed, you can either run a [Provisioner](/operator/provisioner), an [Archiver](/operator/archive-node) or a [Prover](/operator/prover).
+Once your node is installed, you can either run a [Provisioner](/operator/provisioner), an [archive node](/operator/archive-node) or a [Prover](/operator/prover).
 
 If you want to run a local cluster instead, you can follow the instructions below.
 
