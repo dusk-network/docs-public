@@ -30,7 +30,7 @@ To access the blockchain you can either:
 
 You can access the blockchain and submit transactions by running a Dusk node.
 
-The installation instructions can be found [here](/operator/installation), and requirements are different depending on if the node is a [Provisioner](/operator/provisioner) or an [Archiver](/operator/archive-node).
+The installation instructions can be found [here](/operator/installation), and requirements are different depending on if the node is a [Provisioner](/operator/provisioner) or an [archive node](/operator/archive-node).
 
 ### Use Dusk APIs
 
@@ -40,7 +40,7 @@ Dusk exposes the following APIs:
   
 ### Use RPC providers
 
-You can rely on the RPC infrastructure hosted by the community, or run an [Archiver](/operator/archive-node) yourself.
+You can rely on the RPC infrastructure hosted by the community, or run an [archive node](/operator/archive-node) yourself.
 
 ## Token Deposits and Withdrawals
 

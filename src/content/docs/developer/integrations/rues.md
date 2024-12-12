@@ -494,13 +494,13 @@ POST https://nodes.dusk.network/on/network/peers
 ]
 ```
 
-## Archiver Endpoints
+## Archive node Endpoints
 
-These endpoints provide access to historical data and events stored by Archivers.
+These endpoints provide access to historical data and events stored by archive nodes.
 
 ### Moonlight Transaction History
 
-This endpoint provides access to the Moonlight transaction history stored by archivers in an efficient way. 
+This endpoint provides access to the Moonlight transaction history stored by archive nodes in an efficient way. 
 
 Details to be filled in based on implementation.
 
