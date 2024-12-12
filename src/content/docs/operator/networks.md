@@ -23,7 +23,7 @@ Some of the functions for the Nocturne Testnet are:
 - Enabling developers to deploy and test smart contracts.
 - Supporting community-run nodes for stress-testing and performance assessments.
 
-**Status:** Active. You can run a node on Nocturne by following the [guide](/operator/guides/01-nocturne-node) and look at transactions on the <a href="https://testnet.apps.dusk.network/explorer//" target="_blank">blockexplorer</a>.
+**Status:** Active. You can run a node on Nocturne by following the [guide](/operator/guides/nocturne-node) and look at transactions on the <a href="https://testnet.apps.dusk.network/explorer//" target="_blank">blockexplorer</a>.
 
 # 3. Lunare Devnet
 

@@ -263,7 +263,7 @@ You can find the example counter contract in its final form with tests, added co
 
 ### 5) Compile the contract
 
-To learn how to compile the contract and read more about verifiable builds, you can jump straight to the [Compiling](/developer/smart-contract/guides/02-compiling) guide.
+To learn how to compile the contract and read more about verifiable builds, you can jump straight to the [Compiling](/developer/smart-contract/guides/compiling) guide.
 
 ## A note on Contract State Persistence
 

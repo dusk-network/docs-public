@@ -18,14 +18,14 @@ export default function sidebar(currentPath) {
                 type: "group",
                 label: "Guides",
                 entries: [
-                    { label: "Develop", href: '/developer/smart-contract/guides/01-my-first-contract' },
-                    { label: "Compile", href: '/developer/smart-contract/guides/02-compiling' },
-                    { label: "Deploy", href: '/developer/smart-contract/guides/03-deploying' },
-                    { label: "Debug", href: '/developer/smart-contract/guides/04-debugging' },
-                    { label: "Test", href: '/developer/smart-contract/guides/05-testing' },
-                    { label: "Upgrade", href: '/developer/smart-contract/guides/06-upgrades' },
-                    { label: "Interact", href: '/developer/smart-contract/guides/07-interacting' },
-                    { label: "Multisig", href: '/developer/smart-contract/guides/08-multisig' }
+                    { label: "Develop", href: '/developer/smart-contract/guides/my-first-contract' },
+                    { label: "Compile", href: '/developer/smart-contract/guides/compiling' },
+                    { label: "Deploy", href: '/developer/smart-contract/guides/deploying' },
+                    { label: "Debug", href: '/developer/smart-contract/guides/debugging' },
+                    { label: "Test", href: '/developer/smart-contract/guides/testing' },
+                    { label: "Upgrade", href: '/developer/smart-contract/guides/upgrades' },
+                    { label: "Interact", href: '/developer/smart-contract/guides/interacting' },
+                    { label: "Multisig", href: '/developer/smart-contract/guides/multisig' }
                 ],
                 collapsed: true,
             },
