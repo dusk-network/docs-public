@@ -17,7 +17,7 @@ Rusk has been designed for efficiency and decentralization, and users can follow
 # Requirements
 ## Operating System
 
-It is recommended to use a stable operating system with long-term support, such as <a href="https://releases.ubuntu.com/jammy/" target="_blank">Ubuntu 22.04</a> or  <a href="https://www.debian.org/releases/bookworm/" target="_blank">Debian Bookworm</a>.  Since this guide is tailored for **Linux** users, those using other operating systems may encounter compatibility issues.
+It is recommended to use a stable operating system with long-term support, such as <a href="https://releases.ubuntu.com/jammy/" target="_blank">Ubuntu 24.04</a> or  <a href="https://www.debian.org/releases/bookworm/" target="_blank">Debian Bookworm</a>.  Since this guide is tailored for **Linux** users, those using other operating systems may encounter compatibility issues.
 
 ## Hardware
 The node software has been tested on x86-64/AMD64 and ARM architectures.

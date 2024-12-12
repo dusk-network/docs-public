@@ -15,7 +15,7 @@ DO uses droplets, which are Linux-based virtual machines. When you’re [logged 
 
 On the _Create Droplets_ page, select any of the provided regions under the _Choose Region_ header. Choosing different regions is good for decentralization and resilience.
 
-Under _Choose an image_, pick Ubuntu version 22.04 (LTS) x64.
+Under _Choose an image_, pick Ubuntu version 24.04 (LTS) x64.
 
 ![Select region and image for the droplet.](../../../../assets/nocturne/node-guide/region-image-droplet.png)
 
