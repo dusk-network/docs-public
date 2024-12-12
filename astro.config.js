@@ -21,7 +21,7 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: "DOCUMENTATION",
-			favicon: "/favicon.svg",
+			favicon: "/favicon.ico",
 			logo: {
 				light: "./src/assets/logo-light.svg",
 				dark: "./src/assets/logo-dark.svg",
