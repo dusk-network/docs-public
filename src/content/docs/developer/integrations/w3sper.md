@@ -20,7 +20,7 @@ The W3sper SDK includes the following core features:
 
 The W3sper SDK is making use of WASM, and is available in two implementations:
 
--**Web SDK**: a JavaScript-based SDK designed for web applications, allowing for seamless integration with browser-based DApps.
+- **Web SDK**: a JavaScript-based SDK designed for web applications, allowing for seamless integration with browser-based DApps.
 - **Native SDK**: built in Rust and available in a separate repository, ideal for native applications requiring high-performance execution.
 
 <a href="https://github.com/dusk-network/rusk/tree/master/w3sper.js" target="_blank">Use the W3sper SDK</a>
