@@ -11,7 +11,7 @@ Information about contract verification can be found [here](/developer/smart-con
 
 #### Can a Contract deploy another Contract?
 
-Yes, see [here](/developer/smart-contract/guides/deploying#let-contracts-deploy-other-contracts).
+No, not yet. See the [Contracts should be able to deploy contracts](https://github.com/dusk-network/piecrust/issues/160) tracking issue on the topic.
 
 #### Is there Token Discoverability?
 
