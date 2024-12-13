@@ -44,7 +44,7 @@ You can learn more on how the Succinct Attestation consensus works [here](/learn
 The more DUSK you stake, the more likely you are to earn rewards as an active participant in the network.
 :::
 
-## Are there any risks?
+## Slashing
 
 Dusk uses a [slashing mechanism](/operator/provisioner#slashing) to maintain network security. If your node submits invalid blocks or goes offline, your stake may be partially reduced. This mechanism ensures the network rewards reliable participants and discourages harmful behavior.
 
