@@ -17,7 +17,7 @@ Staking DUSK allows you to:
 To begin staking, you need:
 
 - At least **1000 DUSK**: this is the minimum amount required to participate.
-- A **running and fully-synced node**: you can learn how to run a node [here](/docs/operator/provisioner)
+- A **running and fully-synced node**: you can learn how to run a node [here](/operator/provisioner/)
 - **Time for maturity**: your stake becomes active after 2 epochs (about **4320 blocks**).
 
 
