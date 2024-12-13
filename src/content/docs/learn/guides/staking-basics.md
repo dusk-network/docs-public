@@ -44,7 +44,7 @@ The more DUSK you stake, the more likely you are to earn rewards as an active pa
 :::
 
 ## Are there any risks?
-To keep the network secure, Dusk relies on a [slashing mechanism](/operator/02-provisioner#slashing). This means that if your stake is handled by a node that submits invalid blocks or that is not constantly online, part of your stake can be reduced.
+To keep the network secure, Dusk relies on a [slashing mechanism](/operator/provisioner#slashing). This means that if your stake is handled by a node that submits invalid blocks or that is not constantly online, part of your stake can be reduced.
 This allows the system to reward honest and reliable participants while discouraging harmful behavior.
 
 ## Ready to Stake?
