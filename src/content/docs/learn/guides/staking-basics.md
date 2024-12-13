@@ -16,9 +16,10 @@ Staking DUSK allows you to:
 ## What do you need to start?
 To begin staking, you need:
 
-- At least **1000 DUSK**: This is the minimum amount required to participate.
-- **Time for maturity**: Your stake becomes active after 2 epochs (about **4320 blocks**).
-- Choosing a **node** that handles your stake and participate in the consensus process.
+- At least **1000 DUSK**: this is the minimum amount required to participate.
+- A **running and fully-synced node**: you can learn how to run a node [here](/docs/operator/provisioner)
+- **Time for maturity**: your stake becomes active after 2 epochs (about **4320 blocks**).
+
 
 :::note[Important]
 After having staked your tokens, **it takes some time before you start earning rewards**. This is because your stake becomes active after the maturity period (4320 blocks). The maturity period of 4320 blocks corresponds to **approximately 12 hours** (based on an average block time of 10 seconds). Before expecting rewards, ensure to account for this waiting period.
@@ -44,8 +45,12 @@ The more DUSK you stake, the more likely you are to earn rewards as an active pa
 :::
 
 ## Are there any risks?
-To keep the network secure, Dusk relies on a [slashing mechanism](/operator/provisioner#slashing). This means that if your stake is handled by a node that submits invalid blocks or that is not constantly online, part of your stake can be reduced.
-This allows the system to reward honest and reliable participants while discouraging harmful behavior.
+
+Dusk uses a [slashing mechanism](/operator/provisioner#slashing) to maintain network security. If your node submits invalid blocks or goes offline, your stake may be partially reduced. This mechanism ensures the network rewards reliable participants and discourages harmful behavior.
+
+:::note[Important]
+To prevent slashing, ensure your node is operational and synced before staking.
+:::
 
 ## Ready to Stake?
 
