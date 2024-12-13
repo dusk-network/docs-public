@@ -7,9 +7,9 @@ Dusk supports multiple node configurations, with Provisioners being the only nod
 
 Provisioners are required to stake a **minimum of 1000 DUSK** to participate in the consensus mechanism. In return, they earn rewards for validating transactions and generating blocks, providing a financial incentive for securing the network. These rewards not only compensate users for locking up their assets but also encourage ongoing participation in block creation and voting.
 
-To protect network integrity, Dusk enforces [hard-slashing and soft-slashing](/operator/02-provisioner#slashing) mechanisms. These are designed to discourage malicious or negligent actions by penalizing Provisioners who deviate from protocol standards.
+To protect network integrity, Dusk enforces [hard-slashing and soft-slashing](/operator/provisioner#slashing) mechanisms. These are designed to discourage malicious or negligent actions by penalizing Provisioners who deviate from protocol standards.
 
-If you want to quickly launch a Provisioner on Nocturne Testnet, you can use the <a href="https://github.com/dusk-network/node-installer" target="_blank">Noctune node installer</a> by following [this guide](/operator/guides/01-nocturne-node).
+If you want to quickly launch a Provisioner on Nocturne Testnet, you can use the <a href="https://github.com/dusk-network/node-installer" target="_blank">Noctune node installer</a> by following [this guide](/operator/guides/nocturne-node).
 
 ### Provisioner Specifications
 
@@ -22,7 +22,7 @@ For optimized performance, nodes should support efficient single-threaded proces
 | 2 cores; 2 GHz | 4 GB | 50 GB | 10 Mbps |
 
 
-Once you have [installed Rusk](/operator/01-installation), you will be asked to add your consensus keys. These consensus keys are essential for signing messages in block proposal, validation, and voting processes.
+Once you have [installed Rusk](/operator/installation), you will be asked to add your consensus keys. These consensus keys are essential for signing messages in block proposal, validation, and voting processes.
 
 ## Obtain a mnemonic
 If you haven't obtained a mnemonic yet, you can do so by:
@@ -62,9 +62,9 @@ Your node will now start syncing, and you can check its sync status by running:
 ```sh
 ruskquery block-height
 ```
-Once syncing, you can verify the node’s status by comparing its block height with the latest on [the block explorer](https://explorer.dusk.network/). Alternatively, consider [fast-syncing](/operator/guides/02-fast-sync) for a quicker method.
+Once syncing, you can verify the node’s status by comparing its block height with the latest on [the block explorer](https://explorer.dusk.network/). Alternatively, consider [fast-syncing](/operator/guides/fast-sync) for a quicker method.
 
-Once your node is synced, you can [stake some DUSK](/operator/02-provisioner#stake-dusk).
+Once your node is synced, you can [stake some DUSK](/operator/provisioner#stake-dusk).
 
 ## Stake DUSK
 

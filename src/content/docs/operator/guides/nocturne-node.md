@@ -15,11 +15,11 @@ DO uses droplets, which are Linux-based virtual machines. When you’re [logged 
 
 On the _Create Droplets_ page, select any of the provided regions under the _Choose Region_ header. Choosing different regions is good for decentralization and resilience.
 
-Under _Choose an image_, pick Ubuntu version 22.04 (LTS) x64.
+Under _Choose an image_, pick Ubuntu version 24.04 (LTS) x64.
 
 ![Select region and image for the droplet.](../../../../assets/nocturne/node-guide/region-image-droplet.png)
 
-Next, we have to pick the size of the droplet. The [node requirements](/operator/02-provisioner#provisioner-specifications) for a provisioner node are in line with the _SHARED CPU_ -> _Regular_ -> $24/mo option. Select it.
+Next, we have to pick the size of the droplet. The [node requirements](/operator/provisioner#provisioner-specifications) for a provisioner node are in line with the _SHARED CPU_ -> _Regular_ -> $24/mo option. Select it.
 
 ![Select size of the droplet.](../../../../assets/nocturne/node-guide/requirements-droplet.png)
 
@@ -80,7 +80,7 @@ curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-insta
 
 Once everything has been set up, you will be asked to add your consensus keys. These keys are used to sign and vote for blocks.
 
-If you haven't made a wallet yet, use our CLI [Rusk Wallet](https://wallet.dusk.network/setup/), which you can download [here](https://github.com/dusk-network/rusk/actions/runs/11113602682/artifacts/1997624810), and create a new wallet. You can request funds from our [Discord faucet](/operator/guides/01-nocturne-node#faucet). The faucet will give you 5000 nDUSK. The minimum to stake is 1000 nDUSK.
+If you haven't made a wallet yet, use our CLI [Rusk Wallet](https://wallet.dusk.network/setup/), which you can download [here](https://github.com/dusk-network/rusk/actions/runs/11113602682/artifacts/1997624810), and create a new wallet. You can request funds from our [Discord faucet](/operator/guides/nocturne-node#faucet). The faucet will give you 5000 nDUSK. The minimum to stake is 1000 nDUSK.
 
 Once you have access to a Dusk mnemonic, run the following command:
 ```sh

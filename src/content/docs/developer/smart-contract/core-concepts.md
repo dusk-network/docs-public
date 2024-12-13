@@ -3,7 +3,7 @@ title: Core Concepts
 description: Learn the foundational principles of Dusk’s smart contract platform, including zero-knowledge proofs, privacy, and decentralized execution.
 ---
 
-This page explains in more detail the core concepts, namings, conventions and building blocks for developing smart contracts on Dusk. If you want to dive right into development you can directly go to the [Guides](/developer/smart-contract/guides/01-my-first-contract).
+This page explains in more detail the core concepts, namings, conventions and building blocks for developing smart contracts on Dusk. If you want to dive right into development you can directly go to the [Guides](/developer/smart-contract/guides/my-first-contract).
 
 ## State & Persistence
 
@@ -239,7 +239,7 @@ The `abi` and `host` features in the rusk-abi crate are mutually exclusive. This
 
 #### Expose Functions
 
-In order for smart contract functions to be accessible via transactions on Dusk, they need to be exposed using features provided by rusk-abi. Exporting those functions is being done through `rusk_abi::wrap_call` which is available through the `abi` feature. An example for that can be found in the [Guide](/developer/smart-contract/guides/01-my-first-contract#expose-functions).
+In order for smart contract functions to be accessible via transactions on Dusk, they need to be exposed using features provided by rusk-abi. Exporting those functions is being done through `rusk_abi::wrap_call` which is available through the `abi` feature. An example for that can be found in the [Guide](/developer/smart-contract/guides/my-first-contract#expose-functions).
 
 The `rusk_abi::wrap_call` macro serves to wrap contract methods in a way that ensures they can be safely and effectively called by the host environment. This ensures that any errors that occur during the execution of the function are caught and handled appropriately, avoiding uncontrolled errors that can affect the VM state. Wrapping the call also helps converting inputs and outputs between the formats expected by the smart contract and those used by the host environment (e.g. data type conversions), as well as performing security checks.
 

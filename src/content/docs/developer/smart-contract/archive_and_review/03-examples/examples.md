@@ -11,4 +11,4 @@ When going through the examples, developers will notice some patterns:
 
 ## Where to start
 
-The first example to look at is the [counter example](/developer/smart-contract/guides/01-my-first-contract).
+The first example to look at is the [counter example](/developer/smart-contract/guides/my-first-contract).

@@ -3,29 +3,26 @@ title: Install Rusk
 description: Learn how to install and configure a Dusk node.
 ---
 
-
 <a href="https://github.com/dusk-network/rusk" target="_blank">Rusk</a> contains the software needed to run a Dusk node. Users can set specific compilation flags to configure their node for different roles, allowing it to perform tasks like participating in consensus, validating transactions, or storing historical data.
 
 Rusk has been designed for efficiency and decentralization, and users can follow this guide to install their node and later choose which role they want their node to have:
 
-
-
-- [Provisioner](/operator/02-provisioner) : to stake and participates in consensus.
-- [Archiver](/operator/03-archiver) : to store and serve historical data.
-- [Prover](/operator/04-prover) : to compute [Zero-Knowledge Proofs](/learn/deep-dive/cryptography/zkp).
+- [Provisioner](/operator/provisioner) : to stake and participates in consensus.
+- [Archive node](/operator/archive-node) : to store and serve historical data.
+- [Prover](/operator/prover) : to compute [Zero-Knowledge Proofs](/learn/deep-dive/cryptography/zkp).
 
 # Requirements
 ## Operating System
 
-It is recommended to use a stable operating system with long-term support, such as <a href="https://releases.ubuntu.com/jammy/" target="_blank">Ubuntu 22.04</a> or  <a href="https://www.debian.org/releases/bookworm/" target="_blank">Debian Bookworm</a>.  Since this guide is tailored for **Linux** users, those using other operating systems may encounter compatibility issues.
+It is recommended to use a stable operating system with long-term support, such as <a href="https://releases.ubuntu.com/jammy/" target="_blank">Ubuntu 24.04</a> or  <a href="https://www.debian.org/releases/bookworm/" target="_blank">Debian Bookworm</a>.  Since this guide is tailored for **Linux** users, those using other operating systems may encounter compatibility issues.
 
 ## Hardware
 The node software has been tested on x86-64/AMD64 and ARM architectures.
 
 Dusk supports several types of node configurations, and hardware requirements depend on the type of node you want to set up:
-- [Provisioner specifications](/operator/02-provisioner#provisioner-specifications)
-- [Archiver specification](/operator/03-archiver#archiver-specifications)
-- [Prover specifications](/operator/04-prover#prover-specifications)
+- [Provisioner specifications](/operator/provisioner#provisioner-specifications)
+- [Archive node specification](/operator/archive-node#archive-node-specifications)
+- [Prover specifications](/operator/prover#prover-specifications)
 
 ## Networking
 
@@ -50,7 +47,7 @@ Maintaining a secure and stable node is paramount for the proper functioning of 
 
 # Install Rusk
 To install Rusk, you can either:
-- Use the Nocturne installer to [quickly launch your node on the Dusk testnet](/operator/guides/01-nocturne-node)
+- Use the Nocturne installer to [quickly launch your node on the Dusk testnet](/operator/guides/nocturne-node)
 - Build from source
 - Use docker (not recommended for production environment)
 
@@ -64,7 +61,7 @@ curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-insta
 ```
 
 :::note[UFW and other configurations]
-The script may enable <a href="https://help.ubuntu.com/community/UFW" target="_blank">ufw</a>  and apply other configurations to your system. If you want to avoid this, please follow the instructions on how to [build from source](/operator/01-installation#build-from-source).
+The script may enable <a href="https://help.ubuntu.com/community/UFW" target="_blank">ufw</a>  and apply other configurations to your system. If you want to avoid this, please follow the instructions on how to [build from source](/operator/installation#build-from-source).
 :::
 
 ## Build from source
@@ -188,7 +185,7 @@ cargo b --release -p rusk
 ```
 
 
-Once your node is installed, you can either run a [Provisioner](/operator/02-provisioner), an [Archiver](/operator/03-archiver) or a [Prover](/operator/04-prover).
+Once your node is installed, you can either run a [Provisioner](/operator/provisioner), an [archive node](/operator/archive-node) or a [Prover](/operator/prover).
 
 If you want to run a local cluster instead, you can follow the instructions below.
 

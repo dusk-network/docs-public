@@ -75,6 +75,10 @@ A protocol that represents assets as balances within personal accounts, similar 
 
 Software code that enables communication between different systems via request-response messages. It enables tasks like requesting user balances, listening to on-chain events and more.
 
+#### Archive node
+
+A type of full node in blockchain networks that stores the entire history of the blockchain, including all past states, transactions, and emitted events since the genesis block. Archive nodes enable deep historical data retrieval, supporting use cases like blockchain explorers, audits, and regulatory compliance.
+
 #### Asset Token
 
 A category of tokens that represent a “real world” asset or product — such as a commodity (e.g., gold) or currency (e.g., US dollar) — as opposed to utility tokens, which provide network-specific functions.
@@ -97,7 +101,7 @@ Files in which data of the network is permanently recorded. A block permanently 
 
 #### Block Explorer
 
-A web tool for searchign blockchain information, such as block creation dates, sizes, gas fees, and transaction details.
+A web tool for searching blockchain information, such as block creation dates, sizes, gas fees, and transaction details.
 
 #### Block Header
 
