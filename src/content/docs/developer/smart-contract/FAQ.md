@@ -1,6 +1,6 @@
 ---
 
-title: FAQs
+title: FAQ
 description: Learn the answers to common questions about building, deploying, and optimizing smart contracts on Dusk.
 
 ---

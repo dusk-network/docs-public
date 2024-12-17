@@ -11,16 +11,6 @@ To protect network integrity, Dusk enforces [hard-slashing and soft-slashing](/o
 
 If you want to quickly launch a Provisioner on Nocturne Testnet, you can use the <a href="https://github.com/dusk-network/node-installer" target="_blank">Noctune node installer</a> by following [this guide](/operator/guides/nocturne-node).
 
-### Provisioner Specifications
-
-The following specifications support Provisioner nodes with limited proving capacity.
-
-For optimized performance, nodes should support efficient single-threaded processing.
-
-| CPU | RAM | Storage | Network Connection |
-| :--- | :--- | :--- | :--- |
-| 2 cores; 2 GHz | 4 GB | 50 GB | 10 Mbps |
-
 
 Once you have [installed Rusk](/operator/installation), you will be asked to add your consensus keys. These consensus keys are essential for signing messages in block proposal, validation, and voting processes.
 
@@ -34,7 +24,7 @@ rusk-wallet restore
 
 If the node isn’t running, a log message will indicate that: `some operations won't be available`. This is fine, and happens due to your node not being online yet. You can still continue to follow the steps below.
 
-You will be asked to provide your recovery phrase/mnemonic, **in lowercase**, and to enter a password for the wallet. 
+You will be asked to provide your recovery phrase/mnemonic, **in lowercase**, and to enter a password for the wallet.
 
 ## Set up the wallet password
 
@@ -71,7 +61,7 @@ Once your node is synced, you can [stake some DUSK](/operator/provisioner#stake-
 To allow your node to actively participate in the consensus, staking a minimum of 1000 DUSK is required. If you want to stake 1000 DUSK, you can initiate staking by running the following command in the terminal:
 
 ```sh
-rusk-wallet stake --amt 1000 
+rusk-wallet stake --amt 1000
 ```
 
 Once the transaction has gone through, you can view your staking information by running:

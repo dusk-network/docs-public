@@ -19,7 +19,7 @@ Under _Choose an image_, pick Ubuntu version 24.04 (LTS) x64.
 
 ![Select region and image for the droplet.](../../../../assets/nocturne/node-guide/region-image-droplet.png)
 
-Next, we have to pick the size of the droplet. The [node requirements](/operator/provisioner#provisioner-specifications) for a provisioner node are in line with the _SHARED CPU_ -> _Regular_ -> $24/mo option. Select it.
+Next, we have to pick the size of the droplet. The [node requirements](/operator/hardware#provisioner-specifications) for a provisioner node are in line with the _SHARED CPU_ -> _Regular_ -> $24/mo option. Select it.
 
 ![Select size of the droplet.](../../../../assets/nocturne/node-guide/requirements-droplet.png)
 
