@@ -5,11 +5,14 @@ export default function sidebar(currentPath) {
         createLink("Overview", "/operator/overview"),
 
         createGroup("Run a node", currentPath, [
-            { label: "Install Rusk", href: "/operator/installation/" },
+            { label: "Install Node Software", href: "/operator/installation/" },
+            { label: "Hardware Requirements", href: "/operator/hardware" },
             { label: "Run a Provisioner", href: "/operator/provisioner" },
             { label: "Run an Archive Node", href: "/operator/archive-node" },
             { label: "Run a Prover", href: "/operator/prover" },
             { label: "Choose a Network", href: "/operator/networks" },
+            { label: "Maintenance & Monitoring", href: "/operator/maintenance-monitoring" },
+            { label: "FAQ", href: "/operator/faq" },
             //{ label: "Upgrades history", href: "/operator/introduction/history" },
         ], false),
 
