@@ -4,7 +4,7 @@ description: Learn how to install and configure a Dusk node.
 ---
 
 :::note[Node Installer]
-Use the Node installer to [quickly launch your node on Dusk mainnet](https://github.com/dusk-network/node-installer) or [testnet](/operator/guides/nocturne-node)
+Use the Node installer to [quickly launch your node on Dusk mainnet](/operator/guides/mainnet-node) or [testnet](/operator/guides/nocturne-node)
 :::
 
 <a href="https://github.com/dusk-network/rusk" target="_blank">Rusk</a> contains the software needed to run a Dusk node. Users can set specific compilation flags to configure their node for different roles, allowing it to perform tasks like participating in consensus, validating transactions, and storing historical data.
@@ -14,6 +14,8 @@ Rusk supports different feature setups:
 - [Archive node](/operator/archive-node) : to store and serve historical data.
 - [Prover](/operator/prover) : to compute [Zero-Knowledge Proofs](/learn/deep-dive/cryptography/zkp).
 
+The node software has been tested on x86-64/AMD64 and ARM architectures. The above node types have different hardware requirements, which can be found on their respective pages.
+
 To install Rusk, you can either:
 - Use the node installer (recommended)
 - Build from source
@@ -22,11 +24,6 @@ To install Rusk, you can either:
 ## Requirements
 
 This page is tailored for Linux servers, if you are using another operating system you may encounter compatibility issues.
-
-### Hardware
-The node software has been tested on x86-64/AMD64 and ARM architectures.
-
-Dusk supports several types of node configurations, and [hardware requirements](/operator/hardware) depend on the type of node you want to set up.
 
 ## Node Installer
 

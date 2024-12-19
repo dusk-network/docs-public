@@ -19,7 +19,7 @@ Under _Choose an image_, pick Ubuntu version 24.04 (LTS) x64.
 
 ![Select region and image for the droplet.](../../../../assets/nocturne/node-guide/region-image-droplet.png)
 
-Next, we have to pick the size of the droplet. The [node requirements](/operator/hardware#provisioner-specifications) for a provisioner node are in line with the _SHARED CPU_ -> _Regular_ -> $24/mo option. Select it.
+Next, we have to pick the size of the droplet. The [node requirements](/operator/provisioner#provisioner-specifications) for a provisioner node are in line with the _SHARED CPU_ -> _Regular_ -> $24/mo option. Select it.
 
 ![Select size of the droplet.](../../../../assets/nocturne/node-guide/requirements-droplet.png)
 
@@ -78,102 +78,20 @@ curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-insta
 
 ## Configure Rusk
 
-Once everything has been set up, you will be asked to add your consensus keys. These keys are used to sign and vote for blocks.
+You now should have successfully installed Rusk.
 
-If you haven't made a wallet yet, use our CLI [Rusk Wallet](https://wallet.dusk.network/setup/), which you can download [here](https://github.com/dusk-network/rusk/actions/runs/11113602682/artifacts/1997624810), and create a new wallet. You can request funds from our [Discord faucet](/operator/guides/nocturne-node#faucet). The faucet will give you 5000 nDUSK. The minimum to stake is 1000 nDUSK.
+A quick check with:
 
-Once you have access to a Dusk mnemonic, run the following command:
 ```sh
-rusk-wallet restore
+ruskquery version
 ```
 
-If your node is not running, it will tell you `some operations won't be available`. This is fine, and happens due to your node not being online yet. You can still continue to follow the steps below.
+Should tell you, that you are running the latest installer version.
 
-You will be asked to provide your recovery phrase/mnemonic, **in lowercase**, and to enter a password for the wallet.
+:::tip[Continue with wallet]
+Now that you have setup rusk, it's time to setup your wallet to finally start participating in consensus
 
-Once you've done so, run the following command to export a consensus key for the given wallet:
-```sh
-rusk-wallet export -d /opt/dusk/conf -n consensus.keys
-```
+You can read the [node wallet guide](/operator/guides/node-wallet-setup) for a step-by-step instruction how to set it up on the server.
+:::
 
-You will be asked to set an encryption password for the consensus key. Remember it and run the following script to set it as an environment variable:
-```sh
-sh /opt/dusk/bin/setup_consensus_pwd.sh
-```
-
-If you've configured everything correctly, you can now start rusk:
-```sh
-service rusk start
-```
-
-Your node will now start syncing. You can check if it indeed is by running:
-```sh
-ruskquery block-height
-```
-
-It is best to wait until your node is synced up. You can find the latest block height on [the block explorer](https://explorer.dusk.network/).
-
-## Stake nDUSK
-
-The final step is to stake. You can stake by running:
-```sh
-rusk-wallet stake --amt 1000 # Or however much you want to stake
-```
-
-Once the transaction has gone through, you can view your staking information by running:
-```sh
-rusk-wallet stake-info
-```
-
-To see if your node is participating in consensus and creating blocks, occasionally check:
-```sh
-grep "execute_state_transition" /var/log/rusk.log | tail -n 5
-```
-
-Note that this can take a while, given that your stake needs at least 2 epochs, or 4320 blocks, to mature. Your stake, relative to the total stake, also plays a factor.
-
-If everything went right, and your node starts accepting and creating blocks, you have successfully set up your Nocturne node!
-
-
-
-## Faucet
-
-This guide will explain how to obtain nDUSK for the running Nocturne testnet.
-
-## How to get testnet tokens
-
-The Dusk Nocturne testnet uses a Discord bot to distribute Nocturne tokens (nDUSK).
-
-In order to access it, follow these steps:
-
-1. Access the [Dusk Discord server](https://discord.gg/dusk-official).
-2. Among the team members, locate the bot "Dusk Testnet Faucet."
-3. Right-click and select "Message".
-4. Send `!dusk` as a command. The bot will reply, asking for your Testnet wallet address.
-5. Done! Your transaction will be queued, and you will see it in your wallet once processed.
-
-There is currently a limit of 1 transaction per user/wallet every 24 hours.
-
-## FAQ
-
-**Q: How many times can I use the faucet?**
-
-There is currently a 24-hour cooldown period before you can ask for nDUSK again with the same Discord username or wallet address.
-
-**Q: How do I access the Dusk Discord server?**
-
-You can access the Discord server by clicking on [this link](https://discord.gg/dusk-official).
-
-**Q: How long before I will see my nDUSK?**
-
-Once the transaction is submitted, it will be processed in a queue.
-The time required to see the nDUSK in your account may vary according to network congestion and the number of people currently requesting nDUSK, but it usually takes just a few minutes.
-If the network is experiencing a large number of faucet requests, the transaction might take longer than usual to be processed.
-
-**Q: What if I want to run multiple nodes?**
-
-If you need nDUSK for multiple accounts, you can either wait 24 hours and then send again to the other wallet, or send your nDUSK to the first wallet, and then transfer some of it to the second wallet yourself.
-
-**Q: I got error X, what should I do?**
-
-If you encounter an error with the Discord faucet, please get in touch in our Telegram or Discord channel.
+You can request funds from our [Discord faucet](/operator/guides/nocturne-faucet). The faucet will give you 5000 nDUSK. The minimum to stake is 1000 nDUSK. If everything went right after following the [node wallet guide](/operator/guides/node-wallet-setup), and your node starts accepting and creating blocks, you have successfully set up your Nocturne node!
