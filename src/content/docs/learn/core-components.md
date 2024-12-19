@@ -58,7 +58,7 @@ Additionally, the transfer Contract supports **both** a [UTXO](/learn/tx-models#
 
 ![Citadel](../../../assets/citadel.gif)
 
-Citadel is a groundbreaking Self-Sovereign Identity (SSI)/Digital Identity (DI) protocol designed for authenticating with third party services while upholding user privacy. With Citadel it’s possible to anonymously prove identity information, like meeting a certain age threshold or living in a certain jurisdiction, without revealing the exact information or revealing more information than is necessary. Given that Citadel is part of the network, it has wide ranging applications for on-chain activity and realizing compliance paving the way to RegDeFi.
+Citadel is a groundbreaking Self-Sovereign Identity (SSI)/Digital Identity (DI) protocol designed for authenticating with third party services while upholding user privacy. With Citadel it’s possible to anonymously prove identity information, like meeting a certain age threshold or living in a certain jurisdiction, without revealing the exact information or revealing more information than is necessary. Given that Citadel is part of the network, it has wide ranging applications for on-chain activity and realizing compliance in regulated financial markets.
 
 [Deep dive into Citadel](/developer/digital-identity/protocol) 
 
