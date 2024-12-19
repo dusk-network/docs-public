@@ -34,7 +34,7 @@ const json = {
     "fee": null, 
     "inputs": ..., // they are the unspent notes which are persisted from the sync
     "output": output,
-    "openings": ..., // fetched from the node, see dusk-wallet-js/rusk-wallet on how to do it
+    "openings": ..., // fetched from the node, see rusk-wallet on how to do it
     "gas_limit": ...,
     "gas_price": ...,
     "refund": ...,

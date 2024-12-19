@@ -19,6 +19,7 @@ const defaultSidebar = [
   {
     label: "Read FAQ & Guides",
     items: [
+      { label: "How to Stake", link: "/learn/guides/staking-basics/" },
       { label: "Dusk-ERC20 Staking", link: "/learn/guides/erc20-staking/" },
       { label: "BEP2 Migration", link: "/learn/guides/bep2-migration/" },
       { label: "Mainnet DUSK Migration", link: "/learn/guides/mainnet-migration/" },

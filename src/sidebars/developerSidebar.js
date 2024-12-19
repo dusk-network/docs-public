@@ -48,6 +48,7 @@ export default function sidebar(currentPath) {
         createGroup("Integrate with Dusk", currentPath, [
             { label: "Introduction", href: '/developer/integrations/introduction' },
             { label: "The Wallet Stack", href: '/developer/integrations/wallet-stack' },
+            { label: "Transaction Lifecycle", href: '/developer/integrations/tx-lifecycle' },
             { label: "Wallet Core Library", href: '/developer/integrations/wallet-core' },
             //{ label: "Execution Core", href: '/developer/integrations/execution-core' },
             { label: "W3sper SDK", href: '/developer/integrations/w3sper' },

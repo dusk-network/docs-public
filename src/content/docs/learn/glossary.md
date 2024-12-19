@@ -155,6 +155,9 @@ A system where functions and authority are distributed among peers rather than c
 
 A digital program running on a decentralized network, utilizing smart contracts to interact with the blockchain and enforce agreements.
 
+#### DeMI
+The term Decentralized Market Infrastructure (DeMI) refers to leveraging Distributed Ledger Technologies (DLTs) to create a protocol-based Financial Market Infrastructure, as opposed to traditional platform-based systems like Central Securities Depositories (CSDs). DeMI enhances the efficiency and reduces the costs of regulated financial markets.
+
 #### Devnet
 
 An experimental network used by blockchain developers and users, where tokens have no real monetary value.
