@@ -16,7 +16,7 @@ Dusk is powered by [zero knowledge proofs](/learn/deep-dive/cryptography/zkp), a
 Simply put, **Dusk is** a privacy-enabled and regulatory-compliant decentralized ledger paves the way for **decentralized market infrastructure**.
 
 :::note[Note]
-The updated whitepaper can be found [here](https://dusk-cms.ams3.digitaloceanspaces.com/Dusk_Whitepaper_2024_4db72f92a1.pdf).
+The whitepaper can be found [here](https://dusk-cms.ams3.digitaloceanspaces.com/Dusk_Whitepaper_2024_4db72f92a1.pdf).
 :::
 <hr className="subsection" />
 
