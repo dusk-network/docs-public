@@ -26,6 +26,18 @@ To avoid miscalculations when entering values in wei, use the built-in DUSK-to-w
 
 <DuskConverter />
 
+## **Address Verifier**  
+
+import AddressVerifier from './AddressVerifier.astro';
+
+Use this tool to verify that your Dusk public account address meets both requirements:  
+- **Correct Length:** 131 or 132 characters
+- **Base58 Validity:** Contains only valid Base58 characters
+
+If your address passes verification, it is reasonably like it's a valid `targetAddress`.
+
+<AddressVerifier />
+
 ## **Interacting with the Contract**
 
 ### **Step 1: Generate a Dusk Wallet**
@@ -70,7 +82,7 @@ Use the `deposit` function to on-ramp DUSK tokens for inclusion in the Dusk gene
    1. Visit the [ERC20 Dusk On-Ramp Contract](https://etherscan.io/address/0x8787BbE53920B33411F7C9A91Ac321AF1ea1aa2d#writeContract#F1).
    2. Expand the `deposit` function.
    3. **Amount:** Enter the number of tokens in wei. Use the [DUSK-to-wei Calculator](#dusk-to-wei-calculator) above if needed.
-   4. **Target Address:** Enter your Dusk mainnet public account address.
+   4. **Target Address:** Enter your Dusk mainnet public account address. You can verify if it's a valid address with the [Address Verifier](#address-verifier).
    5. Click **"Write"** and confirm the transaction.
 
    </TabItem>
@@ -80,7 +92,7 @@ Use the `deposit` function to on-ramp DUSK tokens for inclusion in the Dusk gene
    2. Expand the `deposit` function.
    3. **Amount:** Enter the number of tokens in wei. Use the [DUSK-to-wei Calculator](#dusk-to-wei-calculator) above if needed.
       - Minimum: **1 LUX (1,000,000,000 wei)**.
-   4. **Target Address:** Enter your Dusk mainnet public account address.
+   4. **Target Address:** Enter your Dusk mainnet public account address. You can verify if it's a valid address with the [Address Verifier](#address-verifier).
    5. Click **"Write"** and confirm the transaction.
 
    </TabItem>
@@ -97,7 +109,7 @@ Use the `stake` function if you want to participate in genesis staking.
    2. Expand the `stake` function.
    3. **Amount:** Enter the number of tokens in wei. Use the [DUSK-to-wei Calculator](#dusk-to-wei-calculator) above if needed.
       - Minimum: **1000 DUSK (1,000,000,000,000 wei)**.
-   4. **Target Address:** Enter your Dusk mainnet public account address.
+   4. **Target Address:** Enter your Dusk mainnet public account address. You can verify if it's a valid address with the [Address Verifier](#address-verifier).
    5. Click **"Write"** and confirm the transaction.
 
    </TabItem>
@@ -107,7 +119,7 @@ Use the `stake` function if you want to participate in genesis staking.
    2. Expand the `stake` function.
    3. **Amount:** Enter the number of tokens in wei. Use the [DUSK-to-wei Calculator](#dusk-to-wei-calculator) above if needed.
       - Minimum: **1000 DUSK (1,000,000,000,000 wei)**.
-   4. **Target Address:** Enter your Dusk mainnet public account address.
+   4. **Target Address:** Enter your Dusk mainnet public account address. You can verify if it's a valid address with the [Address Verifier](#address-verifier).
    5. Click **"Write"** and confirm the transaction.
 
    </TabItem>
