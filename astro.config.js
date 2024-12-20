@@ -27,6 +27,7 @@ export default defineConfig({
 				dark: "./src/assets/logo-dark.svg",
 			},
 			components: {
+				Duskconverter: "./src/components/Duskconverter.astro",
 				PageFrame: "./src/components/PageFrame.astro",
 				Header: "./src/components/Header.astro",
 				ContentPanel: "./src/components/ContentPanel.astro",

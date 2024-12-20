@@ -1,0 +1,46 @@
+<dusk-converter>
+    <div class="converter-form">
+        <label for="duskAmount">DUSK Amount</label>
+        <input
+            id="duskAmount"
+            type="number"
+            min="0"
+            step="0.000000000000000001"
+            required
+        />
+        <button id="convertButton" type="button">Convert</button>
+    </div>
+    <p id="result"></p>
+</dusk-converter>
+
+<script>
+    class DuskConverter extends HTMLElement {
+        constructor() {
+            super();
+
+            const duskInput = this.querySelector("#duskAmount");
+            const convertButton = this.querySelector("#convertButton");
+            const resultDisplay = this.querySelector("#result");
+
+            const convertToWei = (amount) => {
+                if (!amount || isNaN(amount)) return "";
+                return BigInt(amount * 10 ** 18).toString();
+            };
+
+            convertButton.addEventListener("click", () => {
+                const amount = parseFloat(duskInput.value);
+                const weiAmount = convertToWei(amount);
+                console.log(duskInput);
+                console.log(weiAmount);
+
+                if (weiAmount) {
+                    resultDisplay.innerHTML = `Wei Amount: <code>${weiAmount}</code>`;
+                } else {
+                    resultDisplay.innerHTML = "Invalid DUSK amount.";
+                }
+            });
+        }
+    }
+
+    customElements.define("dusk-converter", DuskConverter);
+</script>

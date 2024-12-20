@@ -15,8 +15,16 @@ Welcome to the official guide for interacting with the Dusk Mainnet On-Ramp smar
 ## **Considerations**
 
 - **No Refunds:** Tokens cannot be retrieved once deposited or staked. This is a one-way operation.
-- **Minimum Requirements:** Ensure you meet minimum amounts before interacting, 1 [LUX](/learn/glossary#lux) (in wei, 1 LUX = 10^9 wei) for depositing, 1000 DUSK for staking.
+- **Minimum Requirements:** Ensure you meet minimum amounts before interacting, 1 [LUX](/learn/glossary#lux) (in wei, 1 LUX = 10^9 wei, 1 DUSK = 10^18 wei) for depositing, 1000 DUSK for staking.
 - **Correct Address:** Double-check your public account address before submitting! If you provide the wrong one, your funds could be lost!
+
+## DUSK-to-wei calculator
+
+import DuskConverter from './DuskConverter.astro';
+
+To avoid miscalculations when entering values in wei, use the built-in DUSK-to-wei Converter below:
+
+<DuskConverter />
 
 ## **Interacting with the Contract**
 
@@ -37,7 +45,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
    1. Visit the [ERC20 DUSK Token Contract](https://etherscan.io/address/0x940a2dB1B7008B6C776d4faaCa729d6d4A4AA551#writeContract#F1) on Etherscan.
    2. Expand the `approve` function.
    3. **Spender:** `0x8787BbE53920B33411F7C9A91Ac321AF1ea1aa2d`
-   4. **Amount:** Enter the number of tokens you plan to deposit or stake (in wei, 1 DUSK = 10^18 wei). You can add 18 decimals by clicking on the `+` icon next to `amount` field.
+   4. **Amount:** Enter the number of tokens in wei. Use the [DUSK-to-wei Calculator](#dusk-to-wei-calculator) above if needed.
    5. Click **"Write"** and confirm the transaction in your wallet.
 
    </TabItem>
@@ -46,7 +54,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
    1. Visit the [BEP20 DUSK Token Contract](https://bscscan.com/address/0xB2BD0749DBE21f623d9BABa856D3B0f0e1BFEc9C#writeContract#F1) on BSCscan.
    2. Expand the `approve` function.
    3. **Spender:** `0x3886ab688febff60ce21e99251035f8e29abca31`
-   4. **Amount:** Enter the number of tokens you plan to deposit or stake (in wei, 1 DUSK = 10^18 wei). You can add 18 decimals by clicking on the `+` icon next to `amount` field.
+   4. **Amount:** Enter the number of tokens in wei. Use the [DUSK-to-wei Calculator](#dusk-to-wei-calculator) above if needed.
    5. Click **"Write"** and confirm the transaction in your wallet.
 
    </TabItem>
@@ -59,19 +67,18 @@ Use the `deposit` function to on-ramp DUSK tokens for inclusion in the Dusk gene
 <Tabs syncKey="network">
    <TabItem label="ERC20 DUSK">
 
-   1. Visit the [Dusk On-Ramp Contract](https://etherscan.io/address/0x8787BbE53920B33411F7C9A91Ac321AF1ea1aa2d#writeContract#F1).
+   1. Visit the [ERC20 Dusk On-Ramp Contract](https://etherscan.io/address/0x8787BbE53920B33411F7C9A91Ac321AF1ea1aa2d#writeContract#F1).
    2. Expand the `deposit` function.
-   3. **Amount:** Enter the number of DUSK tokens to deposit (in wei). You can add 18 decimals by clicking on the `+` icon next to `amount` field.
-      - Minimum: **1 LUX (1,000,000,000 wei)**.
+   3. **Amount:** Enter the number of tokens in wei. Use the [DUSK-to-wei Calculator](#dusk-to-wei-calculator) above if needed.
    4. **Target Address:** Enter your Dusk mainnet public account address.
    5. Click **"Write"** and confirm the transaction.
 
    </TabItem>
    <TabItem label="BEP20 DUSK">
 
-   1. Visit the [Dusk On-Ramp Contract](https://bscscan.com/address/0x3886ab688febff60ce21e99251035f8e29abca31#writeContract#F1).
+   1. Visit the [BEP20 Dusk On-Ramp Contract](https://bscscan.com/address/0x3886ab688febff60ce21e99251035f8e29abca31#writeContract#F1).
    2. Expand the `deposit` function.
-   3. **Amount:** Enter the number of DUSK tokens to deposit (in wei). You can add 18 decimals by clicking on the `+` icon next to `amount` field.
+   3. **Amount:** Enter the number of tokens in wei. Use the [DUSK-to-wei Calculator](#dusk-to-wei-calculator) above if needed.
       - Minimum: **1 LUX (1,000,000,000 wei)**.
    4. **Target Address:** Enter your Dusk mainnet public account address.
    5. Click **"Write"** and confirm the transaction.
@@ -86,9 +93,9 @@ Use the `stake` function if you want to participate in genesis staking.
 <Tabs syncKey="network">
    <TabItem label="ERC20 DUSK">
 
-   1. Visit the [Dusk On-Ramp Contract](https://etherscan.io/address/0x8787BbE53920B33411F7C9A91Ac321AF1ea1aa2d#writeContract#F2).
+   1. Visit the [ERC20 Dusk On-Ramp Contract](https://etherscan.io/address/0x8787BbE53920B33411F7C9A91Ac321AF1ea1aa2d#writeContract#F2).
    2. Expand the `stake` function.
-   3. **Amount:** Enter the number of DUSK tokens to stake (in wei). You can add 18 decimals by clicking on the `+` icon next to `amount` field.
+   3. **Amount:** Enter the number of tokens in wei. Use the [DUSK-to-wei Calculator](#dusk-to-wei-calculator) above if needed.
       - Minimum: **1000 DUSK (1,000,000,000,000 wei)**.
    4. **Target Address:** Enter your Dusk mainnet public account address.
    5. Click **"Write"** and confirm the transaction.
@@ -96,9 +103,9 @@ Use the `stake` function if you want to participate in genesis staking.
    </TabItem>
    <TabItem label="BEP20 DUSK">
 
-   1. Visit the [Dusk On-Ramp Contract](https://bscscan.com/address/0x3886ab688febff60ce21e99251035f8e29abca31#writeContract#F2).
+   1. Visit the [BEP20 Dusk On-Ramp Contract](https://bscscan.com/address/0x3886ab688febff60ce21e99251035f8e29abca31#writeContract#F2).
    2. Expand the `stake` function.
-   3. **Amount:** Enter the number of DUSK tokens to stake (in wei). You can add 18 decimals by clicking on the `+` icon next to `amount` field.
+   3. **Amount:** Enter the number of tokens in wei. Use the [DUSK-to-wei Calculator](#dusk-to-wei-calculator) above if needed.
       - Minimum: **1000 DUSK (1,000,000,000,000 wei)**.
    4. **Target Address:** Enter your Dusk mainnet public account address.
    5. Click **"Write"** and confirm the transaction.
