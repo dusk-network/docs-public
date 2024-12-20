@@ -122,3 +122,13 @@ You will not be able to participate in the genesis state of Dusk.
 
 ### **Can I deposit/stake multiple times?**
 Yes, but each transaction must meet the minimum amounts.
+
+### **Can you describe a couple scenarios?**
+
+1. **User Pippo**: sends 10,000 DUSK to the Mainnet Onramp contract using the `stake` method. On the 29th at genesis Pippo has a stake of 10,000. Pippo’s node starts to participate in the consensus. On the 7th of January Pippo will start accruing rewards ✅
+
+2. **User Pluto**: sends 10,000 DUSK to the Mainnet Onramp contract using the `stake` method. On the 29th at genesis Pluto has a stake of 10,000 but he has no node and fails to participate in the consensus. His 10,000 DUSK will be removed from the active stakes but will be accredited as a deposit on the 3rd of January. On the 7th of January Pluto will have its deposit available but no active stake. At that point he can run a node by staking and incurring in the maturity period of 2 epochs. ✅
+
+3. **User Paperino**: sends 900 DUSK to the Mainnet Onramp contract using the `deposit` method. On the 29th his deposit will be saved in the genesis block. ✅
+
+4. **User Topolino**: does not send any DUSK to the Mainnet Onramp contract by the 2nd of January. He can onramp his funds on Mainnet only after the 7th and by using the bridge ✅
