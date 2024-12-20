@@ -1,0 +1,124 @@
+---
+title: Dusk Mainnet On-Ramp
+description: Step-by-step guide on how to move BEP20 and ERC20 DUSK to be included in the Dusk mainnet genesis.
+---
+
+Welcome to the official guide for interacting with the Dusk Mainnet On-Ramp smart contract through Etherscan and BSCscan. This guide explains how to **deposit** and **stake** ERC20/BEP20 DUSK tokens to be included in the Dusk mainnet genesis block. This guide is for advanced users, providing the wrong address can lead to a loss of funds!
+
+## **What You'll Need**
+
+1. **ERC20/BEP20 DUSK tokens** in a supported wallet.
+2. **A Web3 wallet**, like MetaMask.
+3. **Your Dusk Mainnet Target Address**: This is your unique Dusk public account address used for native DUSK issuance.
+4. **Access to Etherscan/BSCscan**: We’ll interact with the contracts directly through their verified pages.
+
+## **Considerations**
+
+- **No Refunds:** Tokens cannot be retrieved once deposited or staked. This is a one-way operation.
+- **Minimum Requirements:** Ensure you meet minimum amounts before interacting, 1 LUX for depositing, 1000 DUSK for staking.
+- **Correct Address:** Double-check your public account address before submitting! If you provide the wrong one, your funds could be lost!
+
+## **Interacting with the Contract**
+
+### **Step 1: Generate a Dusk Wallet**
+1. Use the **Rusk Wallet** to generate a mnemonic and create your Dusk wallet.
+2. **Store your mnemonic securely.**
+3. Copy the **Public Account** address from the wallet and use it as the `targetAddress`.
+
+### **Step 2: Approve the Contract to Use Your DUSK Tokens**
+
+Before depositing or staking, you must allow the on-ramp contract to spend your DUSK tokens:
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Tabs syncKey="network">
+   <TabItem label="ERC20 DUSK">
+
+   1. Visit the [ERC20 DUSK Token Contract](https://etherscan.io/address/0x940a2dB1B7008B6C776d4faaCa729d6d4A4AA551#writeContract#F1) on Etherscan.
+   2. Expand the `approve` function.
+   3. **Spender:** `0x8787BbE53920B33411F7C9A91Ac321AF1ea1aa2d`
+   4. **Amount:** Enter the number of tokens you plan to deposit or stake (in wei, 1 DUSK = 10^18 wei).
+   5. Click **"Write"** and confirm the transaction in your wallet.
+
+   </TabItem>
+   <TabItem label="BEP20 DUSK">
+
+   1. Visit the [BEP20 DUSK Token Contract](https://bscscan.com/address/0xB2BD0749DBE21f623d9BABa856D3B0f0e1BFEc9C#writeContract#F1) on BSCscan.
+   2. Expand the `approve` function.
+   3. **Spender:** `0x3886ab688febff60ce21e99251035f8e29abca31`
+   4. **Amount:** Enter the number of tokens you plan to deposit or stake (in wei, 1 DUSK = 10^18 wei).
+   5. Click **"Write"** and confirm the transaction in your wallet.
+
+   </TabItem>
+</Tabs>
+
+### **Step 3: Deposit ERC20/BEP20 DUSK**
+
+Use the `deposit` function to lock DUSK tokens for inclusion in the Dusk genesis state.
+
+<Tabs syncKey="network">
+   <TabItem label="ERC20 DUSK">
+
+   1. Visit the [Dusk On-Ramp Contract](https://etherscan.io/address/0x8787BbE53920B33411F7C9A91Ac321AF1ea1aa2d#writeContract#F1).
+   2. Expand the `deposit` function.
+   3. **Amount:** Enter the number of DUSK tokens to deposit (in wei).
+      - Minimum: **1 LUX (1,000,000,000 wei)**.
+   4. **Target Address:** Enter your Dusk mainnet public account address.
+   5. Click **"Write"** and confirm the transaction.
+
+   </TabItem>
+   <TabItem label="BEP20 DUSK">
+
+   1. Visit the [Dusk On-Ramp Contract](https://bscscan.com/address/0x3886ab688febff60ce21e99251035f8e29abca31#writeContract#F1).
+   2. Expand the `deposit` function.
+   3. **Amount:** Enter the number of DUSK tokens to deposit (in wei).
+      - Minimum: **1 LUX (1,000,000,000 wei)**.
+   4. **Target Address:** Enter your Dusk mainnet public account address.
+   5. Click **"Write"** and confirm the transaction.
+
+   </TabItem>
+</Tabs>
+
+### **Step 4: Stake ERC20/BEP20 DUSK**
+
+Use the `stake` function if you want to participate in genesis staking.
+
+<Tabs syncKey="network">
+   <TabItem label="ERC20 DUSK">
+
+   1. Visit the [Dusk On-Ramp Contract](https://etherscan.io/address/0x8787BbE53920B33411F7C9A91Ac321AF1ea1aa2d#writeContract#F2).
+   2. Expand the `stake` function.
+   3. **Amount:** Enter the number of DUSK tokens to stake (in wei).
+      - Minimum: **1000 DUSK (1,000,000,000,000 wei)**.
+   4. **Target Address:** Enter your Dusk mainnet public account address.
+   5. Click **"Write"** and confirm the transaction.
+
+   </TabItem>
+   <TabItem label="BEP20 DUSK">
+
+   1. Visit the [Dusk On-Ramp Contract](https://bscscan.com/address/0x3886ab688febff60ce21e99251035f8e29abca31#writeContract#F2).
+   2. Expand the `stake` function.
+   3. **Amount:** Enter the number of DUSK tokens to stake (in wei).
+      - Minimum: **1000 DUSK (1,000,000,000,000 wei)**.
+   4. **Target Address:** Enter your Dusk mainnet public account address.
+   5. Click **"Write"** and confirm the transaction.
+
+   </TabItem>
+</Tabs>
+
+**Warning:** It is recommended to perform both **deposit** and **stake** transactions. If you only stake, you will not have funds available for essential network transactions like reward withdrawals or transfers.
+
+## **Checking Transactions and Balances**
+
+After depositing or staking, verify your transaction status on Etherscan/BSCscan through your wallet. 
+
+## **FAQ**
+
+### **What happens after depositing or staking?**
+Your tokens will be locked, and a corresponding genesis balance will be issued on the Dusk mainnet on January 7th, 2025.
+
+### **What if I miss the deadlines?**
+You will not be able to participate in the genesis state of Dusk.
+
+### **Can I deposit/stake multiple times?**
+Yes, but each transaction must meet the minimum amounts.

@@ -20,10 +20,11 @@ const defaultSidebar = [
     label: "Read FAQ & Guides",
     items: [
       { label: "How to Stake", link: "/learn/guides/staking-basics/" },
-      { label: "Dusk-ERC20 Staking", link: "/learn/guides/erc20-staking/" },
-      { label: "BEP2 Migration", link: "/learn/guides/bep2-migration/" },
+      { label: "Mainnet Onramp", link: "/learn/guides/dusk-mainnet-onramp/" },
       { label: "Mainnet DUSK Migration", link: "/learn/guides/mainnet-migration/" },
       { label: "Restore Block Height", link: "/learn/guides/restore-height/" },
+      { label: "Dusk-ERC20 Staking", link: "/learn/guides/erc20-staking/" },
+      { label: "BEP2 Migration", link: "/learn/guides/bep2-migration/" },
     ],
   },
   {
