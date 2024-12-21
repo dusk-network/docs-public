@@ -19,7 +19,7 @@ If you haven't obtained a mnemonic yet, you can do so by:
 - Using the command `rusk-wallet`and select the option to create a new wallet.
 - Using the [Web Wallet](https://apps.dusk.network/wallet/setup/) to obtain a mnemonic, and then run the following command:
 
-If you haven't made a wallet yet, use our CLI [Rusk Wallet](https://apps.dusk.network/wallet/setup/), which you can download [here](https://github.com/dusk-network/rusk/actions/runs/11113602682/artifacts/1997624810), and create a new wallet.
+If you haven't made a wallet yet, use our CLI [Rusk Wallet](https://apps.dusk.network/wallet/setup/), which you can download [here](https://github.com/dusk-network/rusk/releases/tag/rusk-wallet-0.1.0-rc.0), and create a new wallet.
 
 **It is important that you back up your mnemonic phrase and don't share it with anyone as this is gives anyone access to your wallet and funds**
 

@@ -9,11 +9,18 @@ It is recommended to use a stable operating system with long-term support, such 
 
 #### Are my keys secure on a server/vps?
 
-The wallet stores your keys encrypted. Additionally the staking keys the node uses in-memory do not allow to send funds out of a wallet.
+The wallet stores your keys in encrypted form. In addition, the keys that the node uses in-memory to participate in consensus can be separated from other keys.
 
-Provisioner keys are strictly limited to signing consensus messages, such as block proposal, validation, and voting. Any other critical operations, such as un-staking or withdrawing funds now require a multi-signature process involving a funds key, specifically registered during the staking process.
+Your Stake is defined by a consensus key and an owner. The owner is by default the same key, but can also be a contract or separate key. Your Public Balance is held by a key too, the same goes for the private, shielded Balance.
 
-##### What if I lose access to my server or funds key?
+1. If your owner key is set to a different key, no one is able to unstake, stake or withdraw using your consensus key.
+2. If the key you use to send funds around is set to a different key than the consensus key, no one will be able to send funds from your wallet using your consensus key.
+   - This is naturally the case for shielded accounts as they use different keys by default.
+   - For public accounts you need to create a separated account holding your public account balance.
+
+In summary, consensus keys can be strictly limited to signing consensus messages such as block proposal, validation, and voting. All other critical operations, such as unstaking or sending funds, can be separated to other keys.
+
+##### What if I lose access to my server or keys?
 
 As long as you have your mnemonic phrase stored somewhere, you are able to recovery anything else.
 

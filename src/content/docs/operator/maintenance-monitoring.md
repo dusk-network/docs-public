@@ -19,10 +19,12 @@ The recommended setup for network participants looking to stake and use the netw
 Effective monitoring and alerting systems are crucial to avoid slashing events. There are several tools available for real-time monitoring and alerting, which are particularly important for provisioners participating in consensus. Implementing these systems helps ensure continuous performance and timely responses to potential issues.
 
 ## Keys Management
+
 Proper management of your cryptographic keys is essential to ensure the security of your node.
 
-For this reason, *provisioner keys* are strictly limited to signing consensus messages, such as block proposal, validation, and voting. Any other critical operations, such as un-staking or withdrawing funds now require a multi-signature process involving a *funds key*, specifically registered during the staking process.
+For this reason, *consensus keys* can be strictly limited to signing consensus messages, such as block proposal, validation, and voting.
 
+Any other critical operations, such as un-staking, withdrawing funds or sending out Dusk can be separated into multiple different keys.
 
 ## Sentry Nodes
 Denial-of-service (DoS) attacks occur when an attacker floods a server with excessive traffic, preventing it from maintaining its internet connection. Attackers who scan the network may attempt to identify the IP addresses of provisioner nodes and disrupt their operations by overwhelming them with traffic.
