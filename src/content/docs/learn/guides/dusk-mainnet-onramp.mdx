@@ -5,6 +5,15 @@ description: Step-by-step guide on how to move BEP20 and ERC20 DUSK to be includ
 
 Welcome to the official guide for interacting with the Dusk Mainnet On-Ramp smart contract through Etherscan and BSCscan. This guide explains how to **deposit** and **stake** ERC20/BEP20 DUSK tokens to be included in the Dusk mainnet genesis block. This guide is for **advanced crypto users** and **professional node operators**. Providing the wrong address can lead to a loss of funds!
 
+## Depositing versus staking
+
+there are two primary ways to interact with the on-ramp:
+
+- **Deposit**: Depositing ensures your funds are available at the start of mainnet, but do not contribute to consensus or earn rewards. This is explained in [Step 3](#step-3-deposit-erc20bep20-dusk).
+- **Stake**: Participate in staking at the start of mainnet but requires active participation as a node operator. This is explained in [Step 4](#step-4-stake-erc20bep20-dusk).
+
+**Recommendation:** It is recommended to perform both a **deposit** and **stake** transaction if you want to stake at genesis. If you only stake, you will not have funds available for essential network transactions like reward withdrawals or transfers. It is still possible to migrate DUSK through our [mainnet migration bridge](/learn/guides/mainnet-migration) afterwards. For example scenarios, see [this](#can-you-describe-a-couple-scenarios) FAQ question.
+
 ## **What You'll Need**
 
 1. **ERC20/BEP20 DUSK tokens** in a supported wallet.
@@ -82,6 +91,7 @@ Use the `deposit` function to on-ramp DUSK tokens for inclusion in the Dusk gene
    1. Visit the [ERC20 Dusk On-Ramp Contract](https://etherscan.io/address/0x8787BbE53920B33411F7C9A91Ac321AF1ea1aa2d#writeContract#F1).
    2. Expand the `deposit` function.
    3. **Amount:** Enter the number of tokens in wei. Use the [DUSK-to-wei Calculator](#dusk-to-wei-calculator) above if needed.
+      - Minimum: **1 LUX (1,000,000,000 wei)**.
    4. **Target Address:** Enter your Dusk mainnet public account address. You can verify if it's a valid address with the [Address Verifier](#address-verifier).
    5. Click **"Write"** and confirm the transaction.
 
@@ -108,7 +118,7 @@ Use the `stake` function if you want to participate in genesis staking.
    1. Visit the [ERC20 Dusk On-Ramp Contract](https://etherscan.io/address/0x8787BbE53920B33411F7C9A91Ac321AF1ea1aa2d#writeContract#F2).
    2. Expand the `stake` function.
    3. **Amount:** Enter the number of tokens in wei. Use the [DUSK-to-wei Calculator](#dusk-to-wei-calculator) above if needed.
-      - Minimum: **1000 DUSK (1,000,000,000,000 wei)**.
+      - Minimum: **1000 DUSK (1,000,000,000,000,000,000,000 wei)**.
    4. **Target Address:** Enter your Dusk mainnet public account address. You can verify if it's a valid address with the [Address Verifier](#address-verifier).
    5. Click **"Write"** and confirm the transaction.
 
@@ -118,14 +128,12 @@ Use the `stake` function if you want to participate in genesis staking.
    1. Visit the [BEP20 Dusk On-Ramp Contract](https://bscscan.com/address/0x3886ab688febff60ce21e99251035f8e29abca31#writeContract#F2).
    2. Expand the `stake` function.
    3. **Amount:** Enter the number of tokens in wei. Use the [DUSK-to-wei Calculator](#dusk-to-wei-calculator) above if needed.
-      - Minimum: **1000 DUSK (1,000,000,000,000 wei)**.
+      - Minimum: **1000 DUSK (1,000,000,000,000,000,000,000 wei)**.
    4. **Target Address:** Enter your Dusk mainnet public account address. You can verify if it's a valid address with the [Address Verifier](#address-verifier).
    5. Click **"Write"** and confirm the transaction.
 
    </TabItem>
 </Tabs>
-
-**Warning:** It is recommended to perform both **deposit** and **stake** transactions. If you only stake, you will not have funds available for essential network transactions like reward withdrawals or transfers.
 
 ## **Checking Transactions and Balances**
 
@@ -144,10 +152,10 @@ Yes, but each transaction must meet the minimum amounts.
 
 ### **Can you describe a couple scenarios?**
 
-1. **User Pippo**: He sends 10,000 DUSK to the Mainnet Onramp contract using the `stake` method. As of _Genesis_ on the 29th, he holds a 10,000 DUSK stake, and his node begins participating in consensus. By January 7, he starts accruing rewards.
+1. **User Pippo**: He sends 10,000 DUSK to the Mainnet Onramp contract using the `stake` method. As of _Genesis_ on the 29th, he holds a 10,000 DUSK stake, and his node begins participating in consensus. By January 7, he starts accruing rewards. Pippo did not do a `deposit` and will have to bridge DUSK through our [mainnet migration bridge](/learn/guides/mainnet-migration), or receive DUSK from a friend, to transfer DUSK and withdraw staking rewards.
 
 2. **User Pluto**: He sends 10,000 DUSK to the Mainnet Onramp contract using the `stake` method. As of _Genesis_ on the 29th, he holds a 10,000 DUSK stake, but since he does not run a node, he never participates in consensus. _His 10,000 DUSK is removed from the active stakes and credited back as a deposit on January 3._ By January 7, he holds his original deposit but no active stake. At that point, he can choose to run a node by re-staking and waiting through the two-epoch maturity period.
 
 3. **User Paperino**: He sends 900 DUSK to the Mainnet Onramp contract using the deposit method. His deposit is recorded at _Genesis_ and available from that point on (on December 29th, on January 3rd and  on January 7th).
 
-4. **User Topolino**: He does not send any DUSK to the Mainnet Onramp contract by January 2. He can only move his funds onto Mainnet after January 7, and must use the bridge to do so.
+4. **User Topolino**: He does not send any DUSK to the Mainnet Onramp contract by January 2. He can only move his funds onto Mainnet after January 7, and must use the [mainnet migration bridge](/learn/guides/mainnet-migration) to do so.
