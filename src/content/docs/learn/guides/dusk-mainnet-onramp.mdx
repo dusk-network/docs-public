@@ -12,7 +12,7 @@ there are two primary ways to interact with the on-ramp:
 - **Deposit**: Depositing ensures your funds are available at the start of mainnet, but do not contribute to consensus or earn rewards. This is explained in [Step 3](#step-3-deposit-erc20bep20-dusk).
 - **Stake**: Participate in staking at the start of mainnet but requires active participation as a node operator. This is explained in [Step 4](#step-4-stake-erc20bep20-dusk).
 
-**Recommendation:** It is recommended to perform both a **deposit** and **stake** transaction if you want to stake at genesis. If you only stake, you will not have funds available for essential network transactions like reward withdrawals or transfers. It is still possible to migrate DUSK through our [mainnet migration bridge](/learn/guides/mainnet-migration) afterwards. For example scenarios, see [this](#can-you-describe-a-couple-scenarios) FAQ question.
+**Recommendation:** It is recommended to perform both a **deposit** and **stake** transaction if you want to stake at genesis. If you do not want to stake, you can skip step 4. If you only stake, you will not have funds available for essential network transactions like reward withdrawals or transfers, we therefore recommend to do step 3 as well. It is still possible to migrate DUSK through our [mainnet migration bridge](/learn/guides/mainnet-migration) afterwards. For example scenarios, see [this](#can-you-describe-a-couple-scenarios) FAQ question. Keep in mind that to perform step 4, you do not have to do step 3.
 
 ## **What You'll Need**
 
@@ -83,7 +83,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 ### **Step 3: Deposit ERC20/BEP20 DUSK**
 
-Use the `deposit` function to on-ramp DUSK tokens for inclusion in the Dusk genesis state.
+Use the `deposit` function to on-ramp DUSK tokens for inclusion in the Dusk genesis state. If you want to stake, do not deposit your full balance. Instead, check step 4. If you only want to deposit, you can skip step 4. Read [Deposit versus Staking](#depositing-versus-staking) for more details.
 
 <Tabs syncKey="network">
    <TabItem label="ERC20 DUSK">
@@ -110,7 +110,7 @@ Use the `deposit` function to on-ramp DUSK tokens for inclusion in the Dusk gene
 
 ### **Step 4: Stake ERC20/BEP20 DUSK**
 
-Use the `stake` function if you want to participate in genesis staking.
+Use the `stake` function if you want to participate in genesis staking. Before doing the stake call, make sure you deposited a small amount of funds to do staking operations later. Read [Deposit versus Staking](#depositing-versus-staking) for more details.
 
 <Tabs syncKey="network">
    <TabItem label="ERC20 DUSK">
