@@ -15,29 +15,29 @@ We work under the assumption that you’ve already created an account for your r
 
 DO uses droplets, which are Linux-based virtual machines. When you’re [logged in](https://cloud.digitalocean.com/login) and have set up a default project, navigate to _Droplets_ under the _Manage_ section of your project, and click on [_Create Droplet_](https://cloud.digitalocean.com/droplets/new).
 
-![Create droplet page.](../../../../assets/nocturne/node-guide/create-droplet.png)
+![Create droplet page.](../../../../assets/mainnet/node-guide/create-droplet.png)
 
 On the _Create Droplets_ page, select any of the provided regions under the _Choose Region_ header. Choosing different regions is good for decentralization and resilience.
 
 Under _Choose an image_, pick Ubuntu version 24.04 (LTS) x64.
 
-![Select region and image for the droplet.](../../../../assets/nocturne/node-guide/region-image-droplet.png)
+![Select region and image for the droplet.](../../../../assets/mainnet/node-guide/region-image-droplet.png)
 
 Next, we have to pick the size of the droplet. The [node requirements](/operator/provisioner#provisioner-specifications) for a provisioner node are in line with the _SHARED CPU_ -> _Regular_ -> $24/mo option. Select it.
 
-![Select size of the droplet.](../../../../assets/nocturne/node-guide/requirements-droplet.png)
+![Select size of the droplet.](../../../../assets/mainnet/node-guide/requirements-droplet.png)
 
 Choose an authentication method to access your droplet. Using a SSH key is more secure, but you can also use a password if you prefer. We recommend the SSH key approach. You can follow DOs instructions here: [How to Add SSH Keys to New or Existing Droplets](https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/)
 
-![Set an authentication method.](../../../../assets/nocturne/node-guide/authenticate-droplet.png)
+![Set an authentication method.](../../../../assets/mainnet/node-guide/authenticate-droplet.png)
 
 That's it for creating your droplet! Give it a hostname, and click on _Create Droplet_:
 
-![Create the droplet.](../../../../assets/nocturne/node-guide/finish-droplet.png)
+![Create the droplet.](../../../../assets/mainnet/node-guide/finish-droplet.png)
 
 DO will now set the droplet up for you. This can take a minute:
 
-![Droplet being created.](../../../../assets/nocturne/node-guide/droplet-creation.png)
+![Droplet being created.](../../../../assets/mainnet/node-guide/droplet-creation.png)
 
 ## Configure Firewall
 
@@ -47,7 +47,7 @@ Depending on the cloud provider, we need to either add a firewall rule on the in
 
 DO works with firewall groups. Navigate to _Networking_ -> _Firewalls_ under the _Manage_ section of your project. Click on the [_Create Firewall_](https://cloud.digitalocean.com/networking/firewalls) button.
 
-![Create firewall page.](../../../../assets/nocturne/node-guide/create-firewall.png)
+![Create firewall page.](../../../../assets/mainnet/node-guide/create-firewall.png)
 
 Give the firewall a name, open UDP under port 9000 and TCP under 8080. Leave all the Outbound rules as they are.
 
@@ -55,7 +55,7 @@ Apply the rules to the Mainnet-node droplet you made.
 
 Your firewall should look as follows:
 
-![Configure firewall.](../../../../assets/nocturne/node-guide/configure-firewall.png)
+![Configure firewall.](../../../../assets/mainnet/node-guide/configure-firewall.png)
 
 Click on _Create Firewall_ to apply this firewall to your node's droplet.
 
@@ -63,15 +63,15 @@ Click on _Create Firewall_ to apply this firewall to your node's droplet.
 
 Navigate back to your [droplets overview](https://cloud.digitalocean.com/droplets) and select your Mainnet droplet:
 
-![Droplet overview.](../../../../assets/nocturne/node-guide/droplet-overview.png)
+![Droplet overview.](../../../../assets/mainnet/node-guide/droplet-overview.png)
 
 You can connect to your node through SSH on your local machine, or simply click on _Console_ on your droplets page:
 
-![Connect to droplet through web UI.](../../../../assets/nocturne/node-guide/droplet-console.png)
+![Connect to droplet through web UI.](../../../../assets/mainnet/node-guide/droplet-console.png)
 
 A terminal should pop-up and connect you to your Droplet
 
-![Droplet terminal.](../../../../assets/nocturne/node-guide/droplet-terminal.png)
+![Droplet terminal.](../../../../assets/mainnet/node-guide/droplet-terminal.png)
 
 We've created an easy to use [node installer](https://github.com/dusk-network/node-installer). This installer will set up Rusk as a service on your droplet, preconfigure parts of the node, and provide a couple of helper scripts.
 
