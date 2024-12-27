@@ -17,6 +17,7 @@ export default function sidebar(currentPath) {
 
         createGroup("Guides", currentPath, [
             { label: "Run a Provisioner on Nocturne", href: "/operator/guides/nocturne-node" },
+            { label: "Run an Archive Node", href: "/operator/guides/archive-node" },
             { label: "Setup wallet on Node", href: "/operator/guides/node-wallet-setup" },
             { label: "Fast-Sync a Node", href: "/operator/guides/fast-sync" },
             { label: "Manually Re-Sync a Node", href: "/operator/guides/manual-resync" },

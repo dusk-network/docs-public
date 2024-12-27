@@ -69,7 +69,7 @@ A terminal should pop-up and connect you to your Droplet
 
 ![Droplet terminal.](../../../../assets/nocturne/node-guide/droplet-terminal.png)
 
-Just like last time, we've created an easy to use [node installer](https://github.com/dusk-network/node-installer). This installer will set up Rusk as a service on your droplet, preconfigure parts of the node, and provide a couple of helper scripts.
+We've created an easy to use [node installer](https://github.com/dusk-network/node-installer). This installer will set up Rusk as a service on your droplet, preconfigure parts of the node, and provide a couple of helper scripts.
 
 Install Rusk by pasting the following command in your droplet terminal:
 ```sh
