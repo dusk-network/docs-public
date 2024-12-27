@@ -1,6 +1,6 @@
 ---
-title: Hardware Requirements
-description: Monitoring & Maintenance information for Dusk node runners.
+title: Maintenance & Monitoring
+description: Maintenance & Monitoring information for Dusk node runners.
 ---
 
 # Tips

@@ -3,6 +3,10 @@ title: FAQ
 description: Frequently asked questions about running a node on Dusk.
 ---
 
+#### How much Dusk do I need to stake?
+
+1000 (1 thousand) Dusk.
+
 #### Which operating system is recommended?
 
 It is recommended to use a stable operating system with long-term support, such as Ubuntu 24.04. Ubuntu 24.04 LTS is officially supported, tested and therefore recommended.
