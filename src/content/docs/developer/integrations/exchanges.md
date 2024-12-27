@@ -84,14 +84,16 @@ To reinforce confidence in compliance, there is a comprehensive and detailed **l
 
 
 ## Resources
+
+- [Whitepaper](https://dusk-cms.ams3.digitaloceanspaces.com/Dusk_Whitepaper_2024_4db72f92a1.pdf)
+- [Audits](https://github.com/dusk-network/audits)
 ### Libraries
 
-- [Wallet Stack](/developer/integrations/wallet-stack)
-- [Wallet Core](/developer/integrations/wallet-core)
 - [W3sper SDK](/developer/integrations/w3sper)
+- [Wallet Stack](/developer/integrations/wallet-stack)
 - [RUES (events system)](/developer/integrations/w3sper)
 
-### Links
+### User-facing tools
 
 - [Block explorer](https://explorer.dusk.network/)
 - [Web Wallet](https://wallet.dusk.network/)
@@ -102,9 +104,6 @@ To reinforce confidence in compliance, there is a comprehensive and detailed **l
 - Token decimals: `9` (18 decimals for ERC-20 / BEP-20 versions)
 - [Tokenomics and metrics](https://docs.dusk.network/learn/tokenomics)
 - Consensus Mechanism: [Succinct Attestation Consensus](https://docs.dusk.network/learn/deep-dive/succinct-attestation)
-
-### Audits
-- [Audits Reports](https://github.com/dusk-network/audits)
 
   
 ## Q&As
