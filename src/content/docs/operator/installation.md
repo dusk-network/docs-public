@@ -31,7 +31,7 @@ If you want to spin up a Provisioner node on the Nocturne testnet, you can use t
 
 You can install Rusk by pasting the following command in your terminal:
 ```sh
-curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/latest/download/node-installer.sh | sudo sh
+curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/latest/download/node-installer.sh | sudo bash
 ```
 
 :::note[UFW and other configurations]

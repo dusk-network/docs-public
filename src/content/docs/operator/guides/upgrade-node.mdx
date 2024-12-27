@@ -7,14 +7,32 @@ A network may be occasionally upgraded with new features and performance optimiz
 
 To make the upgrade process as flawless as possible, the [node installer](https://github.com/dusk-network/node-installer) script may be updated from time to time. This script can be ran in a non-destructive way, meaning it changes only what is needed. It will gracefully shut down Rusk for you.
 
-In the case of migrating to a newer version of Nocturne, please see the [Nocturne Reset](#nocturne-reset) section.
-
 ## How to Upgrade
 
-To upgrade to the latest Nocturne version, run:
-```sh
-curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/latest/download/node-installer.sh | sudo sh
-```
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Tabs syncKey="network">
+    <TabItem label="Mainnet">
+
+    To upgrade to the latest mainnet version, run:
+
+    ```bash
+    # mainnet upgrade
+    curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/latest/download/node-installer.sh | sudo bash
+    ```
+
+    </TabItem>
+    <TabItem label="Testnet">
+
+    To upgrade to the latest Nocturne testnet version, run:
+
+    ```bash
+    # testnet upgrade
+    curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/latest/download/node-installer.sh | sudo bash -s testnet
+    ```
+
+    </TabItem>
+</Tabs>
 
 Once it's done and gives no errors, start Rusk again:
 ```sh
@@ -31,7 +49,7 @@ Or keep an eye on the logs to see if it's making and accepting new blocks:
 tail -F /var/log/rusk.log
 ```
 
-If you see new blocks being accepted, you're up and running again. Is your node stuck, or are you not sure if it is?
+If you see new blocks being accepted, you're up and running again.
 
 You can see the status of the Rusk service here:
 ```sh
@@ -49,16 +67,22 @@ If everything else fails, check out the [manual resync](/operator/guides/manual-
 
 ## Nocturne Reset
 
+:::note[Info]
+This only applies for testnet.
+:::
+
+Sometimes the Testnet gets reset. For that you need to reset the state of Nocturne.
+
 1. To reset the state of Nocturne, download the latest version of our installer:
 ```sh
-curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/latest/download/node-installer.sh | sudo sh
+curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/latest/download/node-installer.sh | sudo bash -s testnet
 ```
 
 2. Reset all the data on your node:
 ```sh
 ruskreset
 ```
-Type in Y to accept the deletion of all the state.
+Type in **Y** to accept the deletion of all the state.
 
 3. Start Rusk:
 ```sh
