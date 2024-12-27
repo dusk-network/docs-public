@@ -1,20 +1,22 @@
 ---
-title: Run a node on Dusk
+title: Dusk Node Documentation
 description: A complete guide to setting up, configuring, and operating a node on Dusk.
 ---
 import { LinkCard, Card, CardGrid } from '@astrojs/starlight/components';
 
-This documentation provides insight into everything related to nodes on Dusk. It covers the different types of nodes, the requirements for running a node, and the different ways to set up a node.
+Welcome to the Dusk Node documentation section. This documentation is for anyone interested in running a Dusk node. Here you can find information about the different types of nodes, the requirements for running a node, and the different ways to set up a node.
 
-For developing actively on the Node software or running nodes locally for testing you should look into the README of the [Rusk repository](https://github.com/dusk-network/rusk).
+## Setting Up & Running a Node
 
-## Setting Up a Node
-
-There are multiple ways to set up a Dusk node. The pages below provide information and methods on how to run a node.
+There are multiple ways to set up a Dusk node. The pages below provide guides on how to run a node.
 
 <CardGrid>
-        <LinkCard title="Install Rusk" href="/operator/installation/" description="Install Rusk and run a node on Dusk."/>
-        <LinkCard title="Build from Source" href="/operator/installation#build-from-source" description="Compile your node from the Rusk source code."/>
-        <LinkCard title="Run a Provisioner" href="/operator/provisioner" description="Run a Provisioner and participate in the consensus."/>
-        <LinkCard title="Run a Provisioner on Nocturne" href="/operator/guides/nocturne-node" description="Launch easily a Provisioner on Nocturne testnet."/>
+        <LinkCard title="Mainnet Node" href="/operator/guides/mainnet-node" description="Run a provisioner node on mainnet and participate in consensus"/>
+        <LinkCard title="Testnet Node" href="/operator/guides/nocturne-node" description="Run a provisioner node on testnet and participate in consensus"/>
+        <LinkCard title="Archive Node" href="/operator/guides/archive-node" description="Run an archive node and store more detailed historical chain data"/>
+        <LinkCard title="Setup a wallet" href="/operator/guides/node-wallet-setup" description="Setup the CLI wallet on your node server"/>
 </CardGrid>
+
+:::tip
+For developing actively on the Node software or running nodes locally for testing you should look into the README of the <a href="https://github.com/dusk-network/rusk" target="_blank">Rusk repository</a>.
+:::
