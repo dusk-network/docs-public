@@ -15,7 +15,7 @@ A standardized framework for confidential smart contracts, which any company or 
 
 #### DUSK
 
-The native cryptocurrency of Dusk. It is used to pay for transaction fees and staking. 
+The native cryptocurrency of Dusk. It is used to pay for transaction fees and staking.
 
 #### Kadcast
 
@@ -27,7 +27,7 @@ The smallest denomination of DUSK. 10^9 LUX = 1 DUSK, 1 DUSK = 1,000,000,000 LUX
 
 #### Moonlight
 
-An account-based transaction model on Dusk that tracks balances for accounts and contracts, offering full transparency. It is faster and cheaper than Phoenix, making it easier for developers to integrate with external protocols. 
+An account-based transaction model on Dusk that tracks balances for accounts and contracts, offering full transparency. It is faster and cheaper than Phoenix, making it easier for developers to integrate with external protocols.
 
 #### Phoenix
 
@@ -210,7 +210,7 @@ The fee charged to a user in order to run a smart contract on the blockchain.
 
 The first block of a blockchain, from which all subsequent blocks are built. It is unique and hardcoded into the protocol.
 
-#### Genesis Contract 
+#### Genesis Contract
 
 A smart contract that is made available on the start of the blockchain, and hardcoded into the genesis block.
 
@@ -318,13 +318,17 @@ A network participant staking at least 1,000 DUSK who competes to join the provi
 
 A group of provisioners tasked with selecting and proposing new blocks for the blockchain.
 
-#### Provisioner Key
+#### Consensus Key
 
-A unique identifier of alphanumeric characters which a provisioner uses to actively sign on-chain attestations and proposals of new blocks.
+A unique sequence of alphanumeric characters used by a node participating in consensus (such as a provisioner) to actively sign on-chain attestations and proposals of new blocks.
+
+#### Private Key
+
+A unique sequence of alphanumeric characters used to derive its associated public key.
 
 #### Public Key
 
-A unique identifier of alphanumeric characters that represents the destination address for receiving tokens. A public key can also be used to verify digital signatures made with a private key.
+A unique identifier of alphanumeric characters that is used to sign data. A public key can also be used to verify digital signatures made with a private key.
 
 #### Reference String
 

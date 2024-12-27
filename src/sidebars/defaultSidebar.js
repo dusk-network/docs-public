@@ -17,7 +17,7 @@ const defaultSidebar = [
     ],
   },
   {
-    label: "Read FAQ & Guides",
+    label: "Guides",
     items: [
       { label: "How to Stake", link: "/learn/guides/staking-basics/" },
       { label: "Mainnet Onramp", link: "/learn/guides/dusk-mainnet-onramp/" },
@@ -95,6 +95,10 @@ const defaultSidebar = [
       {
         label: "Succinct Attestation Consensus",
         link: "learn/deep-dive/succinct-attestation",
+      },
+      {
+        label: "Slashing",
+        link: "learn/deep-dive/slashing"
       },
       {
         label: "Additional Resources",

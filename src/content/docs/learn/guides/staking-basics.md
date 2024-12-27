@@ -3,7 +3,7 @@ title: Staking on Dusk
 description: Discover how to earn rewards by staking on Dusk.
 ---
 
-Staking is a vital component of Dusk, ensuring decentralization and security. 
+Staking is a vital component of Dusk, ensuring decentralization and security.
 By staking your DUSK, you contribute to the network's integrity and consensus mechanism, enabling efficient and secure transaction validation. Staking is a way for everyone to actively support the network while earning rewards for their participation.
 
 ## Why Stake?
@@ -28,7 +28,7 @@ After having staked your tokens, **it takes some time before you start earning r
 
 ## How are Rewards determined?
 
-Rewards are probabilistically allocated based on your node's participation in the network's consensus process. 
+Rewards are probabilistically allocated based on your node's participation in the network's consensus process.
 
 **Once** your stake is active, you start earn rewards, which come from:
 
@@ -46,7 +46,7 @@ The more DUSK you stake, the more likely you are to earn rewards as an active pa
 
 ## Slashing
 
-Dusk uses a [slashing mechanism](/operator/provisioner#slashing) to maintain network security. If your node submits invalid blocks or goes offline, your stake may be partially reduced. This mechanism ensures the network rewards reliable participants and discourages harmful behavior.
+Dusk uses a [slashing mechanism](/learn/deep-dive/slashing) to maintain network security. If your node submits invalid blocks or goes offline, your stake may be partially reduced. This mechanism ensures the network rewards reliable participants and discourages harmful behavior.
 
 :::note[Important]
 To prevent slashing, ensure your node is operational and synced before staking.

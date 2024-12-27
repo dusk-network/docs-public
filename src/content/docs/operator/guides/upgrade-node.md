@@ -58,7 +58,7 @@ curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-insta
 ```sh
 ruskreset
 ```
-Press Y to accept the deletion of all the state.
+Type in Y to accept the deletion of all the state.
 
 3. Start Rusk:
 ```sh
@@ -71,7 +71,7 @@ rusk-wallet stake-info
 ```
 If you already have DUSK staked, wait until the chain starts producing blocks. You can check [our explorer](https://testnet.apps.dusk.network/explorer/) to see if the chain is progressing or when it will produce the genesis block.
 
-1. If you do not have testnet DUSK, request nDUSK from the [faucet](/operator/guides/nocturne-node#faucet).
+1. If you do not have testnet DUSK, request nDUSK from the [faucet](/operator/guides/nocturne-faucet).
 
 2. Stake your nDUSK:
 ```sh
