@@ -16,6 +16,7 @@ export default function sidebar(currentPath) {
         ], false),
 
         createGroup("Guides", currentPath, [
+            { label: "Run a Provisioner on Mainnet", href: "/operator/guides/mainnet-node" },
             { label: "Run a Provisioner on Nocturne", href: "/operator/guides/nocturne-node" },
             { label: "Run an Archive Node", href: "/operator/guides/archive-node" },
             { label: "Setup wallet on Node", href: "/operator/guides/node-wallet-setup" },
