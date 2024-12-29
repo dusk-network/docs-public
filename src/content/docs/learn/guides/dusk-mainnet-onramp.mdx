@@ -5,14 +5,11 @@ description: Step-by-step guide on how to move BEP20 and ERC20 DUSK to be includ
 
 Welcome to the official guide for interacting with the Dusk Mainnet On-Ramp smart contract through Etherscan and BSCscan. This guide explains how to **deposit** and **stake** ERC20/BEP20 DUSK tokens to be included in the Dusk mainnet genesis block. This guide is for **advanced crypto users** and **professional node operators**. Providing the wrong address can lead to a loss of funds!
 
-## Depositing versus staking
+## Depositing DUSK Tokens
 
-there are two primary ways to interact with the on-ramp:
+The staking period has ended as of **December 28th, 23:59 CET**. Only **deposits** are now possible until **January 2nd, 23:59 CET**. Depositing ensures your funds are included in the genesis state of the Dusk mainnet but does not contribute to consensus or earn rewards.
 
-- **Deposit**: Depositing ensures your funds are available at the start of mainnet, but do not contribute to consensus or earn rewards. This is explained in [Step 3](#step-3-deposit-erc20bep20-dusk).
-- **Stake**: Participate in staking at the start of mainnet but requires active participation as a node operator. This is explained in [Step 4](#step-4-stake-erc20bep20-dusk).
-
-**Recommendation:** It is recommended to perform both a **deposit** and **stake** transaction if you want to stake at genesis. If you do not want to stake, you can skip step 4. If you only stake, you will not have funds available for essential network transactions like reward withdrawals or transfers, we therefore recommend to do step 3 as well. It is still possible to migrate DUSK through our [mainnet migration bridge](/learn/guides/mainnet-migration) afterwards. For example scenarios, see [this](#can-you-describe-a-couple-scenarios) FAQ question. Keep in mind that to perform step 4, you do not have to do step 3.
+**Recommendation:** If you did not stake before December 28th, you can still deposit DUSK tokens before the January 2nd deadline. Any DUSK not deposited by this date can only be migrated to the Dusk mainnet using the [mainnet migration bridge](/learn/guides/mainnet-migration) after January 7th.
 
 ## **What You'll Need**
 
@@ -24,7 +21,7 @@ there are two primary ways to interact with the on-ramp:
 ## **Considerations**
 
 - **No Refunds:** Tokens cannot be retrieved once deposited or staked. This is a one-way operation.
-- **Minimum Requirements:** Ensure you meet minimum amounts before interacting, 1 [LUX](/learn/glossary#lux) (in wei, 1 LUX = 10^9 wei, 1 DUSK = 10^18 wei) for depositing, 1000 DUSK for staking.
+- **Minimum Requirements:** Ensure you meet minimum amounts before interacting, 1 [LUX](/learn/glossary#lux) (in wei, 1 LUX = 10^9 wei, 1 DUSK = 10^18 wei) for depositing.
 - **Correct Address:** Double-check your public account address before submitting! If you provide the wrong one, your funds could be lost!
 
 ## DUSK-to-wei calculator
@@ -83,7 +80,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 ### **Step 3: Deposit ERC20/BEP20 DUSK**
 
-Use the `deposit` function to on-ramp DUSK tokens for inclusion in the Dusk genesis state. If you want to stake, do not deposit your full balance. Instead, check step 4. If you only want to deposit, you can skip step 4. Read [Deposit versus Staking](#depositing-versus-staking) for more details.
+Use the `deposit` function to on-ramp DUSK tokens for inclusion in the Dusk genesis state. 
 
 <Tabs syncKey="network">
    <TabItem label="ERC20 DUSK">
@@ -108,46 +105,22 @@ Use the `deposit` function to on-ramp DUSK tokens for inclusion in the Dusk gene
    </TabItem>
 </Tabs>
 
-### **Step 4: Stake ERC20/BEP20 DUSK**
-
-Use the `stake` function if you want to participate in genesis staking. Before doing the stake call, make sure you deposited a small amount of funds to do staking operations later. Read [Deposit versus Staking](#depositing-versus-staking) for more details.
-
-<Tabs syncKey="network">
-   <TabItem label="ERC20 DUSK">
-
-   1. Visit the [ERC20 Dusk On-Ramp Contract](https://etherscan.io/address/0x8787BbE53920B33411F7C9A91Ac321AF1ea1aa2d#writeContract#F2).
-   2. Expand the `stake` function.
-   3. **Amount:** Enter the number of tokens in wei. Use the [DUSK-to-wei Calculator](#dusk-to-wei-calculator) above if needed.
-      - Minimum: **1000 DUSK (1,000,000,000,000,000,000,000 wei)**.
-   4. **Target Address:** Enter your Dusk mainnet public account address. You can verify if it's a valid address with the [Address Verifier](#address-verifier).
-   5. Click **"Write"** and confirm the transaction.
-
-   </TabItem>
-   <TabItem label="BEP20 DUSK">
-
-   1. Visit the [BEP20 Dusk On-Ramp Contract](https://bscscan.com/address/0x3886ab688febff60ce21e99251035f8e29abca31#writeContract#F2).
-   2. Expand the `stake` function.
-   3. **Amount:** Enter the number of tokens in wei. Use the [DUSK-to-wei Calculator](#dusk-to-wei-calculator) above if needed.
-      - Minimum: **1000 DUSK (1,000,000,000,000,000,000,000 wei)**.
-   4. **Target Address:** Enter your Dusk mainnet public account address. You can verify if it's a valid address with the [Address Verifier](#address-verifier).
-   5. Click **"Write"** and confirm the transaction.
-
-   </TabItem>
-</Tabs>
-
 ## **Checking Transactions and Balances**
 
-After depositing or staking, verify your transaction status on Etherscan/BSCscan through your wallet. 
+After depositing, verify your transaction status on Etherscan/BSCscan through your wallet. 
 
 ## **FAQ**
 
-### **What happens after depositing or staking?**
+### **What happens after depositing?**
 Your tokens will be on-ramped on Dusk mainnet, and a corresponding genesis balance will be issued on the Dusk mainnet on January 7th, 2025.
 
 ### **What if I miss the deadlines?**
 You will not be able to participate in the genesis state of Dusk.
 
-### **Can I deposit/stake multiple times?**
+### **What if I missed the staking deadline?**
+You will not be included in the genesis state. For the first dry-run on December the 29th we took a snapshot on December the 27th at 5 PM CET. If you staked afterwards, your stake will be reflected on the second dry-run and mainnet.
+
+### **Can I deposit multiple times?**
 Yes, but each transaction must meet the minimum amounts.
 
 ### **Can you describe a couple scenarios?**
