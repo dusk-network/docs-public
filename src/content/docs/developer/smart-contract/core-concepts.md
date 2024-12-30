@@ -28,7 +28,11 @@ static mut STATE: MyContract = MyContract { counter: 0 };
 
 When writing smart contracts, we usually implement methods on the struct that either take `&mut self` and can transform the state (write access) or only take `&self` to access and return information (read-only).
 
-It is important to note that even if that state within the smart contract can change through transactions, the contract code itself is **immutable** once deployed. <A proxy contract upgrading mechanism for example does not impact the immutability of contract code; it merely changes a pointer to point towards another contract. Data in a contract is mutable if the contract's logic allows for it.>
+It is important to note that even if that state within the smart contract can change through transactions, the contract code itself is **immutable** once deployed. 
+
+:::note[Note]
+A proxy contract upgrading mechanism for example does not impact the immutability of contract code; it merely changes a pointer to point towards another contract. Data in a contract is mutable if the contract's logic allows for it.
+:::
 
 ## Rust No-std
 
@@ -54,7 +58,7 @@ Therefore developers need to figure out how to represent users.
 
 In Dusk, an "address" is defined by the developer within the contract's logic. This approach gives developers more control over the privacy and compliance features of their applications but also increases their responsibility to securely identify and authenticate users and transactions. 
 
-The `msg.sender` is not "abstracted" away on dusk. A way to mimic that behavior is by explicitly taking the address as function argument and a signature that signed all other function arguments (including the address). Then verifying this this in the function. Examples of such usage can be found in the [transparent token standard](/learn/token-standards#dusks-token-standards), the [Moonlight transaction model](/learn/deep-dive/transaction_models/moonlight) and [Zedger](/learn/deep-dive/transaction_models/zedger).
+The `msg.sender` is not "abstracted" away on dusk. A way to mimic that behavior is by explicitly taking the address as function argument and a signature that signed all other function arguments (including the address). Then verifying this in the function. Examples of such usage can be found in the [transparent token standard](/learn/token-standards#dusks-token-standards), the [Moonlight transaction model](/learn/deep-dive/transaction_models/moonlight) and [Zedger](/learn/deep-dive/transaction_models/zedger).
 
 ## Methods
 
@@ -100,7 +104,7 @@ Host functions are exempt from the normal costs associated (Gas costs) with comp
 
 The host functions are currently defined in the following files of the Piecrust VM & rusk-abi:
 
-<a href="https://github.com/dusk-network/rusk/blob/master/rusk-abi/src/abi.rs">Piecrust abi.rs</a>
+<a href="https://github.com/dusk-network/rusk/blob/8e6bb4937fe2ed5fe735f8dd7c5da0b8d079e5c3/core/src/abi.rs">Piecrust abi.rs</a>
 
 <a href="https://github.com/dusk-network/piecrust/blob/main/piecrust-uplink/src/abi/state.rs#L44" target="_blank">Piecrust state.rs</a>
 
