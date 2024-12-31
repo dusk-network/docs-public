@@ -244,7 +244,7 @@ One of the host functions available for contracts is a function to verify Zero K
         proof: &[u8],
         public_inputs: &[PublicInput],
     ) -> Result<(), Error> {
-        rusk_abi::verify_proof(verifier_data, proof, public_inputs)
+        dusk_core::abi::verify_proof(verifier_data, proof, public_inputs)
             .then_some(())
             .ok_or(Error::ProofVerification)
     }

@@ -32,10 +32,10 @@ Add the following line to the dependencies section of your **Cargo.toml** file:
 ```toml
 // Cargo.toml
 [dependencies]
-rusk-abi = { git = "https://github.com/dusk-network/rusk/", branch = "master", features = ["abi", "dlmalloc"] }
+dusk-core = { git = "https://github.com/dusk-network/rusk/", branch = "master", features = ["abi-dlmalloc"] }
 ```
 
-The rusk-abi is the application binary interface that allows you to communicate with the underlying piecrust VM.
+The `dusk-core` library exposes the application binary interface that allows you to communicate with the underlying Dusk VM.
 
 ### 3) Prepare the contract
 
@@ -55,7 +55,7 @@ To still use some features we are used to from std, we can use [core](https://do
 Next, in order to use the features of the VM, we need to import a dusk-specific functionality using the standard Rust `use` declaration:
 
 ```rust
-use rusk_abi::wrap_call;
+use dusk_core::abi::wrap_call;
 ```
 This is needed later to expose the functions we want to make available for calling.
 
@@ -68,7 +68,7 @@ Within that module, we can create a struct, that represents our counter state:
 // lib.rs
 #![no_std]
 
-use rusk_abi::wrap_call;
+use dusk_core::abi::wrap_call;
 
 mod contract {
     pub struct Counter {
@@ -181,7 +181,7 @@ unsafe fn init(arg_len: u32) -> u32 {
 }
 ```
 
-This is the first case where we move away from standard rust. The `wrap_call` function is the one we imported earlier via the rusk_abi.
+This is the first case where we move away from standard rust. The `wrap_call` function is the one we imported earlier via `dusk_core::abi``.
 
 :::tip[info]
 The closure within ``wrap_call`` can be used to capture all arguments being passed to the function parameters, given a function contains any.
@@ -194,7 +194,7 @@ wrap_call(arg_len, |num: u32, multiply: u32| STATE.increment(num, multiply))
 
 **Additional Information**: 
 - The `#[no_mangle]` annotations are needed in order to turn off the default name mangling of the Rust linker. We want our names to be as they are, since they will be called via mechanisms outside the control of the linker. More information on that can be found in [core concepts](/developer/smart-contract/core-concepts#no_mangle).
-- `rusk_abi::wrap_call` takes care of all the boilerplate code needed to serialize/deserialize and pass arguments to and from our methods.
+- `dusk_core::abi::wrap_call` takes care of all the boilerplate code needed to serialize/deserialize and pass arguments to and from our methods.
 
 #### Add Serialization
 
@@ -215,7 +215,7 @@ Our contract is now complete, and the entire counter contract looks like this:
 // lib.rs
 #![no_std]
 
-use rusk_abi::wrap_call;
+use dusk_core::abi::wrap_call;
 use contract::Counter;
 
 static mut STATE: Counter = Counter { value: 0 };

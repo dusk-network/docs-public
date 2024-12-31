@@ -39,7 +39,7 @@ targets = ["wasm32-unknown-unknown"]
 components = ["rust-src", "rustfmt", "cargo", "clippy"]
 ```
 
-This ensures compatibility with the rusk-abi dependency in your contract.
+This ensures compatibility with the `dusk-core` dependency in your contract.
 
 ### 3. Add the wasm target
 

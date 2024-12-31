@@ -44,7 +44,7 @@ For both beginner and advanced users who want to develop smart contracts on Dusk
 
 ##### Integrations section
 
-For beginner and advanced users who want to integrate the Dusk blockchain into their applications. This section also includes information for smart contract developers seeking specific integration features like from execution-core.
+For beginner and advanced users who want to integrate the Dusk blockchain into their applications. This section also includes information for smart contract developers seeking specific integration features like from dusk-core.
 
 #### Node docs
 

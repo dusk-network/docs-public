@@ -50,7 +50,6 @@ export default function sidebar(currentPath) {
             { label: "The Wallet Stack", href: '/developer/integrations/wallet-stack' },
             { label: "Transaction Lifecycle", href: '/developer/integrations/tx-lifecycle' },
             { label: "Wallet Core Library", href: '/developer/integrations/wallet-core' },
-            //{ label: "Execution Core", href: '/developer/integrations/execution-core' },
             { label: "W3sper SDK", href: '/developer/integrations/w3sper' },
             { label: "RUES", href: '/developer/integrations/rues' },
             { label: "Integrate with Exchanges", href: '/developer/integrations/exchanges' },

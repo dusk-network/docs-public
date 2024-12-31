@@ -20,6 +20,8 @@ If an error occurs during a session, changes can be discarded and the contract s
 
 ## Retrieving call context
 
+TODO: Call context no longer available?
+
 A common practice for developers is to pass a struct called `CallContext` to contract functions. This struct includes essential information such as the signature, public key, counter, and more.
 
 However, there’s a more efficient approach that developers might prefer: utilizing `rusk-abi::context`. This allows for the retrieval of the call context directly within the current execution environment, eliminating the need to pass it around explicitly. This method not only streamlines the code but also makes function signatures cleaner.

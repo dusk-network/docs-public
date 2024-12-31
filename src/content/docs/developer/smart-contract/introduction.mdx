@@ -20,8 +20,8 @@ A smart contract is a self-executing digital agreement whose terms and condition
 ## Smart contracts on Dusk
 
 Dusk offers robust support for smart contracts, as developers can leverage the features offered 
-by <a href="https://github.com/dusk-network/rusk" target="_blank">Rusk</a>, specifically **execution-core** and **rusk-abi**.
-The rusk-abi serves as an entrypoint to be able to interact with the lower level underlying VM, which is called **Piecrust**.
+by <a href="https://github.com/dusk-network/rusk" target="_blank">Rusk</a>, specifically **dusk-core**.
+The `dusk-core` library serves as an entrypoint to be able to interact with the lower level Dusk VM, both from the perspective of an integrator and protocol developer.
 
 Theoretically, developers can use any programming language that compiles to WebAssembly (**WASM**), but we strongly recommend developers to use Rust due to its extensive support in our ecosystem.
 
@@ -36,12 +36,12 @@ Here is a simplified comparison between Dusk and other smart contracts platforms
 | Main Programming Language |   Solidity    |     Rust      |     Rust      |          Rust          |
 |    Transaction Models     | Account-based | Account-based | Account-based | UTXO and account-based |
 |     Compiling Target      | EVM bytecode  |     WASM      |      BPF      |          WASM          |
-|            VM             |      EVM      |      No       |   Sealevel    |        Piecrust        |
+|            VM             |      EVM      |      No       |   Sealevel    |         Dusk VM        |
 
 
 ### Examples
 
-There are several <a href="https://github.com/dusk-network/piecrust/tree/main/contracts" target="_blank">smart contracts examples</a> available, which can be used for reference.
+There are several <a href="https://github.com/dusk-network/rusk/tree/master/contracts" target="_blank">smart contracts examples</a> available, which can be used for reference.
 
 <CardGrid>
         <LinkCard title="Getting Started" href="/developer/smart-contract/getting-started" description="Install all necessary dependencies and tools to get started with Smart Contract development"/>
