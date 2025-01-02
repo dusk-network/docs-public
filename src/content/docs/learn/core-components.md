@@ -9,7 +9,7 @@ What sets Dusk apart from other blockchains is its bespoke and tailor-made compo
 
 ## Rusk
 
-Rusk can be thought of as the technological heart of the Dusk protocol, similar to the motherboard of a computer. It is the reference implementation of the Dusk protocol in Rust. Rusk serves multiple critical functions. It includes foundational elements like the genesis ZK circuits and contracts, such as the transfer and stake contracts. It integrates key components such as Plonk, Kadcast and Piecrust, and supplies host functions to the Rusk VM. Beyond that, Rusk houses the consensus mechanism and node software, maintaining the chain state, database and network. It also provides crucial external APIs through the Rusk Universal Event System (RUES).
+Rusk can be thought of as the technological heart of the Dusk protocol, similar to the motherboard of a computer. It is the reference implementation of the Dusk protocol in Rust. Rusk serves multiple critical functions. It includes foundational elements like the genesis contracts, such as the transfer and stake contract. It integrates key components such as Plonk, Kadcast and Dusk VM, and supplies host functions to smart contract developers through Dusk Core. Beyond that, Rusk houses the consensus mechanism and node software, maintaining the chain state, database and network. It also provides crucial external APIs through the Rusk Universal Event System (RUES).
 
 ## Consensus Layer: Succinct Attestation
 
@@ -22,11 +22,11 @@ Each round of consensus involves three steps:
 
 Blocks are added to the blockchain if they receive enough votes. The Deterministic Sortition (DS) algorithm ensures fair and random provisioner selection.
  
-## Execution Layer: Piecrust
+## Execution Layer: Dusk VM
 
-[Piecrust](/learn/deep-dive/piecrust) is a hyper optimized <a href="https://en.wikipedia.org/wiki/Virtual_machine#Process_virtual_machines" target="_blank">virtual machine</a> built around Wasmtime, a WASM runtime. It is a ZK-friendly virtual machine, enabling the development and execution of privacy-focused smart contracts and applications. 
+[Dusk VM](/learn/deep-dive/dusk-vm) is a hyper optimized <a href="https://en.wikipedia.org/wiki/Virtual_machine#Process_virtual_machines" target="_blank">virtual machine</a> built around Wasmtime, a WASM runtime. It is a ZK-friendly virtual machine, enabling the development and execution of privacy-focused smart contracts and applications. 
 
-Piecrust is fundamentally different from many blockchain VMs in that it not only executes WASM and is able to natively support ZK operations like SNARK verifications, but it also has a completely different way in which it handles memory.
+Dusk VM is fundamentally different from many blockchain VMs in that it not only executes WASM and is able to natively support ZK operations like SNARK verifications, but it also has a completely different way in which it handles memory.
 
 ## Network Layer: Kadcast
 

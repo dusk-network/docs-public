@@ -91,7 +91,7 @@ const defaultSidebar = [
         collapsed: true,
       },
       { label: "Economic Protocol", link: "learn/deep-dive/economic-protocol" },
-      { label: "Piecrust VM", link: "learn/deep-dive/piecrust" },
+      { label: "Dusk VM", link: "learn/deep-dive/dusk-vm" },
       {
         label: "Succinct Attestation Consensus",
         link: "learn/deep-dive/succinct-attestation",

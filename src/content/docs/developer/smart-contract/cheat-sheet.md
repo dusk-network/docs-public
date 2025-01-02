@@ -20,14 +20,13 @@ Data structures based on B-Trees require the Ord trait to be implemented for the
 
 ## Common host functions
 
-| Function                           | Explanation           |
-| ---------------------------------- | --------------------- |
-| rusk_abi::emit("EVENT_NAME", data) | Emit a contract event |
+| Function                                 | Explanation           |
+| ---------------------------------------- | --------------------- |
+| dusk_core::abi::emit("EVENT_NAME", data) | Emit a contract event |
 
 ## Common Dependencies
 
-- execution-core
-- rusk_abi
+- dusk-core, with `ABI` feature enabled
 
 ### No-std Crates
 

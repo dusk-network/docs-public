@@ -102,15 +102,9 @@ Host functions are exempt from the normal costs associated (Gas costs) with comp
 
 ### Available Host functions
 
-The host functions are currently defined in the following files of the Piecrust VM & rusk-abi:
+The available host functions are exposed through the `abi` module within `dusk-core`:
 
-<a href="https://github.com/dusk-network/rusk/blob/8e6bb4937fe2ed5fe735f8dd7c5da0b8d079e5c3/core/src/abi.rs">Piecrust abi.rs</a>
-
-<a href="https://github.com/dusk-network/piecrust/blob/main/piecrust-uplink/src/abi/state.rs#L44" target="_blank">Piecrust state.rs</a>
-
-<a href="https://github.com/dusk-network/piecrust/blob/main/piecrust-uplink/src/abi/debug.rs#L8" target="_blank">Piecrust debug.rs</a>
-
-<a href="https://github.com/dusk-network/piecrust/blob/main/piecrust-uplink/src/abi/handlers.rs#L11" target="_blank">Piecrust handler.rs</a>
+<a href="https://github.com/dusk-network/rusk/blob/master/core/src/abi.rs">abi.rs</a>
 
 <details>
 <summary>More on interaction between a smart contract & the host </summary>
@@ -146,7 +140,7 @@ The use of an argument buffer and the serialization/deserialization prevents uns
 
 Developers are free to choose any cryptographic signature algorithm when building on Dusk, as they can use various cryptographic primitives, as long as they are WASM-compatible. As an example, developers can choose BLS, JubJub Schnorr, ECDSA, Bitcoin's Secp256k1 and much more. The choice usually depends on requirements for security, signature size, and transaction efficiency.
 
-For developers opting to use BLS signatures, it is recommended to leverage the `rusk_abi::verify_bls` host function provided by Dusk. This function enables signature verification to be offloaded to the host, minimizing the gas consumption and execution time of contracts. Directly including complex cryptographic operations within the contract is still possible but less efficient in terms of gas usage.
+For developers opting to use BLS signatures, it is recommended to leverage the `dusk_core::abi::verify_bls` host function provided by Dusk. This function enables signature verification to be offloaded to the host, minimizing the gas consumption and execution time of contracts. Directly including complex cryptographic operations within the contract is still possible but less efficient in terms of gas usage.
 
 ### Types of keys
 
@@ -225,27 +219,23 @@ pub struct Note {
 
 ## The host
 
-In the context of Dusk we usually refer to Rusk as "the host" because Rusk incorporates the VM, thus being the host that executes smart contracts. This is also the reason why certain built-in functions are called **Host functions** or why your smart contract functions need to be exposed to "the host" in order to be callable. Those functions and the exposing is being made available through [rusk-abi](https://crates.io/crates/rusk-abi).
+In the context of Dusk we usually refer to Rusk as "the host" because Rusk incorporates the VM, thus being the host that executes smart contracts. This is also the reason why certain built-in functions are called **Host functions** or why your smart contract functions need to be exposed to "the host" in order to be callable. Those functions and the exposing is being made available through [dusk-core](https://github.com/dusk-network/rusk/tree/master/core).
 
 ## Rusk
 
 <a href="https://github.com/dusk-network/rusk" target="_blank">Rusk</a> is the official Dusk protocol node client and smart contract platform. It plays a key role in Dusk by enabling the execution of smart contracts and handling the consensus. 
 
-### Rusk-abi
+### Dusk Core
 
-The `rusk-abi` crate encapsulates the following two features: 
-- `abi`: for smart contracts developers who are creating smart contracts that can interact seamlessly with Dusk by adhering to the ABI.
-- `host`: for developers who are building binaries to run ABI-compliant contracts. This involves the creation and management of host functions that execute smart contracts within the execution environment.
+The `dusk-core` crate encapsulates a number of features, from transaction construction and validation, to ABIs exposed to smart contract developers. 
 
-Rusk-abi has two important feature flags. The `host` for functionalities that a host running Rusk needs and the `abi` feature for developing smart contracts. The `abi` feature allows you access specific features of the VM like the explained built-in functions.
-
-The `abi` and `host` features in the rusk-abi crate are mutually exclusive. This means that while they implement the same functions, they do so in fundamentally different ways tailored to their respective roles. While `abi` defines how contracts should interact within the network, `host` ensures that contracts run as intended and manage resources effectively in the execution environment.
+The most important feature flag `dusk-core` exposes is the `abi-dlmalloc` feature for developing smart contracts. The `abi-dlmalloc` feature allows you access specific features of the VM like the explained built-in functions, as well as the `dlmalloc` allocator.
 
 #### Expose Functions
 
-In order for smart contract functions to be accessible via transactions on Dusk, they need to be exposed using features provided by rusk-abi. Exporting those functions is being done through `rusk_abi::wrap_call` which is available through the `abi` feature. An example for that can be found in the [Guide](/developer/smart-contract/guides/my-first-contract#expose-functions).
+In order for smart contract functions to be accessible via transactions on Dusk, they need to be exposed using features provided by `dusk-core`. Exporting those functions is being done through `dusk_core::abi::wrap_call`. An example for that can be found in the [Guide](/developer/smart-contract/guides/my-first-contract#expose-functions).
 
-The `rusk_abi::wrap_call` macro serves to wrap contract methods in a way that ensures they can be safely and effectively called by the host environment. This ensures that any errors that occur during the execution of the function are caught and handled appropriately, avoiding uncontrolled errors that can affect the VM state. Wrapping the call also helps converting inputs and outputs between the formats expected by the smart contract and those used by the host environment (e.g. data type conversions), as well as performing security checks.
+The `dusk_core::abi::wrap_call` function serves to wrap contract methods in a way that ensures they can be safely and effectively called by the host environment. This ensures that any errors that occur during the execution of the function are caught and handled appropriately, avoiding uncontrolled errors that can affect the VM state. Wrapping the call also helps converting inputs and outputs between the formats expected by the smart contract and those used by the host environment (e.g. data type conversions), as well as performing security checks.
 
 ##### no_mangle
 
@@ -255,23 +245,14 @@ When a smart contract is compiled to WASM and run on our VM, the host environmen
 
 By using the `#[no_mangle]` attribute, developers ensure that the compiler does not alter the function names. This preserves the function names exactly as they are defined in the Rust source code, making it straightforward for the host environment to access and execute these functions correctly based on their known names.
 
-Therefore contract methods are exposed to the host environment using `#[no_mangle]` and `rusk_abi::wrap_call`, facilitating safe interaction with the host.
+Therefore contract methods are exposed to the host environment using `#[no_mangle]` and `dusk_core::abi::wrap_call`, facilitating safe interaction with the host.
 
 #### Callcenter
 
 #### Events
 
-Smart contracts on Dusk can use events as a lightweight mechanism to provide feedback, and they are particularly useful for triggering actions on the caller's side. Events are provided through [rusk_abi::emit()](https://docs.rs/rusk-abi/0.13.0-rc.0/rusk_abi/fn.emit.html).
+Smart contracts on Dusk can use events as a lightweight mechanism to provide feedback, and they are particularly useful for triggering actions on the caller's side. Events are provided through `dusk_core::abi::emit`.
 
 Events serve as a logging mechanism that facilitates interactions between various applications and can be emitted by either queries or transactions. Events can be processed post-call by the caller, which can then execute its logic accordingly.
 
 Clients can subscribe to events emitted by both smart contracts and nodes by using the <a href="https://github.com/dusk-network/rusk/wiki/RUES-(Rusk-Universal-Event-System)" target="_blank">Rusk Universal Event System</a>.
-
-## Other common dependencies
-
-- <a href="https://github.com/dusk-network/rusk/tree/ac26fe31bb18563e83600904c32ef98d7119db22/execution-core" target="_blank">execution-core</a>
-- <a href="https://github.com/dusk-network/rusk/" target="_blank">rusk</a>
-
-:::tip[Info]
-It is useful to know that Piecrust is not used directly, but it is exposed through Rusk, the entrypoint for all Dusk related development.
-:::

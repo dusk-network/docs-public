@@ -17,6 +17,10 @@ A standardized framework for confidential smart contracts, which any company or 
 
 The native cryptocurrency of Dusk. It is used to pay for transaction fees and staking.
 
+#### Dusk VM
+
+A general purpose virtual machine developed by Dusk that runs WASM smart contracts and manages their memory.
+
 #### Kadcast
 
 A structured information propagation protocol used by Dusk, characterized by a direct correlation between network performance, latency, and the number of nodes.
@@ -32,10 +36,6 @@ An account-based transaction model on Dusk that tracks balances for accounts and
 #### Phoenix
 
 A UTXO-based, privacy-preserving transaction model on Dusk used for transferring DUSK. It enables users to spend "notes" privately using zero-knowledge proofs without linking balances to addresses.
-
-#### Piecrust
-
-A general purpose virtual machine developed by Dusk that runs WASM smart contracts and manages their memory.
 
 #### Rusk
 

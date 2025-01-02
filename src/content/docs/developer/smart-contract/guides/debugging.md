@@ -3,7 +3,7 @@ title: Debug a contract
 description: Explore debugging techniques to optimize your smart contracts for Dusk’s environment.
 ---
 
-The `debug` and `host_debug` features are meant for debugging while writing the contracts. They allow developers to print logs to stdout from the contract, making inspecting the state a bit easier.
+The `abi-debug` feature of `dusk-core` is meant for debugging while writing the contracts. It allows developers to print logs to stdout from the contract, making inspecting the state a bit easier.
 
 ## WASM tools
 
@@ -17,10 +17,6 @@ Of those, WebAssembly text format (WAT) is a "friendly" representation of WASM w
 
 When trying to call a method on a contract, the `PolynomialDegreeTooLarge` error indicates an issue with proving in Plonk proving system. It likely means that an attempt was made to prove something incorrect, such as proving ownership of something not actually owned or violating Dusk conservation rules.
 
-When trying to avoid incorporating the source code of rusk-abi in the workspace by using it as a regular crate, the compiler complains that `ContractId` in `rusk-abi` library is ambiguous and to either define it as `host::ContractId` or `abi::ContractId`.
-
-The suggestion is using the rusk codebase as a submodule and building against it.
-
 #### Unexpected information returned
 
 If code fails when passing in a vector but correctly executes when passing an array, you may see that unexpected information is returned, similarly to:
@@ -33,7 +29,7 @@ If code fails when passing in a vector but correctly executes when passing an ar
 }
 ```
 
-The issue arises because the argument buffer is written to before it is read from. The `rusk_abi::debug` function writes a string ("Entering constructor") to the argument buffer. Then, the `rusk_abi::wrap_call` function reads an argument from the buffer, passes it to the closure, and writes the closure's return value back to the same buffer. This sequence of operations is incorrect and leads to the corrupted output seen in the returned struct.
+The issue arises because the argument buffer is written to before it is read from. The `dusk_core::abi::piecrust_debug` function writes a string ("Entering constructor") to the argument buffer. Then, the `dusk_core::abi::wrap_call` function reads an argument from the buffer, passes it to the closure, and writes the closure's return value back to the same buffer. This sequence of operations is incorrect and leads to the corrupted output seen in the returned struct.
 
 The reason why this may happen with an array but not with a vector, is that when `STATE.init` takes an array, the serialization process simply serializes the bytes of the array.
 
@@ -48,7 +44,7 @@ You may encounter an issue in which the proving operation is performed correctly
 
 `rusk::chain::rusk: Tx ... executed with 2900000000 gas and err Some("Unknown")`.
 
-The transaction has clearly been processed successfully as it can be seen by the gas being paid, but something went wrong while calling the contract. The recommendation would be to use the debug and host_debug features and litter the contract code with `piecrust_uplink::debug!` calls to see exactly where the contract crashes. If this doesn't yield results, then it is recommended to print out the result of inter-contract calls in piecrust directly, just to see what error is actually being returned. The error is likely the result of an error on the host, which has to pass through the contract barrier before being returned as a response.
+The transaction has clearly been processed successfully as it can be seen by the gas being paid, but something went wrong while calling the contract. The recommendation would be to use the debug and host_debug features and litter the contract code with `dusk_core::abi::piecrust_debug` calls to see exactly where the contract crashes. If this doesn't yield results, then it is recommended to print out the result of inter-contract calls directly, just to see what error is actually being returned. The error is likely the result of an error on the host, which has to pass through the contract barrier before being returned as a response.
 
 #### TokenAddress is just a [u8; 22]
 
@@ -57,7 +53,7 @@ If you're facing the following issue:
 error[E0277]: the trait bound `for<'a> TokenAddress: Serialize<CompositeSerializer<BufferSerializer<&'a mut [u8]>, BufferScratch<&'a mut [u8; 64]>>>` is not satisfied
   --> src/lib.rs:45:5
    |
-45 | /     rusk_abi::wrap_call(arg_len, |pk| {
+45 | /     dusk_core::abi::wrap_call(arg_len, |pk| {
 46 | |         STATE.address_from_pk(pk)
 47 | |     })
    | |______^ the trait `for<'a> Serialize<CompositeSerializer<BufferSerializer<&'a mut [u8]>, BufferScratch<&'a mut [u8; 64]>>>` is not implemented for `TokenAddress`
@@ -78,7 +74,7 @@ note: required by a bound in `wrap_call`
 error[E0277]: the trait bound `TokenAddress: Archive` is not satisfied
   --> src/lib.rs:52:5
    |
-52 | /     rusk_abi::wrap_call(arg_len, |address| {
+52 | /     dusk_core::abi::wrap_call(arg_len, |address| {
 53 | |         let _ = STATE.check_address(address);
 54 | |         1
 55 | |     })

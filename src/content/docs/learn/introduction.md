@@ -45,7 +45,7 @@ Dusk Network is built with high performance and state finality as core prioritie
 
 Another important element is Dusk's consensus algorithm, known as [Succinct Attestation](/learn/deep-dive/succinct-attestation), which operates using a proof-of-stake (PoS) sybil-resistant mechanism and is able to achieve **complete state finality** efficiently and securely.
 
-Transaction performance is further enhanced by [Piecrust](/learn/deep-dive/piecrust), a ZK-friendly virtual machine that supports privacy-preserving computations at scale. Piecrust is optimized to handle zero-knowledge (ZK) proofs efficiently, making it a key component in Dusk’s drive for privacy-focused, high-throughput transactions.
+Transaction performance is further enhanced by [Dusk VM](/learn/deep-dive/dusk-vm), a ZK-friendly virtual machine that supports privacy-preserving computations at scale. Dusk VM is optimized to handle zero-knowledge (ZK) proofs efficiently, making it a key component in Dusk’s drive for privacy-focused, high-throughput transactions.
 
 ### Developer Experience
 
