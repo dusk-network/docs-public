@@ -17,11 +17,6 @@ Of those, WebAssembly text format (WAT) is a "friendly" representation of WASM w
 
 When trying to call a method on a contract, the `PolynomialDegreeTooLarge` error indicates an issue with proving in Plonk proving system. It likely means that an attempt was made to prove something incorrect, such as proving ownership of something not actually owned or violating Dusk conservation rules.
 
-TODO: This should no longer happen
-When trying to avoid incorporating the source code of `dusk-core` in the workspace by using it as a regular crate, the compiler complains that `ContractId` in `dusk-core` library is ambiguous and to either define it as `host::ContractId` or `abi::ContractId`.
-
-The suggestion is using the rusk codebase as a submodule and building against it.
-
 #### Unexpected information returned
 
 If code fails when passing in a vector but correctly executes when passing an array, you may see that unexpected information is returned, similarly to:
@@ -34,7 +29,7 @@ If code fails when passing in a vector but correctly executes when passing an ar
 }
 ```
 
-The issue arises because the argument buffer is written to before it is read from. The `dusk_core::abi::debug` function writes a string ("Entering constructor") to the argument buffer. Then, the `dusk_core::abi::wrap_call` function reads an argument from the buffer, passes it to the closure, and writes the closure's return value back to the same buffer. This sequence of operations is incorrect and leads to the corrupted output seen in the returned struct.
+The issue arises because the argument buffer is written to before it is read from. The `dusk_core::abi::piecrust_debug` function writes a string ("Entering constructor") to the argument buffer. Then, the `dusk_core::abi::wrap_call` function reads an argument from the buffer, passes it to the closure, and writes the closure's return value back to the same buffer. This sequence of operations is incorrect and leads to the corrupted output seen in the returned struct.
 
 The reason why this may happen with an array but not with a vector, is that when `STATE.init` takes an array, the serialization process simply serializes the bytes of the array.
 
@@ -49,7 +44,7 @@ You may encounter an issue in which the proving operation is performed correctly
 
 `rusk::chain::rusk: Tx ... executed with 2900000000 gas and err Some("Unknown")`.
 
-The transaction has clearly been processed successfully as it can be seen by the gas being paid, but something went wrong while calling the contract. The recommendation would be to use the debug and host_debug features and litter the contract code with `dusk_core::abi::debug` calls to see exactly where the contract crashes. If this doesn't yield results, then it is recommended to print out the result of inter-contract calls directly, just to see what error is actually being returned. The error is likely the result of an error on the host, which has to pass through the contract barrier before being returned as a response.
+The transaction has clearly been processed successfully as it can be seen by the gas being paid, but something went wrong while calling the contract. The recommendation would be to use the debug and host_debug features and litter the contract code with `dusk_core::abi::piecrust_debug` calls to see exactly where the contract crashes. If this doesn't yield results, then it is recommended to print out the result of inter-contract calls directly, just to see what error is actually being returned. The error is likely the result of an error on the host, which has to pass through the contract barrier before being returned as a response.
 
 #### TokenAddress is just a [u8; 22]
 

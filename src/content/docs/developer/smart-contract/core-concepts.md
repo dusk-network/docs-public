@@ -235,7 +235,7 @@ The most important feature flag `dusk-core` exposes is the `abi-dlmalloc` featur
 
 In order for smart contract functions to be accessible via transactions on Dusk, they need to be exposed using features provided by `dusk-core`. Exporting those functions is being done through `dusk_core::abi::wrap_call`. An example for that can be found in the [Guide](/developer/smart-contract/guides/my-first-contract#expose-functions).
 
-The `dusk_core::abi::wrap_call` macro serves to wrap contract methods in a way that ensures they can be safely and effectively called by the host environment. This ensures that any errors that occur during the execution of the function are caught and handled appropriately, avoiding uncontrolled errors that can affect the VM state. Wrapping the call also helps converting inputs and outputs between the formats expected by the smart contract and those used by the host environment (e.g. data type conversions), as well as performing security checks.
+The `dusk_core::abi::wrap_call` function serves to wrap contract methods in a way that ensures they can be safely and effectively called by the host environment. This ensures that any errors that occur during the execution of the function are caught and handled appropriately, avoiding uncontrolled errors that can affect the VM state. Wrapping the call also helps converting inputs and outputs between the formats expected by the smart contract and those used by the host environment (e.g. data type conversions), as well as performing security checks.
 
 ##### no_mangle
 

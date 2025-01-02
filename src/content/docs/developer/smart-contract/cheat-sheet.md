@@ -26,7 +26,7 @@ Data structures based on B-Trees require the Ord trait to be implemented for the
 
 ## Common Dependencies
 
-- dusk-core
+- dusk-core, with `ABI` feature enabled
 
 ### No-std Crates
 
