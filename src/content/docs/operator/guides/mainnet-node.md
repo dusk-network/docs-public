@@ -3,11 +3,11 @@ title: Run a Provisioner on Mainnet
 description: A step-by-step guide to installing the Dusk node and connecting to mainnet.
 ---
 
-The following instructions are for the upcoming Mainnet dry-runs for December 29th 2024 and January 3rd 2025. The instructions are very similar to the Nocturne guide, with two notable exceptions:
+The following instructions are for the upcoming Mainnet dry-run on January 3rd 2025. The instructions are very similar to the Nocturne guide, with two notable exceptions:
 - The node installer now defaults to the mainnet configuration.
-- If you participated in the Onramp process, be sure to use that specific wallet when participating.
+- If you participated in the onramp process, be sure to use that specific wallet when participating.
 
-In this guide, we’ll be using [DigitalOcean](https://www.digitalocean.com/) (DO) as our go-to [Virtual Private Server](https://en.wikipedia.org/wiki/Virtual_private_server) (VPS) service. The same can be replicated on Vultr, AWS, any other cloud service or for node runners at home. While it is indeed possible to run a node on home infrastructure, this guide will not deal with those types of setups.
+In this guide, we’ll be using [DigitalOcean](https://www.digitalocean.com/) (DO) as our go-to [Virtual Private Server](https://en.wikipedia.org/wiki/Virtual_private_server) (VPS) service. The same can be replicated on Vultr, AWS, Hetzner, or any other cloud service or for node runners at home. While it is indeed possible to run a node on home infrastructure, this guide will not deal with those types of setups.
 
 We work under the assumption that you’ve already created an account for your respective service, and provided it with a payment method. If not, you can get a $200 credit by using [our referral link](https://m.do.co/c/9ae612e34de9).
 
@@ -41,15 +41,18 @@ DO will now set the droplet up for you. This can take a minute:
 
 ## Configure Firewall
 
-The Rusk node makes use of the Kadcast protocol to communicate messages between nodes on the network. This protocol uses UDP, and runs on a custom port. Due to the nature of how UDP works, Kadcast is not automatically port forwarded. Regardless of where the node is hosted, it is important that this is done.
+The Rusk node uses the Kadcast protocol to communicate messages between nodes on the network. This protocol uses UDP and requires custom port forwarding. Depending on your hosting provider or local setup, you'll need to enable the following ports:
+- **SSH port**: Default is `22` for remote access
+- `9000/udp`: For Kadcast (used for consensus messages)
+- (Optional) `8080/tcp`: For the HTTP server (primarily used for archive nodes)
 
-Depending on the cloud provider, we need to either add a firewall rule on the instance you’re running, or add a firewall group. If you’re running a local setup, you will need to enable port forward in your router.
+### Firewall Group
 
-DO works with firewall groups. Navigate to _Networking_ -> _Firewalls_ under the _Manage_ section of your project. Click on the [_Create Firewall_](https://cloud.digitalocean.com/networking/firewalls) button.
+If you're using DO or a similar cloud provider, configure a firewall group. Navigate to _Networking_ -> _Firewalls_ under the _Manage_ section of your project. Click on the [_Create Firewall_](https://cloud.digitalocean.com/networking/firewalls) button.
 
 ![Create firewall page.](../../../../assets/mainnet/node-guide/create-firewall.png)
 
-Give the firewall a name, open UDP under port 9000 and TCP under 8080. Leave all the Outbound rules as they are.
+Give the firewall a name, open UDP under port 9000. Leave all the Outbound rules as they are.
 
 Apply the rules to the Mainnet-node droplet you made.
 
@@ -58,6 +61,22 @@ Your firewall should look as follows:
 ![Configure firewall.](../../../../assets/mainnet/node-guide/configure-firewall.png)
 
 Click on _Create Firewall_ to apply this firewall to your node's droplet.
+
+### Local Firewall
+
+For local setups, you can use tools like `ufw`, `iptables`, or `firewalld`. Although it's not strictly needed to setup a local firewall if you use firewall groups, it's still recommended to do so with "layered security" in mind.
+
+Here's how you can setup your firewall using `ufw`:
+```bash
+# Allow SSH (default port 22) with rate limiting
+sudo ufw limit ssh
+# Allow Kadcast UDP traffic
+sudo ufw allow 9000/udp
+# Enable the firewall
+sudo ufw enable
+```
+
+For non-default SSH ports, replace `ssh` with the specific port number. Adjust commands if using other firewall tools.
 
 ## Install Rusk
 
@@ -73,6 +92,52 @@ A terminal should pop-up and connect you to your Droplet
 
 ![Droplet terminal.](../../../../assets/mainnet/node-guide/droplet-terminal.png)
 
+### (Optional) User and Group Permissions
+
+Before using the node installer, we recommend setting up a secure, dedicated non-root user account. This is not strictly necessary, but a good security practice. If you haven't created such a user yet, follow these steps:
+
+#### Step 1: Create a Dedicated Group & User
+
+Create a new non-root user (e.g., `duskadmin`), add them to the `dusk` group and set a password for the new user:
+```sh
+sudo groupadd --system dusk
+sudo useradd -m -G dusk -s /bin/bash duskadmin
+sudo passwd duskadmin
+```
+
+#### Step 2: Set Up SSH Access
+
+Ensure the new user has access to your public SSH keys for secure login. Add your public key directly to the new user's `authorized_keys` file:
+1. Edit or create the `authorized_keys` file for the new user:
+```sh
+mkdir -p /home/duskadmin/.ssh
+sudo nano /home/duskadmin/.ssh/authorized_keys
+```
+2. Paste your public SSH key (e.g., starting with `ssh-rsa` or `ssh-ed25519`)
+3. Save and set proper permissions:
+```sh
+sudo chmod 700 /home/duskadmin/.ssh
+sudo chmod 600 /home/duskadmin/.ssh/authorized_keys
+sudo chown -R duskadmin:dusk /home/duskadmin/.ssh
+```
+
+#### Step 3: Add `duskadmin` to the `sudo` Group
+
+If not already done, log in as `root` or a user with sufficient privileges and add `duskadmin` to the `sudo` group:
+```sh
+sudo usermod -aG sudo duskadmin
+```
+Log out from you node for the group changes to take effect.
+
+#### Step 4: Verify Access
+
+Test SSH access to the new user account by connecting to the node with the new account:
+```sh
+ssh duskadmin@<your-server-ip>
+```
+
+### Node Installer
+
 We've created an easy to use [node installer](https://github.com/dusk-network/node-installer). This installer will set up Rusk as a service on your droplet, preconfigure parts of the node, and provide a couple of helper scripts.
 
 Install Rusk by pasting the following command in your droplet terminal:
@@ -80,20 +145,18 @@ Install Rusk by pasting the following command in your droplet terminal:
 curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/latest/download/node-installer.sh | sudo bash
 ```
 
-## Configure Rusk
+### Verify Installation
 
-You now should have successfully installed Rusk.
-
-A quick check with:
+Once installed, verify the installer version with:
 
 ```sh
 ruskquery version
 ```
 
-Should tell you, that you are running the latest installer version.
+You should see the latest version number confirming a successful installation.
 
-:::tip[Continue with wallet]
+## Configure Rusk
+
 Now that you have setup rusk, it's time to setup your wallet to finally start participating in consensus
 
 You can read the [node wallet guide](/operator/guides/node-wallet-setup) for a step-by-step instruction how to set it up on the server.
-:::
