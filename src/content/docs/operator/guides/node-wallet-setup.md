@@ -4,9 +4,9 @@ description: Learn how to setup your Dusk wallet for staking and node running.
 ---
 
 :::note[Node Installer]
-This guide assumes that you have already installed rusk using the node-installer.
+This guide assumes that you have already installed Rusk using the node-installer.
 
-You can use read the node installer guide to [quickly launch your node on Dusk mainnet](https://github.com/dusk-network/node-installer) or [testnet](/operator/guides/nocturne-node)
+You can use the node installer guide to [quickly launch your Provisioner node](/operator/guides/provisioner-node).
 :::
 
 This guide explains setting up the wallet and the last steps needed to start running your node.
@@ -65,6 +65,10 @@ ruskquery block-height
 ```
 
 It is best to wait until your node is synced up. You can find the latest block height on [the block explorer](https://explorer.dusk.network/). Alternatively, consider [fast-syncing](/operator/guides/fast-sync) for a quicker method.
+
+## Testnet Faucet
+
+You can request funds from our [Discord faucet](/operator/guides/nocturne-faucet) for testnet. The faucet will give you 5000 nDUSK. The minimum to stake is 1000 nDUSK.
 
 ## Stake your DUSK
 

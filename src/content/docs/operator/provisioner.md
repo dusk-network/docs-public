@@ -8,7 +8,7 @@ Dusk supports multiple node configurations, with Provisioners being the full nod
 Provisioners are required to stake a **minimum of 1000 DUSK** to participate in the consensus mechanism. In return, they earn rewards for validating transactions and generating blocks, providing a financial incentive for securing the network. These rewards not only compensate users for locking up their assets but also encourage ongoing participation in block creation and voting.
 
 :::tip[Run a Provisioner]
-If you want to quickly launch & run a Provisioner, you can use the <a href="https://github.com/dusk-network/node-installer" target="_blank">node installer</a> by following [the mainnet guide](/operator/guides/mainnet-node) or [the testnet guide](/operator/guides/nocturne-node).
+If you want to quickly launch & run a Provisioner, you can use the <a href="https://github.com/dusk-network/node-installer" target="_blank">node installer</a> by following [the provisioner node guide](/operator/guides/provisioner-node).
 :::
 
 ## Provisioner Specifications
