@@ -3,9 +3,9 @@ title: FAQ
 description: Frequently asked questions about running a node on Dusk.
 ---
 
-#### How much Dusk do I need to stake?
+#### What is the minimum amount of DUSK i can stake?
 
-1000 (1 thousand) Dusk.
+**1000** (1 thousand) Dusk.
 
 #### Which operating system is recommended?
 
@@ -41,4 +41,94 @@ The full node that is used to take part in the consensus is a **provisioner node
 
 Maintaining a secure and stable node is important for the proper functioning of your consensus participation. We recommend using a firewall, restricting access to unused APIs, performing regular updates, and using a static IP for uninterrupted service.
 
+####  How to know if my node is running on the correct chain ID?
 
+You can launch `ruskquery info` to check the chain ID of your node. If you have a chain ID of **1**, it indicates that yournode is running on mainnet.
+
+#### How many blocks are there in one epoch?
+
+One epoch consists of **2160** blocks.
+
+#### What is the proper command to stake 3000 DUSK?
+
+You can use:
+
+```bash
+rusk-wallet moonlight-stake --amt 3000
+```
+
+#### How can I run a Dusk node on Docker?
+You can use the following command: 
+
+```bash
+docker run -p 9000:9000/udp -p 8080:8080/tcp dusknetwork/node
+```
+
+#### How do I configure rusk.toml to use a port other than 9000/udp for Kadcast?
+You can update the kadcast section in the `rusk.toml` or `/opt/dusk/services/rusk.conf.user` file with:
+
+```bash
+bootstrapping_nodes = ['165.22.193.63:<new-port>', '167.172.175.19:<new-port>']
+```
+
+#### What are the steps for SSH setup on Digital Ocean?
+
+To set up SSH on DO, you can follow the steps below.
+
+1) Generate an SSH key:
+```bash
+ssh-keygen -t rsa -b 4096
+```
+
+2) Add the public key to Digital Ocean during droplet creation:
+```bash
+ssh -o "IdentitiesOnly=yes" -i myssh root@<your-droplet-ip>
+```
+
+3) Secure your droplet by removing the default console:
+```bash
+sudo apt-get purge droplet-agent
+```
+
+#### What should I do if I lose my SSH-key file?
+Unstake using the web wallet, destroy your droplet, and follow the setup procedure to recreate your node.
+
+#### How can I transfer an SSH-key to another device?
+
+Copy the `.ssh` folder and key files to the new device from `~/.ssh` (Linux).
+
+#### How can I connect to testnet or mainnet nodes?
+You can set up these values:
+```bash
+const WS_URL = 'https://nodes.dusk.network/on';
+```
+```bash
+const EVENT_SUBSCRIPTION_URL = 'https://nodes.dusk.network/on/blocks/accepted';
+```
+
+And use these URLs:
+- Testnet: `testnet.nodes.dusk.network`
+- Mainnet: `nodes.dusk.network`
+
+#### How can I relay my internal port 8080 when using RUES?
+You can relay your internal port using `socat`:
+
+```bash
+socat tcp-listen:8081,reuseaddr,fork tcp:localhost:8080
+```
+This makes local port 8080 available on port 8081 and allow you to access it via external-ip:8081. To turn this into a service, you can create a `/etc/systemd/system/rusk-relay.service` file with the following content:
+
+```bash
+[Unit]
+Description=Rusk relay
+After=rusk.service
+Requires=rusk.service
+
+[Service]
+Type=simple
+ExecStart=socat tcp-listen:8081,reuseaddr,fork tcp:localhost:8080
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
