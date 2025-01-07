@@ -3,10 +3,6 @@ title: BEP-20/ER-C20 Migration
 description:  Detailed instructions for migrating your ERC-20/BEP-20 DUSK tokens to Dusk mainnet.
 ---
 
-:::note[Important]
-The Dusk mainnet is not live yet, and this migration process is not currently available. This guide will be applicable once the Dusk mainnet has launched. Please check official channels for updates on the mainnet launch and the availability of the migration process.
-:::
-
 This guide provides instructions on how to migrate your BEP20/ERC20 DUSK tokens to native DUSK on the Dusk network. The migration process is facilitated through our [Web Wallet](https://apps.dusk.network/wallet/), allowing you to convert your tokens using WalletConnect-compatible Web3 wallets.
 
 The migration process locks your BEP20/ERC20 DUSK tokens in a smart contract on Ethereum or Binance Smart Chain. Once locked, an event is emitted, and native DUSK is issued to your Dusk mainnet wallet. The entire process typically takes around 15 minutes.

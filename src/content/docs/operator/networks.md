@@ -7,12 +7,14 @@ Dusk offers multiple network environments to support different stages of develop
 
 The available networks include:
 
-# 1. Mainnet (Coming Soon)
+# 1. Mainnet
 
 
-The Dusk Mainnet will serve as the live, production-ready network, where real assets are transacted, and all functionalities are accessible to end-users, businesses, and institutions. Mainnet will enable secure, compliant, and privacy-preserving transactions, utilizing Dusk’s zero-knowledge technology for full-scale financial operations. All deployed contracts and assets here will be available for real-world use cases, enabling a fully **Decentralized Market Infrastructure** (DeMI).
+The Dusk Mainnet is the live, production-ready network, where real assets are transacted, and all functionalities are accessible to end-users, businesses, and institutions. Mainnet enables secure, compliant, and privacy-preserving transactions, utilizing Dusk’s zero-knowledge technology for full-scale financial operations. All deployed contracts and assets here are available for real-world use cases, enabling a fully **Decentralized Market Infrastructure** (DeMI).
 
-**Status:** Not yet available. Stay updated through our Announcements channel on <a href="https://discord.gg/dusk-official" target="_blank">Discord</a>, as well as more in-depth <a href="https://dusk.network/news/" target="_blank">news</a>.
+You can:
+- Run a node on Dusk by following the [guide](/operator/guides/provisioner-node).
+- Look at transactions on the <a href="https://apps.dusk.network/explorer/" target="_blank">Mainnet block explorer</a>.
 
 # 2. Nocturne Testnet
 The Nocturne Testnet provides a realistic, risk-free environment for developers and community members to experiment with Dusk’s features. Nocturne serves as the primary testing network, where new functionalities are deployed, validated, and stress-tested before being introduced to the Mainnet. This environment supports developers in refining their smart contracts, applications, and node setups without risk to real assets.
@@ -23,10 +25,9 @@ Some of the functions for the Nocturne Testnet are:
 - Enabling developers to deploy and test smart contracts.
 - Supporting community-run nodes for stress-testing and performance assessments.
 
-**Status:** Active. You can run a node on Dusk by following the [guide](/operator/guides/provisioner-node) and look at transactions on the respective networks block explorer:
--  <a href="https://apps.dusk.network/explorer//" target="_blank">Mainnet block explorer</a>
--  <a href="https://apps.testnet.dusk.network/explorer//" target="_blank">Testnet block explorer</a>
--  <a href="https://apps.devnet.dusk.network/explorer//" target="_blank">Devnet block explorer</a>
+You can:
+- Run a node on Dusk by following the [guide](/operator/guides/provisioner-node).
+- Look at transactions on the <a href="https://apps.testnet.dusk.network/explorer/" target="_blank">Testnet block explorer</a>.
 
 # 3. Lunare Devnet
 
@@ -38,4 +39,6 @@ Some of the functions for the Lunare Devnet are:
 - Iterating on early-stage features without impacting public nodes.
 - Testing edge cases and improvements in a controlled environment.
 
-**Status:** Not public. The Lunare Devnet can only be accessed by Dusk's engineering teams, as it is frequently reset and used primarily for quickly iterating on testing unstable, early-stage features.
+:::note
+The Lunare Devnet can only be accessed by Dusk's engineering teams, as it is frequently reset and used primarily for quickly iterating on testing unstable, early-stage features.
+:::
