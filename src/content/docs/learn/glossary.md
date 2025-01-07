@@ -37,6 +37,10 @@ An account-based transaction model on Dusk that tracks balances for accounts and
 
 A UTXO-based, privacy-preserving transaction model on Dusk used for transferring DUSK. It enables users to spend "notes" privately using zero-knowledge proofs without linking balances to addresses.
 
+#### Profile
+
+A combination of the Phoenix and Moonlight accounts derived from the mnemonic.
+
 #### Rusk
 
 The official Dusk platform's Rust reference implementation.
@@ -70,6 +74,10 @@ In an account-based blockchain, a combination of a private key and a public key 
 #### Account-Based Transaction Model
 
 A protocol that represents assets as balances within personal accounts, similar to bank accounts.
+
+#### Address
+
+A unique blockchain identifier derived from an account’s public key.
 
 #### Application Program Interface (API)
 
@@ -257,6 +265,10 @@ A proposed regulation by the European Commission that could profoundly impact cr
 #### Markets in Financial Instruments Directive (MiFID II)
 
 An instituted legislative framework by the European Commission to regulate financial markets in the EU. It regulates virtually every asset and profession within the EU financial service industry.
+
+#### Mnemonic
+
+A series of words that derive all cryptographic keys for a wallet.
 
 #### Node
 
