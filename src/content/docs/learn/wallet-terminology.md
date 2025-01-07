@@ -7,9 +7,9 @@ In Dusk, profiles and accounts are designed to provide enhanced flexibility, sea
 
 #### Mnemonic/Wallet:
 
-The mnemonic is a human-readable sequence of words, that serves as the foundation for wallet creation. 
+The mnemonic is a human-readable sequence of words generated using <a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" target="_blank">BIP-39</a>, that serves as the foundation for wallet creation. 
 
-The binary representation of the mnemonic is used to generate all keys and addresses in the wallet.
+The binary representation of the mnemonic is a the cryptographic seed used to generate all keys and addresses in the wallet.
   
 The wallet is the entry point for managing all profiles, accounts, and addresses. It serves as the secure container for digital assets.
 
