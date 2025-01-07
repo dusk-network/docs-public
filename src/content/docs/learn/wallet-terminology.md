@@ -9,18 +9,18 @@ In Dusk, profiles and accounts are designed to provide enhanced flexibility, sea
 
 The mnemonic is a human-readable sequence of words generated using <a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" target="_blank">BIP-39</a>, that serves as the foundation for wallet creation. 
 
-The binary representation of the mnemonic is a the cryptographic seed used to generate all keys and addresses in the wallet.
+The binary representation of the mnemonic is the cryptographic seed used to generate all keys and addresses in the wallet.
   
-The wallet is the entry point for managing all profiles, accounts, and addresses. It serves as the secure container for digital assets.
+The wallet is the entry point for managing the accounts associated to the profile, and it serves as the secure container for digital assets.
 
 ### Profile and Accounts
 
 A profile represents a pair of accounts, each designed for specific transaction types:
 
-- **Phoenix Account:** For shielded (private) transactions. This account uses the [Phoenix transaction model](/learn/deep-dive/transaction_models/phoenix), which is designed to ensure privacy and regulatory compliance.
-- **Moonlight Account:** For public (transparent) transactions. This account uses the [Moonlight transaction model](/learn/deep-dive/transaction_models/moonlight), which is fully transparent.
+- **Phoenix Account:** Designed for shielded (private) transactions, leveraging the [Phoenix transaction model](/learn/deep-dive/transaction_models/phoenix) to ensure both privacy and regulatory compliance.
+- **Moonlight Account:** Used for public (transparent) transactions, utilizing the [Moonlight transaction model](/learn/deep-dive/transaction_models/moonlight) to provide full transparency.
 
-The Profile enables seamless management of both privacy-preserving and transparent transactions.
+The profile enables seamless management of both privacy-preserving and transparent transactions.
 
 ### Addresses
 
