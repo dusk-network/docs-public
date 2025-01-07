@@ -17,7 +17,7 @@ This guide explains setting up the wallet and the last steps needed to start run
 
 If you haven't obtained a mnemonic yet, you can do so by:
 - Using the command `rusk-wallet`and select the option to create a new wallet.
-- Using the [Web Wallet](https://apps.dusk.network/wallet/setup/) to obtain a mnemonic, and then run the following command:
+- Using the [Web Wallet](https://apps.dusk.network/wallet/setup/) to obtain a mnemonic.
 
 If you haven't made a wallet yet, use our CLI [Rusk Wallet](https://apps.dusk.network/wallet/setup/), which you can download [here](https://github.com/dusk-network/rusk/releases/tag/rusk-wallet-0.1.0-rc.0), and create a new wallet.
 
@@ -30,6 +30,7 @@ You can either write the mnemonic phrase down or create the wallet locally on yo
 If you already have a mnemonic it is time to set your wallet up on the node.
 
 Once you have access to a Dusk mnemonic, run the following command:
+
 ```sh
 rusk-wallet restore
 ```
@@ -41,6 +42,7 @@ You will be asked to provide your recovery phrase/mnemonic, **in lowercase**, an
 #### Export consensus key
 
 Once you've done so, run the following command to export a **consensus key** for the given wallet:
+
 ```sh
 rusk-wallet export -d /opt/dusk/conf -n consensus.keys
 ```
@@ -48,6 +50,7 @@ rusk-wallet export -d /opt/dusk/conf -n consensus.keys
 To participate in consensus, Rusk needs your consensus keys. These keys are used to sign and vote for blocks. You will be asked to set an encryption password for the consensus key, make sure to remember it.
 
 Now, run the following script and provide the **same password** (for consensus key) from before. This will set the password as an environment variable for Rusk to use.
+
 ```sh
 sh /opt/dusk/bin/setup_consensus_pwd.sh
 ```
@@ -55,11 +58,13 @@ sh /opt/dusk/bin/setup_consensus_pwd.sh
 #### Start your node
 
 If you've configured everything correctly, you can now start rusk:
+
 ```sh
 service rusk start
 ```
 
 Your node will now start syncing. You can check if it indeed is by running:
+
 ```sh
 ruskquery block-height
 ```
@@ -81,11 +86,13 @@ rusk-wallet stake --amt 1000 # Or however much you want to stake
 ```
 
 Once the transaction has gone through, you can view your staking information by running:
+
 ```sh
 rusk-wallet stake-info
 ```
 
 To see if your node is participating in consensus and creating blocks, occasionally check:
+
 ```sh
 grep "execute_state_transition" /var/log/rusk.log | tail -n 5
 ```
