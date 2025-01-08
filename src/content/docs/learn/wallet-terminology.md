@@ -5,6 +5,9 @@ description: Learn the differences between Dusk mnemonic, profile, accounts and 
 
 In Dusk, profiles and accounts are designed to provide enhanced flexibility, seamlessly integrating unique privacy and compliance features. At the core is the mnemonic, a human-readable sequence of words. This mnemonic serves as the foundation for wallet creation, generating a binary cryptographic seed that derives all keys and addresses within the wallet. Acting as a secure entry point, the wallet enables users to manage profiles, accounts, and addresses with ease.
 
+![Wallet Hierarchy](../../../assets/wallet_hierarchy.png)
+
+
 #### Mnemonic/Wallet:
 
 The mnemonic is a human-readable sequence of words generated using <a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" target="_blank">BIP-39</a>, that serves as the foundation for wallet creation. 
@@ -28,14 +31,3 @@ An address is a unique identifier derived from an account’s public key, used f
 
 - **Shielded Address**: Linked to the Phoenix Account, ensuring privacy.
 - **Public Address**: Linked to the Moonlight Account, ensuring transparency.
-
-## Hierarchy
-```
-Mnemonic (BIP-39 Seed Phrase) 🔑
-   ↓
-Wallet (Cryptographic Seed) 🛠️
-   ↓
-Profile (Phoenix & Moonlight Accounts) 👤
-   ├── Phoenix Account → Shielded Address 🔒
-   └── Moonlight Account → Public Address 🌍
-```
