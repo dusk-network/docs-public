@@ -43,7 +43,7 @@ Maintaining a secure and stable node is important for the proper functioning of 
 
 ####  How to know if my node is running on the correct chain ID?
 
-You can launch `ruskquery info` to check the chain ID of your node. If you have a chain ID of **1**, it indicates that yournode is running on mainnet.
+If you installed the node through the [Node Installer](/operator/installation/#node-installer) you can launch `ruskquery info` to check the chain ID of your node. If you have a chain ID of **1**, it indicates that your node is running on mainnet.
 
 #### How many blocks are there in one epoch?
 
