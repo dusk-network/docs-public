@@ -10,6 +10,7 @@ const defaultSidebar = [
       { label: "Tokenomics", link: "learn/tokenomics" },
       { label: "Transaction Fees & Gas", link: "learn/tx-fees" },
       { label: "Transaction Models", link: "learn/tx-models" },
+      { label: "Wallet Terminology", link: "learn/wallet-terminology" },
       { label: "Token Standards", link: "learn/token-standards" },
       { label: "Native Issuance", link: "learn/tokenization-comparison" },
       { label: "Get involved & Community", link: "learn/community" },
