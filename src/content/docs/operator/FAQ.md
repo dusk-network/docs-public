@@ -3,9 +3,9 @@ title: FAQ
 description: Frequently asked questions about running a node on Dusk.
 ---
 
-#### How much Dusk do I need to stake?
+#### What is the minimum amount of DUSK I must stake?
 
-1000 (1 thousand) Dusk.
+**1000** (1 thousand) Dusk.
 
 #### Which operating system is recommended?
 
@@ -41,4 +41,146 @@ The full node that is used to take part in the consensus is a **provisioner node
 
 Maintaining a secure and stable node is important for the proper functioning of your consensus participation. We recommend using a firewall, restricting access to unused APIs, performing regular updates, and using a static IP for uninterrupted service.
 
+####  How to know if my node is running on the correct chain ID?
+
+You can launch `ruskquery info` to check the chain ID of your node. If you have a chain ID of **1**, it indicates that yournode is running on mainnet.
+
+#### How many blocks are there in one epoch?
+
+One epoch consists of **2160** blocks.
+
+#### What is the proper command to stake 3000 DUSK?
+
+You can use:
+
+```bash
+rusk-wallet moonlight-stake --amt 3000
+```
+
+#### How can I run a Dusk node on Docker?
+You can use the following command: 
+
+```bash
+docker run -p 9000:9000/udp -p 8080:8080/tcp dusknetwork/node
+```
+
+#### How do I configure Kadcast to use a port other than 9000/udp?
+
+Bootstrapper nodes are the nodes used for initial synchronization, and they operate on their own predefined Kadcast port (9000 by default). If you configure your node to use a different port (e.g., 42069), it’s crucial to ensure that other nodes, including bootstrappers, are aware of and can adapt to this port. Otherwise, they will not route messages to your node.
+
+**With the Node Installer:**
+If you are using the Node Installer, it is recommended to specify Kadcast configuration updates in `/opt/dusk/services/rusk.conf.user`. This file takes precedence over `rusk.conf.default` and ensures your changes are retained during updates. 
+
+You can add or modify the following section:
+
+```bash
+KADCAST_PUBLIC_ADDRESS=<MY_WAN_IPv4:<NEW_PORT>
+KADCAST_LISTEN_ADDRESS=<MY_LOCAL_IPv4:<NEW_PORT>
+```
+
+It is important to note that:
+
+- On a VPS, the `KADCAST_PUBLIC_ADDRESS` and `KADCAST_LISTEN_ADDRESS` are often the same, as the public IPv4 is directly exposed to the internet.
+- If you are running your node from home, behind NAT, a private network, or VPN, these may differ. Ensure you configure your local IP and port accordingly, and verify that the port is forwarded correctly on your router.
+- `/opt/dusk/services/rusk.conf.user` is the highest priority file. Changes to `rusk.toml` will be overridden by the default `rusk.conf.default` configuration.
+
+**Without the Node Installer:**
+
+
+If you are **not** using the Node Installer, you will need to explicitly define the ports and IPs in the `[kadcast]` section of the `rusk.toml` file. Here's an example:
+
+```bash
+[kadcast]
+bootstrapping_nodes = [
+    { address = "165.22.193.63", port = <new-port> },
+    { address = "167.172.175.19", port = <new-port> }
+]
+
+[http]
+listener_addr = "0.0.0.0:8080" # Default HTTP listener address
+```
+
+You can override the HTTP listener port by:
+
+- Using the `--http-listener-addr` flag (e.g. `--http-listener-addr 0.0.0.0:8081`).
+- Modifying the `listener_addr` in the rusk.toml file as shown above.
+- Setting it as an environment variable (e.g. `HTTP_LISTENER_ADDR=0.0.0.0:8081`).
+
+
+Configuration precedence is not applicable here, as settings are directly defined in `rusk.toml`.
+
+
+#### What are the steps for SSH setup on Digital Ocean?
+
+To set up SSH on DO, you can follow the steps below.
+
+1) Generate an SSH key:
+```bash
+ssh-keygen -t rsa -b 4096
+```
+
+2) Add the public key to Digital Ocean during droplet creation:
+```bash
+ssh -o "IdentitiesOnly=yes" -i myssh root@<your-droplet-ip>
+```
+
+3) Secure your droplet by removing the default console:
+```bash
+sudo apt-get purge droplet-agent
+```
+
+#### What should I do if I lose my SSH-key file?
+Unstake using the web wallet, destroy your droplet, and follow the setup procedure to recreate your node.
+
+#### How can I transfer an SSH-key to another device?
+
+Copy the `.ssh` folder and key files to the new device from `~/.ssh` (Linux).
+
+#### How can I get data from testnet or mainnet nodes?
+
+First, set up the base URLs:
+
+Testnet: `testnet.nodes.dusk.network`
+Mainnet: `nodes.dusk.network`
+
+For example:
+
+```javascript
+const WS_URL = 'https://nodes.dusk.network/on';
+const EVENT_SUBSCRIPTION_URL = 'https://nodes.dusk.network/on/blocks/accepted';
+```
+Then, initialize a Rusk session by sending a POST request to the session endpoint (`WS_URL`). The server will `return a Rusk-Session-Id`:
+
+```json
+{
+    "sessionId": "abcd1234efgh5678ijkl"
+}
+```
+Use this session ID as an HTTP header (Rusk-Session-Id: <ID>) when subscribing to events at `EVENT_SUBSCRIPTION_URL`.
+
+Finally, keep a websocket connection open using the session ID. Events will be sent to your websocket in real time.
+
+
+#### How can I relay my internal port 8080 when using RUES?
+You can relay your internal port using `socat`:
+
+```bash
+socat tcp-listen:8081,reuseaddr,fork tcp:localhost:8080
+```
+This makes local port 8080 available on port 8081 and allow you to access it via external-ip:8081. To turn this into a service, you can create a `/etc/systemd/system/rusk-relay.service` file with the following content:
+
+```bash
+[Unit]
+Description=Rusk relay
+After=rusk.service
+Requires=rusk.service
+
+[Service]
+Type=simple
+ExecStart=socat tcp-listen:8081,reuseaddr,fork tcp:localhost:8080
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
 

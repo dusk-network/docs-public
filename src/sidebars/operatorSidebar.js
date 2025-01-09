@@ -12,6 +12,7 @@ export default function sidebar(currentPath) {
             { label: "Maintenance & Monitoring", href: "/operator/maintenance-monitoring" },
             { label: "Manually Install Rusk", href: "/operator/installation/" },
             { label: "FAQ", href: "/operator/faq" },
+            { label: "Troubleshooting", href: "/operator/troubleshooting" },
             //{ label: "Upgrades history", href: "/operator/introduction/history" },
         ], false),
 
