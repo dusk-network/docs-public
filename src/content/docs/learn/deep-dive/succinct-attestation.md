@@ -17,7 +17,7 @@ An iteration is composed of three ***steps***:
   2. [***Validation***](#validation), where a committee of extracted provisioners verifies the new block and vote on the result.
   3. [***Ratification***](#ratification), where another committee of provisioners try to agree on the result of the Validation step.
 
-If a candidate is produce in the Proposal step, and a supermajority of votes is reached in favor of the block, the candidate is added to the blockchain. The result of the iteration is certified with an ***attestation*** containing all the (digitally-signed) votes of the committee members that reached agreement on the block.
+If a candidate is produced in the Proposal step, and a supermajority of votes is reached in favor of the block, the candidate is added to the blockchain. The result of the iteration is certified with an ***attestation*** containing all the (digitally-signed) votes of the committee members that reached agreement on the block.
 
 If the iteration fails, a new one is executed with a new candidate and a different set of provisioners running the protocol. A maximum of 255 iterations is run in a single round, with the last one producing an empty *emergency block*, which ensures no round ends without a block.
 
