@@ -74,7 +74,6 @@ If you are using the Node Installer, it is recommended to specify Kadcast config
 You can add or modify the following section:
 
 ```bash
-[kadcast]
 KADCAST_PUBLIC_ADDRESS=<MY_WAN_IPv4:<NEW_PORT>
 KADCAST_LISTEN_ADDRESS=<MY_LOCAL_IPv4:<NEW_PORT>
 ```
