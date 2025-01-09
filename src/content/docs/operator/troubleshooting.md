@@ -68,7 +68,7 @@ If you receive a **404 page not found** response, another service is using that 
 #### "chain.stalled" error
 This indicates your node cannot process blocks due to:
 
-Port not being forwarded or incorrect Kadcast address in `rusk.toml`.
+Port not being forwarded or incorrect Kadcast address in `/opt/dusk/services/rusk.conf.default`.
 To fix the issues, you should ensure the required ports (9000/udp, 8080/tcp) are accessible and verify that the `kadcast_address` is correct.
 To check the state of your node, you can run:
 
