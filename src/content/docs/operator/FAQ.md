@@ -3,7 +3,7 @@ title: FAQ
 description: Frequently asked questions about running a node on Dusk.
 ---
 
-#### What is the minimum amount of DUSK I must stake?
+#### What is the minimum amount of DUSK i can stake?
 
 **1000** (1 thousand) Dusk.
 
@@ -43,7 +43,7 @@ Maintaining a secure and stable node is important for the proper functioning of 
 
 ####  How to know if my node is running on the correct chain ID?
 
-If you installed the node through the [Node Installer](/operator/installation/#node-installer) you can launch `ruskquery info` to check the chain ID of your node. If you have a chain ID of **1**, it indicates that your node is running on mainnet.
+You can launch `ruskquery info` to check the chain ID of your node. If you have a chain ID of **1**, it indicates that yournode is running on mainnet.
 
 #### How many blocks are there in one epoch?
 
@@ -64,13 +64,52 @@ You can use the following command:
 docker run -p 9000:9000/udp -p 8080:8080/tcp dusknetwork/node
 ```
 
-#### How do I configure rusk.toml to use a port other than 9000/udp for Kadcast?
-You can update the kadcast section in the `rusk.toml` or `/opt/dusk/services/rusk.conf.user` file with:
+#### How do I configure Kadcast to use a port other than 9000/udp?
+
+When configuring Kadcast for your node, you can update the bootstrapping nodes in different ways, depending on what you are using.
+
+**With the Node Installer:**
+If you are using the Node Installer, it is recommended to specify Kadcast configuration updates in `/opt/dusk/services/rusk.conf.user`. This file takes precedence over `rusk.conf.default` and ensures your changes are retained during updates. 
+
+You can add or modify the following section:
 
 ```bash
+[kadcast]
 KADCAST_PUBLIC_ADDRESS=<MY_WAN_IPv4:<NEW_PORT>
 KADCAST_LISTEN_ADDRESS=<MY_LOCAL_IPv4:<NEW_PORT>
 ```
+
+It is important to note that:
+
+- On a VPS, the `KADCAST_PUBLIC_ADDRESS` and `KADCAST_LISTEN_ADDRESS` are often the same, as the public IPv4 is directly exposed to the internet.
+- If you are running your node from home, behind NAT, a private network, or VPN, these may differ. Ensure you configure your local IP and port accordingly, and verify that the port is forwarded correctly on your router.
+- `/opt/dusk/services/rusk.conf.user` is the highest priority file. Changes to `rusk.toml` will be overridden by the default `rusk.conf.default` configuration.
+
+**Without the Node Installer:**
+
+
+If you are **not** using the Node Installer, you will need to explicitly define the ports and IPs in the [kadcast] section of the `rusk.toml` file. Here's an example:
+
+```bash
+[kadcast]
+bootstrapping_nodes = [
+    { address = "165.22.193.63", port = <new-port> },
+    { address = "167.172.175.19", port = <new-port> }
+]
+
+[http]
+listener_addr = "0.0.0.0:8080" # Default HTTP listener address
+```
+
+You can override the HTTP listener port by:
+
+- Using the `--http-listener-addr` flag (e.g. `--http-listener-addr 0.0.0.0:8081`).
+- Modifying the `listener_addr` in the rusk.toml file as shown above.
+- Setting it as an environment variable (e.g. `HTTP_LISTENER_ADDR=0.0.0.0:8081`).
+
+
+Configuration precedence is not applicable here, as settings are directly defined in `rusk.toml`.
+
 
 #### What are the steps for SSH setup on Digital Ocean?
 
@@ -98,18 +137,30 @@ Unstake using the web wallet, destroy your droplet, and follow the setup procedu
 
 Copy the `.ssh` folder and key files to the new device from `~/.ssh` (Linux).
 
-#### How can I connect to testnet or mainnet nodes?
-You can set up these values:
-```bash
+#### How can I get data from testnet or mainnet nodes?
+
+First, set up the base URLs:
+
+Testnet: `testnet.nodes.dusk.network`
+Mainnet: `nodes.dusk.network`
+
+For example:
+
+```javascript
 const WS_URL = 'https://nodes.dusk.network/on';
-```
-```bash
 const EVENT_SUBSCRIPTION_URL = 'https://nodes.dusk.network/on/blocks/accepted';
 ```
+Then, initialize a Rusk session by sending a POST request to the session endpoint (`WS_URL`). The server will `return a Rusk-Session-Id`:
 
-And use these URLs:
-- Testnet: `testnet.nodes.dusk.network`
-- Mainnet: `nodes.dusk.network`
+```json
+{
+    "sessionId": "abcd1234efgh5678ijkl"
+}
+```
+Use this session ID as an HTTP header (Rusk-Session-Id: <ID>) when subscribing to events at `EVENT_SUBSCRIPTION_URL`.
+
+Finally, keep a websocket connection open using the session ID. Events will be sent to your websocket in real time.
+
 
 #### How can I relay my internal port 8080 when using RUES?
 You can relay your internal port using `socat`:
@@ -133,3 +184,4 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 ```
+
