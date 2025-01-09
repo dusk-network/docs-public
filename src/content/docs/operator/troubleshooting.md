@@ -33,7 +33,7 @@ rusk-wallet moonlight-stake --amt 3000
 ```
 
 #### Serialization error
-First, wait for your node no be fully synced. If the node is running fine, use the following command for further details:
+First, wait for your node to be fully synced. If the node is running fine, use the following command for further details:
 ```bash
 rusk-wallet --log-level debug
 ```
