@@ -3,7 +3,7 @@ title: FAQ
 description: Frequently asked questions about running a node on Dusk.
 ---
 
-#### What is the minimum amount of DUSK i can stake?
+#### What is the minimum amount of DUSK I must stake?
 
 **1000** (1 thousand) Dusk.
 
@@ -88,7 +88,7 @@ It is important to note that:
 **Without the Node Installer:**
 
 
-If you are **not** using the Node Installer, you will need to explicitly define the ports and IPs in the [kadcast] section of the `rusk.toml` file. Here's an example:
+If you are **not** using the Node Installer, you will need to explicitly define the ports and IPs in the `[kadcast]` section of the `rusk.toml` file. Here's an example:
 
 ```bash
 [kadcast]
