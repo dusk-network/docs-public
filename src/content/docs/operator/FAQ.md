@@ -66,7 +66,7 @@ docker run -p 9000:9000/udp -p 8080:8080/tcp dusknetwork/node
 
 #### How do I configure Kadcast to use a port other than 9000/udp?
 
-When configuring Kadcast for your node, you can update the bootstrapping nodes in different ways, depending on what you are using.
+Bootstrapper nodes are the nodes used for initial synchronization, and they operate on their own predefined Kadcast port (9000 by default). If you configure your node to use a different port (e.g., 42069), it’s crucial to ensure that other nodes, including bootstrappers, are aware of and can adapt to this port. Otherwise, they will not route messages to your node.
 
 **With the Node Installer:**
 If you are using the Node Installer, it is recommended to specify Kadcast configuration updates in `/opt/dusk/services/rusk.conf.user`. This file takes precedence over `rusk.conf.default` and ensures your changes are retained during updates. 
