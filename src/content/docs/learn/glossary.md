@@ -39,7 +39,7 @@ A UTXO-based, privacy-preserving transaction model on Dusk used for transferring
 
 #### Profile
 
-A combination of the Phoenix and Moonlight accounts derived from the mnemonic.
+A profile is a pairing of a Public Account ([Moonlight](#moonlight) and a Shielded Account ([Phoenix](#phoenix) derived from a single mnemonic. Profiles are created in pairs to allow for both public and private transactions.
 
 #### Rusk
 
