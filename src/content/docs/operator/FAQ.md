@@ -68,7 +68,8 @@ docker run -p 9000:9000/udp -p 8080:8080/tcp dusknetwork/node
 You can update the kadcast section in the `rusk.toml` or `/opt/dusk/services/rusk.conf.user` file with:
 
 ```bash
-bootstrapping_nodes = ['165.22.193.63:<new-port>', '167.172.175.19:<new-port>']
+KADCAST_PUBLIC_ADDRESS=<MY_WAN_IPv4:<NEW_PORT>
+KADCAST_LISTEN_ADDRESS=<MY_LOCAL_IPv4:<NEW_PORT>
 ```
 
 #### What are the steps for SSH setup on Digital Ocean?
