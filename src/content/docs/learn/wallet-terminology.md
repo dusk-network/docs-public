@@ -20,7 +20,7 @@ The wallet is the entry point for managing the accounts associated to the profil
 
 A profile represents a pair of accounts, each designed for specific transaction types:
 
-- **Phoenix Account:** Designed for shielded (private) transactions, leveraging the [Phoenix transaction model](/learn/deep-dive/transaction_models/phoenix) to ensure both privacy and regulatory compliance.
+- **Shielded Account:** Designed for shielded (private) transactions, leveraging the [Phoenix transaction model](/learn/deep-dive/transaction_models/phoenix) to ensure both privacy and regulatory compliance.
 - **Moonlight Account:** Used for public (transparent) transactions, utilizing the [Moonlight transaction model](/learn/deep-dive/transaction_models/moonlight) to provide full transparency.
 
 The profile enables seamless management of both privacy-preserving and transparent transactions.
