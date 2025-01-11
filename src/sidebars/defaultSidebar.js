@@ -14,6 +14,7 @@ const defaultSidebar = [
       { label: "Token Standards", link: "learn/token-standards" },
       { label: "Native Issuance", link: "learn/tokenization-comparison" },
       { label: "Get involved & Community", link: "learn/community" },
+      { label: "Verify Team Account", link: "learn/verify-team-account" },
       { label: "Glossary", link: "learn/glossary" },
     ],
   },

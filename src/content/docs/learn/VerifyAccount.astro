@@ -1,0 +1,126 @@
+<verify-account>
+    <div class="verify-form">
+        <label for="channel">Select Channel</label>
+        <select id="channel">
+            <option value="x">X</option>
+            <option value="discord">Discord</option>
+            <option value="telegram">Telegram</option>
+            <option value="email">Email</option>
+        </select>
+
+        <label for="account">Account Name</label>
+        <input
+            id="account"
+            type="text"
+            placeholder="Enter account name"
+        />
+
+        <button id="verifyButton" type="button">Verify</button>
+        <p id="result" class="status"></p>
+    </div>
+
+    <style>
+        .verify-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 400px;
+            margin-top: 1rem;
+        }
+        select,
+        input {
+            background-color: var(--on-surface-color);
+            padding: 0.5rem 1rem 0.5rem 1rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 24px;
+            width: 100%;
+        }
+        button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            color: white;
+            background: #56a1fd;
+            border: none;
+            border-radius: 24px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #71b1ff;
+        }
+        .status {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        .valid {
+            color: green;
+        }
+        .invalid {
+            color: red;
+        }
+    </style>
+</verify-account>
+
+<script>
+    class VerifyAccount extends HTMLElement {
+        constructor() {
+            super();
+            this.channelInput = null;
+            this.accountInput = null;
+            this.verifyButton = null;
+            this.resultDisplay = null;
+            // Static data structure for verification, we can replace this with an API call if we want
+            this.verificationData = {
+                x: ["duskfoundation", "autholykos", "theonlygamo", "davidvbenthem", "lf_dusk", "emadunk", "thisisryanking", "ayajeske", "fulviuus", "heindauven"],
+                discord: ["autholykos", "fulvio", "emanuelecarboni", "thisisryanking", "zer0.3445", "theonlygamo", "jadedoherty", "lufa23", "_david_vb", "ayajeske", "nortonandreev", "herr_seppia", "heindauven", "hdauven"],
+                telegram: ["autholykos", "jadedoherty", "maluca23", "ayajeske", "neotamandua", "emadunk", "venturfulvio", "reikashino", "thisisryanking", "theonlygamo", "hdauven", "herr_seppia", "therealfrznn"],
+                email: ["support@dusk.network", "contact@dusk.network", "emanuele@dusk.network", "ryan@dusk.network", "david@dusk.network", "jeske@dusk.network", "luca@dusk.network", "fulvio@dusk.network", "matteo@dusk.network", "jade@dusk.network", "carboni@dusk.network", "georgian@dusk.network"],
+            };
+        }
+
+        connectedCallback() {
+            this.channelInput = this.querySelector("#channel");
+            this.accountInput = this.querySelector("#account");
+            this.verifyButton = this.querySelector("#verifyButton");
+            this.resultDisplay = this.querySelector("#result");
+
+            this.verifyButton.addEventListener("click", () => {
+                this.verifyAccount();
+            });
+        }
+
+        verifyAccount() {
+                const channel = this.channelInput.value;
+                let account = this.accountInput.value.trim();
+
+                if (!account) {
+                    this.resultDisplay.textContent = "❗ Please enter an account name.";
+                    this.resultDisplay.className = "status invalid";
+                    return;
+                }
+
+                // Strip "@" if present for Telegram, Discord, and X
+                if (["telegram", "discord", "x"].includes(channel)) {
+                    account = account.replace(/^@/, "");
+                }
+
+                // Convert to lowercase for case insensitive comparison
+                const validAccounts = this.verificationData[channel]?.map((a) =>
+                    a.toLowerCase()
+                );
+                const normalizedAccount = account.toLowerCase();
+                // Upper case the first char for a channel
+                const formattedChannel = channel.charAt(0).toUpperCase() + channel.slice(1);
+
+                if (validAccounts && validAccounts.includes(normalizedAccount)) {
+                    this.resultDisplay.textContent = `✅ Verified: "${account}" is a valid ${formattedChannel} team account.`;
+                    this.resultDisplay.className = "status valid";
+                } else {
+                    this.resultDisplay.textContent = `❌ Not Verified: "${account}" is not a valid ${formattedChannel} team account.`;
+                    this.resultDisplay.className = "status invalid";
+                }
+            }
+        }
+
+    customElements.define("verify-account", VerifyAccount);
+</script>
