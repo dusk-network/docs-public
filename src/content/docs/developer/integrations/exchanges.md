@@ -5,7 +5,7 @@ description: Add $DUSK to your exchanges. Discover the integration process, tech
 
 # Introduction
 
-This guide shows how to add DUSK to an Exchange by providing all the relevant information. In the first section we outline general details regarding mainnet integration and token migration. We will then look into what are the available libraries and APIs to access and interact with the blockchan, as well as providing links to all the relevant resources, and addressing some common requests.
+This guide shows how to add DUSK to an Exchange by providing all the relevant information. In the first section we outline general details regarding mainnet integration and token migration. We will then look into what are the available libraries and APIs to access and interact with the blockchain, as well as providing links to all the relevant resources, and addressing some common requests.
 
 ## Connect to Dusk
 
