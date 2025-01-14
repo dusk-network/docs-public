@@ -7,7 +7,7 @@ This guide will explain you how to install and setup an archive node on Ubuntu 2
 
 Install Rusk with the archive feature enabled by pasting the following command in your server terminal:
 ```sh
-curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/download/v0.5.0/node-installer.sh | FEATURE="archive" sudo bash
+curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/latest/download/node-installer.sh | FEATURE="archive" sudo bash
 ```
 
 This will install an archive node with the network being set to mainnet.
