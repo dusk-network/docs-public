@@ -52,6 +52,31 @@ Dusk uses a [slashing mechanism](/learn/deep-dive/slashing) to maintain network 
 To prevent slashing, ensure your node is operational and synced before staking.
 :::
 
+## Re-stake Rewards & Increase Stake
+You can increase your stake at any time without needing to unstake first. When you do, **90% of the added amount becomes active immediately** and begins accruing rewards, while the remaining **10% is moved to your inactive stake**. However, if your stake is not active yet, no penalties are applied, and the full added amount will be available as soon as the original stake becomes eligible.
+
+The inactive portion does not generate rewards and remains locked. It can only be accessed by **fully unstaking** your holdings. Withdrawn rewards are available immediately and can be restaked if you choose. Any new staked amount is directly eligible (without the need of waiting for the maturity period), except for the 10% inactive portion (which will never become eligible).
+
+:::note[Important]
+When you increase your stake, keep in mind that:
+- **90%** is added to your active stake and starts earning rewards.
+- **10%** goes to your inactive stake, accessible only if you **fully** unstake.
+- This applies only if the stake is **already** eligible.
+:::
+
+This mechanism promotes fairness and prevents potential exploitation of compounding effects, ensuring a balanced staking system.
+
+### Example
+As an example, suppose you stake 110,000 DUSK:
+- Your active stake becomes 99,000 DUSK (90% of the total).
+- 11,000 DUSK (10%) is held in the inactive stake.
+
+If you later withdraw 98,000 DUSK, leaving 1,000 DUSK staked:
+- You immediately have 98,000 DUSK, fully liquid.
+- You still have 1,000 DUSK actively staking and 11,000 DUSK in the inactive stake.
+- Once you fully unstake the remaining 1,000 DUSK, the 11,000 DUSK held in the inactive stake is unlocked and becomes available again.
+
+
 ## Ready to Stake?
 
 Staking is a great way to earn rewards and participate in Dusk’s ecosystem.
