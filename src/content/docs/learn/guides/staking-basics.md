@@ -53,19 +53,18 @@ To prevent slashing, ensure your node is operational and synced before staking.
 :::
 
 ## Re-stake Rewards & Increase Stake
-You can increase your stake at any time without needing to unstake first. When you do, **90% of the added amount becomes active immediately** and begins accruing rewards, while the remaining **10% is moved to your inactive stake**.
+You can increase your stake at any time without needing to unstake first. When you do, **90% of the added amount becomes active immediately** and begins accruing rewards, while the remaining **10% is moved to your inactive stake**. However, if your stake is not active yet, no penalties are applied, and the full added amount will be available as soon as the original stake becomes eligible.
 
-The inactive portion does not generate rewards and remains locked. It can only be accessed by **fully unstaking** your holdings. Withdrawn rewards are available immediately and can be restaked if you choose. However, any restaked amount will be subject to the standard maturity period before it becomes active and starts earning rewards.
-
-
-
-This mechanism promotes fairness and prevents potential exploitation of compounding effects, ensuring a balanced staking system.
+The inactive portion does not generate rewards and remains locked. It can only be accessed by **fully unstaking** your holdings. Withdrawn rewards are available immediately and can be restaked if you choose. Any new staked amount is directly eligible (without the need of waiting for the maturity period), except for the 10% inactive portion (which will never become eligible).
 
 :::note[Important]
 When you increase your stake, keep in mind that:
 - **90%** is added to your active stake and starts earning rewards.
 - **10%** goes to your inactive stake, accessible only if you **fully** unstake.
+- This applies only if the stake is **already** eligible.
 :::
+
+This mechanism promotes fairness and prevents potential exploitation of compounding effects, ensuring a balanced staking system.
 
 ### Example
 As an example, suppose you stake 110,000 DUSK:
