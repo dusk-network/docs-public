@@ -55,7 +55,9 @@ To prevent slashing, ensure your node is operational and synced before staking.
 ## Re-stake Rewards & Increase Stake
 You can increase your stake at any time without needing to unstake first. When you do, **90% of the added amount becomes active immediately** and begins accruing rewards, while the remaining **10% is moved to your inactive stake**.
 
-The inactive portion does not generate rewards and remains locked. It can only be accessed by **fully unstaking** your holdings. Once unstaked, this amount can be restaked and will be subject to the standard maturity time. In contrast, withdrawn rewards are immediately available without any restrictions.
+The inactive portion does not generate rewards and remains locked. It can only be accessed by **fully unstaking** your holdings. Withdrawn rewards are available immediately and can be restaked if you choose. However, any restaked amount will be subject to the standard maturity period before it becomes active and starts earning rewards.
+
+
 
 This mechanism promotes fairness and prevents potential exploitation of compounding effects, ensuring a balanced staking system.
 
