@@ -52,7 +52,7 @@ Dusk uses a [slashing mechanism](/learn/deep-dive/slashing) to maintain network 
 To prevent slashing, ensure your node is operational and synced before staking.
 :::
 
-## Stake Top-Ups & Compounding
+## Re-stake Rewards & Increase Stake
 You can increase your stake at any time without needing to unstake first. However, a **fixed penalty of 10%** is applied to the additional amount staked.
 
 The fixed 10% penalty is applied whenever you increase your stake, including when reinvesting rewards to compound your holdings. This portion of the restaked amount is added to your inactive stake, where it will become eligible for rewards after completing the maturity period. 
