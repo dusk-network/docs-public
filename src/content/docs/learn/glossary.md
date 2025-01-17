@@ -27,7 +27,7 @@ The native cryptocurrency of Dusk. It is used to pay for transaction fees and st
 
 #### Dusk VM
 
-[Dusk VM](/learn/deep-dive/dusk-vm) (previously Piecrust) is general purpose virtual machine developed by Dusk that runs WASM smart contracts and manages their memory.
+[Dusk VM](/learn/deep-dive/dusk-vm) is general purpose virtual machine developed by Dusk that runs WASM smart contracts and manages their memory.
 
 #### Hyperstaking
 
