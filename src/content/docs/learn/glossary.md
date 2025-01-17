@@ -66,6 +66,7 @@ A shielded account is based on the [Phoenix](#phoenix) UTXO transaction model an
 A [profile](/learn/wallet-terminology#profile-and-accounts) is a pairing of a Public Account ([Moonlight](#moonlight) and a Shielded Account ([Phoenix](#phoenix) derived from a single mnemonic. Profiles are created in pairs to allow for both public and privacy-preserving transactions.
 
 #### RUES
+
 The Rusk Universal Event System (RUES) is an integral part of the architecture of Dusk, providing an events system that allows real-time communication and events subscription
 
 #### Rusk
