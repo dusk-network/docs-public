@@ -10,6 +10,7 @@ description: A detailed glossary of terms specific to Dusk and general definitio
 Accounts in Dusk  enable users to manage specific types of transactions. An account is linked to a profile and categorized as either a [Shielded Account](#shielded-account) for private transactions or a [Public Account](#public-account) for transparent transactions, each with its own unique address type.
 
 #### Archive Node
+
 An [Archive node](/operator/archive-node) is a Dusk node that preserves a complete historical record of the Dusk blockchain, and does not participate in consensus.
 
 #### Citadel
