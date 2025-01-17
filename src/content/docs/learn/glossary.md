@@ -67,7 +67,7 @@ A [profile](/learn/wallet-terminology#profile-and-accounts) is a pairing of a Pu
 
 #### RUES
 
-The Rusk Universal Event System (RUES) is an integral part of the architecture of Dusk, providing an events system that allows real-time communication and events subscription
+The Rusk Universal Event System (RUES) is an integral part of the architecture of Dusk, providing an events system that allows real-time communication and event subscriptions.
 
 #### Rusk
 
