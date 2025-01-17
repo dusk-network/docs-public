@@ -39,7 +39,7 @@ Hyperstaking is a feature that allows smart contracts to manage stakes with cust
 
 #### Lightspeed
 
-Lightspeed is the Dusk L2 solution, fully EVM compatible. It allows Dusk to be even more scalable, and make it fully interoperable with EVMs-based blockchains.
+Lightspeed is the Dusk L2 solution that offers full EVM equivalence. Lightspeed allows Dusk to scale even further and maintain full interoperability with EVM-based blockchains.
 
 #### LUX
 
