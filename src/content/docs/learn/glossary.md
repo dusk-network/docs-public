@@ -79,7 +79,7 @@ The official CLI wallet for Dusk, enabling users to manage DUSK, interact with t
 
 #### Succinct Attestation
 
-[Succinct Attestation](/learn/deep-dive/succinct-attestation) is aunique Proof-of-Stake consensus algorithm developed by Dusk which allows network participants to compete for block producer rights.
+[Succinct Attestation](/learn/deep-dive/succinct-attestation) is a unique Proof-of-Stake consensus algorithm developed by Dusk which allows network participants to compete for block producer rights.
 
 #### W3sper SDK
 
