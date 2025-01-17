@@ -7,7 +7,7 @@ description: A detailed glossary of terms specific to Dusk and general definitio
 
 #### Account
 
-Accounts in Dusk  enable users to manage specific types of transactions. An account is linked to a profile and categorized as either a [Shielded Account](#shielded-account) for private transactions or a [Public Account](#public-account) for transparent transactions, each with its own unique address type.
+Accounts in Dusk manage transactions with different visibility levels. An account is linked to a profile and categorized as either a [Shielded Account](#shielded-account) for privacy-preserving transactions or a [Public Account](#public-account) for transparent transactions. Each account type has its own unique address format.
 
 #### Archive Node
 
