@@ -5,9 +5,17 @@ description: A detailed glossary of terms specific to Dusk and general definitio
 
 ## Dusk terminology
 
+#### Account
+
+Accounts in Dusk manage transactions with different visibility levels. An account is linked to a profile and categorized as either a [Shielded Account](#shielded-account) for privacy-preserving transactions or a [Public Account](#public-account) for transparent transactions. Each account type has its own unique address format.
+
+#### Archive Node
+
+An [Archive node](/operator/archive-node) is a Dusk node that preserves a complete historical record of the Dusk blockchain, and does not participate in consensus.
+
 #### Citadel
 
-A self-sovereign identity system that is part of the Dusk protocol.
+[Citadel](/developer/digital-identity/protocol) is a self-sovereign identity system that is part of the Dusk protocol.
 
 #### Confidential Security Contract Standard (XSC)
 
@@ -19,11 +27,19 @@ The native cryptocurrency of Dusk. It is used to pay for transaction fees and st
 
 #### Dusk VM
 
-A general purpose virtual machine developed by Dusk that runs WASM smart contracts and manages their memory.
+[Dusk VM](/learn/deep-dive/dusk-vm) is general purpose virtual machine developed by Dusk that runs WASM smart contracts and manages their memory.
+
+#### Hyperstaking
+
+Hyperstaking is a feature that allows smart contracts to manage stakes with custom logic. Similar to "Account Abstraction," it enables use cases like privacy-preserving staking, affiliate programs, delegation, liquid staking, and yield boosting. Staking operations are initiated via a provisioner key, with signature verification only required for the initial stake, offering flexibility and innovation in staking models.
 
 #### Kadcast
 
-A structured information propagation protocol used by Dusk, characterized by a direct correlation between network performance, latency, and the number of nodes.
+[Kadcast](/learn/core-components#network-layer-kadcast) is a structured information propagation protocol used by Dusk, characterized by a direct correlation between network performance, latency, and the number of nodes.
+
+#### Lightspeed
+
+Lightspeed is the Dusk L2 solution that offers full EVM equivalence. Lightspeed allows Dusk to scale even further and maintain full interoperability with EVM-based blockchains.
 
 #### LUX
 
@@ -31,11 +47,11 @@ The smallest denomination of DUSK. 10^9 LUX = 1 DUSK, 1 DUSK = 1,000,000,000 LUX
 
 #### Moonlight
 
-An account-based transaction model on Dusk that tracks balances for accounts and contracts, offering full transparency. It is faster and cheaper than Phoenix, making it easier for developers to integrate with external protocols.
+[Moonlight](/learn/tx-models#moonlight) is an account-based transaction model on Dusk that tracks balances for accounts and contracts, offering full transparency. It is faster and cheaper than Phoenix, making it easier for developers to integrate with external protocols.
 
 #### Phoenix
 
-A UTXO-based, privacy-preserving transaction model on Dusk used for transferring DUSK. It enables users to spend "notes" privately using zero-knowledge proofs without linking balances to addresses.
+[Phoenix](/learn/tx-models#phoenix) is a UTXO-based, privacy-preserving transaction model on Dusk used for transferring DUSK. It enables users to spend "notes" privately using zero-knowledge proofs without linking balances to addresses.
 
 #### Public Account
 
@@ -47,11 +63,15 @@ A shielded account is based on the [Phoenix](#phoenix) UTXO transaction model an
 
 #### Profile
 
-A profile is a pairing of a Public Account ([Moonlight](#moonlight) and a Shielded Account ([Phoenix](#phoenix) derived from a single mnemonic. Profiles are created in pairs to allow for both public and private transactions.
+A [profile](/learn/wallet-terminology#profile-and-accounts) is a pairing of a Public Account ([Moonlight](#moonlight) and a Shielded Account ([Phoenix](#phoenix) derived from a single mnemonic. Profiles are created in pairs to allow for both public and privacy-preserving transactions.
+
+#### RUES
+
+The Rusk Universal Event System (RUES) is an integral part of the architecture of Dusk, providing an events system that allows real-time communication and event subscriptions.
 
 #### Rusk
 
-The official Dusk platform's Rust reference implementation.
+[Rusk](/learn/core-components#rusk) is the official Dusk platform's Rust reference implementation.
 
 #### Rusk Wallet
 
@@ -59,19 +79,19 @@ The official CLI wallet for Dusk, enabling users to manage DUSK, interact with t
 
 #### Succinct Attestation
 
-A unique Proof-of-Stake consensus algorithm developed by Dusk which allows network participants to compete for block producer rights.
+[Succinct Attestation](/learn/deep-dive/succinct-attestation) is a unique Proof-of-Stake consensus algorithm developed by Dusk which allows network participants to compete for block producer rights.
 
 #### W3sper SDK
 
-A JavaScript library for communication within the Dusk ecosystem, enabling developers to integrate Dusk dApps into (web) applications.
+[W3sper](/developer/integrations/w3sper) is a JavaScript library for communication within the Dusk ecosystem, enabling developers to integrate Dusk dApps into (web) applications.
 
 #### Web Wallet
 
-The official web-based wallet for Dusk, providing users with an accessible way to manage DUSK and interact with the blockchain through a user-friendly interface.
+The [Web Wallet](https://apps.dusk.network/wallet/) is the official web-based wallet for Dusk, providing users with an accessible way to manage DUSK and interact with the blockchain through a user-friendly interface.
 
 #### Zedger
 
-A Dusk protocol combining UTXO and account models for the private, compliant management of securities. Zedger allows issuers to digitally represent, issue, and trade securities like stocks and bonds while ensuring regulatory compliance.
+[Zedger](/learn/core-components#zedger--xsc) is a Dusk-based protocol combining UTXO and account models for the private, compliant management of securities. Zedger allows issuers to digitally represent, issue, and trade securities like stocks and bonds while ensuring regulatory compliance.
 
 ## Definitions
 
@@ -321,10 +341,6 @@ An optimized implementation of PLONK that generates zero-knowledge proofs faster
 #### Poseidon
 
 A fast, zero-knowledge friendly cryptographic hash function.
-
-#### Private Key
-
-A string of data that permits a user to access, exchange, and spend assets in a digital wallet.
 
 #### Prover
 
