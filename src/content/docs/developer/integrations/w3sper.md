@@ -96,8 +96,7 @@ _This code needs to be run in an internet connected environment_
 import { Network, Transfer } from "@dusk/w3sper";
 
 // Connect to a node (using the Dusk mainnet load balanced URL for this example, but it could be any valid node)
-const network = await Network.connect("https://nodes.dusk.network/");
-
+const network = await Network.connect("https://testnet.nodes.dusk.network/");
 
 // We will use the transfer object we created above. In a real-world application you would need to retrieve this from a file or out of storage...
 
@@ -115,4 +114,27 @@ console.log({ hash });
 
 // Output the gas paid (value in lux)
 console.log({ gasPaid });
+```
+### Get a balance
+
+_This code needs to be run in an internet connected environment_
+
+```js
+import { AccountSyncer, Network } from "@dusk/w3sper";
+
+// We're using the network here to get the balance of a public key
+const network = await Network.connect("https://testnet.nodes.dusk.network");
+
+// Example public key
+const publicKey =
+	"ocXXBAafr7xFqQTpC1vfdSYdHMXerbPCED2apyUVpLjkuycsizDxwA6b9D7UW91kG58PFKqm9U9NmY9VSwufUFL5rVRSnFSYxbiKK658TF6XjHsHGBzavFJcxAzjjBRM4eF";
+
+// Get the balance of public key.
+const [balance] = await new AccountSyncer(network).balances([publicKey]);
+
+// Disconnect from the network now that we have a balance
+await network.disconnect();
+
+// Output the balance object (`{ nonce: <BigInt>, value: <BigInt> }`)
+console.log(balance);
 ```
