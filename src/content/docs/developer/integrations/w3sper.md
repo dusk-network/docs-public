@@ -45,10 +45,10 @@ import bip39 from "bip39";
 import { ProfileGenerator } from "@dusk/w3sper";
 
 // Generate a random mnemonic (uses crypto.randomBytes under the hood), defaults to 128-bits of entropy, then split this into an array of strings.
-const mnemonic = bip39.generateMnemonic().split(" ");
+const mnemonic = bip39.generateMnemonic();
 
 // Generate 64 byte seed from the mnemonic
-const seeder = async () => Uint8Array.from(mnemonicToSeedSync(mnemonic));
+const seeder = async () => Uint8Array.from(bip39.mnemonicToSeedSync(mnemonic));
 
 // Instantiate ProfileGenerator
 const profiles = new ProfileGenerator(seeder);
