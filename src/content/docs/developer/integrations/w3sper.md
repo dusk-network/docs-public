@@ -115,6 +115,7 @@ console.log({ hash });
 // Output the gas paid (value in lux)
 console.log({ gasPaid });
 ```
+
 ### Get a balance
 
 _This code needs to be run in an internet connected environment_
@@ -138,10 +139,10 @@ await network.disconnect();
 // Output the balance object (`{ nonce: <BigInt>, value: <BigInt> }`)
 console.log(balance);
 ```
+
 ### Get transaction details
 
 _This code needs to be run in an internet connected environment_
-
 
 ```js
 import { Network } from "@dusk/w3sper";
@@ -174,6 +175,21 @@ const query = `tx(hash: "${TX_ID}") {
 const transactionInfo = await network.query(query);
 
 console.log(transactionInfo);
+
+await network.disconnect();
+```
+
+### Get network block height
+
+_This code needs to be run in an internet connected environment_
+
+```js
+import { Network } from "@dusk/w3sper";
+
+const network = await Network.connect("https://testnet.nodes.dusk.network");
+const blockHeight = await network.blockHeight;
+
+console.log(blockHeight);
 
 await network.disconnect();
 ```
