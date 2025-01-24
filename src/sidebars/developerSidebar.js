@@ -53,6 +53,7 @@ export default function sidebar(currentPath) {
             { label: "W3sper SDK", href: '/developer/integrations/w3sper' },
             { label: "RUES", href: '/developer/integrations/rues' },
             { label: "Integrate with Exchanges", href: '/developer/integrations/exchanges' },
+            { label: "Hashing Algorithms", href: '/developer/integrations/hashing-algorithms' },
         ],
             false),
         createGroup("Use Digital Identity", currentPath, [
