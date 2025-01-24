@@ -138,3 +138,42 @@ await network.disconnect();
 // Output the balance object (`{ nonce: <BigInt>, value: <BigInt> }`)
 console.log(balance);
 ```
+### Get transaction details
+
+_This code needs to be run in an internet connected environment_
+
+
+```js
+import { Network } from "@dusk/w3sper";
+
+const network = await Network.connect("https://testnet.nodes.dusk.network");
+const TX_ID =
+	"f8bbede502df102d1d3208297193654386fe0c5c66a969234320bbb0d646905a"; // Replace with the transaction ID you want to look up.
+const query = `tx(hash: "${TX_ID}") {
+    tx {
+      id
+      gasLimit
+      gasPrice
+      txType
+      callData {
+        contractId
+        fnName
+        data
+      }
+      isDeploy
+      memo
+    }
+    err
+    gasSpent
+    blockHash
+    blockHeight
+    blockTimestamp
+    id
+    raw
+  }`;
+const transactionInfo = await network.query(query);
+
+console.log(transactionInfo);
+
+await network.disconnect();
+```
