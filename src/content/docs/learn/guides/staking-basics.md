@@ -67,9 +67,9 @@ When you increase your stake, keep in mind that:
 This mechanism promotes fairness and prevents potential exploitation of compounding effects, ensuring a balanced staking system.
 
 ### Example
-As an example, suppose you stake 110,000 DUSK:
-- Your active stake becomes 99,000 DUSK (90% of the total).
-- 11,000 DUSK (10%) is held in the inactive stake.
+As an example, suppose you stake an additional 110,000 DUSK on top of your existing stake:
+- Your active stake now becomes the result of the previously staked amount plus the 99,000 DUSK (which corresponds to the 90% of the newly added amount).
+- 11,000 DUSK (10% of the newly staked amount) is held in the inactive stake.
 
 If you later withdraw 98,000 DUSK, leaving 1,000 DUSK staked:
 - You immediately have 98,000 DUSK, fully liquid.
