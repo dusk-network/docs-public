@@ -3,19 +3,58 @@ title: FAQ
 description: Frequently asked questions about running a node on Dusk.
 ---
 
+## General
+
+#### Which operating system is recommended?
+
+**Ubuntu 24.04 LTS** is officially supported, tested and therefore recommended.
+
+#### Which node should I run to participate in consensus?
+
+The full node that is used to take part in the consensus is the [**provisioner node**](/operator/provisioner).
+
+#### Can I build Rusk from source?
+Yes, instructions to build Rusk from source can be found [here](/operator/from-source)
+
+#### Which ports does Dusk use?
+
+- **9000/udp**: Required for Kadcast message dissemination.
+- **8080/tcp**: Optional HTTP(S) API for querying the node.
+
+You can use ports other than 9001 and 9000, as long as inbound traffic is allowed for those ports and outbound UDP traffic is allowed for most ports.
+
+#### Can public and private ports be the same?
+Yes, public port and private port can be the same. More information about the meaning of those can be found [here](https://docs.rs/kadcast/0.7.0/kadcast/config/struct.Config.html).
+
+
+####  How to know if my node is running on the correct chain ID?
+
+You can launch `ruskquery info` to check the chain ID of your node. If you have a chain ID of **1**, it indicates that your node is running on mainnet.
+
+#### How many blocks are there in one epoch?
+
+One epoch consists of **2160** blocks.
+
+## Staking
+
 #### What is the minimum amount of DUSK I must stake?
 
 **1000** (1 thousand) Dusk.
 
-#### Which operating system is recommended?
+#### Increase your stake & compounding Rewards
+Details about increasing your stake and compounding your rewards can be found [here](/learn/guides/staking-basics#re-stake-rewards--increase-stake).
 
-It is recommended to use a stable operating system with long-term support, such as Ubuntu 24.04. Ubuntu 24.04 LTS is officially supported, tested and therefore recommended.
+## Security
+
+#### What about maintenance & security?
+
+Maintaining a secure and stable node is important for the proper functioning of your consensus participation. We recommend using a firewall, restricting access to unused APIs, performing regular updates, and using a static IP for uninterrupted service.
 
 #### Are my keys secure on a server/vps?
 
 The wallet stores your keys in encrypted form. In addition, the keys that the node uses in-memory to participate in consensus can be separated from other keys.
 
-Your Stake is defined by a consensus key and an owner. The owner is by default the same key, but can also be a contract or separate key. Your Public Balance is held by a key too, the same goes for the private, shielded Balance.
+Your stake is defined by a consensus key and an owner. The owner is by default the same key, but can also be a contract or separate key. Your Public Balance is held by a key too, the same goes for the private, shielded Balance.
 
 1. If your owner key is set to a different key, no one is able to unstake, stake or withdraw using your consensus key.
 2. If the key you use to send funds around is set to a different key than the consensus key, no one will be able to send funds from your wallet using your consensus key.
@@ -24,32 +63,16 @@ Your Stake is defined by a consensus key and an owner. The owner is by default t
 
 In summary, consensus keys can be strictly limited to signing consensus messages such as block proposal, validation, and voting. All other critical operations, such as unstaking or sending funds, can be separated to other keys.
 
-##### What if I lose access to my server or keys?
+#### What if I lose access to my server or keys?
 
-As long as you have your mnemonic phrase stored somewhere, you are able to recovery anything else.
+As long as you have your mnemonic phrase stored safely, you can recover everything else.
 
-#### Which node do I run to participate in consensus?
+#### What should I do if I lose my SSH-key file?
+Unstake using the web wallet, destroy your droplet, and follow the setup procedure to recreate your node.
 
-The full node that is used to take part in the consensus is a **provisioner node**.
+## How To's
 
-#### Which ports does Dusk use?
-
-- **9000/udp**: Required for Kadcast message dissemination.
-- **8080/tcp**: Optional HTTPS API for querying the node.
-
-#### What about maintenance & security?
-
-Maintaining a secure and stable node is important for the proper functioning of your consensus participation. We recommend using a firewall, restricting access to unused APIs, performing regular updates, and using a static IP for uninterrupted service.
-
-####  How to know if my node is running on the correct chain ID?
-
-You can launch `ruskquery info` to check the chain ID of your node. If you have a chain ID of **1**, it indicates that yournode is running on mainnet.
-
-#### How many blocks are there in one epoch?
-
-One epoch consists of **2160** blocks.
-
-#### What is the proper command to stake 3000 DUSK?
+#### How can I stake 3000 DUSK?
 
 You can use:
 
@@ -58,15 +81,19 @@ rusk-wallet moonlight-stake --amt 3000
 ```
 
 #### How can I run a Dusk node on Docker?
-You can use the following command: 
+We don't support a production-ready Docker image for Rusk. To run Rusk through Docker as ephemeral (non-persistent storage), you can use the following command: 
 
 ```bash
 docker run -p 9000:9000/udp -p 8080:8080/tcp dusknetwork/node
 ```
 
+This command starts a temporary node instance without persistent storage. Data will be lost if the container stops.
+
 #### How do I configure Kadcast to use a port other than 9000/udp?
 
-Bootstrapper nodes are the nodes used for initial synchronization, and they operate on their own predefined Kadcast port (9000 by default). If you configure your node to use a different port (e.g., 42069), it’s crucial to ensure that other nodes, including bootstrappers, are aware of and can adapt to this port. Otherwise, they will not route messages to your node.
+Bootstrapper nodes are used during initial synchronization to help your node join the network. They operate on their own predefined Kadcast port (9000 by default).
+
+If you configure your node to use a different port (e.g., 42069), it’s crucial to ensure that other nodes, including bootstrappers, are aware of and can adapt to this port. Otherwise, they will not route messages to your node.
 
 **With the Node Installer:**
 If you are using the Node Installer, it is recommended to specify Kadcast configuration updates in `/opt/dusk/services/rusk.conf.user`. This file takes precedence over `rusk.conf.default` and ensures your changes are retained during updates. 
@@ -110,7 +137,7 @@ You can override the HTTP listener port by:
 Configuration precedence is not applicable here, as settings are directly defined in `rusk.toml`.
 
 
-#### What are the steps for SSH setup on Digital Ocean?
+#### How to setup SSH on Digital Ocean?
 
 To set up SSH on DO, you can follow the steps below.
 
@@ -128,9 +155,6 @@ ssh -o "IdentitiesOnly=yes" -i myssh root@<your-droplet-ip>
 ```bash
 sudo apt-get purge droplet-agent
 ```
-
-#### What should I do if I lose my SSH-key file?
-Unstake using the web wallet, destroy your droplet, and follow the setup procedure to recreate your node.
 
 #### How can I transfer an SSH-key to another device?
 
@@ -183,4 +207,3 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 ```
-
