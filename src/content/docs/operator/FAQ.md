@@ -41,17 +41,8 @@ One epoch consists of **2160** blocks.
 
 **1000** (1 thousand) Dusk.
 
-#### Stake Top-Ups & Compounding
-You can increase your stake at any time without needing to unstake first. However, a **fixed penalty of 10%** is applied to the additional amount staked.
-
-The fixed 10% penalty is applied whenever you increase your stake, including when reinvesting rewards to compound your holdings. This portion of the restaked amount is added to your inactive stake, where it will become eligible for rewards after completing the maturity period. 
-
-For example:
-
-- When you add **1000 DUSK** to your stake, 10% of that amount (equivalent to **100 DUSK**) will be moved to your inactive stake, while the remaining **900 DUSK** will transition to your active stake after the standard maturity period.
-- Similarly, if you restake **500 DUSK** in rewards, **50 DUSK** will go to inactive stake, and **450 DUSK** will eventually contribute to your active stake.
-
-This mechanism promotes fairness within the staking system while ensuring that all contributions are eventually rewarded.
+#### Increase your stake & compounding Rewards
+Details about increasing your stake and compounding your rewards can be found [here](/learn/guides/staking-basics#re-stake-rewards--increase-stake).
 
 ## Security
 
