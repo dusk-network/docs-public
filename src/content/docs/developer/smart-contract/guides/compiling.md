@@ -87,7 +87,7 @@ For deterministic and verifiable builds, use our Dockerized build environment, w
 Use the prebuilt Docker image:
 
 ```bash
-docker pull dusknode/dusk-verifiable-builds:0.1.0
+docker pull dusknode/dusk-verifiable-builds:0.2.0
 ```
 
 ### Run the Build Command
@@ -98,7 +98,7 @@ Replace `<path-to-contract-code>` and `<path-to-output-folder>` with the appropr
 docker run --rm \
     -v <path-to-contract-code>:/source \
     -v <path-to-output-folder>:/target \
-    dusknode/dusk-verifiable-builds:0.1.0
+    dusknode/dusk-verifiable-builds:0.2.0
 ```
 
 After running this command, the compiled `.wasm` files will be available, depending on your build target, in:
