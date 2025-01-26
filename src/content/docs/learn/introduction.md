@@ -56,15 +56,17 @@ Dusk also introduces an [innovative economic model](/learn/deep-dive/economic-pr
 
 ## Use Cases
 
-Dusk is ideal for building transactional applications with high throughput and privacy that achieve immediate finality without relying on centralized infrastructure or trusted third parties. For example: 
+Dusk is ideal for building compliant financial applications that achieve immediate finality without relying on centralized infrastructure or trusted third parties.
 
-- Automated and self-governing securities.
-- Confidential smart contracts and security tokens.
-- Digital share registry management.
-- Decentralized smart bulletin boards.
-- Proxy voting.
-- Self-custodial applications.
-- Decentralized finance including on-chain trading of RWAs.
+Dusk supports a variety of use cases, bridging traditional finance and blockchain innovation:
+| **Application**                           | **Description**                                                                                                                                                                                                                                  |
+|-------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Regulatory-Compliant Digital Bonds**    | Enables financial institutions to issue compliant digital bonds directly on-chain, reducing costs and automating processes like interest payments. This provides investors with a streamlined way to access and trade bonds instantly.            |
+| **Decentralized Stock Exchange**          | Allows companies to issue and trade shares on a decentralized platform, bypassing traditional brokers. This creates direct access for investors, lowers fees, and offers near-instant settlements while maintaining regulatory compliance.       |
+| **Private and Transparent Transactions**  | Supports a dual-model approach with Phoenix and Moonlight, enabling users to choose between private and transparent transactions. Ideal for both personal use and regulatory-compliant financial activities.                                      |
+| **Self-Sovereign Digital Identity**       | Citadel provides a privacy-first digital identity solution, allowing users to prove their identity while keeping personal information secure. Ideal for applications that need KYC/AML compliance while maintaining user privacy.            |
+| **DeFi with Privacy**                     | Enhances DeFi by enabling private lending, staking, and trading through zero-knowledge proofs. This allows platforms to offer privacy-preserving services that adhere to compliance requirements.                                                  |
+
 
 Please refer to [Dusk's use cases](https://dusk.network/pages/usecases) for more information.
 
