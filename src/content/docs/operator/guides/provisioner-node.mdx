@@ -148,12 +148,12 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
    </TabItem>
    <TabItem label="Testnet">
     ```sh
-    curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/latest/download/node-installer.sh | sudo bash -s testnet
+    curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/latest/download/node-installer.sh | sudo bash -s -- --network testnet
     ```
    </TabItem>
    <TabItem label="Devnet">
     ```sh
-    curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/latest/download/node-installer.sh | sudo bash -s devnet
+    curl --proto '=https' --tlsv1.2 -sSfL https://github.com/dusk-network/node-installer/releases/latest/download/node-installer.sh | sudo bash -s -- --network devnet
     ```
    </TabItem>
 </Tabs>
