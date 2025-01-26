@@ -78,20 +78,40 @@ By doing so, you should see the build file named: `your_contract_project_name.wa
 
 Now that you have compiled the contract, you can [deploy](/developer/smart-contract/guides/deploying) it to the Dusk blockchain.
 
-## How to verify a contract?
+## Verifiable Builds
 
-There is no general way to verify that a WASM binary came from a specific piece of source code, as compilation is non-deterministic due to various factors such as compiler version, compiler flags, build settings, environment and so on.
+For deterministic and verifiable builds, use our Dockerized build environment, which guarantees identical outputs. This is the easiest way to ensure your smart contract builds can be reproduced by others.
 
-Developers may be used to Solidity's deterministic compilation that comes from a standardized compiler. The compiler ensures that the same source code, when compiled with the same version, always produces the same bytecode. In the case of WASM compilation, the lack of standardized compilation means that different environments, settings, or versions of compilers can produce different WASM binaries from the same source code.
+### Pull the Docker Image
 
-### Current solution - Verifiable Builds
+Use the prebuilt Docker image:
 
-To allow users to verify that a deployed smart contract corresponds to the source code, developers would need to provide a reproducible build environment. This can be achieved by using Docker to create a containerized environment from which the smart contract was deployed. Docker ensures that the build environment is consistent, including the specific compiler version and settings used during compilation, resulting in a deterministic compilation process.
+```bash
+docker pull dusknode/dusk-verifiable-builds:0.1.0
+```
 
-While Dusk is looking at ways to resolve this challenge, in the meantime developers are advised to deploy smart contracts from a Docker container. The container should encapsulate the entire build environment, ensuring that anyone can reproduce the build by using the same Docker image. This ensures that the binary produced during the deployment matches the one produced during the verification process.
+### Run the Build Command
 
-Along with the source code, developers should provide the Dockerfile or the Docker image used for the deployment.
+Replace `<path-to-contract-code>` and `<path-to-output-folder>` with the appropriate paths to your contract source code and output directory:
 
-#### Example for docker build & deployment
+```bash
+docker run --rm \
+    -v <path-to-contract-code>:/source \
+    -v <path-to-output-folder>:/target \
+    dusknode/dusk-verifiable-builds:0.1.0
+```
 
-Coming soon...
+After running this command, the compiled `.wasm` files will be available, depending on your build target, in:
+- `/target/final-output/wasm32`
+- `/target/final-output/wasm64`
+
+### Verify the Output
+
+To ensure your contract has compiled correctly, locate the `.wasm` files:
+```bash
+find <path-to-output-folder> -name "*.wasm"
+```
+
+### Reproduce the Build
+
+Share the Docker image and your source code with auditors or collaborators to enable them to reproduce the same build.
