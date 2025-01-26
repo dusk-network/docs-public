@@ -67,14 +67,26 @@ When you increase your stake, keep in mind that:
 This mechanism promotes fairness and prevents potential exploitation of compounding effects, ensuring a balanced staking system.
 
 ### Example
-As an example, suppose you stake 110,000 DUSK:
-- Your active stake becomes 99,000 DUSK (90% of the total).
-- 11,000 DUSK (10%) is held in the inactive stake.
+As an example, suppose you initially stake 5,000 DUSK. After 2 epochs (4320 blocks), your stake becomes active. 
 
-If you later withdraw 98,000 DUSK, leaving 1,000 DUSK staked:
-- You immediately have 98,000 DUSK, fully liquid.
-- You still have 1,000 DUSK actively staking and 11,000 DUSK in the inactive stake.
-- Once you fully unstake the remaining 1,000 DUSK, the 11,000 DUSK held in the inactive stake is unlocked and becomes available again.
+Some time passes, and you decide to add 4,000 DUSK to your stake:
+
+- 90% of the newly added amount (3,600 DUSK) is immediately added to your active stake.
+- 10% of the newly added amount (400 DUSK) is moved to your inactive stake.
+
+At this point:
+
+- Your active stake becomes 8,600 DUSK (5,000 + 3,600).
+- Your inactive stake holds 400 DUSK.
+
+If you later withdraw 8,000 DUSK, leaving 600 DUSK staked:
+
+- You immediately have 8,000 DUSK, fully liquid.
+- Your active stake is now 600 DUSK.
+- Your inactive stake remains 400 DUSK.
+
+If you then fully unstake the remaining 600 DUSK, the 400 DUSK in your inactive stake is unlocked and becomes available.
+
 
 
 ## Ready to Stake?
