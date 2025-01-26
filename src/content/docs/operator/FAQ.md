@@ -19,7 +19,7 @@ Yes, instructions to build Rusk from source can be found [here](/operator/from-s
 #### Which ports does Dusk use?
 
 - **9000/udp**: Required for Kadcast message dissemination.
-- **8080/tcp**: Optional HTTPS API for querying the node.
+- **8080/tcp**: Optional HTTP(S) API for querying the node.
 
 You can use ports other than 9001 and 9000, as long as inbound traffic is allowed for those ports and outbound UDP traffic is allowed for most ports.
 
