@@ -90,7 +90,7 @@ rusk-wallet moonlight-stake --amt 3000
 ```
 
 #### How can I run a Dusk node on Docker?
-We don't support a production-ready Docker image for Rusk. Anyways, for running Rusk on Docker as ephemeral (without persistant storage), you can use the following command: 
+We don't support a production-ready Docker image for Rusk. To run Rusk through Docker as ephemeral (non-persistent storage), you can use the following command: 
 
 ```bash
 docker run -p 9000:9000/udp -p 8080:8080/tcp dusknetwork/node
