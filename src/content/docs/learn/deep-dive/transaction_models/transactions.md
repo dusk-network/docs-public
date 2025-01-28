@@ -1,34 +1,67 @@
 ---
-title: The transfer contract
+title: The Transfer Contract
 description: Learn how transactions are processed using the Dusk transfer contract.
 ---
 
-The <a href="https://github.com/dusk-network/rusk/tree/master/contracts/transfer" target="_blank">Transfer Contract</a> is a vital component of the Dusk network, responsible for verifying transactions and managing gas payments.
+The <a href="https://github.com/dusk-network/rusk/tree/master/contracts/transfer" target="_blank">Transfer Contract</a> is the backbone of Dusk, enabling seamless transaction processing and gas fees payments. By supporting both shielded and public transactions, the Transfer Contract provides unmatched flexibility to balance privacy and compliance.. This flexibility is achieved by specifying the transaction type upon submission, enabling precise routing of the payload.
 
-## Phoenix in the transfer contract
+As a result, Dusk accommodates a wide range of transaction needs and use cases, being able to provide both privacy and compliance.
 
-The Transfer Contract maintains a Merkle tree structure to store obfuscated notes, representing unspent transaction outputs (UTXOs).
-To spend a note, users must provide a zero-knowledge proof, enabling them to spend valid notes without revealing any details.
-To preserve privacy and prevent double-spending, the Transfer Contract uses nullifiers; once a note is spent, the nullifier ensures it cannot be reused.
+The Transfer Contract provides support for:
 
-Upon verifying the zk-proof, the contract updates the Merkle tree to reflect the spent note and records the corresponding nullifier.
+- [Moonlight](/learn/deep-dive/transaction_models/moonlight): A transparent, account-based model.
+- [Phoenix](/learn/deep-dive/transaction_models/phoenix): A privacy-preserving, UTXO-based model.
 
-Each transaction generates two new notes: one for the recipient and another as change for the sender. While the Transfer Contract can accept up to four notes as inputs, it consistently provides two notes as outputs.
+:::note[Note]
+The Transfer Contract implements Dusk's Phoenix and Moonlight [transaction models](/learn/tx-models), allowing users to effortlessly switch between shielded and public transactions.
+:::
+
+These two models act as equivalent payment rails for Dusk:
+- Moonlight resembles a wire transfer and provides transparency.
+- Phoenix functions like cash, providing privacy.
+
+Each model is designed for specific use cases, balancing unique trade-offs between privacy and practicality. Both models are fully compliant, much like how both cash and wire transfers are legitimate methods of transferring value. 
+
+This dual-model approach provides the optimal flexibility for privacy and transparency.
+
+# Paying for gas fees
+
+[Gas fees](/learn/tx-fees) can be paid using Phoenix notes or Moonlight balances:
+- When paying fees using Moonlight, fees are deducted directly from the sender's balance.
+- When paying fees using Phoenix, fees are securely embedded in the zero-knowledge proof.
 
 The Transfer Contract ensures the sender has sufficient funds to cover gas fees and manages these funds by paying them to Provisioners.
 
-The Transfer Contract is essential in Dusk, handling various types of transactions, such as Phoenix and Moonlight. The transaction type is specified when sent to the Transfer Contract, allowing it to direct the payload accordingly.
+# Phoenix <> Moonlight
 
-## Phoenix transfer contract flow
+The Transfer Contract facilitates effortless transitions between transparency and privacy, allowing users to convert between Moonlight balances and Phoenix notes as needed. This gives users the flexibility to represent their funds in either form and switch seamlessly based on their preferences or requirements:
 
-The Transfer Contract operates through the following steps:
+**Phoenix → Moonlight:**
+- Spent Phoenix notes are processed and marked in the Merkle tree.
+- The equivalent value is added to the user's Moonlight balance.
 
-1) A user initiates a transaction by sending it to the transfer contract. This transaction includes the necessary zk-proof to demonstrate ownership of the note to be spent.
+**Moonlight → Phoenix:**
+- The user's Moonlight balance is reduced.
+- A new Phoenix note is created and added to the Merkle tree.
 
-2) The contract calculates the gas required for the transaction and ensures the sender has enough funds to cover these fees. This ensures that the transaction can be processed without any issues.
+:::note[Important]
+Dusk makes use of a UTXO and account-based transaction model. The Transfer Contract allows users to securely convert between Phoenix notes and Moonlight balances.
+:::
 
-3) The Transfer contract verifies the zk-proof to ensure it is valid. This verification process confirms that the user possesses a legitimate note without revealing any specific information about the note itself.
+# Phoenix vs Moonlight
 
-4) Depending on the transaction type specified, the transfer contract directs the payload to the appropriate contract or logic for further processing.
+The Dusk Transfer Contract supports both Moonlight and Phoenix, offering flexibility for users to choose between:
 
-5) Once the proof is verified, the transfer contract updates the Merkle tree to mark the note as spent and records the nullifier. It then generates two new notes—one for the recipient and another as change for the sender.
+| **Property**               | **Moonlight**                                    | **Phoenix**                                      |
+|----------------------------|--------------------------------------------------|-------------------------------------------------|
+| **Model**                  | Transparent, Account-Based                       | Privacy-Preserving, UTXO-Based                  |
+| **Privacy**                | None: transaction details are public            | Shielded – details are hidden via zk-proofs, while still allowing the receiver to prove the source of funds for compliance purposes |
+| **Balance Verification**   | Publicly checked via account balances            | Privately verified via zk-proofs                |
+| **Double-Spending** | Prevented by visible account states            | Prevented by nullifiers                           |
+| **Ideal Use Case**          | Transparency (e.g. wire transfer)    | Confidentiality (e.g. cash)  |
+
+
+# Quick Links
+- Learn more about [Moonlight](/learn/deep-dive/transaction_models/moonlight).
+- Learn more about [Phoenix](/learn/deep-dive/transaction_models/phoenix).
+- Read the [Whitepaper](https://dusk-cms.ams3.digitaloceanspaces.com/Dusk_Whitepaper_2024_4db72f92a1.pdf).

@@ -3,15 +3,48 @@ title: Phoenix
 description: Learn how Dusk’s UTXO-based transaction model ensures privacy and compliance.
 ---
 
-<a href="https://github.com/dusk-network/phoenix/blob/master/docs/v2/protocol.pdf" target="_blank">Phoenix</a> is the privacy-preserving transaction model used by Dusk. In privacy-preserving blockchains there are no accounts or wallets at the protocol layer. Instead, coins are stored as a list of UTXOs with specific quantities and criteria for spending. Transactions are created by consuming existing UTXOs and producing new ones in their place. In the Phoenix model, UTXOs are called notes.
+<a href="https://github.com/dusk-network/phoenix/blob/master/docs/v2/protocol.pdf" target="_blank">Phoenix</a>, Dusk’s privacy-preserving transaction model, is managed by the [Transfer Contract](/learn/deep-dive/transaction_models/transactions) to ensure secure, private, and compliant transactions.
 
-:::note[Important]
-Dusk makes use of a UTXO and account-based transaction model. 
+It uses a UTXO-based system to prioritize user privacy, where funds, referred to as "notes", are spent by the validation of specific zk-proof criteria.
+
+In privacy-preserving blockchains like Dusk, there are no accounts or wallets at the protocol layer. Instead, funds are stored as a list of UTXOs (unspent transaction outputs), each with a specific quantity and spending criteria. Transactions are created by consuming existing UTXOs and producing new ones in their place.
+
+Phoenix operates alongside [Moonlight](/learn/deep-dive/transaction_models/moonlight), Dusk’s transparent, account-based model. While Moonlight offers transparency, Phoenix balances privacy with regulatory compliance. 
+
+
+:::note[Note]
+Unlike anonymity protocols that completely obscure transaction details, Phoenix ensures that only the receiver can identify the sender, enabling compliance with regulations while maintaining privacy from external observers. More information about compliance can be found [here](#privacy--compliance).
 :::
 
-Phoenix is designed to balance privacy with regulatory compliance. Unlike anonymity protocols, where transaction details are entirely hidden, Phoenix ensures that the receiver can provably see who the sender is, but no one else can. This allows users to comply with regulations while maintaining their privacy from external observers.
 
-The network tracks all notes ever created by storing their hashes in the leaves of a Merkle tree of notes. When a transaction is validated, the network includes the hashes of the new notes in the leaves of this tree.
+# Notes and Merkle Tree
+
+The [Transfer Contract](/learn/deep-dive/transaction_models/transactions) uses a Merkle tree to store obfuscated notes, which represent unspent transaction outputs (UTXOs). The network tracks these notes by storing their hashes in the tree's leaves, adding new hashes whenever transactions are validated.
+
+Phoenix relies on the Transfer Contract to validate transactions through zero-knowledge proofs (zk-proofs), ensuring that notes can be spent without revealing sensitive details. 
+Additionally, the Transfer Contract ensures gas fees are included securely within the zk-proof.
+
+Upon verifying the zk-proof, the contract updates the Merkle tree to reflect the spent note and records the corresponding nullifier.
+
+Each transaction generates two new notes: one for the recipient and another as change for the sender. While the Transfer Contract can accept up to four notes as inputs, it consistently provides two notes as outputs.
+
+## Phoenix transfer contract flow
+
+The [Transfer Contract](/learn/deep-dive/transaction_models/transactions) operates Phoenix through the following steps:
+
+1) A user initiates a transaction by sending it to the transfer contract. This transaction includes the necessary zk-proof to demonstrate ownership of the note to be spent.
+
+2) The contract calculates the gas required for the transaction and ensures the sender has enough funds to cover these fees. This ensures that the transaction can be processed without any issues.
+
+3) The Transfer Contract verifies the zk-proof to ensure it is valid. This verification process confirms that the user possesses a legitimate note without revealing any specific information about the note itself.
+
+4) The Transfer Contract identifies the transaction type (Phoenix or Moonlight) and directs the payload to the corresponding logic for further processing.
+
+5) Once the proof is verified, the transfer contract updates the Merkle tree to mark the note as spent and records the nullifier. It then generates two new notes—one for the recipient and another as change for the sender.
+
+## Implementation details
+
+For the complete implementation details you can refer to the [Whitepaper](https://dusk-cms.ams3.digitaloceanspaces.com/Dusk_Whitepaper_2024_4db72f92a1.pdf).
 
 All notes in the network have the same structure:
 `N = {type, com, enc, npk, R, encsender }.`
@@ -64,9 +97,9 @@ Keys in Phoenix can be categorized into **user's static keys** and **note keys**
 
 ### User static keys
 
-– **Secret key**: `sk = (a,b)` - used for decryption and signing data.
-– **Publickey**: `pk=(A,B)` - derived from the secret key, used to encrypt data or verify signatures.
-– **View key**: `vk = (a, B)` - enables viewing but not spending of funds.
+- **Secret key**: `sk = (a,b)` - used for decryption and signing data.
+- **Publickey**: `pk=(A,B)` - derived from the secret key, used to encrypt data or verify signatures.
+- **View key**: `vk = (a, B)` - enables viewing but not spending of funds.
 
 ### Note keys
 
