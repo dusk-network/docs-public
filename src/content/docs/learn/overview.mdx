@@ -13,95 +13,46 @@ Welcome, Duskneer! This guide was created to help you navigate the world of Dusk
 
 ## What is Dusk?
 
-Dusk is a **Layer-1 blockchain** built to reshape the financial landscape with a focus on **privacy, compliance, and decentralization**. It empowers secure, on-chain issuance and trading of financial assets like **bonds, stocks, and other regulated instruments**, providing a reliable and compliant infrastructure for modern finance.
+Dusk is a Layer-1 blockchain built to reshape the financial landscape with a focus on privacy, compliance, and decentralization. It empowers secure, on-chain issuance and trading of financial assets like bonds, stocks, and other regulated instruments, providing a reliable and compliant infrastructure for modern finance.
+
+Dusk bridges the gap between traditional finance and blockchain by enabling:
+- [Native Issuance](/learn/tokenization-comparison): Assets on Dusk exist entirely on-chain instead of being tokenized versions of off-chain assets. This removes intermediaries, cuts costs, and enables instant settlements.
+- [Institutional-Grade Privacy & Compliance](/learn/tokenization-comparison#meeting-institutional-standards):  By leveraging zero-knowledge proofs, transactions remain private while complying with regulatory standards, addressing the concerns of institutions.
+- [High Performance & Finality](/learn/introduction/#high-performance-and-finality): The whole tech stack has been built to achieve near-instant finality, ensuring efficiency even under high transaction loads.
+
+Learn [more about Dusk](/learn/introduction), its [usecases](/learn/introduction#use-cases), or explore the [whitepaper](https://dusk-cms.ams3.digitaloceanspaces.com/Dusk_Whitepaper_2024_4db72f92a1.pdf).
+
+## What can you do on Dusk?
+
+There are several things you can do on Dusk:
+- [Stake and accrue rewards](/learn/guides/staking-basics/): DUSK can be staked to secure the network and receive rewards. Staking is easy, and it allows users to participate in consensus and increase the decentralization of the protocol.
+- [Issue Regulated Financial Assets](https://dusk.network/contact/): Dusk is designed for financial institutions to issue digital bonds, stocks, and RWAs natively on-chain—without the need for intermediaries like Central Securities Depositories (CSDs).
+- [Shielded and Public Transactions](/learn/tx-models/): Dusk offers both shielded and public transactions through Phoenix & Moonlight. Institutions can comply with regulations while keeping sensitive data private.
+- [Use Self-Sovereign Identity](/developer/digital-identity/protocol/): Dusk’s Citadel SSI solution enables privacy-first identity verification (useful for KYC/AML), letting users prove their identity without disclosing personal details
+- [Build & Deploy Smart Contracts](/developer/smart-contract/introduction/): Dusk’s ZK-friendly virtual machine (Dusk VM) enables confidential, high-performance smart contracts.
 
 
-:::tip[Dusk in a nutshell]
-The power of **decentralized** finance, the **privacy & compliance** of fintech institutions, and the **features** of financial market infrastructures - **at the fingertip of all users**.
-:::
-
-You can read the [whitepaper here](https://dusk-cms.ams3.digitaloceanspaces.com/Dusk_Whitepaper_2024_4db72f92a1.pdf).
-## Core Values, Mission, and Vision
-
-At Dusk, our mission is to build an open financial market infrastructure that combines **privacy, security, and regulatory compliance**. We aim to bridge traditional finance with the digital economy, empowering individuals and institutions with a **decentralized platform** for secure and transparent transactions.
-
-## Why Dusk?
-
-Dusk is the most appropriate choice for the issuance, trading and management of regulated financial assets as it provides: 
-| **Native Issuance** | **Unparalleled Privacy** | **High Performance and Finality** |
-|----------------------|--------------------------|-----------------------------------|
-| Digital assets are issued natively on Dusk, existing entirely on-chain. This approach removes intermediaries, reduces costs, and allows for instant, secure settlements. Compliance is directly embedded, [differently from tokenization](/learn/tokenization-comparison). | Dusk utilizes [zero-knowledge](/learn/deep-dive/cryptography/zkp) cryptography to keep transactions private while upholding regulatory transparency. This method supports privacy-preserving transactions by hiding sensitive details, without compromising on compliance. | Dusk’s [Succinct Attestation](/learn/deep-dive/succinct-attestation) consensus mechanism provides high throughput and near-instant finality. SA consensus ensures fast transactions and scalability, providing both safety and smooth user experience even under high-demand.|
-
-## Use Cases
-
-Dusk supports a variety of use cases, bridging traditional finance and blockchain innovation:
-| **Application**                           | **Description**                                                                                                                                                                                                                                  |
-|-------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Regulatory-Compliant Digital Bonds**    | Enables financial institutions to issue compliant digital bonds directly on-chain, reducing costs and automating processes like interest payments. This provides investors with a streamlined way to access and trade bonds instantly.            |
-| **Decentralized Stock Exchange**          | Allows companies to issue and trade shares on a decentralized platform, bypassing traditional brokers. This creates direct access for investors, lowers fees, and offers near-instant settlements while maintaining regulatory compliance.       |
-| **Private and Transparent Transactions**  | Supports a dual-model approach with Phoenix and Moonlight, enabling users to choose between private and transparent transactions. Ideal for both personal use and regulatory-compliant financial activities.                                      |
-| **Self-Sovereign Digital Identity**       | Citadel provides a privacy-first digital identity solution, allowing users to prove their identity while keeping personal information secure. Ideal for applications that need KYC/AML compliance while maintaining user privacy.            |
-| **DeFi with Privacy**                     | Enhances DeFi by enabling private lending, staking, and trading through zero-knowledge proofs. This allows platforms to offer privacy-preserving services that adhere to compliance requirements.                                                  |
-
-
----
 
 ## Core Components
 
-This section provides a brief overview of Dusk’s core components, highlighting the key technologies and layers that power our network.
+This section provides a brief overview of Dusk’s [core components](/learn/core-components), highlighting the key technologies and layers that power our network.
 
 | **Component**            | **Description**                                                                                                                                                                                                                                                                         |                    |
 |-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------|
-| **Rusk**                      | Rusk is the reference implementation of the Dusk protocol in Rust. It performs critical functions, like combining together the various components of the protocol and exposing the HTTP server.                                                                                                                      | ![Rusk Image](../../../assets/get_started/Rusk.png)    |
-| **Succinct Attestation**      | Dusk’s consensus mechanism is a permission-less, committee-based proof-of-stake consensus protocol that provides high throughput and near-instant finality.                                                                            | ![Succinct Attestation Image](../../../assets/get_started/Succinct_Attestation.png) |
-| **Execution Layer: Dusk VM**  | Dusk VM is the virtual machine responsible for executing smart contracts on Dusk. It provides a secure and scalable framework for efficient processing of complex operations.                                                                    | ![Dusk VM Image](../../../assets/get_started/dusk-vm.png) |
-| **Network Layer: Kadcast**    | Kadcast is Dusk’s peer-to-peer protocol for efficient message broadcasting, ensuring low latency and reliable network communication across the network.                                                                               | ![Kadcast Image](../../../assets/get_started/Kadcast.png) |
-| **Phoenix & Moonlight**       | Phoenix enables privacy-preserving transactions using zero-knowledge proofs, while Moonlight supports transparent asset transfers. The flexibility of the dual-model caters to both privacy-focused and transparent financial transactions.                          | ![Phoenix & Moonlight Image](../../../assets/get_started/Phoenix_and_Moonlight.png) |
-| **Citadel**                   | Citadel is Dusk’s self-sovereign identity solution, designed for compliant, privacy-preserving identity management. It provides users with secure, self-controlled digital identities in a regulated manner.                                     | ![Citadel Image](../../../assets/get_started/Citadel.png) |
+| **Rusk**                      | Rusk is the reference implementation of the Dusk protocol in Rust. It manages critical tasks like maintaining the chain state, database, and network, as well as offering external APIs and providing host functions.                                                                                               | ![Rusk Image](../../../assets/get_started/Rusk.png)    |
+| **Succinct Attestation**      | High-speed, near-instant finality consensus for secure transactions. It is committee-based and relies on proof-of-stake for its sybil-resistance.                                                                            | ![Succinct Attestation Image](../../../assets/get_started/Succinct_Attestation.png) |
+| **Dusk VM**  | Highly-optimized ZK-friendly virtual machine with a WASM runtime. It enables the development and execution of privacy-focused smart contracts.                                                                   | ![Dusk VM Image](../../../assets/get_started/dusk-vm.png) |
+| **Kadcast**    |A peer-to-peer network protocol ensuring fast, efficient data broadcasting. It optimizes message exchanges between nodes by using a structured overlay to direct message flow.                                                                            | ![Kadcast Image](../../../assets/get_started/Kadcast.png) |
+| **Phoenix & Moonlight**       | Dusk enables both shielded and public transactions through its dual-model approach, offering unmatched flexibility to achieve both privacy and compliance.                          | ![Phoenix & Moonlight Image](../../../assets/get_started/Phoenix_and_Moonlight.png) |
+| **Citadel**                   | Self-sovereign identity solution for privacy-preserving KYC/AML compliance. It is a protocol designed for authenticating with third party services while protecting sensitive data                                     | ![Citadel Image](../../../assets/get_started/Citadel.png) |
 
-More information about the core components of Dusk can be found [here](/learn/core-components).
-
+Find more details about Dusk’s core components [here](/learn/core-components).
 ---
 
-## Tokenomics
 
-**$DUSK** is the native currency powering Dusk’s network operations, with a total supply capped at **1 billion tokens** to ensure long-term scarcity. Below is a breakdown of the key metrics:
 
-| **Metric** | **Description** |
-| --- | --- |
-| **Initial Supply** | 500,000,000 $DUSK (ERC-20 & BEP-20), migrated to native DUSK via the <a href="https://github.com/dusk-network/dusk-migration">migration contract</a> . |
-| **Total Emitted Supply** | 500,000,000 $DUSK, emitted over 36 years as staking rewards, following the Token Emission Schedule. |
-| **Maximum Supply** | 1,000,000,000 DUSK (combining the 500M initial supply and 500M emissions over time). |
-| **ICO** | Raised 8 millions dollars in November 2018. Tokens were priced at $0.0404. Private sale tokens account for 50% of the total supply, with 10% as DUSK BEP-20 and 40% as DUSK ERC-20. |
-
-### Token utility
-$DUSK is the utility token for the Dusk blockchain, that is used for:
-1. Staking in consensus participation.
-2. Rewarding consensus participants.
-3. Paying of network fees (gas).
-4. Paying for the deployment of dApps on the network.
-5. Paying for the services on the network.
-
-#### Additional Information
-- **Migration**: The initial ERC-20 and BEP-20 [tokens can be migrated to native DUSK](/learn/guides/mainnet-migration/) through a burner contract.
-- **Emission Schedule**: The 500 millions emitted supply will be distributed over a 36-year period to reward stakers, ensuring gradual release and network incentives.
-- **ICO and Private Sale**: In 2018, Dusk raised 8 million dollars, with tokens priced at $0.0404. 50% of the total supply was allocated to private sale investors, divided into 10% BEP-20 and 40% ERC-20.
-
-More details about the tokenomics can be found [here](/learn/tokenomics).
-
----
-
-## Join the Community
-
-:::tip[Discord, Telegram and Twitter]
-The best way to get involved with Dusk is by joining our
-**[Discord](https://discord.gg/dusk-official)** and **[Telegram](https://t.me/DuskNetwork)** community and following us on [**Twitter**](https://x.com/DuskFoundation). By actively participating, you can stay up-to-date with the latest developments, network with like-minded individuals, and be part of shaping Dusk’s future.
-
-:::
-
-:::tip[Developers, Let’s Build Together]
-If you’re a developer, we’re thrilled to have you join us! 
-Drop by our **developer-talk** channel on [**Discord**](https://discord.gg/dusk-official) to connect with fellow devs, share ideas, and get support as you explore Dusk’s powerful tools and features.
-To learn more, explore our [**Developers Docs**](/developer/overview) .
-
-:::
+<CardGrid>
+        <LinkCard title="Join the Community" href="https://discord.gg/dusk-official" description="Writing smart contracts for Dusk"/>
+        <LinkCard title="Stake DUSK" href="/learn/guides/staking-basics/" description="Earn rewards while securing the network."/>
+        <LinkCard title="Are you a developer?" href="/developer/smart-contract/introduction" description="Learn how to start building here"/>
+</CardGrid>
