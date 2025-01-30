@@ -3,7 +3,7 @@ title: The Transfer Contract
 description: Learn how transactions are processed using the Dusk transfer contract.
 ---
 
-The <a href="https://github.com/dusk-network/rusk/tree/master/contracts/transfer" target="_blank">Transfer Contract</a> is the backbone of Dusk, enabling seamless transaction processing and gas fees payments. By supporting both shielded and public transactions, the Transfer Contract provides unmatched flexibility to balance privacy and compliance.. This flexibility is achieved by specifying the transaction type upon submission, enabling precise routing of the payload.
+The <a href="https://github.com/dusk-network/rusk/tree/master/contracts/transfer" target="_blank">Transfer Contract</a> is the backbone of Dusk, enabling seamless transaction processing and gas fees payments. By supporting both shielded and public transactions, the Transfer Contract provides unmatched flexibility to balance privacy and compliance. This flexibility is achieved by specifying the transaction type upon submission, enabling precise routing of the payload.
 
 As a result, Dusk accommodates a wide range of transaction needs and use cases, being able to provide both privacy and compliance.
 
