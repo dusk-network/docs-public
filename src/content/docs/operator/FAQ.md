@@ -207,3 +207,7 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 ```
+
+#### How can I configure the mempool timout?
+
+The node installer sets a default value, but you can customize the mempool timeout by editing the [rusk.toml](https://github.com/dusk-network/node-installer/blob/main/conf/rusk.toml#L9) configuration file.
