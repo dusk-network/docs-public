@@ -15,6 +15,7 @@ const defaultSidebar = [
       { label: "Native Issuance", link: "learn/tokenization-comparison" },
       { label: "Get involved & Community", link: "learn/community" },
       { label: "Verify Team Account", link: "learn/verify-team-account" },
+      { label: "Rusk Wallet", link: "learn/rusk-wallet" },  
       { label: "Glossary", link: "learn/glossary" },
     ],
   },
