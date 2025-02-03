@@ -3,12 +3,35 @@ title: Rusk Wallet
 description: Using the Rusk Wallet to leverage CLI functionalities when interacting with Dusk.
 ---
 
-The [**Rusk Wallet**](https://github.com/dusk-network/rusk/tree/master/rusk-wallet) is a powerful and feature-rich command-line interface (CLI) wallet designed for managing DUSK and interacting directly with the network. It allows users to use the command line to perform tasks like sending funds, managing balances, staking, and interacting with smart contracts.
+The [**Rusk Wallet**](https://github.com/dusk-network/rusk/tree/master/rusk-wallet) is a powerful and feature-rich command-line interface (CLI) wallet designed for managing DUSK and interacting directly with the network. 
 
+Users can choose to use either the interactive mode, which offers a menu-driven interface, or execute specific subcommands to perform tasks such as sending funds, managing balances, staking, and interacting with smart contracts.
 
 ## Commands Overview
 
-The Rusk CLI Wallet comes with several useful options and subcommands for wallet creation, transactions, staking, and more:
+By default, the CLI runs in **interactive** mode when no arguments or subcommands are provided. To start it, simply run:
+
+```bash
+rusk-wallet
+```
+
+This mode presents users with a menu-driven interface, allowing them to navigate through wallet functions interactively without typing commands manually.
+
+The Rusk Wallet can be also run in **headless mode**, where you specify a subcommand to execute actions directly without needing the interactive interface.
+
+To skip the interactive mode and run in headless mode, provide a subcommand directly:
+
+```bash
+rusk-wallet <subcommand>
+```
+For example:
+
+```bash
+rusk-wallet balance
+```
+
+The Rusk wallet provides several subcommands for wallet creation, transactions, staking, and more:
+
 
 | **Subcommand**      | **Description**                                         |
 |--------------------|---------------------------------------------------------|
@@ -28,7 +51,24 @@ The Rusk CLI Wallet comes with several useful options and subcommands for wallet
 | `settings`          | View current settings                                  |
 
 
-Some commands can run without an active connection to Rusk (standalone/offline mode):
+
+## Wallet Password
+
+By default, the wallet will prompt you for a password whenever sensitive information needs to be decrypted (e.g., accessing the wallet or exporting keys). If you're running automated scripts or in a headless environment, you can bypass this prompt using the `RUSK_WALLET_PWD` environment variable:
+
+```bash
+export RUSK_WALLET_PWD=<your_password>
+```
+
+The `RUSK_WALLET_PWD` is used for:
+
+- Wallet decryption (in all commands that use a wallet)
+- Wallet encryption (during the wallet creation, in `create`)
+- BLS key encryption (in `export`)
+
+## Offline Commands
+
+Some commands can run without an active connection to Rusk. These commands work offline because they rely on locally stored wallet data instead of requiring real-time interaction with the Dusk. Offline commands are particularly useful for setting up or recovering wallets before connecting to the network.
 
 - `create`: Create a new wallet
 - `restore`: Restore an existing wallet
@@ -41,16 +81,3 @@ To explore all available commands, you can run:
 ```bash
 rusk-wallet help
 ```
-
-## Wallet Password
-By default, the wallet will prompt you for a password to decrypt or encrypt sensitive information. To bypass this prompt in headless environments (e.g., CI pipelines), set the `RUSK_WALLET_PWD` environment variable:
-
-```bash
-export RUSK_WALLET_PWD=<your_password>
-```
-
-The `RUSK_WALLET_PWD` is used for:
-
-- Wallet decryption (in all commands that use a wallet)
-- Wallet encryption (in `create`)
-- BLS key encryption (in `export`)
