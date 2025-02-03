@@ -22,10 +22,13 @@ To set up a node, you may choose to use the node installer](/operator/guides/pro
 
 Requirements vary depending on whether you are configuring a [Provisioner](/operator/provisioner) node or an [Archive](/operator/archive-node) node.
 
-
 ### Use Dusk APIs
 
-Dusk provides an event system for streamlining information from the network by exposing [RUES](/developer/integrations/rues).
+Dusk offers a streamlined event system through the [Rusk Universal Event System (RUES)](/developer/integrations/rues), as data can be fetched from the following endpoints:
+
+- **Mainnet**: https://nodes.dusk.network/
+- **Testnet**: https://nodes.testnet.dusk.network/
+
   
 ### Use RPC providers
 

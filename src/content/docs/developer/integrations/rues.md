@@ -9,6 +9,12 @@ RUES is designed to handle binary proofs, binary streams, and on-demand event-dr
 It also enables on-demand data dispatching and real-time notifications, supporting applications like wallet operations that require high-performance binary data handling.
 This is achieved by avoiding the need to convert data to JSON or base64.
 
+
+Data can be fetched from the following endpoints:
+
+- **Mainnet**: https://nodes.dusk.network/
+- **Testnet**: https://nodes.testnet.dusk.network/
+
 ## Session Management
 
 Before interacting with RUES, clients must establish a WebSocket session with a Rusk node. This session forms the backbone of real-time event streaming between the client and the node.
