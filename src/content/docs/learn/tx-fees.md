@@ -32,5 +32,27 @@ If the provided GasLimit is not sufficient for processing, your transaction may 
 ## Unsuccessful Transactions
 In addition to encountering the `OUT_OF_GAS` error, a transaction can also FAIL for various reasons depending on the invoked smart contract. If the transaction fails, all changes are reverted, and the entire fees associated with the transaction are charged.
 
-## Fee Redistribution
-Every time a transaction fee is charged, the amount accrues in the block reward. The block reward comprises transaction fees and the coinbase value (according to the [token emission schedule](/learn/tokenomics#token-emission-schedule), see link). The block reward is then allocated 90% to the block generator and 10% to the DUSK pool.
+## Fee Redistribution Mechanism
+All transaction fees collected during block production contribute to the block reward, which includes:
+- Transaction fees.
+- Coinbase value based on the [token emission schedule](/learn/tokenomics#token-emission-schedule).
+
+The block reward is then distributed as follows:
+
+- **80%** to the block generator
+- **10%** to the voting committee
+- **10%** to the DUSK pool (used for network development and operational expenses)
+
+### Block Generator’s Reward Breakdown
+
+The block generator’s 80% reward is split into:
+
+- **Fixed Portion** (70%): Guaranteed for producing the block.
+- **Variable Portion** (10%): Determined by the number of votes included in the block certificate.
+
+The more votes included, the larger the reward. If all votes are included, the generator receives the full 80%.
+This incentivizes block generators to include as many votes as possible, ensuring network consensus and security.
+
+### Voting Committee Rewards
+
+The voting committee receives 10% of the block reward, distributed proportionally based on the credits held by each voter in the committee. Voters with more credits receive larger rewards, encouraging their active participation and discouraging them from skipping votes.
