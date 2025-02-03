@@ -7,6 +7,7 @@ const defaultSidebar = [
       { label: "Core Values", link: "learn/core-values" },
       { label: "Core Components", link: "learn/core-components" },
       { label: "Block Explorer", link: "learn/block-explorer" },
+      { label: "Web Wallet", link: "learn/web-wallet" },
       { label: "Tokenomics", link: "learn/tokenomics" },
       { label: "Transaction Fees & Gas", link: "learn/tx-fees" },
       { label: "Transaction Models", link: "learn/tx-models" },
