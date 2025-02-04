@@ -50,7 +50,7 @@ At the application layer of our network, we’ve introduced innovative protocols
 
 Dusk contains two fundamental Genesis contracts, which are contracts that are available when the network starts, known as the **stake** and **transfer** contracts. 
 
-The <a href="https://github.com/dusk-network/rusk/blob/cf400040c097ff7b8c389a4ea645247d3684202a/contracts/stake/src/state.rs" target="_blank">Stake Contract</a> manages the stakes of node [provisioners](/operator/provisioner) (stakers). It tracks active provisioners, records their rewards, and provides functions to stake, unstake, and withdraw rewards.
+The <a href="https://raw.githubusercontent.com/dusk-network/rusk/rusk-1.0.0/contracts/stake/src/state.rs" target="_blank">Stake Contract</a> manages the stakes of node [provisioners](/operator/provisioner) (stakers). It tracks active provisioners, records their rewards, and provides functions to stake, unstake, and withdraw rewards.
 
 The [Transfer Contract](/learn/deep-dive/transaction_models/transactions) is responsible for the transferring of `DUSK`, regardless of the transaction model used.
 
