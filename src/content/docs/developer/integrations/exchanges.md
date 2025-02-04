@@ -29,7 +29,8 @@ Dusk offers a streamlined event system through the [Rusk Universal Event System 
 - **Mainnet**: https://nodes.dusk.network/
 - **Testnet**: https://nodes.testnet.dusk.network/
 
-  
+These links also provide access to archive-related endpoints for comprehensive historical data retrieval.
+
 ### Use RPC providers
 
 You can rely on the RPC infrastructure hosted by the community, or run an [archive node](/operator/archive-node) yourself.

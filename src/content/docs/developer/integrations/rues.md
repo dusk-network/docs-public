@@ -15,6 +15,8 @@ Data can be fetched from the following endpoints:
 - **Mainnet**: https://nodes.dusk.network/
 - **Testnet**: https://nodes.testnet.dusk.network/
 
+These links also provide access to archive-related endpoints for comprehensive historical data retrieval.
+
 ## Session Management
 
 Before interacting with RUES, clients must establish a WebSocket session with a Rusk node. This session forms the backbone of real-time event streaming between the client and the node.
