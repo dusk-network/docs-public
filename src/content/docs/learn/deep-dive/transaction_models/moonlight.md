@@ -52,8 +52,8 @@ A Moonlight transaction includes the following fields:
 `txmoonlight = {from, to, value, nonce, deposit, data, gas_limit, gas_price, signature}`  
 
 The parameters correspond to:  
-- `from`: Public key of the sender.  
-- `to`: Public key of the recipient.  
+- `sender`: Public key of the sender.  
+- `receiver`: Public key of the recipient.  
 - `value`: Amount of $DUSK to transfer.  
 - `nonce`: Ensures transaction uniqueness and prevents replay attacks.  
 - `deposit`: Optional; amount sent to a contract or function.  
