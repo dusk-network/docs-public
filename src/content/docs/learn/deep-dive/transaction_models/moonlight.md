@@ -3,7 +3,7 @@ title: Moonlight
 description: Learn how the Dusk’s account-based model ensure full transparency.
 ---
 
-<a href="https://github.com/dusk-network/rusk/blob/a46f5ab5e6e66054decd95003e7ccdfa7ca1dfc0/core/src/transfer.rs#L532" target="_blank">Moonlight</a>, Dusk’s transparent, account-based transaction model, is managed by the [Transfer Contract](/learn/deep-dive/transaction_models/transactions) to provide complete transparency.
+<a href="https://github.com/dusk-network/rusk/blob/a46f5ab5e6e66054decd95003e7ccdfa7ca1dfc0/core/src/transfer.rs#L532" target="_blank">Moonlight</a>, Dusk’s transparent, account-based transaction model, is managed by the [Transfer Contract](/learn/deep-dive/transaction_models/transactions) to provide complete transparency. Accounts within Moonlight are referred to as public accounts.
 
 
 Moonlight uses a BTreeMap to efficiently store user accounts, mapping addresses or BLS keys to their respective balances. An example implementation for a transparent token can be found <a href="https://github.com/dusk-network/transparent-token" target="_blank">here</a>.
