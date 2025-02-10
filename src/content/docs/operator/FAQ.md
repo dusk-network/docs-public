@@ -212,7 +212,7 @@ WantedBy=multi-user.target
 
 The node installer sets a default value, but you can customize the mempool timeout by editing the [rusk.toml](https://github.com/dusk-network/node-installer/blob/main/conf/rusk.toml#L9) configuration file.
 
-#### How can I perform a liveness check on my node via SSH?
+#### How can I perform a liveness check on my node?
 
 To check if your node is live and functioning properly, you can:
 
