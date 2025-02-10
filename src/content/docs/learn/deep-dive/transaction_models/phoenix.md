@@ -3,7 +3,7 @@ title: Phoenix
 description: Learn how Dusk’s UTXO-based transaction model ensures privacy and compliance.
 ---
 
-<a href="https://github.com/dusk-network/phoenix/blob/master/docs/v2/protocol.pdf" target="_blank">Phoenix</a>, Dusk’s privacy-preserving transaction model, is managed by the [Transfer Contract](/learn/deep-dive/transaction_models/transactions) to ensure secure, private, and compliant transactions.
+<a href="https://github.com/dusk-network/phoenix/blob/master/docs/v2/protocol.pdf" target="_blank">Phoenix</a>, Dusk’s privacy-preserving transaction model, is managed by the [Transfer Contract](/learn/deep-dive/transaction_models/transactions) to ensure secure, private, and compliant transactions. Accounts within Phoenix are referred to as shielded accounts.
 
 It uses a UTXO-based system to prioritize user privacy, where funds, referred to as "notes", are spent by the validation of specific zk-proof criteria.
 
