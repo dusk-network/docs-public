@@ -73,19 +73,19 @@ Then we compile the rusk binary, depending on the type of node you want, you wil
 As provisioner
 
 ```bash
-cargo b --release -p rusk
+cargo b --release -p dusk-rusk
 ```
 
 Or as archival
 
 ```bash
-cargo b --release --features archive -p rusk 
+cargo b --release --features archive -p dusk-rusk 
 ```
 
 Or as prover only
 
 ```bash
-cargo b --release --no-default-features --features prover -p rusk
+cargo b --release --no-default-features --features prover -p dusk-rusk
 ```
 
 After you compile your binary follow the setup below to complete the setup of your node
