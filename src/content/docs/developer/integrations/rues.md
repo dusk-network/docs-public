@@ -476,7 +476,7 @@ This endpoint retrieves a list of peers connected to the node, where the given v
 
 **Endpoint**: `/on/network/peers`
 
-**Method**: `GET`
+**Method**: `POST`
 
 **Example Request**:
 
