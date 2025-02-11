@@ -66,7 +66,7 @@ Phoenix transactions consist of two parts, a header (`txmetadata`) which include
 A transaction in Dusk is composed by the following elements:
 - `tx_skeleton` = `[root, nullifiers, notes, deposit, max_fee]`
 - `tx_payload` = `[txskeleton,data]`
-- `tx` = `[txpayload,payload_hash, tx_proof]`
+- `tx` = `[txpayload, payload_hash, tx_proof]`
 - `tx_metadata` = `[timestamp, block_height, status, type, tx_hash, gas_price, gas_spent, tx_fee, positions]`
 
 The sender first sets `txskeleton`, which contains the following data:
@@ -97,8 +97,8 @@ Keys in Phoenix can be categorized into **user's static keys** and **note keys**
 
 ### User static keys
 
-- **Secret key**: `sk = (a,b)` - used for decryption and signing data.
-- **Publickey**: `pk=(A,B)` - derived from the secret key, used to encrypt data or verify signatures.
+- **Secret key**: `sk = (a, b)` - used for decryption and signing data.
+- **Publickey**: `pk = (A, B)` - derived from the secret key, used to encrypt data or verify signatures.
 - **View key**: `vk = (a, B)` - enables viewing but not spending of funds.
 
 ### Note keys
@@ -109,7 +109,7 @@ The sender of a note will attach to it the note public key `npk` and the partial
 
 The recipient can identify whether the note was sent to them using only the recipient’s view key, and not its whole secret key.
 
-By using the note's public key, a user can delegate the job of scanning the different transactions of the network to retrieve their notes by sharing their view key `vk` with an external entity, which we call a network-listening helper. Thus, the user could delegate the scanning of all transactions to a different entity by sharing `(a,B)` with the helper. Even with that information, such an entity could not spend `R`’s money, since they can not derive `skR` without the second part of `R`’s private key.
+By using the note's public key, a user can delegate the job of scanning the different transactions of the network to retrieve their notes by sharing their view key `vk` with an external entity, which we call a network-listening helper. Thus, the user could delegate the scanning of all transactions to a different entity by sharing `(a, B)` with the helper. Even with that information, such an entity could not spend `R`’s money, since they can not derive `skR` without the second part of `R`’s private key.
  
 On the other hand, the note's secret key can only be computed by the recipient of the note, since they are the only ones holding the whole secret key `sk = (a,b)`. The recipient can use the note secret key to spend the note.
 
