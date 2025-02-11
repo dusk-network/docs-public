@@ -53,9 +53,9 @@ The parameters above correspond to the following:
 - `type` indicates the type of the note, either transparent or obfuscated;
 - `com` is a commitment to the value of the note; 
 - `enc` is an encryption of the opening of `com` that can be decrypted using the recipient’s view key; 
-`npk` is the note’s public key, whose associated private key `nsk` can only be computed by the recipient of the note
-`R` is a point in the Jubjub subgroup `J` that allows the recipient to compute `nsk` and also identify that he is the recipient of the transaction. 
-`encsender` is the encryption of a public key owned by the sender of the note that allows the recipient of the note to identify them.
+- `npk` is the note’s public key, whose associated private key `nsk` can only be computed by the recipient of the note
+- `R` is a point in the Jubjub subgroup `J` that allows the recipient to compute `nsk` and also identify that he is the recipient of the transaction. 
+- `encsender` is the encryption of a public key owned by the sender of the note that allows the recipient of the note to identify them.
 
 To prevent double spending, transactions include a list of deterministic values called nullifiers, one for each note being spent. The network nodes must check that nullifiers were not used before. This ensures that the network knows that some notes are nullified and can no longer be spent, but without linking the nullifiers to specific notes.
 
