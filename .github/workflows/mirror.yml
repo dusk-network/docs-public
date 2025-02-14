@@ -32,7 +32,7 @@ jobs:
           fetch-depth: 0
 
       - name: Set up Git config
-        uses: fregante/setup-git-user@v1
+        uses: fregante/setup-git-user@v2
 
       - name: create private ssh key file
         run: |
