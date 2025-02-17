@@ -5,7 +5,7 @@ description: Introduction to the core components that power Dusk.
 
 Dusk is built on a foundation of custom-developed tools and components, specifically designed to meet [institutional standards](/learn/tokenization-comparison#meeting-institutional-standards) for privacy, regulatory compliance, and secure interactions with regulated assets. These components enable Dusk to support not only the tokenization of real-world assets (RWAs) but also [native issuance](/learn/tokenization-comparison#native-issuance).
 
-What sets Dusk apart from other blockchains is its tailor-made architecture, driven by continuous cryptographic research to ensure compliance, privacy, and robust network security, providing a reliable foundation for **Decentralized Market Infrastructure** (DeMI).
+What sets Dusk apart from other blockchains is its tailor-made architecture, driven by continuous cryptographic research to ensure compliance, privacy, and robust network security, providing a reliable foundation to be a **Decentralized Market Infrastructure** (DeMI).
 
 ## Rusk
 
