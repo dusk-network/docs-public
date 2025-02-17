@@ -46,41 +46,7 @@ The script may enable <a href="https://help.ubuntu.com/community/UFW" target="_b
 
 ## Build from source
 
-The majority of Dusk software is written in Rust. To compile our code, we will first need to make sure it's installed. Refer to <a href="https://rustup.rs/" target="_blank">Rustup</a> on how to install Rust.
-
-**Other Software Requirements**: To follow the next steps, you need to have the following software installed:: `curl`, `zip`, `libssl-dev`, `rustc`, `clang`, `gcc` and `git`
-
-To compile and run the Dusk node from source, run the following commands
-
-Clone the Rusk repository. Make sure you modify the command to suit the branch you want to get. The command below will not necessarily fetch a branch compatible with the latest network release and specifications.
-```bash
-git clone https://github.com/dusk-network/rusk.git
-cd rusk
-```
-
-Run the setup script in the scripts folder of rusk, which can take care of dependencies.
-
-```bash
-bash scripts/dev-setup.sh
-```
-
-Generate the keys used by the circuits:
-```bash
-make keys
-```
-Compile all the genesis contracts:
-```bash
-
-make wasm
-```
-Build the node:
-```bash
-cargo b --release -p rusk
-```
-
-Once your node is built, you can either run a [Provisioner](/operator/provisioner), an [archive node](/operator/archive-node) or a [Prover](/operator/prover).
-
-If you want to run a local cluster instead, you can check out the developer READMEs in the <a href="https://github.com/dusk-network/rusk" target="_blank">Rusk repository</a>
+Rusk can be built from source by following this [guide](/operator/from-source).
 
 #### Networking
 

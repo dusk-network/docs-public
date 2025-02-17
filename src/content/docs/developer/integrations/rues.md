@@ -9,6 +9,14 @@ RUES is designed to handle binary proofs, binary streams, and on-demand event-dr
 It also enables on-demand data dispatching and real-time notifications, supporting applications like wallet operations that require high-performance binary data handling.
 This is achieved by avoiding the need to convert data to JSON or base64.
 
+
+Data can be fetched from the following endpoints:
+
+- **Mainnet**: https://nodes.dusk.network/
+- **Testnet**: https://nodes.testnet.dusk.network/
+
+These links also provide access to archive-related endpoints for comprehensive historical data retrieval.
+
 ## Session Management
 
 Before interacting with RUES, clients must establish a WebSocket session with a Rusk node. This session forms the backbone of real-time event streaming between the client and the node.
@@ -287,10 +295,11 @@ a9909cd1...580a0000
 
 #### Block Events
 
-**Endpoint**: `/on/blocks:[block-hash]/[topic]`, where `[topic]` is optional. Block events can have the topic `accepted`, or `statechange`.
+**Endpoint**: `/on/blocks:[block-hash]/[topic]`, where `[topic]` is optional. Block events can have the topic `accepted, `statechange`, or `reverted`.
 
 - **accepted**: Indicates that a block has been accepted into the chain.
 - **statechange**: Represents a change in the state of a block. The state of a block can be either `finalized` or `confirmed`.
+- **reverted**: Indicates that a block has been removed from the chain because it got reverted during consensus.
 
 **Method**: `GET`
 
@@ -468,7 +477,7 @@ This endpoint retrieves a list of peers connected to the node, where the given v
 
 **Endpoint**: `/on/network/peers`
 
-**Method**: `GET`
+**Method**: `POST`
 
 **Example Request**:
 
