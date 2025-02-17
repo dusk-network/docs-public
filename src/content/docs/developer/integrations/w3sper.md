@@ -193,3 +193,27 @@ console.log(blockHeight);
 
 await network.disconnect();
 ```
+
+
+### Convert between DUSK and LUX units
+
+_This code can be run in an offline environment_
+
+
+```js
+import { lux } from "@dusk/w3sper";
+
+// Converting from LUX to DUSK (BigInt to string representation)
+console.log(lux.formatToDusk(1n));                 // "0.000000001"
+console.log(lux.formatToDusk(1_000_000_000n));     // "1" -> Exactly one DUSK
+console.log(lux.formatToDusk(1_234_567_890_123n)); // "1234.567890123"
+
+// Demonstrating large and fractional conversions
+console.log(lux.formatToDusk(9_007_199_254_740_993n)); // "9007199.254740993"
+
+// Converting back from DUSK (string to BigInt representation)
+console.log(lux.parseFromDusk("0.000000001"));          // 1n 
+console.log(lux.parseFromDusk("1"));                    // BigInt(1e9)
+console.log(lux.parseFromDusk("1234.567890123"));       // 1_234_567_890_123n
+console.log(lux.parseFromDusk("9007199.254740993"));    // 9_007_199_254_740_993n
+```
