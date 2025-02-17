@@ -1,35 +1,86 @@
-name: Mirror to Public Repo
+#
+# This is a Generic mirror action that will mirror the main branch of the repository to another repository.
+# When enabled on the target repository, it will mirror the changes back to the original repository.
+#
+# The action will run on every push to the main branch of the repository.
+# We will do a rebase from any changes in the target repository to the current repository, and then push the changes to the target Mirror repository.
+# Notice that this procedure can suffer in case of a race condition. If two pushes happen at the same time, the process will fail and manual intervention will be required.
+# GH Action Secrets and Variables required:
+# - secret MIRROR_SSH_KEY_PRIVATE: The private SSH key to access the target (mirror) repository.
+# - variable MIRROR_TO_REPO: The URL of the target (mirror) repository.
+# - variable MIRROR_TO_BRANCH: The branch of the target (mirror) repository. (should pre-exist)
+
+
+
+name: Mirror
 
 on:
   push:
     branches:
       - main
+
 jobs:
   mirror:
     runs-on: ubuntu-latest
+    env:
+      MIRROR_TO_REPO: ${{ vars.MIRROR_TO_REPO }}
+      MIRROR_TO_BRANCH: ${{ vars.MIRROR_TO_BRANCH }}
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
           fetch-depth: 0
-        
+
       - name: Set up Git config
-        run: |
-          git config --global user.email "tech@dusk.network"
-          git config --global user.name "Dusk Network"
+        uses: fregante/setup-git-user@v2
 
       - name: create private ssh key file
         run: |
           mkdir -pm 700 ~/.ssh/
-          echo -e "$SSH_KEY_DUSK_DOCS_PUBLIC\n\n" > ~/.ssh/id_ed25519
+          echo -e "$MIRROR_SSH_KEY_PRIVATE\n\n" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           find ~/.ssh -ls
         env:
-          SSH_KEY_DUSK_DOCS_PUBLIC: ${{ secrets.SSH_KEY_DUSK_DOCS_PUBLIC }}
-        
-      - name: Push to public mirror
-        env:
-          PUBLIC_REPO_URL: git@github.com:dusk-network/docs-public.git
+          MIRROR_SSH_KEY_PRIVATE: ${{ secrets.MIRROR_SSH_KEY_PRIVATE }}
+
+      - name: Add remote and get head commit
+        id: mirror_repo
         run: |
-          set -x
-          git push "$PUBLIC_REPO_URL" main --force
+          git remote add mirrorto "$MIRROR_TO_REPO"
+          git fetch mirrorto $MIRROR_TO_BRANCH
+
+          MIRROR_LATEST_SHA=$(git ls-remote --heads mirrorto $MIRROR_TO_BRANCH | cut -f1)
+          echo "MIRROR_LATEST_SHA=$MIRROR_LATEST_SHA" | tee -a $GITHUB_OUTPUT
+
+      - name: Summary
+        shell: bash
+        run: |
+          (
+          echo "# Information"; echo;
+          echo '- MIRROR_TO_REPO: `'$MIRROR_TO_REPO'`'
+          echo '- Our current sha: `'$GITHUB_SHA'`'
+          echo '- MIRROR_LATEST_SHA: `'$MIRROR_LATEST_SHA'`'
+
+          if [[ "$GITHUB_SHA" = "$MIRROR_LATEST_SHA" ]]; then
+            echo; echo "No changes to push"
+          else
+            echo; echo "Changes to push"; echo
+            echo "# Pushed commits"; echo;
+            echo '```'
+            git log --pretty=format:"%h%x09%an%x09%s" $MIRROR_LATEST_SHA..$GITHUB_SHA
+            echo; echo '```'
+          fi
+          ) | tee -a $GITHUB_STEP_SUMMARY
+        env:
+          GITHUB_SHA: ${{ github.sha }}
+          MIRROR_LATEST_SHA: ${{ steps.mirror_repo.outputs.MIRROR_LATEST_SHA }}
+
+      - name: Rebase current commits over the latest changes
+        if: steps.mirror_repo.outputs.MIRROR_LATEST_SHA != github.sha
+        run: |
+          git rebase mirrorto/$MIRROR_TO_BRANCH
+
+      - name: Push to public mirror
+        if: steps.mirror_repo.outputs.MIRROR_LATEST_SHA != github.sha
+        run: |
+          set -xe
+          git push "$MIRROR_TO_REPO" $MIRROR_TO_BRANCH
