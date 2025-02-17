@@ -211,3 +211,32 @@ WantedBy=multi-user.target
 #### How can I configure the mempool timout?
 
 The node installer sets a default value, but you can customize the mempool timeout by editing the [rusk.toml](https://github.com/dusk-network/node-installer/blob/main/conf/rusk.toml#L9) configuration file.
+
+#### How can I perform a liveness check on my node?
+
+To check if your node is live and functioning properly, you can:
+
+##### A) Check the block height
+
+To see the current block height detected by the node, launch:
+
+```bash
+ruskquery block-height
+```
+
+Monitor it over a period of time to ensure the block height is progressing.
+
+##### B) Check peer connectivity
+To view the current number of connected peers, you can launch:
+
+```bash
+ruskquery peers
+```
+
+##### C) Check service status
+If you're running the node as a service, you can verify its status with:
+
+```bash
+systemctl status rusk
+```
+
