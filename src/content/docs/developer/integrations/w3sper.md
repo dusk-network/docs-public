@@ -44,7 +44,7 @@ The WASM file can be fetched from:
 
 - **Mainnet:** https://nodes.dusk.network/static/drivers/wallet-core.wasm
 - **Testnet:** https://testnet.nodes.dusk.network/static/drivers/wallet-core.wasm
-- **Localhost:** http://localhost:8080/static/drivers/wallet-core.wasm
+- **Localhost:**
 
 This implies that while `getLocalWasmBuffer()` is needed for local execution, it’s not required for online transactions.
 
@@ -63,9 +63,6 @@ export function getLocalWasmBuffer() {
 :::note[Tip]
 Using `getLocalWasmBuffer` is needed for **offline** profile generation, but not it is not needed when executing transactions, checking balances, or querying data.
 :::
-
-
-
 
 
 ### Load the protocol driver
@@ -131,7 +128,6 @@ console.log(defaultProfile.account.toString());
 
 // You could write the output to a file or into storage depending on your needs.
 ```
-
 
 
 ### Create transaction
