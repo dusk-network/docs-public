@@ -82,3 +82,16 @@ Ensure you're using the latest version of `rusk-wallet`. Update by cloning the r
 ```bash
 cargo install --path rusk/rusk-wallet
 ```
+
+
+#### "PersistenceError" caused by "InvalidData"
+This error indicates that your node's state is corrupted. To fix this, reload from a snapshot by running:
+
+```bash
+download_state
+```
+(and confirm the warning by typing 'Y'). Then, restart the node with:
+
+```bash
+service rusk start
+```
