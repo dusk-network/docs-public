@@ -16,17 +16,84 @@ The W3sper SDK includes the following core features:
 - **Proof Management**: generate and delegate Zero Knowledge proofs.
 
 
-## Implementations
+## Implementation
 
-The W3sper SDK is making use of WASM, and is available in two implementations:
+The W3sper SDK is making use of WASM, and it is a JavaScript-based SDK designed for web applications, allowing for seamless integration with browser-based DApps:
 
-- **Web SDK**: a JavaScript-based SDK designed for web applications, allowing for seamless integration with browser-based DApps.
-- **Native SDK**: built in Rust and available in a separate repository, ideal for native applications requiring high-performance execution.
-
-<a href="https://github.com/dusk-network/rusk/tree/master/w3sper.js" target="_blank">Use the W3sper SDK</a>
+<a href="https://github.com/dusk-network/rusk/tree/master/w3sper.js" target="_blank">**Use the W3sper SDK**</a>
 
 
 ## Examples
+
+
+### Loading a WASM
+
+If `getLocalWasmBuffer()` is not specified, W3sper will automatically download the WebAssembly (`wallet-core.wasm`) from the default remote source.
+
+```js
+import { Network, useAsProtocolDriver } from "@dusk/w3sper";
+
+// Connects to the default network (automatically fetching Wasm)
+const network = await Network.connect("https://nodes.dusk.network");
+
+// W3sper will fetch `wallet-core.wasm` from the appropriate source
+await useAsProtocolDriver();
+```
+
+The WASM file can be fetched from:
+
+- **Mainnet:** https://nodes.dusk.network/static/drivers/wallet-core.wasm
+- **Testnet:** https://testnet.nodes.dusk.network/static/drivers/wallet-core.wasm
+- **Localhost:**
+
+This implies that while `getLocalWasmBuffer()` is needed for local execution, it’s not required for online transactions.
+
+The below function loads the **wallet_core.wasm** file:
+
+```bash
+const WASM_RELEASE_PATH = "../../bin/wallet_core.wasm";
+
+export function getLocalWasmBuffer() {
+    if (typeof Deno !== "undefined") {
+        return Deno.readFile(WASM_RELEASE_PATH);
+    }
+    return Promise.reject("Can't access file system");
+}
+```
+:::note[Tip]
+Using `getLocalWasmBuffer` is needed for **offline** profile generation, but not it is not needed when executing transactions, checking balances, or querying data.
+:::
+
+
+### Load the protocol driver
+
+Some examples depend on `ProfileGenerator` , which requires the protocol driver. If it's not loaded, you'll get the error:
+
+`no protocol driver loaded yet. call 'load' first.`
+
+By wrapping the logic inside `useAsProtocolDriver()`, you can ensure that the protocol driver stays in memory while profiles are being generated:
+
+```js
+import { useAsProtocolDriver } from "@dusk/w3sper";
+
+await useAsProtocolDriver(await getLocalWasmBuffer()).then(async () => {
+    const profiles = new ProfileGenerator(seeder);
+    const defaultProfile = await profiles.default;
+    console.log(defaultProfile.account.toString());
+});
+```
+
+This ensures `ProfileGenerator` only runs when the protocol driver is available, preventing premature cleanup that would unload the WASM before profile generation is complete.
+
+
+### Ensure that the seeder is correctly used
+
+The seeder is defined as an `async` function that returns a `Uint8Array`. This means that you need to make sure to pass the resolved seed to `ProfileGenerator`:
+
+```js
+const seed = await seeder();
+const profiles = new ProfileGenerator(seed);
+```
 
 ### Generate a profile using a BIP39 generated seed
 
@@ -61,6 +128,7 @@ console.log(defaultProfile.account.toString());
 
 // You could write the output to a file or into storage depending on your needs.
 ```
+
 
 ### Create transaction
 
@@ -194,7 +262,6 @@ console.log(blockHeight);
 await network.disconnect();
 ```
 
-
 ### Convert between DUSK and LUX units
 
 _This code can be run in an offline environment_
@@ -217,3 +284,4 @@ console.log(lux.parseFromDusk("1"));                    // BigInt(1e9)
 console.log(lux.parseFromDusk("1234.567890123"));       // 1_234_567_890_123n
 console.log(lux.parseFromDusk("9007199.254740993"));    // 9_007_199_254_740_993n
 ```
+
