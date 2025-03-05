@@ -388,7 +388,16 @@ Example for an executed Moonlight transaction.
 
 #### Preverify
 
-This endpoint pre-verifies a transaction without executing or propagating it. The transaction is checked to ensure it conforms to network rules before being propagated or executed.
+This endpoint checks whether a transaction is valid before execution or propagation. It does not broadcast nor execute the transaction: it only verifies its format and validity against network rules, without adding it to the mempool.
+
+:::note[Important]
+The request body must start with `0x` to indicate hex encoding.
+:::
+
+:::note[Note]
+The transaction in this example is invalid: it is only meant to demonstrate the request format. Always replace this with a valid serialized transaction.
+:::
+
 
 **Endpoint**: `/on/transactions/preverify`
 
@@ -397,24 +406,37 @@ This endpoint pre-verifies a transaction without executing or propagating it. Th
 **Example Request**:
 
 ```
-POST https://nodes.dusk.network/on/transactions/preverify
+curl -L -X POST 'https://nodes.dusk.network/on/transactions/preverify' \
+--data-raw '0x01ec00000000000000fa8d31d41cb190cb54fab965d3edba820a8e8fc5cdf5df2ef0b17ed7b318c290808564ec96651502cb086f4e2317de88441376dca3359fcf084a904343591c9c6d420dea1e576a957120af2ea4c46ef9d3bb1394ad3cbc92413c59b1ce518c085001b6532a7b799b7911b4631bb91c07f2d1b10b0641cdb8fdf53bfc8194c9700e22d2fe0068142786be7a79cce92920d2a518dd851e2d7ee65addb2d79f7a8f8487d6df24627a5bf74428e060be27adca21250cb3382c2a4c8b4a78b699c1d752c940420f0000000000000000000000000000e1f50500000000010000000000000000010000000000000000a1684a2771ef0a7c71f1e681951e98c823c0eeac4a9aab1f561223b68b35d0dc25b0ffdad5aa89f78fd859b94a1ae184'
 ```
 
 **Request Body**:
 
-The request body should contain the raw binary representation of a transaction.
+The request body should contain a hex-encoded, serialized transaction, prefixed with `0x`. Ensure that the transaction is properly serialized before submission.
+
+Example below is truncated for readability:
 
 ```
-a9909cd1...580a0000
+0xa9909cd1...580a0000
 ```
 
 **Example Response**:
 
-Upon success, the transaction will be pre-verified, but no specific data is returned unless there is an error.
+Upon success, the transaction is pre-verified, but no specific data is returned unless there is an error.
+
 
 #### Propagate
 
-This endpoint propagates a transaction across the network.
+This endpoint propagates a transaction across the network so that nodes can process it and include it in the blockchain.
+
+:::note[Important]
+The request body must start with `0x` to indicate hex encoding.
+:::
+
+:::note[Note]
+The transaction in this example is invalid: it is only meant to demonstrate the request format. Always replace this with a valid serialized transaction.
+:::
+
 
 **Endpoint**: `/on/transactions/propagate`
 
@@ -423,20 +445,26 @@ This endpoint propagates a transaction across the network.
 **Example Request**:
 
 ```
-POST https://nodes.dusk.network/on/transactions/propagate
+curl -L -X POST 'https://nodes.dusk.network/on/transactions/propagate' \
+--data-raw '0x01ec00000000000000fa8d31d41cb190cb54fab965d3edba820a8e8fc5cdf5df2ef0b17ed7b318c290808564ec96651502cb086f4e2317de88441376dca3359fcf084a904343591c9c6d420dea1e576a957120af2ea4c46ef9d3bb1394ad3cbc92413c59b1ce518c085001b6532a7b799b7911b4631bb91c07f2d1b10b0641cdb8fdf53bfc8194c9700e22d2fe0068142786be7a79cce92920d2a518dd851e2d7ee65addb2d79f7a8f8487d6df24627a5bf74428e060be27adca21250cb3382c2a4c8b4a78b699c1d752c940420f0000000000000000000000000000e1f50500000000010000000000000000010000000000000000a1684a2771ef0a7c71f1e681951e98c823c0eeac4a9aab1f561223b68b35d0dc25b0ffdad5aa89f78fd859b94a1ae184'
 ```
 
 **Request Body**:
 
-The request body should contain the raw binary representation of a transaction.
+
+The request body should contain a hex-encoded, serialized transaction, prefixed with `0x`. Ensure that the transaction is properly serialized before submission.
+
+
+
+Example below is truncated for readability:
 
 ```
-a9909cd1...580a0000
+0xa9909cd1...580a0000
 ```
 
 **Example Response**:
 
-Upon success, the transaction will be propagated across the network. This endpoint returns a response indicating success but no specific data.
+Upon success, the transaction is propagated across the network. This endpoint returns a response indicating success but no specific data.
 
 ### Contracts
 
