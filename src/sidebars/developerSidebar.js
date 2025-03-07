@@ -36,6 +36,11 @@ export default function sidebar(currentPath) {
             },
             {
                 type: "link",
+                label: "Stake Abstraction",
+                href: "/developer/smart-contract/hyperstaking_tech",
+            },
+            {
+                type: "link",
                 label: "FAQ",
                 href: '/developer/smart-contract/faq'
             },

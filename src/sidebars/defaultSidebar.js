@@ -10,6 +10,7 @@ const defaultSidebar = [
       { label: "Web Wallet", link: "learn/web-wallet" },
       { label: "Tokenomics", link: "learn/tokenomics" },
       { label: "Transaction Fees & Gas", link: "learn/tx-fees" },
+      { label: "Stake Abstraction", link: "learn/hyperstaking" },
       { label: "Transaction Models", link: "learn/tx-models" },
       { label: "Wallet Terminology", link: "learn/wallet-terminology" },
       { label: "Token Standards", link: "learn/token-standards" },
