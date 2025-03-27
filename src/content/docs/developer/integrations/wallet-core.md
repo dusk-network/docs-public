@@ -175,4 +175,4 @@ console.log("propagating chain request status: " + propagateReq.status);
 ```
 You should receive a `200` status code for each request if successful.
 
-The [rusk-wallet](/docs/learn/rusk-wallet) library is an example of how to do these operations, and you can refer to it until more complete documentation is available.
+The [rusk-wallet](/learn/rusk-wallet) library is an example of how to do these operations, and you can refer to it until more complete documentation is available.
