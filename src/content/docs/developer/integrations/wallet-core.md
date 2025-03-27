@@ -3,20 +3,18 @@ title: Wallet Core Library
 description: Integrate with Dusk Wallet-Core library to manage transactions.
 ---
 
-This is documentation for how to use the wallet-core library from any programming language of your preference. 
+This documentation explains how to use the <a href="https://github.com/dusk-network/rusk/tree/master/wallet-core" target="_blank">wallet-core</a> library from any programming language of your preference. 
 
-This wallet-core is used in a js library for the web and a rust library (rusk-wallet). They are both examples on how to use this library.
+`wallet-core`is used in a JS library for the web and a Rust library ([rusk-wallet](/learn/rusk-wallet)). They both serve as examples of how to use this library.
 
 This wiki documents how to sign transactions or extend your own code to talk to the blockchain.
 
-**NOTE**: When calling any ffi functions in the library, refer to the latest documentation of the type of the arguments of the function, every function takes a json argument.
-
-Types are defined in `assets/schema.json` and a types.rs is generated with the documented types.
+:::note[Note]
+When calling any FFI functions, refer to the latest documentation for the argument types. Each function takes a JSON argument. Types are defined in `assets/schema.json`, and a `types.rs` file is generated accordingly.
+:::
 
 ## Creating a transaction
-
-The transaction creation happens with the [`execute`](https://github.com/dusk-network/wallet-core/blob/main/src/ffi.rs#L131) function in the `wallet-core`
-this gives out the bytes for the unproven transaction which we'll learn how to prove later on...
+Transaction creation happens via the [`execute`](https://github.com/dusk-network/wallet-core/blob/main/src/ffi.rs#L131) function in `wallet-core`. This returns the bytes for the unproven transaction, which we'll learn how to prove later on...
 
 ```js
  const output = {
@@ -46,9 +44,10 @@ const json = {
 const bytes = call_execute(wasm, json);
 ```
 
-This gives out the bytes of the unproven transaction, before proving that, lets call more complicated method like stake.
+This gives out the bytes of the unproven transaction, before proving that, let's call a more complicated method, like `stake`.
 
-We call [`get_stct_proof`](https://github.com/dusk-network/wallet-core/blob/main/src/compat/stake.rs#L43) to get the proof we needed to embed in the transaction
+We call [`get_stct_proof`](https://github.com/dusk-network/wallet-core/blob/main/src/compat/stake.rs#L43) to get the proof needed to embed in the transaction:
+
 ```js
 const getStctProofArgs = {
     "rng_seed": [...],
@@ -63,7 +62,7 @@ const getStctProofArgs = {
 const { bytes, signature, crossover, blinder, fee } = call_get_stct_proof(wasm, getStctProofArgs);
 ```
 
-Now we need to obtain the stct proof from the prover, to do that we just
+Now we need to obtain the `stct` proof from the prover, to do that we just:
 
 ```js
 const stctProofReq = await request(
@@ -76,10 +75,7 @@ const stctProofReq = await request(
 );
 ```
 
-Then we get the call data required for this transaction since it's a different contract on the blockchain
-
-
-to do that we call [`get_stake_call_data`](https://github.com/dusk-network/wallet-core/blob/main/src/compat/stake.rs#L153)
+Since this involves a different contract on the blockchain, we need to get the call data by calling  [`get_stake_call_data`](https://github.com/dusk-network/wallet-core/blob/main/src/compat/stake.rs#L153):
 
 ```js
 const getStakeCallDataArgs = {
@@ -93,7 +89,7 @@ const getStakeCallDataArgs = {
 const { contract, method, payload } = call_stake_call_data(wasm, getStakeCallDataArgs);
 ```
 
-Now we just call execute like we did for transfer but with the following callData
+Now we just call execute like we did for transfer but with the following `callData`:
 
 ```js
 const callData = {
@@ -112,7 +108,8 @@ const { tx } =  call_execute(wasm, json);
 
 ## Proving
 
-Then we convert the rkyv serialized unproven transaction to var bytes using 
+Then we convert the rkyv serialized unproven transaction to variable `bytes` using:
+
 ```js
 const args = JSON.stringify({
    bytes: unprovenTx,
@@ -121,9 +118,9 @@ const args = JSON.stringify({
 const txSerialized = jsonFromBytes(call(wasm, args, wasm.unproven_tx_to_bytes)).serialized;
 ```
 
-Now we can send it to the node for proving!
+Then, we can send it to the node for proof generation.
 
-To obtain the proof, send the prove_execute request to the node
+To obtain the proof, send the `prove_execute` request to the node:
 
 ```js
 // send the prove execute
@@ -148,7 +145,7 @@ const args = JSON.stringify({
 const provedTx = jsonFromBytes(call(wasm, args, wasm.prove_tx));
 ```
 
-Now you have to preverify the transaction before propagating it to the blockchain
+Now you have to preverify the transaction before propagating it to the blockchain:
 
 ```js
 // preverify the proved tx
@@ -176,6 +173,6 @@ const propagateReq = await request(
 
 console.log("propagating chain request status: " + propagateReq.status);
 ```
-And we should get 200 request for everything.
+You should receive a `200` status code for each request if successful.
 
-The rusk-wallet library is an example of how to do these operations, refer to it until more fuller documentation is online.
+The [rusk-wallet](/learn/rusk-wallet) library is an example of how to do these operations, and you can refer to it until more complete documentation is available.
