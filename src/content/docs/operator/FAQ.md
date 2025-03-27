@@ -35,6 +35,7 @@ You can launch `ruskquery info` to check the chain ID of your node. If you have 
 
 One epoch consists of **2160** blocks.
 
+
 ## Staking
 
 #### What is the minimum amount of DUSK I must stake?
@@ -79,6 +80,15 @@ You can use:
 ```bash
 rusk-wallet moonlight-stake --amt 3000
 ```
+
+#### How to resume validating again after an missing an upgrade?
+If you didn't upgrade your node on time, you need to: 
+- Unstake full amount
+- Upgrade your node
+- Use `download_state` to get you back to a recent block
+- Start node again and wait until it's fully synced
+- Stake again
+
 
 #### How can I run a Dusk node on Docker?
 We don't support a production-ready Docker image for Rusk. To run Rusk through Docker as ephemeral (non-persistent storage), you can use the following command: 
