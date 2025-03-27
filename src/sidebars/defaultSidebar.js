@@ -4,21 +4,24 @@ const defaultSidebar = [
     label: "Learn about Dusk",
     items: [
       { label: "Introduction", link: "learn/introduction" },
+      { label: "Native Issuance", link: "learn/tokenization-comparison" },
       { label: "Core Values", link: "learn/core-values" },
       { label: "Core Components", link: "learn/core-components" },
-      { label: "Block Explorer", link: "learn/block-explorer" },
-      { label: "Web Wallet", link: "learn/web-wallet" },
       { label: "Tokenomics", link: "learn/tokenomics" },
+      { label: "Wallet Terminology", link: "learn/wallet-terminology" },
+      { label: "Transaction Models", link: "learn/tx-models" },
       { label: "Transaction Fees & Gas", link: "learn/tx-fees" },
       { label: "Stake Abstraction", link: "learn/hyperstaking" },
-      { label: "Transaction Models", link: "learn/tx-models" },
-      { label: "Wallet Terminology", link: "learn/wallet-terminology" },
-      { label: "Token Standards", link: "learn/token-standards" },
-      { label: "Native Issuance", link: "learn/tokenization-comparison" },
       { label: "Get involved & Community", link: "learn/community" },
-      { label: "Verify Team Account", link: "learn/verify-team-account" },
-      { label: "Rusk Wallet", link: "learn/rusk-wallet" },  
       { label: "Glossary", link: "learn/glossary" },
+    ],
+  },
+  {
+    label: "Tools",
+    items: [
+      { label: "Block Explorer", link: "learn/block-explorer" },
+      { label: "Web Wallet", link: "learn/web-wallet" },
+      { label: "Rusk Wallet", link: "learn/rusk-wallet" },
     ],
   },
   {
@@ -30,6 +33,7 @@ const defaultSidebar = [
       { label: "Restore Block Height", link: "/learn/guides/restore-height/" },
       { label: "Dusk-ERC20 Staking", link: "/learn/guides/erc20-staking/" },
       { label: "BEP2 Migration", link: "/learn/guides/bep2-migration/" },
+      { label: "Verify Team Account", link: "learn/verify-team-account" },  
     ],
   },
   {
@@ -104,6 +108,10 @@ const defaultSidebar = [
       {
         label: "Slashing",
         link: "learn/deep-dive/slashing"
+      },
+
+      { label: "Token Standards", 
+        link: "learn/token-standards" 
       },
       {
         label: "Additional Resources",
