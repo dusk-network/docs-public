@@ -18,7 +18,7 @@ To access the blockchain you can either:
 
 You can interact with the blockchain and submit transactions by operating a Dusk node.
 
-To set up a node, you may choose to use the node installer](/operator/guides/provisioner-node/#node-installer) or manually install Rusk by following the provided [installation instructions](/operator/installation).
+To set up a node, you may choose to use the [node installer](/operator/guides/provisioner-node/#node-installer) or manually install Rusk by following the provided [installation instructions](/operator/installation).
 
 Requirements vary depending on whether you are configuring a [Provisioner](/operator/provisioner) node or an [Archive](/operator/archive-node) node.
 
@@ -31,32 +31,38 @@ Dusk offers a streamlined event system through the [Rusk Universal Event System 
 
 These links also provide access to archive-related endpoints for comprehensive historical data retrieval.
 
+:::note[Note]
+To avoid service disruptions, it is highly recommended to avoid relying on public endpoints and instead run your own node or use reliable RPC providers.
+::: 
+
 ### Use RPC providers
 
 You can rely on the RPC infrastructure hosted by the community, or run an [archive node](/operator/archive-node) yourself.
 
-## Token Deposits and Withdrawals
+## Token deposits and withdrawals
 
 To monitor deposit and withdrawal events, you can utilize [RUES](/developer/integrations/rues#event-subscriptions) by subscribing via a websocket.
 
 In most cases, 1 block confirmation is sufficient for finality. The only exception to the 1 block finality is when the network is in a rolling finality state, in which up to 5 additional blocks may be required to achieve finality.
 
+You can find a detailed overview of the full transaction lifecycle [here](/developer/integrations/tx-lifecycle).
+
 ## Construct, sign and decode transactions
 
-The [W3sper SDK](https://github.com/dusk-network/rusk/tree/master/w3sper.js) provides address generation, transaction building, signing, and decoding functionalities. It can operate completely offline, without the need for an online wallet or node. 
+The [W3sper SDK](/developer/integrations/w3sper) provides address generation, transaction building, signing, and decoding functionalities. It can operate completely offline, without the need for an online wallet or node. 
 
-The W3sper SDK leverages [wallet-core](https://github.com/dusk-network/dusk-wallet-core) to facilitate offline transaction processing and signing, producing both the transaction hash and signed transaction outputs. 
+The W3sper SDK leverages [wallet-core](/developer/integrations/wallet-core) to facilitate offline transaction processing and signing, producing both the transaction hash and signed transaction outputs. 
 
 The library for transaction serialization and decoding is called [dusk-bytes](https://github.com/dusk-network/dusk-bytes).
 
 
-## Cold Storage Method
+## Cold storage
 
 The [multisig contract](https://github.com/dusk-network/multisig-contract) contains an example of how to do multi-signature transfers, where only *N* out of *M* keys must sign a message to transfer DUSK to another account.
 
 Users get to create accounts owned by multiple different BLS keys, where any important action must be signed (agreed upon) by some configurable portion of those keys.
 
-## Compliance and Legal Opinion
+## Compliance
 
 Dusk is **fully compliant** with key global regulatory frameworks, providing robust adherence to financial and data protection standards:
 
@@ -66,17 +72,38 @@ Dusk is **fully compliant** with key global regulatory frameworks, providing rob
 - MiCA (Markets in Crypto-Assets Regulation)
 - TFR (Transfer of Funds Regulation)
 
-The protocol’s dual-model ([Moonlight](/learn/tx-models#moonlight) and [Phoenix](/learn/tx-models#phoenix)) offers unmatched flexibility while maintaining compliance. 
+The protocol’s dual-model ([Moonlight](/learn/tx-models#moonlight) and [Phoenix](/learn/tx-models#phoenix)) offers a unique design that combines both confidentiality and regulatory compliance. Unlike traditional privacy coins, Dusk doesn't aim for full anonymity, but instead provides both privacy and regulatory compliance.
 
-:::note[Important]
-It is important to note that exchanges only need to support the Moonlight transaction model.
-::: 
+### Compliance in Moonlight (public)
 
 [Moonlight](/learn/tx-models#moonlight) is designed specifically for full transaction transparency, making it ideal for integration with exchanges and ensuring that:
 
 - **CASPs** can easily meet compliance obligations under **AMLD5**, **MiCA**, and **TFR**.
 - There is full support for **KYC**, transaction monitoring, and reporting requirements without any legal or technical barriers.
 
+:::note[Important]
+It is important to note that exchanges **only** need to support the Moonlight transaction model.
+::: 
+
+### Compliance in Phoenix (shielded)
+A user can **only** convert shielded funds to a public address he control, and this is **cryptographically enforced** through signature verification.
+
+This implies that, as long as an exchange does not explicitly share the shielded addresses its users, there is **no way** for deposits to be made via shielded transactions. Even within shielded transfers, the sender’s identity is **always** revealed to the receiver, preventing anonymous inflows.
+
+These design decisions serve an important compliance function:
+
+- 🔐 Conversions between shielded and public balances are **only** possible for the rightful owner.
+- ❌ No shielded-to-public transfers can occur without **cryptographically proven ownership** of the target address.
+- 🛡️ Exchanges are **inherently** protected from untraceable or unauthorized deposits.
+- 🧾 Sender identification is done in **all** shielded transactions.
+
+This architecture makes Dusk fundamentally different from privacy coins, as they focus on full anonimity. Dusk is designed to offer privacy with accountability, enabling full compliance while preserving confidentiality when needed.
+
+:::note[Important]
+It is important to note that exchanges do **not** need to support the Phoenix transaction model.
+::: 
+
+### Legal opinion
 To reinforce confidence in compliance, there is a comprehensive and detailed **legal opinion** confirming adherence to applicable laws and regulations. This document is available for review upon request.
 
 
