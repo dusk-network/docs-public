@@ -83,11 +83,12 @@ rusk-wallet moonlight-stake --amt 3000
 
 #### How to resume validating again after missing an upgrade?
 If you didn't upgrade your node on time, and got soft slashed, you need to: 
-- Unstake full amount
-- Upgrade your node
-- Use `download_state` to get you back to a recent block
-- Start node again and wait until it's fully synced
-- Stake again
+
+1) Unstake full amount
+2) Upgrade your node
+3) Use `download_state` to get you back to a recent block
+4) Start node again and wait until it's fully synced
+5) Stake again
 
 
 #### How can I run a Dusk node on Docker?
