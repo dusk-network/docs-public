@@ -82,7 +82,7 @@ rusk-wallet moonlight-stake --amt 3000
 ```
 
 #### How to resume validating again after missing an upgrade?
-If you didn't upgrade your node on time, you need to: 
+If you didn't upgrade your node on time, and got soft slashed, you need to: 
 - Unstake full amount
 - Upgrade your node
 - Use `download_state` to get you back to a recent block
