@@ -14,8 +14,8 @@
 <a href="https://x.com/DuskFoundation/">
 <img alt="X (formerly Twitter) Follow" src="https://img.shields.io/twitter/follow/DuskFoundation"></a>
 &nbsp;
-<a href="https://github.com/dusk-network/docs/actions/workflows/validate_links.yml">
-<img src="https://github.com/dusk-network/docs/actions/workflows/validate_links.yml/badge.svg" alt="CI"></a>
+<a href="https://github.com/dusk-network/docs-public/actions/workflows/validate_links.yml">
+<img src="https://github.com/dusk-network/docs-public/actions/workflows/validate_links.yml" alt="CI"></a>
 &nbsp;
 <a href="https://starlight.astro.build">
 <img src="https://astro.badg.es/v2/built-with-starlight/tiny.svg" alt="Built with Starlight"></a>
