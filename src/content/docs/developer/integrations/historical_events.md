@@ -22,7 +22,7 @@ Refer to [GraphQL queries](/developer/integrations/rues/#graphql-queries) for ad
 
 ### `moonlightHistory`
 
-Retrieves emitted events from transactions based on sender and/or receiver.
+Retrieves emitted events from transactions based on sender and/or receiver.  The `moonlightHistory' endpoint allows you to specify block ranges (fromBlock, toBlock) to retrieve all transfers within the specified block range. You can also specify a maxCount and a pageCount to limit the number of results returned. Pagination should be used with care as it is offset-based and **not** cursor-based.
 
 #### Example Queries
 
@@ -96,7 +96,7 @@ curl -X POST \
 
 ### `fullMoonlightHistory`
 
-Returns all transactions that have an inflow or outflow of public Dusk for the given address, without the granular filtering options available in `moonlightHistory`.
+Returns all transactions that have an inflow or outflow of public Dusk for the given address, without the granular filtering options available in `moonlightHistory`. The `fullMoonlightHistory' endpoint allows you to specify block ranges (fromBlock, toBlock) to retrieve all transfers within the specified block range.
 
 #### Example Query
 
