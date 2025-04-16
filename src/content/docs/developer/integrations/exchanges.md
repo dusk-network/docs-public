@@ -88,7 +88,7 @@ It is important to note that exchanges **only** need to support the Moonlight tr
 ### Compliance in Phoenix (shielded)
 A user can **only** convert shielded funds to a public address that they control, and this is **cryptographically enforced** through signature verification.
 
-This implies that, as long as an exchange does not explicitly share the shielded addresses its users, there is **no way** for deposits to be made via shielded transactions. Even within shielded transfers, the sender’s identity is **always** revealed to the receiver, preventing anonymous inflows.
+This implies that, as long as an exchange does not explicitly share their shielded addresses to its users, there is **no way** for deposits to be made via shielded transactions. Even within shielded transfers, the sender’s identity is **always** revealed to the receiver, preventing anonymous inflows. An exchange is always able to send back funds received from a shielded address to the owner of the sending address.
 
 These design decisions serve an important compliance function:
 
