@@ -52,8 +52,45 @@ The W3sper SDK leverages [wallet-core](/developer/integrations/wallet-core) to f
 
 The library for transaction serialization and decoding is called [dusk-bytes](https://github.com/dusk-network/dusk-bytes).
 
+## cURLs
 
-## Cold storage
+In this section you can find some examples to retrieve information via cURLs.
+
+### Schema Overview
+
+You can explore the GraphQL schema by making a POST request:
+
+```sh
+curl -s --location --request POST "https://nodes.dusk.network/on/graphql/query"
+```
+
+To see available queries, you can look at the Query type, which lists all callable fields when making a request like:
+
+```sh
+--data-raw 'query { ... }'
+```
+
+### Retrieve Transaction Details by Hash
+
+```bash
+curl -s --location --request POST "https://nodes.dusk.network/on/graphql/query" \
+--data-raw 'query { tx(hash: "59a20ebc71c198eeb7ac2ac55165d26f96b6a9884cebee8575be4e429a56c443") { tx { id, gasLimit, gasPrice, txType, callData { contractId, fnName, data }, isDeploy, memo } err, gasSpent, blockHash, blockHeight, blockTimestamp, id, raw } }'
+```
+
+### Retrieve Block Information by Block Height
+
+```bash
+curl -s --location --request POST "https://nodes.dusk.network/on/graphql/query" \
+--data-raw 'query { block(height: 1000) { header { hash, gasLimit, height, prevBlockHash, seed, stateHash, timestamp, version } } }'
+```
+
+### Retrieve Latest Block
+
+```bash
+curl -s --location --request POST "https://nodes.dusk.network/on/graphql/query" \
+--data-raw 'query { blocks(last: 1) { header { hash, gasLimit, height, prevBlockHash, seed, stateHash, timestamp, version } } }'
+```
+## Cold Storage Method
 
 The [multisig contract](https://github.com/dusk-network/multisig-contract) contains an example of how to do multi-signature transfers, where only *N* out of *M* keys must sign a message to transfer DUSK to another account.
 

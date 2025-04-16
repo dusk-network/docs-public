@@ -53,12 +53,13 @@ export default function sidebar(currentPath) {
         createGroup("Integrate with Dusk", currentPath, [
             { label: "Introduction", href: '/developer/integrations/introduction' },
             { label: "The Wallet Stack", href: '/developer/integrations/wallet-stack' },
-            { label: "Transaction Lifecycle", href: '/developer/integrations/tx-lifecycle' },
             { label: "Wallet Core Library", href: '/developer/integrations/wallet-core' },
+            { label: "Transaction Lifecycle", href: '/developer/integrations/tx-lifecycle' },
             { label: "W3sper SDK", href: '/developer/integrations/w3sper' },
             { label: "RUES", href: '/developer/integrations/rues' },
             { label: "Integrate with Exchanges", href: '/developer/integrations/exchanges' },
             { label: "Hashing Algorithms", href: '/developer/integrations/hashing-algorithms' },
+            { label: "Historical Events", href: '/developer/integrations/archive_endpoints' },
         ],
             false),
         createGroup("Use Digital Identity", currentPath, [
