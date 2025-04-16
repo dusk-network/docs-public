@@ -18,7 +18,7 @@ To access the blockchain you can either:
 
 You can interact with the blockchain and submit transactions by operating a Dusk node.
 
-To set up a node, you may choose to use the node installer](/operator/guides/provisioner-node/#node-installer) or manually install Rusk by following the provided [installation instructions](/operator/installation).
+To set up a node, you may choose to use the [node installer](/operator/guides/provisioner-node/#node-installer) or manually install Rusk by following the provided [installation instructions](/operator/installation).
 
 Requirements vary depending on whether you are configuring a [Provisioner](/operator/provisioner) node or an [Archive](/operator/archive-node) node.
 
@@ -31,21 +31,24 @@ Dusk offers a streamlined event system through the [Rusk Universal Event System 
 
 These links also provide access to archive-related endpoints for comprehensive historical data retrieval.
 
+
 ### Use RPC providers
 
 You can rely on the RPC infrastructure hosted by the community, or run an [archive node](/operator/archive-node) yourself.
 
-## Token Deposits and Withdrawals
+## Token deposits and withdrawals
 
 To monitor deposit and withdrawal events, you can utilize [RUES](/developer/integrations/rues#event-subscriptions) by subscribing via a websocket.
 
 In most cases, 1 block confirmation is sufficient for finality. The only exception to the 1 block finality is when the network is in a rolling finality state, in which up to 5 additional blocks may be required to achieve finality.
 
+You can find a detailed overview of the full transaction lifecycle [here](/developer/integrations/tx-lifecycle).
+
 ## Construct, sign and decode transactions
 
-The [W3sper SDK](https://github.com/dusk-network/rusk/tree/master/w3sper.js) provides address generation, transaction building, signing, and decoding functionalities. It can operate completely offline, without the need for an online wallet or node. 
+The [W3sper SDK](/developer/integrations/w3sper) provides address generation, transaction building, signing, and decoding functionalities. It can operate completely offline, without the need for an online wallet or node. 
 
-The W3sper SDK leverages [wallet-core](https://github.com/dusk-network/dusk-wallet-core) to facilitate offline transaction processing and signing, producing both the transaction hash and signed transaction outputs. 
+The W3sper SDK leverages [wallet-core](/developer/integrations/wallet-core) to facilitate offline transaction processing and signing, producing both the transaction hash and signed transaction outputs. 
 
 The library for transaction serialization and decoding is called [dusk-bytes](https://github.com/dusk-network/dusk-bytes).
 
@@ -93,7 +96,7 @@ The [multisig contract](https://github.com/dusk-network/multisig-contract) conta
 
 Users get to create accounts owned by multiple different BLS keys, where any important action must be signed (agreed upon) by some configurable portion of those keys.
 
-## Compliance and Legal Opinion
+## Compliance
 
 Dusk is **fully compliant** with key global regulatory frameworks, providing robust adherence to financial and data protection standards:
 
@@ -103,17 +106,48 @@ Dusk is **fully compliant** with key global regulatory frameworks, providing rob
 - MiCA (Markets in Crypto-Assets Regulation)
 - TFR (Transfer of Funds Regulation)
 
-The protocol’s dual-model ([Moonlight](/learn/tx-models#moonlight) and [Phoenix](/learn/tx-models#phoenix)) offers unmatched flexibility while maintaining compliance. 
+Dusk supports two distinct transaction models, which users can navigate between in a transparent way:
+- [Phoenix](/learn/tx-models#phoenix)enables confidential transactions while maintaining regulatory compliance
+- [Moonlight](/learn/tx-models#moonlight) is a completely transparent and auditable model.
 
-:::note[Important]
-It is important to note that exchanges only need to support the Moonlight transaction model.
-::: 
+Unlike traditional privacy coins, Dusk doesn't aim for full anonymity, but instead provides both privacy and regulatory compliance.
+
+
+### Compliance in Moonlight (public)
 
 [Moonlight](/learn/tx-models#moonlight) is designed specifically for full transaction transparency, making it ideal for integration with exchanges and ensuring that:
 
 - **CASPs** can easily meet compliance obligations under **AMLD5**, **MiCA**, and **TFR**.
 - There is full support for **KYC**, transaction monitoring, and reporting requirements without any legal or technical barriers.
 
+:::note[Important]
+Exchanges **only** need to support the Moonlight transaction model.
+::: 
+
+### Compliance in Phoenix (shielded)
+
+Dusk features a **complete separation between public and shielded transaction models**. These models are built on distinct cryptographic foundations (with different address formats, lengths, and operational rules), ensuring clear boundaries between transparent and confidential transactions.
+
+As a result, **shielded transactions cannot be sent to public addresses**, such as those used by exchanges. The address formats are incompatible by design, preventing accidental routing or unauthorized deposits across the two models.
+
+Importantly, shielded transactions are not anonymous: **the sender's identity is always revealed to the receiver**. This provides full auditability within private transfers and reflects Dusk’s privacy-through-compliance design.
+
+**Shielded funds can only be converted into public balances by the user themselves**. This conversion is cryptographically enforced through signature verification, meaning assets can only be unshielded to a public address the user controls.
+
+As long as exchanges do not share their shielded addresses, they are inherently isolated from receiving shielded deposits. Even if a shielded transaction is received, the sender’s identity is always known, allowing the exchange to safely return funds to the rightful owner.
+
+These design decisions serve an important compliance function:
+
+- 🔄 Conversions are atomic, preserving state integrity between shielded and public balances.
+- 🔐 Only the rightful owner can perform conversions between shielded and public balances, enforced via cryptographic proof.
+- ❌ Shielded-to-public and public-to-shielded transfers are impossible: the two models are cryptographically separated at the protocol level.
+- 🛡️ Exchanges are inherently protected from unauthorized or anonymous deposits, since shielded transactions cannot target public addresses.
+- 🧾 Every shielded transaction reveals the sender’s identity to the receiver, ensuring full traceability.
+
+This architecture makes Dusk fundamentally different from privacy coins, as they focus on full anonimity. Dusk is designed to offer privacy with accountability, enabling full compliance while preserving confidentiality when needed.
+
+
+### Legal opinion
 To reinforce confidence in compliance, there is a comprehensive and detailed **legal opinion** confirming adherence to applicable laws and regulations. This document is available for review upon request.
 
 
