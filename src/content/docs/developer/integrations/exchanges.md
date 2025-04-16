@@ -82,7 +82,7 @@ The protocol’s dual-model ([Moonlight](/learn/tx-models#moonlight) and [Phoeni
 - There is full support for **KYC**, transaction monitoring, and reporting requirements without any legal or technical barriers.
 
 :::note[Important]
-It is important to note that exchanges **only** need to support the Moonlight transaction model.
+Exchanges **only** need to support the Moonlight transaction model.
 ::: 
 
 ### Compliance in Phoenix (shielded)
