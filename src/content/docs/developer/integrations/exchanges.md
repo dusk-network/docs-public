@@ -31,9 +31,6 @@ Dusk offers a streamlined event system through the [Rusk Universal Event System 
 
 These links also provide access to archive-related endpoints for comprehensive historical data retrieval.
 
-:::note[Note]
-To avoid service disruptions, it is highly recommended to avoid relying on public endpoints and instead run your own node or use reliable RPC providers.
-::: 
 
 ### Use RPC providers
 
@@ -72,7 +69,12 @@ Dusk is **fully compliant** with key global regulatory frameworks, providing rob
 - MiCA (Markets in Crypto-Assets Regulation)
 - TFR (Transfer of Funds Regulation)
 
-The protocol’s dual-model ([Moonlight](/learn/tx-models#moonlight) and [Phoenix](/learn/tx-models#phoenix)) offers a unique design that combines both confidentiality and regulatory compliance. Unlike traditional privacy coins, Dusk doesn't aim for full anonymity, but instead provides both privacy and regulatory compliance.
+Dusk supports two distinct transaction models, which users can navigate between in a transparent way:
+- [Phoenix](/learn/tx-models#phoenix)enables confidential transactions while maintaining regulatory compliance
+- [Moonlight](/learn/tx-models#moonlight) is a completely transparent and auditable model.
+
+Unlike traditional privacy coins, Dusk doesn't aim for full anonymity, but instead provides both privacy and regulatory compliance.
+
 
 ### Compliance in Moonlight (public)
 
@@ -86,22 +88,27 @@ Exchanges **only** need to support the Moonlight transaction model.
 ::: 
 
 ### Compliance in Phoenix (shielded)
-A user can **only** convert shielded funds to a public address that they control, and this is **cryptographically enforced** through signature verification.
 
-This implies that, as long as an exchange does not explicitly share their shielded addresses to its users, there is **no way** for deposits to be made via shielded transactions. Even within shielded transfers, the sender’s identity is **always** revealed to the receiver, preventing anonymous inflows. An exchange is always able to send back funds received from a shielded address to the owner of the sending address.
+Dusk features a **complete separation between public and shielded transaction models**. These models are built on distinct cryptographic foundations (with different address formats, lengths, and operational rules), ensuring clear boundaries between transparent and confidential transactions.
+
+As a result, **shielded transactions cannot be sent to public addresses**, such as those used by exchanges. The address formats are incompatible by design, preventing accidental routing or unauthorized deposits across the two models.
+
+Importantly, shielded transactions are not anonymous: **the sender's identity is always revealed to the receiver**. This provides full auditability within private transfers and reflects Dusk’s privacy-through-compliance design.
+
+**Shielded funds can only be converted into public balances by the user themselves**. This conversion is cryptographically enforced through signature verification, meaning assets can only be unshielded to a public address the user controls.
+
+As long as exchanges do not share their shielded addresses, they are inherently isolated from receiving shielded deposits. Even if a shielded transaction is received, the sender’s identity is always known, allowing the exchange to safely return funds to the rightful owner.
 
 These design decisions serve an important compliance function:
 
-- 🔐 Conversions between shielded and public balances are **only** possible for the rightful owner.
-- ❌ No shielded-to-public transfers can occur without **cryptographically proven ownership** of the target address.
-- 🛡️ Exchanges are **inherently** protected from untraceable or unauthorized deposits.
-- 🧾 Sender identification is done in **all** shielded transactions.
+- 🔄 Conversions are atomic, preserving state integrity between shielded and public balances.
+- 🔐 Only the rightful owner can perform conversions between shielded and public balances, enforced via cryptographic proof.
+- ❌ Shielded-to-public and public-to-shielded transfers are impossible: the two models are cryptographically separated at the protocol level.
+- 🛡️ Exchanges are inherently protected from unauthorized or anonymous deposits, since shielded transactions cannot target public addresses.
+- 🧾 Every shielded transaction reveals the sender’s identity to the receiver, ensuring full traceability.
 
 This architecture makes Dusk fundamentally different from privacy coins, as they focus on full anonimity. Dusk is designed to offer privacy with accountability, enabling full compliance while preserving confidentiality when needed.
 
-:::note[Important]
-It is important to note that exchanges do **not** need to support the Phoenix transaction model.
-::: 
 
 ### Legal opinion
 To reinforce confidence in compliance, there is a comprehensive and detailed **legal opinion** confirming adherence to applicable laws and regulations. This document is available for review upon request.
