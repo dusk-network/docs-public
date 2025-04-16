@@ -46,9 +46,9 @@ You can find a detailed overview of the full transaction lifecycle [here](/devel
 
 ## Construct, sign and decode transactions
 
-The [W3sper SDK](/developer/integrations/w3sper) provides address generation, transaction building, signing, and decoding functionalities. It can operate completely offline, without the need for an online wallet or node. 
+The [W3sper SDK](/developer/integrations/w3sper) provides address generation, transaction building, signing, and decoding functionalities. It can operate completely offline, without the need for an online wallet or node.
 
-The W3sper SDK leverages [wallet-core](/developer/integrations/wallet-core) to facilitate offline transaction processing and signing, producing both the transaction hash and signed transaction outputs. 
+The W3sper SDK leverages [wallet-core](/developer/integrations/wallet-core) to facilitate offline transaction processing and signing, producing both the transaction hash and signed transaction outputs.
 
 The library for transaction serialization and decoding is called [dusk-bytes](https://github.com/dusk-network/dusk-bytes).
 
@@ -107,7 +107,7 @@ Dusk is **fully compliant** with key global regulatory frameworks, providing rob
 - TFR (Transfer of Funds Regulation)
 
 Dusk supports two distinct transaction models, which users can navigate between in a transparent way:
-- [Phoenix](/learn/tx-models#phoenix)enables confidential transactions while maintaining regulatory compliance
+- [Phoenix](/learn/tx-models#phoenix) enables confidential transactions while maintaining regulatory compliance
 - [Moonlight](/learn/tx-models#moonlight) is a completely transparent and auditable model.
 
 Unlike traditional privacy coins, Dusk doesn't aim for full anonymity, but instead provides both privacy and regulatory compliance.
@@ -122,19 +122,17 @@ Unlike traditional privacy coins, Dusk doesn't aim for full anonymity, but inste
 
 :::note[Important]
 Exchanges **only** need to support the Moonlight transaction model.
-::: 
+:::
 
 ### Compliance in Phoenix (shielded)
 
 Dusk features a **complete separation between public and shielded transaction models**. These models are built on distinct cryptographic foundations (with different address formats, lengths, and operational rules), ensuring clear boundaries between transparent and confidential transactions.
 
-As a result, **shielded transactions cannot be sent to public addresses**, such as those used by exchanges. The address formats are incompatible by design, preventing accidental routing or unauthorized deposits across the two models.
+As a result, **shielded transactions cannot be sent to public addresses**, such as those used by exchanges. The address formats are incompatible by design, preventing accidental routing or unauthorized deposits across the two models. As long as exchanges do not share their shielded addresses, they are inherently isolated from receiving shielded deposits.
 
-Importantly, shielded transactions are not anonymous: **the sender's identity is always revealed to the receiver**. This provides full auditability within private transfers and reflects Dusk’s privacy-through-compliance design.
+When using shielded transactions, it is important to know that they are not anonymous: **the sender's identity is always revealed to the receiver**. This provides full auditability within private transfers and reflects Dusk’s privacy-through-compliance design. When deciding to use and receive shielded transactions, the sender’s identity is always known, allowing an exchange to safely return funds to the rightful owner.
 
-**Shielded funds can only be converted into public balances by the user themselves**. This conversion is cryptographically enforced through signature verification, meaning assets can only be unshielded to a public address the user controls.
-
-As long as exchanges do not share their shielded addresses, they are inherently isolated from receiving shielded deposits. Even if a shielded transaction is received, the sender’s identity is always known, allowing the exchange to safely return funds to the rightful owner.
+**Shielded funds can only be converted into public balances by the user themselves**. This conversion is cryptographically enforced through signature verification, meaning assets can only be unshielded to a public address the user controls. Furthermore, conversions are atomic and do not allow any other operation or action while a conversion is taking place. This means that a conversion transaction will always contain only the conversion and no contract call, transfer or other operation.
 
 These design decisions serve an important compliance function:
 
@@ -173,7 +171,7 @@ To reinforce confidence in compliance, there is a comprehensive and detailed **l
 - [Tokenomics and metrics](https://docs.dusk.network/learn/tokenomics)
 - Consensus Mechanism: [Succinct Attestation Consensus](https://docs.dusk.network/learn/deep-dive/succinct-attestation)
 
-  
+
 ## Q&As
 ### Status of Hardware Wallet Support
 
@@ -191,7 +189,7 @@ Users are responsible for the fees of Binance Smart Chain and Ethereum.
 
 ### Token Migration
 
-Mainnet is now live, and users can still migrate from ERC-20 DUSK and BEP-20 DUSK to native DUSK by using the [migration contract](https://github.com/dusk-network/dusk-migration) to burn their tokens and release an equivalent amount of DUSK on the Dusk mainnet to the specified target address. 
+Mainnet is now live, and users can still migrate from ERC-20 DUSK and BEP-20 DUSK to native DUSK by using the [migration contract](https://github.com/dusk-network/dusk-migration) to burn their tokens and release an equivalent amount of DUSK on the Dusk mainnet to the specified target address.
 
 More information about the Mainnet migration can be found [here](/learn/guides/mainnet-migration).
 
