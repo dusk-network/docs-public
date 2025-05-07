@@ -249,3 +249,7 @@ starlight-menu-button button {
 .starlight-aside__content a {
 	color: #71b1ff !important;
 }
+
+:root[data-theme="dark"] .starlight-aside--caution {
+	background-color: #ffa423b5;
+  }
