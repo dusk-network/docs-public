@@ -3,7 +3,7 @@ title: Core Concepts
 description: Learn the foundational principles of Dusk’s smart contract platform, including zero-knowledge proofs, privacy, and decentralized execution.
 ---
 
-This page explains in more detail the core concepts, namings, conventions and building blocks for developing smart contracts on Dusk. If you want to dive right into development you can directly go to the [Guides](/developer/smart-contract/guides/my-first-contract).
+This page explains in more detail the core concepts, namings, conventions and building blocks for developing smart contracts on Dusk. If you want to dive right into development, you can directly go to the [Guides](/developer/smart-contract/guides/my-first-contract).
 
 ## State & Persistence
 
@@ -19,7 +19,7 @@ At a programmatic level, this implies that by using Rust, developers can use any
 
 Our smart contract is naturally part of the global blockchain state. Our contract's state partially comes from the bytecode we deploy and the contract metadata, but also the state that is managed within the contract.
 
-This contract state is defined within our contracts as a static mutable constant and often maintains a single struct. This state is naturally a substate of the global state. However, when talking about the state, we usually refer to this constant, because the underlying global state from the blockchain is an implementation detail we do not necessarily need to care about.
+This contract state is defined within our contracts as a static mutable constant and often maintains a single struct. This state is naturally a substate of the global state. However, when talking about the state, we usually refer to this constant because the underlying global state from the blockchain is an implementation detail we do not necessarily need to care about.
 
 An example state of a counter contract that maintains a single counter value would look like this:
 ```rust
@@ -44,7 +44,7 @@ Because the **core** crate lacks heap memory allocations, we can explicitly also
 
 ### Usage of panic & reverting state
 
-While you can have Result types in your smart contracts and handle them in multiple function calls, in the end you may want to abort execution. For example if a specific requirement is not satisfied you can always make use of directives that lead to panic (e.g. `.expect()` or `panic!()`). This is equivalent to `require()` in Solidity. It will abort the smart contract execution and let the transaction [fail](/learn/tx-fees#unsuccessful-transactions). This will also **revert** the state, making no changes to it.
+While you can have Result types in your smart contracts and handle them in multiple function calls, in the end you may want to abort execution. For example if a specific requirement is not satisfied you can always make use of directives that lead to panic (e.g., `.expect()` or `panic!()`). This is equivalent to `require()` in Solidity. It will abort the smart contract execution and let the transaction [fail](/learn/tx-fees#unsuccessful-transactions). This will also **revert** the state, making no changes to it.
 
 ## UTXO & Account-model
 
@@ -256,3 +256,17 @@ Smart contracts on Dusk can use events as a lightweight mechanism to provide fee
 Events serve as a logging mechanism that facilitates interactions between various applications and can be emitted by either queries or transactions. Events can be processed post-call by the caller, which can then execute its logic accordingly.
 
 Clients can subscribe to events emitted by both smart contracts and nodes by using the <a href="https://github.com/dusk-network/rusk/wiki/RUES-(Rusk-Universal-Event-System)" target="_blank">Rusk Universal Event System</a>.
+
+
+### ICC panic behaviour
+
+In Dusk’s inter-contract call (ICC) model, a contract panic (e.g. from a failed assertion) behaves very differently from an EVM-style revert (e.g., as in Ethereum). In Dusk, a panic only rolls back the state changes of the called contract itself, not the entire transaction. When a contract panics, it returns a `PanicError` to the caller contract, and the caller’s execution can choose how to handle it. If the caller does not explicitly handle the panic, execution simply continues after the call.
+
+For example, suppose Contract A calls Contract B, and B encounters a panic. Rusk will automatically discard any state changes B made before panicking and then return an error receipt up to A. If A’s code does not catch this error, A’s execution resumes normally. A can use a try/catch-style pattern to detect the panic and respond to it. 
+
+Dusk ensures that only the failing contract’s work is undone by default, and your contract must explicitly handle panics from other contracts. While in the EVMs any unhandled revert in a sub-call automatically aborts the entire transaction, Dusk's design allows for a more granular error recovery. 
+
+
+:::note[Note]
+A Dusk contract panic only undoes its own changes and returns a `PanicError` to the caller. The caller can catch and handle it or ignore it. This fundamental difference means Dusk contracts must be written to explicitly check for and handle panic errors from calls.
+:::
