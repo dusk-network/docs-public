@@ -86,7 +86,7 @@ rusk-wallet help
 
 A stake in Dusk is defined by two keys:  
 - **Consensus key:** used to participate in consensus.  
-- **Owner key:** entitled to unstake or withdraw the DUSK.  
+- **Owner key:** entitled to unstake or withdraw DUSK.  
 
 By default, the Rusk Wallet uses your wallet’s consensus key as the owner key. If you omit the owner flag, both consensus activities and stake ownership will be tied to the same consensus key.
 
