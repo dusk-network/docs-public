@@ -81,3 +81,29 @@ To explore all available commands, you can run:
 ```bash
 rusk-wallet help
 ```
+
+## Staking with an owner key
+
+A stake in Dusk is defined by two keys:  
+- **Consensus key:** used to participate in consensus.  
+- **Owner key:** entitled to unstake or withdraw DUSK.  
+
+By default, the Rusk Wallet uses your wallet’s consensus key as the owner key. If you don't specify an owner, both consensus activities and stake ownership will be tied to the same consensus key.
+
+However, you can override this behavior by passing `--owner <address>`, for example:
+
+```bash
+# Stake 2000 DUSK with a custom owner
+rusk-wallet stake --amt 2000 --owner ADDo5VBg8q…Kb1jZFmWr
+```
+
+Alternatively, you can simply omit the `--owner <address>` flag:
+```bash
+# Stake 1000 DUSK with a default owner key
+rusk-wallet stake --amt 1000
+```
+so that the owner key is the consensus key.
+
+:::note[Important]
+if you choose a non-consensus key as the owner, keep in mind that only that owner key can later unstake or withdraw those funds.
+:::
