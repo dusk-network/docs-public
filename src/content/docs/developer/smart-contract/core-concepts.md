@@ -89,7 +89,7 @@ Rusk provides built-in functions that can be called from within a smart contract
 
 ### Host functions
 
-Host functions are functions provided by rusk (the "host") and can be called from within a smart contract running on the VM. Due to the sandboxed nature of VMs, smart contracts need to rely on host functions to access and manipulate lower-level operations that are managed by the Dusk nodes (e.g. time checks, cryptographic functions...).
+Host functions are functions provided by rusk (the "host") and can be called from within a smart contract running on the VM. Due to the sandboxed nature of VMs, smart contracts need to rely on host functions to access and manipulate lower-level operations that are managed by the Dusk nodes (e.g., time checks, cryptographic functions...).
 
 Simply put, host functions are necessary because they allow smart contracts to interact with the system-level functions of the machine on which they run.
 
@@ -235,7 +235,7 @@ The most important feature flag `dusk-core` exposes is the `abi-dlmalloc` featur
 
 In order for smart contract functions to be accessible via transactions on Dusk, they need to be exposed using features provided by `dusk-core`. Exporting those functions is being done through `dusk_core::abi::wrap_call`. An example for that can be found in the [Guide](/developer/smart-contract/guides/my-first-contract#expose-functions).
 
-The `dusk_core::abi::wrap_call` function serves to wrap contract methods in a way that ensures they can be safely and effectively called by the host environment. This ensures that any errors that occur during the execution of the function are caught and handled appropriately, avoiding uncontrolled errors that can affect the VM state. Wrapping the call also helps converting inputs and outputs between the formats expected by the smart contract and those used by the host environment (e.g. data type conversions), as well as performing security checks.
+The `dusk_core::abi::wrap_call` function serves to wrap contract methods in a way that ensures they can be safely and effectively called by the host environment. This ensures that any errors that occur during the execution of the function are caught and handled appropriately, avoiding uncontrolled errors that can affect the VM state. Wrapping the call also helps converting inputs and outputs between the formats expected by the smart contract and those used by the host environment (e.g., data type conversions), as well as performing security checks.
 
 ##### no_mangle
 
@@ -260,7 +260,7 @@ Clients can subscribe to events emitted by both smart contracts and nodes by usi
 
 ### ICC panic behaviour
 
-In Dusk’s inter-contract call (ICC) model, a contract panic (e.g. from a failed assertion) behaves very differently from an EVM-style revert (e.g., as in Ethereum). In Dusk, a panic only rolls back the state changes of the called contract itself, not the entire transaction. When a contract panics, it returns a `PanicError` to the caller contract, and the caller’s execution can choose how to handle it. If the caller does not explicitly handle the panic, execution simply continues after the call.
+In Dusk’s inter-contract call (ICC) model, a contract panic (e.g., from a failed assertion) behaves very differently from an EVM-style revert (e.g., as in Ethereum). In Solidity, a failed `require` immediately triggers a revert that rolls back all state changes in the entire transaction, even across multiple contract calls. In Dusk, a panic only rolls back the state changes of the called contract itself, not the entire transaction. When a contract panics, it returns a `PanicError` to the caller contract, and the caller’s execution can choose how to handle it. If the caller does not explicitly handle the panic, execution simply continues after the call.
 
 For example, suppose Contract A calls Contract B, and B encounters a panic. Rusk will automatically discard any state changes B made before panicking and then return an error receipt up to A. If A’s code does not catch this error, A’s execution resumes normally. A can use a try/catch-style pattern to detect the panic and respond to it. 
 
