@@ -54,7 +54,7 @@ The library for transaction serialization and decoding is called [dusk-bytes](ht
 
 ## Memo field support
 
-Dusk transactions also support a memo field, allowing exchanges to attach a short reference. to each transaction. This is particularly useful for labeling deposits or withdrawals with user identifiers or order references.
+Dusk transactions also support a memo field, allowing exchanges to attach a short reference to each transaction. This is particularly useful for labeling deposits or withdrawals with user identifiers or order references.
 
 ## cURLs
 
