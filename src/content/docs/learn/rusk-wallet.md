@@ -82,7 +82,7 @@ To explore all available commands, you can run:
 rusk-wallet help
 ```
 
-## Staking with a owner key
+## Staking with an owner key
 
 A stake in Dusk is defined by two keys:  
 - **Consensus key:** used to participate in consensus.  
