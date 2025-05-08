@@ -52,6 +52,10 @@ The W3sper SDK leverages [wallet-core](/developer/integrations/wallet-core) to f
 
 The library for transaction serialization and decoding is called [dusk-bytes](https://github.com/dusk-network/dusk-bytes).
 
+## Memo field support
+
+Dusk transactions also support a memo field, allowing exchanges to attach a short reference to each transaction. This is particularly useful for labeling deposits or withdrawals with user identifiers or order references.
+
 ## cURLs
 
 In this section you can find some examples to retrieve information via cURLs.
