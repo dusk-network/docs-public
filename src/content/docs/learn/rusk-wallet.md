@@ -105,5 +105,5 @@ rusk-wallet stake --amt 1000
 so that the owner key is the consensus key.
 
 :::note[Important]
-if you choose a non-consensus key as owner, keep in mind that only that owner key can later unstake or withdraw these funds.
+if you choose a non-consensus key as the owner, keep in mind that only that owner key can later unstake or withdraw those funds.
 :::
