@@ -31,7 +31,7 @@ const defaultSidebar = [
       { label: "Mainnet Onramp", link: "/learn/guides/dusk-mainnet-onramp/" },
       { label: "Mainnet DUSK Migration", link: "/learn/guides/mainnet-migration/" },
       { label: "Restore Block Height", link: "/learn/guides/restore-height/" },
-      { label: "Dusk-ERC20 Staking", link: "/learn/guides/erc20-staking/" },
+      { label: "Withdraw staked ERC-20 DUSK", link: "/learn/guides/erc20-staking/" },
       { label: "BEP2 Migration", link: "/learn/guides/bep2-migration/" },
       { label: "Verify Team Account", link: "learn/verify-team-account" },  
     ],
