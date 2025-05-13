@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.21.5",
+    "@astrojs/starlight": "^0.24.5",
     "astro": "^4.16.18",
     "rehype-mathjax": "^6.0.0",
     "remark-math": "^6.0.0",
