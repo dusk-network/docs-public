@@ -59,7 +59,7 @@ export default function sidebar(currentPath) {
             { label: "RUES", href: '/developer/integrations/rues' },
             { label: "Integrate with Exchanges", href: '/developer/integrations/exchanges' },
             { label: "Hashing Algorithms", href: '/developer/integrations/hashing-algorithms' },
-            { label: "Historical Events", href: '/developer/integrations/archive_endpoints' },
+            { label: "Address Format", href: '/developer/integrations/addresses' },
         ],
             false),
         createGroup("Use Digital Identity", currentPath, [
