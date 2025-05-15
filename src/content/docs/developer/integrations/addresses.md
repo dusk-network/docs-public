@@ -4,7 +4,7 @@ description: Learn how wallet addresses for Phoenix (shielded) and Moonlight (pu
 ---
 
 
-In Dusk, an address is nothing more than the account’s public-key material, compressed, serialized as raw bytes, and finally encoded with `Base58`. As the compressed-point representation is injected into `Base58`, every address maps uniquely to its key(s). The encoding is human-readable while remaining compact and safe.
+In Dusk, an address is nothing more than the account’s public-key, which is compressed and serialized as raw bytes, and then encoded with `Base58`. As the compressed-point representation is injected into `Base58`, every address maps uniquely to its key(s). The encoding is human-readable while remaining compact and safe.
 
 ## Quick reference
 
