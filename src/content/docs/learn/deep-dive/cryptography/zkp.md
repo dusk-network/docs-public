@@ -13,7 +13,7 @@ This capability is pivotal in scenarios where privacy and confidentiality are pa
 
 ## What is a ZKP?
 
-Zero-Knowledge Proofs are a powerful cryptographic technique that allow one party to prove knowledge of a certain fact or solution, without revealing *why* the fact is true or *what* the solution is.
+Zero-Knowledge Proofs are a powerful cryptographic technique that allows one party to prove knowledge of a certain fact or solution, without revealing *why* the fact is true or *what* the solution is.
 
 Put differently: a prover can convince a verifier that they know something, without giving away any details about that knowledge.
 
