@@ -129,7 +129,7 @@ A zk-SNARK system needs an initial setup, and this can be done in different ways
 
 - **Trusted Setup**: Involves generating parameters using secret randomness. If this randomness is compromised, it can compromise the system. That's why secure ceremonies (often involving multiple independent participants) are used to make sure none of this "toxic waste" leaks.
 
-- **Trustless Setup**: Utilizes methods that do not require any party to trust another, often employing publicly verifiable randomness to generate parameters. This setup often has trade offs in proof size or verification speed.
+- **Trustless Setup**: Utilizes methods that do not require any party to trust another, often employing publicly verifiable randomness to generate parameters. This setup often has trade-offs in proof size or verification speed.
 
 ### Dusk Network's Approach
 
